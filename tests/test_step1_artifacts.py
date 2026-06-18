@@ -21,12 +21,15 @@ def test_step1_required_artifacts_exist():
         "requirements.txt",
         "environment.yml",
         "baseline_tests/check_taichi_backend.py",
-        "baseline_tests/run_lbm_cavity_baseline.py",
+        "baseline_tests/run_lbm_smoke_baseline.py",
+        "baseline_tests/run_lbm_poiseuille_baseline.py",
         "baseline_tests/run_mpm3d_baseline.py",
         "logs/check_taichi_backend.log",
-        "logs/lbm_cavity_baseline.log",
+        "logs/lbm_smoke_baseline.log",
+        "logs/lbm_poiseuille_baseline.log",
         "logs/mpm3d_baseline.log",
-        "outputs/lbm_cavity/LB_SingelPhase_500.vtr",
+        "outputs/lbm_smoke/LB_SingelPhase_500.vtr",
+        "outputs/lbm_poiseuille/LB_SingelPhase_1000.vtr",
         "outputs/mpm3d/mpm3d_positions.npy",
         "external/taichi_LBM3D/Single_phase/LBM_3D_SinglePhase_Solver.py",
     ]
@@ -37,14 +40,19 @@ def test_step1_required_artifacts_exist():
 
 def test_step1_logs_record_successful_gpu_baselines():
     backend_log = read_log(ROOT / "logs/check_taichi_backend.log")
-    lbm_log = read_log(ROOT / "logs/lbm_cavity_baseline.log")
+    lbm_log = read_log(ROOT / "logs/lbm_smoke_baseline.log")
+    poiseuille_log = read_log(ROOT / "logs/lbm_poiseuille_baseline.log")
     mpm_log = read_log(ROOT / "logs/mpm3d_baseline.log")
 
     assert "CPU: OK" in backend_log
     assert "GPU: OK" in backend_log
     assert "Starting on arch=cuda" in lbm_log
-    assert "[OK] LBM cavity baseline finished" in lbm_log
+    assert "[OK] LBM all-fluid smoke baseline finished" in lbm_log
     assert "rho_min=1.000000e+00" in lbm_log
+    assert "Starting on arch=cuda" in poiseuille_log
+    assert "iter=1000" in poiseuille_log
+    assert "[OK] LBM Poiseuille baseline finished" in poiseuille_log
+    assert "center_ux=2.041298e-05" in poiseuille_log
     assert "Starting on arch=cuda" in mpm_log
     assert "[OK] MPM 3D baseline finished" in mpm_log
 
@@ -53,6 +61,7 @@ def test_step1_report_marks_acceptance_complete():
     report = (ROOT / "STEP1_BASELINE_REPORT.md").read_text(encoding="utf-8")
 
     assert "- [x] Taichi GPU backend runs successfully" in report
-    assert "- [x] LBM writes VTK output" in report
+    assert "- [x] LBM smoke writes VTK output" in report
+    assert "- [x] LBM Poiseuille writes VTK output" in report
     assert "- [x] MPM `J` remains positive" in report
     assert "- [x] Yes" in report

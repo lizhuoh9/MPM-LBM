@@ -43,10 +43,12 @@ MPM-LBM/
     taichi_LBM3D/
   baseline_tests/
     check_taichi_backend.py
-    run_lbm_cavity_baseline.py
+    run_lbm_smoke_baseline.py
+    run_lbm_poiseuille_baseline.py
     run_mpm3d_baseline.py
   outputs/
-    lbm_cavity/
+    lbm_smoke/
+    lbm_poiseuille/
     mpm3d/
   scripts/
   logs/
@@ -136,12 +138,12 @@ GPU: OK
 
 For this project, GPU failure is a blocking issue. Do not mark Step 1 complete if `ti.gpu` fails.
 
-## LBM Single-Phase Baseline
+## LBM All-Fluid Smoke Baseline
 
 Create:
 
 ```text
-baseline_tests/run_lbm_cavity_baseline.py
+baseline_tests/run_lbm_smoke_baseline.py
 ```
 
 This script must use `external/taichi_LBM3D/Single_phase/LBM_3D_SinglePhase_Solver.py` as the LBM source.
@@ -164,7 +166,7 @@ The script must:
 
 1. Initialize Taichi with GPU first.
 2. Use a small dense grid, initially `32 x 32 x 32`.
-3. Generate a simple cavity geometry file locally under `outputs/lbm_cavity/`.
+3. Generate a simple all-fluid smoke geometry file locally under `outputs/lbm_smoke/`.
 4. Use `0 = fluid`, `1 = solid`.
 5. Save geometry using Fortran order because the original solver reshapes with `order='F'`.
 6. Instantiate `LB3D_Solver_Single_Phase(nx, ny, nz, sparse_storage=False)`.
@@ -174,13 +176,13 @@ The script must:
 10. Call `init_simulation()`.
 11. Run at least 500 steps.
 12. Print progress every 100 steps with finite `max_v`.
-13. Export VTK at least once into `outputs/lbm_cavity/`.
+13. Export VTK at least once into `outputs/lbm_smoke/`.
 14. Fail immediately on NaN or Inf.
 
 Expected log path:
 
 ```text
-logs/lbm_cavity_baseline.log
+logs/lbm_smoke_baseline.log
 ```
 
 Acceptance:
@@ -188,12 +190,55 @@ Acceptance:
 ```text
 LBM run reaches at least 500 steps.
 max_v remains finite.
-VTK output exists under outputs/lbm_cavity/.
+VTK output exists under outputs/lbm_smoke/.
 No NaN or Inf is reported.
 Density/velocity fields can be inspected in ParaView.
 ```
 
-Step 1 does not require exact physical convergence of the cavity flow. It only requires a finite, non-exploding baseline with output.
+Step 1 does not require physical convergence of the all-fluid smoke flow. It only requires a finite, non-exploding baseline with output.
+
+## LBM Pressure-Driven Poiseuille Baseline
+
+Create:
+
+```text
+baseline_tests/run_lbm_poiseuille_baseline.py
+```
+
+This script must use the same upstream Single_phase solver and provide a physical channel-flow baseline for later Step 2 comparison.
+
+The script must:
+
+1. Initialize Taichi with GPU first.
+2. Use a small dense grid, initially `32 x 32 x 32`.
+3. Generate a channel geometry file locally under `outputs/lbm_poiseuille/`.
+4. Use `0 = fluid`, `1 = solid`.
+5. Keep x direction open/pressure-driven.
+6. Make y/z boundary planes solid walls.
+7. Apply a small pressure/density difference in x, for example `rho_in=1.0001`, `rho_out=1.0`.
+8. Call `init_geo()`.
+9. Call `init_simulation()`.
+10. Run at least 1000 steps.
+11. Print finite `max_v`, `rho_min`, `rho_max`, mean x velocity, centerline x velocity, and near-wall x velocity.
+12. Export VTK at least once into `outputs/lbm_poiseuille/`.
+13. Fail immediately on NaN or Inf.
+
+Expected log path:
+
+```text
+logs/lbm_poiseuille_baseline.log
+```
+
+Acceptance:
+
+```text
+Poiseuille run reaches at least 1000 steps.
+rho remains finite and bounded.
+max_v < 0.05.
+x velocity forms a channel-like profile: centerline ux > near-wall ux.
+VTK output exists under outputs/lbm_poiseuille/.
+No NaN or Inf is reported.
+```
 
 ## MPM 3D Baseline
 
@@ -257,7 +302,8 @@ If the MPM smoke test becomes unstable, first reduce `dt`, then reduce `E`, then
 After baseline scripts run, verify output inventory:
 
 ```text
-outputs/lbm_cavity/
+outputs/lbm_smoke/
+outputs/lbm_poiseuille/
 outputs/mpm3d/mpm3d_positions.npy
 ```
 
@@ -265,7 +311,8 @@ The project should contain logs for every run:
 
 ```text
 logs/check_taichi_backend.log
-logs/lbm_cavity_baseline.log
+logs/lbm_smoke_baseline.log
+logs/lbm_poiseuille_baseline.log
 logs/mpm3d_baseline.log
 ```
 
@@ -310,7 +357,8 @@ At minimum, run:
 
 ```powershell
 python baseline_tests/check_taichi_backend.py
-python baseline_tests/run_lbm_cavity_baseline.py
+python baseline_tests/run_lbm_smoke_baseline.py
+python baseline_tests/run_lbm_poiseuille_baseline.py
 python baseline_tests/run_mpm3d_baseline.py
 git -C external/taichi_LBM3D rev-parse HEAD
 python -m pip freeze
@@ -334,9 +382,13 @@ Step 1 is complete only when all required items are true:
 [ ] Taichi GPU backend succeeds.
 [ ] external/taichi_LBM3D exists.
 [ ] taichi_LBM3D commit hash is recorded.
-[ ] LBM Single_phase baseline runs at least 500 steps.
-[ ] LBM max_v remains finite.
-[ ] LBM VTK output exists.
+[ ] LBM all-fluid smoke baseline runs at least 500 steps.
+[ ] LBM smoke max_v remains finite.
+[ ] LBM smoke VTK output exists.
+[ ] LBM Poiseuille baseline runs at least 1000 steps.
+[ ] LBM Poiseuille rho remains bounded.
+[ ] LBM Poiseuille max_v < 0.05.
+[ ] LBM Poiseuille VTK output exists.
 [ ] MPM 3D baseline runs at least 50 steps.
 [ ] MPM diagnostics remain finite.
 [ ] MPM min_J remains positive.
@@ -389,4 +441,3 @@ Only after that MVP is stable should the route upgrade to:
 ```text
 MPM solid + single-phase LBM + moving bounce-back + momentum exchange
 ```
-

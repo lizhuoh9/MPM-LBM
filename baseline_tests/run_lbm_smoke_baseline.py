@@ -24,10 +24,10 @@ def main():
 
     nx, ny, nz = 32, 32, 32
     n_steps = 500
-    out_dir = os.path.join(ROOT, "outputs", "lbm_cavity")
+    out_dir = os.path.join(ROOT, "outputs", "lbm_smoke")
     os.makedirs(out_dir, exist_ok=True)
 
-    geo_path = os.path.join(out_dir, "geo_cavity_32.dat")
+    geo_path = os.path.join(out_dir, "geo_smoke_32.dat")
     make_smoke_geo(geo_path, nx, ny, nz)
 
     lb3d = lbm.LB3D_Solver_Single_Phase(
@@ -71,7 +71,7 @@ def main():
         raise RuntimeError("LBM velocity contains NaN or Inf")
 
     print(
-        "[OK] LBM cavity baseline finished. "
+        "[OK] LBM all-fluid smoke baseline finished. "
         f"max_v_min={min(max_v_values):.6e}, "
         f"max_v_max={max(max_v_values):.6e}, "
         f"rho_min={float(np.min(rho_np)):.6e}, "
