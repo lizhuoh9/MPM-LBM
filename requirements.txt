@@ -1,0 +1,26 @@
+colorama @ file:///C:/b/abs_a9ozq0l032/croot/colorama_1672387194846/work
+dill==0.4.0
+exceptiongroup==1.3.1
+iniconfig==2.3.0
+markdown-it-py==4.0.0
+mdurl==0.1.2
+mkl-service==2.4.0
+mkl_fft @ file:///C:/Users/dev-admin/mkl/mkl_fft_1730823082242/work
+mkl_random @ file:///C:/Users/dev-admin/mkl/mkl_random_1730822522280/work
+mpmath==1.3.0
+numpy==1.26.4
+numpy-stl==3.2.0
+packaging==26.2
+pluggy==1.6.0
+pybullet @ file:///D:/bld/bullet_1643400173941/work
+pyevtk==1.7.0
+Pygments==2.19.2
+pytest==9.1.0
+python-utils==3.9.1
+rich==14.1.0
+sympy==1.14.0
+taichi==1.7.4
+tomli==2.4.1
+tqdm @ file:///C:/b/abs_0eh9b6xugj/croot/tqdm_1738945553987/work
+trimesh @ file:///home/conda/feedstock_root/build_artifacts/trimesh_1756996622194/work
+typing_extensions==4.15.0

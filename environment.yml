@@ -1,0 +1,12 @@
+name: mpm-lbm
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - taichi==1.7.4
+      - numpy
+      - pyevtk
+      - sympy
+      - pytest
