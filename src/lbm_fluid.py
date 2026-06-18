@@ -217,6 +217,7 @@ class LBMFluid3D:
         in_dat = np.loadtxt(filename)
         in_dat[in_dat>0] = 1
         in_dat = np.reshape(in_dat, (self.nx,self.ny,self.nz),order='F')
+        in_dat = in_dat.astype(np.int8)
         self.solid.from_numpy(in_dat)
         self.copy_solid_to_static()
         
