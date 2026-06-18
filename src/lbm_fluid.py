@@ -96,6 +96,10 @@ class LBMFluid3D:
         self.solid_vel = ti.Vector.field(3, ti.f32, shape=(nx,ny,nz))
         self.cell_force = ti.Vector.field(3, ti.f32, shape=(nx,ny,nz))
         self.hydro_force = ti.Vector.field(3, ti.f32, shape=(nx,ny,nz))
+        self.bb_link_count = ti.field(ti.i32, shape=())
+        self.bb_max_correction = ti.field(ti.f32, shape=())
+        self.bb_net_fluid_impulse = ti.Vector.field(3, ti.f32, shape=())
+        self.bb_net_solid_force = ti.Vector.field(3, ti.f32, shape=())
         self.reinit_flag = ti.field(ti.i8, shape=(nx,ny,nz))
         self.ext_f = ti.Vector.field(3,ti.f32,shape=())
 
@@ -309,6 +313,47 @@ class LBMFluid3D:
                         self.F[i][self.LR[s]] = self.f[i][s]
                         #print(i, ip, "@@@")
 
+    @ti.kernel
+    def clear_moving_boundary_diagnostics(self):
+        self.bb_link_count[None] = 0
+        self.bb_max_correction[None] = 0.0
+        self.bb_net_fluid_impulse[None] = ti.Vector([0.0, 0.0, 0.0])
+        self.bb_net_solid_force[None] = ti.Vector([0.0, 0.0, 0.0])
+
+        for I in ti.grouped(self.rho):
+            self.hydro_force[I] = ti.Vector([0.0, 0.0, 0.0])
+
+    @ti.kernel
+    def streaming_moving_bounceback(self):
+        for i in ti.grouped(self.rho):
+            if (self.solid[i] == 0 and i.x<self.nx and i.y<self.ny and i.z<self.nz):
+                for s in ti.static(range(19)):
+                    ip = self.periodic_index(i+self.e[s])
+                    if (self.solid[ip]==0):
+                        self.F[ip][s] = self.f[i][s]
+                    else:
+                        rho_local = self.rho[i]
+                        u_wall = self.solid_vel[ip]
+                        correction = -6.0 * self.w[s] * rho_local * self.e_f[s].dot(u_wall)
+                        bounced = self.f[i][s] + correction
+                        self.F[i][self.LR[s]] = bounced
+
+                        incoming_momentum = self.e_f[s] * self.f[i][s]
+                        outgoing_momentum = self.e_f[self.LR[s]] * bounced
+                        fluid_impulse = outgoing_momentum - incoming_momentum
+                        solid_force = -fluid_impulse
+
+                        ti.atomic_add(self.bb_link_count[None], 1)
+                        ti.atomic_max(self.bb_max_correction[None], ti.abs(correction))
+
+                        for d in ti.static(range(3)):
+                            ti.atomic_add(self.bb_net_fluid_impulse[None][d], fluid_impulse[d])
+                            ti.atomic_add(self.bb_net_solid_force[None][d], solid_force[d])
+                            ti.atomic_add(self.hydro_force[ip][d], solid_force[d])
+
+    @ti.kernel
+    def finalize_moving_boundary_diagnostics(self):
+        self.bb_net_solid_force[None] = -self.bb_net_fluid_impulse[None]
 
     @ti.kernel
     def Boundary_condition(self):
@@ -674,9 +719,30 @@ class LBMFluid3D:
                             }
             )   
 
+    def get_moving_boundary_stats(self):
+        """
+        Diagnostic-only. Reads the last moving-bounceback streaming reductions to Python.
+        """
+        fluid_impulse = self.bb_net_fluid_impulse[None].to_numpy()
+        solid_force = self.bb_net_solid_force[None].to_numpy()
+        return {
+            "bb_link_count": int(self.bb_link_count[None]),
+            "bb_max_correction": float(self.bb_max_correction[None]),
+            "bb_net_fluid_impulse": tuple(float(v) for v in fluid_impulse),
+            "bb_net_solid_force": tuple(float(v) for v in solid_force),
+        }
+
     def step(self):
         self.colission()
         self.streaming1()
+        self.Boundary_condition()
+        self.streaming3()
+
+    def step_moving_bounceback(self):
+        self.clear_moving_boundary_diagnostics()
+        self.colission()
+        self.streaming_moving_bounceback()
+        self.finalize_moving_boundary_diagnostics()
         self.Boundary_condition()
         self.streaming3()
 
