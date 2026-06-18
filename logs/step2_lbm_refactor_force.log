@@ -1,0 +1,69 @@
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_lbm_refactored_body_force.py", line 132, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_lbm_refactored_body_force.py", line 68, in main
+    lbm = LBMFluid3D(LBMConfig(nx=nx, ny=ny, nz=nz, niu=0.1))
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 132, in __init__
+    self.M[None] = ti.Matrix([[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_lbm_refactored_body_force.py", line 132, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_lbm_refactored_body_force.py", line 68, in main
+    lbm = LBMFluid3D(LBMConfig(nx=nx, ny=ny, nz=nz, niu=0.1))
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 132, in __init__
+    self.M[None] = ti.Matrix([[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1358, in __setitem__
+    self[key]._set_entries(value)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1367, in __getitem__
+    return Matrix([[_host_access[i * self.m + j] for j in range(self.m)] for i in range(self.n)])
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_lbm_refactored_body_force.py", line 132, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_lbm_refactored_body_force.py", line 68, in main
+    lbm = LBMFluid3D(LBMConfig(nx=nx, ny=ny, nz=nz, niu=0.1))
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 152, in __init__
+    self.inv_M[None] = ti.Matrix(inv_M_np)
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_lbm_refactored_body_force.py", line 132, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_lbm_refactored_body_force.py", line 68, in main
+    lbm = LBMFluid3D(LBMConfig(nx=nx, ny=ny, nz=nz, niu=0.1))
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 152, in __init__
+    self.inv_M[None] = ti.Matrix(inv_M_np)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1358, in __setitem__
+    self[key]._set_entries(value)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1367, in __getitem__
+    return Matrix([[_host_access[i * self.m + j] for j in range(self.m)] for i in range(self.n)])
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+iter=0000, max_v=6.117585e-07, rho_min=1.000000e+00, rho_max=1.000000e+00, mean_ux=6.117585e-07, max_abs_uy=0.000000e+00, max_abs_uz=0.000000e+00, force_norm_max=1.000000e-06, elapsed=3.84s
+iter=0200, max_v=2.296349e-05, rho_min=1.000000e+00, rho_max=1.000000e+00, mean_ux=2.296349e-05, max_abs_uy=0.000000e+00, max_abs_uz=0.000000e+00, force_norm_max=1.000000e-06, elapsed=4.18s
+iter=0400, max_v=4.531522e-05, rho_min=1.000000e+00, rho_max=1.000000e+00, mean_ux=4.531523e-05, max_abs_uy=0.000000e+00, max_abs_uz=0.000000e+00, force_norm_max=1.000000e-06, elapsed=4.32s
+iter=0600, max_v=6.766695e-05, rho_min=1.000000e+00, rho_max=1.000000e+00, mean_ux=6.766694e-05, max_abs_uy=0.000000e+00, max_abs_uz=0.000000e+00, force_norm_max=1.000000e-06, elapsed=4.46s
+iter=0800, max_v=9.001868e-05, rho_min=1.000000e+00, rho_max=1.000000e+00, mean_ux=9.001869e-05, max_abs_uy=0.000000e+00, max_abs_uz=0.000000e+00, force_norm_max=1.000000e-06, elapsed=4.59s
+iter=1000, max_v=1.123704e-04, rho_min=1.000000e+00, rho_max=1.000000e+00, mean_ux=1.123704e-04, max_abs_uy=0.000000e+00, max_abs_uz=0.000000e+00, force_norm_max=1.000000e-06, elapsed=4.72s
+[OK] Step 2 refactored body-force baseline finished. initial_max_v=0.000000e+00, max_v_min=6.117585e-07, max_v_max=1.123704e-04, final_max_v=1.123704e-04, rho_min=1.000000e+00, rho_max=1.000000e+00, mean_ux=1.123704e-04, force_norm_max=1.000000e-06, vtk=D:\working\squid robot\LBM\MPM-LBM\outputs\lbm_refactored_force\LBMFluid_1000.vtr
