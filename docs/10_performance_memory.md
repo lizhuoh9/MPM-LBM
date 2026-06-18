@@ -104,3 +104,20 @@ moving_boundary
 ```
 
 The profile matrix records total time, initialization, projection, coupling, LBM stepping, MPM substepping, diagnostics, and export overhead. These timings are environment-specific regression signals, not hardware-independent benchmarks.
+
+## Step 14 Larger-Grid Results
+
+Step 14 adds 48^3 engineering scale baseline rows and 64^3 short feasibility rows. Step 14 does not add new FSI physics, and these timings are not production benchmark data.
+
+| case | mode | n_grid | n_particles | total_estimated_mb | total_time_s | rho_min | rho_max |
+| ---- | ---- | -----: | ----------: | -----------------: | -----------: | ------: | ------: |
+| box 48^3 | none | 48 | 13824 | 27.158203 | 44.333 | 1.000000358 | 1.000000358 |
+| box 48^3 | penalty | 48 | 13824 | 27.158203 | 45.785 | 0.999991417 | 1.000009537 |
+| box 48^3 | moving_boundary | 48 | 13824 | 27.158203 | 70.848 | 0.982743502 | 1.039551854 |
+| squid_proxy 48^3 | none | 48 | 4096 | 26.156250 | 69.284 | 1.000000358 | 1.000000358 |
+| squid_proxy 48^3 | penalty | 48 | 4096 | 26.156250 | 91.868 | 0.999996662 | 1.000004530 |
+| squid_proxy 48^3 | moving_boundary | 48 | 4096 | 26.156250 | 95.615 | 0.990947962 | 1.012312770 |
+| box 64^3 feasibility | none | 64 | 32768 | 64.375000 | 155.620 | 1.000000358 | 1.000000358 |
+| box 64^3 feasibility | penalty | 64 | 32768 | 64.375000 | 178.103 | 0.999998331 | 1.000002623 |
+
+The 64^3 rows are feasibility checks, not full validation. The lower-bound memory estimates still exclude Taichi runtime allocation, allocator overhead, temporary buffers, and optional visualization export.

@@ -1,0 +1,17 @@
+{
+  "coupling_mode": "moving_boundary",
+  "geometry_type": "squid_proxy",
+  "geometry_config_path": "configs/step13_squid_proxy_geometry.json",
+  "n_grid": 48,
+  "n_particles": 4096,
+  "n_lbm_steps": 10,
+  "mpm_substeps_per_lbm_step": 10,
+  "target_u_lbm": [0.005, 0.0, 0.0],
+  "gravity": [0.0, 0.0, 0.0],
+  "dynamic_solid_threshold": 0.5,
+  "mb_reaction_scale": 1.0,
+  "mb_force_cap_norm": 0.000025,
+  "output_interval": 5,
+  "write_vtk": false,
+  "write_particles": false
+}

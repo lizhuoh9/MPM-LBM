@@ -1,0 +1,13 @@
+n_grid,geometry_type,mode,n_particles,stable,total_time_sec,estimated_memory_mb,rho_min,rho_max,lbm_max_v,mpm_min_J,notes
+32,memory_estimate,reference,4096,False,0.0,8.046875,1.0,1.0,0.0,1.0,Step 12 lower-bound dense memory estimate; not a runtime validation row
+64,memory_estimate,reference,32768,False,0.0,64.375,1.0,1.0,0.0,1.0,Step 12 lower-bound dense memory estimate; not a runtime validation row
+96,memory_estimate,reference,110592,False,0.0,217.265625,1.0,1.0,0.0,1.0,Step 12 lower-bound dense memory estimate; not a runtime validation row
+128,memory_estimate,reference,262144,False,0.0,515.0,1.0,1.0,0.0,1.0,Step 12 lower-bound dense memory estimate; not a runtime validation row
+48,box,none,13824,True,44.33290440001292,27.158203125,1.0000003576278687,1.0000003576278687,0.0,0.9999996423721313,48^3 box engineering scale baseline; not production benchmark
+48,box,penalty,13824,True,45.78459070000099,27.158203125,0.9999914169311523,1.000009536743164,1.598680501047056e-05,0.9999955296516418,48^3 box engineering scale baseline; not production benchmark
+48,box,moving_boundary,13824,True,70.84768750000512,27.158203125,0.982743501663208,1.039551854133606,0.021100755780935287,0.9927889108657837,48^3 box engineering scale baseline; not production benchmark
+48,squid_proxy,none,4096,True,69.28358170000138,26.15625,1.0000003576278687,1.0000003576278687,0.0,0.9999995231628418,48^3 procedural squid_proxy engineering scale baseline; not real squid validation
+48,squid_proxy,penalty,4096,True,91.86760880000656,26.15625,0.9999966621398926,1.000004529953003,7.749323231109884e-06,0.9999956488609314,48^3 procedural squid_proxy engineering scale baseline; not real squid validation
+48,squid_proxy,moving_boundary,4096,True,95.61465970001882,26.15625,0.990947961807251,1.0123127698898315,0.007713154423981905,0.9937073588371277,48^3 procedural squid_proxy engineering scale baseline; not real squid validation
+64,box,none,32768,True,155.61961829999927,64.375,1.0000003576278687,1.0000003576278687,0.0,0.9999997019767761,64^3 short feasibility check; not full validation
+64,box,penalty,32768,True,178.1033772000228,64.375,0.9999983310699463,1.0000026226043701,5.287714429869084e-06,0.9999986290931702,64^3 short feasibility check; not full validation

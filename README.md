@@ -17,6 +17,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - moving-boundary reaction transfer to MPM
 - unified FSIDriver3D with modes: none, penalty, moving_boundary
 - shared diagnostics, CSV/NPZ outputs, logs, and small validation baselines
+- larger-grid engineering baselines through 48^3 and 64^3 feasibility checks
 
 ## Not Implemented
 
@@ -78,7 +79,7 @@ tests/
 
 All step reports and baseline logs are committed for reproducibility. The main validated driver entry points are the Step 10 baselines and the `FSIDriver3D` mode matrix.
 
-Current validation is small-scale: `n_grid = 32`, `n_particles = 4096`, and short coupled driver windows. These runs are useful regression and comparison baselines, not final accuracy validation.
+Current validation includes small 32^3 regression cases, 48^3 engineering scale baseline cases, and 64^3 short feasibility checks. These runs are useful regression and comparison baselines, not final accuracy validation and not production benchmark data.
 
 ## Performance and Artifact Policy
 
@@ -96,6 +97,10 @@ Step 13 adds procedural geometry initialization:
 - squid_proxy
 
 The squid_proxy is procedural and is not real squid validation.
+
+## Larger-Grid Validation
+
+Step 14 adds 48^3 scale validation and 64^3 feasibility checks. These are engineering scale baselines, not production benchmark data or real squid validation. Step 14 does not add new FSI physics.
 
 ## Upstream LBM Note
 

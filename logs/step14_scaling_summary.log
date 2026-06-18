@@ -1,0 +1,7 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+Step 14 scaling summary
+row_count=12
+grid_references=[32, 48, 64, 96, 128]
+csv=D:\working\squid robot\LBM\MPM-LBM\outputs\step14_scaling_summary\scaling_summary.csv
+json=D:\working\squid robot\LBM\MPM-LBM\outputs\step14_scaling_summary\scaling_summary.json
+[OK] Step 14 scaling summary finished

@@ -64,6 +64,10 @@ The `squid_proxy` is a procedural union of analytic primitives:
 
 The squid_proxy is procedural and is not real squid validation. It is not anatomical geometry, does not validate swimming, and is not a biomechanical model.
 
+## Step 14 Reuse
+
+Step 14 reuses `configs/step13_squid_proxy_geometry.json` for 48^3 squid_proxy scale validation. This keeps the procedural geometry fixed while increasing LBM grid resolution. The Step 14 squid_proxy rows remain not real squid validation, not swimming validation, and not anatomical squid geometry evidence.
+
 ## Artifact Policy
 
 Step 13 commits small baseline geometry outputs for reproducibility:

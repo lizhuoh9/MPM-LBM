@@ -1,0 +1,15 @@
+{
+  "coupling_mode": "penalty",
+  "geometry_type": "box",
+  "n_grid": 48,
+  "n_particles": 13824,
+  "n_lbm_steps": 10,
+  "mpm_substeps_per_lbm_step": 10,
+  "target_u_lbm": [0.01, 0.0, 0.0],
+  "gravity": [0.0, 0.0, 0.0],
+  "beta_lbm": 0.001,
+  "penalty_force_cap_lbm": 0.00005,
+  "output_interval": 5,
+  "write_vtk": false,
+  "write_particles": false
+}
