@@ -1,7 +1,8 @@
 from dataclasses import asdict, dataclass
 import json
-from typing import Tuple
+from typing import Optional, Tuple
 
+from .geometry_config import VALID_GEOMETRY_TYPES
 from .sim_config import UnifiedSimConfig
 
 
@@ -17,6 +18,8 @@ def _as_float_tuple(values, name):
 @dataclass(frozen=True)
 class FSIDriverConfig:
     coupling_mode: str = "penalty"
+    geometry_type: str = "box"
+    geometry_config_path: Optional[str] = None
 
     n_grid: int = 32
     n_particles: int = 4096
@@ -45,6 +48,8 @@ class FSIDriverConfig:
     def __post_init__(self):
         if self.coupling_mode not in VALID_COUPLING_MODES:
             raise ValueError(f"coupling_mode must be one of {VALID_COUPLING_MODES}")
+        if self.geometry_type not in VALID_GEOMETRY_TYPES:
+            raise ValueError(f"geometry_type must be one of {VALID_GEOMETRY_TYPES}")
         if self.n_grid <= 0:
             raise ValueError("n_grid must be positive")
         if self.n_particles <= 0:

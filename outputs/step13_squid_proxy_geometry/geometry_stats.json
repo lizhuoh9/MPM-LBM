@@ -1,0 +1,41 @@
+{
+  "accepted_count": 6300,
+  "active_cell_count": 1838,
+  "arms_particle_count": 210,
+  "candidate_count": 274625,
+  "candidate_resolution": 65,
+  "cell_force_max_norm": 0.0,
+  "component_count": 5,
+  "deterministic": true,
+  "geometry_type": "squid_proxy",
+  "geometry_volume": 0.022940373236231226,
+  "head_particle_count": 745,
+  "hydro_force_max_norm": 0.0,
+  "left_fin_particle_count": 80,
+  "mantle_particle_count": 3441,
+  "max_phi_raw": 1.0376660823822021,
+  "mpm_max_J": 1.0,
+  "mpm_max_speed": 0.0,
+  "mpm_min_J": 1.0,
+  "occupied_count": 774,
+  "particle_count": 4096,
+  "particle_max": [
+    0.699999988079071,
+    0.807692289352417,
+    0.607692301273346
+  ],
+  "particle_min": [
+    0.30000001192092896,
+    0.13076923787593842,
+    0.39230769872665405
+  ],
+  "projected_mass": 0.02294035255908966,
+  "projected_volume_clamped": 0.022870710119605064,
+  "projected_volume_raw": 0.02294035069644451,
+  "right_fin_particle_count": 79,
+  "scope_note": "procedural squid proxy geometry, not anatomical or validated squid geometry",
+  "solid_phi_max": 1.0,
+  "solid_phi_min": 0.0,
+  "total_mass": 0.022940369322896004,
+  "voxel_volume_estimate": 0.02362060546875
+}

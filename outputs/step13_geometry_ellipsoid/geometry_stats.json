@@ -1,0 +1,34 @@
+{
+  "accepted_count": 4132,
+  "active_cell_count": 1105,
+  "candidate_count": 274625,
+  "candidate_resolution": 65,
+  "cell_force_max_norm": 0.0,
+  "deterministic": true,
+  "geometry_type": "ellipsoid",
+  "geometry_volume": 0.01504597177969959,
+  "hydro_force_max_norm": 0.0,
+  "max_phi_raw": 1.0089688301086426,
+  "mpm_max_J": 1.0,
+  "mpm_max_speed": 0.0,
+  "mpm_min_J": 1.0,
+  "occupied_count": 504,
+  "particle_count": 4096,
+  "particle_max": [
+    0.6384615302085876,
+    0.6846153736114502,
+    0.607692301273346
+  ],
+  "particle_min": [
+    0.36153846979141235,
+    0.30000001192092896,
+    0.39230769872665405
+  ],
+  "projected_mass": 0.015045968815684319,
+  "projected_volume_clamped": 0.015021401457488537,
+  "projected_volume_raw": 0.015045967884361744,
+  "solid_phi_max": 1.0,
+  "solid_phi_min": 0.0,
+  "total_mass": 0.015045971609652042,
+  "voxel_volume_estimate": 0.015380859375
+}

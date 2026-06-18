@@ -6,6 +6,8 @@ import numpy as np
 from .coupling import PenaltyFSICoupler3D
 from .diagnostics import FSIDiagnostics3D
 from .fsi_config import FSIDriverConfig
+from .geometry_config import GeometryConfig
+from .geometry import GeometrySampler3D
 from .lbm_fluid import LBMFluid3D
 from .moving_boundary_coupling import MovingBoundaryFSICoupler3D
 from .mpm_solid import MPMSolid3D
@@ -87,7 +89,12 @@ class FSIDriver3D:
             ),
             n_particles=self.config.n_particles,
         )
-        self.solid.init_box()
+        if self.config.geometry_type == "box" and self.config.geometry_config_path is None:
+            self.solid.init_box()
+        else:
+            geometry_config = self._make_geometry_config()
+            cloud = GeometrySampler3D(geometry_config).sample_particles()
+            self.solid.init_from_numpy(cloud["x"], cloud["vol0"], cloud["mass"])
         target_u_norm = self.mapper.velocity_lbm_to_norm(self.config.target_u_lbm)
         self.solid.set_uniform_velocity(float(target_u_norm[0]), float(target_u_norm[1]), float(target_u_norm[2]))
 
@@ -109,6 +116,28 @@ class FSIDriver3D:
         self.initialized = True
         self.start_time = time.perf_counter()
         self.timing["init_time"] += self.start_time - t0
+
+    def _make_geometry_config(self):
+        if self.config.geometry_config_path is None:
+            return GeometryConfig(
+                geometry_type=self.config.geometry_type,
+                n_particles=self.config.n_particles,
+                box_min=self.config.box_min,
+                box_max=self.config.box_max,
+            )
+
+        geometry_config = GeometryConfig.from_json(self.config.geometry_config_path)
+        if geometry_config.geometry_type != self.config.geometry_type:
+            raise ValueError(
+                "geometry_config_path geometry_type does not match FSIDriverConfig.geometry_type: "
+                f"{geometry_config.geometry_type} != {self.config.geometry_type}"
+            )
+        if geometry_config.n_particles != self.config.n_particles:
+            raise ValueError(
+                "geometry_config_path n_particles does not match FSIDriverConfig.n_particles: "
+                f"{geometry_config.n_particles} != {self.config.n_particles}"
+            )
+        return geometry_config
 
     def step_once(self):
         if not self.initialized:

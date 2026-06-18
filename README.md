@@ -87,6 +87,16 @@ See:
 - docs/10_performance_memory.md
 - docs/11_artifact_policy.md
 
+## Geometry Support
+
+Step 13 adds procedural geometry initialization:
+
+- box
+- ellipsoid
+- squid_proxy
+
+The squid_proxy is procedural and is not real squid validation.
+
 ## Upstream LBM Note
 
 The LBM backend is derived from the vendored taichi_LBM3D single-phase solver under external/taichi_LBM3D. The external source is kept unmodified in this project workflow. For license details, see the upstream repository and vendored license files if present.

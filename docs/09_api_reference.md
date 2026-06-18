@@ -13,8 +13,22 @@ This is a lightweight API reference for the current prototype. It is not autogen
 
 - purpose: 3D MPM solid with APIC transfer and fixed-corotated elasticity
 - main fields: `x`, `v`, `C`, `F`, `Jp`, `mass`, `vol0`, `grid_v`, `grid_m`, `grid_f_ext`
-- main methods: `init_box`, `set_uniform_velocity`, `clear_grid`, `p2g`, `grid_update`, `g2p`, `substep`, `get_stats`, `export_particles`
+- main methods: `init_box`, `init_from_numpy`, `set_uniform_velocity`, `clear_grid`, `p2g`, `grid_update`, `g2p`, `substep`, `get_stats`, `export_particles`
 - mode: all driver modes use `MPMSolid3D`
+
+## GeometryConfig
+
+- purpose: JSON-loadable procedural geometry configuration for MPM particle initialization
+- main fields: `geometry_type`, `n_particles`, `box_min`, `box_max`, `center`, `ellipsoid_radii`, `mantle_center`, `mantle_radii`, `head_center`, `head_radii`, `arm_length`, `arm_radius`, `fin_radius`
+- main methods: `from_json`, `to_dict`
+- mode: used by Step 13 geometry baselines and non-box `FSIDriver3D` initialization
+
+## GeometrySampler3D
+
+- purpose: deterministic particle-cloud and voxel-occupancy generation for analytic geometry
+- main fields: `config`, `domain_min`, `domain_max`, `domain_span`, `domain_volume`
+- main methods: `inside`, `sample_particles`, `voxelize`, `component_masks`
+- mode: used for `ellipsoid` and `squid_proxy`; `box` remains the default driver path for compatibility
 
 ## GridUnitMapper
 
@@ -54,9 +68,9 @@ This is a lightweight API reference for the current prototype. It is not autogen
 ## FSIDriverConfig
 
 - purpose: common JSON-loadable driver configuration
-- main fields: `coupling_mode`, `n_grid`, `n_particles`, `n_lbm_steps`, `mpm_substeps_per_lbm_step`, `mpm_dt`, `target_u_lbm`, `gravity`, `beta_lbm`, `penalty_force_cap_lbm`, `mb_reaction_scale`, `mb_force_cap_norm`
+- main fields: `coupling_mode`, `geometry_type`, `geometry_config_path`, `n_grid`, `n_particles`, `n_lbm_steps`, `mpm_substeps_per_lbm_step`, `mpm_dt`, `target_u_lbm`, `gravity`, `beta_lbm`, `penalty_force_cap_lbm`, `mb_reaction_scale`, `mb_force_cap_norm`
 - main methods: `from_json`, `to_dict`, `make_unified_sim_config`
-- mode: selects none, penalty, or moving_boundary
+- mode: selects none, penalty, or moving_boundary, and selects geometry initialization through `geometry_type`
 
 ## FSIDriver3D
 

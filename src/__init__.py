@@ -6,6 +6,8 @@ from .coupling import PenaltyFSICoupler3D
 from .diagnostics import FSIDiagnostics3D
 from .fsi_config import FSIDriverConfig
 from .fsi_driver import FSIDriver3D
+from .geometry_config import GeometryConfig
+from .geometry import GeometrySampler3D
 from .mpm_config import MPMConfig
 from .mpm_solid import MPMSolid3D
 from .moving_boundary_coupling import MovingBoundaryFSICoupler3D
@@ -20,6 +22,8 @@ __all__ = [
     "FSIDiagnostics3D",
     "FSIDriverConfig",
     "FSIDriver3D",
+    "GeometryConfig",
+    "GeometrySampler3D",
     "MPMConfig",
     "MPMSolid3D",
     "MovingBoundaryFSICoupler3D",

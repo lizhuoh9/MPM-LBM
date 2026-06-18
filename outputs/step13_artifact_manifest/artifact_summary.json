@@ -1,0 +1,16 @@
+{
+  "by_extension": {
+    ".csv": 48879,
+    ".dat": 5013504,
+    ".json": 17434,
+    ".log": 240403,
+    ".md": 115916,
+    ".npy": 12516992,
+    ".npz": 267189,
+    ".vtr": 64111974
+  },
+  "file_count": 374,
+  "large_file_count": 0,
+  "total_size_bytes": 82332291,
+  "total_size_mb": 78.51819133758545
+}

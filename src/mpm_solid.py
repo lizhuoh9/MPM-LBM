@@ -142,6 +142,46 @@ class MPMSolid3D:
             self.vol0[p] = self.p_vol0
 
     @ti.kernel
+    def reset_deformation_state(self):
+        for p in range(self.n_particles):
+            self.C[p] = ti.Matrix.zero(ti.f32, 3, 3)
+            self.F[p] = ti.Matrix.identity(ti.f32, 3)
+            self.Jp[p] = 1.0
+
+    def init_from_numpy(self, x_np, vol0_np, mass_np, v_np=None):
+        x_arr = np.asarray(x_np, dtype=np.float32)
+        vol_arr = np.asarray(vol0_np, dtype=np.float32)
+        mass_arr = np.asarray(mass_np, dtype=np.float32)
+
+        if x_arr.shape != (self.n_particles, 3):
+            raise ValueError(f"x_np must have shape ({self.n_particles}, 3)")
+        if vol_arr.shape != (self.n_particles,):
+            raise ValueError(f"vol0_np must have shape ({self.n_particles},)")
+        if mass_arr.shape != (self.n_particles,):
+            raise ValueError(f"mass_np must have shape ({self.n_particles},)")
+        if v_np is None:
+            v_arr = np.zeros_like(x_arr, dtype=np.float32)
+        else:
+            v_arr = np.asarray(v_np, dtype=np.float32)
+            if v_arr.shape != (self.n_particles, 3):
+                raise ValueError(f"v_np must have shape ({self.n_particles}, 3)")
+
+        if not np.all(np.isfinite(x_arr)):
+            raise ValueError("x_np must be finite")
+        if not np.all(np.isfinite(v_arr)):
+            raise ValueError("v_np must be finite")
+        if not np.all(np.isfinite(vol_arr)) or np.any(vol_arr <= 0.0):
+            raise ValueError("vol0_np must be finite and positive")
+        if not np.all(np.isfinite(mass_arr)) or np.any(mass_arr <= 0.0):
+            raise ValueError("mass_np must be finite and positive")
+
+        self.x.from_numpy(x_arr)
+        self.v.from_numpy(v_arr)
+        self.vol0.from_numpy(vol_arr)
+        self.mass.from_numpy(mass_arr)
+        self.reset_deformation_state()
+
+    @ti.kernel
     def clear_grid(self):
         for I in ti.grouped(self.grid_m):
             self.grid_v[I] = ti.Vector([0.0, 0.0, 0.0])

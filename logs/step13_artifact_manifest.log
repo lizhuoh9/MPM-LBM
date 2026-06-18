@@ -1,0 +1,9 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+Step 13 artifact manifest
+file_count=374
+total_size_bytes=82332291
+total_size_mb=78.518191
+large_file_count=0
+manifest=D:\working\squid robot\LBM\MPM-LBM\outputs\step13_artifact_manifest\artifact_manifest.csv
+summary=D:\working\squid robot\LBM\MPM-LBM\outputs\step13_artifact_manifest\artifact_summary.json
+[OK] Step 13 artifact manifest finished

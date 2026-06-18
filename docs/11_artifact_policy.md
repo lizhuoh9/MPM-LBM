@@ -59,3 +59,14 @@ size_mb >= 5.0
 ```
 
 The manifest is an audit aid. It does not delete or compress artifacts.
+
+## Geometry Outputs
+
+Step 13 adds small committed geometry baselines:
+
+- particle clouds under `outputs/step13_*`
+- voxel masks such as `geometry_occupancy.npy`
+- projection diagnostics such as `solid_phi.npy`
+- driver mode diagnostics for `squid_proxy`
+
+Geometry particle clouds, voxel masks, and VTK files can grow quickly. Small Step 13 baseline outputs may be committed because they are part of the reproducibility contract. Large ad-hoc geometry experiments should go under `outputs/experiments/` or `outputs/scratch/`.

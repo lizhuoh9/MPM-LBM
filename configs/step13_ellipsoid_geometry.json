@@ -1,0 +1,6 @@
+{
+  "geometry_type": "ellipsoid",
+  "n_particles": 4096,
+  "center": [0.5, 0.5, 0.5],
+  "ellipsoid_radii": [0.15, 0.20, 0.12]
+}

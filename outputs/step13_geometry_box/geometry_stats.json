@@ -1,0 +1,32 @@
+{
+  "accepted_count": 4352,
+  "active_cell_count": 1872,
+  "candidate_count": 166375,
+  "candidate_resolution": 55,
+  "cell_force_max_norm": 0.0,
+  "deterministic": true,
+  "geometry_type": "box",
+  "geometry_volume": 0.02615777610818933,
+  "hydro_force_max_norm": 0.0,
+  "max_phi_raw": 1.0765281915664673,
+  "mpm_max_J": 1.0,
+  "mpm_max_speed": 0.0,
+  "mpm_min_J": 1.0,
+  "particle_count": 4096,
+  "particle_max": [
+    0.5363636612892151,
+    0.6454545259475708,
+    0.5363636612892151
+  ],
+  "particle_min": [
+    0.26363635063171387,
+    0.3545454442501068,
+    0.26363635063171387
+  ],
+  "projected_mass": 0.02615775726735592,
+  "projected_volume_clamped": 0.02565053664147854,
+  "projected_volume_raw": 0.02615775726735592,
+  "solid_phi_max": 1.0,
+  "solid_phi_min": 0.0,
+  "total_mass": 0.026157774031162262
+}
