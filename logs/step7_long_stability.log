@@ -1,0 +1,93 @@
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step7_long_coupled_stability.py", line 211, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step7_long_coupled_stability.py", line 66, in main
+    lbm = LBMFluid3D(sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 132, in __init__
+    self.M[None] = ti.Matrix([[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step7_long_coupled_stability.py", line 211, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step7_long_coupled_stability.py", line 66, in main
+    lbm = LBMFluid3D(sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 132, in __init__
+    self.M[None] = ti.Matrix([[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1358, in __setitem__
+    self[key]._set_entries(value)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1367, in __getitem__
+    return Matrix([[_host_access[i * self.m + j] for j in range(self.m)] for i in range(self.n)])
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step7_long_coupled_stability.py", line 211, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step7_long_coupled_stability.py", line 66, in main
+    lbm = LBMFluid3D(sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 152, in __init__
+    self.inv_M[None] = ti.Matrix(inv_M_np)
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step7_long_coupled_stability.py", line 211, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step7_long_coupled_stability.py", line 66, in main
+    lbm = LBMFluid3D(sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 152, in __init__
+    self.inv_M[None] = ti.Matrix(inv_M_np)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1358, in __setitem__
+    self[key]._set_entries(value)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1367, in __getitem__
+    return Matrix([[_host_access[i * self.m + j] for j in range(self.m)] for i in range(self.n)])
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 7 long coupled stability
+n_grid=32
+n_lbm_steps=100
+mpm_substeps_per_lbm_step=10
+target_u_lbm=(0.02, 0.0, 0.0)
+target_u_norm=(0.15625, 0.0, 0.0)
+initial_fluid_mean_ux=0.000000000e+00
+initial_solid_mean_vx_norm=1.562547684e-01
+lbm_step=0010, total_mpm_substeps=100, fluid_mean_ux=8.632827075e-07, solid_mean_vx_norm=1.549457759e-01, active_force_cell_count=1582, rho_min=9.999849796e-01, rho_max=1.000016212e+00, lbm_max_v=2.865052011e-05, mpm_min_J=9.999890327e-01, mpm_max_speed=1.549715996e-01, elapsed=60.60s
+lbm_step=0020, total_mpm_substeps=200, fluid_mean_ux=1.451931439e-06, solid_mean_vx_norm=1.536530703e-01, active_force_cell_count=1584, rho_min=9.999889731e-01, rho_max=1.000013351e+00, lbm_max_v=4.154553972e-05, mpm_min_J=9.999938607e-01, mpm_max_speed=1.536906809e-01, elapsed=60.73s
+lbm_step=0030, total_mpm_substeps=300, fluid_mean_ux=2.037180366e-06, solid_mean_vx_norm=1.523718685e-01, active_force_cell_count=1584, rho_min=9.999892116e-01, rho_max=1.000011683e+00, lbm_max_v=5.645535930e-05, mpm_min_J=9.999927878e-01, mpm_max_speed=1.523905247e-01, elapsed=60.85s
+lbm_step=0040, total_mpm_substeps=400, fluid_mean_ux=2.616510528e-06, solid_mean_vx_norm=1.511041373e-01, active_force_cell_count=1584, rho_min=9.999905229e-01, rho_max=1.000009775e+00, lbm_max_v=7.068603009e-05, mpm_min_J=9.999917150e-01, mpm_max_speed=1.511305720e-01, elapsed=60.97s
+lbm_step=0050, total_mpm_substeps=500, fluid_mean_ux=3.191187488e-06, solid_mean_vx_norm=1.498417407e-01, active_force_cell_count=1584, rho_min=9.999912381e-01, rho_max=1.000010848e+00, lbm_max_v=8.617419371e-05, mpm_min_J=9.999879003e-01, mpm_max_speed=1.498780996e-01, elapsed=61.11s
+lbm_step=0060, total_mpm_substeps=600, fluid_mean_ux=3.761252628e-06, solid_mean_vx_norm=1.485930234e-01, active_force_cell_count=1584, rho_min=9.999884963e-01, rho_max=1.000013471e+00, lbm_max_v=9.995541041e-05, mpm_min_J=9.999881387e-01, mpm_max_speed=1.486353576e-01, elapsed=61.24s
+lbm_step=0070, total_mpm_substeps=700, fluid_mean_ux=4.325544978e-06, solid_mean_vx_norm=1.473572105e-01, active_force_cell_count=1584, rho_min=9.999927282e-01, rho_max=1.000009656e+00, lbm_max_v=1.132910766e-04, mpm_min_J=9.999887347e-01, mpm_max_speed=1.474028379e-01, elapsed=61.35s
+lbm_step=0080, total_mpm_substeps=800, fluid_mean_ux=4.885771887e-06, solid_mean_vx_norm=1.461304426e-01, active_force_cell_count=1584, rho_min=9.999895692e-01, rho_max=1.000012636e+00, lbm_max_v=1.281912409e-04, mpm_min_J=9.999896884e-01, mpm_max_speed=1.461691111e-01, elapsed=61.49s
+lbm_step=0090, total_mpm_substeps=900, fluid_mean_ux=5.440605037e-06, solid_mean_vx_norm=1.449164003e-01, active_force_cell_count=1584, rho_min=9.999911189e-01, rho_max=1.000012755e+00, lbm_max_v=1.400079636e-04, mpm_min_J=9.999923110e-01, mpm_max_speed=1.449544877e-01, elapsed=61.61s
+lbm_step=0100, total_mpm_substeps=1000, fluid_mean_ux=5.990422324e-06, solid_mean_vx_norm=1.437114030e-01, active_force_cell_count=1584, rho_min=9.999907017e-01, rho_max=1.000012636e+00, lbm_max_v=1.526288688e-04, mpm_min_J=9.999910593e-01, mpm_max_speed=1.437596679e-01, elapsed=61.71s
+completed_lbm_steps=100
+total_mpm_substeps=1000
+initial_fluid_mean_ux=0.000000000e+00
+final_fluid_mean_ux=5.990422324e-06
+initial_solid_mean_vx_norm=1.562547684e-01
+final_solid_mean_vx_norm=1.437114030e-01
+active_force_cell_count=1584
+rho_min=9.999907017e-01
+rho_max=1.000012636e+00
+lbm_max_v=1.526288688e-04
+mpm_min_J=9.999910593e-01
+mpm_max_speed=1.437596679e-01
+[OK] Step 7 long coupled stability finished
