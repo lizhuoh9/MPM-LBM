@@ -1,0 +1,8 @@
+{
+  "modes": ["none", "penalty", "moving_boundary"],
+  "n_grid": 32,
+  "n_particles": 4096,
+  "n_lbm_steps": 20,
+  "mpm_substeps_per_lbm_step": 10,
+  "target_u_lbm": [0.02, 0.0, 0.0]
+}

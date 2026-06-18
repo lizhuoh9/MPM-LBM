@@ -4,6 +4,8 @@ from .lbm_config import LBMConfig
 from .lbm_fluid import LBMFluid3D
 from .coupling import PenaltyFSICoupler3D
 from .diagnostics import FSIDiagnostics3D
+from .fsi_config import FSIDriverConfig
+from .fsi_driver import FSIDriver3D
 from .mpm_config import MPMConfig
 from .mpm_solid import MPMSolid3D
 from .moving_boundary_coupling import MovingBoundaryFSICoupler3D
@@ -16,6 +18,8 @@ __all__ = [
     "LBMFluid3D",
     "PenaltyFSICoupler3D",
     "FSIDiagnostics3D",
+    "FSIDriverConfig",
+    "FSIDriver3D",
     "MPMConfig",
     "MPMSolid3D",
     "MovingBoundaryFSICoupler3D",
