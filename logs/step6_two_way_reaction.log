@@ -1,0 +1,79 @@
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step6_two_way_mpm_reaction.py", line 138, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step6_two_way_mpm_reaction.py", line 61, in main
+    lbm = LBMFluid3D(sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 132, in __init__
+    self.M[None] = ti.Matrix([[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step6_two_way_mpm_reaction.py", line 138, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step6_two_way_mpm_reaction.py", line 61, in main
+    lbm = LBMFluid3D(sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 132, in __init__
+    self.M[None] = ti.Matrix([[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1358, in __setitem__
+    self[key]._set_entries(value)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1367, in __getitem__
+    return Matrix([[_host_access[i * self.m + j] for j in range(self.m)] for i in range(self.n)])
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step6_two_way_mpm_reaction.py", line 138, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step6_two_way_mpm_reaction.py", line 61, in main
+    lbm = LBMFluid3D(sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 152, in __init__
+    self.inv_M[None] = ti.Matrix(inv_M_np)
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step6_two_way_mpm_reaction.py", line 138, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step6_two_way_mpm_reaction.py", line 61, in main
+    lbm = LBMFluid3D(sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 152, in __init__
+    self.inv_M[None] = ti.Matrix(inv_M_np)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1358, in __setitem__
+    self[key]._set_entries(value)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1367, in __getitem__
+    return Matrix([[_host_access[i * self.m + j] for j in range(self.m)] for i in range(self.n)])
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 6 MPM reaction baseline
+target_u_lbm=(0.03, 0.0, 0.0)
+target_u_norm=(0.234375, 0.0, 0.0)
+reaction_substeps=50
+initial_solid_mean_vx_norm=2.343750000e-01
+reaction_substep=0010, max_reaction_grid_force_norm=1.564399241e-07, net_reaction_grid_force=(-0.0013285474851727486, 0.0, 0.0), mpm_min_J=9.999980927e-01, mpm_max_speed=2.342585325e-01, elapsed=106.60s
+reaction_substep=0020, max_reaction_grid_force_norm=1.571494295e-07, net_reaction_grid_force=(-0.0013282157015055418, 0.0, 0.0), mpm_min_J=9.999960065e-01, mpm_max_speed=2.340926528e-01, elapsed=106.65s
+reaction_substep=0030, max_reaction_grid_force_norm=1.574828161e-07, net_reaction_grid_force=(-0.0013277239631861448, 0.0, 0.0), mpm_min_J=9.999954700e-01, mpm_max_speed=2.338974327e-01, elapsed=106.69s
+reaction_substep=0040, max_reaction_grid_force_norm=1.574408230e-07, net_reaction_grid_force=(-0.0013270739000290632, 0.0, 0.0), mpm_min_J=9.999949932e-01, mpm_max_speed=2.336899191e-01, elapsed=106.73s
+reaction_substep=0050, max_reaction_grid_force_norm=1.570245161e-07, net_reaction_grid_force=(-0.0013262658612802625, 0.0, 0.0), mpm_min_J=9.999901652e-01, mpm_max_speed=2.334775776e-01, elapsed=106.78s
+initial_solid_mean_vx_norm=2.343750000e-01
+final_solid_mean_vx_norm=2.333916724e-01
+max_reaction_grid_force_norm=1.570245161e-07
+net_reaction_grid_force=(-0.0013262658612802625, 0.0, 0.0)
+mpm_min_J=9.999901652e-01
+mpm_max_speed=2.334775776e-01
+[OK] Step 6 MPM reaction baseline finished

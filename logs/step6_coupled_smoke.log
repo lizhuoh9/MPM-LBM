@@ -1,0 +1,88 @@
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step6_coupled_smoke.py", line 221, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step6_coupled_smoke.py", line 95, in main
+    lbm = LBMFluid3D(sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 132, in __init__
+    self.M[None] = ti.Matrix([[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step6_coupled_smoke.py", line 221, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step6_coupled_smoke.py", line 95, in main
+    lbm = LBMFluid3D(sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 132, in __init__
+    self.M[None] = ti.Matrix([[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1358, in __setitem__
+    self[key]._set_entries(value)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1367, in __getitem__
+    return Matrix([[_host_access[i * self.m + j] for j in range(self.m)] for i in range(self.n)])
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step6_coupled_smoke.py", line 221, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step6_coupled_smoke.py", line 95, in main
+    lbm = LBMFluid3D(sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 152, in __init__
+    self.inv_M[None] = ti.Matrix(inv_M_np)
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step6_coupled_smoke.py", line 221, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step6_coupled_smoke.py", line 95, in main
+    lbm = LBMFluid3D(sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 152, in __init__
+    self.inv_M[None] = ti.Matrix(inv_M_np)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1358, in __setitem__
+    self[key]._set_entries(value)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1367, in __getitem__
+    return Matrix([[_host_access[i * self.m + j] for j in range(self.m)] for i in range(self.n)])
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 6 coupled smoke baseline
+n_grid=32
+n_lbm_steps=20
+mpm_substeps_per_lbm_step=10
+target_u_lbm=(0.02, 0.0, 0.0)
+target_u_norm=(0.15625, 0.0, 0.0)
+initial_fluid_mean_ux=0.000000000e+00
+initial_solid_mean_vx_norm=1.562500000e-01
+lbm_step=0005, total_mpm_substeps=50, active_force_cell_count=1584, cell_force_max_norm=1.991822865e-05, hydro_force_max_norm=1.991822865e-05, rho_min=9.999913573e-01, rho_max=1.000008941e+00, lbm_max_v=2.100593156e-05, mpm_min_J=9.999932051e-01, mpm_max_speed=1.556468904e-01, elapsed=88.41s
+lbm_step=0010, total_mpm_substeps=100, active_force_cell_count=1582, cell_force_max_norm=1.982890717e-05, hydro_force_max_norm=1.982890717e-05, rho_min=9.999848604e-01, rho_max=1.000016212e+00, lbm_max_v=2.864679482e-05, mpm_min_J=9.999887943e-01, mpm_max_speed=1.549717784e-01, elapsed=88.49s
+lbm_step=0015, total_mpm_substeps=150, active_force_cell_count=1584, cell_force_max_norm=1.974153383e-05, hydro_force_max_norm=1.974153383e-05, rho_min=9.999850392e-01, rho_max=1.000016451e+00, lbm_max_v=3.436131374e-05, mpm_min_J=9.999945760e-01, mpm_max_speed=1.543245912e-01, elapsed=88.59s
+lbm_step=0020, total_mpm_substeps=200, active_force_cell_count=1584, cell_force_max_norm=1.964967669e-05, hydro_force_max_norm=1.964967669e-05, rho_min=9.999890327e-01, rho_max=1.000013232e+00, lbm_max_v=4.153085320e-05, mpm_min_J=9.999936819e-01, mpm_max_speed=1.536898315e-01, elapsed=88.67s
+initial_fluid_mean_ux=0.000000000e+00
+final_fluid_mean_ux=3.118429595e-05
+initial_solid_mean_vx_norm=1.562500000e-01
+final_solid_mean_vx_norm=1.536528170e-01
+active_force_cell_count=1584
+cell_force_max_norm=1.963135037e-05
+hydro_force_max_norm=1.963135037e-05
+net_cell_force=(0.01734890230000019, -4.51098669529415e-09, 1.6600392171994827e-08)
+net_hydro_force=(-0.01734890230000019, 4.511206963542236e-09, -1.6600392171994827e-08)
+max_reaction_grid_force_norm=1.017982498e-07
+net_reaction_grid_force=(-0.0008700874168425798, 2.1612188427777568e-10, -4.4330308868190116e-10)
+completed_lbm_steps=20
+total_mpm_substeps=200
+[OK] Step 6 coupled smoke baseline finished. completed_lbm_steps=20, total_mpm_substeps=200, rho_min=9.999890327e-01, rho_max=1.000013232e+00, lbm_max_v=4.153085320e-05, mpm_min_J=9.999936819e-01, mpm_max_speed=1.536898315e-01, out_dir=outputs/step6_coupled_smoke
