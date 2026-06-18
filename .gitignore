@@ -1,3 +1,26 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+
+# Python
+*.pyc
+.mypy_cache/
+.ruff_cache/
+
+# Taichi / runtime cache
+.taichi_cache/
+.cache/
+
+# Local scratch outputs
+outputs/tmp/
+outputs/scratch/
+logs/tmp/
+logs/scratch/
+
+# Large ad-hoc experiment dumps
+outputs/experiments/
+logs/experiments/
+
+# Local environments
+.venv/
+.env/

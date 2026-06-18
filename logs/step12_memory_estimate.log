@@ -1,0 +1,7 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+Step 12 memory estimate
+n_grid=32, n_cells=32768, n_particles=4096, lbm_estimated_mb=6.750000, mpm_particle_estimated_mb=0.421875, mpm_grid_estimated_mb=0.875000, coupling_estimated_mb=0.000000, total_estimated_mb=8.046875
+n_grid=64, n_cells=262144, n_particles=32768, lbm_estimated_mb=54.000000, mpm_particle_estimated_mb=3.375000, mpm_grid_estimated_mb=7.000000, coupling_estimated_mb=0.000000, total_estimated_mb=64.375000
+n_grid=96, n_cells=884736, n_particles=110592, lbm_estimated_mb=182.250000, mpm_particle_estimated_mb=11.390625, mpm_grid_estimated_mb=23.625000, coupling_estimated_mb=0.000000, total_estimated_mb=217.265625
+n_grid=128, n_cells=2097152, n_particles=262144, lbm_estimated_mb=432.000000, mpm_particle_estimated_mb=27.000000, mpm_grid_estimated_mb=56.000000, coupling_estimated_mb=0.000000, total_estimated_mb=515.000000
+[OK] Step 12 memory estimate finished

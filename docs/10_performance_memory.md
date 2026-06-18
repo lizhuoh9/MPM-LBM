@@ -1,0 +1,106 @@
+# Performance and Memory
+
+Step 12 estimates dense-grid memory and records timing baselines.
+Step 12 does not implement optimization or new solver physics.
+
+## Scope
+
+The purpose is resource governance:
+
+- estimate memory lower bounds for dense LBM and MPM fields
+- record a lightweight profile matrix for `none`, `penalty`, and `moving_boundary`
+- preserve the Step 10 mode matrix while preparing for larger future cases
+
+The estimates are not measured GPU allocation. They exclude Taichi runtime overhead, allocator overhead, kernel metadata, and temporary compiler/runtime buffers.
+
+## Dense-Grid Memory Model
+
+### LBM Estimate Fields
+
+The LBM dense-field model counts:
+
+```text
+f: 19 floats / cell
+F: 19 floats / cell
+rho: 1 float / cell
+v: 3 floats / cell
+solid_phi: 1 float / cell
+solid_mass: 1 float / cell
+solid_vel: 3 floats / cell
+cell_force: 3 floats / cell
+hydro_force: 3 floats / cell
+solid/static_solid/old_solid/reinit_flag: 4 int8 / cell
+```
+
+The lower-bound estimate is:
+
+```text
+LBM bytes = n_grid^3 * (53 * dtype_bytes + 4)
+```
+
+### MPM Particle Estimate Fields
+
+The MPM particle model counts:
+
+```text
+x: 3 floats / particle
+v: 3 floats / particle
+C: 9 floats / particle
+F: 9 floats / particle
+Jp: 1 float / particle
+mass: 1 float / particle
+vol0: 1 float / particle
+```
+
+The lower-bound estimate is:
+
+```text
+MPM particle bytes = n_particles * 27 * dtype_bytes
+```
+
+### MPM Grid Estimate Fields
+
+The MPM grid model counts:
+
+```text
+grid_v: 3 floats / node
+grid_m: 1 float / node
+grid_f_ext: 3 floats / node
+```
+
+The lower-bound estimate is:
+
+```text
+MPM grid bytes = n_grid^3 * 7 * dtype_bytes
+```
+
+### Coupling Estimate Assumptions
+
+Projection fields are counted inside the LBM estimate. Current coupling diagnostics are scalar or reuse LBM/MPM fields, so additional coupling memory is treated as negligible relative to dense grid fields.
+
+## Current Baseline Scale
+
+Current Step 12 profile baselines use:
+
+```text
+n_grid = 32
+n_particles = 4096
+n_lbm_steps = 10
+mpm_substeps_per_lbm_step = 10
+```
+
+## Scaling Warning
+
+The 128^3 estimate is reported for planning. It is not a promise that the current GPU can run that case. At 128^3 and larger, dense-field memory, Taichi runtime overhead, and output volume should be reviewed before launching long simulations.
+
+## Profile Matrix
+
+The Step 12 profile matrix runs the same `FSIDriver3D` modes with VTK and particle exports disabled:
+
+```text
+none
+penalty
+moving_boundary
+```
+
+The profile matrix records total time, initialization, projection, coupling, LBM stepping, MPM substepping, diagnostics, and export overhead. These timings are environment-specific regression signals, not hardware-independent benchmarks.

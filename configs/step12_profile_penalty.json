@@ -1,0 +1,15 @@
+{
+  "coupling_mode": "penalty",
+  "n_grid": 32,
+  "n_particles": 4096,
+  "n_lbm_steps": 10,
+  "mpm_substeps_per_lbm_step": 10,
+  "mpm_dt": 0.0004,
+  "target_u_lbm": [0.02, 0.0, 0.0],
+  "gravity": [0.0, 0.0, 0.0],
+  "beta_lbm": 0.001,
+  "penalty_force_cap_lbm": 0.0001,
+  "write_vtk": false,
+  "write_particles": false,
+  "output_interval": 10
+}

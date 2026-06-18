@@ -1,0 +1,103 @@
+﻿python.exe : D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vec
+tors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for per
+formance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a
+ large matrix like this, e.g.:
+所在位置 行:2 字符: 8
++ $out = & 'D:\working\taichi\env\python.exe' baseline_tests\run_step12 ...
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (D:\working\taic...ike this, e.g.::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step12_driver_profile_matrix.py", line 123, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step12_driver_profile_matrix.py", line 77, in main
+    diagnostics = driver.run()
+  File "D:\working\squid robot\LBM\MPM-LBM\src\fsi_driver.py", line 195, in run
+    self.initialize()
+  File "D:\working\squid robot\LBM\MPM-LBM\src\fsi_driver.py", line 78, in initialize
+    self.lbm = LBMFluid3D(self.sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 136, in __init__
+    self.M[None] = ti.Matrix([[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x
+19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So
+the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix
+ like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step12_driver_profile_matrix.py", line 123, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step12_driver_profile_matrix.py", line 77, in main
+    diagnostics = driver.run()
+  File "D:\working\squid robot\LBM\MPM-LBM\src\fsi_driver.py", line 195, in run
+    self.initialize()
+  File "D:\working\squid robot\LBM\MPM-LBM\src\fsi_driver.py", line 78, in initialize
+    self.lbm = LBMFluid3D(self.sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 136, in __init__
+    self.M[None] = ti.Matrix([[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1358, in __setitem__
+    self[key]._set_entries(value)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1367, in __getitem__
+    return Matrix([[_host_access[i * self.m + j] for j in range(self.m)] for i in range(self.n)])
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x
+19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So
+the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix
+ like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step12_driver_profile_matrix.py", line 123, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step12_driver_profile_matrix.py", line 77, in main
+    diagnostics = driver.run()
+  File "D:\working\squid robot\LBM\MPM-LBM\src\fsi_driver.py", line 195, in run
+    self.initialize()
+  File "D:\working\squid robot\LBM\MPM-LBM\src\fsi_driver.py", line 78, in initialize
+    self.lbm = LBMFluid3D(self.sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 156, in __init__
+    self.inv_M[None] = ti.Matrix(inv_M_np)
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x
+19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So
+the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix
+ like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step12_driver_profile_matrix.py", line 123, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step12_driver_profile_matrix.py", line 77, in main
+    diagnostics = driver.run()
+  File "D:\working\squid robot\LBM\MPM-LBM\src\fsi_driver.py", line 195, in run
+    self.initialize()
+  File "D:\working\squid robot\LBM\MPM-LBM\src\fsi_driver.py", line 78, in initialize
+    self.lbm = LBMFluid3D(self.sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 156, in __init__
+    self.inv_M[None] = ti.Matrix(inv_M_np)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1358, in __setitem__
+    self[key]._set_entries(value)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1367, in __getitem__
+    return Matrix([[_host_access[i * self.m + j] for j in range(self.m)] for i in range(self.n)])
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 12 driver profile matrix
+modes=['none', 'penalty', 'moving_boundary']
+mode=none, total_time=6.917063930e+01, projection_time=7.172903999e-01, coupling_time=0.000000000e+00, lbm_step_time=3.315308700e+00, mpm_substep_time=2.560219300e+00, rho_min=1.000000358e+00, rho_max=1.000000358e+00, lbm_max_v=0.000000000e+00, mpm_min_J=9.999997020e-01
+mode=penalty, total_time=4.176673150e+01, projection_time=7.542968001e-01, coupling_time=2.239187000e-01, lbm_step_time=3.341393600e+00, mpm_substep_time=3.819050200e+00, rho_min=9.999848604e-01, rho_max=1.000016212e+00, lbm_max_v=2.863191366e-05, mpm_min_J=9.999889135e-01
+mode=moving_boundary, total_time=4.517759770e+01, projection_time=7.380417000e-01, coupling_time=5.759623000e-01, lbm_step_time=4.187514900e+00, mpm_substep_time=3.869418200e+00, rho_min=9.684749246e-01, rho_max=1.029817462e+00, lbm_max_v=2.595713362e-02, mpm_min_J=9.881106019e-01
+elapsed=156.15s
+[OK] Step 12 driver profile matrix finished

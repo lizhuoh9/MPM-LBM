@@ -1,0 +1,5 @@
+n_grid,n_cells,n_particles,lbm_estimated_mb,mpm_particle_estimated_mb,mpm_grid_estimated_mb,coupling_estimated_mb,total_estimated_mb
+32,32768,4096,6.75,0.421875,0.875,0.0,8.046875
+64,262144,32768,54.0,3.375,7.0,0.0,64.375
+96,884736,110592,182.25,11.390625,23.625,0.0,217.265625
+128,2097152,262144,432.0,27.0,56.0,0.0,515.0
