@@ -230,6 +230,11 @@ class MPMSolid3D:
         self.g2p()
 
     @ti.kernel
+    def set_uniform_velocity(self, vx: ti.f32, vy: ti.f32, vz: ti.f32):
+        for p in range(self.n_particles):
+            self.v[p] = ti.Vector([vx, vy, vz])
+
+    @ti.kernel
     def reduce_stats(self):
         self.min_x[None] = ti.Vector([1.0e9, 1.0e9, 1.0e9])
         self.max_x[None] = ti.Vector([-1.0e9, -1.0e9, -1.0e9])
