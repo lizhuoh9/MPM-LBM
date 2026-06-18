@@ -1,0 +1,14 @@
+[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+step=0000, min_y=0.359375, max_y=0.640625, max_speed=0.000000e+00, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=0.00s
+step=0010, min_y=0.359289, max_y=0.640539, max_speed=3.920031e-02, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=3.67s
+step=0020, min_y=0.359046, max_y=0.640296, max_speed=7.840086e-02, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=3.68s
+step=0030, min_y=0.358646, max_y=0.639896, max_speed=1.176015e-01, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=3.69s
+step=0040, min_y=0.358089, max_y=0.639339, max_speed=1.568020e-01, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=3.70s
+step=0050, min_y=0.357376, max_y=0.638626, max_speed=1.960026e-01, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=3.71s
+step=0060, min_y=0.356506, max_y=0.637756, max_speed=2.352031e-01, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=3.72s
+step=0070, min_y=0.355479, max_y=0.636728, max_speed=2.744035e-01, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=3.73s
+step=0080, min_y=0.354295, max_y=0.635545, max_speed=3.136035e-01, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=3.74s
+step=0090, min_y=0.352954, max_y=0.634204, max_speed=3.528039e-01, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=3.75s
+step=0100, min_y=0.351457, max_y=0.632707, max_speed=3.920040e-01, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=3.76s
+[OK] Step 3 MPM falling block baseline finished. initial_min_y=0.359375, final_min_y=0.351457, initial_max_speed=0.000000e+00, final_max_speed=3.920040e-01, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, out_dir=D:\working\squid robot\LBM\MPM-LBM\outputs\mpm_falling_block

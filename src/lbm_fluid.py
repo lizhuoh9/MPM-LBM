@@ -450,7 +450,7 @@ class LBMFluid3D:
             self.solid_vel[I] = ti.Vector([0.0, 0.0, 0.0])
             self.cell_force[I] = ti.Vector([0.0, 0.0, 0.0])
             self.hydro_force[I] = ti.Vector([0.0, 0.0, 0.0])
-            self.reinit_flag[I] = 0
+            self.reinit_flag[I] = ti.cast(0, ti.i8)
 
     @ti.kernel
     def copy_solid_to_static(self):
@@ -469,10 +469,10 @@ class LBMFluid3D:
             if self.static_solid[I] != 0 or dynamic_solid:
                 new_solid = 1
 
-            self.solid[I] = new_solid
-            self.reinit_flag[I] = 0
+            self.solid[I] = ti.cast(new_solid, ti.i8)
+            self.reinit_flag[I] = ti.cast(0, ti.i8)
             if prev_solid != 0 and new_solid == 0:
-                self.reinit_flag[I] = 1
+                self.reinit_flag[I] = ti.cast(1, ti.i8)
 
     @ti.kernel
     def reinitialize_new_fluid_cells(self):
@@ -488,7 +488,7 @@ class LBMFluid3D:
                     feq_value = self.feq(s, self.rho0, reset_v)
                     self.f[I][s] = feq_value
                     self.F[I][s] = feq_value
-                self.reinit_flag[I] = 0
+                self.reinit_flag[I] = ti.cast(0, ti.i8)
 
     @ti.kernel
     def set_uniform_cell_force(self, fx: ti.f32, fy: ti.f32, fz: ti.f32):
@@ -543,6 +543,9 @@ class LBMFluid3D:
             self.hydro_force[I] = -self.cell_force[I]
 
     def get_stats(self):
+        """
+        Diagnostic-only. Do not call every production step because this copies Taichi fields to NumPy.
+        """
         rho_np = self.rho.to_numpy()
         vel_np = self.v.to_numpy()
         solid_np = self.solid.to_numpy()

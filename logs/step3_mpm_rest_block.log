@@ -1,0 +1,14 @@
+[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+step=0000, min_y=0.359375, max_y=0.640625, max_speed=0.000000e+00, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=0.00s
+step=0010, min_y=0.359375, max_y=0.640625, max_speed=0.000000e+00, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=46.09s
+step=0020, min_y=0.359375, max_y=0.640625, max_speed=0.000000e+00, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=46.10s
+step=0030, min_y=0.359375, max_y=0.640625, max_speed=0.000000e+00, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=46.12s
+step=0040, min_y=0.359375, max_y=0.640625, max_speed=0.000000e+00, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=46.13s
+step=0050, min_y=0.359375, max_y=0.640625, max_speed=0.000000e+00, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=46.15s
+step=0060, min_y=0.359375, max_y=0.640625, max_speed=0.000000e+00, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=46.17s
+step=0070, min_y=0.359375, max_y=0.640625, max_speed=0.000000e+00, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=46.19s
+step=0080, min_y=0.359375, max_y=0.640625, max_speed=0.000000e+00, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=46.21s
+step=0090, min_y=0.359375, max_y=0.640625, max_speed=0.000000e+00, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=46.22s
+step=0100, min_y=0.359375, max_y=0.640625, max_speed=0.000000e+00, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=46.23s
+[OK] Step 3 MPM rest block baseline finished. initial_min_y=0.359375, final_min_y=0.359375, max_speed=0.000000e+00, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, out_dir=D:\working\squid robot\LBM\MPM-LBM\outputs\mpm_rest_block

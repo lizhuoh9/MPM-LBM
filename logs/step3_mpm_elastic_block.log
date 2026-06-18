@@ -1,0 +1,10 @@
+[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+step=0000, min_y=0.129375, max_y=0.410625, max_speed=0.000000e+00, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=0.00s
+step=0050, min_y=0.127376, max_y=0.408626, max_speed=1.960025e-01, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=3.53s
+step=0100, min_y=0.121457, max_y=0.402707, max_speed=3.920039e-01, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=3.57s
+step=0150, min_y=0.111618, max_y=0.392867, max_speed=5.880057e-01, min_J=1.000000, max_J=1.000000, total_mass=2.700039e-02, elapsed=3.61s
+step=0200, min_y=0.098727, max_y=0.379108, max_speed=7.846178e-01, min_J=0.958502, max_J=1.000039, total_mass=2.700039e-02, elapsed=3.65s
+step=0250, min_y=0.089599, max_y=0.361667, max_speed=9.163209e-01, min_J=0.828186, max_J=0.998469, total_mass=2.700039e-02, elapsed=3.70s
+step=0300, min_y=0.086393, max_y=0.349519, max_speed=3.946655e-01, min_J=0.778176, max_J=0.999240, total_mass=2.700039e-02, elapsed=3.74s
+[OK] Step 3 MPM elastic block baseline finished. initial_min_y=0.129375, final_min_y=0.086393, min_y_seen=0.086393, boundary_zone=0.125000, final_max_speed=3.946655e-01, min_J_seen=0.778176, max_J_seen=1.000039, final_min_J=0.778176, final_max_J=0.999240, total_mass=2.700039e-02, out_dir=D:\working\squid robot\LBM\MPM-LBM\outputs\mpm_elastic_block
