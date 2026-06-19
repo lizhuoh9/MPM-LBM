@@ -1,0 +1,8 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 17 Step 16 regression
+scope=threshold regression after adding diagnostic-only direction accumulators
+case=step16_box_48_short, n_grid=48, completed_lbm_steps=10, total_mpm_substeps=100, rho_min=9.888914824e-01, rho_max=1.017282963e+00, lbm_max_v=8.981407620e-03, mpm_min_J=9.971734881e-01, bb_link_count_min=6120, cell_force_max_norm=0.000000000e+00, stable=True
+case=step16_box_64_feasibility, n_grid=64, completed_lbm_steps=5, total_mpm_substeps=25, rho_min=9.922733307e-01, rho_max=1.002777219e+00, lbm_max_v=5.351944361e-03, mpm_min_J=9.955477118e-01, bb_link_count_min=11186, cell_force_max_norm=0.000000000e+00, stable=True
+elapsed=384.13s
+[OK] Step 17 Step 16 regression finished

@@ -5,8 +5,8 @@ This is a lightweight API reference for the current prototype. It is not autogen
 ## LBMFluid3D
 
 - purpose: dense single-phase D3Q19 MRT LBM fluid wrapper with static and moving-boundary support
-- main fields: `rho`, `v`, `solid`, `solid_phi`, `solid_mass`, `solid_vel`, `cell_force`, `hydro_force`
-- main methods: `init_geo`, `init_simulation`, `step`, `step_moving_bounceback`, `update_dynamic_solid`, `reinitialize_new_fluid_cells`, `get_stats`, `export_VTK`
+- main fields: `rho`, `v`, `solid`, `solid_phi`, `solid_mass`, `solid_vel`, `cell_force`, `hydro_force`, `bb_link_count_by_dir`, `bb_fluid_impulse_by_dir`, `bb_solid_force_by_dir`
+- main methods: `init_geo`, `init_simulation`, `step`, `step_moving_bounceback`, `update_dynamic_solid`, `reinitialize_new_fluid_cells`, `get_stats`, `get_moving_boundary_directional_stats`, `export_VTK`
 - mode: all modes use `LBMFluid3D`; moving_boundary uses `step_moving_bounceback`
 
 ## MPMSolid3D
@@ -71,6 +71,14 @@ This is a lightweight API reference for the current prototype. It is not autogen
 - main fields: static helper class, no persistent simulation fields
 - main methods: `hydro_force_sum`, `cell_force_sum`, `solid_particle_momentum`, `moving_boundary_accounting_row`
 - mode: used by Step 15 baselines to record link-wise impulse, hydro_force sums, reaction convention diagnostics, applied MPM grid force, and solid momentum
+
+## LinkAreaMomentumAccounting3D
+
+- purpose: Step 17 adds diagnostic-only direction-wise and link-area proxy accounting.
+- main fields: static helper class, no persistent simulation fields
+- main methods: `direction_metadata`, `area_weights`, `read_directional_stats`, `area_weighted_impulse`, `summarize_link_accounting`
+- area policies: `uniform`, `inverse_length`, `length`
+- mode: diagnostic/readback utility for moving_boundary baselines only. The moving bounce-back formula is unchanged. MovingBoundaryFSICoupler3D is unchanged. These are diagnostic proxy policies, not final surface-area reconstruction.
 
 ## Calibration Helpers
 

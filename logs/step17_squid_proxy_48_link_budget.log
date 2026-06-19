@@ -1,0 +1,7 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 17 squid proxy 48 link budget
+scope=squid_proxy is procedural and not real squid validation
+squid_proxy_48_link_budget case=squid_proxy_48_link_budget, n_grid=48, completed_lbm_steps=20, total_mpm_substeps=200, rho_min=9.910271168e-01, rho_max=1.012060523e+00, lbm_max_v=7.719247136e-03, mpm_min_J=9.938787818e-01, bb_link_count_min=6616, area_proxy_total=5.189610024e+03, axis_link_count=1746, face_diagonal_link_count=4870, cell_force_max_norm=0.000000000e+00, stable=True
+elapsed=131.98s
+[OK] Step 17 squid proxy 48 link budget finished

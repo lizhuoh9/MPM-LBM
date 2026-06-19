@@ -96,3 +96,9 @@ Step 16 does not add new FSI physics. It uses the Step 15 recommended moving_bou
 | 64^3 moving_boundary feasibility | 1.0 | 0.000005 | 0.0025 |
 
 The 64^3 moving_boundary row is a feasibility baseline. squid_proxy is procedural and not real squid validation. Strict link-area momentum-conserving coupling remains future work.
+
+## Step 17 Direction-Wise Accounting
+
+Step 17 adds diagnostic-only direction-wise and link-area proxy accounting. It records per-D3Q19 direction link counts, fluid impulse, solid reaction, and correction statistics on top of the Step 15 calibration path.
+
+The moving bounce-back formula is unchanged. MovingBoundaryFSICoupler3D is unchanged. These are diagnostic proxy policies, not final surface-area reconstruction. Strict link-area momentum-conserving coupling remains future work. squid_proxy is procedural and not real squid validation.

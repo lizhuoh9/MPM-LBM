@@ -1,0 +1,9 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 17 link-area wall Couette
+scope=diagnostic proxy policies, not final surface-area reconstruction
+policy=uniform, total_link_count=10240, axis_link_count=2048, face_diagonal_link_count=8192, area_proxy_total=1.024000000e+04, area_weighted_fluid_impulse_x=5.826950073e-02, area_weighted_solid_force_x=-5.826950073e-02, rho_min=1.000004411e+00, rho_max=1.000011086e+00, lbm_max_v=2.746346593e-02
+policy=inverse_length, total_link_count=10240, axis_link_count=2048, face_diagonal_link_count=8192, area_proxy_total=7.840618751e+03, area_weighted_fluid_impulse_x=4.120275910e-02, area_weighted_solid_force_x=-4.120275910e-02, rho_min=1.000004411e+00, rho_max=1.000011086e+00, lbm_max_v=2.746346593e-02
+policy=length, total_link_count=10240, axis_link_count=2048, face_diagonal_link_count=8192, area_proxy_total=1.363323750e+04, area_weighted_fluid_impulse_x=8.240551821e-02, area_weighted_solid_force_x=-8.240551821e-02, rho_min=1.000004411e+00, rho_max=1.000011086e+00, lbm_max_v=2.746346593e-02
+elapsed=38.41s
+[OK] Step 17 link-area wall Couette finished

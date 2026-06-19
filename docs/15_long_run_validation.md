@@ -74,3 +74,9 @@ outputs/step16_long_run_summary/step16_summary.json
 - not two-phase flow
 - not contact angle physics
 - not sparse storage work
+
+## Step 17 Link-Area Accounting
+
+Step 17 adds diagnostic-only direction-wise and link-area proxy accounting. It reuses the Step 16 calibrated settings to analyze moving-boundary link budgets without changing the Step 16 solver behavior.
+
+The moving bounce-back formula is unchanged. MovingBoundaryFSICoupler3D is unchanged. These are diagnostic proxy policies, not final surface-area reconstruction. Strict link-area momentum-conserving coupling remains future work. squid_proxy is procedural and not real squid validation.

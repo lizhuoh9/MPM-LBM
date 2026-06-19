@@ -1,0 +1,7 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 17 box 64 link budget
+scope=64^3 moving_boundary feasibility with link-area proxy accounting
+box_64_link_budget case=box_64_link_budget, n_grid=64, completed_lbm_steps=5, total_mpm_substeps=25, rho_min=9.922732711e-01, rho_max=1.002777219e+00, lbm_max_v=5.351910833e-03, mpm_min_J=9.955477715e-01, bb_link_count_min=11186, area_proxy_total=8.619669617e+03, axis_link_count=2424, face_diagonal_link_count=8762, cell_force_max_norm=0.000000000e+00, stable=True
+elapsed=267.10s
+[OK] Step 17 box 64 link budget finished

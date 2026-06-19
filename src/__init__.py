@@ -2,6 +2,7 @@
 
 from .lbm_config import LBMConfig
 from .lbm_fluid import LBMFluid3D
+from .link_area_accounting import LinkAreaMomentumAccounting3D
 from .coupling import PenaltyFSICoupler3D
 from .diagnostics import FSIDiagnostics3D
 from .fsi_config import FSIDriverConfig
@@ -20,6 +21,7 @@ from .calibration import classify_calibration_row, choose_recommended_row, write
 __all__ = [
     "LBMConfig",
     "LBMFluid3D",
+    "LinkAreaMomentumAccounting3D",
     "PenaltyFSICoupler3D",
     "FSIDiagnostics3D",
     "FSIDriverConfig",

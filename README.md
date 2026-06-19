@@ -20,6 +20,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - larger-grid engineering baselines through 48^3 and 64^3 feasibility checks
 - moving-boundary reaction calibration diagnostics and recommended moving_boundary configs
 - Step 16 long-run validation for calibrated 48^3 moving_boundary cases and a conservative 64^3 moving_boundary feasibility row
+- Step 17 diagnostic-only direction-wise and link-area proxy accounting for moving-boundary bounce-back
 
 ## Not Implemented
 
@@ -113,6 +114,12 @@ Step 15 adds `MomentumAccounting3D`, calibration helpers, reaction_scale and for
 Step 16 does not add new FSI physics. It uses the Step 15 calibrated moving_boundary settings for longer 48^3 box and procedural squid_proxy runs, then adds a conservative 64^3 moving_boundary feasibility row and a 64^3 none/penalty/moving_boundary mode comparison.
 
 The 64^3 moving_boundary row is a feasibility baseline. squid_proxy is procedural and not real squid validation. Strict link-area momentum-conserving coupling remains future work.
+
+## Link-Area Momentum Accounting
+
+Step 17 adds diagnostic-only direction-wise and link-area proxy accounting. The moving bounce-back formula is unchanged. MovingBoundaryFSICoupler3D is unchanged.
+
+The Step 17 area policies are `uniform`, `inverse_length`, and `length`. These are diagnostic proxy policies, not final surface-area reconstruction. Strict link-area momentum-conserving coupling remains future work. squid_proxy is procedural and not real squid validation.
 
 ## Upstream LBM Note
 

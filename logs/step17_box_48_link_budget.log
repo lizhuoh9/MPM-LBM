@@ -1,0 +1,6 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 17 box 48 link budget
+box_48_link_budget case=box_48_link_budget, n_grid=48, completed_lbm_steps=20, total_mpm_substeps=200, rho_min=9.888915420e-01, rho_max=1.017282963e+00, lbm_max_v=9.996161796e-03, mpm_min_J=9.928040504e-01, bb_link_count_min=5964, area_proxy_total=4.578029289e+03, axis_link_count=1232, face_diagonal_link_count=4732, cell_force_max_norm=0.000000000e+00, stable=True
+elapsed=58.75s
+[OK] Step 17 box 48 link budget finished

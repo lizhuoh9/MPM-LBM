@@ -100,6 +100,11 @@ class LBMFluid3D:
         self.bb_max_correction = ti.field(ti.f32, shape=())
         self.bb_net_fluid_impulse = ti.Vector.field(3, ti.f32, shape=())
         self.bb_net_solid_force = ti.Vector.field(3, ti.f32, shape=())
+        self.bb_link_count_by_dir = ti.field(ti.i32, shape=(19,))
+        self.bb_fluid_impulse_by_dir = ti.Vector.field(3, ti.f32, shape=(19,))
+        self.bb_solid_force_by_dir = ti.Vector.field(3, ti.f32, shape=(19,))
+        self.bb_correction_abs_sum_by_dir = ti.field(ti.f32, shape=(19,))
+        self.bb_correction_abs_max_by_dir = ti.field(ti.f32, shape=(19,))
         self.reinit_flag = ti.field(ti.i8, shape=(nx,ny,nz))
         self.ext_f = ti.Vector.field(3,ti.f32,shape=())
 
@@ -320,6 +325,13 @@ class LBMFluid3D:
         self.bb_net_fluid_impulse[None] = ti.Vector([0.0, 0.0, 0.0])
         self.bb_net_solid_force[None] = ti.Vector([0.0, 0.0, 0.0])
 
+        for s in range(19):
+            self.bb_link_count_by_dir[s] = 0
+            self.bb_fluid_impulse_by_dir[s] = ti.Vector([0.0, 0.0, 0.0])
+            self.bb_solid_force_by_dir[s] = ti.Vector([0.0, 0.0, 0.0])
+            self.bb_correction_abs_sum_by_dir[s] = 0.0
+            self.bb_correction_abs_max_by_dir[s] = 0.0
+
         for I in ti.grouped(self.rho):
             self.hydro_force[I] = ti.Vector([0.0, 0.0, 0.0])
 
@@ -345,15 +357,33 @@ class LBMFluid3D:
 
                         ti.atomic_add(self.bb_link_count[None], 1)
                         ti.atomic_max(self.bb_max_correction[None], ti.abs(correction))
+                        ti.atomic_add(self.bb_link_count_by_dir[s], 1)
+                        ti.atomic_add(self.bb_correction_abs_sum_by_dir[s], ti.abs(correction))
+                        ti.atomic_max(self.bb_correction_abs_max_by_dir[s], ti.abs(correction))
 
                         for d in ti.static(range(3)):
                             ti.atomic_add(self.bb_net_fluid_impulse[None][d], fluid_impulse[d])
                             ti.atomic_add(self.bb_net_solid_force[None][d], solid_force[d])
                             ti.atomic_add(self.hydro_force[ip][d], solid_force[d])
+                            ti.atomic_add(self.bb_fluid_impulse_by_dir[s][d], fluid_impulse[d])
+                            ti.atomic_add(self.bb_solid_force_by_dir[s][d], solid_force[d])
 
     @ti.kernel
     def finalize_moving_boundary_diagnostics(self):
-        self.bb_net_solid_force[None] = -self.bb_net_fluid_impulse[None]
+        link_count = 0
+        fluid_impulse = ti.Vector([0.0, 0.0, 0.0])
+        solid_force = ti.Vector([0.0, 0.0, 0.0])
+        max_correction = 0.0
+        for s in ti.static(range(19)):
+            link_count += self.bb_link_count_by_dir[s]
+            fluid_impulse += self.bb_fluid_impulse_by_dir[s]
+            solid_force += self.bb_solid_force_by_dir[s]
+            max_correction = ti.max(max_correction, self.bb_correction_abs_max_by_dir[s])
+
+        self.bb_link_count[None] = link_count
+        self.bb_max_correction[None] = max_correction
+        self.bb_net_fluid_impulse[None] = fluid_impulse
+        self.bb_net_solid_force[None] = solid_force
 
     @ti.kernel
     def Boundary_condition(self):
@@ -730,6 +760,18 @@ class LBMFluid3D:
             "bb_max_correction": float(self.bb_max_correction[None]),
             "bb_net_fluid_impulse": tuple(float(v) for v in fluid_impulse),
             "bb_net_solid_force": tuple(float(v) for v in solid_force),
+        }
+
+    def get_moving_boundary_directional_stats(self):
+        """
+        Diagnostic-only. Returns per-D3Q19-direction moving-boundary bounce-back reductions.
+        """
+        return {
+            "link_count_by_dir": self.bb_link_count_by_dir.to_numpy(),
+            "fluid_impulse_by_dir": self.bb_fluid_impulse_by_dir.to_numpy(),
+            "solid_force_by_dir": self.bb_solid_force_by_dir.to_numpy(),
+            "correction_abs_sum_by_dir": self.bb_correction_abs_sum_by_dir.to_numpy(),
+            "correction_abs_max_by_dir": self.bb_correction_abs_max_by_dir.to_numpy(),
         }
 
     def step(self):

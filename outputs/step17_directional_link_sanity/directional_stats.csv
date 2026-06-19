@@ -1,0 +1,2 @@
+case,bb_link_count,sum_link_count_by_dir,link_count_sum_error,bb_net_fluid_impulse_x,bb_net_solid_force_x,directional_fluid_impulse_x,directional_solid_force_x,scalar_vs_directional_impulse_error_x,scalar_vs_directional_solid_error_x,hydro_vs_directional_solid_error_x,rho_min,rho_max,lbm_max_v,cell_force_max_norm,hydro_force_max_norm
+directional_link_sanity,10240,10240,0,0.12314987182617188,-0.12314987182617188,0.12314987182617188,-0.12314987182617188,0.0,0.0,0.000942230224609375,1.000000238418579,1.000002145767212,0.014671622775495052,0.0,0.3333340287208557

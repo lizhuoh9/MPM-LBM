@@ -1,0 +1,6 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 17 directional link sanity
+bb_link_count=10240, sum_link_count_by_dir=10240, scalar_vs_directional_impulse_error_x=0.000000000e+00, bb_net_fluid_impulse_x=1.231498718e-01, bb_net_solid_force_x=-1.231498718e-01, rho_min=1.000000238e+00, rho_max=1.000002146e+00, lbm_max_v=1.467162278e-02
+elapsed=37.85s
+[OK] Step 17 directional link sanity finished
