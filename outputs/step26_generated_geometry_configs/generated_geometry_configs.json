@@ -1,0 +1,26 @@
+{
+  "driver_config_count": 8,
+  "row_count": 2,
+  "rows": [
+    {
+      "candidate_id": "real_candidate_smoke_mesh",
+      "geometry_config_path": "configs/step26_real_candidate_smoke_mesh_geometry.json",
+      "geometry_config_valid": true,
+      "geometry_type": "mesh",
+      "n_particles": 4096,
+      "quality_check_enabled": true,
+      "quality_check_strict": true,
+      "source_file": "data/geometry_fixtures/step25_real_candidate_smoke_mesh.obj"
+    },
+    {
+      "candidate_id": "real_candidate_smoke_voxel",
+      "geometry_config_path": "configs/step26_real_candidate_smoke_voxel_geometry.json",
+      "geometry_config_valid": true,
+      "geometry_type": "voxel",
+      "n_particles": 4096,
+      "quality_check_enabled": true,
+      "quality_check_strict": true,
+      "source_file": "data/geometry_fixtures/voxel_sphere.npy"
+    }
+  ]
+}

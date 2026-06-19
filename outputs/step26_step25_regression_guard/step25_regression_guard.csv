@@ -1,0 +1,8 @@
+check,pass,value,notes
+step25_report_exists,True,STEP25_CONTROLLED_REAL_GEOMETRY_INTAKE_REPORT.md,required Step 25 artifact
+step25_candidate_manifest,True,2,expected 2 passing rows
+step25_sampling_reproducibility,True,2,expected 2 passing rows
+step25_projection_smoke,True,2,expected 2 passing rows
+step25_large_file_count,True,0,expected 0
+step25_scan_data_file_count,True,0,expected 0
+step25_raw_candidate_large_file_count,True,0,expected 0

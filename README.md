@@ -29,6 +29,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 23 quality-gated synthetic imported geometry scale validation with quality reports for every driver row
 - Step 24 strict quality-gated synthetic imported geometry long-run validation for selected moving_boundary rows
 - Step 25 controlled real geometry candidate intake with manifest, fingerprinting, normalization reports, deterministic sampling reproducibility, and projection-only smoke diagnostics
+- Step 26 controlled real geometry projection-only and short driver feasibility with strict quality reports for every very short driver row
 
 ## Not Implemented
 
@@ -56,6 +57,22 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 Candidate intake does not perform production mesh repair or automatic remeshing.
 Raw large real geometry files and scan data are not committed.
+
+## Step 26 Short Feasibility Boundary
+
+Step 26 is controlled real geometry projection-only and short driver feasibility.
+Step 26 is not real squid validation.
+Step 26 does not implement squid actuation.
+Step 26 does not implement squid swimming.
+Step 26 does not implement new FSI physics.
+Step 26 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 26 reuses the accepted Step 25 candidates, checks their fingerprints, creates driver-ready geometry configs, runs projection-only diagnostics at 32^3/48^3/64^3, and runs 48^3 very short driver rows for existing modes only.
 
 ## Quick Start
 

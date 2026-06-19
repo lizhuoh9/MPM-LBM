@@ -120,6 +120,17 @@ Step 24 boundary: Step 24 runs strict quality-gated synthetic imported geometry 
 
 Step 25 is controlled real geometry intake, not real squid validation. Step 25 performs geometry QA, normalization, fingerprinting, sampling reproducibility, and projection-only smoke diagnostics. Step 25 does not implement squid swimming. Step 25 does not implement squid actuation. Step 25 does not implement new FSI physics. Step 25 does not validate production sharp-interface FSI. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged. Candidate intake does not perform production mesh repair or automatic remeshing. Raw large real geometry files and scan data are not committed.
 
+## Step 26 Real Geometry Feasibility APIs
+
+- `geometry_config_payload_from_candidate_descriptor(descriptor)`: converts a validated Step 25 descriptor into a strict driver-ready `GeometryConfig` payload.
+- `write_geometry_config_from_descriptor(descriptor_path, out_config_path)`: writes and reload-validates the generated geometry config.
+- `driver_config_payload_for_candidate(...)`: creates a 48^3 very short `FSIDriverConfig` payload with VTK and particle outputs disabled.
+- `run_projection_only_scale_case(geometry_config_path, n_grid, out_dir)`: runs projection-only scale diagnostics without a driver long-run.
+- `run_short_driver_case(driver_config_path, out_dir)`: runs the existing `FSIDriver3D` for 5 LBM steps and 25 MPM substeps.
+- `compare_step25_projection_smoke(step25_csv, step26_csv)`: compares Step 26 32^3 projection rows against the accepted Step 25 projection smoke.
+
+Step 26 is controlled real geometry projection-only and short driver feasibility. Step 26 is not real squid validation. Step 26 does not implement squid actuation. Step 26 does not implement squid swimming. Step 26 does not implement new FSI physics. Step 26 does not validate production sharp-interface FSI.
+
 ## MomentumAccounting3D
 
 - purpose: diagnostic-only moving_boundary momentum accounting

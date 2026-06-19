@@ -1,0 +1,3 @@
+candidate_id,geometry_type,geometry_config_path,source_file,n_particles,quality_check_enabled,quality_check_strict,geometry_config_valid
+real_candidate_smoke_mesh,mesh,configs/step26_real_candidate_smoke_mesh_geometry.json,data/geometry_fixtures/step25_real_candidate_smoke_mesh.obj,4096,True,True,True
+real_candidate_smoke_voxel,voxel,configs/step26_real_candidate_smoke_voxel_geometry.json,data/geometry_fixtures/voxel_sphere.npy,4096,True,True,True

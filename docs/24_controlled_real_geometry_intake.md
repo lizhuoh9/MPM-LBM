@@ -85,3 +85,17 @@ Primary outputs:
 ## Decision For Step 26
 
 If Step 25 passes, Step 26 should remain conservative: controlled real geometry projection-only diagnostics and optional very short driver feasibility. It should not claim swimming, actuation, production sharp-interface FSI, or final readiness.
+
+## Step 26 Follow-Up
+
+Step 26 is controlled real geometry projection-only and short driver feasibility.
+Step 26 is not real squid validation.
+Step 26 does not implement squid actuation.
+Step 26 does not implement squid swimming.
+Step 26 does not implement new FSI physics.
+Step 26 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.

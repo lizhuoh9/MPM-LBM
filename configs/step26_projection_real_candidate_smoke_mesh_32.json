@@ -1,0 +1,5 @@
+{
+  "candidate_id": "real_candidate_smoke_mesh",
+  "geometry_config_path": "configs/step26_real_candidate_smoke_mesh_geometry.json",
+  "n_grid": 32
+}

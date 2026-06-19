@@ -1,0 +1,26 @@
+{
+  "compared_row_count": 2,
+  "pass_count": 2,
+  "rows": [
+    {
+      "active_cell_count_delta": 0,
+      "candidate_id": "real_candidate_smoke_mesh",
+      "geometry_type": "mesh",
+      "projected_mass_delta": -5.960464477539063e-08,
+      "projection_pass_both": true,
+      "regression_pass": true,
+      "solid_phi_max_delta": 0.0,
+      "solid_phi_min_delta": 0.0
+    },
+    {
+      "active_cell_count_delta": 0,
+      "candidate_id": "real_candidate_smoke_voxel",
+      "geometry_type": "voxel",
+      "projected_mass_delta": 0.0,
+      "projection_pass_both": true,
+      "regression_pass": true,
+      "solid_phi_max_delta": 0.0,
+      "solid_phi_min_delta": 0.0
+    }
+  ]
+}

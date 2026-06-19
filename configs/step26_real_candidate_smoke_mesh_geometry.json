@@ -1,0 +1,14 @@
+{
+  "deterministic": true,
+  "geometry_file": "data/geometry_fixtures/step25_real_candidate_smoke_mesh.obj",
+  "geometry_type": "mesh",
+  "mesh_inside_method": "ray_cast",
+  "mesh_voxel_resolution": 32,
+  "n_particles": 4096,
+  "normalize_to_domain": true,
+  "p_rho": 1.0,
+  "padding": 0.08,
+  "preserve_aspect_ratio": true,
+  "quality_check_enabled": true,
+  "quality_check_strict": true
+}

@@ -81,3 +81,16 @@ Candidate intake does not perform production mesh repair or automatic remeshing.
 Raw large real geometry files and scan data are not committed.
 
 The `data/real_geometry_candidates/` directory is ignored by default except for `README.md`, `.gitkeep`, and `*_descriptor.json`. Local raw real geometry, scan data, private anatomy, and proprietary CAD should stay out of committed artifacts.
+
+## Step 26 Short Feasibility Artifacts
+
+Step 26 commits small config, CSV, JSON, NPZ, Markdown, and log artifacts only. Step 26 does not write `.vtr` outputs or particle `.npy` outputs.
+
+Step 26 is controlled real geometry projection-only and short driver feasibility.
+Step 26 is not real squid validation.
+Step 26 does not implement squid actuation.
+Step 26 does not implement squid swimming.
+Step 26 does not implement new FSI physics.
+Step 26 does not validate production sharp-interface FSI.
+
+The Step 26 artifact manifest requires `large_file_count == 0`, no raw candidate large files, no scan data, no private absolute paths in committed outputs, and exactly 8 driver `geometry_quality_report.json` files.

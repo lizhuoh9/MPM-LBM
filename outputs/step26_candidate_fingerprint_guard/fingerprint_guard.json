@@ -1,0 +1,40 @@
+{
+  "pass_count": 2,
+  "row_count": 2,
+  "rows": [
+    {
+      "candidate_id": "real_candidate_smoke_mesh",
+      "fingerprint_match": true,
+      "geometry_type": "mesh",
+      "guard_pass": true,
+      "no_private_absolute_path": true,
+      "quality_check_enabled": true,
+      "quality_check_strict": true,
+      "sha256": "d5a3dd8a698a81951052c6fc3aeb1dd37f7a3c205c07b23d514a3b6a77c2c126",
+      "sha256_matches_step25": true,
+      "size_bytes": 323,
+      "size_matches_step25": true,
+      "source_file_redacted": "data/geometry_fixtures/step25_real_candidate_smoke_mesh.obj",
+      "step25_sha256": "d5a3dd8a698a81951052c6fc3aeb1dd37f7a3c205c07b23d514a3b6a77c2c126",
+      "step25_size_bytes": 323,
+      "validation_scope": "intake_qa_normalization_sampling_projection_only"
+    },
+    {
+      "candidate_id": "real_candidate_smoke_voxel",
+      "fingerprint_match": true,
+      "geometry_type": "voxel",
+      "guard_pass": true,
+      "no_private_absolute_path": true,
+      "quality_check_enabled": true,
+      "quality_check_strict": true,
+      "sha256": "7df9048eb5967888f0788817414b05235fe4a67367198ad82fdb571d92e3b01f",
+      "sha256_matches_step25": true,
+      "size_bytes": 32896,
+      "size_matches_step25": true,
+      "source_file_redacted": "data/geometry_fixtures/voxel_sphere.npy",
+      "step25_sha256": "7df9048eb5967888f0788817414b05235fe4a67367198ad82fdb571d92e3b01f",
+      "step25_size_bytes": 32896,
+      "validation_scope": "intake_qa_normalization_sampling_projection_only"
+    }
+  ]
+}

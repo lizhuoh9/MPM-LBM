@@ -1,0 +1,3 @@
+step,total_mpm_substeps,coupling_mode,rho_min,rho_max,lbm_max_v,fluid_mean_ux,projection_zone_fluid_mean_ux,far_field_fluid_mean_ux,solid_mean_vx_norm,mpm_min_J,mpm_max_speed,projected_mass,active_cell_count,cell_force_max_norm,hydro_force_max_norm,bb_link_count,bb_max_correction,active_reaction_particle_count,max_grid_reaction_norm,elapsed_seconds
+0,0,none,1.0,1.0,0.0,0.0,0.0,0.0,0.031249286606907845,1.0,0.03125,0.0,0,0.0,0.0,0,0.0,0,0.0,2.5864375000237487
+5,25,none,1.0000003576278687,1.0000003576278687,0.0,0.0,0.0,0.0,0.031249351799488068,0.9999989867210388,0.03125078231096268,0.6058254837989807,68947,0.0,0.0,0,0.0,0,0.0,73.0039438000531

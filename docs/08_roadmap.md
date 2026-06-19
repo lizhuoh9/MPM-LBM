@@ -4,7 +4,7 @@ The next steps should preserve the existing regression baselines and mode matrix
 
 ## Current Status
 
-Step 25 is controlled real geometry intake, not real squid validation. It preserves imported-geometry evidence and adds candidate manifest, fingerprint, QA, normalization, deterministic sampling, and projection-only smoke diagnostics before any actuation or production sharp-interface FSI claims.
+Step 26 is controlled real geometry projection-only and short driver feasibility. It preserves Step 25 intake evidence, adds 32^3/48^3/64^3 projection-only scale diagnostics, and adds 48^3 very short driver feasibility rows before any actuation, swimming, or production sharp-interface FSI claims.
 
 ## Proposed Steps
 
@@ -50,6 +50,7 @@ Step 22 geometry quality and import robustness contracts
 Step 23 quality-gated imported geometry scale validation contracts
 Step 24 strict quality-gated imported geometry long-run contracts
 Step 25 controlled real geometry intake contracts
+Step 26 controlled real geometry projection-only and short driver feasibility contracts
 ```
 
 New physics should be added behind explicit modes or new configs, not by silently changing validated behavior.
@@ -73,3 +74,5 @@ Step 23 repeats imported geometry scale validation with quality_check_enabled=tr
 Step 24 runs strict quality-gated synthetic imported geometry long-run validation. Step 24 uses quality_check_enabled=true and quality_check_strict=true for selected imported geometry rows. Step 24 is not real squid validation. Step 24 does not implement new FSI physics. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged. Imported geometry remains limited to small synthetic voxel and mesh fixtures. The Step 24 mesh path is not production mesh repair or automatic remeshing. Step 25 should be a controlled real geometry intake contract, starting with geometry QA, normalization, and sampling reproducibility only.
 
 Step 25 is controlled real geometry intake, not real squid validation. Step 25 performs geometry QA, normalization, fingerprinting, sampling reproducibility, and projection-only smoke diagnostics. Step 25 does not implement squid swimming. Step 25 does not implement squid actuation. Step 25 does not implement new FSI physics. Step 25 does not validate production sharp-interface FSI. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged. Candidate intake does not perform production mesh repair or automatic remeshing. Raw large real geometry files and scan data are not committed.
+
+Step 26 is controlled real geometry projection-only and short driver feasibility. Step 26 is not real squid validation. Step 26 does not implement squid actuation. Step 26 does not implement squid swimming. Step 26 does not implement new FSI physics. Step 26 does not validate production sharp-interface FSI. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.

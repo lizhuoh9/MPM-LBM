@@ -1,0 +1,3 @@
+candidate_id,geometry_type,projected_mass_delta,active_cell_count_delta,solid_phi_min_delta,solid_phi_max_delta,projection_pass_both,regression_pass
+real_candidate_smoke_mesh,mesh,-5.960464477539063e-08,0,0.0,0.0,True,True
+real_candidate_smoke_voxel,voxel,0.0,0,0.0,0.0,True,True

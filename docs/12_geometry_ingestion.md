@@ -156,6 +156,22 @@ Raw large real geometry files and scan data are not committed.
 
 Step 25 descriptors live under `configs/step25_candidate_*_descriptor.json`. Local candidate payloads belong under `data/real_geometry_candidates/`, which is ignored by default except for README, `.gitkeep`, and descriptor files.
 
+## Step 26 Controlled Projection And Short Driver Feasibility
+
+Step 26 is controlled real geometry projection-only and short driver feasibility.
+Step 26 is not real squid validation.
+Step 26 does not implement squid actuation.
+Step 26 does not implement squid swimming.
+Step 26 does not implement new FSI physics.
+Step 26 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 26 converts the accepted Step 25 descriptors into strict driver-ready geometry configs, runs projection-only scale diagnostics, and then runs 48^3 very short driver feasibility rows with VTK and particle outputs disabled.
+
 ## Limitations
 
 - no real squid geometry validation

@@ -1,0 +1,5 @@
+[OK] Step 26 projection scale diagnostics finished
+row_count=6
+pass_count=6
+min_projected_mass=9.944105148315e-02
+scope=projection_only_no_fsi_driver_long_run
