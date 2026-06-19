@@ -23,6 +23,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 17 diagnostic-only direction-wise and link-area proxy accounting for moving-boundary bounce-back
 - Step 18 opt-in experimental link-area reaction transfer mode for moving_boundary comparison
 - Step 19 long-window and 64^3 feasibility validation for the opt-in experimental link-area transfer
+- Step 20 small synthetic mesh and voxel geometry import pipeline for 32^3 imported-geometry smoke validation
 
 ## Not Implemented
 
@@ -30,6 +31,8 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - contact angle physics
 - sparse storage
 - real squid geometry
+- real squid validation
+- production mesh repair
 - final strict momentum-conserving sharp-interface FSI
 - production-grade solver readiness
 
@@ -103,6 +106,30 @@ Step 13 adds procedural geometry initialization:
 
 The squid_proxy is procedural and is not real squid validation.
 
+Step 20 adds a small synthetic mesh and voxel geometry import pipeline.
+Step 20 is a geometry-ingestion scaffold, not real squid validation.
+Imported geometry supports voxel and mesh inputs through GeometryConfig and GeometrySampler3D.
+The Step 20 mesh path is limited to small synthetic fixtures and is not production mesh repair.
+
+Supported geometry types are now:
+
+- box
+- ellipsoid
+- squid_proxy
+- voxel
+- mesh
+
+The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Run the Step 20 imported geometry baselines:
+
+```powershell
+& 'D:\working\taichi\env\python.exe' -W ignore baseline_tests\run_step20_voxel_import_sanity.py
+& 'D:\working\taichi\env\python.exe' -W ignore baseline_tests\run_step20_mesh_import_sanity.py
+& 'D:\working\taichi\env\python.exe' -W ignore baseline_tests\run_step20_imported_geometry_projection.py
+& 'D:\working\taichi\env\python.exe' -W ignore baseline_tests\run_step20_driver_imported_geometry_modes.py
+```
+
 ## Larger-Grid Validation
 
 Step 14 adds 48^3 scale validation and 64^3 feasibility checks. These are engineering scale baselines, not production benchmark data or real squid validation. Step 14 does not add new FSI physics.
@@ -134,6 +161,10 @@ The experimental transfer uses a bounded global area_scale from Step 17 link-are
 Step 19 validates the opt-in link_area_experimental transfer over longer windows and 64^3 feasibility. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. LinkAreaMovingBoundaryCoupler3D formula is unchanged. MovingBoundaryFSICoupler3D is unchanged.
 
 The link-area transfer remains experimental and uses a bounded global area_scale. This is not final strict momentum-conserving sharp-interface FSI. squid_proxy is procedural and not real squid validation.
+
+## Geometry Import Pipeline
+
+Step 20 adds small synthetic voxel and OBJ fixtures, minimal import utilities, deterministic imported-geometry particle sampling, LBM projection diagnostics, and 32^3 driver smoke baselines for none, penalty, and moving_boundary modes. It prepares the repository for future real geometry ingestion without changing FSI physics.
 
 ## Upstream LBM Note
 

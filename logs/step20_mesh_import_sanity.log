@@ -1,0 +1,4 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+case=mesh_cube, vertices=8, faces=12, particle_count=4096, occupied=21952, geometry_volume=7.478525262e-01
+case=mesh_ellipsoid, vertices=114, faces=224, particle_count=4096, occupied=4400, geometry_volume=1.339171598e-01
+[OK] Step 20 mesh import sanity finished

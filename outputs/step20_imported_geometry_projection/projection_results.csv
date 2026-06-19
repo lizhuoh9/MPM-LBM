@@ -1,0 +1,4 @@
+case,geometry_type,particle_count,projected_mass,active_cell_count,solid_phi_min,solid_phi_max,cell_force_max_norm,hydro_force_max_norm,stable,notes
+voxel_sphere,voxel,4096,0.09944090992212296,5286,0.0,1.0,0.0,0.0,True,imported geometry projection only; no FSI force path
+mesh_cube,mesh,4096,0.7478519678115845,28653,0.0,1.0,0.0,0.0,True,imported geometry projection only; no FSI force path
+mesh_ellipsoid,mesh,4096,0.13391710817813873,6415,0.0,1.0,0.0,0.0,True,imported geometry projection only; no FSI force path

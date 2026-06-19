@@ -1,16 +1,22 @@
 # Geometry Ingestion and Squid Proxy Geometry
 
-Step 13 adds procedural geometry ingestion for MPM particle initialization and LBM projection diagnostics. Step 13 does not add new FSI physics.
+Step 13 adds procedural geometry ingestion for MPM particle initialization and LBM projection diagnostics. Step 13 does not add new FSI physics. Step 20 adds a small synthetic mesh and voxel geometry import pipeline. Step 20 does not add new FSI physics.
+
+Step 20 is a geometry-ingestion scaffold, not real squid validation. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 ## Scope
 
-The geometry layer supports three deterministic geometry types:
+The geometry layer supports deterministic geometry types:
 
 - `box`
 - `ellipsoid`
 - `squid_proxy`
+- `voxel`
+- `mesh`
 
 `GeometryConfig` stores normalized-domain geometry parameters. `GeometrySampler3D` turns those parameters into a deterministic MPM particle cloud and a diagnostic voxel occupancy mask.
+
+Imported geometry supports voxel and mesh inputs through GeometryConfig and GeometrySampler3D. Voxel input is a small `.npy` occupancy array with optional JSON metadata. Mesh input is a small ASCII OBJ fixture with deterministic normalization into the normalized cubic domain.
 
 ## Sampling
 
@@ -33,6 +39,17 @@ This keeps the Step 13 baselines reproducible across runs.
 
 The voxel output is diagnostic only. LBM coupling still uses the existing `MPMToLBMProjector3D` path.
 
+## Imported Geometry
+
+Step 20 adds:
+
+- `src/voxel_io.py` for small `.npy` occupancy loading and metadata stats.
+- `src/mesh_io.py` for minimal ASCII OBJ parsing, face triangulation, and normalization.
+- `src/geometry_import.py` for `ImportedGeometrySampler3D`.
+- `data/geometry_fixtures/` for small synthetic voxel and mesh fixtures.
+
+The Step 20 mesh path is limited to small synthetic fixtures and is not production mesh repair. It supports the Step 20 cube and ellipsoid proxy fixtures; it does not claim non-manifold repair, arbitrary mesh cleanup, material/texture support, or anatomical squid import.
+
 ## MPM Initialization
 
 `MPMSolid3D.init_from_numpy()` initializes particle positions, reference volumes, masses, and optional velocities from NumPy arrays. It resets `C`, `F`, and `Jp` to the undeformed state.
@@ -46,6 +63,8 @@ This is an initialization entry point only. It does not change the MPM constitut
 - `box`: preserves the existing `MPMSolid3D.init_box()` default path.
 - `ellipsoid`: samples an analytic ellipsoid and calls `MPMSolid3D.init_from_numpy()`.
 - `squid_proxy`: samples the procedural squid proxy and calls `MPMSolid3D.init_from_numpy()`.
+- `voxel`: imports a `.npy` occupancy field, samples particles, and calls `MPMSolid3D.init_from_numpy()`.
+- `mesh`: imports a small synthetic OBJ fixture, samples particles, and calls `MPMSolid3D.init_from_numpy()`.
 
 The coupling modes remain unchanged:
 
@@ -79,9 +98,10 @@ Step 13 commits small baseline geometry outputs for reproducibility:
 
 Larger ad-hoc geometry experiments should be written under `outputs/experiments/` or `outputs/scratch/` and should not be committed unless they become a documented step baseline.
 
+Step 20 commits only small synthetic fixtures and small 32^3 validation artifacts. It does not commit large real geometry, large scans, or large Step 20 VTK exports.
+
 ## Limitations
 
-- no mesh import
 - no real squid geometry validation
 - no squid actuation
 - no swimming locomotion
@@ -89,3 +109,4 @@ Larger ad-hoc geometry experiments should be written under `outputs/experiments/
 - no contact angle physics
 - no sparse storage implementation
 - no new FSI physics
+- no production mesh repair

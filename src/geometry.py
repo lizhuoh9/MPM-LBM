@@ -3,6 +3,7 @@ import math
 import numpy as np
 
 from .geometry_config import GeometryConfig
+from .geometry_import import ImportedGeometrySampler3D
 from .geometry_utils import as_vec3, inside_box, inside_capsule, inside_ellipsoid
 
 
@@ -13,8 +14,11 @@ class GeometrySampler3D:
         self.domain_max = as_vec3(config.domain_max, "domain_max")
         self.domain_span = self.domain_max - self.domain_min
         self.domain_volume = float(np.prod(self.domain_span))
+        self.imported = ImportedGeometrySampler3D(config) if config.geometry_type in {"voxel", "mesh"} else None
 
     def inside(self, points: np.ndarray) -> np.ndarray:
+        if self.imported is not None:
+            return self.imported.inside(points)
         if self.config.geometry_type == "box":
             return inside_box(points, self.config.box_min, self.config.box_max)
         if self.config.geometry_type == "ellipsoid":
@@ -59,6 +63,8 @@ class GeometrySampler3D:
         }
 
     def sample_particles(self) -> dict:
+        if self.imported is not None:
+            return self.imported.sample_particles()
         candidates, inside_mask, resolution = self._find_inside_candidates()
         inside_points = candidates[inside_mask]
         selected = self._select_deterministic_subset(inside_points, self.config.n_particles)
@@ -90,6 +96,8 @@ class GeometrySampler3D:
         }
 
     def voxelize(self, n_grid: int) -> dict:
+        if self.imported is not None:
+            return self.imported.voxelize(n_grid)
         if n_grid <= 0:
             raise ValueError("n_grid must be positive")
         coords_1d = (np.arange(n_grid, dtype=np.float64) + 0.5) / float(n_grid)

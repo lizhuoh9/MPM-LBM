@@ -1,0 +1,8 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+case=voxel_sphere, mode=none, reaction=engineering, rho_min=1.000000000e+00, rho_max=1.000000358e+00, lbm_max_v=0.000000000e+00, mpm_min_J=1.000000000e+00, projected_mass=9.944097698e-02, active_cell_count=5294, cell_force_max_norm=0.000000000e+00, hydro_force_max_norm=0.000000000e+00
+case=voxel_sphere, mode=penalty, reaction=engineering, rho_min=9.999981523e-01, rho_max=1.000002742e+00, lbm_max_v=5.303598755e-06, mpm_min_J=9.999960065e-01, projected_mass=9.944102168e-02, active_cell_count=5294, cell_force_max_norm=4.981097391e-06, hydro_force_max_norm=4.981097391e-06
+case=mesh_cube, mode=none, reaction=engineering, rho_min=1.000000000e+00, rho_max=1.000000358e+00, lbm_max_v=0.000000000e+00, mpm_min_J=9.932250977e-01, projected_mass=7.478525639e-01, active_cell_count=28646, cell_force_max_norm=0.000000000e+00, hydro_force_max_norm=0.000000000e+00
+case=mesh_cube, mode=penalty, reaction=engineering, rho_min=9.999989867e-01, rho_max=1.000001669e+00, lbm_max_v=5.048454113e-06, mpm_min_J=9.932426810e-01, projected_mass=7.478539348e-01, active_cell_count=28647, cell_force_max_norm=5.030093234e-06, hydro_force_max_norm=5.030093234e-06
+case=mesh_cube, mode=moving_boundary, reaction=engineering, rho_min=9.929329157e-01, rho_max=1.008372307e+00, lbm_max_v=7.739408407e-03, mpm_min_J=9.932188392e-01, projected_mass=7.478532195e-01, active_cell_count=28646, cell_force_max_norm=0.000000000e+00, hydro_force_max_norm=4.192635715e-01
+[OK] Step 20 driver imported geometry modes finished

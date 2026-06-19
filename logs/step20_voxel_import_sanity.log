@@ -1,0 +1,7 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+Step 20 voxel import sanity
+voxel_shape=[32, 32, 32]
+occupied_count=3016
+particle_count=4096
+geometry_volume=9.944105599e-02
+[OK] Step 20 voxel import sanity finished

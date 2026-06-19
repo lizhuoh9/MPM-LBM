@@ -1,0 +1,6 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+case=voxel_sphere, geometry_type=voxel, projected_mass=9.944090992e-02, active_cell_count=5286, solid_phi_max=1.000000000e+00
+case=mesh_cube, geometry_type=mesh, projected_mass=7.478519678e-01, active_cell_count=28653, solid_phi_max=1.000000000e+00
+case=mesh_ellipsoid, geometry_type=mesh, projected_mass=1.339171082e-01, active_cell_count=6415, solid_phi_max=1.000000000e+00
+[OK] Step 20 imported geometry projection finished

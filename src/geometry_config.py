@@ -1,9 +1,11 @@
 from dataclasses import asdict, dataclass
 import json
-from typing import Tuple
+import math
+from typing import Optional, Tuple
 
 
-VALID_GEOMETRY_TYPES = ("box", "ellipsoid", "squid_proxy")
+VALID_GEOMETRY_TYPES = ("box", "ellipsoid", "squid_proxy", "voxel", "mesh")
+VALID_MESH_INSIDE_METHODS = ("ray_cast", "voxelized")
 
 
 def _as_float_tuple(values, name):
@@ -49,6 +51,16 @@ class GeometryConfig:
     arm_radius: float = 0.018
     fin_radius: float = 0.07
 
+    geometry_file: Optional[str] = None
+    metadata_file: Optional[str] = None
+    normalize_to_domain: bool = True
+    preserve_aspect_ratio: bool = True
+    padding: float = 0.05
+    voxel_threshold: float = 0.5
+    voxel_spacing: Tuple[float, float, float] = (1.0, 1.0, 1.0)
+    mesh_inside_method: str = "ray_cast"
+    mesh_voxel_resolution: int = 32
+
     p_rho: float = 1.0
     particles_per_axis_hint: int = 32
     deterministic: bool = True
@@ -62,6 +74,16 @@ class GeometryConfig:
             raise ValueError("particles_per_axis_hint must be positive")
         if self.p_rho <= 0.0:
             raise ValueError("p_rho must be positive")
+        if self.geometry_type in {"voxel", "mesh"} and not self.geometry_file:
+            raise ValueError(f"geometry_type={self.geometry_type!r} requires geometry_file")
+        if self.padding < 0.0 or self.padding >= 0.5:
+            raise ValueError("padding must satisfy 0 <= padding < 0.5")
+        if not math.isfinite(float(self.voxel_threshold)):
+            raise ValueError("voxel_threshold must be finite")
+        if self.mesh_inside_method not in VALID_MESH_INSIDE_METHODS:
+            raise ValueError(f"mesh_inside_method must be one of {VALID_MESH_INSIDE_METHODS}")
+        if self.mesh_voxel_resolution <= 0:
+            raise ValueError("mesh_voxel_resolution must be positive")
         if self.arm_length <= 0.0:
             raise ValueError("arm_length must be positive")
         if self.arm_radius <= 0.0:
@@ -81,6 +103,7 @@ class GeometryConfig:
             "mantle_radii",
             "head_center",
             "head_radii",
+            "voxel_spacing",
         ):
             object.__setattr__(self, name, _as_float_tuple(getattr(self, name), name))
 
@@ -90,6 +113,7 @@ class GeometryConfig:
         _validate_positive(self.ellipsoid_radii, "ellipsoid_radii")
         _validate_positive(self.mantle_radii, "mantle_radii")
         _validate_positive(self.head_radii, "head_radii")
+        _validate_positive(self.voxel_spacing, "voxel_spacing")
 
     @classmethod
     def from_json(cls, path: str) -> "GeometryConfig":
@@ -111,6 +135,7 @@ class GeometryConfig:
             "mantle_radii",
             "head_center",
             "head_radii",
+            "voxel_spacing",
         ]
         for key in tuple_fields:
             data[key] = list(data[key])

@@ -18,17 +18,26 @@ This is a lightweight API reference for the current prototype. It is not autogen
 
 ## GeometryConfig
 
-- purpose: JSON-loadable procedural geometry configuration for MPM particle initialization
-- main fields: `geometry_type`, `n_particles`, `box_min`, `box_max`, `center`, `ellipsoid_radii`, `mantle_center`, `mantle_radii`, `head_center`, `head_radii`, `arm_length`, `arm_radius`, `fin_radius`
+- purpose: JSON-loadable geometry configuration for MPM particle initialization
+- geometry types: `box`, `ellipsoid`, `squid_proxy`, `voxel`, `mesh`
+- main procedural fields: `geometry_type`, `n_particles`, `box_min`, `box_max`, `center`, `ellipsoid_radii`, `mantle_center`, `mantle_radii`, `head_center`, `head_radii`, `arm_length`, `arm_radius`, `fin_radius`
+- main import fields: `geometry_file`, `metadata_file`, `normalize_to_domain`, `preserve_aspect_ratio`, `padding`, `voxel_threshold`, `voxel_spacing`, `mesh_inside_method`, `mesh_voxel_resolution`
 - main methods: `from_json`, `to_dict`
-- mode: used by Step 13 geometry baselines and non-box `FSIDriver3D` initialization
+- mode: used by Step 13 procedural geometry baselines, Step 20 imported geometry baselines, and non-box `FSIDriver3D` initialization
 
 ## GeometrySampler3D
 
-- purpose: deterministic particle-cloud and voxel-occupancy generation for analytic geometry
-- main fields: `config`, `domain_min`, `domain_max`, `domain_span`, `domain_volume`
+- purpose: deterministic particle-cloud and voxel-occupancy generation for procedural and imported geometry
+- main fields: `config`, `domain_min`, `domain_max`, `domain_span`, `domain_volume`, `imported`
 - main methods: `inside`, `sample_particles`, `voxelize`, `component_masks`
-- mode: used for `ellipsoid` and `squid_proxy`; `box` remains the default driver path for compatibility
+- mode: used for `ellipsoid`, `squid_proxy`, `voxel`, and `mesh`; `box` remains the default driver path for compatibility
+
+## ImportedGeometrySampler3D
+
+- purpose: Step 20 imported voxel/mesh helper for small synthetic fixtures
+- main inputs: `.npy` voxel occupancy files and small ASCII OBJ mesh fixtures
+- main methods: `inside`, `sample_particles`, `voxelize`, `get_stats`
+- boundary: Step 20 adds a small synthetic mesh and voxel geometry import pipeline. Step 20 is a geometry-ingestion scaffold, not real squid validation. Imported geometry supports voxel and mesh inputs through GeometryConfig and GeometrySampler3D. The Step 20 mesh path is limited to small synthetic fixtures and is not production mesh repair.
 
 ## GridUnitMapper
 
@@ -73,6 +82,8 @@ This is a lightweight API reference for the current prototype. It is not autogen
 - mode: used only when `coupling_mode = "moving_boundary"` and `reaction_transfer_mode = "link_area_experimental"`
 - boundary: The default moving_boundary reaction transfer remains engineering. The moving bounce-back formula is unchanged. MovingBoundaryFSICoupler3D is unchanged. The experimental transfer uses a bounded global area_scale from Step 17 link-area proxy accounting. This is not final strict momentum-conserving sharp-interface FSI.
 
+Step 20 boundary: The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
 ## MomentumAccounting3D
 
 - purpose: diagnostic-only moving_boundary momentum accounting
@@ -100,7 +111,7 @@ This is a lightweight API reference for the current prototype. It is not autogen
 - purpose: common JSON-loadable driver configuration
 - main fields: `coupling_mode`, `reaction_transfer_mode`, `link_area_policy`, `link_area_scale_min`, `link_area_scale_max`, `geometry_type`, `geometry_config_path`, `n_grid`, `n_particles`, `n_lbm_steps`, `mpm_substeps_per_lbm_step`, `mpm_dt`, `target_u_lbm`, `gravity`, `beta_lbm`, `penalty_force_cap_lbm`, `mb_reaction_scale`, `mb_force_cap_norm`
 - main methods: `from_json`, `to_dict`, `make_unified_sim_config`
-- mode: selects none, penalty, or moving_boundary, selects geometry initialization through `geometry_type`, and selects moving_boundary reaction transfer through `reaction_transfer_mode`
+- mode: selects none, penalty, or moving_boundary, selects procedural or imported geometry initialization through `geometry_type`, and selects moving_boundary reaction transfer through `reaction_transfer_mode`
 
 ## FSIDriver3D
 

@@ -1,0 +1,40 @@
+{
+  "accepted_count": 27309,
+  "bounds_index_max": [
+    24,
+    24,
+    24
+  ],
+  "bounds_index_min": [
+    7,
+    7,
+    7
+  ],
+  "candidate_count": 274625,
+  "candidate_resolution": 65,
+  "deterministic": true,
+  "domain_max": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "domain_min": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "geometry_type": "voxel",
+  "geometry_volume": 0.09944105598543468,
+  "imported_geometry_note": "Step 20 synthetic imported geometry scaffold, not real squid validation and not production mesh repair",
+  "occupied_count": 3016,
+  "occupied_fraction": 0.092041015625,
+  "particle_count": 4096,
+  "shape": [
+    32,
+    32,
+    32
+  ],
+  "source_file": "data/geometry_fixtures/voxel_sphere.npy",
+  "voxel_order": "ijk",
+  "voxelized_occupied_count": 3016
+}

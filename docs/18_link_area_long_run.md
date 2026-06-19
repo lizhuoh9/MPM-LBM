@@ -45,4 +45,6 @@ Each link-area run writes `diagnostics_timeseries.csv`, `diagnostics_timeseries.
 
 ## Decision
 
-Step 19 supports proceeding to Step 20: mesh/voxel geometry import pipeline. The next bottleneck is geometry ingestion, not claiming final strict momentum-conserving sharp-interface FSI.
+Step 19 supported proceeding to Step 20: mesh/voxel geometry import pipeline. Step 20 adds a small synthetic mesh and voxel geometry import pipeline. Step 20 is a geometry-ingestion scaffold, not real squid validation. Imported geometry supports voxel and mesh inputs through GeometryConfig and GeometrySampler3D. The Step 20 mesh path is limited to small synthetic fixtures and is not production mesh repair.
+
+The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.

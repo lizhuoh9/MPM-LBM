@@ -1,0 +1,72 @@
+{
+  "mesh_cube": {
+    "accepted_count": 205379,
+    "bounds_max": [
+      0.95,
+      0.95,
+      0.95
+    ],
+    "bounds_min": [
+      0.05,
+      0.05,
+      0.05
+    ],
+    "candidate_count": 274625,
+    "candidate_resolution": 65,
+    "deterministic": true,
+    "faces_count": 12,
+    "geometry_type": "mesh",
+    "geometry_volume": 0.7478525261720528,
+    "imported_geometry_note": "Step 20 synthetic imported geometry scaffold, not real squid validation and not production mesh repair",
+    "mesh_inside_method": "ray_cast",
+    "particle_count": 4096,
+    "particle_max": [
+      0.9461538195610046,
+      0.9461538195610046,
+      0.9461538195610046
+    ],
+    "particle_min": [
+      0.05384615436196327,
+      0.05384615436196327,
+      0.05384615436196327
+    ],
+    "source_file": "data/geometry_fixtures/cube.obj",
+    "vertices_count": 8,
+    "voxel_occupied_count": 21952
+  },
+  "mesh_ellipsoid": {
+    "accepted_count": 36777,
+    "bounds_max": [
+      0.95,
+      0.8214285714285714,
+      0.7357142857142857
+    ],
+    "bounds_min": [
+      0.05,
+      0.17857142857142855,
+      0.26428571428571423
+    ],
+    "candidate_count": 274625,
+    "candidate_resolution": 65,
+    "deterministic": true,
+    "faces_count": 224,
+    "geometry_type": "mesh",
+    "geometry_volume": 0.13391715976331361,
+    "imported_geometry_note": "Step 20 synthetic imported geometry scaffold, not real squid validation and not production mesh repair",
+    "mesh_inside_method": "ray_cast",
+    "particle_count": 4096,
+    "particle_max": [
+      0.9461538195610046,
+      0.807692289352417,
+      0.7307692170143127
+    ],
+    "particle_min": [
+      0.05384615436196327,
+      0.19230769574642181,
+      0.26923078298568726
+    ],
+    "source_file": "data/geometry_fixtures/ellipsoid_proxy.obj",
+    "vertices_count": 114,
+    "voxel_occupied_count": 4400
+  }
+}
