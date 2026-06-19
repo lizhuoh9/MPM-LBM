@@ -1,0 +1,8 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 19 Step 18 regression
+step18_sanity_regression case=step18_sanity_regression, transfer=link_area_experimental, n_grid=32, completed_lbm_steps=5, total_mpm_substeps=25, rho_min=9.768383503e-01, rho_max=1.018712997e+00, lbm_max_v=1.370775793e-02, mpm_min_J=9.983738661e-01, area_scale_final=7.763041258e-01, area_scale_min=7.151700854e-01, area_scale_max=1.000000000e+00, cell_force_max_norm=0.000000000e+00, stable=True
+step18_box_48_experimental_regression case=step18_box_48_experimental_regression, transfer=link_area_experimental, n_grid=48, completed_lbm_steps=10, total_mpm_substeps=100, rho_min=9.888914824e-01, rho_max=1.017294407e+00, lbm_max_v=8.986835368e-03, mpm_min_J=9.971750975e-01, area_scale_final=4.178959727e-01, area_scale_min=4.178959727e-01, area_scale_max=1.000000000e+00, cell_force_max_norm=0.000000000e+00, stable=True
+engineering_default_regression case=engineering_default_regression, transfer=engineering, n_grid=32, completed_lbm_steps=5, total_mpm_substeps=25, rho_min=9.870007038e-01, rho_max=1.009115219e+00, lbm_max_v=7.159951143e-03, mpm_min_J=9.983740449e-01, area_scale_final=1.000000000e+00, area_scale_min=1.000000000e+00, area_scale_max=1.000000000e+00, cell_force_max_norm=0.000000000e+00, stable=True
+elapsed=876.63s
+[OK] Step 19 Step 18 regression finished

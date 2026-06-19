@@ -1,0 +1,9 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 19 48^3 long engineering vs link-area comparison
+box_48_engineering case=box_48, transfer=engineering, n_grid=48, completed_lbm_steps=30, total_mpm_substeps=300, rho_min=9.888914824e-01, rho_max=1.017282844e+00, lbm_max_v=1.135529857e-02, mpm_min_J=9.923997521e-01, area_scale_final=1.000000000e+00, area_scale_min=1.000000000e+00, area_scale_max=1.000000000e+00, cell_force_max_norm=0.000000000e+00, stable=True
+box_48_link_area_experimental case=box_48, transfer=link_area_experimental, n_grid=48, completed_lbm_steps=30, total_mpm_substeps=300, rho_min=9.888915420e-01, rho_max=1.017294168e+00, lbm_max_v=1.139399689e-02, mpm_min_J=9.923648834e-01, area_scale_final=7.022697926e-01, area_scale_min=4.179948866e-01, area_scale_max=1.000000000e+00, cell_force_max_norm=0.000000000e+00, stable=True
+squid_proxy_48_engineering case=squid_proxy_48, transfer=engineering, n_grid=48, completed_lbm_steps=20, total_mpm_substeps=200, rho_min=9.910269976e-01, rho_max=1.012060404e+00, lbm_max_v=7.719148882e-03, mpm_min_J=9.938786030e-01, area_scale_final=1.000000000e+00, area_scale_min=1.000000000e+00, area_scale_max=1.000000000e+00, cell_force_max_norm=0.000000000e+00, stable=True
+squid_proxy_48_link_area_experimental case=squid_proxy_48, transfer=link_area_experimental, n_grid=48, completed_lbm_steps=20, total_mpm_substeps=200, rho_min=9.910461307e-01, rho_max=1.012029290e+00, lbm_max_v=7.718052715e-03, mpm_min_J=9.939622283e-01, area_scale_final=7.994040847e-01, area_scale_min=7.840885520e-01, area_scale_max=1.000000000e+00, cell_force_max_norm=0.000000000e+00, stable=True
+elapsed=889.15s
+[OK] Step 19 48^3 long engineering vs link-area comparison finished

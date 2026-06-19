@@ -22,6 +22,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 16 long-run validation for calibrated 48^3 moving_boundary cases and a conservative 64^3 moving_boundary feasibility row
 - Step 17 diagnostic-only direction-wise and link-area proxy accounting for moving-boundary bounce-back
 - Step 18 opt-in experimental link-area reaction transfer mode for moving_boundary comparison
+- Step 19 long-window and 64^3 feasibility validation for the opt-in experimental link-area transfer
 
 ## Not Implemented
 
@@ -127,6 +128,12 @@ The Step 17 area policies are `uniform`, `inverse_length`, and `length`. These a
 Step 18 adds an opt-in experimental link-area reaction transfer mode. The default moving_boundary reaction transfer remains engineering. The moving bounce-back formula is unchanged. MovingBoundaryFSICoupler3D is unchanged.
 
 The experimental transfer uses a bounded global area_scale from Step 17 link-area proxy accounting. Enable it only with `coupling_mode = "moving_boundary"` and `reaction_transfer_mode = "link_area_experimental"`. This is not final strict momentum-conserving sharp-interface FSI. squid_proxy is procedural and not real squid validation.
+
+## Link-Area Long-Run Validation
+
+Step 19 validates the opt-in link_area_experimental transfer over longer windows and 64^3 feasibility. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. LinkAreaMovingBoundaryCoupler3D formula is unchanged. MovingBoundaryFSICoupler3D is unchanged.
+
+The link-area transfer remains experimental and uses a bounded global area_scale. This is not final strict momentum-conserving sharp-interface FSI. squid_proxy is procedural and not real squid validation.
 
 ## Upstream LBM Note
 

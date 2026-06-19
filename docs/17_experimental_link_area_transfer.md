@@ -4,6 +4,8 @@ Step 18 adds an opt-in experimental link-area reaction transfer mode.
 
 The default moving_boundary reaction transfer remains engineering. The moving bounce-back formula is unchanged. MovingBoundaryFSICoupler3D is unchanged. The experimental transfer uses a bounded global area_scale from Step 17 link-area proxy accounting. This is not final strict momentum-conserving sharp-interface FSI. squid_proxy is procedural and not real squid validation.
 
+Step 19 validates the opt-in link_area_experimental transfer over longer windows and 64^3 feasibility. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. LinkAreaMovingBoundaryCoupler3D formula is unchanged. MovingBoundaryFSICoupler3D is unchanged. The link-area transfer remains experimental and uses a bounded global area_scale. This is not final strict momentum-conserving sharp-interface FSI. squid_proxy is procedural and not real squid validation.
+
 ## Scope
 
 The new mode is enabled only through:
@@ -56,6 +58,15 @@ Step 18 adds:
 - existing engineering moving_boundary regression
 
 These are engineering comparison baselines, not final validation of a sharp-interface method.
+
+Step 19 extends the evidence with:
+
+- 48^3 box link_area_experimental long-run, 50 LBM steps and 500 MPM substeps
+- 48^3 procedural squid_proxy link_area_experimental long-run, 30 LBM steps and 300 MPM substeps
+- 64^3 box link_area_experimental feasibility, 5 LBM steps and 25 MPM substeps
+- 64^3 engineering-vs-link-area comparison
+- 48^3 longer engineering-vs-link-area comparison
+- Step 18 regression rows for short experimental transfer and default engineering transfer
 
 ## Limitations
 

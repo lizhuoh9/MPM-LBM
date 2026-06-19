@@ -1,0 +1,8 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+box_48_link_area_long stable=True, row_count=1, rho_min=9.888914227e-01, rho_max=1.017294407e+00, area_scale_range=[4.179039001e-01, 1.000000000e+00]
+squid_proxy_48_link_area_long stable=True, row_count=1, rho_min=9.910463095e-01, rho_max=1.012029171e+00, area_scale_range=[7.840836644e-01, 1.000000000e+00]
+box_64_link_area_feasibility stable=True, row_count=1, rho_min=9.922732115e-01, rho_max=1.002777219e+00, area_scale_range=[7.772856355e-01, 1.000000000e+00]
+engineering_vs_link_area_64 stable=True, row_count=2, rho_min=9.922732711e-01, rho_max=1.002777338e+00, area_scale_range=[7.772856951e-01, 1.000000000e+00]
+engineering_vs_link_area_48 stable=True, row_count=4, rho_min=9.888914824e-01, rho_max=1.017294168e+00, area_scale_range=[4.179948866e-01, 1.000000000e+00]
+step18_regression stable=True, row_count=3, rho_min=9.768383503e-01, rho_max=1.018712997e+00, area_scale_range=[4.178959727e-01, 1.000000000e+00]
+[OK] Step 19 long-run summary finished

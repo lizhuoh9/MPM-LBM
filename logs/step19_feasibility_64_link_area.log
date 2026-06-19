@@ -1,0 +1,6 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 19 64^3 link-area feasibility
+box_64_link_area_feasibility case=box_64_link_area_feasibility, transfer=link_area_experimental, n_grid=64, completed_lbm_steps=5, total_mpm_substeps=25, rho_min=9.922732115e-01, rho_max=1.002777219e+00, lbm_max_v=5.351947155e-03, mpm_min_J=9.955477118e-01, area_scale_final=7.772856355e-01, area_scale_min=7.772856355e-01, area_scale_max=1.000000000e+00, cell_force_max_norm=0.000000000e+00, stable=True
+elapsed=253.57s
+[OK] Step 19 64^3 link-area feasibility finished

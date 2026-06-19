@@ -1,0 +1,19 @@
+{
+  "coupling_mode": "moving_boundary",
+  "reaction_transfer_mode": "link_area_experimental",
+  "link_area_policy": "inverse_length",
+  "geometry_type": "squid_proxy",
+  "geometry_config_path": "configs/step13_squid_proxy_geometry.json",
+  "n_grid": 48,
+  "n_particles": 4096,
+  "n_lbm_steps": 30,
+  "mpm_substeps_per_lbm_step": 10,
+  "target_u_lbm": [0.005, 0.0, 0.0],
+  "mb_reaction_scale": 0.5,
+  "mb_force_cap_norm": 0.000025,
+  "link_area_scale_min": 0.25,
+  "link_area_scale_max": 2.0,
+  "output_interval": 10,
+  "write_vtk": false,
+  "write_particles": false
+}

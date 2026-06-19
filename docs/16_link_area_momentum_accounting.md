@@ -30,6 +30,8 @@ area_scale = clip(
 
 The experimental path keeps the local reaction distribution from `lbm.hydro_force`; it does not reconstruct per-cell surface area.
 
+Step 19 validates the opt-in link_area_experimental transfer over longer windows and 64^3 feasibility. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. LinkAreaMovingBoundaryCoupler3D formula is unchanged. MovingBoundaryFSICoupler3D is unchanged. The link-area transfer remains experimental and uses a bounded global area_scale. This is not final strict momentum-conserving sharp-interface FSI. squid_proxy is procedural and not real squid validation.
+
 ## Direction Classes
 
 The accounting uses the actual `LBMFluid3D.e` direction ordering:

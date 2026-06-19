@@ -1,0 +1,6 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 19 48^3 box link-area long-run
+box_48_link_area_long case=box_48_link_area_long, transfer=link_area_experimental, n_grid=48, completed_lbm_steps=50, total_mpm_substeps=500, rho_min=9.888914227e-01, rho_max=1.017294407e+00, lbm_max_v=1.197801810e-02, mpm_min_J=9.923650026e-01, area_scale_final=8.538822532e-01, area_scale_min=4.179039001e-01, area_scale_max=1.000000000e+00, cell_force_max_norm=0.000000000e+00, stable=True
+elapsed=95.48s
+[OK] Step 19 48^3 box link-area long-run finished

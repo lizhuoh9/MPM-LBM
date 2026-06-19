@@ -152,3 +152,21 @@ Observed wall times in this Windows/Taichi GPU environment:
 | mode comparison | moving_boundary | 64 | 5 | 25 | 134.012 | 0.992273331 | 1.002777338 | 0.005351928 |
 
 The 64^3 moving_boundary row is a feasibility baseline. squid_proxy is procedural and not real squid validation. Strict link-area momentum-conserving coupling remains future work.
+
+## Step 19 Link-Area Long-Run Runtime Notes
+
+Step 19 validates the opt-in link_area_experimental transfer over longer windows and 64^3 feasibility. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. LinkAreaMovingBoundaryCoupler3D formula is unchanged. MovingBoundaryFSICoupler3D is unchanged.
+
+The link-area transfer remains experimental and uses a bounded global area_scale. This is not final strict momentum-conserving sharp-interface FSI. squid_proxy is procedural and not real squid validation.
+
+Observed wall times in this Windows/Taichi GPU environment:
+
+| case | transfer | n_grid | LBM steps | MPM substeps | elapsed seconds | rho_min | rho_max | area_scale_min | area_scale_final |
+| ---- | -------- | -----: | --------: | -----------: | --------------: | ------: | ------: | -------------: | ---------------: |
+| box long-run | link_area_experimental | 48 | 50 | 500 | 53.242 | 0.988891423 | 1.017294407 | 0.417903900 | 0.853882253 |
+| squid_proxy long-run | link_area_experimental | 48 | 30 | 300 | 103.237 | 0.991046309 | 1.012029171 | 0.784083664 | 0.808569014 |
+| box feasibility | link_area_experimental | 64 | 5 | 25 | 152.678 | 0.992273211 | 1.002777219 | 0.777285635 | 0.777285635 |
+| box 64 comparison | engineering | 64 | 5 | 25 | 55.480 | 0.992273271 | 1.002777219 | 1.000000000 | 1.000000000 |
+| box 64 comparison | link_area_experimental | 64 | 5 | 25 | 175.284 | 0.992273271 | 1.002777338 | 0.777285695 | 0.777285695 |
+
+The Step 19 outputs keep VTK and particle exports disabled for scale configs.
