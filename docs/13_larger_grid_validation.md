@@ -94,3 +94,14 @@ large_file_count = 0
 - no two-phase flow
 - no contact angle physics
 - no sparse storage implementation
+
+## Step 16 Extension
+
+Step 16 does not add new FSI physics. It extends the Step 14 larger-grid baseline with calibrated Step 15 moving_boundary settings:
+
+- 48^3 box moving_boundary long-run: 50 LBM steps and 500 MPM substeps
+- 48^3 procedural squid_proxy moving_boundary long-run: 30 LBM steps and 300 MPM substeps
+- 64^3 moving_boundary feasibility: 5 LBM steps and 25 MPM substeps
+- 64^3 none/penalty/moving_boundary mode comparison
+
+The 64^3 moving_boundary row is a feasibility baseline. squid_proxy is procedural and not real squid validation. Strict link-area momentum-conserving coupling remains future work.

@@ -84,3 +84,15 @@ force_cap_norm = 0.000025
 ## Limitations
 
 Step 15 is calibration and accounting infrastructure. It is not final sharp-interface FSI, not real squid validation, not squid swimming validation, not two-phase flow, not contact angle physics, and not sparse-storage work.
+
+## Step 16 Use Of Calibrated Settings
+
+Step 16 does not add new FSI physics. It uses the Step 15 recommended moving_boundary settings directly:
+
+| case | reaction_scale | force_cap_norm | target_u_lbm_x |
+| ---- | -------------: | -------------: | ---------------: |
+| 48^3 box long-run | 1.0 | 0.00001 | 0.005 |
+| 48^3 procedural squid_proxy long-run | 0.5 | 0.000025 | 0.005 |
+| 64^3 moving_boundary feasibility | 1.0 | 0.000005 | 0.0025 |
+
+The 64^3 moving_boundary row is a feasibility baseline. squid_proxy is procedural and not real squid validation. Strict link-area momentum-conserving coupling remains future work.

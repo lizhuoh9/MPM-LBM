@@ -1,0 +1,9 @@
+[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 16 64^3 mode comparison
+scope=none/penalty/moving_boundary short comparison; no new FSI physics
+mode_compare_64 case=mode_compare_64_none, mode=none, n_grid=64, n_particles=32768, completed_lbm_steps=5, total_mpm_substeps=25, rho_min=1.000000000e+00, rho_max=1.000000358e+00, lbm_max_v=0.000000000e+00, mpm_min_J=9.999997020e-01, mpm_max_speed=1.953306235e-02, bb_link_count_min=0, cell_force_max_norm=0.000000000e+00, hydro_force_max_norm=0.000000000e+00, elapsed_seconds=14.424, stable=True
+mode_compare_64 case=mode_compare_64_penalty, mode=penalty, n_grid=64, n_particles=32768, completed_lbm_steps=5, total_mpm_substeps=25, rho_min=9.999992847e-01, rho_max=1.000001550e+00, lbm_max_v=2.630221161e-06, mpm_min_J=9.999989867e-01, mpm_max_speed=1.953125000e-02, bb_link_count_min=0, cell_force_max_norm=2.490252427e-06, hydro_force_max_norm=2.490252427e-06, elapsed_seconds=116.397, stable=True
+mode_compare_64 case=mode_compare_64_moving_boundary, mode=moving_boundary, n_grid=64, n_particles=32768, completed_lbm_steps=5, total_mpm_substeps=25, rho_min=9.922733307e-01, rho_max=1.002777338e+00, lbm_max_v=5.351927597e-03, mpm_min_J=9.955478311e-01, mpm_max_speed=4.163375497e-02, bb_link_count_min=11186, cell_force_max_norm=0.000000000e+00, hydro_force_max_norm=4.023546278e-01, elapsed_seconds=134.012, stable=True
+elapsed=504.83s
+[OK] Step 16 64^3 mode comparison finished

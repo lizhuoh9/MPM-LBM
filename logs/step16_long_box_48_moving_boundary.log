@@ -1,0 +1,6 @@
+[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 16 48^3 box moving_boundary long-run
+long_box_48 case=long_box_48_moving_boundary, mode=moving_boundary, n_grid=48, n_particles=13824, completed_lbm_steps=50, total_mpm_substeps=500, rho_min=9.888914824e-01, rho_max=1.017282963e+00, lbm_max_v=1.205245685e-02, mpm_min_J=9.923995733e-01, mpm_max_speed=8.707759529e-02, bb_link_count_min=5964, cell_force_max_norm=0.000000000e+00, hydro_force_max_norm=4.111795127e-01, elapsed_seconds=45.772, stable=True
+elapsed=83.30s
+[OK] Step 16 48^3 box moving_boundary long-run finished

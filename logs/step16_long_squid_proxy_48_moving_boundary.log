@@ -1,0 +1,7 @@
+[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 16 48^3 squid_proxy moving_boundary long-run
+scope=squid_proxy is procedural and not real squid validation
+long_squid_proxy_48 case=long_squid_proxy_48_moving_boundary, mode=moving_boundary, n_grid=48, n_particles=4096, completed_lbm_steps=30, total_mpm_substeps=300, rho_min=9.910269380e-01, rho_max=1.012060523e+00, lbm_max_v=7.719209883e-03, mpm_min_J=9.938786626e-01, mpm_max_speed=6.466298550e-02, bb_link_count_min=6616, cell_force_max_norm=0.000000000e+00, hydro_force_max_norm=4.203420877e-01, elapsed_seconds=81.596, stable=True
+elapsed=119.82s
+[OK] Step 16 48^3 squid_proxy moving_boundary long-run finished

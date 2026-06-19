@@ -1,0 +1,6 @@
+[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+Step 16 long-run summary
+row_count=6
+csv=D:\working\squid robot\LBM\MPM-LBM\outputs\step16_long_run_summary\step16_summary.csv
+json=D:\working\squid robot\LBM\MPM-LBM\outputs\step16_long_run_summary\step16_summary.json
+[OK] Step 16 long-run summary finished

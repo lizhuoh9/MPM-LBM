@@ -1,0 +1,8 @@
+[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 16 64^3 moving_boundary feasibility
+scope=64^3 moving_boundary feasibility; not full 64^3 validation
+feasibility_64_moving_boundary case=feasibility_64_moving_boundary, mode=moving_boundary, n_grid=64, n_particles=32768, completed_lbm_steps=5, total_mpm_substeps=25, rho_min=9.922732711e-01, rho_max=1.002777219e+00, lbm_max_v=5.351931788e-03, mpm_min_J=9.955478311e-01, mpm_max_speed=4.163395986e-02, bb_link_count_min=11186, cell_force_max_norm=0.000000000e+00, hydro_force_max_norm=4.023546278e-01, elapsed_seconds=137.659, stable=True
+The 64^3 moving_boundary row is a feasibility baseline.
+elapsed=240.34s
+[OK] Step 16 64^3 moving_boundary feasibility finished

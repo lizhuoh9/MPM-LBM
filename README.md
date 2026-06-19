@@ -19,6 +19,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - shared diagnostics, CSV/NPZ outputs, logs, and small validation baselines
 - larger-grid engineering baselines through 48^3 and 64^3 feasibility checks
 - moving-boundary reaction calibration diagnostics and recommended moving_boundary configs
+- Step 16 long-run validation for calibrated 48^3 moving_boundary cases and a conservative 64^3 moving_boundary feasibility row
 
 ## Not Implemented
 
@@ -106,6 +107,12 @@ Step 14 adds 48^3 scale validation and 64^3 feasibility checks. These are engine
 ## Moving-Boundary Calibration
 
 Step 15 adds `MomentumAccounting3D`, calibration helpers, reaction_scale and force_cap_norm sweeps, and recommended moving_boundary configs for 48^3 box and 48^3 procedural squid_proxy cases. Step 15 does not change the moving bounce-back formula and does not claim strict final momentum conservation.
+
+## Long-Run Validation
+
+Step 16 does not add new FSI physics. It uses the Step 15 calibrated moving_boundary settings for longer 48^3 box and procedural squid_proxy runs, then adds a conservative 64^3 moving_boundary feasibility row and a 64^3 none/penalty/moving_boundary mode comparison.
+
+The 64^3 moving_boundary row is a feasibility baseline. squid_proxy is procedural and not real squid validation. Strict link-area momentum-conserving coupling remains future work.
 
 ## Upstream LBM Note
 

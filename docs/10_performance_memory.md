@@ -135,3 +135,20 @@ Observed wall times in this Windows/Taichi GPU environment:
 | force_cap_norm sweep | 4 | 834.13 | 48^3 box, 10 LBM steps each |
 | squid_proxy calibrated window | 4 | 423.49 | 48^3 procedural proxy, 10 LBM steps each |
 | calibrated-vs-original comparison | 2 | 138.75 | 48^3 box comparison |
+
+## Step 16 Long-Run Runtime Notes
+
+Step 16 does not add new FSI physics. It reuses the Step 15 calibrated moving_boundary settings, disables VTK and particle exports in required configs, and records long-run validation diagnostics from the existing `FSIDriver3D` timeseries.
+
+Observed wall times in this Windows/Taichi GPU environment:
+
+| case | mode | n_grid | LBM steps | MPM substeps | elapsed seconds | rho_min | rho_max | lbm_max_v |
+| ---- | ---- | -----: | --------: | -----------: | --------------: | ------: | ------: | --------: |
+| box long-run | moving_boundary | 48 | 50 | 500 | 45.772 | 0.988891482 | 1.017282963 | 0.012052457 |
+| squid_proxy long-run | moving_boundary | 48 | 30 | 300 | 81.596 | 0.991026938 | 1.012060523 | 0.007719210 |
+| box feasibility | moving_boundary | 64 | 5 | 25 | 137.659 | 0.992273271 | 1.002777219 | 0.005351932 |
+| mode comparison | none | 64 | 5 | 25 | 14.424 | 1.000000000 | 1.000000358 | 0.000000000 |
+| mode comparison | penalty | 64 | 5 | 25 | 116.397 | 0.999999285 | 1.000001550 | 0.000002630 |
+| mode comparison | moving_boundary | 64 | 5 | 25 | 134.012 | 0.992273331 | 1.002777338 | 0.005351928 |
+
+The 64^3 moving_boundary row is a feasibility baseline. squid_proxy is procedural and not real squid validation. Strict link-area momentum-conserving coupling remains future work.
