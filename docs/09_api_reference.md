@@ -63,7 +63,15 @@ This is a lightweight API reference for the current prototype. It is not autogen
 - purpose: transfer moving-boundary `hydro_force` diagnostics back to the MPM grid using engineering-scale reaction
 - main fields: `reaction_scale`, `force_cap_norm`, `active_reaction_particle_count`, `max_particle_reaction_norm`, `max_grid_reaction_norm`
 - main methods: `clear_reaction_diagnostics`, `add_moving_boundary_reaction_to_mpm_grid`, `get_stats`
-- mode: used only when `coupling_mode = "moving_boundary"`
+- mode: used only when `coupling_mode = "moving_boundary"` and `reaction_transfer_mode = "engineering"`
+
+## LinkAreaMovingBoundaryCoupler3D
+
+- purpose: Step 18 adds an opt-in experimental link-area reaction transfer mode.
+- main fields: `area_policy`, `area_scale`, `raw_area_scale`, `area_proxy_total`, `active_reaction_particle_count`, `max_grid_reaction_norm`
+- main methods: `update_area_scale_from_lbm`, `set_area_scale`, `clear_reaction_diagnostics`, `add_link_area_reaction_to_mpm_grid`, `get_stats`
+- mode: used only when `coupling_mode = "moving_boundary"` and `reaction_transfer_mode = "link_area_experimental"`
+- boundary: The default moving_boundary reaction transfer remains engineering. The moving bounce-back formula is unchanged. MovingBoundaryFSICoupler3D is unchanged. The experimental transfer uses a bounded global area_scale from Step 17 link-area proxy accounting. This is not final strict momentum-conserving sharp-interface FSI.
 
 ## MomentumAccounting3D
 
@@ -90,14 +98,14 @@ This is a lightweight API reference for the current prototype. It is not autogen
 ## FSIDriverConfig
 
 - purpose: common JSON-loadable driver configuration
-- main fields: `coupling_mode`, `geometry_type`, `geometry_config_path`, `n_grid`, `n_particles`, `n_lbm_steps`, `mpm_substeps_per_lbm_step`, `mpm_dt`, `target_u_lbm`, `gravity`, `beta_lbm`, `penalty_force_cap_lbm`, `mb_reaction_scale`, `mb_force_cap_norm`
+- main fields: `coupling_mode`, `reaction_transfer_mode`, `link_area_policy`, `link_area_scale_min`, `link_area_scale_max`, `geometry_type`, `geometry_config_path`, `n_grid`, `n_particles`, `n_lbm_steps`, `mpm_substeps_per_lbm_step`, `mpm_dt`, `target_u_lbm`, `gravity`, `beta_lbm`, `penalty_force_cap_lbm`, `mb_reaction_scale`, `mb_force_cap_norm`
 - main methods: `from_json`, `to_dict`, `make_unified_sim_config`
-- mode: selects none, penalty, or moving_boundary, and selects geometry initialization through `geometry_type`
+- mode: selects none, penalty, or moving_boundary, selects geometry initialization through `geometry_type`, and selects moving_boundary reaction transfer through `reaction_transfer_mode`
 
 ## FSIDriver3D
 
 - purpose: unified engineering driver for initialization, stepping, diagnostics, output, and timing
-- main fields: `config`, `sim`, `mapper`, `lbm`, `solid`, `projector`, `penalty_coupler`, `mb_coupler`, `diagnostics_rows`, `timing`
+- main fields: `config`, `sim`, `mapper`, `lbm`, `solid`, `projector`, `penalty_coupler`, `mb_coupler`, `link_area_coupler`, `diagnostics_rows`, `timing`
 - main methods: `initialize`, `step_once`, `run`, `collect_diagnostics`, `export_outputs`, `save_timeseries`, `final_diagnostics`, `performance_row`
 - mode: dispatches to `_step_none`, `_step_penalty`, or `_step_moving_boundary`
 

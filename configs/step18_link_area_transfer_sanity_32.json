@@ -1,0 +1,22 @@
+{
+  "coupling_mode": "moving_boundary",
+  "reaction_transfer_mode": "link_area_experimental",
+  "link_area_policy": "inverse_length",
+  "geometry_type": "box",
+  "n_grid": 32,
+  "n_particles": 4096,
+  "n_lbm_steps": 5,
+  "mpm_substeps_per_lbm_step": 5,
+  "target_u_lbm": [
+    0.01,
+    0.0,
+    0.0
+  ],
+  "mb_reaction_scale": 1.0,
+  "mb_force_cap_norm": 0.00001,
+  "link_area_scale_min": 0.25,
+  "link_area_scale_max": 2.0,
+  "output_interval": 1,
+  "write_vtk": false,
+  "write_particles": false
+}

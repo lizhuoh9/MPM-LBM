@@ -1,0 +1,6 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 18 link-area transfer box 48
+box_48 case=box_48, transfer_mode=link_area_experimental, policy=inverse_length, rho_min=9.897375703e-01, rho_max=1.014070630e+00, lbm_max_v=9.917610325e-03, mpm_min_J=9.927747250e-01, area_scale=7.875820994e-01, bb_link_count=5964, active_reaction_particle_count=8622, cell_force_max_norm=0.000000000e+00, stable=True
+elapsed=135.17s
+[OK] Step 18 link-area transfer box 48 finished

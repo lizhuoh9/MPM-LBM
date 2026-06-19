@@ -3,6 +3,7 @@
 from .lbm_config import LBMConfig
 from .lbm_fluid import LBMFluid3D
 from .link_area_accounting import LinkAreaMomentumAccounting3D
+from .link_area_coupling import LinkAreaMovingBoundaryCoupler3D
 from .coupling import PenaltyFSICoupler3D
 from .diagnostics import FSIDiagnostics3D
 from .fsi_config import FSIDriverConfig
@@ -22,6 +23,7 @@ __all__ = [
     "LBMConfig",
     "LBMFluid3D",
     "LinkAreaMomentumAccounting3D",
+    "LinkAreaMovingBoundaryCoupler3D",
     "PenaltyFSICoupler3D",
     "FSIDiagnostics3D",
     "FSIDriverConfig",

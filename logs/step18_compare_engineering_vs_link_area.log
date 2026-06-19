@@ -1,0 +1,9 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 18 engineering vs link-area comparison
+box_48_engineering case=box_48, transfer_mode=engineering, policy=engineering, rho_min=9.897503853e-01, rho_max=1.013995290e+00, lbm_max_v=9.996211156e-03, mpm_min_J=9.928042293e-01, area_scale=1.000000000e+00, bb_link_count=5964, active_reaction_particle_count=8622, cell_force_max_norm=0.000000000e+00, stable=True
+box_48_link_area_experimental case=box_48, transfer_mode=link_area_experimental, policy=inverse_length, rho_min=9.897376299e-01, rho_max=1.014070868e+00, lbm_max_v=9.917681105e-03, mpm_min_J=9.927746654e-01, area_scale=7.875720859e-01, bb_link_count=5964, active_reaction_particle_count=8622, cell_force_max_norm=0.000000000e+00, stable=True
+squid_proxy_48_engineering case=squid_proxy_48, transfer_mode=engineering, policy=engineering, rho_min=9.918613434e-01, rho_max=1.010593176e+00, lbm_max_v=6.485940889e-03, mpm_min_J=9.945954680e-01, area_scale=1.000000000e+00, bb_link_count=6616, active_reaction_particle_count=3299, cell_force_max_norm=0.000000000e+00, stable=True
+squid_proxy_48_link_area_experimental case=squid_proxy_48, transfer_mode=link_area_experimental, policy=inverse_length, rho_min=9.921447039e-01, rho_max=1.010515213e+00, lbm_max_v=6.503075361e-03, mpm_min_J=9.948464632e-01, area_scale=7.993974090e-01, bb_link_count=6606, active_reaction_particle_count=3299, cell_force_max_norm=0.000000000e+00, stable=True
+elapsed=970.07s
+[OK] Step 18 engineering vs link-area comparison finished

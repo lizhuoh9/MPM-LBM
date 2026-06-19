@@ -7,6 +7,8 @@ from .sim_config import UnifiedSimConfig
 
 
 VALID_COUPLING_MODES = ("none", "penalty", "moving_boundary")
+VALID_REACTION_TRANSFER_MODES = ("engineering", "link_area_experimental")
+VALID_LINK_AREA_POLICIES = ("uniform", "inverse_length", "length")
 
 
 def _as_float_tuple(values, name):
@@ -40,6 +42,10 @@ class FSIDriverConfig:
 
     mb_reaction_scale: float = 1.0
     mb_force_cap_norm: float = 1.0e-4
+    reaction_transfer_mode: str = "engineering"
+    link_area_policy: str = "inverse_length"
+    link_area_scale_min: float = 0.25
+    link_area_scale_max: float = 2.0
 
     output_interval: int = 10
     write_vtk: bool = True
@@ -48,6 +54,12 @@ class FSIDriverConfig:
     def __post_init__(self):
         if self.coupling_mode not in VALID_COUPLING_MODES:
             raise ValueError(f"coupling_mode must be one of {VALID_COUPLING_MODES}")
+        if self.reaction_transfer_mode not in VALID_REACTION_TRANSFER_MODES:
+            raise ValueError(f"reaction_transfer_mode must be one of {VALID_REACTION_TRANSFER_MODES}")
+        if self.reaction_transfer_mode == "link_area_experimental" and self.coupling_mode != "moving_boundary":
+            raise ValueError("reaction_transfer_mode='link_area_experimental' requires coupling_mode='moving_boundary'")
+        if self.link_area_policy not in VALID_LINK_AREA_POLICIES:
+            raise ValueError(f"link_area_policy must be one of {VALID_LINK_AREA_POLICIES}")
         if self.geometry_type not in VALID_GEOMETRY_TYPES:
             raise ValueError(f"geometry_type must be one of {VALID_GEOMETRY_TYPES}")
         if self.n_grid <= 0:
@@ -70,6 +82,12 @@ class FSIDriverConfig:
             raise ValueError("mb_reaction_scale must be positive")
         if self.mb_force_cap_norm <= 0.0:
             raise ValueError("mb_force_cap_norm must be positive")
+        if self.link_area_scale_min <= 0.0:
+            raise ValueError("link_area_scale_min must be positive")
+        if self.link_area_scale_max <= 0.0:
+            raise ValueError("link_area_scale_max must be positive")
+        if self.link_area_scale_min > self.link_area_scale_max:
+            raise ValueError("link_area_scale_min must be <= link_area_scale_max")
         if self.output_interval <= 0:
             raise ValueError("output_interval must be positive")
 

@@ -16,6 +16,20 @@ Step 17 adds moving-boundary diagnostics for:
 
 The diagnostic fields are small 19-entry reductions. They do not change the LBM distribution update, MPM update, projection path, or moving-boundary reaction transfer.
 
+Step 18 adds an opt-in experimental link-area reaction transfer mode. The default moving_boundary reaction transfer remains engineering. The moving bounce-back formula is unchanged. MovingBoundaryFSICoupler3D is unchanged. The experimental transfer uses a bounded global area_scale from Step 17 link-area proxy accounting. This is not final strict momentum-conserving sharp-interface FSI. squid_proxy is procedural and not real squid validation.
+
+Step 18 uses the Step 17 accounting summary as a global proxy scale:
+
+```text
+area_scale = clip(
+    |area_weighted_solid_force_x| / (|bb_net_solid_force_x| + eps),
+    area_scale_min,
+    area_scale_max
+)
+```
+
+The experimental path keeps the local reaction distribution from `lbm.hydro_force`; it does not reconstruct per-cell surface area.
+
 ## Direction Classes
 
 The accounting uses the actual `LBMFluid3D.e` direction ordering:

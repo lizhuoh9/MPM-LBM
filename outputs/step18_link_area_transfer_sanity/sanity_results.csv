@@ -1,0 +1,2 @@
+step,area_policy,raw_area_scale,area_scale,area_proxy_total,bb_link_count,rho_min,rho_max,lbm_max_v,mpm_min_J,mpm_max_speed,active_reaction_particle_count,max_grid_reaction_norm,net_grid_reaction_force_x,cell_force_max_norm,stable
+5,inverse_length,0.7763039469718933,0.7763039469718933,1895.64501953125,2458,0.976838231086731,1.0187129974365234,0.013707758858799934,0.9983738660812378,0.1654164344072342,3520,4.094676114618778e-06,0.0005629324587062001,0.0,True

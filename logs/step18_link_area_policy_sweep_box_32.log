@@ -1,0 +1,8 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 18 link-area policy sweep box 32
+policy=uniform, stable=True, area_scale=1.000000000e+00, rho_min=9.854516983e-01, rho_max=1.015292883e+00, lbm_max_v=1.282438729e-02, mpm_min_J=9.986472726e-01, bb_link_count=2458, cell_force_max_norm=0.000000000e+00
+policy=inverse_length, stable=True, area_scale=7.510586977e-01, rho_min=9.854512811e-01, rho_max=1.015294671e+00, lbm_max_v=1.282968279e-02, mpm_min_J=9.986491799e-01, bb_link_count=2458, cell_force_max_norm=0.000000000e+00
+policy=length, stable=True, area_scale=1.351855159e+00, rho_min=9.854525328e-01, rho_max=1.015290022e+00, lbm_max_v=1.281696465e-02, mpm_min_J=9.986468554e-01, bb_link_count=2458, cell_force_max_norm=0.000000000e+00
+elapsed=671.88s
+[OK] Step 18 link-area policy sweep box 32 finished

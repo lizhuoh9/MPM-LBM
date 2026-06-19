@@ -21,6 +21,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - moving-boundary reaction calibration diagnostics and recommended moving_boundary configs
 - Step 16 long-run validation for calibrated 48^3 moving_boundary cases and a conservative 64^3 moving_boundary feasibility row
 - Step 17 diagnostic-only direction-wise and link-area proxy accounting for moving-boundary bounce-back
+- Step 18 opt-in experimental link-area reaction transfer mode for moving_boundary comparison
 
 ## Not Implemented
 
@@ -54,7 +55,7 @@ The committed Step 10 artifacts are the current reproducibility baseline. Step 1
 | ---- | -------- | ------------ | ---------- | ------------- |
 | none | `lbm.step()` | none | zero | no |
 | penalty | `lbm.step()` | `PenaltyFSICoupler3D` | nonzero | no |
-| moving_boundary | `lbm.step_moving_bounceback()` | `MovingBoundaryFSICoupler3D` | zero | yes |
+| moving_boundary | `lbm.step_moving_bounceback()` | `MovingBoundaryFSICoupler3D` by default | zero | yes |
 
 ## Repository Layout
 
@@ -120,6 +121,12 @@ The 64^3 moving_boundary row is a feasibility baseline. squid_proxy is procedura
 Step 17 adds diagnostic-only direction-wise and link-area proxy accounting. The moving bounce-back formula is unchanged. MovingBoundaryFSICoupler3D is unchanged.
 
 The Step 17 area policies are `uniform`, `inverse_length`, and `length`. These are diagnostic proxy policies, not final surface-area reconstruction. Strict link-area momentum-conserving coupling remains future work. squid_proxy is procedural and not real squid validation.
+
+## Experimental Link-Area Transfer
+
+Step 18 adds an opt-in experimental link-area reaction transfer mode. The default moving_boundary reaction transfer remains engineering. The moving bounce-back formula is unchanged. MovingBoundaryFSICoupler3D is unchanged.
+
+The experimental transfer uses a bounded global area_scale from Step 17 link-area proxy accounting. Enable it only with `coupling_mode = "moving_boundary"` and `reaction_transfer_mode = "link_area_experimental"`. This is not final strict momentum-conserving sharp-interface FSI. squid_proxy is procedural and not real squid validation.
 
 ## Upstream LBM Note
 

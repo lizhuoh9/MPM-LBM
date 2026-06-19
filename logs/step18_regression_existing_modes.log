@@ -1,0 +1,7 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 18 existing mode regression
+case=engineering_box_48_regression, mode=moving_boundary, n_grid=48, completed_lbm_steps=10, total_mpm_substeps=100, rho_min=9.888914824e-01, rho_max=1.017282844e+00, lbm_max_v=8.981326595e-03, mpm_min_J=9.971734881e-01, bb_link_count_min=6120, cell_force_max_norm=0.000000000e+00, stable=True
+case=step17_accounting_regression, mode=moving_boundary, n_grid=48, completed_lbm_steps=5, total_mpm_substeps=50, rho_min=9.835842252e-01, rho_max=1.006649613e+00, lbm_max_v=9.175894782e-03, mpm_min_J=9.907679558e-01, bb_link_count_min=6148, cell_force_max_norm=0.000000000e+00, stable=True
+elapsed=151.50s
+[OK] Step 18 existing mode regression finished

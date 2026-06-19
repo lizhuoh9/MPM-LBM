@@ -1,0 +1,7 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 18 link-area transfer squid proxy 48
+scope=squid_proxy is procedural and not real squid validation
+squid_proxy_48 case=squid_proxy_48, transfer_mode=link_area_experimental, policy=inverse_length, rho_min=9.921446443e-01, rho_max=1.010514975e+00, lbm_max_v=6.503165700e-03, mpm_min_J=9.948466420e-01, area_scale=7.994082570e-01, bb_link_count=6606, active_reaction_particle_count=3299, cell_force_max_norm=0.000000000e+00, stable=True
+elapsed=219.37s
+[OK] Step 18 link-area transfer squid proxy 48 finished

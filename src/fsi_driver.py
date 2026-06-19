@@ -9,6 +9,7 @@ from .fsi_config import FSIDriverConfig
 from .geometry_config import GeometryConfig
 from .geometry import GeometrySampler3D
 from .lbm_fluid import LBMFluid3D
+from .link_area_coupling import LinkAreaMovingBoundaryCoupler3D
 from .moving_boundary_coupling import MovingBoundaryFSICoupler3D
 from .mpm_solid import MPMSolid3D
 from .projection import MPMToLBMProjector3D
@@ -70,6 +71,7 @@ class FSIDriver3D:
         self.projector = None
         self.penalty_coupler = None
         self.mb_coupler = None
+        self.link_area_coupler = None
 
     def initialize(self):
         t0 = time.perf_counter()
@@ -105,12 +107,22 @@ class FSIDriver3D:
                 beta_lbm=self.config.beta_lbm,
                 force_cap_lbm=self.config.penalty_force_cap_lbm,
             )
-        if self.config.coupling_mode == "moving_boundary":
+        if self.config.coupling_mode == "moving_boundary" and self.config.reaction_transfer_mode == "engineering":
             self.mb_coupler = MovingBoundaryFSICoupler3D(
                 self.sim,
                 reaction_scale=self.config.mb_reaction_scale,
                 force_cap_norm=self.config.mb_force_cap_norm,
                 phi_min=1.0e-6,
+            )
+        if self.config.coupling_mode == "moving_boundary" and self.config.reaction_transfer_mode == "link_area_experimental":
+            self.link_area_coupler = LinkAreaMovingBoundaryCoupler3D(
+                self.sim,
+                area_policy=self.config.link_area_policy,
+                reaction_scale=self.config.mb_reaction_scale,
+                force_cap_norm=self.config.mb_force_cap_norm,
+                phi_min=1.0e-6,
+                area_scale_min=self.config.link_area_scale_min,
+                area_scale_max=self.config.link_area_scale_max,
             )
 
         self.initialized = True
@@ -208,14 +220,27 @@ class FSIDriver3D:
         self.timing["lbm_step_time"] += time.perf_counter() - t0
 
         t0 = time.perf_counter()
-        for _ in range(self.config.mpm_substeps_per_lbm_step):
-            self.solid.clear_grid()
-            self.solid.p2g()
-            self.mb_coupler.clear_reaction_diagnostics()
-            self.mb_coupler.add_moving_boundary_reaction_to_mpm_grid(self.solid, self.lbm)
-            self.solid.grid_update()
-            self.solid.g2p()
-            self.total_mpm_substeps += 1
+        if self.config.reaction_transfer_mode == "engineering":
+            for _ in range(self.config.mpm_substeps_per_lbm_step):
+                self.solid.clear_grid()
+                self.solid.p2g()
+                self.mb_coupler.clear_reaction_diagnostics()
+                self.mb_coupler.add_moving_boundary_reaction_to_mpm_grid(self.solid, self.lbm)
+                self.solid.grid_update()
+                self.solid.g2p()
+                self.total_mpm_substeps += 1
+        elif self.config.reaction_transfer_mode == "link_area_experimental":
+            self.link_area_coupler.update_area_scale_from_lbm(self.lbm)
+            for _ in range(self.config.mpm_substeps_per_lbm_step):
+                self.solid.clear_grid()
+                self.solid.p2g()
+                self.link_area_coupler.clear_reaction_diagnostics()
+                self.link_area_coupler.add_link_area_reaction_to_mpm_grid(self.solid, self.lbm)
+                self.solid.grid_update()
+                self.solid.g2p()
+                self.total_mpm_substeps += 1
+        else:
+            raise ValueError(f"unsupported reaction_transfer_mode: {self.config.reaction_transfer_mode}")
         self.timing["mpm_substep_time"] += time.perf_counter() - t0
 
     def run(self):
@@ -262,6 +287,10 @@ class FSIDriver3D:
             mb_stats = self.mb_coupler.get_stats()
             active_reaction_particle_count = mb_stats["active_reaction_particle_count"]
             max_grid_reaction_norm = mb_stats["max_grid_reaction_norm"]
+        elif self.config.coupling_mode == "moving_boundary" and self.link_area_coupler is not None:
+            link_area_stats = self.link_area_coupler.get_stats()
+            active_reaction_particle_count = link_area_stats["active_reaction_particle_count"]
+            max_grid_reaction_norm = link_area_stats["max_grid_reaction_norm"]
         elif self.config.coupling_mode == "penalty" and self.penalty_coupler is not None:
             penalty_stats = self.penalty_coupler.get_stats()
             max_grid_reaction_norm = penalty_stats["max_reaction_grid_force_norm"]

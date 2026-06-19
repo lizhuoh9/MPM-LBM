@@ -4,7 +4,7 @@ The next steps should preserve the existing regression baselines and mode matrix
 
 ## Current Status
 
-Step 17 is completed as the diagnostic-only direction-wise and link-area proxy accounting stage once `STEP17_LINK_AREA_ACCOUNTING_REPORT.md` is accepted. The next implementation step should preserve this baseline before adding any opt-in experimental link-area reaction transfer.
+Step 18 is completed as the opt-in experimental link-area reaction transfer stage once `STEP18_LINK_AREA_TRANSFER_REPORT.md` is accepted. The next implementation step should preserve this baseline before longer experimental-transfer windows.
 
 ## Proposed Steps
 
@@ -16,7 +16,8 @@ Step 17 is completed as the diagnostic-only direction-wise and link-area proxy a
 | Step 15 | completed: moving-boundary reaction calibration and sharper momentum accounting | keep engineering-scale MVP path available for comparison |
 | Step 16 | completed: long-run validation and 64^3 moving_boundary feasibility | preserve Step 10 mode matrix, Step 13 geometry contracts, and Step 14 scale baselines |
 | Step 17 | completed: diagnostic-only direction-wise and link-area proxy accounting | no new FSI mode and no solver physics change |
-| Step 18 | proposed: experimental link-area reaction transfer mode | opt-in only; do not replace the engineering-scale moving_boundary path |
+| Step 18 | completed: experimental link-area reaction transfer mode | opt-in only; do not replace the engineering-scale moving_boundary path |
+| Step 19 | proposed: experimental link-area transfer long-run and 64^3 feasibility | preserve Step 18 comparison evidence before increasing scale |
 | Future | stricter sharp-interface momentum accounting and real geometry ingestion | Strict link-area momentum-conserving coupling remains future work. |
 
 ## Regression Rule
@@ -35,6 +36,7 @@ Step 14 larger-grid validation contracts
 Step 15 moving-boundary calibration contracts
 Step 16 long-run validation contracts
 Step 17 link-area momentum accounting contracts
+Step 18 experimental link-area transfer contracts
 ```
 
 New physics should be added behind explicit modes or new configs, not by silently changing validated behavior.
@@ -42,3 +44,5 @@ New physics should be added behind explicit modes or new configs, not by silentl
 Step 16 does not add new FSI physics. The 64^3 moving_boundary row is a feasibility baseline. squid_proxy is procedural and not real squid validation.
 
 Step 17 adds diagnostic-only direction-wise and link-area proxy accounting. The moving bounce-back formula is unchanged. MovingBoundaryFSICoupler3D is unchanged. These are diagnostic proxy policies, not final surface-area reconstruction.
+
+Step 18 adds an opt-in experimental link-area reaction transfer mode. The default moving_boundary reaction transfer remains engineering. The moving bounce-back formula is unchanged. MovingBoundaryFSICoupler3D is unchanged. The experimental transfer uses a bounded global area_scale from Step 17 link-area proxy accounting. This is not final strict momentum-conserving sharp-interface FSI. squid_proxy is procedural and not real squid validation.

@@ -1,0 +1,6 @@
+﻿[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 18 link-area transfer sanity
+step=5, area_policy=inverse_length, area_scale=7.763039470e-01, raw_area_scale=7.763039470e-01, bb_link_count=2458, rho_min=9.768382311e-01, rho_max=1.018712997e+00, lbm_max_v=1.370775886e-02, mpm_min_J=9.983738661e-01, active_reaction_particle_count=3520, cell_force_max_norm=0.000000000e+00, stable=True
+elapsed=285.53s
+[OK] Step 18 link-area transfer sanity finished
