@@ -1,0 +1,6 @@
+{
+  "case": "voxel_sphere",
+  "geometry_config_path": "configs/step22_quality_voxel_sphere.json",
+  "particles_per_axis_hint": [24, 32, 40],
+  "projection_n_grid": 32
+}

@@ -4,7 +4,7 @@ The next steps should preserve the existing regression baselines and mode matrix
 
 ## Current Status
 
-Step 21 is completed as synthetic imported geometry scale validation. The next implementation step should preserve the imported-geometry evidence before any real squid geometry, actuation, or final strict sharp-interface FSI claims.
+Step 22 is completed as diagnostic geometry QA and import robustness for small synthetic imported geometry. The next implementation step should preserve the imported-geometry evidence before any real squid geometry, actuation, or final strict sharp-interface FSI claims.
 
 ## Proposed Steps
 
@@ -20,6 +20,7 @@ Step 21 is completed as synthetic imported geometry scale validation. The next i
 | Step 19 | completed: experimental link-area transfer long-run and 64^3 feasibility | preserve Step 18 comparison evidence before increasing scale |
 | Step 20 | completed: mesh/voxel geometry import pipeline | synthetic fixtures only; do not claim real squid validation |
 | Step 21 | completed: imported geometry scale validation | synthetic fixtures only; 48^3 mode validation and 64^3 feasibility before real geometry |
+| Step 22 | completed: geometry quality checks and import robustness | diagnostic QA only; no production mesh repair or automatic remeshing |
 | Future | stricter sharp-interface momentum accounting and real geometry ingestion | Strict link-area momentum-conserving coupling remains future work. |
 
 ## Regression Rule
@@ -42,6 +43,7 @@ Step 18 experimental link-area transfer contracts
 Step 19 link-area long-run validation contracts
 Step 20 geometry import contracts
 Step 21 imported geometry scale validation contracts
+Step 22 geometry quality and import robustness contracts
 ```
 
 New physics should be added behind explicit modes or new configs, not by silently changing validated behavior.
@@ -57,3 +59,5 @@ Step 19 validates the opt-in link_area_experimental transfer over longer windows
 Step 20 adds a small synthetic mesh and voxel geometry import pipeline. Step 20 is a geometry-ingestion scaffold, not real squid validation. Imported geometry supports voxel and mesh inputs through GeometryConfig and GeometrySampler3D. The Step 20 mesh path is limited to small synthetic fixtures and is not production mesh repair. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 21 carries Step 20 synthetic imported voxel and mesh geometries to 48^3 mode validation and 64^3 feasibility. Step 21 is synthetic imported geometry scale validation, not real squid validation. Imported geometry remains limited to small synthetic voxel and mesh fixtures. The Step 21 mesh path is not production mesh repair. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 22 adds diagnostic quality checks for imported mesh and voxel geometry. Step 22 is a geometry QA and import robustness layer, not real squid validation. Imported geometry remains limited to small synthetic voxel and mesh fixtures. The Step 22 mesh path is not production mesh repair or automatic remeshing. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.

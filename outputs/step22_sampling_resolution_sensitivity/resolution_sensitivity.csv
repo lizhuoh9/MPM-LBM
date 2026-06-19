@@ -1,0 +1,7 @@
+case,geometry_type,particles_per_axis_hint,mesh_voxel_resolution,geometry_volume,projected_mass,relative_mass_error,active_cell_count,occupied_count,stable,notes
+voxel_sphere,voxel,24,32,0.09944105598543468,0.09944106638431549,7.492459027300498e-08,5286,3016,True,Step 22 sampling and projection resolution sensitivity
+voxel_sphere,voxel,32,32,0.09944105598543468,0.09944111853837967,5.993967221840398e-07,5286,3016,True,Step 22 sampling and projection resolution sensitivity
+voxel_sphere,voxel,40,32,0.09944105598543468,0.09944111108779907,5.244721319110348e-07,5286,3016,True,Step 22 sampling and projection resolution sensitivity
+mesh_ellipsoid,mesh,24,24,0.13391715976331361,0.13391698896884918,1.2239863946123235e-06,6415,4400,True,Step 22 sampling and projection resolution sensitivity
+mesh_ellipsoid,mesh,32,32,0.13391715976331361,0.13391703367233276,8.901719233544171e-07,6415,4400,True,Step 22 sampling and projection resolution sensitivity
+mesh_ellipsoid,mesh,40,48,0.13391715976331361,0.13391712307929993,2.2254298083860427e-07,6415,4400,True,Step 22 sampling and projection resolution sensitivity

@@ -50,6 +50,9 @@ class FSIDriverConfig:
     output_interval: int = 10
     write_vtk: bool = True
     write_particles: bool = True
+    quality_check_enabled: bool = False
+    quality_check_strict: bool = False
+    quality_report_path: Optional[str] = None
 
     def __post_init__(self):
         if self.coupling_mode not in VALID_COUPLING_MODES:

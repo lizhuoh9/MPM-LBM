@@ -1,0 +1,4 @@
+case,geometry_type,quality_kind,strict_pass,expected_failure,loader_expected_failure,severity,boundary_edge_count,nonmanifold_edge_count,degenerate_face_count,occupied_count,connected_component_count,reasons,stable,notes
+bad_nonwatertight,mesh,mesh,False,True,False,error,4,0,0,0,0,mesh has boundary edges,True,expected strict quality-gate failure for intentionally bad Step 22 fixture
+bad_degenerate,mesh,mesh,False,True,False,error,3,1,1,0,0,mesh has degenerate faces; mesh has boundary edges; mesh has nonmanifold edges,True,expected strict quality-gate failure for intentionally bad Step 22 fixture
+bad_empty_voxel,voxel,voxel,False,True,True,error,0,0,0,0,0,voxel occupancy is empty; voxel occupancy has no connected components,True,expected strict quality-gate failure for intentionally bad Step 22 fixture

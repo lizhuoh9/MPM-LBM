@@ -1,0 +1,11 @@
+{
+  "geometry_type": "voxel",
+  "n_particles": 4096,
+  "geometry_file": "data/geometry_fixtures/voxel_sphere.npy",
+  "metadata_file": "data/geometry_fixtures/voxel_sphere_metadata.json",
+  "voxel_threshold": 0.5,
+  "p_rho": 1.0,
+  "deterministic": true,
+  "quality_check_enabled": false,
+  "quality_check_strict": false
+}

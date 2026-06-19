@@ -11,6 +11,8 @@ from .fsi_driver import FSIDriver3D
 from .geometry_config import GeometryConfig
 from .geometry import GeometrySampler3D
 from .geometry_import import ImportedGeometrySampler3D
+from .geometry_quality import GeometryQualityGate, analyze_geometry_config
+from .mesh_quality import analyze_mesh
 from .mesh_io import load_obj, mesh_bounds, normalize_vertices, write_obj
 from .mpm_config import MPMConfig
 from .mpm_solid import MPMSolid3D
@@ -20,6 +22,7 @@ from .projection import MPMToLBMProjector3D
 from .sim_config import UnifiedSimConfig
 from .units import GridUnitMapper
 from .voxel_io import VoxelGeometry, load_voxel_geometry, save_voxel_geometry, voxel_centers_to_points
+from .voxel_quality import analyze_voxel_occupancy
 from .calibration import classify_calibration_row, choose_recommended_row, write_calibration_summary
 
 __all__ = [
@@ -34,6 +37,9 @@ __all__ = [
     "GeometryConfig",
     "GeometrySampler3D",
     "ImportedGeometrySampler3D",
+    "GeometryQualityGate",
+    "analyze_geometry_config",
+    "analyze_mesh",
     "load_obj",
     "mesh_bounds",
     "normalize_vertices",
@@ -49,6 +55,7 @@ __all__ = [
     "load_voxel_geometry",
     "save_voxel_geometry",
     "voxel_centers_to_points",
+    "analyze_voxel_occupancy",
     "classify_calibration_row",
     "choose_recommended_row",
     "write_calibration_summary",

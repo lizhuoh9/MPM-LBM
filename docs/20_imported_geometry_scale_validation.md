@@ -82,3 +82,16 @@ Primary outputs:
 ## Decision
 
 Step 21 supports proceeding to Step 22 planning with the same constraints: no real squid validation claim, no production mesh repair claim, and no final strict momentum-conserving sharp-interface FSI claim.
+
+## Step 22 Follow-On
+
+Step 22 adds diagnostic quality checks for imported mesh and voxel geometry.
+Step 22 is a geometry QA and import robustness layer, not real squid validation.
+
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+Imported geometry remains limited to small synthetic voxel and mesh fixtures.
+The Step 22 mesh path is not production mesh repair or automatic remeshing.
+
+Step 22 validates the import path with mesh quality sanity, voxel quality sanity, strict expected-failure bad fixtures, sampling resolution sensitivity diagnostics, and optional `FSIDriver3D` geometry quality reports. It does not add new FSI physics or change Step 21 coupling behavior.

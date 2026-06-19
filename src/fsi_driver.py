@@ -1,3 +1,5 @@
+from dataclasses import replace
+import json
 import os
 import time
 
@@ -8,6 +10,7 @@ from .diagnostics import FSIDiagnostics3D
 from .fsi_config import FSIDriverConfig
 from .geometry_config import GeometryConfig
 from .geometry import GeometrySampler3D
+from .geometry_quality import GeometryQualityGate, analyze_geometry_config
 from .lbm_fluid import LBMFluid3D
 from .link_area_coupling import LinkAreaMovingBoundaryCoupler3D
 from .moving_boundary_coupling import MovingBoundaryFSICoupler3D
@@ -72,6 +75,7 @@ class FSIDriver3D:
         self.penalty_coupler = None
         self.mb_coupler = None
         self.link_area_coupler = None
+        self.geometry_quality_report = None
 
     def initialize(self):
         t0 = time.perf_counter()
@@ -95,6 +99,7 @@ class FSIDriver3D:
             self.solid.init_box()
         else:
             geometry_config = self._make_geometry_config()
+            self._run_geometry_quality_check(geometry_config)
             cloud = GeometrySampler3D(geometry_config).sample_particles()
             self.solid.init_from_numpy(cloud["x"], cloud["vol0"], cloud["mass"])
         target_u_norm = self.mapper.velocity_lbm_to_norm(self.config.target_u_lbm)
@@ -149,7 +154,41 @@ class FSIDriver3D:
                 "geometry_config_path n_particles does not match FSIDriverConfig.n_particles: "
                 f"{geometry_config.n_particles} != {self.config.n_particles}"
             )
+        if self.config.quality_check_enabled or self.config.quality_check_strict or self.config.quality_report_path:
+            geometry_config = replace(
+                geometry_config,
+                quality_check_enabled=bool(self.config.quality_check_enabled),
+                quality_check_strict=bool(self.config.quality_check_strict),
+                quality_report_path=self.config.quality_report_path,
+            )
         return geometry_config
+
+    def _run_geometry_quality_check(self, geometry_config):
+        if not geometry_config.quality_check_enabled:
+            return None
+
+        report = analyze_geometry_config(geometry_config)
+        gate = GeometryQualityGate(strict=geometry_config.quality_check_strict)
+        gate_result = gate.evaluate(report)
+        payload = {
+            "report": report,
+            "gate": gate_result,
+        }
+        self.geometry_quality_report = payload
+
+        report_path = geometry_config.quality_report_path
+        if report_path is None:
+            report_path = os.path.join(self.out_dir, "geometry_quality_report.json")
+        elif not os.path.isabs(report_path):
+            report_path = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")), report_path)
+        os.makedirs(os.path.dirname(report_path), exist_ok=True)
+        with open(report_path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2, sort_keys=True)
+            f.write("\n")
+
+        if not gate_result["pass"]:
+            raise ValueError("Geometry quality gate failed: " + "; ".join(gate_result["reasons"]))
+        return payload
 
     def step_once(self):
         if not self.initialized:

@@ -22,8 +22,11 @@ This is a lightweight API reference for the current prototype. It is not autogen
 - geometry types: `box`, `ellipsoid`, `squid_proxy`, `voxel`, `mesh`
 - main procedural fields: `geometry_type`, `n_particles`, `box_min`, `box_max`, `center`, `ellipsoid_radii`, `mantle_center`, `mantle_radii`, `head_center`, `head_radii`, `arm_length`, `arm_radius`, `fin_radius`
 - main import fields: `geometry_file`, `metadata_file`, `normalize_to_domain`, `preserve_aspect_ratio`, `padding`, `voxel_threshold`, `voxel_spacing`, `mesh_inside_method`, `mesh_voxel_resolution`
+- main quality fields: `quality_check_enabled`, `quality_check_strict`, `quality_report_path`
 - main methods: `from_json`, `to_dict`
 - mode: used by Step 13 procedural geometry baselines, Step 20 imported geometry baselines, and non-box `FSIDriver3D` initialization
+
+Step 22 adds diagnostic quality checks for imported mesh and voxel geometry. Step 22 is a geometry QA and import robustness layer, not real squid validation. Imported geometry remains limited to small synthetic voxel and mesh fixtures. The Step 22 mesh path is not production mesh repair or automatic remeshing.
 
 ## GeometrySampler3D
 
@@ -86,6 +89,15 @@ This is a lightweight API reference for the current prototype. It is not autogen
 Step 20 boundary: The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 Step 21 boundary: The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
+## Geometry Quality Diagnostics
+
+- `analyze_mesh(vertices, faces, eps=1.0e-12)`: CPU/NumPy diagnostic mesh report for counts, bounds, degenerate faces, edge topology proxies, surface area, and volume proxies.
+- `analyze_voxel_occupancy(occupancy, metadata=None)`: CPU/NumPy diagnostic voxel report for occupancy count, connected components, occupied bounds, surface voxels, and interior voxels.
+- `analyze_geometry_config(config)`: loads the configured geometry and returns the matching mesh or voxel diagnostic report.
+- `GeometryQualityGate(strict=False)`: evaluates reports as warnings in non-strict mode and as errors for required strict bad-geometry fixtures.
+
+The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
 ## MomentumAccounting3D
 
 - purpose: diagnostic-only moving_boundary momentum accounting
@@ -111,7 +123,7 @@ Step 21 boundary: The default reaction_transfer_mode remains engineering. The mo
 ## FSIDriverConfig
 
 - purpose: common JSON-loadable driver configuration
-- main fields: `coupling_mode`, `reaction_transfer_mode`, `link_area_policy`, `link_area_scale_min`, `link_area_scale_max`, `geometry_type`, `geometry_config_path`, `n_grid`, `n_particles`, `n_lbm_steps`, `mpm_substeps_per_lbm_step`, `mpm_dt`, `target_u_lbm`, `gravity`, `beta_lbm`, `penalty_force_cap_lbm`, `mb_reaction_scale`, `mb_force_cap_norm`
+- main fields: `coupling_mode`, `reaction_transfer_mode`, `link_area_policy`, `link_area_scale_min`, `link_area_scale_max`, `geometry_type`, `geometry_config_path`, `quality_check_enabled`, `quality_check_strict`, `quality_report_path`, `n_grid`, `n_particles`, `n_lbm_steps`, `mpm_substeps_per_lbm_step`, `mpm_dt`, `target_u_lbm`, `gravity`, `beta_lbm`, `penalty_force_cap_lbm`, `mb_reaction_scale`, `mb_force_cap_norm`
 - main methods: `from_json`, `to_dict`, `make_unified_sim_config`
 - mode: selects none, penalty, or moving_boundary, selects procedural or imported geometry initialization through `geometry_type`, and selects moving_boundary reaction transfer through `reaction_transfer_mode`
 
@@ -121,6 +133,7 @@ Step 21 boundary: The default reaction_transfer_mode remains engineering. The mo
 - main fields: `config`, `sim`, `mapper`, `lbm`, `solid`, `projector`, `penalty_coupler`, `mb_coupler`, `link_area_coupler`, `diagnostics_rows`, `timing`
 - main methods: `initialize`, `step_once`, `run`, `collect_diagnostics`, `export_outputs`, `save_timeseries`, `final_diagnostics`, `performance_row`
 - mode: dispatches to `_step_none`, `_step_penalty`, or `_step_moving_boundary`
+- quality gate: when enabled by config, writes `geometry_quality_report.json` before imported-geometry sampling and raises `ValueError` only for strict gate failures
 
 ## FSIDiagnostics3D
 

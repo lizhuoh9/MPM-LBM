@@ -1,0 +1,7 @@
+{
+  "case": "mesh_ellipsoid",
+  "geometry_config_path": "configs/step22_quality_mesh_ellipsoid.json",
+  "particles_per_axis_hint": [24, 32, 40],
+  "mesh_voxel_resolution": [24, 32, 48],
+  "projection_n_grid": 32
+}

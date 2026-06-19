@@ -1,0 +1,14 @@
+{
+  "geometry_type": "mesh",
+  "n_particles": 4096,
+  "geometry_file": "data/geometry_fixtures/bad_degenerate.obj",
+  "mesh_inside_method": "ray_cast",
+  "mesh_voxel_resolution": 32,
+  "normalize_to_domain": true,
+  "preserve_aspect_ratio": true,
+  "padding": 0.05,
+  "p_rho": 1.0,
+  "deterministic": true,
+  "quality_check_enabled": true,
+  "quality_check_strict": true
+}

@@ -1,0 +1,2 @@
+case,geometry_type,quality_kind,pass,severity,shape_x,shape_y,shape_z,occupied_count,occupied_fraction,empty,bounds_index_min_x,bounds_index_min_y,bounds_index_min_z,bounds_index_max_x,bounds_index_max_y,bounds_index_max_z,bbox_size_x,bbox_size_y,bbox_size_z,touches_domain_boundary,connected_component_count,largest_component_size,largest_component_fraction,surface_voxel_count,interior_voxel_count,stable,notes
+voxel_sphere,voxel,voxel,True,ok,32,32,32,3016,0.092041015625,False,7,7,7,24,24,24,18,18,18,False,1,3016,1.0,768,2248,True,diagnostic voxel occupancy report

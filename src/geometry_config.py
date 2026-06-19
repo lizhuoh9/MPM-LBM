@@ -64,6 +64,9 @@ class GeometryConfig:
     p_rho: float = 1.0
     particles_per_axis_hint: int = 32
     deterministic: bool = True
+    quality_check_enabled: bool = False
+    quality_check_strict: bool = False
+    quality_report_path: Optional[str] = None
 
     def __post_init__(self):
         if self.geometry_type not in VALID_GEOMETRY_TYPES:

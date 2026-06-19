@@ -1,0 +1,134 @@
+{
+  "bad_degenerate": {
+    "gate": {
+      "pass": false,
+      "reasons": [
+        "mesh has degenerate faces",
+        "mesh has boundary edges",
+        "mesh has nonmanifold edges"
+      ],
+      "severity": "error",
+      "strict": true,
+      "warnings": []
+    },
+    "report": {
+      "boundary_edge_count": 3,
+      "bounds_max_x": 0.95,
+      "bounds_max_y": 0.95,
+      "bounds_max_z": 0.95,
+      "bounds_min_x": 0.05,
+      "bounds_min_y": 0.05,
+      "bounds_min_z": 0.05,
+      "bounds_span_x": 0.8999999999999999,
+      "bounds_span_y": 0.8999999999999999,
+      "bounds_span_z": 0.8999999999999999,
+      "degenerate_face_count": 1,
+      "duplicate_vertex_count": 0,
+      "euler_characteristic": 2,
+      "faces_count": 2,
+      "geometry_type": "mesh",
+      "has_finite_vertices": true,
+      "has_valid_face_indices": true,
+      "is_watertight_proxy": false,
+      "nonmanifold_edge_count": 1,
+      "notes": "diagnostic proxy only; no production mesh repair or automatic remeshing",
+      "orientation_consistent_proxy": true,
+      "quality_kind": "mesh",
+      "scope_note": "diagnostic mesh quality proxy; not production mesh repair or automatic remeshing",
+      "source_file": "data/geometry_fixtures/bad_degenerate.obj",
+      "stable": false,
+      "surface_area": 0.4049999999999999,
+      "vertices_count": 4,
+      "volume_abs": 0.00675,
+      "volume_signed": -0.00675,
+      "zero_area_face_count": 1
+    }
+  },
+  "bad_empty_voxel": {
+    "gate": {
+      "pass": false,
+      "reasons": [
+        "voxel occupancy is empty",
+        "voxel occupancy has no connected components"
+      ],
+      "severity": "error",
+      "strict": true,
+      "warnings": [
+        "voxel occupied fraction is outside the recommended diagnostic range"
+      ]
+    },
+    "report": {
+      "bbox_size_x": 0,
+      "bbox_size_y": 0,
+      "bbox_size_z": 0,
+      "bounds_index_max_x": -1,
+      "bounds_index_max_y": -1,
+      "bounds_index_max_z": -1,
+      "bounds_index_min_x": -1,
+      "bounds_index_min_y": -1,
+      "bounds_index_min_z": -1,
+      "connected_component_count": 0,
+      "empty": true,
+      "geometry_type": "voxel",
+      "interior_voxel_count": 0,
+      "largest_component_fraction": 0.0,
+      "largest_component_size": 0,
+      "loader_error": "occupancy must contain at least one occupied voxel",
+      "notes": "diagnostic voxel occupancy report",
+      "occupied_count": 0,
+      "occupied_fraction": 0.0,
+      "quality_kind": "voxel",
+      "scope_note": "diagnostic voxel quality report; not real squid validation",
+      "shape_x": 8,
+      "shape_y": 8,
+      "shape_z": 8,
+      "source_file": "data/geometry_fixtures/bad_empty_voxel.npy",
+      "stable": false,
+      "surface_voxel_count": 0,
+      "touches_domain_boundary": false
+    }
+  },
+  "bad_nonwatertight": {
+    "gate": {
+      "pass": false,
+      "reasons": [
+        "mesh has boundary edges"
+      ],
+      "severity": "error",
+      "strict": true,
+      "warnings": []
+    },
+    "report": {
+      "boundary_edge_count": 4,
+      "bounds_max_x": 0.95,
+      "bounds_max_y": 0.95,
+      "bounds_max_z": 0.95,
+      "bounds_min_x": 0.05,
+      "bounds_min_y": 0.05,
+      "bounds_min_z": 0.05,
+      "bounds_span_x": 0.8999999999999999,
+      "bounds_span_y": 0.8999999999999999,
+      "bounds_span_z": 0.8999999999999999,
+      "degenerate_face_count": 0,
+      "duplicate_vertex_count": 0,
+      "euler_characteristic": 1,
+      "faces_count": 2,
+      "geometry_type": "mesh",
+      "has_finite_vertices": true,
+      "has_valid_face_indices": true,
+      "is_watertight_proxy": false,
+      "nonmanifold_edge_count": 0,
+      "notes": "diagnostic proxy only; no production mesh repair or automatic remeshing",
+      "orientation_consistent_proxy": false,
+      "quality_kind": "mesh",
+      "scope_note": "diagnostic mesh quality proxy; not production mesh repair or automatic remeshing",
+      "source_file": "data/geometry_fixtures/bad_nonwatertight.obj",
+      "stable": true,
+      "surface_area": 0.8099999999999998,
+      "vertices_count": 4,
+      "volume_abs": 0.013500000000000002,
+      "volume_signed": 1.734723475976807e-18,
+      "zero_area_face_count": 0
+    }
+  }
+}

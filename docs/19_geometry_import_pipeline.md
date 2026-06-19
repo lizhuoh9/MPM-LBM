@@ -96,3 +96,21 @@ Primary Step 21 outputs:
 - `outputs/step21_imported_geometry_64_feasibility/imported_geometry_64_results.csv`
 - `outputs/step21_imported_geometry_projection_quality/projection_quality.csv`
 - `outputs/step21_imported_geometry_scale_summary/step21_summary.json`
+
+## Step 22 Follow-On
+
+Step 22 adds diagnostic quality checks for imported mesh and voxel geometry.
+Step 22 is a geometry QA and import robustness layer, not real squid validation.
+
+The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+Imported geometry remains limited to small synthetic voxel and mesh fixtures.
+The Step 22 mesh path is not production mesh repair or automatic remeshing.
+
+Primary Step 22 outputs:
+
+- `outputs/step22_mesh_quality_sanity/mesh_quality_results.csv`
+- `outputs/step22_voxel_quality_sanity/voxel_quality_results.csv`
+- `outputs/step22_bad_geometry_failure_checks/bad_geometry_results.csv`
+- `outputs/step22_sampling_resolution_sensitivity/resolution_sensitivity.csv`
+- `outputs/step22_driver_quality_gate_smoke/quality_gate_driver_results.csv`
+- `outputs/step22_artifact_manifest/artifact_summary.json`
