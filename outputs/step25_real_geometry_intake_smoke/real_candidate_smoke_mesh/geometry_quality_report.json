@@ -1,0 +1,41 @@
+{
+  "gate": {
+    "pass": true,
+    "reasons": [],
+    "severity": "ok",
+    "strict": true,
+    "warnings": []
+  },
+  "report": {
+    "boundary_edge_count": 0,
+    "bounds_max_x": 0.92,
+    "bounds_max_y": 0.92,
+    "bounds_max_z": 0.92,
+    "bounds_min_x": 0.08,
+    "bounds_min_y": 0.08,
+    "bounds_min_z": 0.08,
+    "bounds_span_x": 0.8400000000000001,
+    "bounds_span_y": 0.8400000000000001,
+    "bounds_span_z": 0.8400000000000001,
+    "degenerate_face_count": 0,
+    "duplicate_vertex_count": 0,
+    "euler_characteristic": 2,
+    "faces_count": 12,
+    "geometry_type": "mesh",
+    "has_finite_vertices": true,
+    "has_valid_face_indices": true,
+    "is_watertight_proxy": true,
+    "nonmanifold_edge_count": 0,
+    "notes": "diagnostic proxy only; no production mesh repair or automatic remeshing",
+    "orientation_consistent_proxy": true,
+    "quality_kind": "mesh",
+    "scope_note": "diagnostic mesh quality proxy; not production mesh repair or automatic remeshing",
+    "source_file": "data/geometry_fixtures/step25_real_candidate_smoke_mesh.obj",
+    "stable": true,
+    "surface_area": 4.233600000000002,
+    "vertices_count": 8,
+    "volume_abs": 0.7056,
+    "volume_signed": -0.5927040000000001,
+    "zero_area_face_count": 0
+  }
+}

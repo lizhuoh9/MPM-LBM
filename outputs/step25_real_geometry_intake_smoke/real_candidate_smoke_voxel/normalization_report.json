@@ -1,0 +1,58 @@
+{
+  "candidate_id": "real_candidate_smoke_voxel",
+  "domain_max": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "domain_min": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "geometry_type": "voxel",
+  "normalization_changed_coordinates": false,
+  "normalized_bounds_max": [
+    0.78125,
+    0.78125,
+    0.78125
+  ],
+  "normalized_bounds_min": [
+    0.21875,
+    0.21875,
+    0.21875
+  ],
+  "normalized_inside_domain": true,
+  "notes": "voxel candidate normalization records occupancy-to-domain mapping only; source .npy is unchanged",
+  "padding": 0.08,
+  "preserve_aspect_ratio": true,
+  "remeshing_performed": false,
+  "repair_performed": false,
+  "scale_factor": 1.0,
+  "source_bounds_max": [
+    25.0,
+    25.0,
+    25.0
+  ],
+  "source_bounds_min": [
+    7.0,
+    7.0,
+    7.0
+  ],
+  "source_file_fingerprint": {
+    "extension": ".npy",
+    "filename": "voxel_sphere.npy",
+    "is_large": false,
+    "mtime_policy_note": "mtime excluded from fingerprint; content hash and exact size define identity",
+    "path": "data/geometry_fixtures/voxel_sphere.npy",
+    "path_policy": "repo_relative",
+    "sha256": "7df9048eb5967888f0788817414b05235fe4a67367198ad82fdb571d92e3b01f",
+    "size_bytes": 32896
+  },
+  "source_file_modified": false,
+  "translation": [
+    0.0,
+    0.0,
+    0.0
+  ]
+}

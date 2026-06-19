@@ -115,3 +115,21 @@ Imported geometry remains limited to small synthetic voxel and mesh fixtures.
 The Step 24 mesh path is not production mesh repair or automatic remeshing.
 
 The Step 24 role is to verify that good synthetic imported geometry passes strict quality gating during selected longer moving_boundary windows before opening a controlled real geometry intake contract.
+
+## Decision For Step 25
+
+Step 25 is controlled real geometry intake, not real squid validation.
+Step 25 performs geometry QA, normalization, fingerprinting, sampling reproducibility, and projection-only smoke diagnostics.
+Step 25 does not implement squid swimming.
+Step 25 does not implement squid actuation.
+Step 25 does not implement new FSI physics.
+Step 25 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+Candidate intake does not perform production mesh repair or automatic remeshing.
+Raw large real geometry files and scan data are not committed.
+
+The Step 25 role is to define candidate descriptors, manifest/fingerprint checks, strict geometry QA, normalization reports, deterministic sampling reproducibility, and projection-only smoke diagnostics before any short driver feasibility step.

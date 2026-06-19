@@ -1,0 +1,18 @@
+{
+  "candidate_id": "real_candidate_smoke_voxel",
+  "geometry_type": "voxel",
+  "geometry_volume_first": 0.09944105598543468,
+  "geometry_volume_second": 0.09944105598543468,
+  "mass_hash_first": "0d777e06ff546f71450116b73f89bd669c9ae2457d698d75866e39e20a286758",
+  "mass_hash_second": "0d777e06ff546f71450116b73f89bd669c9ae2457d698d75866e39e20a286758",
+  "mass_sum_first": 0.0994410589337349,
+  "mass_sum_second": 0.0994410589337349,
+  "particle_count_first": 4096,
+  "particle_count_second": 4096,
+  "relative_mass_error": 0.0,
+  "reproducibility_pass": true,
+  "sampled_position_hash_first": "4ee9cf0961092f74b14d09233559ef7ded2100f8b1e0bc7c896232aa740d4d40",
+  "sampled_position_hash_second": "4ee9cf0961092f74b14d09233559ef7ded2100f8b1e0bc7c896232aa740d4d40",
+  "vol0_hash_first": "0d777e06ff546f71450116b73f89bd669c9ae2457d698d75866e39e20a286758",
+  "vol0_hash_second": "0d777e06ff546f71450116b73f89bd669c9ae2457d698d75866e39e20a286758"
+}

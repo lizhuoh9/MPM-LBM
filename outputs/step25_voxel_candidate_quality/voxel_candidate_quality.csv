@@ -1,0 +1,2 @@
+candidate_id,geometry_type,quality_kind,quality_pass,quality_severity,quality_warnings_count,quality_reasons_count,quality_report_path,occupied_count,connected_component_count,largest_component_fraction,touches_domain_boundary
+real_candidate_smoke_voxel,voxel,voxel,True,ok,0,0,outputs/step25_voxel_candidate_quality/real_candidate_smoke_voxel/geometry_quality_report.json,3016,1,1.0,False

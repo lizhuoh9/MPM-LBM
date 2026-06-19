@@ -1,0 +1,2 @@
+candidate_id,geometry_type,quality_kind,quality_pass,quality_severity,quality_warnings_count,quality_reasons_count,quality_report_path,vertices_count,faces_count,has_valid_face_indices,degenerate_face_count,boundary_edge_count,nonmanifold_edge_count
+real_candidate_smoke_mesh,mesh,mesh,True,ok,0,0,outputs/step25_mesh_candidate_quality/real_candidate_smoke_mesh/geometry_quality_report.json,8,12,True,0,0,0

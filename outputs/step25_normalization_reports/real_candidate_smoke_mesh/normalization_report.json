@@ -1,0 +1,58 @@
+{
+  "candidate_id": "real_candidate_smoke_mesh",
+  "domain_max": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "domain_min": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "geometry_type": "mesh",
+  "normalization_changed_coordinates": true,
+  "normalized_bounds_max": [
+    0.92,
+    0.92,
+    0.92
+  ],
+  "normalized_bounds_min": [
+    0.08,
+    0.08,
+    0.08
+  ],
+  "normalized_inside_domain": true,
+  "notes": "mesh coordinates normalized in memory for intake reporting only; no repair or remeshing",
+  "padding": 0.08,
+  "preserve_aspect_ratio": true,
+  "remeshing_performed": false,
+  "repair_performed": false,
+  "scale_factor": 0.8400000000000001,
+  "source_bounds_max": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "source_bounds_min": [
+    -0.5,
+    -0.5,
+    -0.5
+  ],
+  "source_file_fingerprint": {
+    "extension": ".obj",
+    "filename": "step25_real_candidate_smoke_mesh.obj",
+    "is_large": false,
+    "mtime_policy_note": "mtime excluded from fingerprint; content hash and exact size define identity",
+    "path": "data/geometry_fixtures/step25_real_candidate_smoke_mesh.obj",
+    "path_policy": "repo_relative",
+    "sha256": "d5a3dd8a698a81951052c6fc3aeb1dd37f7a3c205c07b23d514a3b6a77c2c126",
+    "size_bytes": 323
+  },
+  "source_file_modified": false,
+  "translation": [
+    0.5,
+    0.5,
+    0.5
+  ]
+}

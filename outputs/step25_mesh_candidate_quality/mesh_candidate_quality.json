@@ -1,0 +1,25 @@
+{
+  "row_count": 1,
+  "rows": [
+    {
+      "boundary_edge_count": 0,
+      "candidate_id": "real_candidate_smoke_mesh",
+      "connected_component_count": 0,
+      "degenerate_face_count": 0,
+      "faces_count": 12,
+      "geometry_type": "mesh",
+      "has_valid_face_indices": true,
+      "largest_component_fraction": 0.0,
+      "nonmanifold_edge_count": 0,
+      "occupied_count": 0,
+      "quality_kind": "mesh",
+      "quality_pass": true,
+      "quality_reasons_count": 0,
+      "quality_report_path": "outputs/step25_mesh_candidate_quality/real_candidate_smoke_mesh/geometry_quality_report.json",
+      "quality_severity": "ok",
+      "quality_warnings_count": 0,
+      "touches_domain_boundary": false,
+      "vertices_count": 8
+    }
+  ]
+}

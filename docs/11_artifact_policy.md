@@ -70,3 +70,14 @@ Step 13 adds small committed geometry baselines:
 - driver mode diagnostics for `squid_proxy`
 
 Geometry particle clouds, voxel masks, and VTK files can grow quickly. Small Step 13 baseline outputs may be committed because they are part of the reproducibility contract. Large ad-hoc geometry experiments should go under `outputs/experiments/` or `outputs/scratch/`.
+
+## Step 25 Candidate Intake Artifacts
+
+Step 25 commits small descriptor, CSV, JSON, Markdown, and log artifacts only. Step 25 does not write `.vtr` outputs or particle `.npy` outputs.
+
+Step 25 is controlled real geometry intake, not real squid validation.
+Step 25 performs geometry QA, normalization, fingerprinting, sampling reproducibility, and projection-only smoke diagnostics.
+Candidate intake does not perform production mesh repair or automatic remeshing.
+Raw large real geometry files and scan data are not committed.
+
+The `data/real_geometry_candidates/` directory is ignored by default except for `README.md`, `.gitkeep`, and `*_descriptor.json`. Local raw real geometry, scan data, private anatomy, and proprietary CAD should stay out of committed artifacts.

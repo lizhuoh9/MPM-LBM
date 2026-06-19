@@ -140,6 +140,24 @@ The Step 24 mesh path is not production mesh repair or automatic remeshing.
 
 Step 24 applies strict mode only to good synthetic imported fixtures that already have Step 22 and Step 23 evidence. It does not change geometry diagnostics into production mesh repair or automatic remeshing.
 
+## Step 25 Controlled Intake
+
+Step 25 is controlled real geometry intake, not real squid validation.
+Step 25 performs geometry QA, normalization, fingerprinting, sampling reproducibility, and projection-only smoke diagnostics.
+Step 25 does not implement squid swimming.
+Step 25 does not implement squid actuation.
+Step 25 does not implement new FSI physics.
+Step 25 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+Candidate intake does not perform production mesh repair or automatic remeshing.
+Raw large real geometry files and scan data are not committed.
+
+Step 25 reuses the Step 22 strict geometry quality diagnostics for controlled candidate descriptors. It records quality reports and normalization reports; it does not repair the candidate geometry.
+
 ## Limitations
 
 - no real squid geometry validation;

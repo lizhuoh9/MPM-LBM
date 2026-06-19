@@ -28,6 +28,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 22 diagnostic mesh/voxel geometry quality checks and import robustness baselines
 - Step 23 quality-gated synthetic imported geometry scale validation with quality reports for every driver row
 - Step 24 strict quality-gated synthetic imported geometry long-run validation for selected moving_boundary rows
+- Step 25 controlled real geometry candidate intake with manifest, fingerprinting, normalization reports, deterministic sampling reproducibility, and projection-only smoke diagnostics
 
 ## Not Implemented
 
@@ -39,6 +40,22 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - production mesh repair
 - final strict momentum-conserving sharp-interface FSI
 - production-grade solver readiness
+
+## Step 25 Intake Boundary
+
+Step 25 is controlled real geometry intake, not real squid validation.
+Step 25 performs geometry QA, normalization, fingerprinting, sampling reproducibility, and projection-only smoke diagnostics.
+Step 25 does not implement squid swimming.
+Step 25 does not implement squid actuation.
+Step 25 does not implement new FSI physics.
+Step 25 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+Candidate intake does not perform production mesh repair or automatic remeshing.
+Raw large real geometry files and scan data are not committed.
 
 ## Quick Start
 

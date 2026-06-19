@@ -1,0 +1,39 @@
+{
+  "gate": {
+    "pass": true,
+    "reasons": [],
+    "severity": "ok",
+    "strict": true,
+    "warnings": []
+  },
+  "report": {
+    "bbox_size_x": 18,
+    "bbox_size_y": 18,
+    "bbox_size_z": 18,
+    "bounds_index_max_x": 24,
+    "bounds_index_max_y": 24,
+    "bounds_index_max_z": 24,
+    "bounds_index_min_x": 7,
+    "bounds_index_min_y": 7,
+    "bounds_index_min_z": 7,
+    "connected_component_count": 1,
+    "empty": false,
+    "geometry_type": "voxel",
+    "interior_voxel_count": 2248,
+    "largest_component_fraction": 1.0,
+    "largest_component_size": 3016,
+    "loader_error": "",
+    "notes": "diagnostic voxel occupancy report",
+    "occupied_count": 3016,
+    "occupied_fraction": 0.092041015625,
+    "quality_kind": "voxel",
+    "scope_note": "diagnostic voxel quality report; not real squid validation",
+    "shape_x": 32,
+    "shape_y": 32,
+    "shape_z": 32,
+    "source_file": "data/geometry_fixtures/voxel_sphere.npy",
+    "stable": true,
+    "surface_voxel_count": 768,
+    "touches_domain_boundary": false
+  }
+}

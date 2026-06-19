@@ -1,0 +1,18 @@
+{
+  "candidate_id": "real_candidate_smoke_voxel",
+  "geometry_type": "voxel",
+  "source_file": "data/geometry_fixtures/voxel_sphere.npy",
+  "metadata_file": "data/geometry_fixtures/voxel_sphere_metadata.json",
+  "source_policy": "controlled_intake_smoke_not_anatomical_validation",
+  "license_status": "small_committed_smoke_fixture",
+  "commit_policy": "small_controlled_fixture_allowed",
+  "normalize_to_domain": true,
+  "preserve_aspect_ratio": true,
+  "padding": 0.08,
+  "n_particles": 4096,
+  "voxel_threshold": 0.5,
+  "quality_check_enabled": true,
+  "quality_check_strict": true,
+  "artifact_policy": "no_vtk_no_particles_no_large_raw_geometry",
+  "validation_scope": "intake_qa_normalization_sampling_projection_only"
+}

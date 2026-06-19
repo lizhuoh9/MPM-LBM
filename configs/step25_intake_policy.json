@@ -1,0 +1,23 @@
+{
+  "step": 25,
+  "scope": "controlled_real_geometry_intake",
+  "allowed_validation_scope": "intake_qa_normalization_sampling_projection_only",
+  "candidate_directory": "data/real_geometry_candidates",
+  "quality_check_enabled_required": true,
+  "quality_check_strict_required": true,
+  "large_file_threshold_bytes": 1000000,
+  "allowed_commit_policies": [
+    "small_controlled_fixture_allowed",
+    "do_not_commit_large_raw_geometry",
+    "local_candidate_only"
+  ],
+  "forbidden_outputs": [
+    ".vtr",
+    "particle .npy"
+  ],
+  "scope_language": [
+    "Step 25 is controlled real geometry intake, not real squid validation.",
+    "Step 25 performs geometry QA, normalization, fingerprinting, sampling reproducibility, and projection-only smoke diagnostics.",
+    "Raw large real geometry files and scan data are not committed."
+  ]
+}

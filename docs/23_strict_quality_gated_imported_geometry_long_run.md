@@ -95,4 +95,18 @@ Step 24 keeps VTK and particle export disabled. Step 24 commits only small CSV, 
 
 ## Next Step
 
-Step 25 should be a controlled real geometry intake contract, starting with geometry QA, normalization, and sampling reproducibility only.
+Step 25 is controlled real geometry intake, not real squid validation.
+Step 25 performs geometry QA, normalization, fingerprinting, sampling reproducibility, and projection-only smoke diagnostics.
+Step 25 does not implement squid swimming.
+Step 25 does not implement squid actuation.
+Step 25 does not implement new FSI physics.
+Step 25 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+Candidate intake does not perform production mesh repair or automatic remeshing.
+Raw large real geometry files and scan data are not committed.
+
+Step 25 starts with descriptor validation, fingerprinting, strict geometry QA, normalization reports, deterministic sampling reproducibility, and projection-only smoke diagnostics.

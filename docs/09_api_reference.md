@@ -104,6 +104,22 @@ Step 23 boundary: The default quality_check_enabled remains false. The default r
 
 Step 24 boundary: Step 24 runs strict quality-gated synthetic imported geometry long-run validation. Step 24 uses quality_check_enabled=true and quality_check_strict=true for selected imported geometry rows. Step 24 is not real squid validation. Step 24 does not implement new FSI physics. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged. Imported geometry remains limited to small synthetic voxel and mesh fixtures. The Step 24 mesh path is not production mesh repair or automatic remeshing.
 
+## Step 25 Geometry Intake APIs
+
+- `sha256_file(path)`: deterministic SHA-256 for source bytes.
+- `file_size_bytes(path)`: exact byte-size for source files.
+- `fingerprint_geometry_file(path, root=None, redact_absolute=True)`: returns path-redacted fingerprint metadata for committed manifests.
+- `load_candidate_descriptor(path)`: loads a Step 25 candidate descriptor.
+- `validate_candidate_descriptor(payload, descriptor_path=None)`: enforces candidate ID, geometry type, strict quality gate, commit policy, and intake-only scope.
+- `candidate_manifest_row(descriptor_path, root=None)`: builds a manifest row with source fingerprint and redacted path.
+- `normalize_mesh_candidate(descriptor)`: reports mesh normalization bounds and transform without source mutation.
+- `normalize_voxel_candidate(descriptor)`: reports voxel occupancy-domain mapping without rewriting the source.
+- `run_candidate_intake(descriptor_path, out_dir)`: runs descriptor, fingerprint, quality, normalization, and manifest checks.
+- `run_candidate_sampling_reproducibility(descriptor_path, out_dir)`: verifies deterministic particle positions, `vol0`, and mass hashes.
+- `run_candidate_projection_smoke(descriptor_path, out_dir)`: runs projection-only diagnostics without a driver long-run.
+
+Step 25 is controlled real geometry intake, not real squid validation. Step 25 performs geometry QA, normalization, fingerprinting, sampling reproducibility, and projection-only smoke diagnostics. Step 25 does not implement squid swimming. Step 25 does not implement squid actuation. Step 25 does not implement new FSI physics. Step 25 does not validate production sharp-interface FSI. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged. Candidate intake does not perform production mesh repair or automatic remeshing. Raw large real geometry files and scan data are not committed.
+
 ## MomentumAccounting3D
 
 - purpose: diagnostic-only moving_boundary momentum accounting

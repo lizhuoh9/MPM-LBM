@@ -1,0 +1,39 @@
+{
+  "row_count": 2,
+  "rows": [
+    {
+      "candidate_id": "real_candidate_smoke_mesh",
+      "geometry_type": "mesh",
+      "normalization_report_path": "outputs/step25_normalization_reports/real_candidate_smoke_mesh/normalization_report.json",
+      "normalized_inside_domain": true,
+      "padding": 0.08,
+      "preserve_aspect_ratio": true,
+      "remeshing_performed": false,
+      "repair_performed": false,
+      "scale_factor": 0.8400000000000001,
+      "source_file_modified": false,
+      "translation": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "candidate_id": "real_candidate_smoke_voxel",
+      "geometry_type": "voxel",
+      "normalization_report_path": "outputs/step25_normalization_reports/real_candidate_smoke_voxel/normalization_report.json",
+      "normalized_inside_domain": true,
+      "padding": 0.08,
+      "preserve_aspect_ratio": true,
+      "remeshing_performed": false,
+      "repair_performed": false,
+      "scale_factor": 1.0,
+      "source_file_modified": false,
+      "translation": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ]
+}

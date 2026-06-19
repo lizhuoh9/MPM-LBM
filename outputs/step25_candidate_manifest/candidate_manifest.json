@@ -1,0 +1,49 @@
+{
+  "row_count": 2,
+  "rows": [
+    {
+      "candidate_id": "real_candidate_smoke_mesh",
+      "commit_policy": "small_controlled_fixture_allowed",
+      "descriptor_path": "configs/step25_candidate_smoke_mesh_descriptor.json",
+      "geometry_type": "mesh",
+      "is_large": false,
+      "license_status": "small_committed_smoke_fixture",
+      "manifest_pass": true,
+      "n_particles": 4096,
+      "normalize_to_domain": true,
+      "notes": "manifest checks passed",
+      "padding": 0.08,
+      "preserve_aspect_ratio": true,
+      "quality_check_enabled": true,
+      "quality_check_strict": true,
+      "sha256": "d5a3dd8a698a81951052c6fc3aeb1dd37f7a3c205c07b23d514a3b6a77c2c126",
+      "size_bytes": 323,
+      "source_file": "data/geometry_fixtures/step25_real_candidate_smoke_mesh.obj",
+      "source_file_redacted": "data/geometry_fixtures/step25_real_candidate_smoke_mesh.obj",
+      "source_policy": "controlled_intake_smoke_not_anatomical_validation",
+      "validation_scope": "intake_qa_normalization_sampling_projection_only"
+    },
+    {
+      "candidate_id": "real_candidate_smoke_voxel",
+      "commit_policy": "small_controlled_fixture_allowed",
+      "descriptor_path": "configs/step25_candidate_smoke_voxel_descriptor.json",
+      "geometry_type": "voxel",
+      "is_large": false,
+      "license_status": "small_committed_smoke_fixture",
+      "manifest_pass": true,
+      "n_particles": 4096,
+      "normalize_to_domain": true,
+      "notes": "manifest checks passed",
+      "padding": 0.08,
+      "preserve_aspect_ratio": true,
+      "quality_check_enabled": true,
+      "quality_check_strict": true,
+      "sha256": "7df9048eb5967888f0788817414b05235fe4a67367198ad82fdb571d92e3b01f",
+      "size_bytes": 32896,
+      "source_file": "data/geometry_fixtures/voxel_sphere.npy",
+      "source_file_redacted": "data/geometry_fixtures/voxel_sphere.npy",
+      "source_policy": "controlled_intake_smoke_not_anatomical_validation",
+      "validation_scope": "intake_qa_normalization_sampling_projection_only"
+    }
+  ]
+}

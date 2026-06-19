@@ -1,0 +1,25 @@
+{
+  "row_count": 1,
+  "rows": [
+    {
+      "boundary_edge_count": 0,
+      "candidate_id": "real_candidate_smoke_voxel",
+      "connected_component_count": 1,
+      "degenerate_face_count": 0,
+      "faces_count": 0,
+      "geometry_type": "voxel",
+      "has_valid_face_indices": false,
+      "largest_component_fraction": 1.0,
+      "nonmanifold_edge_count": 0,
+      "occupied_count": 3016,
+      "quality_kind": "voxel",
+      "quality_pass": true,
+      "quality_reasons_count": 0,
+      "quality_report_path": "outputs/step25_voxel_candidate_quality/real_candidate_smoke_voxel/geometry_quality_report.json",
+      "quality_severity": "ok",
+      "quality_warnings_count": 0,
+      "touches_domain_boundary": false,
+      "vertices_count": 0
+    }
+  ]
+}

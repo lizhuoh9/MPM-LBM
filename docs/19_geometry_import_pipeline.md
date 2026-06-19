@@ -157,3 +157,28 @@ Primary Step 24 outputs:
 - `outputs/step24_strict_imported_geometry_64_feasibility/imported_geometry_64_strict_feasibility_results.csv`
 - `outputs/step24_quality_report_aggregation/quality_report_summary.csv`
 - `outputs/step24_artifact_manifest/artifact_summary.json`
+
+## Step 25 Follow-On
+
+Step 25 is controlled real geometry intake, not real squid validation.
+Step 25 performs geometry QA, normalization, fingerprinting, sampling reproducibility, and projection-only smoke diagnostics.
+Step 25 does not implement squid swimming.
+Step 25 does not implement squid actuation.
+Step 25 does not implement new FSI physics.
+Step 25 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+Candidate intake does not perform production mesh repair or automatic remeshing.
+Raw large real geometry files and scan data are not committed.
+
+Primary Step 25 outputs:
+
+- `outputs/step25_candidate_manifest/candidate_manifest.csv`
+- `outputs/step25_real_geometry_intake_smoke/intake_smoke_summary.csv`
+- `outputs/step25_normalization_reports/normalization_summary.csv`
+- `outputs/step25_sampling_reproducibility/sampling_reproducibility.csv`
+- `outputs/step25_projection_smoke/projection_smoke_results.csv`
+- `outputs/step25_artifact_manifest/artifact_summary.json`

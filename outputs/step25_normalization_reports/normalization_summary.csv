@@ -1,0 +1,3 @@
+candidate_id,geometry_type,normalization_report_path,normalized_inside_domain,padding,preserve_aspect_ratio,scale_factor,translation,source_file_modified,repair_performed,remeshing_performed
+real_candidate_smoke_mesh,mesh,outputs/step25_normalization_reports/real_candidate_smoke_mesh/normalization_report.json,True,0.08,True,0.8400000000000001,"[0.5, 0.5, 0.5]",False,False,False
+real_candidate_smoke_voxel,voxel,outputs/step25_normalization_reports/real_candidate_smoke_voxel/normalization_report.json,True,0.08,True,1.0,"[0.0, 0.0, 0.0]",False,False,False

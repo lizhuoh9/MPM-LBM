@@ -1,0 +1,3 @@
+candidate_id,geometry_type,projected_mass,projected_volume_raw,projected_volume_clamped,max_phi_raw,active_cell_count,solid_phi_min,solid_phi_max,has_nan,has_inf,projection_pass,scope_note
+real_candidate_smoke_mesh,mesh,0.605826199054718,0.605826199054718,0.5182793736457825,2.044157028198242,23961,0.0,1.0,False,False,True,projection-only smoke diagnostics; no FSI driver long-run and no real squid validation claim
+real_candidate_smoke_voxel,voxel,0.0994410514831543,0.0994410514831543,0.09256836026906967,1.8842977285385132,5286,0.0,1.0,False,False,True,projection-only smoke diagnostics; no FSI driver long-run and no real squid validation claim

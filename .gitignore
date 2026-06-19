@@ -21,6 +21,12 @@ logs/scratch/
 outputs/experiments/
 logs/experiments/
 
+# Local real-geometry candidate intake payloads
+data/real_geometry_candidates/*
+!data/real_geometry_candidates/README.md
+!data/real_geometry_candidates/.gitkeep
+!data/real_geometry_candidates/*_descriptor.json
+
 # Local environments
 .venv/
 .env/

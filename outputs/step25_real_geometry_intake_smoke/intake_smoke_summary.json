@@ -1,0 +1,29 @@
+{
+  "row_count": 2,
+  "rows": [
+    {
+      "candidate_id": "real_candidate_smoke_mesh",
+      "geometry_type": "mesh",
+      "manifest_pass": true,
+      "normalization_pass": true,
+      "normalization_report_path": "outputs/step25_real_geometry_intake_smoke/real_candidate_smoke_mesh/normalization_report.json",
+      "quality_pass": true,
+      "quality_report_path": "outputs/step25_real_geometry_intake_smoke/real_candidate_smoke_mesh/geometry_quality_report.json",
+      "quality_severity": "ok",
+      "scope_note": "Step 25 intake only; no FSI driver validation and no real squid validation claim",
+      "source_file": "data/geometry_fixtures/step25_real_candidate_smoke_mesh.obj"
+    },
+    {
+      "candidate_id": "real_candidate_smoke_voxel",
+      "geometry_type": "voxel",
+      "manifest_pass": true,
+      "normalization_pass": true,
+      "normalization_report_path": "outputs/step25_real_geometry_intake_smoke/real_candidate_smoke_voxel/normalization_report.json",
+      "quality_pass": true,
+      "quality_report_path": "outputs/step25_real_geometry_intake_smoke/real_candidate_smoke_voxel/geometry_quality_report.json",
+      "quality_severity": "ok",
+      "scope_note": "Step 25 intake only; no FSI driver validation and no real squid validation claim",
+      "source_file": "data/geometry_fixtures/voxel_sphere.npy"
+    }
+  ]
+}

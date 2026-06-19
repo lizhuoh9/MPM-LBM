@@ -1,0 +1,7 @@
+check,pass,value,notes
+step24_report_exists,True,STEP24_STRICT_QUALITY_GATED_IMPORTED_GEOMETRY_LONG_RUN_REPORT.md,required Step 24 artifact
+step24_quality_aggregation_exists,True,outputs/step24_quality_report_aggregation/quality_report_summary.json,required Step 24 artifact
+step24_quality_report_count,True,9,expected 9
+step24_large_file_count,True,0,expected 0
+step24_pytest_log_exists,True,logs/step24_pytest.log,required Step 24 artifact
+step24_docs_no_forbidden_claims,True,,Step 24 docs remain scoped away from real validation claims

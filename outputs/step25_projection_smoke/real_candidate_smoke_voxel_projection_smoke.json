@@ -1,0 +1,15 @@
+{
+  "active_cell_count": 5286,
+  "candidate_id": "real_candidate_smoke_voxel",
+  "geometry_type": "voxel",
+  "has_inf": false,
+  "has_nan": false,
+  "max_phi_raw": 1.8842977285385132,
+  "projected_mass": 0.0994410514831543,
+  "projected_volume_clamped": 0.09256836026906967,
+  "projected_volume_raw": 0.0994410514831543,
+  "projection_pass": true,
+  "scope_note": "projection-only smoke diagnostics; no FSI driver long-run and no real squid validation claim",
+  "solid_phi_max": 1.0,
+  "solid_phi_min": 0.0
+}
