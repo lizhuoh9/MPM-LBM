@@ -170,3 +170,24 @@ Observed wall times in this Windows/Taichi GPU environment:
 | box 64 comparison | link_area_experimental | 64 | 5 | 25 | 175.284 | 0.992273271 | 1.002777338 | 0.777285695 | 0.777285695 |
 
 The Step 19 outputs keep VTK and particle exports disabled for scale configs.
+
+## Step 21 Imported Geometry Scale Runtime Notes
+
+Step 21 carries Step 20 synthetic imported voxel and mesh geometries to 48^3 mode validation and 64^3 feasibility. Step 21 is synthetic imported geometry scale validation, not real squid validation.
+
+The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Imported geometry remains limited to small synthetic voxel and mesh fixtures. The Step 21 mesh path is not production mesh repair. Required Step 21 configs keep `write_vtk = false` and `write_particles = false`.
+
+Global Step 21 accepted ranges from the committed summary:
+
+| metric | value |
+| ------ | ----: |
+| driver rows | 15 |
+| projection quality rows | 3 |
+| rho_min_global | 0.984065592 |
+| rho_max_global | 1.017020583 |
+| lbm_max_v_global | 0.008774806 |
+| mpm_min_J_global | 0.995436490 |
+| mpm_max_speed_global | 0.028837694 |
+| max_relative_mass_error | 0.000002471 |

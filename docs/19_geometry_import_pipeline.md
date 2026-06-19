@@ -78,3 +78,21 @@ Primary outputs:
 ## Decision
 
 Step 20 supports proceeding to Step 21: imported geometry scale validation. Step 21 should carry imported voxel/mesh cases to larger validation windows before any real squid geometry work.
+
+## Step 21 Follow-On
+
+Step 21 carries Step 20 synthetic imported voxel and mesh geometries to 48^3 mode validation and 64^3 feasibility.
+Step 21 is synthetic imported geometry scale validation, not real squid validation.
+
+The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Imported geometry remains limited to small synthetic voxel and mesh fixtures. The Step 21 mesh path is not production mesh repair.
+
+Primary Step 21 outputs:
+
+- `outputs/step21_voxel_sphere_48_modes/voxel_sphere_48_results.csv`
+- `outputs/step21_mesh_cube_48_modes/mesh_cube_48_results.csv`
+- `outputs/step21_mesh_ellipsoid_48_modes/mesh_ellipsoid_48_results.csv`
+- `outputs/step21_imported_geometry_64_feasibility/imported_geometry_64_results.csv`
+- `outputs/step21_imported_geometry_projection_quality/projection_quality.csv`
+- `outputs/step21_imported_geometry_scale_summary/step21_summary.json`

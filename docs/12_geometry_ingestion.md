@@ -1,8 +1,10 @@
 # Geometry Ingestion and Squid Proxy Geometry
 
-Step 13 adds procedural geometry ingestion for MPM particle initialization and LBM projection diagnostics. Step 13 does not add new FSI physics. Step 20 adds a small synthetic mesh and voxel geometry import pipeline. Step 20 does not add new FSI physics.
+Step 13 adds procedural geometry ingestion for MPM particle initialization and LBM projection diagnostics. Step 13 does not add new FSI physics. Step 20 adds a small synthetic mesh and voxel geometry import pipeline. Step 20 does not add new FSI physics. Step 21 carries the Step 20 imported geometry fixtures to larger validation windows without adding new FSI physics.
 
 Step 20 is a geometry-ingestion scaffold, not real squid validation. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 21 carries Step 20 synthetic imported voxel and mesh geometries to 48^3 mode validation and 64^3 feasibility. Step 21 is synthetic imported geometry scale validation, not real squid validation. Imported geometry remains limited to small synthetic voxel and mesh fixtures. The Step 21 mesh path is not production mesh repair.
 
 ## Scope
 
@@ -99,6 +101,8 @@ Step 13 commits small baseline geometry outputs for reproducibility:
 Larger ad-hoc geometry experiments should be written under `outputs/experiments/` or `outputs/scratch/` and should not be committed unless they become a documented step baseline.
 
 Step 20 commits only small synthetic fixtures and small 32^3 validation artifacts. It does not commit large real geometry, large scans, or large Step 20 VTK exports.
+
+Step 21 commits CSV/NPZ diagnostics for the 48^3 and 64^3 imported-geometry scale baselines with VTK and particle export disabled. It does not commit large real geometry, large scans, or large Step 21 VTK outputs.
 
 ## Limitations
 

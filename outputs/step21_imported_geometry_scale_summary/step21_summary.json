@@ -1,0 +1,14 @@
+{
+  "driver_row_count": 15,
+  "large_file_count": 0,
+  "lbm_max_v_global": 0.008774805814027786,
+  "max_relative_mass_error": 2.4707331693457252e-06,
+  "mpm_max_speed_global": 0.028837693855166435,
+  "mpm_min_J_global": 0.9954364895820618,
+  "notes": "Step 21 scale summary for synthetic imported geometry validation",
+  "projection_quality_row_count": 3,
+  "required_row_count": 18,
+  "rho_max_global": 1.017020583152771,
+  "rho_min_global": 0.984065592288971,
+  "stable": true
+}

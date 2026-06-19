@@ -24,6 +24,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 18 opt-in experimental link-area reaction transfer mode for moving_boundary comparison
 - Step 19 long-window and 64^3 feasibility validation for the opt-in experimental link-area transfer
 - Step 20 small synthetic mesh and voxel geometry import pipeline for 32^3 imported-geometry smoke validation
+- Step 21 synthetic imported geometry scale validation for 48^3 imported-geometry mode rows and 64^3 feasibility rows
 
 ## Not Implemented
 
@@ -111,6 +112,11 @@ Step 20 is a geometry-ingestion scaffold, not real squid validation.
 Imported geometry supports voxel and mesh inputs through GeometryConfig and GeometrySampler3D.
 The Step 20 mesh path is limited to small synthetic fixtures and is not production mesh repair.
 
+Step 21 carries Step 20 synthetic imported voxel and mesh geometries to 48^3 mode validation and 64^3 feasibility.
+Step 21 is synthetic imported geometry scale validation, not real squid validation.
+Imported geometry remains limited to small synthetic voxel and mesh fixtures.
+The Step 21 mesh path is not production mesh repair.
+
 Supported geometry types are now:
 
 - box
@@ -165,6 +171,8 @@ The link-area transfer remains experimental and uses a bounded global area_scale
 ## Geometry Import Pipeline
 
 Step 20 adds small synthetic voxel and OBJ fixtures, minimal import utilities, deterministic imported-geometry particle sampling, LBM projection diagnostics, and 32^3 driver smoke baselines for none, penalty, and moving_boundary modes. It prepares the repository for future real geometry ingestion without changing FSI physics.
+
+Step 21 carries those small synthetic imported voxel and mesh fixtures to 48^3 mode validation and 64^3 feasibility without changing coupling formulas. See docs/20_imported_geometry_scale_validation.md.
 
 ## Upstream LBM Note
 

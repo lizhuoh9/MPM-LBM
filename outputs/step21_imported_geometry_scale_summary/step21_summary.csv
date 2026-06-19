@@ -1,0 +1,2 @@
+stable,required_row_count,driver_row_count,projection_quality_row_count,rho_min_global,rho_max_global,lbm_max_v_global,mpm_min_J_global,mpm_max_speed_global,max_relative_mass_error,large_file_count,notes
+True,18,15,3,0.984065592288971,1.017020583152771,0.008774805814027786,0.9954364895820618,0.028837693855166435,2.4707331693457252e-06,0,Step 21 scale summary for synthetic imported geometry validation
