@@ -1,0 +1,18 @@
+{
+  "coupling_mode": "moving_boundary",
+  "geometry_type": "mesh",
+  "geometry_config_path": "configs/step20_mesh_cube_geometry.json",
+  "n_grid": 64,
+  "n_particles": 4096,
+  "n_lbm_steps": 5,
+  "mpm_substeps_per_lbm_step": 5,
+  "target_u_lbm": [0.0025, 0.0, 0.0],
+  "gravity": [0.0, 0.0, 0.0],
+  "mb_force_cap_norm": 5.0e-6,
+  "reaction_transfer_mode": "engineering",
+  "output_interval": 5,
+  "write_vtk": false,
+  "write_particles": false,
+  "quality_check_enabled": true,
+  "quality_check_strict": true
+}

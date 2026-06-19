@@ -102,6 +102,8 @@ The default reaction_transfer_mode remains engineering. The moving bounce-back f
 
 Step 23 boundary: The default quality_check_enabled remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
+Step 24 boundary: Step 24 runs strict quality-gated synthetic imported geometry long-run validation. Step 24 uses quality_check_enabled=true and quality_check_strict=true for selected imported geometry rows. Step 24 is not real squid validation. Step 24 does not implement new FSI physics. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged. Imported geometry remains limited to small synthetic voxel and mesh fixtures. The Step 24 mesh path is not production mesh repair or automatic remeshing.
+
 ## MomentumAccounting3D
 
 - purpose: diagnostic-only moving_boundary momentum accounting

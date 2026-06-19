@@ -124,6 +124,22 @@ The Step 23 mesh path is not production mesh repair or automatic remeshing.
 
 Step 23 uses the Step 22 non-strict quality gate across the Step 21 48^3 and 64^3 imported geometry scale matrix, aggregates all quality reports, and compares Step 21 ungated rows with Step 23 quality-gated rows.
 
+## Step 24 Strict Good-Fixture Gate
+
+Step 24 runs strict quality-gated synthetic imported geometry long-run validation.
+Step 24 uses quality_check_enabled=true and quality_check_strict=true for selected imported geometry rows.
+Step 24 is not real squid validation.
+Step 24 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+Imported geometry remains limited to small synthetic voxel and mesh fixtures.
+The Step 24 mesh path is not production mesh repair or automatic remeshing.
+
+Step 24 applies strict mode only to good synthetic imported fixtures that already have Step 22 and Step 23 evidence. It does not change geometry diagnostics into production mesh repair or automatic remeshing.
+
 ## Limitations
 
 - no real squid geometry validation;

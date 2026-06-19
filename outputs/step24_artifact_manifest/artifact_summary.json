@@ -1,0 +1,21 @@
+{
+  "by_extension": {
+    ".csv": 1175106,
+    ".dat": 44347392,
+    ".json": 232294,
+    ".log": 369510,
+    ".md": 990782,
+    ".npy": 14781056,
+    ".npz": 1763751,
+    ".obj": 7617,
+    ".vtr": 64111974
+  },
+  "file_count": 1230,
+  "large_file_count": 0,
+  "step24_file_count": 85,
+  "step24_quality_report_count": 9,
+  "step24_total_size_bytes": 4709953,
+  "step24_total_size_mb": 4.491761207580566,
+  "total_size_bytes": 127779482,
+  "total_size_mb": 121.86001014709473
+}

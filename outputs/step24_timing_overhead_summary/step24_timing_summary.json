@@ -1,0 +1,9 @@
+{
+  "max_total_time": 215.12517949996982,
+  "median_total_time": 136.73283619998256,
+  "quality_report_count": 9,
+  "quality_report_max_size_bytes": 1352,
+  "quality_report_total_size_bytes": 11047,
+  "row_count": 9,
+  "scope_note": "Timing is a workflow and artifact-budget diagnostic only, not a production benchmark."
+}

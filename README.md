@@ -27,6 +27,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 21 synthetic imported geometry scale validation for 48^3 imported-geometry mode rows and 64^3 feasibility rows
 - Step 22 diagnostic mesh/voxel geometry quality checks and import robustness baselines
 - Step 23 quality-gated synthetic imported geometry scale validation with quality reports for every driver row
+- Step 24 strict quality-gated synthetic imported geometry long-run validation for selected moving_boundary rows
 
 ## Not Implemented
 
@@ -118,6 +119,18 @@ Step 21 carries Step 20 synthetic imported voxel and mesh geometries to 48^3 mod
 Step 21 is synthetic imported geometry scale validation, not real squid validation.
 Imported geometry remains limited to small synthetic voxel and mesh fixtures.
 The Step 21 mesh path is not production mesh repair.
+
+Step 24 runs strict quality-gated synthetic imported geometry long-run validation.
+Step 24 uses quality_check_enabled=true and quality_check_strict=true for selected imported geometry rows.
+Step 24 is not real squid validation.
+Step 24 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+Imported geometry remains limited to small synthetic voxel and mesh fixtures.
+The Step 24 mesh path is not production mesh repair or automatic remeshing.
 
 Supported geometry types are now:
 

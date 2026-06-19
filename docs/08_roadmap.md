@@ -4,7 +4,7 @@ The next steps should preserve the existing regression baselines and mode matrix
 
 ## Current Status
 
-Step 23 is completed as quality-gated synthetic imported geometry scale validation. The next implementation step should preserve the imported-geometry evidence before any real squid geometry, actuation, or final strict sharp-interface FSI claims.
+Step 24 is strict quality-gated synthetic imported geometry long-run validation. It preserves imported-geometry evidence before any real squid geometry, actuation, or final strict sharp-interface FSI claims.
 
 ## Proposed Steps
 
@@ -22,6 +22,7 @@ Step 23 is completed as quality-gated synthetic imported geometry scale validati
 | Step 21 | completed: imported geometry scale validation | synthetic fixtures only; 48^3 mode validation and 64^3 feasibility before real geometry |
 | Step 22 | completed: geometry quality checks and import robustness | diagnostic QA only; no production mesh repair or automatic remeshing |
 | Step 23 | completed: quality-gated imported geometry scale validation | non-strict quality reports for synthetic scale baselines |
+| Step 24 | strict quality-gated imported geometry long-run validation | strict gate for selected synthetic imported geometry rows only |
 | Future | stricter sharp-interface momentum accounting and real geometry ingestion | Strict link-area momentum-conserving coupling remains future work. |
 
 ## Regression Rule
@@ -46,6 +47,7 @@ Step 20 geometry import contracts
 Step 21 imported geometry scale validation contracts
 Step 22 geometry quality and import robustness contracts
 Step 23 quality-gated imported geometry scale validation contracts
+Step 24 strict quality-gated imported geometry long-run contracts
 ```
 
 New physics should be added behind explicit modes or new configs, not by silently changing validated behavior.
@@ -65,3 +67,5 @@ Step 21 carries Step 20 synthetic imported voxel and mesh geometries to 48^3 mod
 Step 22 adds diagnostic quality checks for imported mesh and voxel geometry. Step 22 is a geometry QA and import robustness layer, not real squid validation. Imported geometry remains limited to small synthetic voxel and mesh fixtures. The Step 22 mesh path is not production mesh repair or automatic remeshing. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 23 repeats imported geometry scale validation with quality_check_enabled=true. Step 23 uses quality_check_strict=false for scale validation. Step 23 is quality-gated synthetic imported geometry validation, not real squid validation. The default quality_check_enabled remains false. Imported geometry remains limited to small synthetic voxel and mesh fixtures. The Step 23 mesh path is not production mesh repair or automatic remeshing. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 24 runs strict quality-gated synthetic imported geometry long-run validation. Step 24 uses quality_check_enabled=true and quality_check_strict=true for selected imported geometry rows. Step 24 is not real squid validation. Step 24 does not implement new FSI physics. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged. Imported geometry remains limited to small synthetic voxel and mesh fixtures. The Step 24 mesh path is not production mesh repair or automatic remeshing. Step 25 should be a controlled real geometry intake contract, starting with geometry QA, normalization, and sampling reproducibility only.
