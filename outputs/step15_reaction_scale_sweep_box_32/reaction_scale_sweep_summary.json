@@ -1,0 +1,32 @@
+{
+  "recommended": {
+    "accounting_error_x": 2.2258609533309937e-05,
+    "bb_link_count": 2322,
+    "cell_force_max_norm": 0.0,
+    "classification_reason": "well_behaved",
+    "final_solid_vx": 0.09621147066354752,
+    "force_cap_norm": 0.0001,
+    "geometry_type": "box",
+    "hydro_force_max_norm": 0.39837307108248987,
+    "initial_solid_vx": 0.07812738418579102,
+    "lbm_max_v": 0.014735502353953489,
+    "mpm_max_speed": 0.16735990395634548,
+    "mpm_min_J": 0.9730791449546814,
+    "net_grid_reaction_force_x": 0.002166969235986471,
+    "over_damped": false,
+    "projection_zone_ux_final": 0.0007696156078998672,
+    "reaction_scale": 0.25,
+    "reason": "well_behaved",
+    "recommended": true,
+    "rho_max": 1.0124542713165283,
+    "rho_min": 0.9874573945999146,
+    "score": 1749.9969968434668,
+    "sign_reversed": false,
+    "solid_momentum_delta_x": 0.0004883452036672179,
+    "solid_slowdown": 0.0,
+    "stable": true,
+    "well_behaved": true
+  },
+  "scope_note": "Step 15 reaction_scale sweep uses the existing moving_boundary engineering coupling scale.",
+  "stable_count": 4
+}

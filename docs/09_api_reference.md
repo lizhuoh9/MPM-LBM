@@ -65,6 +65,20 @@ This is a lightweight API reference for the current prototype. It is not autogen
 - main methods: `clear_reaction_diagnostics`, `add_moving_boundary_reaction_to_mpm_grid`, `get_stats`
 - mode: used only when `coupling_mode = "moving_boundary"`
 
+## MomentumAccounting3D
+
+- purpose: diagnostic-only moving_boundary momentum accounting
+- main fields: static helper class, no persistent simulation fields
+- main methods: `hydro_force_sum`, `cell_force_sum`, `solid_particle_momentum`, `moving_boundary_accounting_row`
+- mode: used by Step 15 baselines to record link-wise impulse, hydro_force sums, reaction convention diagnostics, applied MPM grid force, and solid momentum
+
+## Calibration Helpers
+
+- purpose: classify Step 15 moving_boundary calibration rows and choose recommended stable-window rows
+- main functions: `classify_calibration_row`, `choose_recommended_row`, `write_calibration_summary`
+- main config presets: `configs/step15_mb_recommended_box_48.json`, `configs/step15_mb_recommended_squid_proxy_48.json`
+- mode: diagnostic/reporting utilities only; they do not change FSI physics
+
 ## FSIDriverConfig
 
 - purpose: common JSON-loadable driver configuration

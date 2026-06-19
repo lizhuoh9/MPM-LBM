@@ -121,3 +121,17 @@ Step 14 adds 48^3 engineering scale baseline rows and 64^3 short feasibility row
 | box 64^3 feasibility | penalty | 64 | 32768 | 64.375000 | 178.103 | 0.999998331 | 1.000002623 |
 
 The 64^3 rows are feasibility checks, not full validation. The lower-bound memory estimates still exclude Taichi runtime allocation, allocator overhead, temporary buffers, and optional visualization export.
+
+## Step 15 Calibration Runtime Notes
+
+Step 15 calibration rows are environment-specific regression data, not hardware-independent timing results. The committed Step 15 runs keep `write_vtk = false` and `write_particles = false` for required calibration configs.
+
+Observed wall times in this Windows/Taichi GPU environment:
+
+| case | rows | total time s | note |
+| ---- | ---: | -----------: | ---- |
+| momentum accounting sanity | 1 | 48.50 | 32^3 box, 10 LBM steps |
+| reaction_scale sweep | 4 | 656.89 | 32^3 box, 20 LBM steps each |
+| force_cap_norm sweep | 4 | 834.13 | 48^3 box, 10 LBM steps each |
+| squid_proxy calibrated window | 4 | 423.49 | 48^3 procedural proxy, 10 LBM steps each |
+| calibrated-vs-original comparison | 2 | 138.75 | 48^3 box comparison |

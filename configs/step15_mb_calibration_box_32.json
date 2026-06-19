@@ -1,0 +1,18 @@
+{
+  "coupling_mode": "moving_boundary",
+  "geometry_type": "box",
+  "n_grid": 32,
+  "n_particles": 4096,
+  "n_lbm_steps": 20,
+  "mpm_substeps_per_lbm_step": 10,
+  "target_u_lbm": [
+    0.01,
+    0.0,
+    0.0
+  ],
+  "dynamic_solid_threshold": 0.5,
+  "mb_reaction_scale": 1.0,
+  "mb_force_cap_norm": 0.0001,
+  "write_vtk": false,
+  "write_particles": false
+}

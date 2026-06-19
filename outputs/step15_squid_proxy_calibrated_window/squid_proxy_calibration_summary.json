@@ -1,0 +1,70 @@
+{
+  "recommended": {
+    "accounting_error_x": 0.0006433012895286083,
+    "bb_link_count": 6654,
+    "cell_force_max_norm": 0.0,
+    "classification_reason": "well_behaved",
+    "final_solid_vx": 0.025893528014421463,
+    "force_cap_norm": 2.5e-05,
+    "geometry_type": "squid_proxy",
+    "hydro_force_max_norm": 0.4202519350678718,
+    "initial_solid_vx": 0.026041535660624504,
+    "lbm_max_v": 0.00771917555340587,
+    "mpm_max_speed": 0.05399553168698101,
+    "mpm_min_J": 0.9938786625862122,
+    "net_grid_reaction_force_x": -0.0003390809870325029,
+    "over_damped": false,
+    "projection_zone_ux_final": 0.00014675261303335034,
+    "reaction_scale": 0.5,
+    "reason": "well_behaved",
+    "recommended": true,
+    "rho_max": 1.0120604038238525,
+    "rho_min": 0.9910269975662231,
+    "score": 1789.6545179469992,
+    "sign_reversed": false,
+    "solid_momentum_delta_x": -3.397837420853183e-06,
+    "solid_slowdown": 0.00014800764620304108,
+    "stable": true,
+    "well_behaved": true
+  },
+  "recommended_config": {
+    "beta_lbm": 0.001,
+    "box_max": [
+      0.55,
+      0.65,
+      0.55
+    ],
+    "box_min": [
+      0.25,
+      0.35,
+      0.25
+    ],
+    "coupling_mode": "moving_boundary",
+    "dynamic_solid_threshold": 0.5,
+    "geometry_config_path": "configs/step13_squid_proxy_geometry.json",
+    "geometry_type": "squid_proxy",
+    "gravity": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mb_force_cap_norm": 2.5e-05,
+    "mb_reaction_scale": 0.5,
+    "mpm_dt": 0.0004,
+    "mpm_substeps_per_lbm_step": 10,
+    "n_grid": 48,
+    "n_lbm_steps": 10,
+    "n_particles": 4096,
+    "output_interval": 10,
+    "penalty_force_cap_lbm": 0.0001,
+    "target_u_lbm": [
+      0.005,
+      0.0,
+      0.0
+    ],
+    "write_particles": false,
+    "write_vtk": false
+  },
+  "scope_note": "squid_proxy is procedural and not real squid validation.",
+  "stable_count": 4
+}

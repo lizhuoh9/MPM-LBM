@@ -1,0 +1,119 @@
+﻿python.exe : D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vec
+tors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for per
+formance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a
+ large matrix like this, e.g.:
+所在位置 行:2 字符: 8
++ $out = & 'D:\working\taichi\env\python.exe' baseline_tests\run_step15 ...
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (D:\working\taic...ike this, e.g.::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step15_squid_proxy_calibrated_window.py", line 100, in <m
+odule>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step15_squid_proxy_calibrated_window.py", line 52, in mai
+n
+    result = run_accounted_moving_boundary_case(config, case_dir)
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\step15_common.py", line 163, in run_accounted_moving_boundary
+_case
+    driver.initialize()
+  File "D:\working\squid robot\LBM\MPM-LBM\src\fsi_driver.py", line 80, in initialize
+    self.lbm = LBMFluid3D(self.sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 136, in __init__
+    self.M[None] = ti.Matrix([[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x
+19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So
+the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix
+ like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step15_squid_proxy_calibrated_window.py", line 100, in <m
+odule>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step15_squid_proxy_calibrated_window.py", line 52, in mai
+n
+    result = run_accounted_moving_boundary_case(config, case_dir)
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\step15_common.py", line 163, in run_accounted_moving_boundary
+_case
+    driver.initialize()
+  File "D:\working\squid robot\LBM\MPM-LBM\src\fsi_driver.py", line 80, in initialize
+    self.lbm = LBMFluid3D(self.sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 136, in __init__
+    self.M[None] = ti.Matrix([[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1358, in __setitem__
+    self[key]._set_entries(value)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1367, in __getitem__
+    return Matrix([[_host_access[i * self.m + j] for j in range(self.m)] for i in range(self.n)])
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x
+19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So
+the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix
+ like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step15_squid_proxy_calibrated_window.py", line 100, in <m
+odule>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step15_squid_proxy_calibrated_window.py", line 52, in mai
+n
+    result = run_accounted_moving_boundary_case(config, case_dir)
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\step15_common.py", line 163, in run_accounted_moving_boundary
+_case
+    driver.initialize()
+  File "D:\working\squid robot\LBM\MPM-LBM\src\fsi_driver.py", line 80, in initialize
+    self.lbm = LBMFluid3D(self.sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 156, in __init__
+    self.inv_M[None] = ti.Matrix(inv_M_np)
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x
+19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So
+the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix
+ like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step15_squid_proxy_calibrated_window.py", line 100, in <m
+odule>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step15_squid_proxy_calibrated_window.py", line 52, in mai
+n
+    result = run_accounted_moving_boundary_case(config, case_dir)
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\step15_common.py", line 163, in run_accounted_moving_boundary
+_case
+    driver.initialize()
+  File "D:\working\squid robot\LBM\MPM-LBM\src\fsi_driver.py", line 80, in initialize
+    self.lbm = LBMFluid3D(self.sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 156, in __init__
+    self.inv_M[None] = ti.Matrix(inv_M_np)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1358, in __setitem__
+    self[key]._set_entries(value)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1367, in __getitem__
+    return Matrix([[_host_access[i * self.m + j] for j in range(self.m)] for i in range(self.n)])
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 15 squid_proxy calibrated moving_boundary window
+squid_proxy_window reaction_scale=0.5, force_cap_norm=2.5e-05, stable=True, well_behaved=True, sign_reversed=False, rho_min=9.910269976e-01, rho_max=1.012060404e+00, lbm_max_v=7.719175553e-03, mpm_min_J=9.938786626e-01, mpm_max_speed=5.399553169e-02, solid_slowdown=1.480076462e-04, score=1789.654518
+squid_proxy_window reaction_scale=0.5, force_cap_norm=5e-05, stable=True, well_behaved=False, sign_reversed=False, rho_min=9.883083701e-01, rho_max=1.020388484e+00, lbm_max_v=9.443600849e-03, mpm_min_J=9.886159301e-01, mpm_max_speed=8.059073639e-02, solid_slowdown=3.511067480e-04, score=679.184313
+squid_proxy_window reaction_scale=1, force_cap_norm=2.5e-05, stable=True, well_behaved=True, sign_reversed=False, rho_min=9.909479618e-01, rho_max=1.012312651e+00, lbm_max_v=7.713217078e-03, mpm_min_J=9.937074184e-01, mpm_max_speed=5.547738240e-02, solid_slowdown=1.504626125e-04, score=1786.346568
+squid_proxy_window reaction_scale=1, force_cap_norm=5e-05, stable=True, well_behaved=False, sign_reversed=False, rho_min=9.880867600e-01, rho_max=1.020747304e+00, lbm_max_v=9.802541211e-03, mpm_min_J=9.880653024e-01, mpm_max_speed=8.706983055e-02, solid_slowdown=2.198200673e-04, score=673.383052
+recommended_reaction_scale=0.5, recommended_force_cap_norm=2.5e-05
+recommended_config=configs/step15_mb_recommended_squid_proxy_48.json
+csv=D:\working\squid robot\LBM\MPM-LBM\outputs\step15_squid_proxy_calibrated_window\squid_proxy_calibration.csv
+npz=D:\working\squid robot\LBM\MPM-LBM\outputs\step15_squid_proxy_calibrated_window\squid_proxy_calibration.npz
+elapsed=423.49s
+[OK] Step 15 squid proxy calibrated window finished

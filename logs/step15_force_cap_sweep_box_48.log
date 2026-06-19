@@ -1,0 +1,111 @@
+﻿python.exe : D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vec
+tors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for per
+formance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a
+ large matrix like this, e.g.:
+所在位置 行:2 字符: 8
++ $out = & 'D:\working\taichi\env\python.exe' baseline_tests\run_step15 ...
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (D:\working\taic...ike this, e.g.::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step15_force_cap_sweep_box_48.py", line 85, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step15_force_cap_sweep_box_48.py", line 44, in main
+    result = run_accounted_moving_boundary_case(config, case_dir)
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\step15_common.py", line 163, in run_accounted_moving_boundary
+_case
+    driver.initialize()
+  File "D:\working\squid robot\LBM\MPM-LBM\src\fsi_driver.py", line 80, in initialize
+    self.lbm = LBMFluid3D(self.sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 136, in __init__
+    self.M[None] = ti.Matrix([[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x
+19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So
+the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix
+ like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step15_force_cap_sweep_box_48.py", line 85, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step15_force_cap_sweep_box_48.py", line 44, in main
+    result = run_accounted_moving_boundary_case(config, case_dir)
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\step15_common.py", line 163, in run_accounted_moving_boundary
+_case
+    driver.initialize()
+  File "D:\working\squid robot\LBM\MPM-LBM\src\fsi_driver.py", line 80, in initialize
+    self.lbm = LBMFluid3D(self.sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 136, in __init__
+    self.M[None] = ti.Matrix([[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1358, in __setitem__
+    self[key]._set_entries(value)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1367, in __getitem__
+    return Matrix([[_host_access[i * self.m + j] for j in range(self.m)] for i in range(self.n)])
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x
+19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So
+the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix
+ like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step15_force_cap_sweep_box_48.py", line 85, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step15_force_cap_sweep_box_48.py", line 44, in main
+    result = run_accounted_moving_boundary_case(config, case_dir)
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\step15_common.py", line 163, in run_accounted_moving_boundary
+_case
+    driver.initialize()
+  File "D:\working\squid robot\LBM\MPM-LBM\src\fsi_driver.py", line 80, in initialize
+    self.lbm = LBMFluid3D(self.sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 156, in __init__
+    self.inv_M[None] = ti.Matrix(inv_M_np)
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x
+19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So
+the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix
+ like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step15_force_cap_sweep_box_48.py", line 85, in <module>
+    main()
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\run_step15_force_cap_sweep_box_48.py", line 44, in main
+    result = run_accounted_moving_boundary_case(config, case_dir)
+  File "D:\working\squid robot\LBM\MPM-LBM\baseline_tests\step15_common.py", line 163, in run_accounted_moving_boundary
+_case
+    driver.initialize()
+  File "D:\working\squid robot\LBM\MPM-LBM\src\fsi_driver.py", line 80, in initialize
+    self.lbm = LBMFluid3D(self.sim.make_lbm_config())
+  File "D:\working\squid robot\LBM\MPM-LBM\src\lbm_fluid.py", line 156, in __init__
+    self.inv_M[None] = ti.Matrix(inv_M_np)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1358, in __setitem__
+    self[key]._set_entries(value)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1367, in __getitem__
+    return Matrix([[_host_access[i * self.m + j] for j in range(self.m)] for i in range(self.n)])
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+[Taichi] version 1.7.4, llvm 15.0.1, commit b4b956fd, win, python 3.10.18
+[Taichi] Starting on arch=cuda
+Step 15 force_cap_norm sweep box 48
+force_cap_box_48 reaction_scale=1, force_cap_norm=1e-05, stable=True, well_behaved=True, sign_reversed=False, rho_min=9.888914227e-01, rho_max=1.017282844e+00, lbm_max_v=8.981352343e-03, mpm_min_J=9.971733689e-01, mpm_max_speed=6.890911849e-02, solid_slowdown=0.000000000e+00, score=1716.077901
+force_cap_box_48 reaction_scale=1, force_cap_norm=2.5e-05, stable=True, well_behaved=False, sign_reversed=False, rho_min=9.827434421e-01, rho_max=1.039551854e+00, lbm_max_v=2.110090655e-02, mpm_min_J=9.927887321e-01, mpm_max_speed=1.415861024e-01, solid_slowdown=0.000000000e+00, score=431.899221
+force_cap_box_48 reaction_scale=1, force_cap_norm=5e-05, stable=False, well_behaved=False, sign_reversed=False, rho_min=9.719970226e-01, rho_max=1.068580151e+00, lbm_max_v=3.272996408e-02, mpm_min_J=9.860292673e-01, mpm_max_speed=2.594842366e-01, solid_slowdown=0.000000000e+00, score=-965.862228
+force_cap_box_48 reaction_scale=1, force_cap_norm=0.0001, stable=False, well_behaved=False, sign_reversed=False, rho_min=9.533197880e-01, rho_max=1.132052422e+00, lbm_max_v=6.139941791e-02, mpm_min_J=9.753063321e-01, mpm_max_speed=4.550199544e-01, solid_slowdown=0.000000000e+00, score=-1787.381838
+recommended_force_cap_norm=1e-05
+recommended_config=configs/step15_mb_recommended_box_48.json
+csv=D:\working\squid robot\LBM\MPM-LBM\outputs\step15_force_cap_sweep_box_48\force_cap_sweep.csv
+npz=D:\working\squid robot\LBM\MPM-LBM\outputs\step15_force_cap_sweep_box_48\force_cap_sweep.npz
+elapsed=834.13s
+[OK] Step 15 force cap sweep box 48 finished

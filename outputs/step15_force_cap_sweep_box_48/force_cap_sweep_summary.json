@@ -1,0 +1,70 @@
+{
+  "recommended": {
+    "accounting_error_x": 0.0006724121049046516,
+    "bb_link_count": 6120,
+    "cell_force_max_norm": 0.0,
+    "classification_reason": "well_behaved",
+    "final_solid_vx": 0.03333438187837601,
+    "force_cap_norm": 1e-05,
+    "geometry_type": "box",
+    "hydro_force_max_norm": 0.41117961184362883,
+    "initial_solid_vx": 0.026045124977827072,
+    "lbm_max_v": 0.008981352342944981,
+    "mpm_max_speed": 0.0689091184862163,
+    "mpm_min_J": 0.9971733689308167,
+    "net_grid_reaction_force_x": -0.005055018234997988,
+    "over_damped": false,
+    "projection_zone_ux_final": 0.0002624478832978454,
+    "reaction_scale": 1.0,
+    "reason": "well_behaved",
+    "recommended": true,
+    "rho_max": 1.0172828435897827,
+    "rho_min": 0.9888914227485657,
+    "score": 1716.077900675981,
+    "sign_reversed": false,
+    "solid_momentum_delta_x": 0.00019690315549536475,
+    "solid_slowdown": 0.0,
+    "stable": true,
+    "well_behaved": true
+  },
+  "recommended_config": {
+    "beta_lbm": 0.001,
+    "box_max": [
+      0.55,
+      0.65,
+      0.55
+    ],
+    "box_min": [
+      0.25,
+      0.35,
+      0.25
+    ],
+    "coupling_mode": "moving_boundary",
+    "dynamic_solid_threshold": 0.5,
+    "geometry_config_path": null,
+    "geometry_type": "box",
+    "gravity": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mb_force_cap_norm": 1e-05,
+    "mb_reaction_scale": 1.0,
+    "mpm_dt": 0.0004,
+    "mpm_substeps_per_lbm_step": 10,
+    "n_grid": 48,
+    "n_lbm_steps": 10,
+    "n_particles": 13824,
+    "output_interval": 10,
+    "penalty_force_cap_lbm": 0.0001,
+    "target_u_lbm": [
+      0.005,
+      0.0,
+      0.0
+    ],
+    "write_particles": false,
+    "write_vtk": false
+  },
+  "scope_note": "Step 15 force_cap_norm sweep calibrates existing moving_boundary settings.",
+  "stable_count": 2
+}

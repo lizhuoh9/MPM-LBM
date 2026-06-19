@@ -11,9 +11,11 @@ from .geometry import GeometrySampler3D
 from .mpm_config import MPMConfig
 from .mpm_solid import MPMSolid3D
 from .moving_boundary_coupling import MovingBoundaryFSICoupler3D
+from .momentum_accounting import MomentumAccounting3D
 from .projection import MPMToLBMProjector3D
 from .sim_config import UnifiedSimConfig
 from .units import GridUnitMapper
+from .calibration import classify_calibration_row, choose_recommended_row, write_calibration_summary
 
 __all__ = [
     "LBMConfig",
@@ -27,7 +29,11 @@ __all__ = [
     "MPMConfig",
     "MPMSolid3D",
     "MovingBoundaryFSICoupler3D",
+    "MomentumAccounting3D",
     "MPMToLBMProjector3D",
     "UnifiedSimConfig",
     "GridUnitMapper",
+    "classify_calibration_row",
+    "choose_recommended_row",
+    "write_calibration_summary",
 ]

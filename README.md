@@ -18,6 +18,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - unified FSIDriver3D with modes: none, penalty, moving_boundary
 - shared diagnostics, CSV/NPZ outputs, logs, and small validation baselines
 - larger-grid engineering baselines through 48^3 and 64^3 feasibility checks
+- moving-boundary reaction calibration diagnostics and recommended moving_boundary configs
 
 ## Not Implemented
 
@@ -101,6 +102,10 @@ The squid_proxy is procedural and is not real squid validation.
 ## Larger-Grid Validation
 
 Step 14 adds 48^3 scale validation and 64^3 feasibility checks. These are engineering scale baselines, not production benchmark data or real squid validation. Step 14 does not add new FSI physics.
+
+## Moving-Boundary Calibration
+
+Step 15 adds `MomentumAccounting3D`, calibration helpers, reaction_scale and force_cap_norm sweeps, and recommended moving_boundary configs for 48^3 box and 48^3 procedural squid_proxy cases. Step 15 does not change the moving bounce-back formula and does not claim strict final momentum conservation.
 
 ## Upstream LBM Note
 

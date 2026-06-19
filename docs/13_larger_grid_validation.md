@@ -24,6 +24,8 @@ The coupling formulas, LBM step paths, MPM update path, projection path, and mov
 
 The 48^3 box moving_boundary config uses `target_u_lbm = [0.005, 0.0, 0.0]` and `mb_force_cap_norm = 0.000025`. An initial `target_u_lbm = [0.01, 0.0, 0.0]` trial produced `rho_max = 1.066477895`, outside the Step 14 acceptance range, so only the Step 14 moving_boundary config was made more conservative.
 
+Step 15 calibrates the conservative moving_boundary settings introduced in Step 14. The Step 15 48^3 box sweep keeps the Step 14 known-good `force_cap_norm = 0.000025` row stable and recommends `force_cap_norm = 0.00001` for the box 48^3 moving_boundary preset. The Step 15 48^3 squid_proxy window recommends `reaction_scale = 0.5` and `force_cap_norm = 0.000025`.
+
 ## Results
 
 ### 48^3 Box
