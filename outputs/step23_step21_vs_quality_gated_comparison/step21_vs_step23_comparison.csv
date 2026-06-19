@@ -1,0 +1,16 @@
+case,mode,reaction_transfer_mode,n_grid,rho_min_delta,rho_max_delta,lbm_max_v_delta,mpm_min_J_delta,projected_mass_delta,active_cell_count_delta,stable_both,notes
+mesh_cube,moving_boundary,engineering,48,-3.5762786865234375e-07,1.1920928955078125e-07,1.708976924419403e-07,-5.960464477539063e-08,4.76837158203125e-07,0,True,finite trend comparison only; bitwise identity is not required
+mesh_cube,moving_boundary,link_area_experimental,48,-4.76837158203125e-07,-3.5762786865234375e-07,-1.6111880540847778e-07,-5.960464477539063e-08,2.086162567138672e-06,0,True,finite trend comparison only; bitwise identity is not required
+mesh_cube,none,engineering,48,0.0,0.0,0.0,2.384185791015625e-07,4.172325134277344e-07,0,True,finite trend comparison only; bitwise identity is not required
+mesh_cube,penalty,engineering,48,1.1920928955078125e-07,-1.1920928955078125e-07,-1.726721166050993e-08,1.1920928955078125e-07,3.5762786865234375e-07,0,True,finite trend comparison only; bitwise identity is not required
+mesh_ellipsoid,moving_boundary,engineering,48,1.1920928955078125e-07,1.1920928955078125e-07,1.1222437024116516e-07,-5.960464477539063e-08,-2.086162567138672e-07,0,True,finite trend comparison only; bitwise identity is not required
+mesh_ellipsoid,moving_boundary,link_area_experimental,48,-1.0728836059570312e-06,5.960464477539062e-07,-7.916241884231567e-09,-1.1920928955078125e-07,-1.4901161193847656e-07,0,True,finite trend comparison only; bitwise identity is not required
+mesh_ellipsoid,none,engineering,48,0.0,0.0,0.0,-2.980232238769531e-07,5.960464477539063e-08,0,True,finite trend comparison only; bitwise identity is not required
+mesh_ellipsoid,penalty,engineering,48,1.1920928955078125e-07,0.0,-2.6526322471909225e-08,0.0,4.470348358154297e-08,0,True,finite trend comparison only; bitwise identity is not required
+voxel_sphere,moving_boundary,engineering,48,6.556510925292969e-07,0.0,3.725290298461914e-09,-5.960464477539063e-08,-5.21540641784668e-08,0,True,finite trend comparison only; bitwise identity is not required
+voxel_sphere,moving_boundary,link_area_experimental,48,2.980232238769531e-07,0.0,-1.2014061212539673e-07,-1.7881393432617188e-07,1.043081283569336e-07,0,True,finite trend comparison only; bitwise identity is not required
+voxel_sphere,none,engineering,48,0.0,0.0,0.0,0.0,8.195638656616211e-08,0,True,finite trend comparison only; bitwise identity is not required
+voxel_sphere,penalty,engineering,48,0.0,0.0,-4.5522028813138604e-08,1.1920928955078125e-07,0.0,0,True,finite trend comparison only; bitwise identity is not required
+mesh_cube,penalty,engineering,64,0.0,0.0,0.0,0.0,-1.7285346984863281e-06,0,True,finite trend comparison only; bitwise identity is not required
+voxel_sphere,moving_boundary,engineering,64,5.960464477539063e-08,0.0,2.561137080192566e-08,-5.960464477539063e-08,-1.341104507446289e-07,0,True,finite trend comparison only; bitwise identity is not required
+voxel_sphere,penalty,engineering,64,0.0,0.0,-7.320522854570299e-09,1.7881393432617188e-07,1.564621925354004e-07,0,True,finite trend comparison only; bitwise identity is not required

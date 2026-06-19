@@ -1,0 +1,41 @@
+{
+  "gate": {
+    "pass": true,
+    "reasons": [],
+    "severity": "ok",
+    "strict": false,
+    "warnings": []
+  },
+  "report": {
+    "boundary_edge_count": 0,
+    "bounds_max_x": 0.95,
+    "bounds_max_y": 0.8214285714285714,
+    "bounds_max_z": 0.7357142857142857,
+    "bounds_min_x": 0.05,
+    "bounds_min_y": 0.17857142857142855,
+    "bounds_min_z": 0.26428571428571423,
+    "bounds_span_x": 0.8999999999999999,
+    "bounds_span_y": 0.6428571428571428,
+    "bounds_span_z": 0.4714285714285714,
+    "degenerate_face_count": 0,
+    "duplicate_vertex_count": 0,
+    "euler_characteristic": 2,
+    "faces_count": 224,
+    "geometry_type": "mesh",
+    "has_finite_vertices": true,
+    "has_valid_face_indices": true,
+    "is_watertight_proxy": true,
+    "nonmanifold_edge_count": 0,
+    "notes": "diagnostic proxy only; no production mesh repair or automatic remeshing",
+    "orientation_consistent_proxy": true,
+    "quality_kind": "mesh",
+    "scope_note": "diagnostic mesh quality proxy; not production mesh repair or automatic remeshing",
+    "source_file": "data/geometry_fixtures/ellipsoid_proxy.obj",
+    "stable": true,
+    "surface_area": 1.3506765992797967,
+    "vertices_count": 114,
+    "volume_abs": 0.21991672770228632,
+    "volume_signed": -0.1338748998891997,
+    "zero_area_face_count": 0
+  }
+}

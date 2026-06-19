@@ -26,6 +26,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 20 small synthetic mesh and voxel geometry import pipeline for 32^3 imported-geometry smoke validation
 - Step 21 synthetic imported geometry scale validation for 48^3 imported-geometry mode rows and 64^3 feasibility rows
 - Step 22 diagnostic mesh/voxel geometry quality checks and import robustness baselines
+- Step 23 quality-gated synthetic imported geometry scale validation with quality reports for every driver row
 
 ## Not Implemented
 
@@ -182,6 +183,14 @@ The Step 22 mesh path is not production mesh repair or automatic remeshing.
 
 The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 See docs/21_geometry_quality_checks.md.
+
+Step 23 repeats imported geometry scale validation with quality_check_enabled=true.
+Step 23 uses quality_check_strict=false for scale validation.
+Step 23 is quality-gated synthetic imported geometry validation, not real squid validation.
+The default quality_check_enabled remains false.
+Imported geometry remains limited to small synthetic voxel and mesh fixtures.
+The Step 23 mesh path is not production mesh repair or automatic remeshing.
+See docs/22_quality_gated_imported_geometry_validation.md.
 
 ## Upstream LBM Note
 

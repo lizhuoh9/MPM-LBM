@@ -114,3 +114,23 @@ Primary Step 22 outputs:
 - `outputs/step22_sampling_resolution_sensitivity/resolution_sensitivity.csv`
 - `outputs/step22_driver_quality_gate_smoke/quality_gate_driver_results.csv`
 - `outputs/step22_artifact_manifest/artifact_summary.json`
+
+## Step 23 Follow-On
+
+Step 23 repeats imported geometry scale validation with quality_check_enabled=true.
+Step 23 uses quality_check_strict=false for scale validation.
+Step 23 is quality-gated synthetic imported geometry validation, not real squid validation.
+
+The default quality_check_enabled remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+Imported geometry remains limited to small synthetic voxel and mesh fixtures.
+The Step 23 mesh path is not production mesh repair or automatic remeshing.
+
+Primary Step 23 outputs:
+
+- `outputs/step23_quality_gated_voxel_sphere_48_modes/voxel_sphere_48_quality_gated_results.csv`
+- `outputs/step23_quality_gated_mesh_cube_48_modes/mesh_cube_48_quality_gated_results.csv`
+- `outputs/step23_quality_gated_mesh_ellipsoid_48_modes/mesh_ellipsoid_48_quality_gated_results.csv`
+- `outputs/step23_quality_gated_imported_geometry_64_feasibility/imported_geometry_64_quality_gated_results.csv`
+- `outputs/step23_quality_report_aggregation/quality_report_summary.csv`
+- `outputs/step23_step21_vs_quality_gated_comparison/step21_vs_step23_comparison.csv`
+- `outputs/step23_artifact_manifest/artifact_summary.json`

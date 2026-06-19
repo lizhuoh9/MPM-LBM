@@ -28,6 +28,8 @@ This is a lightweight API reference for the current prototype. It is not autogen
 
 Step 22 adds diagnostic quality checks for imported mesh and voxel geometry. Step 22 is a geometry QA and import robustness layer, not real squid validation. Imported geometry remains limited to small synthetic voxel and mesh fixtures. The Step 22 mesh path is not production mesh repair or automatic remeshing.
 
+Step 23 repeats imported geometry scale validation with quality_check_enabled=true. Step 23 uses quality_check_strict=false for scale validation. Step 23 is quality-gated synthetic imported geometry validation, not real squid validation. The default quality_check_enabled remains false. Imported geometry remains limited to small synthetic voxel and mesh fixtures. The Step 23 mesh path is not production mesh repair or automatic remeshing.
+
 ## GeometrySampler3D
 
 - purpose: deterministic particle-cloud and voxel-occupancy generation for procedural and imported geometry
@@ -97,6 +99,8 @@ Step 21 boundary: The default reaction_transfer_mode remains engineering. The mo
 - `GeometryQualityGate(strict=False)`: evaluates reports as warnings in non-strict mode and as errors for required strict bad-geometry fixtures.
 
 The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 23 boundary: The default quality_check_enabled remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 ## MomentumAccounting3D
 

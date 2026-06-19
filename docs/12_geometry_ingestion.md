@@ -1,6 +1,6 @@
 # Geometry Ingestion and Squid Proxy Geometry
 
-Step 13 adds procedural geometry ingestion for MPM particle initialization and LBM projection diagnostics. Step 13 does not add new FSI physics. Step 20 adds a small synthetic mesh and voxel geometry import pipeline. Step 20 does not add new FSI physics. Step 21 carries the Step 20 imported geometry fixtures to larger validation windows without adding new FSI physics. Step 22 adds diagnostic quality checks for imported mesh and voxel geometry.
+Step 13 adds procedural geometry ingestion for MPM particle initialization and LBM projection diagnostics. Step 13 does not add new FSI physics. Step 20 adds a small synthetic mesh and voxel geometry import pipeline. Step 20 does not add new FSI physics. Step 21 carries the Step 20 imported geometry fixtures to larger validation windows without adding new FSI physics. Step 22 adds diagnostic quality checks for imported mesh and voxel geometry. Step 23 repeats imported geometry scale validation with quality_check_enabled=true.
 
 Step 20 is a geometry-ingestion scaffold, not real squid validation. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
@@ -8,6 +8,8 @@ Step 21 carries Step 20 synthetic imported voxel and mesh geometries to 48^3 mod
 
 Step 22 is a geometry QA and import robustness layer, not real squid validation. Imported geometry remains limited to small synthetic voxel and mesh fixtures. The Step 22 mesh path is not production mesh repair or automatic remeshing.
 The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 23 uses quality_check_strict=false for scale validation. Step 23 is quality-gated synthetic imported geometry validation, not real squid validation. The default quality_check_enabled remains false. Imported geometry remains limited to small synthetic voxel and mesh fixtures. The Step 23 mesh path is not production mesh repair or automatic remeshing.
 
 ## Scope
 
@@ -120,6 +122,8 @@ Step 20 commits only small synthetic fixtures and small 32^3 validation artifact
 Step 21 commits CSV/NPZ diagnostics for the 48^3 and 64^3 imported-geometry scale baselines with VTK and particle export disabled. It does not commit large real geometry, large scans, or large Step 21 VTK outputs.
 
 Step 22 commits small CSV/JSON/NPZ geometry QA diagnostics, small bad fixtures, and quality gate smoke logs with VTK and particle export disabled. It does not commit large real geometry, large scans, production repair outputs, or automatic remeshing artifacts.
+
+Step 23 commits quality-gated scale validation CSV/JSON/NPZ diagnostics and quality reports with VTK and particle export disabled. It does not commit large real geometry, large scans, production repair outputs, or automatic remeshing artifacts.
 
 ## Limitations
 

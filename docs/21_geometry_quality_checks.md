@@ -112,6 +112,18 @@ Primary outputs:
 
 The driver quality gate smoke keeps output small with VTK and particle export disabled. The penalty voxel row and moving-boundary mesh row both finish with stable density and positive MPM volume.
 
+## Step 23 Quality-Gated Scale Validation
+
+Step 23 repeats imported geometry scale validation with quality_check_enabled=true.
+Step 23 uses quality_check_strict=false for scale validation.
+Step 23 is quality-gated synthetic imported geometry validation, not real squid validation.
+
+The default quality_check_enabled remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+Imported geometry remains limited to small synthetic voxel and mesh fixtures.
+The Step 23 mesh path is not production mesh repair or automatic remeshing.
+
+Step 23 uses the Step 22 non-strict quality gate across the Step 21 48^3 and 64^3 imported geometry scale matrix, aggregates all quality reports, and compares Step 21 ungated rows with Step 23 quality-gated rows.
+
 ## Limitations
 
 - no real squid geometry validation;

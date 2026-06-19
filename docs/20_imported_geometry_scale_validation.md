@@ -95,3 +95,18 @@ Imported geometry remains limited to small synthetic voxel and mesh fixtures.
 The Step 22 mesh path is not production mesh repair or automatic remeshing.
 
 Step 22 validates the import path with mesh quality sanity, voxel quality sanity, strict expected-failure bad fixtures, sampling resolution sensitivity diagnostics, and optional `FSIDriver3D` geometry quality reports. It does not add new FSI physics or change Step 21 coupling behavior.
+
+## Step 23 Follow-On
+
+Step 23 repeats imported geometry scale validation with quality_check_enabled=true.
+Step 23 uses quality_check_strict=false for scale validation.
+Step 23 is quality-gated synthetic imported geometry validation, not real squid validation.
+
+The default quality_check_enabled remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+Imported geometry remains limited to small synthetic voxel and mesh fixtures.
+The Step 23 mesh path is not production mesh repair or automatic remeshing.
+
+Step 23 reruns the Step 21 48^3 and 64^3 imported geometry scale cases with non-strict quality reports enabled for every driver row. It adds quality report aggregation and a Step 21 vs Step 23 comparison.

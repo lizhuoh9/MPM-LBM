@@ -1,0 +1,16 @@
+case,geometry_type,quality_kind,pass,severity,warnings_count,reasons_count,vertices_count,faces_count,boundary_edge_count,degenerate_face_count,occupied_count,connected_component_count,largest_component_fraction,source_report_path
+mesh_cube_64_penalty_engineering,mesh,mesh,True,ok,0,0,8,12,0,0,0,0,0.0,outputs/step23_quality_gated_imported_geometry_64_feasibility/mesh_cube_64_penalty_engineering/geometry_quality_report.json
+voxel_sphere_64_moving_boundary_engineering,voxel,voxel,True,ok,0,0,0,0,0,0,3016,1,1.0,outputs/step23_quality_gated_imported_geometry_64_feasibility/voxel_sphere_64_moving_boundary_engineering/geometry_quality_report.json
+voxel_sphere_64_penalty_engineering,voxel,voxel,True,ok,0,0,0,0,0,0,3016,1,1.0,outputs/step23_quality_gated_imported_geometry_64_feasibility/voxel_sphere_64_penalty_engineering/geometry_quality_report.json
+mesh_cube_48_moving_boundary_engineering,mesh,mesh,True,ok,0,0,8,12,0,0,0,0,0.0,outputs/step23_quality_gated_mesh_cube_48_modes/mesh_cube_48_moving_boundary_engineering/geometry_quality_report.json
+mesh_cube_48_moving_boundary_link_area_experimental,mesh,mesh,True,ok,0,0,8,12,0,0,0,0,0.0,outputs/step23_quality_gated_mesh_cube_48_modes/mesh_cube_48_moving_boundary_link_area_experimental/geometry_quality_report.json
+mesh_cube_48_none_engineering,mesh,mesh,True,ok,0,0,8,12,0,0,0,0,0.0,outputs/step23_quality_gated_mesh_cube_48_modes/mesh_cube_48_none_engineering/geometry_quality_report.json
+mesh_cube_48_penalty_engineering,mesh,mesh,True,ok,0,0,8,12,0,0,0,0,0.0,outputs/step23_quality_gated_mesh_cube_48_modes/mesh_cube_48_penalty_engineering/geometry_quality_report.json
+mesh_ellipsoid_48_moving_boundary_engineering,mesh,mesh,True,ok,0,0,114,224,0,0,0,0,0.0,outputs/step23_quality_gated_mesh_ellipsoid_48_modes/mesh_ellipsoid_48_moving_boundary_engineering/geometry_quality_report.json
+mesh_ellipsoid_48_moving_boundary_link_area_experimental,mesh,mesh,True,ok,0,0,114,224,0,0,0,0,0.0,outputs/step23_quality_gated_mesh_ellipsoid_48_modes/mesh_ellipsoid_48_moving_boundary_link_area_experimental/geometry_quality_report.json
+mesh_ellipsoid_48_none_engineering,mesh,mesh,True,ok,0,0,114,224,0,0,0,0,0.0,outputs/step23_quality_gated_mesh_ellipsoid_48_modes/mesh_ellipsoid_48_none_engineering/geometry_quality_report.json
+mesh_ellipsoid_48_penalty_engineering,mesh,mesh,True,ok,0,0,114,224,0,0,0,0,0.0,outputs/step23_quality_gated_mesh_ellipsoid_48_modes/mesh_ellipsoid_48_penalty_engineering/geometry_quality_report.json
+voxel_sphere_48_moving_boundary_engineering,voxel,voxel,True,ok,0,0,0,0,0,0,3016,1,1.0,outputs/step23_quality_gated_voxel_sphere_48_modes/voxel_sphere_48_moving_boundary_engineering/geometry_quality_report.json
+voxel_sphere_48_moving_boundary_link_area_experimental,voxel,voxel,True,ok,0,0,0,0,0,0,3016,1,1.0,outputs/step23_quality_gated_voxel_sphere_48_modes/voxel_sphere_48_moving_boundary_link_area_experimental/geometry_quality_report.json
+voxel_sphere_48_none_engineering,voxel,voxel,True,ok,0,0,0,0,0,0,3016,1,1.0,outputs/step23_quality_gated_voxel_sphere_48_modes/voxel_sphere_48_none_engineering/geometry_quality_report.json
+voxel_sphere_48_penalty_engineering,voxel,voxel,True,ok,0,0,0,0,0,0,3016,1,1.0,outputs/step23_quality_gated_voxel_sphere_48_modes/voxel_sphere_48_penalty_engineering/geometry_quality_report.json
