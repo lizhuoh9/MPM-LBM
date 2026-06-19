@@ -131,6 +131,17 @@ Step 25 is controlled real geometry intake, not real squid validation. Step 25 p
 
 Step 26 is controlled real geometry projection-only and short driver feasibility. Step 26 is not real squid validation. Step 26 does not implement squid actuation. Step 26 does not implement squid swimming. Step 26 does not implement new FSI physics. Step 26 does not validate production sharp-interface FSI.
 
+## Step 27 Real Geometry 64 Short Driver APIs
+
+Step 27 reuses the Step 26 orchestration APIs and adds Step 27 baseline scripts around them. No new public solver API is introduced.
+
+- `baseline_tests/step27_common.py`: Step 27 config guards, short-driver row checks, summary helpers, and CSV/JSON/NPZ writers.
+- `baseline_tests/run_step27_64_driver_mesh_feasibility.py`: runs the mesh candidate 64^3 penalty, moving_boundary engineering, and moving_boundary link-area rows.
+- `baseline_tests/run_step27_64_driver_voxel_feasibility.py`: runs the voxel candidate 64^3 penalty, moving_boundary engineering, and moving_boundary link-area rows.
+- `baseline_tests/run_step27_driver_projection_alignment.py`: compares Step 27 driver projection diagnostics against Step 26 64^3 projection-only diagnostics.
+
+Step 27 is controlled real geometry 64^3 short driver feasibility. Step 27 is not real squid validation. Step 27 does not implement squid actuation. Step 27 does not implement squid swimming. Step 27 does not implement new FSI physics. Step 27 does not validate production sharp-interface FSI. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
 ## MomentumAccounting3D
 
 - purpose: diagnostic-only moving_boundary momentum accounting

@@ -172,6 +172,22 @@ PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupl
 
 Step 26 converts the accepted Step 25 descriptors into strict driver-ready geometry configs, runs projection-only scale diagnostics, and then runs 48^3 very short driver feasibility rows with VTK and particle outputs disabled.
 
+## Step 27 Controlled 64 Short Driver Feasibility
+
+Step 27 is controlled real geometry 64^3 short driver feasibility.
+Step 27 is not real squid validation.
+Step 27 does not implement squid actuation.
+Step 27 does not implement squid swimming.
+Step 27 does not implement new FSI physics.
+Step 27 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 27 reuses the Step 26 strict driver-ready geometry configs and runs only a six-row 64^3 coupling subset with VTK and particle outputs disabled.
+
 ## Limitations
 
 - no real squid geometry validation

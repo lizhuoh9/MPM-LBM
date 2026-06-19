@@ -1,0 +1,7 @@
+candidate_id,geometry_type,mode,reaction_transfer_mode,n_grid,driver_projected_mass,step26_projected_mass,projected_mass_delta,driver_active_cell_count,step26_active_cell_count,active_cell_count_delta,alignment_pass
+real_candidate_smoke_mesh,mesh,moving_boundary,engineering,64,0.6058249473571777,0.6058260798454285,-1.1324882507324219e-06,110592,110592,0,True
+real_candidate_smoke_mesh,mesh,moving_boundary,link_area_experimental,64,0.6058267951011658,0.6058260798454285,7.152557373046875e-07,110592,110592,0,True
+real_candidate_smoke_mesh,mesh,penalty,engineering,64,0.6058264970779419,0.6058260798454285,4.172325134277344e-07,110592,110592,0,True
+real_candidate_smoke_voxel,voxel,moving_boundary,engineering,64,0.09944099187850952,0.09944107383489609,-8.195638656616211e-08,31116,31116,0,True
+real_candidate_smoke_voxel,voxel,moving_boundary,link_area_experimental,64,0.09944093227386475,0.09944107383489609,-1.4156103134155273e-07,31116,31116,0,True
+real_candidate_smoke_voxel,voxel,penalty,engineering,64,0.0994410514831543,0.09944107383489609,-2.2351741790771484e-08,31116,31116,0,True

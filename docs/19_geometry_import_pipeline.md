@@ -207,3 +207,27 @@ Primary Step 26 outputs:
 - `outputs/step25_sampling_reproducibility/sampling_reproducibility.csv`
 - `outputs/step25_projection_smoke/projection_smoke_results.csv`
 - `outputs/step25_artifact_manifest/artifact_summary.json`
+
+## Step 27 Follow-On
+
+Step 27 is controlled real geometry 64^3 short driver feasibility.
+Step 27 is not real squid validation.
+Step 27 does not implement squid actuation.
+Step 27 does not implement squid swimming.
+Step 27 does not implement new FSI physics.
+Step 27 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Primary Step 27 outputs:
+
+- `outputs/step27_candidate_fingerprint_guard/fingerprint_guard.csv`
+- `outputs/step27_64_driver_mesh_feasibility/mesh_64_short_driver_results.csv`
+- `outputs/step27_64_driver_voxel_feasibility/voxel_64_short_driver_results.csv`
+- `outputs/step27_driver_projection_alignment/driver_projection_alignment.csv`
+- `outputs/step27_64_driver_summary/driver_64_summary.json`
+- `outputs/step27_quality_report_aggregation/quality_report_summary.json`
+- `outputs/step27_artifact_manifest/artifact_summary.json`

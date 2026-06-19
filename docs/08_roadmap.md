@@ -4,7 +4,7 @@ The next steps should preserve the existing regression baselines and mode matrix
 
 ## Current Status
 
-Step 26 is controlled real geometry projection-only and short driver feasibility. It preserves Step 25 intake evidence, adds 32^3/48^3/64^3 projection-only scale diagnostics, and adds 48^3 very short driver feasibility rows before any actuation, swimming, or production sharp-interface FSI claims.
+Step 27 is controlled real geometry 64^3 short driver feasibility. It preserves Step 25 intake evidence and Step 26 projection/short-driver evidence while adding a six-row 64^3 coupling subset before any actuation, swimming, or production sharp-interface FSI claims.
 
 ## Proposed Steps
 
@@ -25,6 +25,7 @@ Step 26 is controlled real geometry projection-only and short driver feasibility
 | Step 24 | completed: strict quality-gated imported geometry long-run validation | strict gate for selected synthetic imported geometry rows only |
 | Step 25 | controlled real geometry intake | manifest, fingerprinting, QA, normalization, deterministic sampling, and projection-only smoke only |
 | Step 26 | controlled real geometry projection-only and short driver feasibility | no squid actuation, swimming, production sharp-interface FSI, or final readiness claim |
+| Step 27 | controlled real geometry 64^3 short driver feasibility | six coupling rows only; no squid actuation, swimming, production sharp-interface FSI, or final readiness claim |
 
 ## Regression Rule
 
@@ -51,6 +52,7 @@ Step 23 quality-gated imported geometry scale validation contracts
 Step 24 strict quality-gated imported geometry long-run contracts
 Step 25 controlled real geometry intake contracts
 Step 26 controlled real geometry projection-only and short driver feasibility contracts
+Step 27 controlled real geometry 64^3 short driver feasibility contracts
 ```
 
 New physics should be added behind explicit modes or new configs, not by silently changing validated behavior.
@@ -76,3 +78,5 @@ Step 24 runs strict quality-gated synthetic imported geometry long-run validatio
 Step 25 is controlled real geometry intake, not real squid validation. Step 25 performs geometry QA, normalization, fingerprinting, sampling reproducibility, and projection-only smoke diagnostics. Step 25 does not implement squid swimming. Step 25 does not implement squid actuation. Step 25 does not implement new FSI physics. Step 25 does not validate production sharp-interface FSI. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged. Candidate intake does not perform production mesh repair or automatic remeshing. Raw large real geometry files and scan data are not committed.
 
 Step 26 is controlled real geometry projection-only and short driver feasibility. Step 26 is not real squid validation. Step 26 does not implement squid actuation. Step 26 does not implement squid swimming. Step 26 does not implement new FSI physics. Step 26 does not validate production sharp-interface FSI. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 27 is controlled real geometry 64^3 short driver feasibility. Step 27 is not real squid validation. Step 27 does not implement squid actuation. Step 27 does not implement squid swimming. Step 27 does not implement new FSI physics. Step 27 does not validate production sharp-interface FSI. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.

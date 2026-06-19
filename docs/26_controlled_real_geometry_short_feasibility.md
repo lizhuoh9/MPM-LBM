@@ -103,3 +103,19 @@ Primary outputs:
 ## Decision For Step 27
 
 If Step 26 passes, Step 27 can conservatively try a 64^3 short-driver subset. It should keep the same scope boundaries and avoid actuation, swimming, production sharp-interface FSI claims, mesh repair claims, automatic remeshing claims, and formula changes.
+
+## Step 27 Follow-Up
+
+Step 27 is controlled real geometry 64^3 short driver feasibility.
+Step 27 is not real squid validation.
+Step 27 does not implement squid actuation.
+Step 27 does not implement squid swimming.
+Step 27 does not implement new FSI physics.
+Step 27 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 27 runs only the 64^3 coupling subset for the accepted mesh and voxel candidates: penalty engineering, moving_boundary engineering, and moving_boundary link_area_experimental. It keeps VTK and particle outputs disabled.

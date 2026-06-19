@@ -1,0 +1,90 @@
+{
+  "pass_count": 6,
+  "row_count": 6,
+  "rows": [
+    {
+      "active_cell_count_delta": 0,
+      "alignment_pass": true,
+      "candidate_id": "real_candidate_smoke_mesh",
+      "driver_active_cell_count": 110592,
+      "driver_projected_mass": 0.6058249473571777,
+      "geometry_type": "mesh",
+      "mode": "moving_boundary",
+      "n_grid": 64,
+      "projected_mass_delta": -1.1324882507324219e-06,
+      "reaction_transfer_mode": "engineering",
+      "step26_active_cell_count": 110592,
+      "step26_projected_mass": 0.6058260798454285
+    },
+    {
+      "active_cell_count_delta": 0,
+      "alignment_pass": true,
+      "candidate_id": "real_candidate_smoke_mesh",
+      "driver_active_cell_count": 110592,
+      "driver_projected_mass": 0.6058267951011658,
+      "geometry_type": "mesh",
+      "mode": "moving_boundary",
+      "n_grid": 64,
+      "projected_mass_delta": 7.152557373046875e-07,
+      "reaction_transfer_mode": "link_area_experimental",
+      "step26_active_cell_count": 110592,
+      "step26_projected_mass": 0.6058260798454285
+    },
+    {
+      "active_cell_count_delta": 0,
+      "alignment_pass": true,
+      "candidate_id": "real_candidate_smoke_mesh",
+      "driver_active_cell_count": 110592,
+      "driver_projected_mass": 0.6058264970779419,
+      "geometry_type": "mesh",
+      "mode": "penalty",
+      "n_grid": 64,
+      "projected_mass_delta": 4.172325134277344e-07,
+      "reaction_transfer_mode": "engineering",
+      "step26_active_cell_count": 110592,
+      "step26_projected_mass": 0.6058260798454285
+    },
+    {
+      "active_cell_count_delta": 0,
+      "alignment_pass": true,
+      "candidate_id": "real_candidate_smoke_voxel",
+      "driver_active_cell_count": 31116,
+      "driver_projected_mass": 0.09944099187850952,
+      "geometry_type": "voxel",
+      "mode": "moving_boundary",
+      "n_grid": 64,
+      "projected_mass_delta": -8.195638656616211e-08,
+      "reaction_transfer_mode": "engineering",
+      "step26_active_cell_count": 31116,
+      "step26_projected_mass": 0.09944107383489609
+    },
+    {
+      "active_cell_count_delta": 0,
+      "alignment_pass": true,
+      "candidate_id": "real_candidate_smoke_voxel",
+      "driver_active_cell_count": 31116,
+      "driver_projected_mass": 0.09944093227386475,
+      "geometry_type": "voxel",
+      "mode": "moving_boundary",
+      "n_grid": 64,
+      "projected_mass_delta": -1.4156103134155273e-07,
+      "reaction_transfer_mode": "link_area_experimental",
+      "step26_active_cell_count": 31116,
+      "step26_projected_mass": 0.09944107383489609
+    },
+    {
+      "active_cell_count_delta": 0,
+      "alignment_pass": true,
+      "candidate_id": "real_candidate_smoke_voxel",
+      "driver_active_cell_count": 31116,
+      "driver_projected_mass": 0.0994410514831543,
+      "geometry_type": "voxel",
+      "mode": "penalty",
+      "n_grid": 64,
+      "projected_mass_delta": -2.2351741790771484e-08,
+      "reaction_transfer_mode": "engineering",
+      "step26_active_cell_count": 31116,
+      "step26_projected_mass": 0.09944107383489609
+    }
+  ]
+}

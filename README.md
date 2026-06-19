@@ -30,6 +30,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 24 strict quality-gated synthetic imported geometry long-run validation for selected moving_boundary rows
 - Step 25 controlled real geometry candidate intake with manifest, fingerprinting, normalization reports, deterministic sampling reproducibility, and projection-only smoke diagnostics
 - Step 26 controlled real geometry projection-only and short driver feasibility with strict quality reports for every very short driver row
+- Step 27 controlled real geometry 64^3 short driver feasibility for a six-row coupling subset with strict quality reports
 
 ## Not Implemented
 
@@ -73,6 +74,22 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 26 reuses the accepted Step 25 candidates, checks their fingerprints, creates driver-ready geometry configs, runs projection-only diagnostics at 32^3/48^3/64^3, and runs 48^3 very short driver rows for existing modes only.
+
+## Step 27 64 Short Driver Boundary
+
+Step 27 is controlled real geometry 64^3 short driver feasibility.
+Step 27 is not real squid validation.
+Step 27 does not implement squid actuation.
+Step 27 does not implement squid swimming.
+Step 27 does not implement new FSI physics.
+Step 27 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 27 reuses the accepted Step 25 candidates and Step 26 strict driver-ready geometry configs, then runs only six 64^3 short coupling rows: penalty engineering, moving_boundary engineering, and moving_boundary link_area_experimental for both mesh and voxel candidates.
 
 ## Quick Start
 

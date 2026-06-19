@@ -1,0 +1,30 @@
+{
+  "coupling_mode": "penalty",
+  "geometry_config_path": "configs/step26_real_candidate_smoke_voxel_geometry.json",
+  "geometry_type": "voxel",
+  "gravity": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "link_area_policy": "inverse_length",
+  "link_area_scale_max": 2.0,
+  "link_area_scale_min": 0.25,
+  "mb_force_cap_norm": 1e-05,
+  "mpm_substeps_per_lbm_step": 5,
+  "n_grid": 64,
+  "n_lbm_steps": 5,
+  "n_particles": 4096,
+  "output_interval": 5,
+  "penalty_force_cap_lbm": 5e-05,
+  "quality_check_enabled": true,
+  "quality_check_strict": true,
+  "reaction_transfer_mode": "engineering",
+  "target_u_lbm": [
+    0.003,
+    0.0,
+    0.0
+  ],
+  "write_particles": false,
+  "write_vtk": false
+}

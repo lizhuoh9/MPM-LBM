@@ -1,0 +1,9 @@
+check,pass,value,notes
+step26_report_exists,True,STEP26_CONTROLLED_REAL_GEOMETRY_SHORT_FEASIBILITY_REPORT.md,required Step 26 artifact
+step26_projection_scale_diagnostics,True,6,expected 6 passing rows
+step26_short_driver_summary,True,8,expected 8 stable rows
+step26_quality_report_aggregation,True,8,expected 8 passing reports
+step26_large_file_count,True,0,expected 0
+step26_raw_candidate_large_file_count,True,0,expected 0
+step26_scan_data_file_count,True,0,expected 0
+step26_private_absolute_path_count,True,0,expected 0

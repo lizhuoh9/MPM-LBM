@@ -67,3 +67,19 @@ Step 26 does not implement new FSI physics.
 Step 26 does not validate production sharp-interface FSI.
 
 Step 26 reuses the accepted Step 25 descriptors only after fingerprint comparison against the Step 25 manifest. Generated Step 26 configs must keep strict quality gates enabled and must keep VTK and particle outputs disabled.
+
+## Step 27 Candidate Reuse
+
+Step 27 is controlled real geometry 64^3 short driver feasibility.
+Step 27 is not real squid validation.
+Step 27 does not implement squid actuation.
+Step 27 does not implement squid swimming.
+Step 27 does not implement new FSI physics.
+Step 27 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 27 reuses the accepted Step 25 descriptors and Step 26 driver-ready geometry configs only after fingerprint comparison. Generated Step 27 driver configs must keep strict quality gates enabled and must keep VTK and particle outputs disabled.
