@@ -168,6 +168,23 @@ PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupl
 
 Step 32 reuses `configs/step30_squid_proxy_geometry.json` and `configs/step30_squid_proxy_region_config.json` as immutable semantic context. It adds deterministic schedule artifacts for the mantle radius scale, mantle cavity volume proxy scale, and funnel aperture proxy scale. It does not alter `GeometryConfig`, `GeometrySampler3D`, imported geometry loading, MPM initialization, LBM projection, or driver mode dispatch.
 
+## Step 33 Squid Proxy Kinematics Mapping
+
+Step 33 is controlled squid proxy kinematics mapping to boundary-motion diagnostics.
+Step 33 maps schedules to displacement and velocity proxies only.
+Step 33 does not integrate kinematics into FSIDriver3D.
+Step 33 does not apply moving wall velocity to LBM.
+Step 33 does not implement a jet model.
+Step 33 does not implement squid swimming.
+Step 33 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 33 reuses `configs/step30_squid_proxy_geometry.json`, `configs/step30_squid_proxy_region_config.json`, and `configs/step32_squid_proxy_kinematics_schedule.json`. It maps schedule rows to region-level proxy diagnostics and grid coverage summaries. It does not alter `GeometryConfig`, `GeometrySampler3D`, imported geometry loading, MPM initialization, LBM projection, or driver mode dispatch.
+
 ## Step 14 Reuse
 
 Step 14 reuses `configs/step13_squid_proxy_geometry.json` for 48^3 squid_proxy scale validation. This keeps the procedural geometry fixed while increasing LBM grid resolution. The Step 14 squid_proxy rows remain not real squid validation, not swimming validation, and not anatomical squid geometry evidence.

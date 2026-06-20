@@ -1,0 +1,11 @@
+{
+  "pass_count": 8,
+  "row_count": 8,
+  "step32_large_file_count": 0,
+  "step32_particle_npy_count": 0,
+  "step32_quality_pass": true,
+  "step32_region_mapping_pass": true,
+  "step32_repeatability_pass": true,
+  "step32_schedule_row_count": 81,
+  "step32_vtr_count": 0
+}

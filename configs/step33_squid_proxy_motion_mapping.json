@@ -1,0 +1,22 @@
+{
+  "mapping_id": "step33_squid_proxy_boundary_motion_diagnostics",
+  "schedule_config_path": "configs/step32_squid_proxy_kinematics_schedule.json",
+  "region_config_path": "configs/step30_squid_proxy_region_config.json",
+  "geometry_config_path": "configs/step30_squid_proxy_geometry.json",
+  "sample_count": 32768,
+  "grid_sizes": [32, 48, 64],
+  "tracked_regions": [
+    "mantle_outer",
+    "mantle_cavity_proxy",
+    "funnel_outlet_proxy"
+  ],
+  "mantle_motion_model": "radial_scale_proxy",
+  "cavity_motion_model": "volume_scale_proxy",
+  "funnel_motion_model": "aperture_scale_proxy",
+  "driver_integration_enabled": false,
+  "lbm_wall_velocity_enabled": false,
+  "jet_model_enabled": false,
+  "actuation_enabled": false,
+  "deterministic": true,
+  "scope_note": "motion diagnostics only; no driver integration"
+}

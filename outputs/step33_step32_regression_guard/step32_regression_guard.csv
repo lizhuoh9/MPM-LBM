@@ -1,0 +1,9 @@
+check,pass,value,notes
+step32_report_exists,True,STEP32_CONTROLLED_SQUID_PROXY_KINEMATICS_SCHEDULE_REPORT.md,required Step 32 artifact
+step32_schedule_row_count,True,81,expected 81 schedule rows
+step32_quality_pass,True,True,Step 32 quality must pass
+step32_repeatability_pass,True,True,Step 32 repeatability must pass
+step32_region_mapping_pass,True,True,Step 32 region mapping must pass
+step32_large_file_count,True,0,expected 0
+step32_step32_vtr_count,True,0,expected 0
+step32_step32_particle_npy_count,True,0,expected 0

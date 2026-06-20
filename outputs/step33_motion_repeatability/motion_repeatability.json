@@ -1,0 +1,59 @@
+{
+  "rows": [
+    {
+      "check": "row_count",
+      "notes": "row counts must match",
+      "pass": true,
+      "value_first": 243,
+      "value_second": 243
+    },
+    {
+      "check": "motion_hash",
+      "notes": "full motion hash must repeat",
+      "pass": true,
+      "value_first": "b932535bf4808c17c1719843cd1a8e37508beb0c147d8d954f35acdaefee4300",
+      "value_second": "b932535bf4808c17c1719843cd1a8e37508beb0c147d8d954f35acdaefee4300"
+    },
+    {
+      "check": "mantle_motion_hash",
+      "notes": "mantle motion hash must repeat",
+      "pass": true,
+      "value_first": "f0ffd6d1c733430acd2312301440ed58a985dd5ec451b0601058918ba0d4db2d",
+      "value_second": "f0ffd6d1c733430acd2312301440ed58a985dd5ec451b0601058918ba0d4db2d"
+    },
+    {
+      "check": "cavity_motion_hash",
+      "notes": "cavity motion hash must repeat",
+      "pass": true,
+      "value_first": "cde3c204e5b8b06cb54370bb28566d69ea87fae890eb02e7433e0006e1ea2f40",
+      "value_second": "cde3c204e5b8b06cb54370bb28566d69ea87fae890eb02e7433e0006e1ea2f40"
+    },
+    {
+      "check": "funnel_motion_hash",
+      "notes": "funnel motion hash must repeat",
+      "pass": true,
+      "value_first": "c0a7c1b170f4515b26c7853f8347943418cb473dec7ec614ee97ef912cbcb566",
+      "value_second": "c0a7c1b170f4515b26c7853f8347943418cb473dec7ec614ee97ef912cbcb566"
+    },
+    {
+      "check": "repeatability_pass",
+      "notes": "all repeatability checks must pass",
+      "pass": true,
+      "value_first": true,
+      "value_second": true
+    }
+  ],
+  "summary": {
+    "cavity_motion_hash_first": "cde3c204e5b8b06cb54370bb28566d69ea87fae890eb02e7433e0006e1ea2f40",
+    "cavity_motion_hash_second": "cde3c204e5b8b06cb54370bb28566d69ea87fae890eb02e7433e0006e1ea2f40",
+    "funnel_motion_hash_first": "c0a7c1b170f4515b26c7853f8347943418cb473dec7ec614ee97ef912cbcb566",
+    "funnel_motion_hash_second": "c0a7c1b170f4515b26c7853f8347943418cb473dec7ec614ee97ef912cbcb566",
+    "mantle_motion_hash_first": "f0ffd6d1c733430acd2312301440ed58a985dd5ec451b0601058918ba0d4db2d",
+    "mantle_motion_hash_second": "f0ffd6d1c733430acd2312301440ed58a985dd5ec451b0601058918ba0d4db2d",
+    "motion_hash_first": "b932535bf4808c17c1719843cd1a8e37508beb0c147d8d954f35acdaefee4300",
+    "motion_hash_second": "b932535bf4808c17c1719843cd1a8e37508beb0c147d8d954f35acdaefee4300",
+    "repeatability_pass": true,
+    "row_count_first": 243,
+    "row_count_second": 243
+  }
+}

@@ -92,3 +92,18 @@ No FSIDriver3D, LBM, MPM, moving bounce-back, link-area, or projection formula f
 ## Decision For Step 33
 
 Step 33 should be `Controlled Squid Proxy Kinematics Mapping To Boundary-Motion Diagnostics`. It may map the accepted Step 32 schedule to region displacement and velocity proxies for diagnostics only. It must not integrate moving wall velocity into LBM, must not add a jet path, and must not claim swimming behavior. Real driver integration should wait for Step 34 or later.
+
+Step 33 is controlled squid proxy kinematics mapping to boundary-motion diagnostics.
+Step 33 maps schedules to displacement and velocity proxies only.
+Step 33 does not integrate kinematics into FSIDriver3D.
+Step 33 does not apply moving wall velocity to LBM.
+Step 33 does not implement a jet model.
+Step 33 does not implement squid swimming.
+Step 33 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 33 maps the accepted schedule to aggregate proxy rows and diagnostic grid coverage only. Driver interface work remains a later step.

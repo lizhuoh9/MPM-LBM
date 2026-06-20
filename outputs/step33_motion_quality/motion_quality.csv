@@ -1,0 +1,16 @@
+check,pass,value,notes
+row_count_pass,True,243,row_count must match samples times tracked regions
+tracked_region_count_pass,True,3,all tracked regions must be present
+finite_pass,True,True,motion numeric fields must be finite
+bounds_pass,True,True,motion proxy norms and scales must be bounded
+mantle_motion_pass,True,True,mantle proxy motion diagnostics must be present
+cavity_motion_pass,True,True,cavity proxy volume diagnostics must be present
+funnel_motion_pass,True,True,funnel proxy aperture diagnostics must be present
+mantle_velocity_nonzero_during_cycle,True,True,mantle velocity proxy must be nonzero during the prescribed cycle
+cavity_volume_rate_nonzero_during_cycle,True,True,cavity volume-rate proxy must be nonzero during the prescribed cycle
+funnel_aperture_rate_nonzero_during_open_close,True,True,funnel aperture-rate proxy must be nonzero during open/close phases
+driver_integration_disabled_pass,True,True,driver integration must stay disabled
+lbm_wall_velocity_disabled_pass,True,True,LBM wall velocity must stay disabled
+jet_model_disabled_pass,True,True,jet model must stay disabled
+actuation_disabled_pass,True,True,actuation must stay disabled
+quality_pass,True,True,all Step 33 motion quality checks must pass

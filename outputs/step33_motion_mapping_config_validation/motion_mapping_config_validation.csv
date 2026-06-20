@@ -1,0 +1,21 @@
+check,pass,value,notes
+mapping_id_present,True,step33_squid_proxy_boundary_motion_diagnostics,mapping_id must be nonempty
+schedule_config_path_exists,True,configs/step32_squid_proxy_kinematics_schedule.json,Step 32 schedule config must exist
+region_config_path_exists,True,configs/step30_squid_proxy_region_config.json,Step 30 region config must exist
+geometry_config_path_exists,True,configs/step30_squid_proxy_geometry.json,Step 30 geometry config must exist
+sample_count_positive,True,32768,sample_count must be positive
+grid_sizes_positive,True,"[32, 48, 64]",grid sizes must be positive
+grid_sizes_expected,True,"[32, 48, 64]","grid sizes must be [32, 48, 64]"
+tracked_regions_include_mantle_outer,True,"[""mantle_outer"", ""mantle_cavity_proxy"", ""funnel_outlet_proxy""]",mantle_outer must be tracked
+tracked_regions_include_mantle_cavity_proxy,True,"[""mantle_outer"", ""mantle_cavity_proxy"", ""funnel_outlet_proxy""]",mantle_cavity_proxy must be tracked
+tracked_regions_include_funnel_outlet_proxy,True,"[""mantle_outer"", ""mantle_cavity_proxy"", ""funnel_outlet_proxy""]",funnel_outlet_proxy must be tracked
+tracked_regions_expected,True,"[""mantle_outer"", ""mantle_cavity_proxy"", ""funnel_outlet_proxy""]",tracked regions must match Step 33 contract
+mantle_motion_model_valid,True,radial_scale_proxy,mantle model must be radial_scale_proxy
+cavity_motion_model_valid,True,volume_scale_proxy,cavity model must be volume_scale_proxy
+funnel_motion_model_valid,True,aperture_scale_proxy,funnel model must be aperture_scale_proxy
+deterministic_enabled,True,True,mapping must be deterministic
+driver_integration_disabled,True,False,Step 33 must not integrate with driver
+lbm_wall_velocity_disabled,True,False,Step 33 must not enable LBM wall velocity
+jet_model_disabled,True,False,Step 33 must not enable a jet model
+actuation_disabled,True,False,Step 33 must not enable actuation
+scope_note_valid,True,motion diagnostics only; no driver integration,scope_note must state diagnostics-only and no driver integration

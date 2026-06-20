@@ -1,0 +1,116 @@
+{
+  "rows": [
+    {
+      "check": "row_count_pass",
+      "notes": "row_count must match samples times tracked regions",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "tracked_region_count_pass",
+      "notes": "all tracked regions must be present",
+      "pass": true,
+      "value": 3
+    },
+    {
+      "check": "finite_pass",
+      "notes": "motion numeric fields must be finite",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "bounds_pass",
+      "notes": "motion proxy norms and scales must be bounded",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "mantle_motion_pass",
+      "notes": "mantle proxy motion diagnostics must be present",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "cavity_motion_pass",
+      "notes": "cavity proxy volume diagnostics must be present",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "funnel_motion_pass",
+      "notes": "funnel proxy aperture diagnostics must be present",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "mantle_velocity_nonzero_during_cycle",
+      "notes": "mantle velocity proxy must be nonzero during the prescribed cycle",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "cavity_volume_rate_nonzero_during_cycle",
+      "notes": "cavity volume-rate proxy must be nonzero during the prescribed cycle",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "funnel_aperture_rate_nonzero_during_open_close",
+      "notes": "funnel aperture-rate proxy must be nonzero during open/close phases",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "driver_integration_disabled_pass",
+      "notes": "driver integration must stay disabled",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "lbm_wall_velocity_disabled_pass",
+      "notes": "LBM wall velocity must stay disabled",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "jet_model_disabled_pass",
+      "notes": "jet model must stay disabled",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "actuation_disabled_pass",
+      "notes": "actuation must stay disabled",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "quality_pass",
+      "notes": "all Step 33 motion quality checks must pass",
+      "pass": true,
+      "value": true
+    }
+  ],
+  "summary": {
+    "actuation_disabled_pass": true,
+    "bounds_pass": true,
+    "cavity_motion_pass": true,
+    "cavity_volume_rate_nonzero_during_cycle": true,
+    "driver_integration_disabled_pass": true,
+    "expected_row_count": 243,
+    "expected_tracked_region_count": 3,
+    "finite_pass": true,
+    "funnel_aperture_rate_nonzero_during_open_close": true,
+    "funnel_motion_pass": true,
+    "jet_model_disabled_pass": true,
+    "lbm_wall_velocity_disabled_pass": true,
+    "mantle_motion_pass": true,
+    "mantle_velocity_nonzero_during_cycle": true,
+    "quality_pass": true,
+    "row_count": 243,
+    "row_count_pass": true,
+    "schedule_sample_count": 81,
+    "tracked_region_count": 3,
+    "tracked_region_count_pass": true
+  }
+}

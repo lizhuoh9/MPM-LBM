@@ -1,0 +1,10 @@
+check,pass,value,notes
+schedule_row_count,True,81,Step 32 schedule row count must remain 81
+motion_sample_count,True,81,motion sample count must match schedule
+phase_samples_match,True,243,motion phase must match schedule phase
+mantle_scale_match,True,243,motion mantle scale must match schedule
+mantle_rate_match,True,243,motion mantle rate must match schedule
+cavity_scale_match,True,243,motion cavity scale must match schedule
+cavity_rate_match,True,243,motion cavity rate must match schedule
+funnel_scale_match,True,243,motion funnel scale must match schedule
+funnel_rate_match,True,243,motion funnel rate must match schedule

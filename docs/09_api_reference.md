@@ -125,6 +125,41 @@ PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupl
 
 Step 32 schedule APIs are CPU/NumPy artifact utilities. They do not import or invoke `FSIDriver3D`, LBM stepping, MPM stepping, penalty coupling, moving-boundary coupling, link-area transfer, or projection formulas.
 
+## Step 33 Squid Proxy Kinematics Mapping APIs
+
+Step 33 is controlled squid proxy kinematics mapping to boundary-motion diagnostics.
+Step 33 maps schedules to displacement and velocity proxies only.
+Step 33 does not integrate kinematics into FSIDriver3D.
+Step 33 does not apply moving wall velocity to LBM.
+Step 33 does not implement a jet model.
+Step 33 does not implement squid swimming.
+Step 33 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+- `SquidMotionMappingConfig`: immutable config for mapping accepted Step 32 schedules to region proxy diagnostics.
+- `validate_motion_mapping_config(config, root=None)`: returns artifact-friendly config validation rows.
+- `summarize_motion_mapping_config_validation(rows)`: summarizes validation rows.
+- `load_motion_mapping_inputs(mapping_config_path)`: loads mapping config, Step 32 schedule config, Step 30 geometry/region configs, deterministic points, and masks.
+- `compute_region_motion_rows(...)`: emits one motion row per schedule sample and tracked region.
+- `mantle_displacement_proxy(...)`: computes radial displacement proxy norms for the mantle region.
+- `mantle_velocity_proxy(...)`: computes radial velocity proxy norms for the mantle region.
+- `cavity_volume_rate_proxy(cavity_volume_rate)`: carries the cavity volume-rate diagnostic.
+- `funnel_aperture_rate_proxy(funnel_aperture_rate)`: carries the funnel aperture-rate diagnostic.
+- `summarize_motion_rows(rows)`: summarizes row count, finite/bounds checks, enabled-flag counts, and motion envelopes.
+- `write_motion_rows(rows, csv_path, json_path, summary=None)`: writes committed CSV/JSON motion artifacts.
+- `analyze_motion_mapping(rows, mapping_config)`: evaluates finite, bounds, region, motion, and disabled-flag checks.
+- `quality_rows_from_motion_analysis(analysis)`: converts motion quality analysis to artifact rows.
+- `assert_motion_mapping_quality(analysis)`: raises when a motion quality check fails.
+- `summarize_motion_on_grids(points, masks, motion_rows, grid_sizes)`: computes diagnostic coverage rows at configured grid sizes.
+- `summarize_motion_grid_rows(rows)`: summarizes grid coverage diagnostics.
+- `assert_motion_grid_diagnostics(summary)`: raises when grid coverage checks fail.
+
+Step 33 mapping APIs are CPU/NumPy artifact utilities. They do not import or invoke `FSIDriver3D`, LBM stepping, MPM stepping, penalty coupling, moving-boundary coupling, link-area transfer, or projection formulas.
+
 ## ImportedGeometrySampler3D
 
 - purpose: Step 20 imported voxel/mesh helper for small synthetic fixtures

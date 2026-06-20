@@ -1,0 +1,66 @@
+{
+  "rows": [
+    {
+      "check": "schedule_row_count",
+      "notes": "Step 32 schedule row count must remain 81",
+      "pass": true,
+      "value": 81
+    },
+    {
+      "check": "motion_sample_count",
+      "notes": "motion sample count must match schedule",
+      "pass": true,
+      "value": 81
+    },
+    {
+      "check": "phase_samples_match",
+      "notes": "motion phase must match schedule phase",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "mantle_scale_match",
+      "notes": "motion mantle scale must match schedule",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "mantle_rate_match",
+      "notes": "motion mantle rate must match schedule",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "cavity_scale_match",
+      "notes": "motion cavity scale must match schedule",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "cavity_rate_match",
+      "notes": "motion cavity rate must match schedule",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "funnel_scale_match",
+      "notes": "motion funnel scale must match schedule",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "funnel_rate_match",
+      "notes": "motion funnel rate must match schedule",
+      "pass": true,
+      "value": 243
+    }
+  ],
+  "summary": {
+    "consistency_pass": true,
+    "motion_row_count": 243,
+    "motion_sample_count": 81,
+    "pass_count": 9,
+    "row_count": 9,
+    "schedule_row_count": 81
+  }
+}

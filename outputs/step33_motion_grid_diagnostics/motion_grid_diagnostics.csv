@@ -1,0 +1,10 @@
+grid_size,region_id,active_cell_count,sample_point_count,max_velocity_norm,mean_velocity_norm,max_displacement_norm,coverage_pass,finite_pass
+32,funnel_outlet_proxy,8,8,0.0,0.0,0.0,True,True
+32,mantle_cavity_proxy,100,100,0.0,0.0,0.0,True,True
+32,mantle_outer,648,648,0.11118596431055332,0.03885579975466314,0.025987588251121133,True,True
+48,funnel_outlet_proxy,8,8,0.0,0.0,0.0,True,True
+48,mantle_cavity_proxy,100,100,0.0,0.0,0.0,True,True
+48,mantle_outer,648,648,0.11118596431055332,0.03885579975466314,0.025987588251121133,True,True
+64,funnel_outlet_proxy,8,8,0.0,0.0,0.0,True,True
+64,mantle_cavity_proxy,100,100,0.0,0.0,0.0,True,True
+64,mantle_outer,648,648,0.11118596431055332,0.03885579975466314,0.025987588251121133,True,True

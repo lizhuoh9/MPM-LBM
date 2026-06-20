@@ -1,0 +1,17 @@
+{
+  "sampling_id": "step33_squid_proxy_motion_sampling",
+  "motion_mapping_config_path": "configs/step33_squid_proxy_motion_mapping.json",
+  "schedule_sample_count": 81,
+  "tracked_region_count": 3,
+  "expected_motion_row_count": 243,
+  "hash_numeric_precision": 12,
+  "write_csv": true,
+  "write_json": true,
+  "write_vtk": false,
+  "write_particles": false,
+  "driver_integration_enabled": false,
+  "lbm_wall_velocity_enabled": false,
+  "jet_model_enabled": false,
+  "actuation_enabled": false,
+  "scope_note": "artifact sampling for motion diagnostics only; no driver integration"
+}

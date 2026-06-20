@@ -105,3 +105,20 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 32 defines deterministic mantle radius, mantle cavity volume proxy, and funnel aperture proxy schedules as artifacts only. Driver integration remains a later step.
+
+## Step 33 Direction
+
+Step 33 is controlled squid proxy kinematics mapping to boundary-motion diagnostics.
+Step 33 maps schedules to displacement and velocity proxies only.
+Step 33 does not integrate kinematics into FSIDriver3D.
+Step 33 does not apply moving wall velocity to LBM.
+Step 33 does not implement a jet model.
+Step 33 does not implement squid swimming.
+Step 33 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 33 maps the accepted Step 32 schedule to `mantle_outer`, `mantle_cavity_proxy`, and `funnel_outlet_proxy` proxy diagnostics only.

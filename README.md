@@ -36,6 +36,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 30 controlled squid proxy region geometry contract for static squid-like region semantics
 - Step 31 controlled squid proxy region projection and static driver smoke for existing coupling modes only
 - Step 32 controlled squid proxy prescribed kinematics schedule contract for artifact-only mantle, cavity, and funnel proxy schedules
+- Step 33 controlled squid proxy kinematics mapping to boundary-motion diagnostics for artifact-only displacement and velocity proxies
 
 ## Not Implemented
 
@@ -101,6 +102,23 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 32 adds deterministic phase samples, mantle radius scale, mantle cavity volume proxy scale, funnel aperture proxy scale, derivative diagnostics, repeatability hashes, region mapping validation, a Step 31 regression guard, and artifact budget checks. These are schedule artifacts only.
+
+## Step 33 Squid Proxy Kinematics Mapping Boundary
+
+Step 33 is controlled squid proxy kinematics mapping to boundary-motion diagnostics.
+Step 33 maps schedules to displacement and velocity proxies only.
+Step 33 does not integrate kinematics into FSIDriver3D.
+Step 33 does not apply moving wall velocity to LBM.
+Step 33 does not implement a jet model.
+Step 33 does not implement squid swimming.
+Step 33 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 33 maps the accepted Step 32 schedule to region-level proxy diagnostics for `mantle_outer`, `mantle_cavity_proxy`, and `funnel_outlet_proxy`, then summarizes coverage at 32^3, 48^3, and 64^3. These diagnostics are not written into a coupled simulation state.
 
 ## Step 25 Intake Boundary
 

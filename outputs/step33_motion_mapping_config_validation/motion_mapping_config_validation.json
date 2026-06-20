@@ -1,0 +1,154 @@
+{
+  "config_path": "configs/step33_squid_proxy_motion_mapping.json",
+  "rows": [
+    {
+      "check": "mapping_id_present",
+      "notes": "mapping_id must be nonempty",
+      "pass": true,
+      "value": "step33_squid_proxy_boundary_motion_diagnostics"
+    },
+    {
+      "check": "schedule_config_path_exists",
+      "notes": "Step 32 schedule config must exist",
+      "pass": true,
+      "value": "configs/step32_squid_proxy_kinematics_schedule.json"
+    },
+    {
+      "check": "region_config_path_exists",
+      "notes": "Step 30 region config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_region_config.json"
+    },
+    {
+      "check": "geometry_config_path_exists",
+      "notes": "Step 30 geometry config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_geometry.json"
+    },
+    {
+      "check": "sample_count_positive",
+      "notes": "sample_count must be positive",
+      "pass": true,
+      "value": 32768
+    },
+    {
+      "check": "grid_sizes_positive",
+      "notes": "grid sizes must be positive",
+      "pass": true,
+      "value": [
+        32,
+        48,
+        64
+      ]
+    },
+    {
+      "check": "grid_sizes_expected",
+      "notes": "grid sizes must be [32, 48, 64]",
+      "pass": true,
+      "value": [
+        32,
+        48,
+        64
+      ]
+    },
+    {
+      "check": "tracked_regions_include_mantle_outer",
+      "notes": "mantle_outer must be tracked",
+      "pass": true,
+      "value": [
+        "mantle_outer",
+        "mantle_cavity_proxy",
+        "funnel_outlet_proxy"
+      ]
+    },
+    {
+      "check": "tracked_regions_include_mantle_cavity_proxy",
+      "notes": "mantle_cavity_proxy must be tracked",
+      "pass": true,
+      "value": [
+        "mantle_outer",
+        "mantle_cavity_proxy",
+        "funnel_outlet_proxy"
+      ]
+    },
+    {
+      "check": "tracked_regions_include_funnel_outlet_proxy",
+      "notes": "funnel_outlet_proxy must be tracked",
+      "pass": true,
+      "value": [
+        "mantle_outer",
+        "mantle_cavity_proxy",
+        "funnel_outlet_proxy"
+      ]
+    },
+    {
+      "check": "tracked_regions_expected",
+      "notes": "tracked regions must match Step 33 contract",
+      "pass": true,
+      "value": [
+        "mantle_outer",
+        "mantle_cavity_proxy",
+        "funnel_outlet_proxy"
+      ]
+    },
+    {
+      "check": "mantle_motion_model_valid",
+      "notes": "mantle model must be radial_scale_proxy",
+      "pass": true,
+      "value": "radial_scale_proxy"
+    },
+    {
+      "check": "cavity_motion_model_valid",
+      "notes": "cavity model must be volume_scale_proxy",
+      "pass": true,
+      "value": "volume_scale_proxy"
+    },
+    {
+      "check": "funnel_motion_model_valid",
+      "notes": "funnel model must be aperture_scale_proxy",
+      "pass": true,
+      "value": "aperture_scale_proxy"
+    },
+    {
+      "check": "deterministic_enabled",
+      "notes": "mapping must be deterministic",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "driver_integration_disabled",
+      "notes": "Step 33 must not integrate with driver",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "lbm_wall_velocity_disabled",
+      "notes": "Step 33 must not enable LBM wall velocity",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "jet_model_disabled",
+      "notes": "Step 33 must not enable a jet model",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "actuation_disabled",
+      "notes": "Step 33 must not enable actuation",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "scope_note_valid",
+      "notes": "scope_note must state diagnostics-only and no driver integration",
+      "pass": true,
+      "value": "motion diagnostics only; no driver integration"
+    }
+  ],
+  "summary": {
+    "pass_count": 20,
+    "row_count": 20,
+    "validation_pass": true
+  }
+}
