@@ -1,0 +1,30 @@
+check,pass,value,notes
+velocity_field_id_present,True,step35_squid_proxy_wall_velocity_diagnostic,velocity_field_id must be nonempty
+boundary_motion_config_path_exists,True,configs/step34_boundary_motion_interface_prescribed_kinematic.json,Step 34 boundary-motion config must exist
+motion_mapping_config_path_exists,True,configs/step33_squid_proxy_motion_mapping.json,Step 33 motion mapping config must exist
+schedule_config_path_exists,True,configs/step32_squid_proxy_kinematics_schedule.json,Step 32 schedule config must exist
+region_config_path_exists,True,configs/step30_squid_proxy_region_config.json,Step 30 region config must exist
+geometry_config_path_exists,True,configs/step30_squid_proxy_geometry.json,Step 30 geometry config must exist
+grid_sizes_positive,True,"[32, 48, 64]",grid sizes must be positive
+grid_sizes_expected,True,"[32, 48, 64]","grid sizes must be [32, 48, 64]"
+phase_samples_finite,True,"[0.0, 0.1, 0.2, 0.35, 0.5, 0.75, 1.0]",phase samples must be finite
+phase_samples_in_unit_interval,True,"[0.0, 0.1, 0.2, 0.35, 0.5, 0.75, 1.0]","phase samples must be in [0, 1]"
+phase_samples_expected,True,"[0.0, 0.1, 0.2, 0.35, 0.5, 0.75, 1.0]",phase samples must match Step 35 contract
+tracked_regions_include_mantle_outer,True,"[""mantle_outer"", ""mantle_cavity_proxy"", ""funnel_outlet_proxy""]",mantle_outer must be tracked
+tracked_regions_include_mantle_cavity_proxy,True,"[""mantle_outer"", ""mantle_cavity_proxy"", ""funnel_outlet_proxy""]",mantle_cavity_proxy must be tracked
+tracked_regions_include_funnel_outlet_proxy,True,"[""mantle_outer"", ""mantle_cavity_proxy"", ""funnel_outlet_proxy""]",funnel_outlet_proxy must be tracked
+tracked_regions_expected,True,"[""mantle_outer"", ""mantle_cavity_proxy"", ""funnel_outlet_proxy""]",tracked regions must match Step 35 contract
+wall_velocity_model_valid,True,diagnostic_proxy,wall_velocity_model must be diagnostic_proxy
+funnel_axis_valid,True,+y,funnel_axis must be +y
+max_velocity_norm_allowed_valid,True,1.0,max_velocity_norm_allowed must be finite and positive
+deterministic_enabled,True,True,Step 35 generation must be deterministic
+scope_note_valid,True,velocity field diagnostics only; no LBM population update,scope_note must state diagnostics-only and no LBM population update
+write_dense_field_false,True,False,write_dense_field must be false
+write_sparse_samples_false,True,False,write_sparse_samples must be false
+apply_to_lbm_false,True,False,apply_to_lbm must be false
+lbm_population_update_enabled_false,True,False,lbm_population_update_enabled must be false
+moving_bounceback_update_enabled_false,True,False,moving_bounceback_update_enabled must be false
+driver_integration_enabled_false,True,False,driver_integration_enabled must be false
+jet_model_enabled_false,True,False,jet_model_enabled must be false
+actuation_enabled_false,True,False,actuation_enabled must be false
+all_execution_flags_false,True,0,all Step 35 execution flags must be disabled

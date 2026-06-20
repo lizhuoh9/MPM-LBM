@@ -1,0 +1,9 @@
+check,observed,expected,pass,notes
+lbm_population_update_count,0,0,True,Step 35 source must not write distribution populations
+moving_bounceback_update_count,0,0,True,Step 35 source must not call moving bounce-back updates
+dynamic_solid_mutation_count,0,0,True,Step 35 source must not mutate dynamic solid state
+projector_mutation_count,0,0,True,Step 35 source must not mutate projector state
+driver_integration_enabled_count,0,0,True,driver integration must remain disabled
+apply_to_lbm_count,0,0,True,Step 35 must not apply diagnostics to LBM
+lbm_population_update_enabled_count,0,0,True,LBM population update flag must remain disabled
+moving_bounceback_update_enabled_count,0,0,True,moving bounce-back update flag must remain disabled

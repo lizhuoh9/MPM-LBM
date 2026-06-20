@@ -1,0 +1,27 @@
+{
+  "by_extension": {
+    ".csv": 3512288,
+    ".dat": 63959040,
+    ".json": 1051231,
+    ".log": 385195,
+    ".md": 1541649,
+    ".npy": 14781056,
+    ".npz": 2370871,
+    ".obj": 7940,
+    ".py": 1902495,
+    ".vtr": 64111974,
+    "<none>": 1
+  },
+  "file_count": 2181,
+  "large_file_count": 0,
+  "private_absolute_path_count": 0,
+  "raw_candidate_large_file_count": 0,
+  "scan_data_file_count": 0,
+  "step35_file_count": 47,
+  "step35_particle_npy_count": 0,
+  "step35_total_size_bytes": 261378,
+  "step35_total_size_mb": 0.2492694854736328,
+  "step35_vtr_count": 0,
+  "total_size_bytes": 153623740,
+  "total_size_mb": 146.50701522827148
+}

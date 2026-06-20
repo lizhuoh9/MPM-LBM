@@ -1,0 +1,22 @@
+{
+  "sampling_id": "step35_squid_proxy_wall_velocity_sampling",
+  "velocity_field_config_path": "configs/step35_squid_proxy_wall_velocity_field.json",
+  "grid_size_count": 3,
+  "phase_sample_count": 7,
+  "tracked_region_count": 3,
+  "expected_wall_velocity_row_count": 63,
+  "hash_numeric_precision": 12,
+  "write_csv": true,
+  "write_json": true,
+  "write_dense_field": false,
+  "write_sparse_samples": false,
+  "write_vtk": false,
+  "write_particles": false,
+  "apply_to_lbm": false,
+  "lbm_population_update_enabled": false,
+  "moving_bounceback_update_enabled": false,
+  "driver_integration_enabled": false,
+  "jet_model_enabled": false,
+  "actuation_enabled": false,
+  "scope_note": "artifact sampling for wall velocity diagnostics only; no LBM population update"
+}

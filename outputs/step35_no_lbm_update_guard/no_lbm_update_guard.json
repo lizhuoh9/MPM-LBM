@@ -1,0 +1,69 @@
+{
+  "rows": [
+    {
+      "check": "lbm_population_update_count",
+      "expected": 0,
+      "notes": "Step 35 source must not write distribution populations",
+      "observed": 0,
+      "pass": true
+    },
+    {
+      "check": "moving_bounceback_update_count",
+      "expected": 0,
+      "notes": "Step 35 source must not call moving bounce-back updates",
+      "observed": 0,
+      "pass": true
+    },
+    {
+      "check": "dynamic_solid_mutation_count",
+      "expected": 0,
+      "notes": "Step 35 source must not mutate dynamic solid state",
+      "observed": 0,
+      "pass": true
+    },
+    {
+      "check": "projector_mutation_count",
+      "expected": 0,
+      "notes": "Step 35 source must not mutate projector state",
+      "observed": 0,
+      "pass": true
+    },
+    {
+      "check": "driver_integration_enabled_count",
+      "expected": 0,
+      "notes": "driver integration must remain disabled",
+      "observed": 0,
+      "pass": true
+    },
+    {
+      "check": "apply_to_lbm_count",
+      "expected": 0,
+      "notes": "Step 35 must not apply diagnostics to LBM",
+      "observed": 0,
+      "pass": true
+    },
+    {
+      "check": "lbm_population_update_enabled_count",
+      "expected": 0,
+      "notes": "LBM population update flag must remain disabled",
+      "observed": 0,
+      "pass": true
+    },
+    {
+      "check": "moving_bounceback_update_enabled_count",
+      "expected": 0,
+      "notes": "moving bounce-back update flag must remain disabled",
+      "observed": 0,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "apply_to_lbm_count": 0,
+    "driver_integration_enabled_count": 0,
+    "guard_pass": true,
+    "lbm_population_update_count": 0,
+    "moving_bounceback_update_count": 0,
+    "pass_count": 8,
+    "row_count": 8
+  }
+}

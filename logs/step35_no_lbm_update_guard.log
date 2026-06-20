@@ -1,0 +1,4 @@
+[OK] Step 35 no LBM update guard finished
+guard_pass=True
+lbm_population_update_count=0
+moving_bounceback_update_count=0

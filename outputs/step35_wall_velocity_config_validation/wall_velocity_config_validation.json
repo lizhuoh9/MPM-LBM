@@ -1,0 +1,285 @@
+{
+  "config": {
+    "actuation_enabled": false,
+    "apply_to_lbm": false,
+    "boundary_motion_config_path": "configs/step34_boundary_motion_interface_prescribed_kinematic.json",
+    "deterministic": true,
+    "driver_integration_enabled": false,
+    "funnel_axis": "+y",
+    "geometry_config_path": "configs/step30_squid_proxy_geometry.json",
+    "grid_sizes": [
+      32,
+      48,
+      64
+    ],
+    "jet_model_enabled": false,
+    "lbm_population_update_enabled": false,
+    "max_velocity_norm_allowed": 1.0,
+    "motion_mapping_config_path": "configs/step33_squid_proxy_motion_mapping.json",
+    "moving_bounceback_update_enabled": false,
+    "phase_samples": [
+      0.0,
+      0.1,
+      0.2,
+      0.35,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "region_config_path": "configs/step30_squid_proxy_region_config.json",
+    "schedule_config_path": "configs/step32_squid_proxy_kinematics_schedule.json",
+    "scope_note": "velocity field diagnostics only; no LBM population update",
+    "tracked_regions": [
+      "mantle_outer",
+      "mantle_cavity_proxy",
+      "funnel_outlet_proxy"
+    ],
+    "velocity_field_id": "step35_squid_proxy_wall_velocity_diagnostic",
+    "wall_velocity_model": "diagnostic_proxy",
+    "write_dense_field": false,
+    "write_sparse_samples": false
+  },
+  "rows": [
+    {
+      "check": "velocity_field_id_present",
+      "notes": "velocity_field_id must be nonempty",
+      "pass": true,
+      "value": "step35_squid_proxy_wall_velocity_diagnostic"
+    },
+    {
+      "check": "boundary_motion_config_path_exists",
+      "notes": "Step 34 boundary-motion config must exist",
+      "pass": true,
+      "value": "configs/step34_boundary_motion_interface_prescribed_kinematic.json"
+    },
+    {
+      "check": "motion_mapping_config_path_exists",
+      "notes": "Step 33 motion mapping config must exist",
+      "pass": true,
+      "value": "configs/step33_squid_proxy_motion_mapping.json"
+    },
+    {
+      "check": "schedule_config_path_exists",
+      "notes": "Step 32 schedule config must exist",
+      "pass": true,
+      "value": "configs/step32_squid_proxy_kinematics_schedule.json"
+    },
+    {
+      "check": "region_config_path_exists",
+      "notes": "Step 30 region config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_region_config.json"
+    },
+    {
+      "check": "geometry_config_path_exists",
+      "notes": "Step 30 geometry config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_geometry.json"
+    },
+    {
+      "check": "grid_sizes_positive",
+      "notes": "grid sizes must be positive",
+      "pass": true,
+      "value": [
+        32,
+        48,
+        64
+      ]
+    },
+    {
+      "check": "grid_sizes_expected",
+      "notes": "grid sizes must be [32, 48, 64]",
+      "pass": true,
+      "value": [
+        32,
+        48,
+        64
+      ]
+    },
+    {
+      "check": "phase_samples_finite",
+      "notes": "phase samples must be finite",
+      "pass": true,
+      "value": [
+        0.0,
+        0.1,
+        0.2,
+        0.35,
+        0.5,
+        0.75,
+        1.0
+      ]
+    },
+    {
+      "check": "phase_samples_in_unit_interval",
+      "notes": "phase samples must be in [0, 1]",
+      "pass": true,
+      "value": [
+        0.0,
+        0.1,
+        0.2,
+        0.35,
+        0.5,
+        0.75,
+        1.0
+      ]
+    },
+    {
+      "check": "phase_samples_expected",
+      "notes": "phase samples must match Step 35 contract",
+      "pass": true,
+      "value": [
+        0.0,
+        0.1,
+        0.2,
+        0.35,
+        0.5,
+        0.75,
+        1.0
+      ]
+    },
+    {
+      "check": "tracked_regions_include_mantle_outer",
+      "notes": "mantle_outer must be tracked",
+      "pass": true,
+      "value": [
+        "mantle_outer",
+        "mantle_cavity_proxy",
+        "funnel_outlet_proxy"
+      ]
+    },
+    {
+      "check": "tracked_regions_include_mantle_cavity_proxy",
+      "notes": "mantle_cavity_proxy must be tracked",
+      "pass": true,
+      "value": [
+        "mantle_outer",
+        "mantle_cavity_proxy",
+        "funnel_outlet_proxy"
+      ]
+    },
+    {
+      "check": "tracked_regions_include_funnel_outlet_proxy",
+      "notes": "funnel_outlet_proxy must be tracked",
+      "pass": true,
+      "value": [
+        "mantle_outer",
+        "mantle_cavity_proxy",
+        "funnel_outlet_proxy"
+      ]
+    },
+    {
+      "check": "tracked_regions_expected",
+      "notes": "tracked regions must match Step 35 contract",
+      "pass": true,
+      "value": [
+        "mantle_outer",
+        "mantle_cavity_proxy",
+        "funnel_outlet_proxy"
+      ]
+    },
+    {
+      "check": "wall_velocity_model_valid",
+      "notes": "wall_velocity_model must be diagnostic_proxy",
+      "pass": true,
+      "value": "diagnostic_proxy"
+    },
+    {
+      "check": "funnel_axis_valid",
+      "notes": "funnel_axis must be +y",
+      "pass": true,
+      "value": "+y"
+    },
+    {
+      "check": "max_velocity_norm_allowed_valid",
+      "notes": "max_velocity_norm_allowed must be finite and positive",
+      "pass": true,
+      "value": 1.0
+    },
+    {
+      "check": "deterministic_enabled",
+      "notes": "Step 35 generation must be deterministic",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "scope_note_valid",
+      "notes": "scope_note must state diagnostics-only and no LBM population update",
+      "pass": true,
+      "value": "velocity field diagnostics only; no LBM population update"
+    },
+    {
+      "check": "write_dense_field_false",
+      "notes": "write_dense_field must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "write_sparse_samples_false",
+      "notes": "write_sparse_samples must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_lbm_false",
+      "notes": "apply_to_lbm must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "lbm_population_update_enabled_false",
+      "notes": "lbm_population_update_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "moving_bounceback_update_enabled_false",
+      "notes": "moving_bounceback_update_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "driver_integration_enabled_false",
+      "notes": "driver_integration_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "jet_model_enabled_false",
+      "notes": "jet_model_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "actuation_enabled_false",
+      "notes": "actuation_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "all_execution_flags_false",
+      "notes": "all Step 35 execution flags must be disabled",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "actuation_enabled": false,
+    "apply_to_lbm": false,
+    "driver_integration_enabled": false,
+    "execution_flag_enabled_count": 0,
+    "expected_wall_velocity_row_count": 63,
+    "grid_size_count": 3,
+    "jet_model_enabled": false,
+    "lbm_population_update_enabled": false,
+    "moving_bounceback_update_enabled": false,
+    "pass_count": 29,
+    "phase_sample_count": 7,
+    "row_count": 29,
+    "tracked_region_count": 3,
+    "validation_pass": true,
+    "velocity_field_id": "step35_squid_proxy_wall_velocity_diagnostic",
+    "write_dense_field": false,
+    "write_sparse_samples": false
+  }
+}

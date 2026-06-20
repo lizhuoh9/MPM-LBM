@@ -1,0 +1,92 @@
+{
+  "rows": [
+    {
+      "active_cell_count_max": 8,
+      "active_cell_count_min": 8,
+      "coverage_pass": true,
+      "grid_size": 32,
+      "phase_count": 7,
+      "region_id": "funnel_outlet_proxy",
+      "velocity_nonzero_phase_count": 2
+    },
+    {
+      "active_cell_count_max": 100,
+      "active_cell_count_min": 100,
+      "coverage_pass": true,
+      "grid_size": 32,
+      "phase_count": 7,
+      "region_id": "mantle_cavity_proxy",
+      "velocity_nonzero_phase_count": 7
+    },
+    {
+      "active_cell_count_max": 648,
+      "active_cell_count_min": 648,
+      "coverage_pass": true,
+      "grid_size": 32,
+      "phase_count": 7,
+      "region_id": "mantle_outer",
+      "velocity_nonzero_phase_count": 7
+    },
+    {
+      "active_cell_count_max": 16,
+      "active_cell_count_min": 16,
+      "coverage_pass": true,
+      "grid_size": 48,
+      "phase_count": 7,
+      "region_id": "funnel_outlet_proxy",
+      "velocity_nonzero_phase_count": 2
+    },
+    {
+      "active_cell_count_max": 328,
+      "active_cell_count_min": 328,
+      "coverage_pass": true,
+      "grid_size": 48,
+      "phase_count": 7,
+      "region_id": "mantle_cavity_proxy",
+      "velocity_nonzero_phase_count": 7
+    },
+    {
+      "active_cell_count_max": 2136,
+      "active_cell_count_min": 2136,
+      "coverage_pass": true,
+      "grid_size": 48,
+      "phase_count": 7,
+      "region_id": "mantle_outer",
+      "velocity_nonzero_phase_count": 7
+    },
+    {
+      "active_cell_count_max": 48,
+      "active_cell_count_min": 48,
+      "coverage_pass": true,
+      "grid_size": 64,
+      "phase_count": 7,
+      "region_id": "funnel_outlet_proxy",
+      "velocity_nonzero_phase_count": 2
+    },
+    {
+      "active_cell_count_max": 764,
+      "active_cell_count_min": 764,
+      "coverage_pass": true,
+      "grid_size": 64,
+      "phase_count": 7,
+      "region_id": "mantle_cavity_proxy",
+      "velocity_nonzero_phase_count": 7
+    },
+    {
+      "active_cell_count_max": 5056,
+      "active_cell_count_min": 5056,
+      "coverage_pass": true,
+      "grid_size": 64,
+      "phase_count": 7,
+      "region_id": "mantle_outer",
+      "velocity_nonzero_phase_count": 7
+    }
+  ],
+  "summary": {
+    "active_cell_count_max": 5056,
+    "active_cell_count_min": 8,
+    "coverage_pass": true,
+    "pass_count": 9,
+    "row_count": 9
+  }
+}

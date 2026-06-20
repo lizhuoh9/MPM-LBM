@@ -1,0 +1,8 @@
+check,observed,expected,pass,notes
+step34_report_exists,True,True,True,Step 34 report must remain present
+step34_no_op_pass,True,True,True,Step 34 interface no-op must remain accepted
+step34_noop_state_guard_pass_count,2,2,True,Step 34 no-op state guard must keep two passing rows
+step34_quality_report_count,6,6,True,Step 34 quality report count must remain six
+step34_large_file_count,0,0,True,Step 34 artifact large-file count must remain zero
+step34_vtr_count,0,0,True,Step 34 must not contain .vtr outputs
+step34_particle_npy_count,0,0,True,Step 34 must not contain particle .npy outputs

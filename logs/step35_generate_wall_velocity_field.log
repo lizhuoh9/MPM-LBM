@@ -1,0 +1,4 @@
+[OK] Step 35 generate wall velocity field finished
+row_count=63
+max_velocity_norm=0.108959772409
+min_active_cell_count=8

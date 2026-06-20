@@ -1,0 +1,10 @@
+grid_size,region_id,phase_count,active_cell_count_min,active_cell_count_max,velocity_nonzero_phase_count,coverage_pass
+32,funnel_outlet_proxy,7,8,8,2,True
+32,mantle_cavity_proxy,7,100,100,7,True
+32,mantle_outer,7,648,648,7,True
+48,funnel_outlet_proxy,7,16,16,2,True
+48,mantle_cavity_proxy,7,328,328,7,True
+48,mantle_outer,7,2136,2136,7,True
+64,funnel_outlet_proxy,7,48,48,2,True
+64,mantle_cavity_proxy,7,764,764,7,True
+64,mantle_outer,7,5056,5056,7,True

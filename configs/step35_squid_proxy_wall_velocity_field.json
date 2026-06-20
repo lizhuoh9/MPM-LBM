@@ -1,0 +1,28 @@
+{
+  "velocity_field_id": "step35_squid_proxy_wall_velocity_diagnostic",
+  "boundary_motion_config_path": "configs/step34_boundary_motion_interface_prescribed_kinematic.json",
+  "motion_mapping_config_path": "configs/step33_squid_proxy_motion_mapping.json",
+  "schedule_config_path": "configs/step32_squid_proxy_kinematics_schedule.json",
+  "region_config_path": "configs/step30_squid_proxy_region_config.json",
+  "geometry_config_path": "configs/step30_squid_proxy_geometry.json",
+  "grid_sizes": [32, 48, 64],
+  "phase_samples": [0.0, 0.1, 0.2, 0.35, 0.5, 0.75, 1.0],
+  "tracked_regions": [
+    "mantle_outer",
+    "mantle_cavity_proxy",
+    "funnel_outlet_proxy"
+  ],
+  "wall_velocity_model": "diagnostic_proxy",
+  "funnel_axis": "+y",
+  "max_velocity_norm_allowed": 1.0,
+  "write_dense_field": false,
+  "write_sparse_samples": false,
+  "apply_to_lbm": false,
+  "lbm_population_update_enabled": false,
+  "moving_bounceback_update_enabled": false,
+  "driver_integration_enabled": false,
+  "jet_model_enabled": false,
+  "actuation_enabled": false,
+  "deterministic": true,
+  "scope_note": "velocity field diagnostics only; no LBM population update"
+}

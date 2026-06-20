@@ -1,0 +1,28 @@
+{
+  "summary": {
+    "apply_to_lbm_count": 0,
+    "bounds_pass": true,
+    "coverage_pass": true,
+    "diagnostic_only_pass": true,
+    "driver_integration_enabled_count": 0,
+    "expected_grid_size_count": 3,
+    "expected_phase_sample_count": 7,
+    "expected_row_count": 63,
+    "expected_tracked_region_count": 3,
+    "finite_pass": true,
+    "grid_size_count": 3,
+    "lbm_population_update_enabled_count": 0,
+    "max_velocity_norm": 0.10895977240897987,
+    "max_velocity_norm_allowed": 1.0,
+    "max_velocity_norm_pass": true,
+    "moving_bounceback_update_enabled_count": 0,
+    "no_bounceback_update_pass": true,
+    "no_driver_integration_pass": true,
+    "no_lbm_update_pass": true,
+    "phase_sample_count": 7,
+    "quality_pass": true,
+    "row_count": 63,
+    "row_count_pass": true,
+    "tracked_region_count": 3
+  }
+}

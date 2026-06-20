@@ -1,0 +1,12 @@
+{
+  "pass_count": 7,
+  "regression_pass": true,
+  "row_count": 7,
+  "step34_large_file_count": 0,
+  "step34_no_op_pass": true,
+  "step34_noop_state_guard_pass_count": 2,
+  "step34_particle_npy_count": 0,
+  "step34_quality_report_count": 6,
+  "step34_report_exists": true,
+  "step34_vtr_count": 0
+}
