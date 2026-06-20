@@ -35,6 +35,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 29 controlled real geometry 64^3 short-window stability envelope for the Step 28 transfer matrix
 - Step 30 controlled squid proxy region geometry contract for static squid-like region semantics
 - Step 31 controlled squid proxy region projection and static driver smoke for existing coupling modes only
+- Step 32 controlled squid proxy prescribed kinematics schedule contract for artifact-only mantle, cavity, and funnel proxy schedules
 
 ## Not Implemented
 
@@ -82,6 +83,24 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 31 adds 32^3/48^3/64^3 projection-only region diagnostics, four 48^3 static driver smoke rows, region-driver alignment, engineering vs link_area_experimental static comparison, strict quality report aggregation, and a Step 30 regression guard.
+
+## Step 32 Squid Proxy Kinematics Schedule Boundary
+
+Step 32 is controlled squid proxy prescribed kinematics schedule.
+Step 32 defines kinematics schedules only.
+Step 32 does not integrate kinematics into FSIDriver3D.
+Step 32 does not apply moving wall velocity.
+Step 32 does not implement mantle contraction in the driver.
+Step 32 does not implement funnel actuation in the driver.
+Step 32 does not implement squid swimming.
+Step 32 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 32 adds deterministic phase samples, mantle radius scale, mantle cavity volume proxy scale, funnel aperture proxy scale, derivative diagnostics, repeatability hashes, region mapping validation, a Step 31 regression guard, and artifact budget checks. These are schedule artifacts only.
 
 ## Step 25 Intake Boundary
 

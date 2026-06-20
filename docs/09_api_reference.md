@@ -88,6 +88,43 @@ PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupl
 
 Step 31 region projection is semantic context, not a mass partition. Step 30 region masks intentionally overlap, so Step 31 does not require region projected mass to sum to driver projected mass.
 
+## Step 32 Squid Proxy Kinematics Schedule APIs
+
+Step 32 is controlled squid proxy prescribed kinematics schedule.
+Step 32 defines kinematics schedules only.
+Step 32 does not integrate kinematics into FSIDriver3D.
+Step 32 does not apply moving wall velocity.
+Step 32 does not implement mantle contraction in the driver.
+Step 32 does not implement funnel actuation in the driver.
+Step 32 does not implement squid swimming.
+Step 32 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+- `SquidKinematicsScheduleConfig`: immutable schedule config for one prescribed diagnostic cycle.
+- `validate_kinematics_schedule_config(config, root=None)`: returns artifact-friendly schedule config validation rows.
+- `summarize_config_validation(rows)`: summarizes validation rows.
+- `phase_samples(config)`: returns inclusive phase samples over `[0, 1]`.
+- `smoothstep(x)`: deterministic scalar/vector smoothstep helper.
+- `window_weight(phase, start, end, ramp_fraction)`: creates a bounded open/close window.
+- `mantle_radius_scale(phase, config)`: returns prescribed mantle radius scale diagnostics.
+- `cavity_volume_scale(phase, config)`: returns prescribed cavity volume proxy scale diagnostics.
+- `funnel_aperture_scale(phase, config)`: returns prescribed funnel aperture proxy scale diagnostics.
+- `schedule_rows(config)`: emits artifact rows with phase, scale, rate, label, and disabled execution flags.
+- `summarize_schedule(rows)`: summarizes observed schedule bounds and endpoint repeatability.
+- `write_schedule_outputs(rows, csv_path, json_path, summary=None)`: writes the committed CSV/JSON schedule artifacts.
+- `analyze_kinematics_schedule(rows, config)`: evaluates finite, bounds, monotonic, endpoint, derivative, contraction/refill, and disabled-flag checks.
+- `quality_rows_from_analysis(analysis)`: converts schedule quality analysis to artifact rows.
+- `assert_kinematics_schedule_quality(analysis)`: raises when a schedule quality check fails.
+- `validate_kinematics_region_mapping(schedule_config, region_config)`: verifies that future kinematic targets map to accepted Step 30 regions while remaining inactive.
+- `region_mapping_rows(mapping)`: converts mapping checks to artifact rows.
+- `assert_region_mapping(mapping)`: raises when region mapping checks fail.
+
+Step 32 schedule APIs are CPU/NumPy artifact utilities. They do not import or invoke `FSIDriver3D`, LBM stepping, MPM stepping, penalty coupling, moving-boundary coupling, link-area transfer, or projection formulas.
+
 ## ImportedGeometrySampler3D
 
 - purpose: Step 20 imported voxel/mesh helper for small synthetic fixtures

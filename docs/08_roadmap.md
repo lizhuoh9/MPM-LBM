@@ -4,7 +4,7 @@ The next steps should preserve the existing regression baselines and mode matrix
 
 ## Current Status
 
-Step 31 is controlled squid proxy region projection and static driver smoke. It preserves the Step 30 static squid-like region semantics while adding 32^3/48^3/64^3 region projection diagnostics and a four-row 48^3 static driver smoke.
+Step 32 is controlled squid proxy prescribed kinematics schedule. It preserves the Step 30/31 static squid proxy region semantics while adding deterministic mantle, cavity, and funnel proxy schedules as artifact-only diagnostics.
 
 ## Proposed Steps
 
@@ -30,7 +30,8 @@ Step 31 is controlled squid proxy region projection and static driver smoke. It 
 | Step 29 | controlled real geometry 64^3 short-window stability envelope | four moving_boundary 20-step rows only; stability envelope, transfer envelope, force/reaction envelope, area-scale envelope, and Step 28 prefix regression |
 | Step 30 | controlled squid proxy region geometry | static region semantics only; no squid actuation, swimming, mantle contraction, funnel actuation, new FSI physics, or real squid validation |
 | Step 31 | controlled squid proxy region projection and static driver smoke | static region semantics only; existing modes only; no squid actuation, swimming, mantle contraction, funnel actuation, new FSI physics, or real squid validation |
-| Step 32 | proposed: controlled squid proxy prescribed kinematics schedule contract | schedule contract only; driver integration should wait for Step 33 |
+| Step 32 | completed: controlled squid proxy prescribed kinematics schedule contract | schedule contract only; no driver integration, no moving wall velocity, no new FSI physics |
+| Step 33 | proposed: controlled squid proxy kinematics mapping to boundary-motion diagnostics | diagnostic mapping only; real driver integration should wait for Step 34 or later |
 
 ## Regression Rule
 
@@ -62,6 +63,7 @@ Step 28 controlled real geometry 64^3 transfer diagnostics contracts
 Step 29 controlled real geometry 64^3 short-window stability envelope contracts
 Step 30 controlled squid proxy region geometry contracts
 Step 31 controlled squid proxy region projection and static driver smoke contracts
+Step 32 controlled squid proxy prescribed kinematics schedule contracts
 ```
 
 New physics should be added behind explicit modes or new configs, not by silently changing validated behavior.
@@ -97,3 +99,5 @@ Step 29 is controlled real geometry 64^3 short-window stability envelope. Step 2
 Step 30 is controlled squid proxy region geometry. Step 30 defines squid-like region semantics only. Step 30 is not real squid validation. Step 30 does not implement squid actuation. Step 30 does not implement squid swimming. Step 30 does not implement mantle contraction. Step 30 does not implement funnel actuation. Step 30 does not implement new FSI physics. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 31 is controlled squid proxy region projection and static driver smoke. Step 31 uses static squid proxy region semantics only. Step 31 is not real squid validation. Step 31 does not implement squid actuation. Step 31 does not implement squid swimming. Step 31 does not implement mantle contraction. Step 31 does not implement funnel actuation. Step 31 does not implement new FSI physics. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 32 is controlled squid proxy prescribed kinematics schedule. Step 32 defines kinematics schedules only. Step 32 does not integrate kinematics into FSIDriver3D. Step 32 does not apply moving wall velocity. Step 32 does not implement mantle contraction in the driver. Step 32 does not implement funnel actuation in the driver. Step 32 does not implement squid swimming. Step 32 does not implement new FSI physics. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.

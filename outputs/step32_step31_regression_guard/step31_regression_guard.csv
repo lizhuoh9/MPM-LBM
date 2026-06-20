@@ -1,0 +1,8 @@
+check,pass,value,notes
+step31_report_exists,True,STEP31_CONTROLLED_SQUID_PROXY_REGION_STATIC_DRIVER_REPORT.md,required Step 31 artifact
+step31_region_projection_scale,True,21,expected 21 passing projection rows
+step31_static_driver_smoke,True,4,expected four stable static rows
+step31_quality_report_aggregation,True,4,expected four passing strict reports
+step31_large_file_count,True,0,expected 0
+step31_step31_vtr_count,True,0,expected 0
+step31_step31_particle_npy_count,True,0,expected 0

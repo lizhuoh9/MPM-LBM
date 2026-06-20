@@ -73,4 +73,22 @@ No Step 31 `.vtr` outputs or particle `.npy` outputs are committed.
 
 ## Decision For Step 32
 
-Step 32 should be `Controlled Squid Proxy Prescribed Kinematics Schedule Contract`. It should define a kinematic schedule contract only: mantle radius schedule, mantle cavity volume proxy schedule, funnel aperture proxy schedule, cycle period, phase/ramp, and repeatability diagnostics. Driver integration should wait for Step 33.
+Step 32 is controlled squid proxy prescribed kinematics schedule.
+Step 32 defines kinematics schedules only.
+Step 32 does not integrate kinematics into FSIDriver3D.
+Step 32 does not apply moving wall velocity.
+Step 32 does not implement mantle contraction in the driver.
+Step 32 does not implement funnel actuation in the driver.
+Step 32 does not implement squid swimming.
+Step 32 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 32 defines mantle radius schedule, mantle cavity volume proxy schedule, funnel aperture proxy schedule, cycle period, phase/ramp semantics, derivative diagnostics, repeatability hashes, region mapping compatibility, and artifact budget checks. These are schedule artifacts only.
+
+## Decision For Step 33
+
+Step 33 should be `Controlled Squid Proxy Kinematics Mapping To Boundary-Motion Diagnostics`. It may map the accepted Step 32 schedule to region displacement and velocity proxies for diagnostics only. Real driver integration should wait for Step 34 or later.

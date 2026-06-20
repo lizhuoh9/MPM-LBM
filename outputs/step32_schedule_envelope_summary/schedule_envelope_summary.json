@@ -1,0 +1,48 @@
+{
+  "rows": [
+    {
+      "actuation_enabled_count": 0,
+      "cavity_volume_scale_max_observed": 1.0,
+      "cavity_volume_scale_min_observed": 0.6,
+      "contraction_sample_count": 28,
+      "driver_integration_enabled_count": 0,
+      "endpoint_repeatability_pass": true,
+      "envelope_pass": true,
+      "finite_pass": true,
+      "funnel_aperture_scale_max_observed": 1.0,
+      "funnel_aperture_scale_min_observed": 0.35,
+      "funnel_open_sample_count": 27,
+      "mantle_radius_scale_max_observed": 1.0,
+      "mantle_radius_scale_min_observed": 0.85,
+      "max_abs_cavity_volume_rate": 1.711370262390659,
+      "max_abs_funnel_aperture_rate": 20.845481049562675,
+      "max_abs_mantle_radius_rate": 0.6417638483964936,
+      "phase_max": 1.0,
+      "phase_min": 0.0,
+      "refill_sample_count": 53,
+      "row_count": 81
+    }
+  ],
+  "summary": {
+    "actuation_enabled_count": 0,
+    "cavity_volume_scale_max_observed": 1.0,
+    "cavity_volume_scale_min_observed": 0.6,
+    "contraction_sample_count": 28,
+    "driver_integration_enabled_count": 0,
+    "endpoint_repeatability_pass": true,
+    "envelope_pass": true,
+    "finite_pass": true,
+    "funnel_aperture_scale_max_observed": 1.0,
+    "funnel_aperture_scale_min_observed": 0.35,
+    "funnel_open_sample_count": 27,
+    "mantle_radius_scale_max_observed": 1.0,
+    "mantle_radius_scale_min_observed": 0.85,
+    "max_abs_cavity_volume_rate": 1.711370262390659,
+    "max_abs_funnel_aperture_rate": 20.845481049562675,
+    "max_abs_mantle_radius_rate": 0.6417638483964936,
+    "phase_max": 1.0,
+    "phase_min": 0.0,
+    "refill_sample_count": 53,
+    "row_count": 81
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "sampling_id": "step32_squid_proxy_kinematics_sampling",
+  "schedule_config_path": "configs/step32_squid_proxy_kinematics_schedule.json",
+  "output_row_count": 81,
+  "hash_numeric_precision": 12,
+  "write_csv": true,
+  "write_json": true,
+  "write_vtk": false,
+  "write_particles": false,
+  "driver_integration_enabled": false,
+  "actuation_enabled": false,
+  "scope_note": "artifact sampling for schedule contract only; no driver integration"
+}

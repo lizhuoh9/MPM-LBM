@@ -1,0 +1,92 @@
+{
+  "rows": [
+    {
+      "check": "row_count_pass",
+      "notes": "row_count must match sample_count",
+      "pass": true,
+      "value": 81
+    },
+    {
+      "check": "finite_pass",
+      "notes": "schedule numeric fields must be finite",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "bounds_pass",
+      "notes": "mantle and cavity scales must stay inside configured bounds",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "phase_monotonic_pass",
+      "notes": "phase samples must be monotonic",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "endpoint_repeatability_pass",
+      "notes": "cycle endpoints must repeat rest values",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "derivative_finite_pass",
+      "notes": "first derivatives must be finite",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "contraction_volume_rate_pass",
+      "notes": "cavity volume must not increase during contraction",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "refill_volume_rate_pass",
+      "notes": "cavity volume must not decrease during refill",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "funnel_aperture_bounds_pass",
+      "notes": "funnel aperture must stay inside configured bounds",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "driver_integration_disabled_pass",
+      "notes": "Step 32 rows must not enable driver integration",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "actuation_disabled_pass",
+      "notes": "Step 32 rows must not enable actuation",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "quality_pass",
+      "notes": "all schedule quality checks must pass",
+      "pass": true,
+      "value": true
+    }
+  ],
+  "summary": {
+    "actuation_disabled_pass": true,
+    "bounds_pass": true,
+    "contraction_volume_rate_pass": true,
+    "derivative_finite_pass": true,
+    "driver_integration_disabled_pass": true,
+    "endpoint_repeatability_pass": true,
+    "expected_row_count": 81,
+    "finite_pass": true,
+    "funnel_aperture_bounds_pass": true,
+    "phase_monotonic_pass": true,
+    "quality_pass": true,
+    "refill_volume_rate_pass": true,
+    "row_count": 81,
+    "row_count_pass": true
+  }
+}

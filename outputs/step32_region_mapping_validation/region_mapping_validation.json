@@ -1,0 +1,72 @@
+{
+  "rows": [
+    {
+      "check": "all_required_regions_present",
+      "notes": "all Step 30 region IDs must remain present",
+      "pass": true,
+      "value": 7
+    },
+    {
+      "check": "mantle_outer_present",
+      "notes": "mantle radius schedule future target exists",
+      "pass": true,
+      "value": "mantle_outer"
+    },
+    {
+      "check": "mantle_cavity_proxy_present",
+      "notes": "cavity volume proxy future target exists",
+      "pass": true,
+      "value": "mantle_cavity_proxy"
+    },
+    {
+      "check": "funnel_outlet_proxy_present",
+      "notes": "funnel aperture proxy future target exists",
+      "pass": true,
+      "value": "funnel_outlet_proxy"
+    },
+    {
+      "check": "active_for_actuation_disabled",
+      "notes": "Step 30 regions must remain inactive",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "driver_integration_disabled",
+      "notes": "Step 32 must not integrate with driver",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "actuation_disabled",
+      "notes": "Step 32 must not enable actuation",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "mapping_pass",
+      "notes": "future mapping only; Step 32 does not enable driver integration or region actuation",
+      "pass": true,
+      "value": true
+    }
+  ],
+  "summary": {
+    "active_for_actuation_region_count": 0,
+    "active_for_actuation_region_ids": [],
+    "actuation_enabled": false,
+    "all_required_regions_present": true,
+    "driver_integration_enabled": false,
+    "funnel_outlet_proxy_present": true,
+    "kinematic_region_ids": [
+      "mantle_outer",
+      "mantle_cavity_proxy",
+      "funnel_outlet_proxy"
+    ],
+    "mantle_cavity_proxy_present": true,
+    "mantle_outer_present": true,
+    "mapping_note": "future mapping only; Step 32 does not enable driver integration or region actuation",
+    "mapping_pass": true,
+    "present_required_region_count": 7,
+    "region_config_geometry_type": "squid_proxy",
+    "required_region_count": 7
+  }
+}

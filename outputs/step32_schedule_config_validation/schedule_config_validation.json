@@ -1,0 +1,156 @@
+{
+  "config_path": "configs/step32_squid_proxy_kinematics_schedule.json",
+  "rows": [
+    {
+      "check": "schedule_id_present",
+      "notes": "schedule_id must be nonempty",
+      "pass": true,
+      "value": "step32_squid_proxy_prescribed_cycle"
+    },
+    {
+      "check": "region_config_path_exists",
+      "notes": "Step 30 region config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_region_config.json"
+    },
+    {
+      "check": "geometry_config_path_exists",
+      "notes": "Step 30 geometry config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_geometry.json"
+    },
+    {
+      "check": "cycle_period_positive",
+      "notes": "cycle_period_steps must be positive",
+      "pass": true,
+      "value": 40
+    },
+    {
+      "check": "sample_count_sufficient",
+      "notes": "sample_count must include at least one full closed cycle",
+      "pass": true,
+      "value": 81
+    },
+    {
+      "check": "phase_values_finite",
+      "notes": "phase values must be finite",
+      "pass": true,
+      "value": [
+        0.0,
+        0.35,
+        0.35,
+        1.0,
+        0.05,
+        0.4
+      ]
+    },
+    {
+      "check": "phase_values_bounded",
+      "notes": "phase values must be in [0, 1]",
+      "pass": true,
+      "value": [
+        0.0,
+        0.35,
+        0.35,
+        1.0,
+        0.05,
+        0.4
+      ]
+    },
+    {
+      "check": "contraction_range_valid",
+      "notes": "contraction_start_phase must be less than contraction_end_phase",
+      "pass": true,
+      "value": [
+        0.0,
+        0.35
+      ]
+    },
+    {
+      "check": "refill_range_valid",
+      "notes": "refill must start at contraction_end_phase and end later",
+      "pass": true,
+      "value": [
+        0.35,
+        1.0
+      ]
+    },
+    {
+      "check": "cycle_endpoint_valid",
+      "notes": "refill_end_phase must close the cycle at 1.0",
+      "pass": true,
+      "value": 1.0
+    },
+    {
+      "check": "ramp_fraction_valid",
+      "notes": "ramp_fraction must be in [0, 0.5]",
+      "pass": true,
+      "value": 0.1
+    },
+    {
+      "check": "mantle_scale_range_valid",
+      "notes": "mantle radius scale range must be positive and ordered",
+      "pass": true,
+      "value": [
+        0.85,
+        1.0
+      ]
+    },
+    {
+      "check": "cavity_scale_range_valid",
+      "notes": "cavity volume scale range must be positive and ordered",
+      "pass": true,
+      "value": [
+        0.6,
+        1.0
+      ]
+    },
+    {
+      "check": "funnel_scale_range_valid",
+      "notes": "funnel aperture scale range must be nonnegative and ordered",
+      "pass": true,
+      "value": [
+        0.35,
+        1.0
+      ]
+    },
+    {
+      "check": "funnel_open_window_valid",
+      "notes": "funnel open start must be less than end",
+      "pass": true,
+      "value": [
+        0.05,
+        0.4
+      ]
+    },
+    {
+      "check": "deterministic_enabled",
+      "notes": "schedule must be deterministic",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "driver_integration_disabled",
+      "notes": "Step 32 must not integrate kinematics into the driver",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "actuation_disabled",
+      "notes": "Step 32 must not enable actuation",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "scope_note_valid",
+      "notes": "scope_note must state schedule-only and no driver integration",
+      "pass": true,
+      "value": "schedule contract only; no driver integration"
+    }
+  ],
+  "summary": {
+    "pass_count": 19,
+    "row_count": 19,
+    "validation_pass": true
+  }
+}

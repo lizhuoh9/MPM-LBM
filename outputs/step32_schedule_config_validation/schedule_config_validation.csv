@@ -1,0 +1,20 @@
+check,pass,value,notes
+schedule_id_present,True,step32_squid_proxy_prescribed_cycle,schedule_id must be nonempty
+region_config_path_exists,True,configs/step30_squid_proxy_region_config.json,Step 30 region config must exist
+geometry_config_path_exists,True,configs/step30_squid_proxy_geometry.json,Step 30 geometry config must exist
+cycle_period_positive,True,40,cycle_period_steps must be positive
+sample_count_sufficient,True,81,sample_count must include at least one full closed cycle
+phase_values_finite,True,"[0.0, 0.35, 0.35, 1.0, 0.05, 0.4]",phase values must be finite
+phase_values_bounded,True,"[0.0, 0.35, 0.35, 1.0, 0.05, 0.4]","phase values must be in [0, 1]"
+contraction_range_valid,True,"[0.0, 0.35]",contraction_start_phase must be less than contraction_end_phase
+refill_range_valid,True,"[0.35, 1.0]",refill must start at contraction_end_phase and end later
+cycle_endpoint_valid,True,1.0,refill_end_phase must close the cycle at 1.0
+ramp_fraction_valid,True,0.1,"ramp_fraction must be in [0, 0.5]"
+mantle_scale_range_valid,True,"[0.85, 1.0]",mantle radius scale range must be positive and ordered
+cavity_scale_range_valid,True,"[0.6, 1.0]",cavity volume scale range must be positive and ordered
+funnel_scale_range_valid,True,"[0.35, 1.0]",funnel aperture scale range must be nonnegative and ordered
+funnel_open_window_valid,True,"[0.05, 0.4]",funnel open start must be less than end
+deterministic_enabled,True,True,schedule must be deterministic
+driver_integration_disabled,True,False,Step 32 must not integrate kinematics into the driver
+actuation_disabled,True,False,Step 32 must not enable actuation
+scope_note_valid,True,schedule contract only; no driver integration,scope_note must state schedule-only and no driver integration

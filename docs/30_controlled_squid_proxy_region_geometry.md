@@ -90,4 +90,18 @@ Step 31 adds region-aware projection aggregation at 32^3, 48^3, and 64^3, plus a
 
 ## Step 32 Direction
 
-Step 32 should be `Controlled Squid Proxy Prescribed Kinematics Schedule Contract`. It should define schedule semantics only and should not integrate kinematics into the driver yet.
+Step 32 is controlled squid proxy prescribed kinematics schedule.
+Step 32 defines kinematics schedules only.
+Step 32 does not integrate kinematics into FSIDriver3D.
+Step 32 does not apply moving wall velocity.
+Step 32 does not implement mantle contraction in the driver.
+Step 32 does not implement funnel actuation in the driver.
+Step 32 does not implement squid swimming.
+Step 32 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 32 defines deterministic mantle radius, mantle cavity volume proxy, and funnel aperture proxy schedules as artifacts only. Driver integration remains a later step.

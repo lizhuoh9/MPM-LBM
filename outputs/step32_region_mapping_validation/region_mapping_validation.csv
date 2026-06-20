@@ -1,0 +1,9 @@
+check,pass,value,notes
+all_required_regions_present,True,7,all Step 30 region IDs must remain present
+mantle_outer_present,True,mantle_outer,mantle radius schedule future target exists
+mantle_cavity_proxy_present,True,mantle_cavity_proxy,cavity volume proxy future target exists
+funnel_outlet_proxy_present,True,funnel_outlet_proxy,funnel aperture proxy future target exists
+active_for_actuation_disabled,True,0,Step 30 regions must remain inactive
+driver_integration_disabled,True,False,Step 32 must not integrate with driver
+actuation_disabled,True,False,Step 32 must not enable actuation
+mapping_pass,True,True,future mapping only; Step 32 does not enable driver integration or region actuation

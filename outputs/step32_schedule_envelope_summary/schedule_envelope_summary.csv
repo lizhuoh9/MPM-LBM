@@ -1,0 +1,2 @@
+mantle_radius_scale_min_observed,mantle_radius_scale_max_observed,cavity_volume_scale_min_observed,cavity_volume_scale_max_observed,funnel_aperture_scale_min_observed,funnel_aperture_scale_max_observed,max_abs_mantle_radius_rate,max_abs_cavity_volume_rate,max_abs_funnel_aperture_rate,contraction_sample_count,refill_sample_count,funnel_open_sample_count,envelope_pass
+0.85,1.0,0.6,1.0,0.35,1.0,0.6417638483964936,1.711370262390659,20.845481049562675,28,53,27,True

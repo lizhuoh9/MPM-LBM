@@ -150,6 +150,24 @@ Step 31 reuses `configs/step30_squid_proxy_geometry.json` and `configs/step30_sq
 
 The procedural `squid_proxy` quality report now records that appendage and fin proxy components may be disconnected in coarse diagnostic voxelization. This keeps strict quality reports warning-free for the accepted static proxy semantics without changing `GeometrySampler3D`, `MPMToLBMProjector3D`, LBM, MPM, or coupler formulas.
 
+## Step 32 Squid Proxy Kinematics Schedule
+
+Step 32 is controlled squid proxy prescribed kinematics schedule.
+Step 32 defines kinematics schedules only.
+Step 32 does not integrate kinematics into FSIDriver3D.
+Step 32 does not apply moving wall velocity.
+Step 32 does not implement mantle contraction in the driver.
+Step 32 does not implement funnel actuation in the driver.
+Step 32 does not implement squid swimming.
+Step 32 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 32 reuses `configs/step30_squid_proxy_geometry.json` and `configs/step30_squid_proxy_region_config.json` as immutable semantic context. It adds deterministic schedule artifacts for the mantle radius scale, mantle cavity volume proxy scale, and funnel aperture proxy scale. It does not alter `GeometryConfig`, `GeometrySampler3D`, imported geometry loading, MPM initialization, LBM projection, or driver mode dispatch.
+
 ## Step 14 Reuse
 
 Step 14 reuses `configs/step13_squid_proxy_geometry.json` for 48^3 squid_proxy scale validation. This keeps the procedural geometry fixed while increasing LBM grid resolution. The Step 14 squid_proxy rows remain not real squid validation, not swimming validation, and not anatomical squid geometry evidence.

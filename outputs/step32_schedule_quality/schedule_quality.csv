@@ -1,0 +1,13 @@
+check,pass,value,notes
+row_count_pass,True,81,row_count must match sample_count
+finite_pass,True,True,schedule numeric fields must be finite
+bounds_pass,True,True,mantle and cavity scales must stay inside configured bounds
+phase_monotonic_pass,True,True,phase samples must be monotonic
+endpoint_repeatability_pass,True,True,cycle endpoints must repeat rest values
+derivative_finite_pass,True,True,first derivatives must be finite
+contraction_volume_rate_pass,True,True,cavity volume must not increase during contraction
+refill_volume_rate_pass,True,True,cavity volume must not decrease during refill
+funnel_aperture_bounds_pass,True,True,funnel aperture must stay inside configured bounds
+driver_integration_disabled_pass,True,True,Step 32 rows must not enable driver integration
+actuation_disabled_pass,True,True,Step 32 rows must not enable actuation
+quality_pass,True,True,all schedule quality checks must pass
