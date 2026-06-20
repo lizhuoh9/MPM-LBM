@@ -102,6 +102,34 @@ The `squid_proxy` is a procedural union of analytic primitives:
 
 The squid_proxy is procedural and is not real squid validation. It is not anatomical geometry, does not validate swimming, and is not a biomechanical model.
 
+## Step 30 Squid Proxy Region Semantics
+
+Step 30 is controlled squid proxy region geometry.
+Step 30 defines squid-like region semantics only.
+Step 30 is not real squid validation.
+Step 30 does not implement squid actuation.
+Step 30 does not implement squid swimming.
+Step 30 does not implement mantle contraction.
+Step 30 does not implement funnel actuation.
+Step 30 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 30 adds static semantic region descriptors on top of the existing procedural squid proxy:
+
+- `mantle_outer`
+- `mantle_cavity_proxy`
+- `funnel_outlet_proxy`
+- `head_proxy`
+- `arms_proxy`
+- `left_fin_proxy`
+- `right_fin_proxy`
+
+The mantle cavity proxy and funnel outlet proxy are static semantic descriptors. They do not change `GeometrySampler3D`, the MPM initialization path, the LBM projection formula, or any coupler formula.
+
 ## Step 14 Reuse
 
 Step 14 reuses `configs/step13_squid_proxy_geometry.json` for 48^3 squid_proxy scale validation. This keeps the procedural geometry fixed while increasing LBM grid resolution. The Step 14 squid_proxy rows remain not real squid validation, not swimming validation, and not anatomical squid geometry evidence.

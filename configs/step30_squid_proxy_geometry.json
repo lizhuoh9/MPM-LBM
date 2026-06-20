@@ -1,0 +1,14 @@
+{
+  "geometry_type": "squid_proxy",
+  "n_particles": 4096,
+  "mantle_center": [0.50, 0.58, 0.50],
+  "mantle_radii": [0.16, 0.24, 0.12],
+  "head_center": [0.50, 0.36, 0.50],
+  "head_radii": [0.11, 0.10, 0.09],
+  "arm_length": 0.22,
+  "arm_radius": 0.018,
+  "fin_radius": 0.07,
+  "quality_check_enabled": true,
+  "quality_check_strict": true,
+  "deterministic": true
+}

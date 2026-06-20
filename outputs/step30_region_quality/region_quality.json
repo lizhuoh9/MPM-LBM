@@ -1,0 +1,85 @@
+{
+  "rows": [
+    {
+      "check": "schema_pass",
+      "notes": "region schema validation",
+      "pass": true,
+      "value": 7
+    },
+    {
+      "check": "no_required_region_missing",
+      "notes": "required region IDs present",
+      "pass": true,
+      "value": ""
+    },
+    {
+      "check": "region_ids_unique",
+      "notes": "region IDs are stable and unique",
+      "pass": true,
+      "value": []
+    },
+    {
+      "check": "all_masks_boolean",
+      "notes": "masks use boolean dtype",
+      "pass": true,
+      "value": 7
+    },
+    {
+      "check": "all_bboxes_finite",
+      "notes": "every required region has finite bbox",
+      "pass": true,
+      "value": 7
+    },
+    {
+      "check": "solid_regions_positive",
+      "notes": "required solid-like regions have positive counts",
+      "pass": true,
+      "value": "solid/appendage/fin regions"
+    },
+    {
+      "check": "cavity_proxy_positive",
+      "notes": "mantle cavity proxy has positive count",
+      "pass": true,
+      "value": 100
+    },
+    {
+      "check": "funnel_outlet_positive",
+      "notes": "funnel outlet proxy has positive count",
+      "pass": true,
+      "value": 8
+    },
+    {
+      "check": "mantle_cavity_inside_mantle",
+      "notes": "mantle cavity proxy is inside mantle outer proxy",
+      "pass": true,
+      "value": "recorded"
+    },
+    {
+      "check": "funnel_outlet_near_mantle_boundary",
+      "notes": "funnel outlet proxy lies near mantle boundary proxy",
+      "pass": true,
+      "value": "recorded"
+    },
+    {
+      "check": "no_forbidden_region_claims",
+      "notes": "region notes avoid validation and actuation claims",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "arms_proxy_count": 34,
+    "forbidden_claim_count": 0,
+    "funnel_outlet_proxy_count": 8,
+    "head_proxy_count": 136,
+    "left_fin_proxy_count": 18,
+    "mantle_cavity_proxy_count": 100,
+    "mantle_outer_count": 648,
+    "missing_required_region_count": 0,
+    "pass_count": 11,
+    "region_quality_pass": true,
+    "required_region_count": 7,
+    "right_fin_proxy_count": 18,
+    "row_count": 11
+  }
+}

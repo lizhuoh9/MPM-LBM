@@ -43,6 +43,12 @@ The committed Step 29 baselines are diagnostic artifacts:
 
 Step 29 is a short-window stability envelope. It does not add squid motion, production mesh repair, or new solver behavior.
 
+## Decision For Step 30
+
+Step 30 should be controlled squid proxy region geometry. It should define squid-like region semantics only: mantle outer, mantle cavity proxy, funnel outlet proxy, head proxy, arms proxy, optional fin proxies, body axis, reference length, body-frame origin, and deterministic region diagnostics.
+
+Step 30 is not real squid validation. Step 30 should not implement squid actuation, swimming, mantle contraction, funnel actuation, or new FSI physics.
+
 ## Artifact Policy
 
 Step 29 commits small CSV, JSON, NPZ, Markdown, config, log, and report artifacts only. It does not commit raw large real geometry, scan data, VTK outputs, or particle NPY outputs.

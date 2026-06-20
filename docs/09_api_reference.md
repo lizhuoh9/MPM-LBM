@@ -37,6 +37,33 @@ Step 23 repeats imported geometry scale validation with quality_check_enabled=tr
 - main methods: `inside`, `sample_particles`, `voxelize`, `component_masks`
 - mode: used for `ellipsoid`, `squid_proxy`, `voxel`, and `mesh`; `box` remains the default driver path for compatibility
 
+## Squid Proxy Region APIs
+
+Step 30 is controlled squid proxy region geometry.
+Step 30 defines squid-like region semantics only.
+Step 30 is not real squid validation.
+Step 30 does not implement squid actuation.
+Step 30 does not implement squid swimming.
+Step 30 does not implement mantle contraction.
+Step 30 does not implement funnel actuation.
+Step 30 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+- `SquidRegion`: immutable region descriptor with `region_id`, name, role, material, parent, actuation flag, and notes.
+- `SquidProxyRegionConfig`: immutable region schema with body axis, reference length, body-frame origin, required regions, and allowed overlap pairs.
+- `default_squid_proxy_region_config()`: returns the Step 30 default region schema.
+- `validate_squid_region_config(config)`: returns an artifact-friendly schema validation dictionary.
+- `sample_squid_proxy_region_points(geometry_config, count, seed)`: builds a deterministic diagnostic point cloud.
+- `sample_squid_proxy_regions(geometry_config, region_config, points)`: returns boolean masks for all required Step 30 regions.
+- `summarize_region_masks(points, masks, geometry_config, region_config)`: returns counts, estimated volumes, bboxes, and finite diagnostics.
+- `evaluate_region_quality(...)`: checks required regions, positive counts, finite bboxes, cavity/outlet semantic placement, and forbidden scope claims.
+- `overlap_matrix_rows(...)`: emits a documented overlap matrix for intentional static proxy overlaps.
+- `run_squid_region_projection_smoke(...)`: computes 32^3/48^3 projection-only region mass and active-cell diagnostics without running the FSI driver.
+
 ## ImportedGeometrySampler3D
 
 - purpose: Step 20 imported voxel/mesh helper for small synthetic fixtures

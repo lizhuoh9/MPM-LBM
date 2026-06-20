@@ -1,0 +1,132 @@
+{
+  "config": {
+    "allowed_overlap_pairs": [
+      [
+        "arms_proxy",
+        "head_proxy"
+      ],
+      [
+        "funnel_outlet_proxy",
+        "head_proxy"
+      ],
+      [
+        "funnel_outlet_proxy",
+        "mantle_outer"
+      ],
+      [
+        "head_proxy",
+        "mantle_outer"
+      ],
+      [
+        "left_fin_proxy",
+        "mantle_outer"
+      ],
+      [
+        "mantle_cavity_proxy",
+        "mantle_outer"
+      ],
+      [
+        "mantle_outer",
+        "right_fin_proxy"
+      ]
+    ],
+    "body_axis": "+y",
+    "body_frame_origin": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "geometry_type": "squid_proxy",
+    "reference_length": 1.0,
+    "regions": [
+      {
+        "active_for_actuation": false,
+        "material": "solid_proxy",
+        "name": "mantle outer proxy",
+        "notes": "outer mantle semantic proxy; static region only; not anatomical validation",
+        "parent_id": null,
+        "region_id": "mantle_outer",
+        "role": "solid_region"
+      },
+      {
+        "active_for_actuation": false,
+        "material": "void_semantic_proxy",
+        "name": "mantle cavity proxy",
+        "notes": "internal cavity semantics only; static descriptor; not anatomical validation",
+        "parent_id": "mantle_outer",
+        "region_id": "mantle_cavity_proxy",
+        "role": "cavity_proxy"
+      },
+      {
+        "active_for_actuation": false,
+        "material": "outlet_semantic_proxy",
+        "name": "funnel outlet proxy",
+        "notes": "static funnel or siphon outlet semantics only; no prescribed motion",
+        "parent_id": "mantle_outer",
+        "region_id": "funnel_outlet_proxy",
+        "role": "outlet_proxy"
+      },
+      {
+        "active_for_actuation": false,
+        "material": "solid_proxy",
+        "name": "head proxy",
+        "notes": "coarse head semantic proxy; static region only; not anatomical validation",
+        "parent_id": null,
+        "region_id": "head_proxy",
+        "role": "solid_region"
+      },
+      {
+        "active_for_actuation": false,
+        "material": "solid_proxy",
+        "name": "arms proxy",
+        "notes": "coarse arms semantic proxy; static region only; not anatomical validation",
+        "parent_id": "head_proxy",
+        "region_id": "arms_proxy",
+        "role": "appendage_proxy"
+      },
+      {
+        "active_for_actuation": false,
+        "material": "solid_proxy",
+        "name": "left fin proxy",
+        "notes": "optional left fin semantic proxy; static region only",
+        "parent_id": "mantle_outer",
+        "region_id": "left_fin_proxy",
+        "role": "fin_proxy"
+      },
+      {
+        "active_for_actuation": false,
+        "material": "solid_proxy",
+        "name": "right fin proxy",
+        "notes": "optional right fin semantic proxy; static region only",
+        "parent_id": "mantle_outer",
+        "region_id": "right_fin_proxy",
+        "role": "fin_proxy"
+      }
+    ],
+    "scope_note": "procedural squid-like proxy region semantics only; not anatomical validation; not real squid validation; no actuation or swimming"
+  },
+  "summary": {
+    "active_for_actuation_region_ids": [],
+    "actuation_disabled_count": 7,
+    "allowed_overlap_ids_known": true,
+    "allowed_overlap_pair_count": 7,
+    "body_axis": "+y",
+    "body_axis_valid": true,
+    "body_frame_origin_finite": true,
+    "duplicate_region_ids": [],
+    "forbidden_claim_count": 0,
+    "forbidden_claims": [],
+    "geometry_type": "squid_proxy",
+    "missing_required_regions": [],
+    "present_required_region_count": 7,
+    "reference_length": 1.0,
+    "reference_length_positive": true,
+    "region_count": 7,
+    "region_fields_nonempty": true,
+    "region_ids_unique": true,
+    "required_region_count": 7,
+    "roles_valid": true,
+    "schema_pass": true,
+    "scope_note_mentions_not_anatomical_validation": true
+  }
+}

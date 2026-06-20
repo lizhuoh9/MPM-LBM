@@ -1,0 +1,10 @@
+{
+  "diagonal_match_count": 7,
+  "diagonal_mismatch_count": 0,
+  "intentional_overlap_count": 14,
+  "matrix_finite": true,
+  "overlap_pass": true,
+  "row_count": 49,
+  "scope_note": "Step 30 overlap diagnostics document semantic proxy overlaps only.",
+  "unintended_overlap_count": 0
+}

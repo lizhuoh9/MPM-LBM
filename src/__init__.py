@@ -12,6 +12,8 @@ from .geometry_config import GeometryConfig
 from .geometry import GeometrySampler3D
 from .geometry_import import ImportedGeometrySampler3D
 from .geometry_quality import GeometryQualityGate, analyze_geometry_config
+from .squid_region_config import SquidProxyRegionConfig, SquidRegion, default_squid_proxy_region_config
+from .squid_proxy_regions import sample_squid_proxy_regions, summarize_region_masks
 from .mesh_quality import analyze_mesh
 from .mesh_io import load_obj, mesh_bounds, normalize_vertices, write_obj
 from .mpm_config import MPMConfig
@@ -39,6 +41,11 @@ __all__ = [
     "ImportedGeometrySampler3D",
     "GeometryQualityGate",
     "analyze_geometry_config",
+    "SquidProxyRegionConfig",
+    "SquidRegion",
+    "default_squid_proxy_region_config",
+    "sample_squid_proxy_regions",
+    "summarize_region_masks",
     "analyze_mesh",
     "load_obj",
     "mesh_bounds",

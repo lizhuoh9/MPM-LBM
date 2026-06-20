@@ -1,0 +1,14 @@
+metric,value
+by_extension,"{"".csv"": 2205676, "".dat"": 60641280, "".json"": 490867, "".log"": 377674, "".md"": 1328978, "".npy"": 14781056, "".npz"": 2190393, "".obj"": 7940, "".py"": 1487870, "".vtr"": 64111974, ""<none>"": 1}"
+file_count,1878
+large_file_count,0
+private_absolute_path_count,0
+raw_candidate_large_file_count,0
+scan_data_file_count,0
+step30_file_count,38
+step30_particle_npy_count,0
+step30_total_size_bytes,142750
+step30_total_size_mb,0.1361370086669922
+step30_vtr_count,0
+total_size_bytes,147623709
+total_size_mb,140.78493976593018

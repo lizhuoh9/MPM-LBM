@@ -33,6 +33,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 27 controlled real geometry 64^3 short driver feasibility for a six-row coupling subset with strict quality reports
 - Step 28 controlled real geometry 64^3 transfer diagnostics comparing engineering and link_area_experimental moving_boundary transfer rows
 - Step 29 controlled real geometry 64^3 short-window stability envelope for the Step 28 transfer matrix
+- Step 30 controlled squid proxy region geometry contract for static squid-like region semantics
 
 ## Not Implemented
 
@@ -44,6 +45,24 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - production mesh repair
 - final strict momentum-conserving sharp-interface FSI
 - production-grade solver readiness
+
+## Step 30 Squid Proxy Region Boundary
+
+Step 30 is controlled squid proxy region geometry.
+Step 30 defines squid-like region semantics only.
+Step 30 is not real squid validation.
+Step 30 does not implement squid actuation.
+Step 30 does not implement squid swimming.
+Step 30 does not implement mantle contraction.
+Step 30 does not implement funnel actuation.
+Step 30 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 30 adds stable proxy region IDs for `mantle_outer`, `mantle_cavity_proxy`, `funnel_outlet_proxy`, `head_proxy`, `arms_proxy`, `left_fin_proxy`, and `right_fin_proxy`. The cavity and outlet regions are static geometry semantics only.
 
 ## Step 25 Intake Boundary
 

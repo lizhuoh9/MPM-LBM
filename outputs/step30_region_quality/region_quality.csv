@@ -1,0 +1,12 @@
+check,pass,value,notes
+schema_pass,True,7,region schema validation
+no_required_region_missing,True,,required region IDs present
+region_ids_unique,True,[],region IDs are stable and unique
+all_masks_boolean,True,7,masks use boolean dtype
+all_bboxes_finite,True,7,every required region has finite bbox
+solid_regions_positive,True,solid/appendage/fin regions,required solid-like regions have positive counts
+cavity_proxy_positive,True,100,mantle cavity proxy has positive count
+funnel_outlet_positive,True,8,funnel outlet proxy has positive count
+mantle_cavity_inside_mantle,True,recorded,mantle cavity proxy is inside mantle outer proxy
+funnel_outlet_near_mantle_boundary,True,recorded,funnel outlet proxy lies near mantle boundary proxy
+no_forbidden_region_claims,True,0,region notes avoid validation and actuation claims

@@ -1,0 +1,8 @@
+check,pass,value,notes
+step29_report_exists,True,STEP29_CONTROLLED_REAL_GEOMETRY_64_STABILITY_ENVELOPE_REPORT.md,required Step 29 artifact
+step29_stability_driver,True,4,expected 4 stable rows
+step29_quality_report_aggregation,True,4,expected 4 passing reports
+step29_large_file_count,True,0,expected 0
+step29_raw_candidate_large_file_count,True,0,expected 0
+step29_scan_data_file_count,True,0,expected 0
+step29_private_absolute_path_count,True,0,expected 0
