@@ -100,3 +100,20 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 28 continues to use only the accepted mesh and voxel smoke candidates. The candidate fingerprint guard must pass before the 64^3 transfer-pair driver rows are accepted.
+
+## Step 29 Candidate Policy
+
+Step 29 is controlled real geometry 64^3 short-window stability envelope.
+Step 29 extends Step 28 transfer diagnostics conservatively.
+Step 29 is not real squid validation.
+Step 29 does not implement squid actuation.
+Step 29 does not implement squid swimming.
+Step 29 does not implement new FSI physics.
+Step 29 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 29 continues to use only the accepted mesh and voxel smoke candidates. The candidate fingerprint guard must pass before the 64^3 20-step stability driver rows are accepted.

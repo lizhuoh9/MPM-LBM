@@ -215,3 +215,20 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 28 reuses the accepted Step 25 candidate descriptors and Step 26 strict driver-ready GeometryConfig files. It does not add mesh cleanup, mesh fixing, or new geometry ingestion behavior.
+
+## Step 29 Geometry Boundary
+
+Step 29 is controlled real geometry 64^3 short-window stability envelope.
+Step 29 extends Step 28 transfer diagnostics conservatively.
+Step 29 is not real squid validation.
+Step 29 does not implement squid actuation.
+Step 29 does not implement squid swimming.
+Step 29 does not implement new FSI physics.
+Step 29 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 29 reuses the accepted Step 25 candidate descriptors and Step 26 strict driver-ready GeometryConfig files. It does not add mesh cleanup, mesh fixing, or new geometry ingestion behavior.

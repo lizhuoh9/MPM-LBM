@@ -1,0 +1,9 @@
+check,pass,value,notes
+step28_report_exists,True,STEP28_CONTROLLED_REAL_GEOMETRY_64_TRANSFER_DIAGNOSTICS_REPORT.md,required Step 28 artifact
+step28_transfer_pair_driver,True,4,expected 4 stable rows
+step28_engineering_vs_link_area,True,2,expected 2 passing comparisons
+step28_quality_report_aggregation,True,4,expected 4 passing reports
+step28_large_file_count,True,0,expected 0
+step28_raw_candidate_large_file_count,True,0,expected 0
+step28_scan_data_file_count,True,0,expected 0
+step28_private_absolute_path_count,True,0,expected 0

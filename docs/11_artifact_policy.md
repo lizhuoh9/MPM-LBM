@@ -131,3 +131,22 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 The Step 28 artifact manifest requires `large_file_count == 0`, no raw candidate large files, no scan data, no private absolute paths in committed outputs, and exactly 4 driver `geometry_quality_report.json` files.
+
+## Step 29 Stability Envelope Artifacts
+
+Step 29 commits small config, CSV, JSON, NPZ, Markdown, and log artifacts only. Step 29 does not write `.vtr` outputs or particle `.npy` outputs.
+
+Step 29 is controlled real geometry 64^3 short-window stability envelope.
+Step 29 extends Step 28 transfer diagnostics conservatively.
+Step 29 is not real squid validation.
+Step 29 does not implement squid actuation.
+Step 29 does not implement squid swimming.
+Step 29 does not implement new FSI physics.
+Step 29 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+The Step 29 artifact manifest requires `large_file_count == 0`, no raw candidate large files, no scan data, no private absolute paths in committed outputs, and exactly 4 driver `geometry_quality_report.json` files.

@@ -32,6 +32,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 26 controlled real geometry projection-only and short driver feasibility with strict quality reports for every very short driver row
 - Step 27 controlled real geometry 64^3 short driver feasibility for a six-row coupling subset with strict quality reports
 - Step 28 controlled real geometry 64^3 transfer diagnostics comparing engineering and link_area_experimental moving_boundary transfer rows
+- Step 29 controlled real geometry 64^3 short-window stability envelope for the Step 28 transfer matrix
 
 ## Not Implemented
 
@@ -108,6 +109,23 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 28 reuses the accepted Step 25 candidates and Step 26 strict driver-ready geometry configs, then runs four 64^3 moving_boundary rows: engineering and link_area_experimental transfer for both mesh and voxel candidates.
+
+## Step 29 Stability Envelope Boundary
+
+Step 29 is controlled real geometry 64^3 short-window stability envelope.
+Step 29 extends Step 28 transfer diagnostics conservatively.
+Step 29 is not real squid validation.
+Step 29 does not implement squid actuation.
+Step 29 does not implement squid swimming.
+Step 29 does not implement new FSI physics.
+Step 29 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 29 reuses the accepted Step 28 transfer matrix, then runs four 64^3 moving_boundary 20-step rows to summarize stability, force/reaction, transfer, area-scale, and Step 28 prefix envelopes.
 
 ## Quick Start
 

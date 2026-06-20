@@ -257,3 +257,30 @@ Primary Step 28 outputs:
 - `outputs/step28_step27_prefix_regression/step27_prefix_regression.csv`
 - `outputs/step28_quality_report_aggregation/quality_report_summary.json`
 - `outputs/step28_artifact_manifest/artifact_summary.json`
+
+## Step 29 Stability Envelope
+
+Step 29 is controlled real geometry 64^3 short-window stability envelope.
+Step 29 extends Step 28 transfer diagnostics conservatively.
+Step 29 is not real squid validation.
+Step 29 does not implement squid actuation.
+Step 29 does not implement squid swimming.
+Step 29 does not implement new FSI physics.
+Step 29 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Primary Step 29 outputs:
+
+- `outputs/step29_candidate_fingerprint_guard/fingerprint_guard.csv`
+- `outputs/step29_64_stability_driver/stability_driver_results.csv`
+- `outputs/step29_stability_envelope_summary/stability_envelope.csv`
+- `outputs/step29_engineering_vs_link_area_envelope/engineering_vs_link_area_envelope.csv`
+- `outputs/step29_force_reaction_envelope/force_reaction_envelope.csv`
+- `outputs/step29_area_scale_envelope/area_scale_envelope.csv`
+- `outputs/step29_step28_prefix_regression/step28_prefix_regression.csv`
+- `outputs/step29_quality_report_aggregation/quality_report_summary.json`
+- `outputs/step29_artifact_manifest/artifact_summary.json`

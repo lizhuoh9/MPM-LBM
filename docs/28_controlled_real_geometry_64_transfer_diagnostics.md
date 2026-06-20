@@ -45,3 +45,20 @@ The link-area envelope reports the currently exposed final area scale plus the c
 ## Artifact Policy
 
 Step 28 commits small CSV, JSON, NPZ, Markdown, config, log, and report artifacts only. It does not commit raw large real geometry, scan data, VTK outputs, or particle NPY outputs.
+
+## Decision For Step 29
+
+Step 29 is controlled real geometry 64^3 short-window stability envelope.
+Step 29 extends Step 28 transfer diagnostics conservatively.
+Step 29 is not real squid validation.
+Step 29 does not implement squid actuation.
+Step 29 does not implement squid swimming.
+Step 29 does not implement new FSI physics.
+Step 29 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 29 should keep the same accepted mesh and voxel smoke candidates and extend only the four 64^3 moving_boundary transfer rows from 10 to 20 LBM steps.

@@ -109,3 +109,20 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 28 narrows from the Step 27 six-row coupling subset to four moving_boundary rows so the 10-step window can report transfer-pair deltas, force/reaction diagnostics, area-scale envelope values, and Step 27 step-5 prefix regression.
+
+## Step 29 Follow-Up Boundary
+
+Step 29 is controlled real geometry 64^3 short-window stability envelope.
+Step 29 extends Step 28 transfer diagnostics conservatively.
+Step 29 is not real squid validation.
+Step 29 does not implement squid actuation.
+Step 29 does not implement squid swimming.
+Step 29 does not implement new FSI physics.
+Step 29 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 29 keeps the Step 28 four-row transfer matrix and extends the diagnostic window to 20 LBM steps for stability, force/reaction, area-scale, and Step 28 prefix envelopes.
