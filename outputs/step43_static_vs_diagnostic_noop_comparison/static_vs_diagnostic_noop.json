@@ -1,0 +1,45 @@
+{
+  "rows": [
+    {
+      "active_cell_count_delta": 0,
+      "area_scale_delta": 0.0,
+      "bb_link_count_delta": 0,
+      "both_stable": true,
+      "comparison": "static_vs_diagnostic_noop_engineering",
+      "comparison_pass": true,
+      "diagnostic_case": "diagnostic_geometry_motion_48_moving_boundary",
+      "diagnostic_no_op_pass": true,
+      "lbm_max_v_delta": 0.0,
+      "mpm_min_J_delta": 0.0,
+      "notes": "Step 43 diagnostic geometry motion is report-only; physics diagnostics must match static row",
+      "projected_mass_delta": 0.0,
+      "reaction_transfer_mode": "engineering",
+      "rho_max_delta": 0.0,
+      "rho_min_delta": 0.0,
+      "static_case": "static_48_moving_boundary"
+    },
+    {
+      "active_cell_count_delta": 0,
+      "area_scale_delta": 0.0,
+      "bb_link_count_delta": 0,
+      "both_stable": true,
+      "comparison": "static_vs_diagnostic_noop_link_area_experimental",
+      "comparison_pass": true,
+      "diagnostic_case": "diagnostic_geometry_motion_48_link_area",
+      "diagnostic_no_op_pass": true,
+      "lbm_max_v_delta": 0.0,
+      "mpm_min_J_delta": 0.0,
+      "notes": "Step 43 diagnostic geometry motion is report-only; physics diagnostics must match static row",
+      "projected_mass_delta": 0.0,
+      "reaction_transfer_mode": "link_area_experimental",
+      "rho_max_delta": 0.0,
+      "rho_min_delta": 0.0,
+      "static_case": "static_48_link_area"
+    }
+  ],
+  "summary": {
+    "comparison_pass": true,
+    "comparison_pass_count": 2,
+    "row_count": 2
+  }
+}

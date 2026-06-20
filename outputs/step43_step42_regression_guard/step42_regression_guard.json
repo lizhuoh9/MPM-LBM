@@ -1,0 +1,81 @@
+{
+  "rows": [
+    {
+      "check": "step42_report_exists",
+      "notes": "required Step 42 artifact",
+      "pass": true,
+      "value": "STEP42_CONTROLLED_SQUID_PROXY_PRESCRIBED_GEOMETRY_DISPLACEMENT_DIAGNOSTICS_REPORT.md"
+    },
+    {
+      "check": "step42_geometry_displacement_exists",
+      "notes": "required Step 42 artifact",
+      "pass": true,
+      "value": "outputs/step42_geometry_displacement/geometry_displacement.json"
+    },
+    {
+      "check": "step42_quality_exists",
+      "notes": "required Step 42 artifact",
+      "pass": true,
+      "value": "outputs/step42_displacement_quality/displacement_quality.json"
+    },
+    {
+      "check": "step42_no_driver_guard_exists",
+      "notes": "required Step 42 artifact",
+      "pass": true,
+      "value": "outputs/step42_no_driver_update_guard/no_driver_update_guard.json"
+    },
+    {
+      "check": "step42_artifact_summary_exists",
+      "notes": "required Step 42 artifact",
+      "pass": true,
+      "value": "outputs/step42_artifact_manifest/artifact_summary.json"
+    },
+    {
+      "check": "step42_displacement_row_count",
+      "notes": "Step 42 displacement row count stays 243",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "step42_displacement_phase_count",
+      "notes": "Step 42 displacement phase count stays 81",
+      "pass": true,
+      "value": 81
+    },
+    {
+      "check": "step42_quality_pass",
+      "notes": "Step 42 quality stays passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step42_no_driver_guard_pass",
+      "notes": "Step 42 no-driver-update guard stays passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step42_large_file_count",
+      "notes": "Step 42 artifact large-file count stays 0",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step42_vtr_count",
+      "notes": "Step 42 wrote no VTR outputs",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step42_particle_npy_count",
+      "notes": "Step 42 wrote no particle NPY outputs",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "pass_count": 12,
+    "regression_pass": true,
+    "row_count": 12
+  }
+}

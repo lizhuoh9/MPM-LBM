@@ -1,0 +1,13 @@
+check,pass,value,notes
+step42_report_exists,True,STEP42_CONTROLLED_SQUID_PROXY_PRESCRIBED_GEOMETRY_DISPLACEMENT_DIAGNOSTICS_REPORT.md,required Step 42 artifact
+step42_geometry_displacement_exists,True,outputs/step42_geometry_displacement/geometry_displacement.json,required Step 42 artifact
+step42_quality_exists,True,outputs/step42_displacement_quality/displacement_quality.json,required Step 42 artifact
+step42_no_driver_guard_exists,True,outputs/step42_no_driver_update_guard/no_driver_update_guard.json,required Step 42 artifact
+step42_artifact_summary_exists,True,outputs/step42_artifact_manifest/artifact_summary.json,required Step 42 artifact
+step42_displacement_row_count,True,243,Step 42 displacement row count stays 243
+step42_displacement_phase_count,True,81,Step 42 displacement phase count stays 81
+step42_quality_pass,True,True,Step 42 quality stays passing
+step42_no_driver_guard_pass,True,True,Step 42 no-driver-update guard stays passing
+step42_large_file_count,True,0,Step 42 artifact large-file count stays 0
+step42_vtr_count,True,0,Step 42 wrote no VTR outputs
+step42_particle_npy_count,True,0,Step 42 wrote no particle NPY outputs

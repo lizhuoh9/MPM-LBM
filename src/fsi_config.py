@@ -12,6 +12,8 @@ VALID_REACTION_TRANSFER_MODES = ("engineering", "link_area_experimental")
 VALID_LINK_AREA_POLICIES = ("uniform", "inverse_length", "length")
 VALID_BOUNDARY_MOTION_MODES = ("static", "prescribed_kinematic")
 VALID_WALL_VELOCITY_APPLICATION_MODES = ("disabled", "solid_vel_experimental")
+VALID_GEOMETRY_MOTION_MODES = ("static", "prescribed_kinematic")
+VALID_GEOMETRY_MOTION_APPLICATION_MODES = ("disabled", "diagnostic_only")
 
 
 def _as_float_tuple(values, name):
@@ -55,6 +57,12 @@ class FSIDriverConfig:
     wall_velocity_application_mode: str = "disabled"
     wall_velocity_application_config_path: Optional[str] = None
     wall_velocity_application_report_enabled: bool = False
+    geometry_motion_mode: str = "static"
+    geometry_motion_config_path: Optional[str] = None
+    geometry_motion_report_enabled: bool = False
+    geometry_motion_application_mode: str = "disabled"
+    geometry_motion_application_config_path: Optional[str] = None
+    geometry_motion_application_report_enabled: bool = False
 
     output_interval: int = 10
     write_vtk: bool = True
@@ -89,6 +97,29 @@ class FSIDriverConfig:
                 raise ValueError("wall_velocity_application_config_path is required when wall_velocity_application_mode='solid_vel_experimental'")
             if not _path_exists(self.wall_velocity_application_config_path):
                 raise ValueError("wall_velocity_application_config_path must exist when wall_velocity_application_mode='solid_vel_experimental'")
+        if self.geometry_motion_mode not in VALID_GEOMETRY_MOTION_MODES:
+            raise ValueError(f"geometry_motion_mode must be one of {VALID_GEOMETRY_MOTION_MODES}")
+        if self.geometry_motion_application_mode not in VALID_GEOMETRY_MOTION_APPLICATION_MODES:
+            raise ValueError(f"geometry_motion_application_mode must be one of {VALID_GEOMETRY_MOTION_APPLICATION_MODES}")
+        if self.geometry_motion_mode == "static":
+            if self.geometry_motion_config_path is not None:
+                raise ValueError("geometry_motion_config_path must be None when geometry_motion_mode='static'")
+            if self.geometry_motion_application_mode != "disabled":
+                raise ValueError("geometry_motion_application_mode must be disabled when geometry_motion_mode='static'")
+        if self.geometry_motion_mode == "prescribed_kinematic":
+            if not self.geometry_motion_config_path:
+                raise ValueError("geometry_motion_config_path is required when geometry_motion_mode='prescribed_kinematic'")
+            if not _path_exists(self.geometry_motion_config_path):
+                raise ValueError("geometry_motion_config_path must exist when geometry_motion_mode='prescribed_kinematic'")
+        if self.geometry_motion_application_mode == "disabled" and self.geometry_motion_application_config_path is not None:
+            raise ValueError("geometry_motion_application_config_path must be None when geometry_motion_application_mode='disabled'")
+        if self.geometry_motion_application_mode == "diagnostic_only":
+            if self.geometry_motion_mode != "prescribed_kinematic":
+                raise ValueError("geometry_motion_application_mode='diagnostic_only' requires geometry_motion_mode='prescribed_kinematic'")
+            if not self.geometry_motion_application_config_path:
+                raise ValueError("geometry_motion_application_config_path is required when geometry_motion_application_mode='diagnostic_only'")
+            if not _path_exists(self.geometry_motion_application_config_path):
+                raise ValueError("geometry_motion_application_config_path must exist when geometry_motion_application_mode='diagnostic_only'")
         if self.geometry_type not in VALID_GEOMETRY_TYPES:
             raise ValueError(f"geometry_type must be one of {VALID_GEOMETRY_TYPES}")
         if self.n_grid <= 0:

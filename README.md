@@ -46,6 +46,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 40 controlled jet-cycle proxy parameter sensitivity smoke over wall-velocity scale values
 - Step 41 controlled jet-cycle proxy selected-parameter 64^3 feasibility for `wall_velocity_scale = 0.05`
 - Step 42 controlled squid proxy prescribed geometry displacement diagnostics
+- Step 43 controlled squid proxy geometry motion driver interface contract
 
 ## Not Implemented
 
@@ -143,6 +144,24 @@ The default boundary_motion_mode remains static.
 The default wall_velocity_application_mode remains disabled.
 
 Step 42 generates per-phase prescribed displacement diagnostics for `mantle_outer`, `mantle_cavity_proxy`, and `funnel_outlet_proxy`, then checks repeatability, schedule consistency, Step 33 motion consistency, grid coverage, cycle closure, no-driver-update guards, Step 41 regression, and artifact budget. These diagnostics are not written into a coupled simulation state.
+
+## Step 43 Squid Proxy Geometry Motion Driver Interface Boundary
+
+Step 43 is controlled squid proxy geometry motion driver interface.
+Step 43 defines a guarded driver interface only.
+Step 43 keeps geometry motion diagnostic-only.
+Step 43 does not update driver geometry.
+Step 43 does not displace MPM particles.
+Step 43 does not update LBM solid_phi.
+Step 43 does not update dynamic_solid.
+Step 43 does not recompute boundary links from displaced geometry.
+Step 43 does not change moving bounce-back formulas.
+The default geometry_motion_mode remains static.
+The default geometry_motion_application_mode remains disabled.
+The default boundary_motion_mode remains static.
+The default wall_velocity_application_mode remains disabled.
+
+Step 43 adds driver config fields and a report-only initialization hook that can read the accepted Step 42 displacement artifact and write a geometry-motion interface report. The diagnostic-only path is validated against static 48^3 rows and is not written into a coupled simulation state.
 
 ## Step 25 Intake Boundary
 

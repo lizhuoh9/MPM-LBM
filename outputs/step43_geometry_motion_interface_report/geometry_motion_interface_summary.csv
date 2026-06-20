@@ -1,0 +1,31 @@
+metric,value
+application_mode,diagnostic_only
+apply_to_driver,False
+apply_to_lbm_solid_phi,False
+apply_to_lbm_solid_vel,False
+apply_to_mpm_particles,False
+apply_to_projection,False
+config_validation_pass,True
+config_validation_pass_count,25
+config_validation_row_count,25
+cycle_closure_pass,True
+diagnostic_only,True
+displacement_artifact_path,outputs/step42_geometry_displacement/geometry_displacement.json
+displacement_bounds_pass,True
+displacement_config_path,configs/step42_squid_proxy_geometry_displacement.json
+displacement_finite_pass,True
+displacement_row_count,243
+geometry_motion_id,step43_geometry_motion_prescribed_diagnostic_only
+geometry_motion_mode,prescribed_kinematic
+max_displacement_norm,0.025987588251121133
+mutate_geometry_state,False
+mutation_flag_enabled_count,0
+no_op_pass,True
+phase_sample_count,81
+quality_pass,True
+recompute_boundary_links,False
+repeatability_pass,True
+scope_note,Step 43 diagnostic-only geometry motion driver interface; no geometry mutation
+tracked_region_count,3
+tracked_regions,"[""mantle_outer"", ""mantle_cavity_proxy"", ""funnel_outlet_proxy""]"
+update_dynamic_solid,False

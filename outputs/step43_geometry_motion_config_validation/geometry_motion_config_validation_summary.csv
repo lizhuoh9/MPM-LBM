@@ -1,0 +1,24 @@
+metric,value
+all_mutation_flags_false,True
+application_mode,diagnostic_only
+apply_to_driver,False
+apply_to_lbm_solid_phi,False
+apply_to_lbm_solid_vel,False
+apply_to_mpm_particles,False
+apply_to_projection,False
+diagnostic_only,True
+displacement_bounds_pass,True
+displacement_diagnostic_only_pass,True
+displacement_finite_pass,True
+displacement_row_count,243
+geometry_motion_mode,prescribed_kinematic
+max_displacement_norm,0.025987588251121133
+mutate_geometry_state,False
+pass_count,25
+phase_sample_count,81
+recompute_boundary_links,False
+row_count,25
+tracked_region_count,3
+tracked_regions,"[""mantle_outer"", ""mantle_cavity_proxy"", ""funnel_outlet_proxy""]"
+update_dynamic_solid,False
+validation_pass,True

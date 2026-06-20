@@ -1,0 +1,26 @@
+check,pass,value,notes
+geometry_motion_id_expected,True,step43_geometry_motion_prescribed_diagnostic_only,Step 43 geometry motion id must be stable
+geometry_motion_mode_expected,True,prescribed_kinematic,Step 43 interface config must be prescribed_kinematic
+application_mode_expected,True,diagnostic_only,Step 43 application mode must be diagnostic_only
+diagnostic_only_true,True,True,Step 43 interface must remain diagnostic-only
+deterministic_true,True,True,Step 43 interface must be deterministic
+displacement_config_path_exists,True,configs/step42_squid_proxy_geometry_displacement.json,Step 42 displacement config must exist
+displacement_artifact_path_exists,True,outputs/step42_geometry_displacement/geometry_displacement.json,Step 42 displacement artifact must exist
+schedule_config_path_exists,True,configs/step32_squid_proxy_kinematics_schedule.json,Step 32 schedule config must exist
+motion_mapping_config_path_exists,True,configs/step33_squid_proxy_motion_mapping.json,Step 33 motion mapping config must exist
+region_config_path_exists,True,configs/step30_squid_proxy_region_config.json,Step 30 region config must exist
+geometry_config_path_exists,True,configs/step30_squid_proxy_geometry.json,Step 30 geometry config must exist
+displacement_row_count_expected,True,243,Step 42 displacement artifact must have 243 rows
+phase_sample_count_expected,True,81,Step 42 displacement artifact must have 81 phases
+tracked_regions_expected,True,"[""mantle_outer"", ""mantle_cavity_proxy"", ""funnel_outlet_proxy""]",tracked regions must match Step 42
+tracked_region_count_expected,True,3,tracked region count must be three
+scope_note_valid,True,Step 43 geometry motion driver interface only; no geometry mutation,scope_note must state interface-only and no geometry mutation
+apply_to_driver_false,True,False,apply_to_driver must remain false
+apply_to_mpm_particles_false,True,False,apply_to_mpm_particles must remain false
+apply_to_lbm_solid_phi_false,True,False,apply_to_lbm_solid_phi must remain false
+apply_to_lbm_solid_vel_false,True,False,apply_to_lbm_solid_vel must remain false
+apply_to_projection_false,True,False,apply_to_projection must remain false
+update_dynamic_solid_false,True,False,update_dynamic_solid must remain false
+recompute_boundary_links_false,True,False,recompute_boundary_links must remain false
+mutate_geometry_state_false,True,False,mutate_geometry_state must remain false
+all_mutation_flags_false,True,0,all mutation flags must be false

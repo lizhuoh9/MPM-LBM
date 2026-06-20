@@ -63,6 +63,7 @@ class FSIDriver3D:
             "diagnostics_time": 0.0,
             "export_time": 0.0,
             "wall_velocity_application_time": 0.0,
+            "geometry_motion_interface_time": 0.0,
             "total_time": 0.0,
         }
 
@@ -80,6 +81,7 @@ class FSIDriver3D:
         self.boundary_motion_interface_report = None
         self.wall_velocity_application_report = None
         self.wall_velocity_application_reports = []
+        self.geometry_motion_interface_report = None
 
     def initialize(self):
         t0 = time.perf_counter()
@@ -87,6 +89,7 @@ class FSIDriver3D:
         make_all_fluid_geo(self.geo_path, self.config.n_grid)
         save_json_config(self.config, os.path.join(self.out_dir, "driver_config.json"))
         self._run_boundary_motion_interface_report()
+        self._run_geometry_motion_interface_report()
 
         self.lbm = LBMFluid3D(self.sim.make_lbm_config())
         self.lbm.init_geo(self.geo_path)
@@ -217,6 +220,28 @@ class FSIDriver3D:
             return self.boundary_motion_interface_report
 
         raise ValueError(f"unsupported boundary_motion_mode: {self.config.boundary_motion_mode}")
+
+    def _run_geometry_motion_interface_report(self):
+        if self.config.geometry_motion_application_mode == "disabled":
+            return None
+        if self.config.geometry_motion_application_mode != "diagnostic_only":
+            raise ValueError(f"unsupported geometry_motion_application_mode: {self.config.geometry_motion_application_mode}")
+        if self.config.geometry_motion_mode != "prescribed_kinematic":
+            raise ValueError("diagnostic_only geometry motion requires prescribed_kinematic geometry_motion_mode")
+
+        from .geometry_motion_interface import write_geometry_motion_interface_report
+
+        t0 = time.perf_counter()
+        report_path = None
+        if self.config.geometry_motion_report_enabled or self.config.geometry_motion_application_report_enabled:
+            report_path = os.path.join(self.out_dir, "geometry_motion_interface_report.json")
+        self.geometry_motion_interface_report = write_geometry_motion_interface_report(
+            self.config.geometry_motion_application_config_path or self.config.geometry_motion_config_path,
+            report_path,
+            geometry_motion_mode=self.config.geometry_motion_mode,
+        )
+        self.timing["geometry_motion_interface_time"] += time.perf_counter() - t0
+        return self.geometry_motion_interface_report
 
     def step_once(self):
         if not self.initialized:

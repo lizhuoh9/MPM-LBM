@@ -1,0 +1,11 @@
+check,pass,value,notes
+mpm_particle_mutation_count,True,0,Step 43 must not move MPM particles
+lbm_solid_phi_mutation_count,True,0,Step 43 must not update LBM solid_phi
+lbm_solid_vel_mutation_count,True,0,Step 43 must not update LBM solid_vel
+dynamic_solid_mutation_count,True,0,Step 43 must not update dynamic_solid
+projection_call_from_geometry_motion_count,True,0,Step 43 geometry motion path must not project displaced geometry
+boundary_link_recompute_count,True,0,Step 43 must not recompute boundary links from displaced geometry
+geometry_state_mutation_count,True,0,Step 43 must not mutate geometry state
+displaced_particle_output_count,True,0,Step 43 must not write displaced particle outputs
+dense_displacement_field_output_count,True,0,Step 43 must not write dense displacement fields
+mutation_flags_false,True,True,all Step 43 geometry-motion mutation flags must stay false

@@ -1,0 +1,86 @@
+{
+  "rows": [
+    {
+      "check": "mpm_particle_mutation_count",
+      "notes": "Step 43 must not move MPM particles",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "lbm_solid_phi_mutation_count",
+      "notes": "Step 43 must not update LBM solid_phi",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "lbm_solid_vel_mutation_count",
+      "notes": "Step 43 must not update LBM solid_vel",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "dynamic_solid_mutation_count",
+      "notes": "Step 43 must not update dynamic_solid",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "projection_call_from_geometry_motion_count",
+      "notes": "Step 43 geometry motion path must not project displaced geometry",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "boundary_link_recompute_count",
+      "notes": "Step 43 must not recompute boundary links from displaced geometry",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "geometry_state_mutation_count",
+      "notes": "Step 43 must not mutate geometry state",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "displaced_particle_output_count",
+      "notes": "Step 43 must not write displaced particle outputs",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "dense_displacement_field_output_count",
+      "notes": "Step 43 must not write dense displacement fields",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "mutation_flags_false",
+      "notes": "all Step 43 geometry-motion mutation flags must stay false",
+      "pass": true,
+      "value": true
+    }
+  ],
+  "summary": {
+    "apply_to_driver": false,
+    "apply_to_lbm_solid_phi": false,
+    "apply_to_lbm_solid_vel": false,
+    "apply_to_mpm_particles": false,
+    "apply_to_projection": false,
+    "boundary_link_recompute_count": 0,
+    "dense_displacement_field_output_count": 0,
+    "diagnostic_driver_row_count": 2,
+    "displaced_particle_output_count": 0,
+    "dynamic_solid_mutation_count": 0,
+    "geometry_motion_report_no_op_pass": true,
+    "geometry_state_mutation_count": 0,
+    "guard_pass": true,
+    "lbm_solid_phi_mutation_count": 0,
+    "lbm_solid_vel_mutation_count": 0,
+    "mpm_particle_mutation_count": 0,
+    "mutate_geometry_state": false,
+    "projection_call_from_geometry_motion_count": 0,
+    "recompute_boundary_links": false,
+    "update_dynamic_solid": false
+  }
+}

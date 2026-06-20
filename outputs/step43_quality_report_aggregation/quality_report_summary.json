@@ -1,0 +1,56 @@
+{
+  "rows": [
+    {
+      "case": "static_48_moving_boundary",
+      "error_count": 0,
+      "mode_class": "static",
+      "quality_pass": true,
+      "quality_report_path": "outputs/step43_static_driver_regression/static_48_moving_boundary/geometry_quality_report.json",
+      "reaction_transfer_mode": "engineering",
+      "severity": "ok",
+      "strict": true,
+      "warning_count": 0
+    },
+    {
+      "case": "static_48_link_area",
+      "error_count": 0,
+      "mode_class": "static",
+      "quality_pass": true,
+      "quality_report_path": "outputs/step43_static_driver_regression/static_48_link_area/geometry_quality_report.json",
+      "reaction_transfer_mode": "link_area_experimental",
+      "severity": "ok",
+      "strict": true,
+      "warning_count": 0
+    },
+    {
+      "case": "diagnostic_geometry_motion_48_moving_boundary",
+      "error_count": 0,
+      "mode_class": "diagnostic",
+      "quality_pass": true,
+      "quality_report_path": "outputs/step43_diagnostic_geometry_motion_noop_smoke/diagnostic_geometry_motion_48_moving_boundary/geometry_quality_report.json",
+      "reaction_transfer_mode": "engineering",
+      "severity": "ok",
+      "strict": true,
+      "warning_count": 0
+    },
+    {
+      "case": "diagnostic_geometry_motion_48_link_area",
+      "error_count": 0,
+      "mode_class": "diagnostic",
+      "quality_pass": true,
+      "quality_report_path": "outputs/step43_diagnostic_geometry_motion_noop_smoke/diagnostic_geometry_motion_48_link_area/geometry_quality_report.json",
+      "reaction_transfer_mode": "link_area_experimental",
+      "severity": "ok",
+      "strict": true,
+      "warning_count": 0
+    }
+  ],
+  "summary": {
+    "error_count": 0,
+    "pass_count": 4,
+    "quality_report_aggregation_pass": true,
+    "quality_report_count": 4,
+    "strict_count": 4,
+    "warning_count": 0
+  }
+}
