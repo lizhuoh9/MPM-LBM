@@ -1,0 +1,11 @@
+{
+  "coupling_time": 0.0,
+  "diagnostics_time": 2.192284499993548,
+  "export_time": 1.600012183189392e-06,
+  "init_time": 48.634422299975995,
+  "lbm_step_time": 4.583674099936616,
+  "mode": "none",
+  "mpm_substep_time": 3.508220300078392,
+  "projection_time": 1.0268885000259615,
+  "total_time": 59.94996230001561
+}

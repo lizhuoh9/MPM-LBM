@@ -49,6 +49,24 @@ Step 30 should be controlled squid proxy region geometry. It should define squid
 
 Step 30 is not real squid validation. Step 30 should not implement squid actuation, swimming, mantle contraction, funnel actuation, or new FSI physics.
 
+## Step 31 Follow-On
+
+Step 31 is controlled squid proxy region projection and static driver smoke.
+Step 31 uses static squid proxy region semantics only.
+Step 31 is not real squid validation.
+Step 31 does not implement squid actuation.
+Step 31 does not implement squid swimming.
+Step 31 does not implement mantle contraction.
+Step 31 does not implement funnel actuation.
+Step 31 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 31 remains a static proxy validation layer over the Step 30 region contract. It does not change the Step 29 real-geometry stability envelope.
+
 ## Artifact Policy
 
 Step 29 commits small CSV, JSON, NPZ, Markdown, config, log, and report artifacts only. It does not commit raw large real geometry, scan data, VTK outputs, or particle NPY outputs.

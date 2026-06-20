@@ -72,4 +72,22 @@ No FSI, LBM, MPM, moving bounce-back, link-area, or projection formula files wer
 
 ## Step 31 Direction
 
-Step 31 should be `Controlled Squid Proxy Region Projection And Static Driver Smoke`. It can add region-aware projection aggregation and a static driver smoke, but it should still avoid actuation. Prescribed mantle or funnel kinematics should remain out of scope for Step 31.
+Step 31 is controlled squid proxy region projection and static driver smoke.
+Step 31 uses static squid proxy region semantics only.
+Step 31 is not real squid validation.
+Step 31 does not implement squid actuation.
+Step 31 does not implement squid swimming.
+Step 31 does not implement mantle contraction.
+Step 31 does not implement funnel actuation.
+Step 31 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 31 adds region-aware projection aggregation at 32^3, 48^3, and 64^3, plus a four-row static `FSIDriver3D` smoke matrix for existing modes. Prescribed mantle or funnel kinematics remain out of scope for Step 31.
+
+## Step 32 Direction
+
+Step 32 should be `Controlled Squid Proxy Prescribed Kinematics Schedule Contract`. It should define schedule semantics only and should not integrate kinematics into the driver yet.

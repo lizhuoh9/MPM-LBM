@@ -130,6 +130,26 @@ Step 30 adds static semantic region descriptors on top of the existing procedura
 
 The mantle cavity proxy and funnel outlet proxy are static semantic descriptors. They do not change `GeometrySampler3D`, the MPM initialization path, the LBM projection formula, or any coupler formula.
 
+## Step 31 Squid Proxy Region Static Driver
+
+Step 31 is controlled squid proxy region projection and static driver smoke.
+Step 31 uses static squid proxy region semantics only.
+Step 31 is not real squid validation.
+Step 31 does not implement squid actuation.
+Step 31 does not implement squid swimming.
+Step 31 does not implement mantle contraction.
+Step 31 does not implement funnel actuation.
+Step 31 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 31 reuses `configs/step30_squid_proxy_geometry.json` and `configs/step30_squid_proxy_region_config.json`. It adds projection-only region diagnostics at 32^3, 48^3, and 64^3, then runs four short static 48^3 driver rows with existing coupling modes. It does not add new geometry import behavior, mesh cleanup, remeshing, or raw scan-data handling.
+
+The procedural `squid_proxy` quality report now records that appendage and fin proxy components may be disconnected in coarse diagnostic voxelization. This keeps strict quality reports warning-free for the accepted static proxy semantics without changing `GeometrySampler3D`, `MPMToLBMProjector3D`, LBM, MPM, or coupler formulas.
+
 ## Step 14 Reuse
 
 Step 14 reuses `configs/step13_squid_proxy_geometry.json` for 48^3 squid_proxy scale validation. This keeps the procedural geometry fixed while increasing LBM grid resolution. The Step 14 squid_proxy rows remain not real squid validation, not swimming validation, and not anatomical squid geometry evidence.

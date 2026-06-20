@@ -34,6 +34,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 28 controlled real geometry 64^3 transfer diagnostics comparing engineering and link_area_experimental moving_boundary transfer rows
 - Step 29 controlled real geometry 64^3 short-window stability envelope for the Step 28 transfer matrix
 - Step 30 controlled squid proxy region geometry contract for static squid-like region semantics
+- Step 31 controlled squid proxy region projection and static driver smoke for existing coupling modes only
 
 ## Not Implemented
 
@@ -63,6 +64,24 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 30 adds stable proxy region IDs for `mantle_outer`, `mantle_cavity_proxy`, `funnel_outlet_proxy`, `head_proxy`, `arms_proxy`, `left_fin_proxy`, and `right_fin_proxy`. The cavity and outlet regions are static geometry semantics only.
+
+## Step 31 Squid Proxy Static Driver Boundary
+
+Step 31 is controlled squid proxy region projection and static driver smoke.
+Step 31 uses static squid proxy region semantics only.
+Step 31 is not real squid validation.
+Step 31 does not implement squid actuation.
+Step 31 does not implement squid swimming.
+Step 31 does not implement mantle contraction.
+Step 31 does not implement funnel actuation.
+Step 31 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 31 adds 32^3/48^3/64^3 projection-only region diagnostics, four 48^3 static driver smoke rows, region-driver alignment, engineering vs link_area_experimental static comparison, strict quality report aggregation, and a Step 30 regression guard.
 
 ## Step 25 Intake Boundary
 

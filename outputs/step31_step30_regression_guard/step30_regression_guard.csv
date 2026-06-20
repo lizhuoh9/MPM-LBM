@@ -1,0 +1,8 @@
+check,pass,value,notes
+step30_report_exists,True,STEP30_CONTROLLED_SQUID_PROXY_REGION_GEOMETRY_REPORT.md,required Step 30 artifact
+step30_region_schema,True,7,expected seven regions
+step30_region_mask_sampling,True,32768,expected repeatable hashes
+step30_region_projection_smoke,True,14,expected Step 30 32/48 projection pass
+step30_large_file_count,True,0,expected 0
+step30_step30_vtr_count,True,0,expected 0
+step30_step30_particle_npy_count,True,0,expected 0

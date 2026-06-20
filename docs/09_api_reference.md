@@ -64,6 +64,30 @@ PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupl
 - `overlap_matrix_rows(...)`: emits a documented overlap matrix for intentional static proxy overlaps.
 - `run_squid_region_projection_smoke(...)`: computes 32^3/48^3 projection-only region mass and active-cell diagnostics without running the FSI driver.
 
+## Step 31 Squid Proxy Region Driver Diagnostics
+
+Step 31 is controlled squid proxy region projection and static driver smoke.
+Step 31 uses static squid proxy region semantics only.
+Step 31 is not real squid validation.
+Step 31 does not implement squid actuation.
+Step 31 does not implement squid swimming.
+Step 31 does not implement mantle contraction.
+Step 31 does not implement funnel actuation.
+Step 31 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+- `load_region_driver_context(geometry_config_path, region_config_path)`: loads the accepted Step 30 geometry and region config.
+- `summarize_region_projection_alignment(region_projection_rows, driver_rows)`: aligns 48^3 driver rows with Step 31 region projection context.
+- `summarize_static_driver_region_context(driver_row, projection_rows)`: writes one row of driver mass/active-cell diagnostics beside semantic region context.
+- `compare_engineering_vs_link_area_static(driver_rows)`: compares the two static moving_boundary transfer rows diagnostically.
+- `write_region_driver_summary(rows, csv_path, json_path, summary=None)`: writes artifact-friendly CSV/JSON summary rows.
+
+Step 31 region projection is semantic context, not a mass partition. Step 30 region masks intentionally overlap, so Step 31 does not require region projected mass to sum to driver projected mass.
+
 ## ImportedGeometrySampler3D
 
 - purpose: Step 20 imported voxel/mesh helper for small synthetic fixtures
@@ -124,6 +148,8 @@ Step 21 boundary: The default reaction_transfer_mode remains engineering. The mo
 - `analyze_voxel_occupancy(occupancy, metadata=None)`: CPU/NumPy diagnostic voxel report for occupancy count, connected components, occupied bounds, surface voxels, and interior voxels.
 - `analyze_geometry_config(config)`: loads the configured geometry and returns the matching mesh or voxel diagnostic report.
 - `GeometryQualityGate(strict=False)`: evaluates reports as warnings in non-strict mode and as errors for required strict bad-geometry fixtures.
+
+For procedural `squid_proxy`, coarse diagnostic voxelization records `allow_disconnected_components = true` because appendage and fin proxy components may be disconnected at the diagnostic resolution. This is quality-report semantics only and does not change sampling, projection, LBM, MPM, or coupling formulas.
 
 The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 

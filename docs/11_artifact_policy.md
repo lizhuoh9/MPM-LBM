@@ -170,3 +170,23 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 The Step 30 artifact manifest requires `large_file_count == 0`, Step 30 total size below 5 MB, repository total size below 180 MB, no raw candidate large files, no scan data, no private absolute paths, no Step 30 `.vtr`, and no Step 30 particle `.npy` files.
+
+## Step 31 Squid Proxy Region Static Driver Artifacts
+
+Step 31 commits small config, CSV, JSON, NPZ, Markdown, and log artifacts only. Step 31 does not write `.vtr` outputs or particle `.npy` outputs.
+
+Step 31 is controlled squid proxy region projection and static driver smoke.
+Step 31 uses static squid proxy region semantics only.
+Step 31 is not real squid validation.
+Step 31 does not implement squid actuation.
+Step 31 does not implement squid swimming.
+Step 31 does not implement mantle contraction.
+Step 31 does not implement funnel actuation.
+Step 31 does not implement new FSI physics.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+The Step 31 artifact manifest requires `large_file_count == 0`, Step 31 total size below 10 MB, repository total size below 185 MB, no raw candidate large files, no scan data, no private absolute paths, no Step 31 `.vtr`, and no Step 31 particle `.npy` files.

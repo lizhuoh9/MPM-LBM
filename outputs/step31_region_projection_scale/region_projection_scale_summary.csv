@@ -1,0 +1,11 @@
+metric,value
+active_cell_count_total,2886
+grid_size_count,3
+has_inf_count,0
+has_nan_count,0
+pass_count,21
+projected_mass_total,0.08807373046875
+projection_pass,True
+required_region_count,7
+row_count,21
+scope_note,projection-only squid proxy region diagnostics; no FSI driver was run

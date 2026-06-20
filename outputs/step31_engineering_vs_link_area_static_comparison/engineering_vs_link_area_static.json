@@ -1,0 +1,33 @@
+{
+  "rows": [
+    {
+      "active_cell_count_delta": 0,
+      "active_reaction_particle_count_max_delta": 0,
+      "bb_link_count_max_delta": 0,
+      "candidate_id": "squid_proxy_region",
+      "comparison_pass": true,
+      "engineering_case": "squid_proxy_region_48_moving_boundary",
+      "hydro_force_max_norm_delta": 1.6391277313232422e-06,
+      "lbm_max_v_delta": -1.0367482900619507e-05,
+      "link_area_area_scale_final": 0.7893505096435547,
+      "link_area_case": "squid_proxy_region_48_link_area",
+      "link_area_raw_area_scale_final": 0.7893505096435547,
+      "mpm_min_J_delta": 1.4603137969970703e-05,
+      "n_grid": 48,
+      "projected_mass_delta": -3.725290298461914e-09,
+      "rho_max_delta": 3.6954879760742188e-06,
+      "rho_min_delta": 2.6285648345947266e-05,
+      "scope_note": "Step 31 controlled squid proxy region projection and static driver smoke; no actuation, no swimming, and no new FSI physics"
+    }
+  ],
+  "summary": {
+    "max_abs_lbm_max_v_delta": 1.0367482900619507e-05,
+    "max_abs_mpm_min_J_delta": 1.4603137969970703e-05,
+    "max_abs_projected_mass_delta": 3.725290298461914e-09,
+    "max_abs_rho_max_delta": 3.6954879760742188e-06,
+    "max_abs_rho_min_delta": 2.6285648345947266e-05,
+    "pass_count": 1,
+    "row_count": 1,
+    "scope_note": "Step 31 controlled squid proxy region projection and static driver smoke; no actuation, no swimming, and no new FSI physics"
+  }
+}

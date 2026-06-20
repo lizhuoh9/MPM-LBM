@@ -4,7 +4,7 @@ The next steps should preserve the existing regression baselines and mode matrix
 
 ## Current Status
 
-Step 30 is controlled squid proxy region geometry. It preserves the Step 29 controlled real geometry stability envelope while adding static squid-like proxy region semantics for future region-aware diagnostics.
+Step 31 is controlled squid proxy region projection and static driver smoke. It preserves the Step 30 static squid-like region semantics while adding 32^3/48^3/64^3 region projection diagnostics and a four-row 48^3 static driver smoke.
 
 ## Proposed Steps
 
@@ -29,6 +29,8 @@ Step 30 is controlled squid proxy region geometry. It preserves the Step 29 cont
 | Step 28 | controlled real geometry 64^3 transfer diagnostics | four moving_boundary transfer rows only; diagnostic comparison, force/reaction summary, area-scale envelope, and Step 27 prefix regression |
 | Step 29 | controlled real geometry 64^3 short-window stability envelope | four moving_boundary 20-step rows only; stability envelope, transfer envelope, force/reaction envelope, area-scale envelope, and Step 28 prefix regression |
 | Step 30 | controlled squid proxy region geometry | static region semantics only; no squid actuation, swimming, mantle contraction, funnel actuation, new FSI physics, or real squid validation |
+| Step 31 | controlled squid proxy region projection and static driver smoke | static region semantics only; existing modes only; no squid actuation, swimming, mantle contraction, funnel actuation, new FSI physics, or real squid validation |
+| Step 32 | proposed: controlled squid proxy prescribed kinematics schedule contract | schedule contract only; driver integration should wait for Step 33 |
 
 ## Regression Rule
 
@@ -59,6 +61,7 @@ Step 27 controlled real geometry 64^3 short driver feasibility contracts
 Step 28 controlled real geometry 64^3 transfer diagnostics contracts
 Step 29 controlled real geometry 64^3 short-window stability envelope contracts
 Step 30 controlled squid proxy region geometry contracts
+Step 31 controlled squid proxy region projection and static driver smoke contracts
 ```
 
 New physics should be added behind explicit modes or new configs, not by silently changing validated behavior.
@@ -92,3 +95,5 @@ Step 28 is controlled real geometry 64^3 transfer diagnostics. Step 28 compares 
 Step 29 is controlled real geometry 64^3 short-window stability envelope. Step 29 extends Step 28 transfer diagnostics conservatively. Step 29 is not real squid validation. Step 29 does not implement squid actuation. Step 29 does not implement squid swimming. Step 29 does not implement new FSI physics. Step 29 does not validate production sharp-interface FSI. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 30 is controlled squid proxy region geometry. Step 30 defines squid-like region semantics only. Step 30 is not real squid validation. Step 30 does not implement squid actuation. Step 30 does not implement squid swimming. Step 30 does not implement mantle contraction. Step 30 does not implement funnel actuation. Step 30 does not implement new FSI physics. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 31 is controlled squid proxy region projection and static driver smoke. Step 31 uses static squid proxy region semantics only. Step 31 is not real squid validation. Step 31 does not implement squid actuation. Step 31 does not implement squid swimming. Step 31 does not implement mantle contraction. Step 31 does not implement funnel actuation. Step 31 does not implement new FSI physics. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.

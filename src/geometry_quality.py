@@ -69,6 +69,8 @@ def analyze_geometry_config(config) -> dict:
             "geometry_type": config.geometry_type,
             "quality_kind": "procedural_voxelized",
             "source_file": config.geometry_type,
+            "allow_disconnected_components": config.geometry_type == "squid_proxy",
+            "component_semantics": _procedural_component_semantics(config.geometry_type),
             "scope_note": "procedural diagnostic voxelization only",
         }
     )
@@ -148,7 +150,7 @@ class GeometryQualityGate:
         if components == 0:
             reasons.append("voxel occupancy has no connected components")
 
-        if components > 1:
+        if components > 1 and not bool(report.get("allow_disconnected_components", False)):
             warnings.append("voxel occupancy has multiple connected components")
         if bool(report.get("touches_domain_boundary", False)):
             warnings.append("voxel occupancy touches domain boundary")
@@ -164,3 +166,9 @@ def _resolve_path(path):
         return text
     root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     return os.path.join(root, text)
+
+
+def _procedural_component_semantics(geometry_type: str) -> str:
+    if geometry_type == "squid_proxy":
+        return "static squid proxy appendage and fin components may be disconnected in coarse diagnostic voxelization"
+    return ""
