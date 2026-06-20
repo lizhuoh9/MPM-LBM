@@ -1,0 +1,23 @@
+{
+  "rows": [
+    {
+      "both_stable": true,
+      "comparison": "experimental_engineering_vs_link_area",
+      "comparison_pass": true,
+      "engineering_case": "experimental_48_moving_boundary",
+      "lbm_max_v_delta": 3.734603524208069e-06,
+      "link_area_case": "experimental_48_link_area",
+      "link_area_scale_final": 0.7982993721961975,
+      "mpm_min_J_delta": 4.3451786041259766e-05,
+      "notes": "bounded Step 37 experimental engineering-vs-link-area short-window envelope comparison",
+      "projected_mass_delta": 1.6763806343078613e-08,
+      "rho_max_delta": -8.106231689453125e-06,
+      "rho_min_delta": 2.384185791015625e-07
+    }
+  ],
+  "summary": {
+    "comparison_pass": true,
+    "pass_count": 1,
+    "row_count": 1
+  }
+}

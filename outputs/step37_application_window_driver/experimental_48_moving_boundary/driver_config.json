@@ -1,0 +1,51 @@
+{
+  "coupling_mode": "moving_boundary",
+  "geometry_type": "squid_proxy",
+  "geometry_config_path": "configs/step30_squid_proxy_geometry.json",
+  "n_grid": 48,
+  "n_particles": 4096,
+  "n_lbm_steps": 20,
+  "mpm_substeps_per_lbm_step": 5,
+  "mpm_dt": 0.0004,
+  "target_u_lbm": [
+    0.005,
+    0.0,
+    0.0
+  ],
+  "gravity": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "box_min": [
+    0.25,
+    0.35,
+    0.25
+  ],
+  "box_max": [
+    0.55,
+    0.65,
+    0.55
+  ],
+  "dynamic_solid_threshold": 0.5,
+  "beta_lbm": 0.001,
+  "penalty_force_cap_lbm": 0.0001,
+  "mb_reaction_scale": 0.5,
+  "mb_force_cap_norm": 2.5e-05,
+  "reaction_transfer_mode": "engineering",
+  "link_area_policy": "inverse_length",
+  "link_area_scale_min": 0.25,
+  "link_area_scale_max": 2.0,
+  "boundary_motion_mode": "prescribed_kinematic",
+  "boundary_motion_config_path": "configs/step34_boundary_motion_interface_prescribed_kinematic.json",
+  "boundary_motion_report_enabled": true,
+  "wall_velocity_application_mode": "solid_vel_experimental",
+  "wall_velocity_application_config_path": "configs/step36_wall_velocity_application_solid_vel_experimental.json",
+  "wall_velocity_application_report_enabled": true,
+  "output_interval": 1,
+  "write_vtk": false,
+  "write_particles": false,
+  "quality_check_enabled": true,
+  "quality_check_strict": true,
+  "quality_report_path": null
+}

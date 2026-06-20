@@ -1,0 +1,57 @@
+{
+  "rows": [
+    {
+      "check": "step36_report_exists",
+      "notes": "Step 36 report remains present",
+      "pass": true,
+      "value": "STEP36 report"
+    },
+    {
+      "check": "step36_experimental_rows",
+      "notes": "Step 36 experimental row count stays 3",
+      "pass": true,
+      "value": 3
+    },
+    {
+      "check": "step36_experimental_stable",
+      "notes": "Step 36 experimental rows stay stable",
+      "pass": true,
+      "value": 3
+    },
+    {
+      "check": "step36_application_quality",
+      "notes": "Step 36 application quality stays passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step36_step35_guard",
+      "notes": "Step 36 Step 35 regression guard stays passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step36_large_file_count",
+      "notes": "Step 36 artifact large-file count stays 0",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step36_vtr_count",
+      "notes": "Step 36 wrote no VTR outputs",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step36_particle_npy_count",
+      "notes": "Step 36 wrote no particle NPY outputs",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "pass_count": 8,
+    "regression_pass": true,
+    "row_count": 8
+  }
+}

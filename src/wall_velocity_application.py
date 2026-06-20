@@ -19,6 +19,7 @@ from .wall_velocity_field import interpolate_motion_rows_to_phase, load_wall_vel
 
 
 APPLICATION_SCOPE_NOTE = "Step 36 opt-in experimental solid_vel application only; no bounce-back formula change"
+_GRID_CACHE = {}
 
 
 def load_wall_velocity_application_config(path) -> WallVelocityApplicationConfig:
@@ -53,6 +54,14 @@ def build_wall_velocity_grid(application_config, n_grid: int, phase: float) -> t
 
     requested_phase = float(phase)
     selected_phase = nearest_wall_velocity_phase(application_config, requested_phase)
+    cache_key = (application_config.application_id, n, selected_phase)
+    cached = _GRID_CACHE.get(cache_key)
+    if cached is not None:
+        cached_grid, cached_summary = cached
+        summary = dict(cached_summary)
+        summary["requested_phase"] = requested_phase
+        return cached_grid.copy(), summary
+
     wall_inputs = load_wall_velocity_inputs(application_config.wall_velocity_config_path)
     motion_by_region = interpolate_motion_rows_to_phase(wall_inputs["motion_rows"], selected_phase)
     geometry_config = GeometryConfig.from_json(_resolve_path(application_config.geometry_config_path))
@@ -101,7 +110,9 @@ def build_wall_velocity_grid(application_config, n_grid: int, phase: float) -> t
         "actuation_claim_enabled": bool(application_config.actuation_claim_enabled),
         "scope_note": APPLICATION_SCOPE_NOTE,
     }
-    return capped.reshape((n, n, n, 3)), summary
+    grid = capped.reshape((n, n, n, 3))
+    _GRID_CACHE[cache_key] = (grid.copy(), dict(summary))
+    return grid, summary
 
 
 def apply_wall_velocity_to_lbm_solid_vel(lbm, velocity_grid: np.ndarray, application_config) -> dict:

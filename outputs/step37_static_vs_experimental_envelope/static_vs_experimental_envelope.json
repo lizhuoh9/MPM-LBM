@@ -1,0 +1,43 @@
+{
+  "rows": [
+    {
+      "active_cell_count_delta": 0,
+      "bb_link_count_delta": 0,
+      "both_stable": true,
+      "comparison": "static_vs_experimental_engineering",
+      "comparison_pass": true,
+      "experimental_applied_velocity_max": 0.007021783310068709,
+      "experimental_case": "experimental_48_moving_boundary",
+      "lbm_max_v_delta": 0.00250818207859993,
+      "mpm_min_J_delta": 1.430511474609375e-06,
+      "notes": "bounded Step 37 static-vs-experimental short-window envelope comparison",
+      "projected_mass_delta": -9.313225746154785e-09,
+      "reaction_transfer_mode": "engineering",
+      "rho_max_delta": 0.0025905370712280273,
+      "rho_min_delta": -0.0051749348640441895,
+      "static_case": "static_48_moving_boundary"
+    },
+    {
+      "active_cell_count_delta": 0,
+      "bb_link_count_delta": 0,
+      "both_stable": true,
+      "comparison": "static_vs_experimental_link_area_experimental",
+      "comparison_pass": true,
+      "experimental_applied_velocity_max": 0.007021783310068709,
+      "experimental_case": "experimental_48_link_area",
+      "lbm_max_v_delta": 0.002528967335820198,
+      "mpm_min_J_delta": 1.3113021850585938e-06,
+      "notes": "bounded Step 37 static-vs-experimental short-window envelope comparison",
+      "projected_mass_delta": 1.862645149230957e-09,
+      "reaction_transfer_mode": "link_area_experimental",
+      "rho_max_delta": 0.0025784969329833984,
+      "rho_min_delta": -0.00520092248916626,
+      "static_case": "static_48_link_area"
+    }
+  ],
+  "summary": {
+    "comparison_pass": true,
+    "pass_count": 2,
+    "row_count": 2
+  }
+}

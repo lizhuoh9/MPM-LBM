@@ -1,0 +1,2 @@
+comparison,engineering_case,link_area_case,both_stable,link_area_scale_final,rho_min_delta,rho_max_delta,lbm_max_v_delta,mpm_min_J_delta,projected_mass_delta,notes,comparison_pass
+experimental_engineering_vs_link_area,experimental_48_moving_boundary,experimental_48_link_area,True,0.7982993721961975,2.384185791015625e-07,-8.106231689453125e-06,3.734603524208069e-06,4.3451786041259766e-05,1.6763806343078613e-08,bounded Step 37 experimental engineering-vs-link-area short-window envelope comparison,True

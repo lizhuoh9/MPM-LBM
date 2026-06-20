@@ -1,0 +1,9 @@
+check,pass,value,notes
+step36_report_exists,True,STEP36 report,Step 36 report remains present
+step36_experimental_rows,True,3,Step 36 experimental row count stays 3
+step36_experimental_stable,True,3,Step 36 experimental rows stay stable
+step36_application_quality,True,True,Step 36 application quality stays passing
+step36_step35_guard,True,True,Step 36 Step 35 regression guard stays passing
+step36_large_file_count,True,0,Step 36 artifact large-file count stays 0
+step36_vtr_count,True,0,Step 36 wrote no VTR outputs
+step36_particle_npy_count,True,0,Step 36 wrote no particle NPY outputs
