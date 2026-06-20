@@ -1,0 +1,59 @@
+{
+  "rows": [
+    {
+      "check": "row_count",
+      "notes": "row counts must match",
+      "pass": true,
+      "value_first": 243,
+      "value_second": 243
+    },
+    {
+      "check": "displacement_hash",
+      "notes": "full displacement hash must repeat",
+      "pass": true,
+      "value_first": "41f18b424458ecb86507682ed868f930637dd6fd517ac45cb3de586103f2f8e8",
+      "value_second": "41f18b424458ecb86507682ed868f930637dd6fd517ac45cb3de586103f2f8e8"
+    },
+    {
+      "check": "mantle_displacement_hash",
+      "notes": "mantle hash must repeat",
+      "pass": true,
+      "value_first": "c7f09c3fcee67a68db0901d3aad0ef4a4d4882b258ee93eb62e7c90b9b299b77",
+      "value_second": "c7f09c3fcee67a68db0901d3aad0ef4a4d4882b258ee93eb62e7c90b9b299b77"
+    },
+    {
+      "check": "cavity_displacement_hash",
+      "notes": "cavity hash must repeat",
+      "pass": true,
+      "value_first": "f1c2beef5f7b93c59e143e4a5ec6689d9b1473e89e42e90eb3ab58b45b10c256",
+      "value_second": "f1c2beef5f7b93c59e143e4a5ec6689d9b1473e89e42e90eb3ab58b45b10c256"
+    },
+    {
+      "check": "funnel_displacement_hash",
+      "notes": "funnel hash must repeat",
+      "pass": true,
+      "value_first": "7b03785e8241893f651ecab86e19e7da70746f620c542bd1b8eaa01689a31d00",
+      "value_second": "7b03785e8241893f651ecab86e19e7da70746f620c542bd1b8eaa01689a31d00"
+    },
+    {
+      "check": "repeatability_pass",
+      "notes": "all repeatability checks must pass",
+      "pass": true,
+      "value_first": true,
+      "value_second": true
+    }
+  ],
+  "summary": {
+    "cavity_displacement_hash_first": "f1c2beef5f7b93c59e143e4a5ec6689d9b1473e89e42e90eb3ab58b45b10c256",
+    "cavity_displacement_hash_second": "f1c2beef5f7b93c59e143e4a5ec6689d9b1473e89e42e90eb3ab58b45b10c256",
+    "displacement_hash_first": "41f18b424458ecb86507682ed868f930637dd6fd517ac45cb3de586103f2f8e8",
+    "displacement_hash_second": "41f18b424458ecb86507682ed868f930637dd6fd517ac45cb3de586103f2f8e8",
+    "funnel_displacement_hash_first": "7b03785e8241893f651ecab86e19e7da70746f620c542bd1b8eaa01689a31d00",
+    "funnel_displacement_hash_second": "7b03785e8241893f651ecab86e19e7da70746f620c542bd1b8eaa01689a31d00",
+    "mantle_displacement_hash_first": "c7f09c3fcee67a68db0901d3aad0ef4a4d4882b258ee93eb62e7c90b9b299b77",
+    "mantle_displacement_hash_second": "c7f09c3fcee67a68db0901d3aad0ef4a4d4882b258ee93eb62e7c90b9b299b77",
+    "repeatability_pass": true,
+    "row_count_first": 243,
+    "row_count_second": 243
+  }
+}

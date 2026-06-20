@@ -1,0 +1,169 @@
+{
+  "config_path": "configs/step42_squid_proxy_geometry_displacement.json",
+  "rows": [
+    {
+      "check": "displacement_id_expected",
+      "notes": "Step 42 displacement id must be stable",
+      "pass": true,
+      "value": "step42_squid_proxy_geometry_displacement_diagnostics"
+    },
+    {
+      "check": "schedule_config_path_exists",
+      "notes": "Step 32 schedule config must exist",
+      "pass": true,
+      "value": "configs/step32_squid_proxy_kinematics_schedule.json"
+    },
+    {
+      "check": "motion_mapping_config_path_exists",
+      "notes": "Step 33 motion mapping config must exist",
+      "pass": true,
+      "value": "configs/step33_squid_proxy_motion_mapping.json"
+    },
+    {
+      "check": "region_config_path_exists",
+      "notes": "Step 30 region config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_region_config.json"
+    },
+    {
+      "check": "geometry_config_path_exists",
+      "notes": "Step 30 geometry config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_geometry.json"
+    },
+    {
+      "check": "sample_count_expected",
+      "notes": "sample_count must remain 32768",
+      "pass": true,
+      "value": 32768
+    },
+    {
+      "check": "phase_sample_count_expected",
+      "notes": "phase_sample_count must remain 81",
+      "pass": true,
+      "value": 81
+    },
+    {
+      "check": "grid_sizes_expected",
+      "notes": "grid sizes must be [32, 48, 64]",
+      "pass": true,
+      "value": [
+        32,
+        48,
+        64
+      ]
+    },
+    {
+      "check": "tracked_regions_expected",
+      "notes": "tracked regions must match the Step 42 contract",
+      "pass": true,
+      "value": [
+        "mantle_outer",
+        "mantle_cavity_proxy",
+        "funnel_outlet_proxy"
+      ]
+    },
+    {
+      "check": "mantle_model_valid",
+      "notes": "mantle model must be radial_scale_proxy",
+      "pass": true,
+      "value": "radial_scale_proxy"
+    },
+    {
+      "check": "cavity_model_valid",
+      "notes": "cavity model must be volume_scale_proxy",
+      "pass": true,
+      "value": "volume_scale_proxy"
+    },
+    {
+      "check": "funnel_model_valid",
+      "notes": "funnel model must be aperture_scale_proxy",
+      "pass": true,
+      "value": "aperture_scale_proxy"
+    },
+    {
+      "check": "max_displacement_norm_finite",
+      "notes": "max displacement bound must be finite",
+      "pass": true,
+      "value": 0.25
+    },
+    {
+      "check": "max_displacement_norm_expected",
+      "notes": "max displacement bound must be 0.25",
+      "pass": true,
+      "value": 0.25
+    },
+    {
+      "check": "dense_field_disabled",
+      "notes": "Step 42 must not write dense displacement fields",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "displaced_particles_disabled",
+      "notes": "Step 42 must not write displaced particles",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_driver_disabled",
+      "notes": "Step 42 must not apply to FSIDriver3D",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_lbm_disabled",
+      "notes": "Step 42 must not apply to LBM",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_mpm_disabled",
+      "notes": "Step 42 must not apply to MPM",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_projection_disabled",
+      "notes": "Step 42 must not apply to projection",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "update_dynamic_solid_disabled",
+      "notes": "Step 42 must not update dynamic_solid",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "driver_integration_disabled",
+      "notes": "driver integration must remain disabled",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "deterministic_enabled",
+      "notes": "Step 42 must be deterministic",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "scope_note_valid",
+      "notes": "scope note must state diagnostic-only scope",
+      "pass": true,
+      "value": "geometry displacement diagnostics only; no driver-coupled geometry update"
+    }
+  ],
+  "summary": {
+    "grid_sizes": [
+      32,
+      48,
+      64
+    ],
+    "pass_count": 24,
+    "phase_sample_count": 81,
+    "row_count": 24,
+    "tracked_region_count": 3,
+    "validation_pass": true
+  }
+}

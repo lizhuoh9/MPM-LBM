@@ -1,0 +1,7 @@
+metric,value
+grid_sizes,"[32, 48, 64]"
+pass_count,24
+phase_sample_count,81
+row_count,24
+tracked_region_count,3
+validation_pass,True

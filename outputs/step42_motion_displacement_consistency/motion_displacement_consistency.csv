@@ -1,0 +1,9 @@
+check,pass,value,notes
+motion_mapping_row_count,True,243,Step 33 motion row count must remain 243
+displacement_row_count,True,243,Step 42 displacement row count must be 243
+phase_match,True,243,Step 42 phases must match Step 33 motion phases
+region_match,True,243,Step 42 regions must match Step 33 motion regions
+velocity_displacement_sign,True,243,velocity and displacement diagnostics must remain finite and nonnegative
+mantle_motion_displacement,True,mantle_outer,mantle displacement must align with Step 33 mantle motion scale
+cavity_motion_displacement,True,mantle_cavity_proxy,cavity displacement must align with Step 33 cavity scale
+funnel_motion_displacement,True,funnel_outlet_proxy,funnel displacement must align with Step 33 aperture scale

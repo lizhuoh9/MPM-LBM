@@ -1,0 +1,39 @@
+{
+  "displacement_id": "step42_squid_proxy_geometry_displacement_diagnostics",
+  "schedule_config_path": "configs/step32_squid_proxy_kinematics_schedule.json",
+  "motion_mapping_config_path": "configs/step33_squid_proxy_motion_mapping.json",
+  "region_config_path": "configs/step30_squid_proxy_region_config.json",
+  "geometry_config_path": "configs/step30_squid_proxy_geometry.json",
+  "tracked_regions": [
+    "mantle_outer",
+    "mantle_cavity_proxy",
+    "funnel_outlet_proxy"
+  ],
+  "context_regions": [
+    "head_proxy",
+    "arms_proxy",
+    "left_fin_proxy",
+    "right_fin_proxy"
+  ],
+  "sample_count": 32768,
+  "phase_sample_count": 81,
+  "grid_sizes": [
+    32,
+    48,
+    64
+  ],
+  "mantle_displacement_model": "radial_scale_proxy",
+  "cavity_displacement_model": "volume_scale_proxy",
+  "funnel_displacement_model": "aperture_scale_proxy",
+  "max_displacement_norm_allowed": 0.25,
+  "write_dense_displacement_field": false,
+  "write_displaced_particles": false,
+  "apply_to_driver": false,
+  "apply_to_lbm": false,
+  "apply_to_mpm": false,
+  "apply_to_projection": false,
+  "update_dynamic_solid": false,
+  "driver_integration_enabled": false,
+  "deterministic": true,
+  "scope_note": "geometry displacement diagnostics only; no driver-coupled geometry update"
+}

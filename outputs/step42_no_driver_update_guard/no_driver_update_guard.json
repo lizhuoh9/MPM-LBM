@@ -1,0 +1,69 @@
+{
+  "rows": [
+    {
+      "check": "driver_update_count",
+      "notes": "Step 42 must not update driver geometry",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "lbm_update_count",
+      "notes": "Step 42 must not update LBM state",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "mpm_update_count",
+      "notes": "Step 42 must not update MPM state",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "projection_update_count",
+      "notes": "Step 42 must not update projection state",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "dynamic_solid_update_count",
+      "notes": "Step 42 must not update dynamic_solid",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "displaced_particle_output_count",
+      "notes": "Step 42 must not write displaced particles",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "dense_displacement_field_output_count",
+      "notes": "Step 42 must not write dense displacement fields",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "fsidriver_integration_count",
+      "notes": "Step 42 must not integrate with FSIDriver3D",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "apply_to_driver": false,
+    "apply_to_lbm": false,
+    "apply_to_mpm": false,
+    "apply_to_projection": false,
+    "dense_displacement_field_output_count": 0,
+    "displaced_particle_output_count": 0,
+    "driver_integration_enabled": false,
+    "driver_update_count": 0,
+    "dynamic_solid_update_count": 0,
+    "fsidriver_integration_count": 0,
+    "guard_pass": true,
+    "lbm_update_count": 0,
+    "mpm_update_count": 0,
+    "projection_update_count": 0,
+    "update_dynamic_solid": false
+  }
+}

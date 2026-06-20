@@ -1,0 +1,65 @@
+{
+  "rows": [
+    {
+      "check": "motion_mapping_row_count",
+      "notes": "Step 33 motion row count must remain 243",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "displacement_row_count",
+      "notes": "Step 42 displacement row count must be 243",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "phase_match",
+      "notes": "Step 42 phases must match Step 33 motion phases",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "region_match",
+      "notes": "Step 42 regions must match Step 33 motion regions",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "velocity_displacement_sign",
+      "notes": "velocity and displacement diagnostics must remain finite and nonnegative",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "mantle_motion_displacement",
+      "notes": "mantle displacement must align with Step 33 mantle motion scale",
+      "pass": true,
+      "value": "mantle_outer"
+    },
+    {
+      "check": "cavity_motion_displacement",
+      "notes": "cavity displacement must align with Step 33 cavity scale",
+      "pass": true,
+      "value": "mantle_cavity_proxy"
+    },
+    {
+      "check": "funnel_motion_displacement",
+      "notes": "funnel displacement must align with Step 33 aperture scale",
+      "pass": true,
+      "value": "funnel_outlet_proxy"
+    }
+  ],
+  "summary": {
+    "cavity_motion_displacement_pass": true,
+    "consistency_pass": true,
+    "displacement_row_count": 243,
+    "funnel_motion_displacement_pass": true,
+    "mantle_motion_displacement_pass": true,
+    "motion_mapping_row_count": 243,
+    "pass_count": 8,
+    "phase_match_pass": true,
+    "region_match_pass": true,
+    "row_count": 8,
+    "velocity_displacement_sign_pass": true
+  }
+}

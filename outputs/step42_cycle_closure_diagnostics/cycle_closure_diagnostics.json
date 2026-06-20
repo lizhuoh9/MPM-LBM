@@ -1,0 +1,27 @@
+{
+  "rows": [
+    {
+      "closure_pass": true,
+      "closure_tolerance": 1e-10,
+      "phase0_phase1_displacement_delta": 0.0,
+      "region_id": "mantle_outer"
+    },
+    {
+      "closure_pass": true,
+      "closure_tolerance": 1e-10,
+      "phase0_phase1_displacement_delta": 0.0,
+      "region_id": "mantle_cavity_proxy"
+    },
+    {
+      "closure_pass": true,
+      "closure_tolerance": 1e-10,
+      "phase0_phase1_displacement_delta": 0.0,
+      "region_id": "funnel_outlet_proxy"
+    }
+  ],
+  "summary": {
+    "closure_tolerance": 1e-10,
+    "cycle_closure_pass": true,
+    "row_count": 3
+  }
+}

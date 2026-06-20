@@ -45,6 +45,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 39 controlled jet-cycle proxy multi-cycle stability envelope
 - Step 40 controlled jet-cycle proxy parameter sensitivity smoke over wall-velocity scale values
 - Step 41 controlled jet-cycle proxy selected-parameter 64^3 feasibility for `wall_velocity_scale = 0.05`
+- Step 42 controlled squid proxy prescribed geometry displacement diagnostics
 
 ## Not Implemented
 
@@ -127,6 +128,21 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 33 maps the accepted Step 32 schedule to region-level proxy diagnostics for `mantle_outer`, `mantle_cavity_proxy`, and `funnel_outlet_proxy`, then summarizes coverage at 32^3, 48^3, and 64^3. These diagnostics are not written into a coupled simulation state.
+
+## Step 42 Squid Proxy Prescribed Geometry Displacement Boundary
+
+Step 42 is controlled squid proxy prescribed geometry displacement diagnostics.
+Step 42 derives displacement diagnostics only.
+Step 42 does not update driver geometry.
+Step 42 does not displace MPM particles in FSIDriver3D.
+Step 42 does not update LBM solid_phi.
+Step 42 does not update dynamic_solid.
+Step 42 does not change moving bounce-back formulas.
+Step 42 remains diagnostic-only.
+The default boundary_motion_mode remains static.
+The default wall_velocity_application_mode remains disabled.
+
+Step 42 generates per-phase prescribed displacement diagnostics for `mantle_outer`, `mantle_cavity_proxy`, and `funnel_outlet_proxy`, then checks repeatability, schedule consistency, Step 33 motion consistency, grid coverage, cycle closure, no-driver-update guards, Step 41 regression, and artifact budget. These diagnostics are not written into a coupled simulation state.
 
 ## Step 25 Intake Boundary
 

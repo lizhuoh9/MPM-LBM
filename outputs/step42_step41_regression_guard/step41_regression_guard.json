@@ -1,0 +1,117 @@
+{
+  "rows": [
+    {
+      "check": "step41_report_exists",
+      "notes": "required Step 41 artifact",
+      "pass": true,
+      "value": "STEP41_CONTROLLED_JET_CYCLE_PROXY_SELECTED_PARAMETER_64_FEASIBILITY_REPORT.md"
+    },
+    {
+      "check": "step41_driver_results_exists",
+      "notes": "required Step 41 artifact",
+      "pass": true,
+      "value": "outputs/step41_64_selected_parameter_driver/selected_parameter_64_results.json"
+    },
+    {
+      "check": "step41_feasibility_summary_exists",
+      "notes": "required Step 41 artifact",
+      "pass": true,
+      "value": "outputs/step41_64_feasibility_summary/feasibility_summary.json"
+    },
+    {
+      "check": "step41_wall_velocity_quality_exists",
+      "notes": "required Step 41 artifact",
+      "pass": true,
+      "value": "outputs/step41_wall_velocity_64_quality/wall_velocity_64_quality.json"
+    },
+    {
+      "check": "step41_cycle_proxy_exists",
+      "notes": "required Step 41 artifact",
+      "pass": true,
+      "value": "outputs/step41_cycle_proxy_64_diagnostics/cycle_proxy_64_diagnostics.json"
+    },
+    {
+      "check": "step41_tethered_guard_exists",
+      "notes": "required Step 41 artifact",
+      "pass": true,
+      "value": "outputs/step41_tethered_no_free_body_guard/tethered_no_free_body_guard.json"
+    },
+    {
+      "check": "step41_quality_summary_exists",
+      "notes": "required Step 41 artifact",
+      "pass": true,
+      "value": "outputs/step41_quality_report_aggregation/quality_report_summary.json"
+    },
+    {
+      "check": "step41_artifact_summary_exists",
+      "notes": "required Step 41 artifact",
+      "pass": true,
+      "value": "outputs/step41_artifact_manifest/artifact_summary.json"
+    },
+    {
+      "check": "step41_driver_row_count",
+      "notes": "Step 41 driver row count stays 4",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step41_driver_stable_count",
+      "notes": "Step 41 driver rows stay stable",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step41_feasibility_pass",
+      "notes": "Step 41 feasibility summary stays passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step41_wall_velocity_quality_pass",
+      "notes": "Step 41 wall velocity quality stays passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step41_cycle_proxy_pass",
+      "notes": "Step 41 cycle proxy diagnostics stay passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step41_tethered_guard_pass",
+      "notes": "Step 41 tethered guard stays passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step41_quality_reports_pass",
+      "notes": "Step 41 strict quality reports stay passing",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step41_large_file_count",
+      "notes": "Step 41 artifact large-file count stays 0",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step41_vtr_count",
+      "notes": "Step 41 wrote no VTR outputs",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step41_particle_npy_count",
+      "notes": "Step 41 wrote no particle NPY outputs",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "pass_count": 18,
+    "regression_pass": true,
+    "row_count": 18
+  }
+}

@@ -1,0 +1,4 @@
+region_id,phase0_phase1_displacement_delta,closure_tolerance,closure_pass
+mantle_outer,0.0,1e-10,True
+mantle_cavity_proxy,0.0,1e-10,True
+funnel_outlet_proxy,0.0,1e-10,True

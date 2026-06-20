@@ -1,0 +1,19 @@
+check,pass,value,notes
+step41_report_exists,True,STEP41_CONTROLLED_JET_CYCLE_PROXY_SELECTED_PARAMETER_64_FEASIBILITY_REPORT.md,required Step 41 artifact
+step41_driver_results_exists,True,outputs/step41_64_selected_parameter_driver/selected_parameter_64_results.json,required Step 41 artifact
+step41_feasibility_summary_exists,True,outputs/step41_64_feasibility_summary/feasibility_summary.json,required Step 41 artifact
+step41_wall_velocity_quality_exists,True,outputs/step41_wall_velocity_64_quality/wall_velocity_64_quality.json,required Step 41 artifact
+step41_cycle_proxy_exists,True,outputs/step41_cycle_proxy_64_diagnostics/cycle_proxy_64_diagnostics.json,required Step 41 artifact
+step41_tethered_guard_exists,True,outputs/step41_tethered_no_free_body_guard/tethered_no_free_body_guard.json,required Step 41 artifact
+step41_quality_summary_exists,True,outputs/step41_quality_report_aggregation/quality_report_summary.json,required Step 41 artifact
+step41_artifact_summary_exists,True,outputs/step41_artifact_manifest/artifact_summary.json,required Step 41 artifact
+step41_driver_row_count,True,4,Step 41 driver row count stays 4
+step41_driver_stable_count,True,4,Step 41 driver rows stay stable
+step41_feasibility_pass,True,True,Step 41 feasibility summary stays passing
+step41_wall_velocity_quality_pass,True,True,Step 41 wall velocity quality stays passing
+step41_cycle_proxy_pass,True,True,Step 41 cycle proxy diagnostics stay passing
+step41_tethered_guard_pass,True,True,Step 41 tethered guard stays passing
+step41_quality_reports_pass,True,4,Step 41 strict quality reports stay passing
+step41_large_file_count,True,0,Step 41 artifact large-file count stays 0
+step41_vtr_count,True,0,Step 41 wrote no VTR outputs
+step41_particle_npy_count,True,0,Step 41 wrote no particle NPY outputs

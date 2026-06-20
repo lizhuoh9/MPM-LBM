@@ -1,0 +1,7 @@
+check,pass,value,notes
+schedule_row_count,True,81,Step 32 schedule row count must remain 81
+displacement_sample_count,True,81,displacement sample count must match schedule
+phase_samples_match,True,243,displacement phases must match schedule phases
+mantle_scale_consistency,True,243,mantle displacement rows must track mantle scale
+cavity_volume_scale_consistency,True,243,cavity displacement rows must track volume scale
+funnel_aperture_scale_consistency,True,243,funnel displacement rows must track aperture scale

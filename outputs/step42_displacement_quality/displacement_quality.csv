@@ -1,0 +1,16 @@
+check,pass,value,notes
+row_count_pass,True,243,row count must be 81 phases times 3 regions
+tracked_region_count_pass,True,3,all tracked regions must be present
+finite_pass,True,True,all numeric diagnostics must be finite
+bounds_pass,True,True,displacement norms and bounding boxes must be bounded
+coverage_pass,True,True,every tracked region must have sampled support
+cycle_closure_pass,True,True,phase 0 and phase 1 diagnostics must close
+endpoint_repeatability_pass,True,True,endpoint rows must repeat deterministically
+diagnostic_only_pass,True,True,rows must stay diagnostic-only
+no_driver_update_pass,True,True,driver updates must stay disabled
+no_lbm_update_pass,True,True,LBM updates must stay disabled
+no_mpm_update_pass,True,True,MPM updates must stay disabled
+no_projection_update_pass,True,True,projection updates must stay disabled
+no_dense_field_pass,True,True,dense field output must stay disabled
+no_displaced_particles_pass,True,True,displaced particle output must stay disabled
+quality_pass,True,True,all Step 42 quality checks must pass

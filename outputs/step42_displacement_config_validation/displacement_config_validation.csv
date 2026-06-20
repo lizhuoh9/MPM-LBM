@@ -1,0 +1,25 @@
+check,pass,value,notes
+displacement_id_expected,True,step42_squid_proxy_geometry_displacement_diagnostics,Step 42 displacement id must be stable
+schedule_config_path_exists,True,configs/step32_squid_proxy_kinematics_schedule.json,Step 32 schedule config must exist
+motion_mapping_config_path_exists,True,configs/step33_squid_proxy_motion_mapping.json,Step 33 motion mapping config must exist
+region_config_path_exists,True,configs/step30_squid_proxy_region_config.json,Step 30 region config must exist
+geometry_config_path_exists,True,configs/step30_squid_proxy_geometry.json,Step 30 geometry config must exist
+sample_count_expected,True,32768,sample_count must remain 32768
+phase_sample_count_expected,True,81,phase_sample_count must remain 81
+grid_sizes_expected,True,"[32, 48, 64]","grid sizes must be [32, 48, 64]"
+tracked_regions_expected,True,"[""mantle_outer"", ""mantle_cavity_proxy"", ""funnel_outlet_proxy""]",tracked regions must match the Step 42 contract
+mantle_model_valid,True,radial_scale_proxy,mantle model must be radial_scale_proxy
+cavity_model_valid,True,volume_scale_proxy,cavity model must be volume_scale_proxy
+funnel_model_valid,True,aperture_scale_proxy,funnel model must be aperture_scale_proxy
+max_displacement_norm_finite,True,0.25,max displacement bound must be finite
+max_displacement_norm_expected,True,0.25,max displacement bound must be 0.25
+dense_field_disabled,True,False,Step 42 must not write dense displacement fields
+displaced_particles_disabled,True,False,Step 42 must not write displaced particles
+apply_to_driver_disabled,True,False,Step 42 must not apply to FSIDriver3D
+apply_to_lbm_disabled,True,False,Step 42 must not apply to LBM
+apply_to_mpm_disabled,True,False,Step 42 must not apply to MPM
+apply_to_projection_disabled,True,False,Step 42 must not apply to projection
+update_dynamic_solid_disabled,True,False,Step 42 must not update dynamic_solid
+driver_integration_disabled,True,False,driver integration must remain disabled
+deterministic_enabled,True,True,Step 42 must be deterministic
+scope_note_valid,True,geometry displacement diagnostics only; no driver-coupled geometry update,scope note must state diagnostic-only scope

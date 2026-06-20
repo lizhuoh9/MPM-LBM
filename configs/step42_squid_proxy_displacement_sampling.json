@@ -1,0 +1,21 @@
+{
+  "sampling_id": "step42_squid_proxy_displacement_sampling",
+  "sample_count": 32768,
+  "phase_sample_count": 81,
+  "grid_sizes": [
+    32,
+    48,
+    64
+  ],
+  "point_seed": 42,
+  "deterministic": true,
+  "write_dense_displacement_field": false,
+  "write_displaced_particles": false,
+  "apply_to_driver": false,
+  "apply_to_lbm": false,
+  "apply_to_mpm": false,
+  "apply_to_projection": false,
+  "update_dynamic_solid": false,
+  "driver_integration_enabled": false,
+  "scope_note": "sampling for geometry displacement diagnostics only"
+}

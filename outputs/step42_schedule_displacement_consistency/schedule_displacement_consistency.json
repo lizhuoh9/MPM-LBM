@@ -1,0 +1,52 @@
+{
+  "rows": [
+    {
+      "check": "schedule_row_count",
+      "notes": "Step 32 schedule row count must remain 81",
+      "pass": true,
+      "value": 81
+    },
+    {
+      "check": "displacement_sample_count",
+      "notes": "displacement sample count must match schedule",
+      "pass": true,
+      "value": 81
+    },
+    {
+      "check": "phase_samples_match",
+      "notes": "displacement phases must match schedule phases",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "mantle_scale_consistency",
+      "notes": "mantle displacement rows must track mantle scale",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "cavity_volume_scale_consistency",
+      "notes": "cavity displacement rows must track volume scale",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "funnel_aperture_scale_consistency",
+      "notes": "funnel displacement rows must track aperture scale",
+      "pass": true,
+      "value": 243
+    }
+  ],
+  "summary": {
+    "cavity_volume_scale_consistency_pass": true,
+    "consistency_pass": true,
+    "displacement_row_count": 243,
+    "displacement_sample_count": 81,
+    "funnel_aperture_scale_consistency_pass": true,
+    "mantle_scale_consistency_pass": true,
+    "pass_count": 6,
+    "phase_samples_match": true,
+    "row_count": 6,
+    "schedule_row_count": 81
+  }
+}
