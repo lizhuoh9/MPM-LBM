@@ -1,0 +1,48 @@
+{
+  "rows": [
+    {
+      "applied_cell_count_max": 2136,
+      "applied_cell_count_min": 2136,
+      "cap_pass": true,
+      "case": "experimental_48_moving_boundary",
+      "cycle_count": 2,
+      "cycle_pass_count": 2,
+      "finite_pass": true,
+      "lbm_population_update_count_max": 0,
+      "max_applied_velocity_norm": 0.007021783310068709,
+      "modify_bounceback_formula_any": false,
+      "phase_sequence_repeats": true,
+      "quality_pass": true,
+      "reaction_transfer_mode": "engineering",
+      "timeseries_row_count": 80,
+      "wall_velocity_cap_lbm": 0.01
+    },
+    {
+      "applied_cell_count_max": 2136,
+      "applied_cell_count_min": 2136,
+      "cap_pass": true,
+      "case": "experimental_48_link_area",
+      "cycle_count": 2,
+      "cycle_pass_count": 2,
+      "finite_pass": true,
+      "lbm_population_update_count_max": 0,
+      "max_applied_velocity_norm": 0.007021783310068709,
+      "modify_bounceback_formula_any": false,
+      "phase_sequence_repeats": true,
+      "quality_pass": true,
+      "reaction_transfer_mode": "link_area_experimental",
+      "timeseries_row_count": 80,
+      "wall_velocity_cap_lbm": 0.01
+    }
+  ],
+  "summary": {
+    "cycle_count": 2,
+    "max_applied_velocity_norm": 0.007021783310068709,
+    "max_lbm_population_update_count": 0,
+    "min_applied_cell_count": 2136,
+    "min_timeseries_row_count": 80,
+    "pass_count": 2,
+    "quality_pass": true,
+    "row_count": 2
+  }
+}

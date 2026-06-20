@@ -1,0 +1,43 @@
+{
+  "rows": [
+    {
+      "active_cell_count_delta": 0,
+      "bb_link_count_delta": 0,
+      "both_stable": true,
+      "comparison": "static_vs_experimental_engineering",
+      "comparison_pass": true,
+      "experimental_applied_velocity_max": 0.007021783310068709,
+      "experimental_case": "experimental_48_moving_boundary",
+      "lbm_max_v_delta": 0.003219286911189556,
+      "mpm_min_J_delta": 1.3709068298339844e-06,
+      "notes": "bounded Step 39 static-vs-experimental two-cycle proxy comparison",
+      "projected_mass_delta": -3.725290298461914e-09,
+      "reaction_transfer_mode": "engineering",
+      "rho_max_delta": 0.004618287086486816,
+      "rho_min_delta": -0.007118880748748779,
+      "static_case": "static_48_moving_boundary"
+    },
+    {
+      "active_cell_count_delta": 1,
+      "bb_link_count_delta": -2,
+      "both_stable": true,
+      "comparison": "static_vs_experimental_link_area_experimental",
+      "comparison_pass": true,
+      "experimental_applied_velocity_max": 0.007021783310068709,
+      "experimental_case": "experimental_48_link_area",
+      "lbm_max_v_delta": 0.003217441961169243,
+      "mpm_min_J_delta": -1.1205673217773438e-05,
+      "notes": "bounded Step 39 static-vs-experimental two-cycle proxy comparison",
+      "projected_mass_delta": -3.725290298461914e-09,
+      "reaction_transfer_mode": "link_area_experimental",
+      "rho_max_delta": 0.004770517349243164,
+      "rho_min_delta": -0.0071405768394470215,
+      "static_case": "static_48_link_area"
+    }
+  ],
+  "summary": {
+    "comparison_pass": true,
+    "pass_count": 2,
+    "row_count": 2
+  }
+}

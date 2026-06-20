@@ -1,0 +1,63 @@
+{
+  "rows": [
+    {
+      "check": "step38_report_exists",
+      "notes": "Step 38 report remains present",
+      "pass": true,
+      "value": "STEP38 report"
+    },
+    {
+      "check": "step38_driver_row_count",
+      "notes": "Step 38 driver row count stays 4",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step38_driver_stable_count",
+      "notes": "Step 38 driver rows stay stable",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step38_cycle_proxy",
+      "notes": "Step 38 cycle proxy diagnostics stay passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step38_wall_velocity_cycle_quality",
+      "notes": "Step 38 wall velocity cycle quality stays passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step38_tethered_guard",
+      "notes": "Step 38 tethered guard stays passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step38_large_file_count",
+      "notes": "Step 38 artifact large-file count stays 0",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step38_vtr_count",
+      "notes": "Step 38 wrote no VTR outputs",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step38_particle_npy_count",
+      "notes": "Step 38 wrote no particle NPY outputs",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "pass_count": 9,
+    "regression_pass": true,
+    "row_count": 9
+  }
+}

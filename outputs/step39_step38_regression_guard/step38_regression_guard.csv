@@ -1,0 +1,10 @@
+check,pass,value,notes
+step38_report_exists,True,STEP38 report,Step 38 report remains present
+step38_driver_row_count,True,4,Step 38 driver row count stays 4
+step38_driver_stable_count,True,4,Step 38 driver rows stay stable
+step38_cycle_proxy,True,True,Step 38 cycle proxy diagnostics stay passing
+step38_wall_velocity_cycle_quality,True,True,Step 38 wall velocity cycle quality stays passing
+step38_tethered_guard,True,True,Step 38 tethered guard stays passing
+step38_large_file_count,True,0,Step 38 artifact large-file count stays 0
+step38_vtr_count,True,0,Step 38 wrote no VTR outputs
+step38_particle_npy_count,True,0,Step 38 wrote no particle NPY outputs

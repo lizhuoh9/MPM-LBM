@@ -1,0 +1,123 @@
+{
+  "rows": [
+    {
+      "bb_correction_integral_proxy": 0.055150505009805784,
+      "bb_link_count_integral_proxy": 265024.0,
+      "case": "experimental_48_moving_boundary",
+      "cycle_index": 1,
+      "hydro_force_max_norm_integral_proxy": 16.705360263586044,
+      "impulse_proxy_finite_pass": true,
+      "max_bb_correction": 0.0024120884481817484,
+      "max_grid_reaction_norm": 1.0544598808337469e-05,
+      "max_hydro_force_max_norm": 0.4208977520465851,
+      "mode_class": "experimental",
+      "notes": "existing-diagnostics multicycle force and bounce-back proxy only; no real impulse validation claim",
+      "reaction_transfer_mode": "engineering"
+    },
+    {
+      "bb_correction_integral_proxy": 0.07410909910686314,
+      "bb_link_count_integral_proxy": 266822.0,
+      "case": "experimental_48_moving_boundary",
+      "cycle_index": 2,
+      "hydro_force_max_norm_integral_proxy": 16.69046887755394,
+      "impulse_proxy_finite_pass": true,
+      "max_bb_correction": 0.0025169772561639547,
+      "max_grid_reaction_norm": 1.0538232345425058e-05,
+      "max_hydro_force_max_norm": 0.4192942678928375,
+      "mode_class": "experimental",
+      "notes": "existing-diagnostics multicycle force and bounce-back proxy only; no real impulse validation claim",
+      "reaction_transfer_mode": "engineering"
+    },
+    {
+      "bb_correction_integral_proxy": 0.04429622215684503,
+      "bb_link_count_integral_proxy": 265024.0,
+      "case": "static_48_moving_boundary",
+      "cycle_index": 1,
+      "hydro_force_max_norm_integral_proxy": 16.662421941757202,
+      "impulse_proxy_finite_pass": true,
+      "max_bb_correction": 0.001404494745656848,
+      "max_grid_reaction_norm": 1.0544597898842767e-05,
+      "max_hydro_force_max_norm": 0.418045312166214,
+      "mode_class": "static",
+      "notes": "existing-diagnostics multicycle force and bounce-back proxy only; no real impulse validation claim",
+      "reaction_transfer_mode": "engineering"
+    },
+    {
+      "bb_correction_integral_proxy": 0.06802526209503412,
+      "bb_link_count_integral_proxy": 266822.0,
+      "case": "static_48_moving_boundary",
+      "cycle_index": 2,
+      "hydro_force_max_norm_integral_proxy": 16.65766069293022,
+      "impulse_proxy_finite_pass": true,
+      "max_bb_correction": 0.0020447473507374525,
+      "max_grid_reaction_norm": 1.0538236892898567e-05,
+      "max_hydro_force_max_norm": 0.4172605276107788,
+      "mode_class": "static",
+      "notes": "existing-diagnostics multicycle force and bounce-back proxy only; no real impulse validation claim",
+      "reaction_transfer_mode": "engineering"
+    },
+    {
+      "bb_correction_integral_proxy": 0.055057226069038734,
+      "bb_link_count_integral_proxy": 265024.0,
+      "case": "experimental_48_link_area",
+      "cycle_index": 1,
+      "hydro_force_max_norm_integral_proxy": 16.705224603414536,
+      "impulse_proxy_finite_pass": true,
+      "max_bb_correction": 0.0024064986500889063,
+      "max_grid_reaction_norm": 1.0544550605118275e-05,
+      "max_hydro_force_max_norm": 0.4208909273147583,
+      "mode_class": "experimental",
+      "notes": "existing-diagnostics multicycle force and bounce-back proxy only; no real impulse validation claim",
+      "reaction_transfer_mode": "link_area_experimental"
+    },
+    {
+      "bb_correction_integral_proxy": 0.07405494910199195,
+      "bb_link_count_integral_proxy": 266860.0,
+      "case": "experimental_48_link_area",
+      "cycle_index": 2,
+      "hydro_force_max_norm_integral_proxy": 16.692104190587997,
+      "impulse_proxy_finite_pass": true,
+      "max_bb_correction": 0.0025076628662645817,
+      "max_grid_reaction_norm": 1.0538178685237654e-05,
+      "max_hydro_force_max_norm": 0.4194331467151642,
+      "mode_class": "experimental",
+      "notes": "existing-diagnostics multicycle force and bounce-back proxy only; no real impulse validation claim",
+      "reaction_transfer_mode": "link_area_experimental"
+    },
+    {
+      "bb_correction_integral_proxy": 0.04402341553941369,
+      "bb_link_count_integral_proxy": 265014.0,
+      "case": "static_48_link_area",
+      "cycle_index": 1,
+      "hydro_force_max_norm_integral_proxy": 16.66167438030243,
+      "impulse_proxy_finite_pass": true,
+      "max_bb_correction": 0.0014008040307089686,
+      "max_grid_reaction_norm": 1.0544559700065292e-05,
+      "max_hydro_force_max_norm": 0.41786298155784607,
+      "mode_class": "static",
+      "notes": "existing-diagnostics multicycle force and bounce-back proxy only; no real impulse validation claim",
+      "reaction_transfer_mode": "link_area_experimental"
+    },
+    {
+      "bb_correction_integral_proxy": 0.06773833523038775,
+      "bb_link_count_integral_proxy": 266886.0,
+      "case": "static_48_link_area",
+      "cycle_index": 2,
+      "hydro_force_max_norm_integral_proxy": 16.657075256109238,
+      "impulse_proxy_finite_pass": true,
+      "max_bb_correction": 0.0020264028571546078,
+      "max_grid_reaction_norm": 1.0538282367633656e-05,
+      "max_hydro_force_max_norm": 0.41721850633621216,
+      "mode_class": "static",
+      "notes": "existing-diagnostics multicycle force and bounce-back proxy only; no real impulse validation claim",
+      "reaction_transfer_mode": "link_area_experimental"
+    }
+  ],
+  "summary": {
+    "cycle_to_cycle_impulse_proxy_drift_finite": true,
+    "impulse_proxy_summary_pass": true,
+    "max_cycle_to_cycle_impulse_proxy_drift": 0.014891386032104492,
+    "pass_count": 8,
+    "row_count": 8
+  }
+}

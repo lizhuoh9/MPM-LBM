@@ -1,0 +1,81 @@
+{
+  "rows": [
+    {
+      "case": "experimental_48_link_area",
+      "connected_component_count": 3,
+      "geometry_type": "squid_proxy",
+      "largest_component_fraction": 0.9844961240310077,
+      "mode_class": "experimental",
+      "occupied_count": 774,
+      "pass": true,
+      "quality_kind": "procedural_voxelized",
+      "reaction_transfer_mode": "link_area_experimental",
+      "reasons_count": 0,
+      "report_size_bytes": 1218,
+      "severity": "ok",
+      "source_report_path": "outputs/step39_multicycle_driver/experimental_48_link_area/geometry_quality_report.json",
+      "strict": true,
+      "warnings_count": 0
+    },
+    {
+      "case": "experimental_48_moving_boundary",
+      "connected_component_count": 3,
+      "geometry_type": "squid_proxy",
+      "largest_component_fraction": 0.9844961240310077,
+      "mode_class": "experimental",
+      "occupied_count": 774,
+      "pass": true,
+      "quality_kind": "procedural_voxelized",
+      "reaction_transfer_mode": "engineering",
+      "reasons_count": 0,
+      "report_size_bytes": 1218,
+      "severity": "ok",
+      "source_report_path": "outputs/step39_multicycle_driver/experimental_48_moving_boundary/geometry_quality_report.json",
+      "strict": true,
+      "warnings_count": 0
+    },
+    {
+      "case": "static_48_link_area",
+      "connected_component_count": 3,
+      "geometry_type": "squid_proxy",
+      "largest_component_fraction": 0.9844961240310077,
+      "mode_class": "static",
+      "occupied_count": 774,
+      "pass": true,
+      "quality_kind": "procedural_voxelized",
+      "reaction_transfer_mode": "link_area_experimental",
+      "reasons_count": 0,
+      "report_size_bytes": 1218,
+      "severity": "ok",
+      "source_report_path": "outputs/step39_multicycle_driver/static_48_link_area/geometry_quality_report.json",
+      "strict": true,
+      "warnings_count": 0
+    },
+    {
+      "case": "static_48_moving_boundary",
+      "connected_component_count": 3,
+      "geometry_type": "squid_proxy",
+      "largest_component_fraction": 0.9844961240310077,
+      "mode_class": "static",
+      "occupied_count": 774,
+      "pass": true,
+      "quality_kind": "procedural_voxelized",
+      "reaction_transfer_mode": "engineering",
+      "reasons_count": 0,
+      "report_size_bytes": 1218,
+      "severity": "ok",
+      "source_report_path": "outputs/step39_multicycle_driver/static_48_moving_boundary/geometry_quality_report.json",
+      "strict": true,
+      "warnings_count": 0
+    }
+  ],
+  "summary": {
+    "error_count": 0,
+    "experimental_report_count": 2,
+    "pass_count": 4,
+    "quality_report_count": 4,
+    "static_report_count": 2,
+    "strict_count": 4,
+    "warning_count": 0
+  }
+}

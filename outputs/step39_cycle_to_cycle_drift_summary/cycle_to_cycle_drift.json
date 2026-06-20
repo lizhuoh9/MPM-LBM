@@ -1,0 +1,61 @@
+{
+  "rows": [
+    {
+      "bb_max_correction_drift": 0.00010488880798220634,
+      "case": "experimental_48_moving_boundary",
+      "drift_pass": true,
+      "hydro_force_max_norm_drift": -0.0016034841537475586,
+      "lbm_max_v_drift": 0.00016578752547502518,
+      "mode_class": "experimental",
+      "mpm_min_J_drift": 0.001018226146697998,
+      "projected_mass_drift": 1.862645149230957e-09,
+      "reaction_transfer_mode": "engineering",
+      "rho_max_drift_cycle2_minus_cycle1": -0.0030183792114257812,
+      "rho_min_drift_cycle2_minus_cycle1": -0.00023543834686279297
+    },
+    {
+      "bb_max_correction_drift": 0.0006402526050806046,
+      "case": "static_48_moving_boundary",
+      "drift_pass": true,
+      "hydro_force_max_norm_drift": -0.0007847845554351807,
+      "lbm_max_v_drift": 0.0018947357311844826,
+      "mode_class": "static",
+      "mpm_min_J_drift": 0.001020967960357666,
+      "projected_mass_drift": -5.587935447692871e-09,
+      "reaction_transfer_mode": "engineering",
+      "rho_max_drift_cycle2_minus_cycle1": -0.0016460418701171875,
+      "rho_min_drift_cycle2_minus_cycle1": -0.0008631348609924316
+    },
+    {
+      "bb_max_correction_drift": 0.00010116421617567539,
+      "case": "experimental_48_link_area",
+      "drift_pass": true,
+      "hydro_force_max_norm_drift": -0.0014577805995941162,
+      "lbm_max_v_drift": 0.00014548562467098236,
+      "mode_class": "experimental",
+      "mpm_min_J_drift": 0.0010012388229370117,
+      "projected_mass_drift": -3.725290298461914e-09,
+      "reaction_transfer_mode": "link_area_experimental",
+      "rho_max_drift_cycle2_minus_cycle1": -0.0030274391174316406,
+      "rho_min_drift_cycle2_minus_cycle1": -0.00021260976791381836
+    },
+    {
+      "bb_max_correction_drift": 0.0006255988264456391,
+      "case": "static_48_link_area",
+      "drift_pass": true,
+      "hydro_force_max_norm_drift": -0.0006444752216339111,
+      "lbm_max_v_drift": 0.0018939841538667679,
+      "mode_class": "static",
+      "mpm_min_J_drift": 0.0010239481925964355,
+      "projected_mass_drift": -5.587935447692871e-09,
+      "reaction_transfer_mode": "link_area_experimental",
+      "rho_max_drift_cycle2_minus_cycle1": -0.0015925168991088867,
+      "rho_min_drift_cycle2_minus_cycle1": -0.0009014010429382324
+    }
+  ],
+  "summary": {
+    "drift_summary_pass": true,
+    "pass_count": 4,
+    "row_count": 4
+  }
+}

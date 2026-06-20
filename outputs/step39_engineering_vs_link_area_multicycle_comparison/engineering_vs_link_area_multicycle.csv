@@ -1,0 +1,2 @@
+comparison,engineering_case,link_area_case,both_stable,link_area_scale_final,rho_min_delta,rho_max_delta,lbm_max_v_delta,mpm_min_J_delta,projected_mass_delta,notes,comparison_pass
+experimental_engineering_vs_link_area_multicycle,experimental_48_moving_boundary,experimental_48_link_area,True,0.8130925297737122,3.30805778503418e-05,-9.894371032714844e-06,-2.692919224500656e-05,3.844499588012695e-05,0.0,bounded Step 39 experimental engineering-vs-link-area two-cycle proxy comparison,True
