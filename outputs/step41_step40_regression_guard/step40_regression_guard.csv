@@ -1,0 +1,11 @@
+check,pass,value,notes
+step40_report_exists,True,STEP40 report,Step 40 report remains present
+step40_driver_row_count,True,8,Step 40 driver row count stays 8
+step40_driver_stable_count,True,8,Step 40 driver rows stay stable
+step40_scale_count,True,3,Step 40 keeps three parameter scales
+step40_parameter_sensitivity,True,True,Step 40 sensitivity summary stays passing
+step40_cap_pass,True,True,Step 40 cap diagnostics stay passing
+step40_tethered_guard,True,True,Step 40 tethered guard stays passing
+step40_large_file_count,True,0,Step 40 artifact large-file count stays 0
+step40_vtr_count,True,0,Step 40 wrote no VTR outputs
+step40_particle_npy_count,True,0,Step 40 wrote no particle NPY outputs

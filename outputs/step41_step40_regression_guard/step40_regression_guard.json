@@ -1,0 +1,69 @@
+{
+  "rows": [
+    {
+      "check": "step40_report_exists",
+      "notes": "Step 40 report remains present",
+      "pass": true,
+      "value": "STEP40 report"
+    },
+    {
+      "check": "step40_driver_row_count",
+      "notes": "Step 40 driver row count stays 8",
+      "pass": true,
+      "value": 8
+    },
+    {
+      "check": "step40_driver_stable_count",
+      "notes": "Step 40 driver rows stay stable",
+      "pass": true,
+      "value": 8
+    },
+    {
+      "check": "step40_scale_count",
+      "notes": "Step 40 keeps three parameter scales",
+      "pass": true,
+      "value": 3
+    },
+    {
+      "check": "step40_parameter_sensitivity",
+      "notes": "Step 40 sensitivity summary stays passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step40_cap_pass",
+      "notes": "Step 40 cap diagnostics stay passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step40_tethered_guard",
+      "notes": "Step 40 tethered guard stays passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step40_large_file_count",
+      "notes": "Step 40 artifact large-file count stays 0",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step40_vtr_count",
+      "notes": "Step 40 wrote no VTR outputs",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step40_particle_npy_count",
+      "notes": "Step 40 wrote no particle NPY outputs",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "pass_count": 10,
+    "regression_pass": true,
+    "row_count": 10
+  }
+}

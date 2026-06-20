@@ -1,0 +1,21 @@
+{
+  "rows": [],
+  "summary": {
+    "driver_row_count": 4,
+    "feasibility_pass": true,
+    "max_applied_velocity_norm": 0.00721642344030184,
+    "max_lbm_max_v_global": 0.012116076424717903,
+    "max_rho_max_global": 1.0409393310546875,
+    "min_active_cell_count": 9837,
+    "min_completed_lbm_steps": 40,
+    "min_mpm_min_J_global": 0.9959453344345093,
+    "min_projected_mass_min": 0.02294033206999302,
+    "min_rho_min_global": 0.9690961241722107,
+    "min_total_mpm_substeps": 200,
+    "n_grid": 64,
+    "one_cycle_pass": true,
+    "quality_pass_count": 4,
+    "selected_scale": 0.05,
+    "stable_count": 4
+  }
+}

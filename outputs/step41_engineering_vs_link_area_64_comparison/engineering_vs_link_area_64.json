@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "both_stable": true,
+      "comparison": "engineering_vs_link_area_64_scale_0050",
+      "comparison_pass": true,
+      "engineering_case": "step41_64_experimental_moving_boundary_scale_0050",
+      "lbm_max_v_delta": -3.334134817123413e-07,
+      "link_area_case": "step41_64_experimental_link_area_scale_0050",
+      "link_area_scale_final": 0.8088821768760681,
+      "max_applied_velocity_norm_delta": 0.0,
+      "mpm_min_J_delta": 2.384185791015625e-07,
+      "notes": "bounded engineering vs link-area 64^3 proxy comparison",
+      "projected_mass_delta": -7.450580596923828e-09,
+      "rho_max_delta": 5.960464477539062e-07,
+      "rho_min_delta": -3.7550926208496094e-06,
+      "wall_velocity_scale": 0.05
+    }
+  ],
+  "summary": {
+    "comparison_pass": true,
+    "comparison_pass_count": 1,
+    "force_impulse_parameter_response_pass": true,
+    "pass_count": 1,
+    "response_finite_pass_count": 1,
+    "row_count": 1
+  }
+}

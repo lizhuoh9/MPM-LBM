@@ -1,0 +1,2 @@
+comparison,engineering_case,link_area_case,wall_velocity_scale,both_stable,link_area_scale_final,rho_min_delta,rho_max_delta,lbm_max_v_delta,mpm_min_J_delta,projected_mass_delta,max_applied_velocity_norm_delta,notes,comparison_pass
+engineering_vs_link_area_64_scale_0050,step41_64_experimental_moving_boundary_scale_0050,step41_64_experimental_link_area_scale_0050,0.05,True,0.8088821768760681,-3.7550926208496094e-06,5.960464477539062e-07,-3.334134817123413e-07,2.384185791015625e-07,-7.450580596923828e-09,0.0,bounded engineering vs link-area 64^3 proxy comparison,True

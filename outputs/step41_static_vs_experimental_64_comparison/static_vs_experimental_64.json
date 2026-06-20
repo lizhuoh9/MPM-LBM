@@ -1,0 +1,48 @@
+{
+  "rows": [
+    {
+      "active_cell_count_delta": 0,
+      "bb_link_count_delta": 0,
+      "both_stable": true,
+      "comparison": "static_vs_experimental_64_engineering",
+      "comparison_pass": true,
+      "experimental_applied_velocity_max": 0.00721642344030184,
+      "experimental_case": "step41_64_experimental_moving_boundary_scale_0050",
+      "lbm_max_v_delta": 0.008544792886823416,
+      "mpm_min_J_delta": 4.404783248901367e-05,
+      "notes": "bounded static vs experimental 64^3 proxy comparison",
+      "projected_mass_delta": 2.0489096641540527e-08,
+      "reaction_transfer_mode": "engineering",
+      "rho_max_delta": 0.0345991849899292,
+      "rho_min_delta": -0.02701258659362793,
+      "static_case": "step41_64_static_moving_boundary",
+      "wall_velocity_scale": 0.05
+    },
+    {
+      "active_cell_count_delta": 0,
+      "bb_link_count_delta": 0,
+      "both_stable": true,
+      "comparison": "static_vs_experimental_64_link_area_experimental",
+      "comparison_pass": true,
+      "experimental_applied_velocity_max": 0.00721642344030184,
+      "experimental_case": "step41_64_experimental_link_area_scale_0050",
+      "lbm_max_v_delta": 0.008631049888208508,
+      "mpm_min_J_delta": 4.470348358154297e-05,
+      "notes": "bounded static vs experimental 64^3 proxy comparison",
+      "projected_mass_delta": -5.587935447692871e-09,
+      "reaction_transfer_mode": "link_area_experimental",
+      "rho_max_delta": 0.03459656238555908,
+      "rho_min_delta": -0.027017056941986084,
+      "static_case": "step41_64_static_link_area",
+      "wall_velocity_scale": 0.05
+    }
+  ],
+  "summary": {
+    "comparison_pass": true,
+    "comparison_pass_count": 2,
+    "force_impulse_parameter_response_pass": true,
+    "pass_count": 2,
+    "response_finite_pass_count": 2,
+    "row_count": 2
+  }
+}

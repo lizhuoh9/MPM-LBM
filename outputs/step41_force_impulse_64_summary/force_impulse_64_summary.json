@@ -1,0 +1,65 @@
+{
+  "rows": [
+    {
+      "bb_correction_integral_proxy": 0.05928212316939607,
+      "bb_link_count_integral_proxy": 1094556.0,
+      "case": "step41_64_experimental_moving_boundary_scale_0050",
+      "hydro_force_max_norm": 0.4186820685863495,
+      "impulse_proxy": 16.68148782849312,
+      "mode_class": "experimental",
+      "notes": "Step 41 force and bounce-back proxy only; no real impulse validation claim",
+      "reaction_transfer_mode": "engineering",
+      "response_finite_pass": true,
+      "transfer_mode": "engineering",
+      "wall_velocity_scale": 0.05
+    },
+    {
+      "bb_correction_integral_proxy": 0.04538297632825561,
+      "bb_link_count_integral_proxy": 1094494.0,
+      "case": "step41_64_static_moving_boundary",
+      "hydro_force_max_norm": 0.4167819321155548,
+      "impulse_proxy": 16.645385712385178,
+      "mode_class": "static",
+      "notes": "Step 41 force and bounce-back proxy only; no real impulse validation claim",
+      "reaction_transfer_mode": "engineering",
+      "response_finite_pass": true,
+      "transfer_mode": "engineering",
+      "wall_velocity_scale": 0.0
+    },
+    {
+      "bb_correction_integral_proxy": 0.058928466140059754,
+      "bb_link_count_integral_proxy": 1094558.0,
+      "case": "step41_64_experimental_link_area_scale_0050",
+      "hydro_force_max_norm": 0.41868215799331665,
+      "impulse_proxy": 16.68147698044777,
+      "mode_class": "experimental",
+      "notes": "Step 41 force and bounce-back proxy only; no real impulse validation claim",
+      "reaction_transfer_mode": "link_area_experimental",
+      "response_finite_pass": true,
+      "transfer_mode": "link_area_experimental",
+      "wall_velocity_scale": 0.05
+    },
+    {
+      "bb_correction_integral_proxy": 0.04526376086869277,
+      "bb_link_count_integral_proxy": 1094480.0,
+      "case": "step41_64_static_link_area",
+      "hydro_force_max_norm": 0.4167807996273041,
+      "impulse_proxy": 16.645376473665237,
+      "mode_class": "static",
+      "notes": "Step 41 force and bounce-back proxy only; no real impulse validation claim",
+      "reaction_transfer_mode": "link_area_experimental",
+      "response_finite_pass": true,
+      "transfer_mode": "link_area_experimental",
+      "wall_velocity_scale": 0.0
+    }
+  ],
+  "summary": {
+    "comparison_pass": true,
+    "comparison_pass_count": 4,
+    "force_impulse_64_pass": true,
+    "force_impulse_parameter_response_pass": true,
+    "pass_count": 4,
+    "response_finite_pass_count": 4,
+    "row_count": 4
+  }
+}

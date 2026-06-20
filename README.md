@@ -44,6 +44,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 38 controlled tethered jet-cycle proxy diagnostics prototype
 - Step 39 controlled jet-cycle proxy multi-cycle stability envelope
 - Step 40 controlled jet-cycle proxy parameter sensitivity smoke over wall-velocity scale values
+- Step 41 controlled jet-cycle proxy selected-parameter 64^3 feasibility for `wall_velocity_scale = 0.05`
 
 ## Not Implemented
 
@@ -435,6 +436,20 @@ Step 40 does not change moving bounce-back formulas.
 The default boundary_motion_mode remains static.
 The default wall_velocity_application_mode remains disabled.
 See docs/40_controlled_jet_cycle_proxy_parameter_sensitivity_smoke.md.
+
+Step 41 is controlled jet-cycle proxy selected-parameter 64^3 feasibility.
+Step 41 selects one accepted wall velocity scale from Step 40.
+Step 41 remains tethered and proxy-only.
+Step 41 does not validate a real jet.
+Step 41 does not validate jet propulsion.
+Step 41 does not implement free-body motion.
+Step 41 does not implement squid swimming.
+Step 41 does not implement real squid validation.
+Step 41 does not change moving bounce-back formulas.
+The default boundary_motion_mode remains static.
+The default wall_velocity_application_mode remains disabled.
+Step 41 runs four `64^3` one-cycle rows with `wall_velocity_scale = 0.05`, `wall_velocity_cap_lbm = 0.01`, and `dynamic_solid_threshold = 0.75` in the Step 41 configs only.
+See docs/41_controlled_jet_cycle_proxy_selected_parameter_64_feasibility.md.
 
 ## Upstream LBM Note
 
