@@ -1,0 +1,7 @@
+case,transfer_mode,reaction_transfer_mode,wall_velocity_scale,wall_velocity_cap_lbm,max_applied_velocity_norm,applied_cell_count_min,application_report_count,stable,cap_saturation_observed,response_pass,notes
+experimental_48_moving_boundary_scale_0025,engineering,engineering,0.025,0.01,0.0035108916550343544,2136,40,True,False,True,applied velocity response is bounded by the configured cap; this is a proxy diagnostic
+experimental_48_moving_boundary_scale_0050,engineering,engineering,0.05,0.01,0.007021783310068709,2136,40,True,False,True,applied velocity response is bounded by the configured cap; this is a proxy diagnostic
+experimental_48_moving_boundary_scale_0075,engineering,engineering,0.075,0.01,0.00967813097947864,2136,40,True,False,True,applied velocity response is bounded by the configured cap; this is a proxy diagnostic
+experimental_48_link_area_scale_0025,link_area_experimental,link_area_experimental,0.025,0.01,0.0035108916550343544,2136,40,True,False,True,applied velocity response is bounded by the configured cap; this is a proxy diagnostic
+experimental_48_link_area_scale_0050,link_area_experimental,link_area_experimental,0.05,0.01,0.007021783310068709,2136,40,True,False,True,applied velocity response is bounded by the configured cap; this is a proxy diagnostic
+experimental_48_link_area_scale_0075,link_area_experimental,link_area_experimental,0.075,0.01,0.009677064006429106,2136,40,True,False,True,applied velocity response is bounded by the configured cap; this is a proxy diagnostic

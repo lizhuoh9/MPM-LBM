@@ -1,0 +1,160 @@
+{
+  "rows": [
+    {
+      "actuation_claim_enabled": false,
+      "application_mode": "solid_vel_experimental",
+      "apply_to_lbm_populations": false,
+      "apply_to_lbm_solid_vel": true,
+      "jet_model_enabled": false,
+      "kind": "application",
+      "modify_bounceback_formula": false,
+      "pass": true,
+      "path": "configs/step40_wall_velocity_application_scale_0025.json",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.025
+    },
+    {
+      "actuation_claim_enabled": false,
+      "application_mode": "solid_vel_experimental",
+      "apply_to_lbm_populations": false,
+      "apply_to_lbm_solid_vel": true,
+      "jet_model_enabled": false,
+      "kind": "application",
+      "modify_bounceback_formula": false,
+      "pass": true,
+      "path": "configs/step40_wall_velocity_application_scale_0050.json",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.05
+    },
+    {
+      "actuation_claim_enabled": false,
+      "application_mode": "solid_vel_experimental",
+      "apply_to_lbm_populations": false,
+      "apply_to_lbm_solid_vel": true,
+      "jet_model_enabled": false,
+      "kind": "application",
+      "modify_bounceback_formula": false,
+      "pass": true,
+      "path": "configs/step40_wall_velocity_application_scale_0075.json",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.075
+    },
+    {
+      "actuation_claim_enabled": false,
+      "application_mode": "disabled",
+      "apply_to_lbm_populations": false,
+      "apply_to_lbm_solid_vel": false,
+      "jet_model_enabled": false,
+      "kind": "driver",
+      "modify_bounceback_formula": false,
+      "pass": true,
+      "path": "configs/step40_static_48_moving_boundary.json",
+      "wall_velocity_cap_lbm": 0.0,
+      "wall_velocity_scale": 0.0
+    },
+    {
+      "actuation_claim_enabled": false,
+      "application_mode": "disabled",
+      "apply_to_lbm_populations": false,
+      "apply_to_lbm_solid_vel": false,
+      "jet_model_enabled": false,
+      "kind": "driver",
+      "modify_bounceback_formula": false,
+      "pass": true,
+      "path": "configs/step40_static_48_link_area.json",
+      "wall_velocity_cap_lbm": 0.0,
+      "wall_velocity_scale": 0.0
+    },
+    {
+      "actuation_claim_enabled": false,
+      "application_mode": "solid_vel_experimental",
+      "apply_to_lbm_populations": false,
+      "apply_to_lbm_solid_vel": true,
+      "jet_model_enabled": false,
+      "kind": "driver",
+      "modify_bounceback_formula": false,
+      "pass": true,
+      "path": "configs/step40_experimental_48_moving_boundary_scale_0025.json",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.025
+    },
+    {
+      "actuation_claim_enabled": false,
+      "application_mode": "solid_vel_experimental",
+      "apply_to_lbm_populations": false,
+      "apply_to_lbm_solid_vel": true,
+      "jet_model_enabled": false,
+      "kind": "driver",
+      "modify_bounceback_formula": false,
+      "pass": true,
+      "path": "configs/step40_experimental_48_moving_boundary_scale_0050.json",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.05
+    },
+    {
+      "actuation_claim_enabled": false,
+      "application_mode": "solid_vel_experimental",
+      "apply_to_lbm_populations": false,
+      "apply_to_lbm_solid_vel": true,
+      "jet_model_enabled": false,
+      "kind": "driver",
+      "modify_bounceback_formula": false,
+      "pass": true,
+      "path": "configs/step40_experimental_48_moving_boundary_scale_0075.json",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.075
+    },
+    {
+      "actuation_claim_enabled": false,
+      "application_mode": "solid_vel_experimental",
+      "apply_to_lbm_populations": false,
+      "apply_to_lbm_solid_vel": true,
+      "jet_model_enabled": false,
+      "kind": "driver",
+      "modify_bounceback_formula": false,
+      "pass": true,
+      "path": "configs/step40_experimental_48_link_area_scale_0025.json",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.025
+    },
+    {
+      "actuation_claim_enabled": false,
+      "application_mode": "solid_vel_experimental",
+      "apply_to_lbm_populations": false,
+      "apply_to_lbm_solid_vel": true,
+      "jet_model_enabled": false,
+      "kind": "driver",
+      "modify_bounceback_formula": false,
+      "pass": true,
+      "path": "configs/step40_experimental_48_link_area_scale_0050.json",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.05
+    },
+    {
+      "actuation_claim_enabled": false,
+      "application_mode": "solid_vel_experimental",
+      "apply_to_lbm_populations": false,
+      "apply_to_lbm_solid_vel": true,
+      "jet_model_enabled": false,
+      "kind": "driver",
+      "modify_bounceback_formula": false,
+      "pass": true,
+      "path": "configs/step40_experimental_48_link_area_scale_0075.json",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.075
+    }
+  ],
+  "summary": {
+    "all_caps_are_001": true,
+    "application_config_count": 3,
+    "driver_config_count": 8,
+    "experimental_config_count": 6,
+    "scale_values": [
+      0.025,
+      0.05,
+      0.075
+    ],
+    "static_disabled_count": 2,
+    "validation_pass": true
+  }
+}

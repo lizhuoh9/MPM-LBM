@@ -1,0 +1,40 @@
+{
+  "gate": {
+    "pass": true,
+    "reasons": [],
+    "severity": "ok",
+    "strict": true,
+    "warnings": []
+  },
+  "report": {
+    "allow_disconnected_components": true,
+    "bbox_size_x": 12,
+    "bbox_size_y": 22,
+    "bbox_size_z": 8,
+    "bounds_index_max_x": 21,
+    "bounds_index_max_y": 25,
+    "bounds_index_max_z": 19,
+    "bounds_index_min_x": 10,
+    "bounds_index_min_y": 4,
+    "bounds_index_min_z": 12,
+    "component_semantics": "static squid proxy appendage and fin components may be disconnected in coarse diagnostic voxelization",
+    "connected_component_count": 3,
+    "empty": false,
+    "geometry_type": "squid_proxy",
+    "interior_voxel_count": 416,
+    "largest_component_fraction": 0.9844961240310077,
+    "largest_component_size": 762,
+    "notes": "diagnostic voxel occupancy report",
+    "occupied_count": 774,
+    "occupied_fraction": 0.02362060546875,
+    "quality_kind": "procedural_voxelized",
+    "scope_note": "procedural diagnostic voxelization only",
+    "shape_x": 32,
+    "shape_y": 32,
+    "shape_z": 32,
+    "source_file": "squid_proxy",
+    "stable": true,
+    "surface_voxel_count": 358,
+    "touches_domain_boundary": false
+  }
+}

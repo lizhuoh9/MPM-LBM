@@ -1,0 +1,69 @@
+{
+  "rows": [
+    {
+      "check": "step39_report_exists",
+      "notes": "Step 39 report remains present",
+      "pass": true,
+      "value": "STEP39 report"
+    },
+    {
+      "check": "step39_driver_row_count",
+      "notes": "Step 39 driver row count stays 4",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step39_driver_stable_count",
+      "notes": "Step 39 driver rows stay stable",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step39_multicycle_proxy",
+      "notes": "Step 39 multicycle proxy diagnostics stay passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step39_drift_summary",
+      "notes": "Step 39 cycle-to-cycle drift stays passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step39_wall_velocity_quality",
+      "notes": "Step 39 wall velocity quality stays passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step39_tethered_guard",
+      "notes": "Step 39 tethered guard stays passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step39_large_file_count",
+      "notes": "Step 39 artifact large-file count stays 0",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step39_vtr_count",
+      "notes": "Step 39 wrote no VTR outputs",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step39_particle_npy_count",
+      "notes": "Step 39 wrote no particle NPY outputs",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "pass_count": 10,
+    "regression_pass": true,
+    "row_count": 10
+  }
+}

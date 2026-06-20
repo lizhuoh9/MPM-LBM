@@ -1,0 +1,100 @@
+{
+  "rows": [
+    {
+      "application_report_count": 40,
+      "applied_cell_count_min": 2136,
+      "cap_saturation_observed": false,
+      "case": "experimental_48_moving_boundary_scale_0025",
+      "max_applied_velocity_norm": 0.0035108916550343544,
+      "notes": "applied velocity response is bounded by the configured cap; this is a proxy diagnostic",
+      "reaction_transfer_mode": "engineering",
+      "response_pass": true,
+      "stable": true,
+      "transfer_mode": "engineering",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.025
+    },
+    {
+      "application_report_count": 40,
+      "applied_cell_count_min": 2136,
+      "cap_saturation_observed": false,
+      "case": "experimental_48_moving_boundary_scale_0050",
+      "max_applied_velocity_norm": 0.007021783310068709,
+      "notes": "applied velocity response is bounded by the configured cap; this is a proxy diagnostic",
+      "reaction_transfer_mode": "engineering",
+      "response_pass": true,
+      "stable": true,
+      "transfer_mode": "engineering",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.05
+    },
+    {
+      "application_report_count": 40,
+      "applied_cell_count_min": 2136,
+      "cap_saturation_observed": false,
+      "case": "experimental_48_moving_boundary_scale_0075",
+      "max_applied_velocity_norm": 0.00967813097947864,
+      "notes": "applied velocity response is bounded by the configured cap; this is a proxy diagnostic",
+      "reaction_transfer_mode": "engineering",
+      "response_pass": true,
+      "stable": true,
+      "transfer_mode": "engineering",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.075
+    },
+    {
+      "application_report_count": 40,
+      "applied_cell_count_min": 2136,
+      "cap_saturation_observed": false,
+      "case": "experimental_48_link_area_scale_0025",
+      "max_applied_velocity_norm": 0.0035108916550343544,
+      "notes": "applied velocity response is bounded by the configured cap; this is a proxy diagnostic",
+      "reaction_transfer_mode": "link_area_experimental",
+      "response_pass": true,
+      "stable": true,
+      "transfer_mode": "link_area_experimental",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.025
+    },
+    {
+      "application_report_count": 40,
+      "applied_cell_count_min": 2136,
+      "cap_saturation_observed": false,
+      "case": "experimental_48_link_area_scale_0050",
+      "max_applied_velocity_norm": 0.007021783310068709,
+      "notes": "applied velocity response is bounded by the configured cap; this is a proxy diagnostic",
+      "reaction_transfer_mode": "link_area_experimental",
+      "response_pass": true,
+      "stable": true,
+      "transfer_mode": "link_area_experimental",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.05
+    },
+    {
+      "application_report_count": 40,
+      "applied_cell_count_min": 2136,
+      "cap_saturation_observed": false,
+      "case": "experimental_48_link_area_scale_0075",
+      "max_applied_velocity_norm": 0.009677064006429106,
+      "notes": "applied velocity response is bounded by the configured cap; this is a proxy diagnostic",
+      "reaction_transfer_mode": "link_area_experimental",
+      "response_pass": true,
+      "stable": true,
+      "transfer_mode": "link_area_experimental",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.075
+    }
+  ],
+  "summary": {
+    "all_experimental_rows_stable": true,
+    "applied_velocity_response_pass": true,
+    "cap_saturation_observed": false,
+    "cap_value": 0.01,
+    "engineering_row_count": 3,
+    "experimental_row_count": 6,
+    "link_area_row_count": 3,
+    "max_applied_velocity_norm": 0.00967813097947864,
+    "parameter_sensitivity_pass": true,
+    "scale_count": 3
+  }
+}

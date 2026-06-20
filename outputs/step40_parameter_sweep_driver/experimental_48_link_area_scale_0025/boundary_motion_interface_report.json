@@ -1,0 +1,244 @@
+{
+  "config": {
+    "actuation_enabled": false,
+    "coupling_integration_enabled": false,
+    "deterministic": true,
+    "diagnostic_only": true,
+    "driver_integration_enabled": false,
+    "expected_motion_row_count": 243,
+    "expected_schedule_row_count": 81,
+    "expected_tracked_region_count": 3,
+    "interface_id": "step34_squid_proxy_boundary_motion_driver_interface",
+    "jet_model_enabled": false,
+    "lbm_population_update_enabled": false,
+    "lbm_wall_velocity_enabled": false,
+    "motion_mapping_config_path": "configs/step33_squid_proxy_motion_mapping.json",
+    "motion_mapping_output_path": "outputs/step33_motion_mapping/motion_mapping.json",
+    "moving_bounceback_update_enabled": false,
+    "mpm_grid_velocity_enabled": false,
+    "projector_integration_enabled": false,
+    "schedule_config_path": "configs/step32_squid_proxy_kinematics_schedule.json",
+    "schedule_output_path": "outputs/step32_kinematics_schedule/kinematics_schedule.json",
+    "scope_note": "Step 34 diagnostic-only boundary-motion interface; no-op driver report"
+  },
+  "motion_summary": {
+    "actuation_enabled_count": 0,
+    "bounds_pass": true,
+    "cavity_volume_rate_nonzero_row_count": 81,
+    "driver_integration_enabled_count": 0,
+    "expected_row_count": 243,
+    "finite_pass": true,
+    "funnel_aperture_rate_nonzero_row_count": 54,
+    "funnel_outlet_proxy_row_count": 81,
+    "jet_model_enabled_count": 0,
+    "lbm_wall_velocity_enabled_count": 0,
+    "mantle_cavity_proxy_row_count": 81,
+    "mantle_outer_max_displacement_norm": 0.025987588251121133,
+    "mantle_outer_max_velocity_norm": 0.11118596431055332,
+    "mantle_outer_nonzero_velocity_row_count": 81,
+    "mantle_outer_row_count": 81,
+    "row_count": 243,
+    "schedule_sample_count": 81,
+    "tracked_region_count": 3,
+    "tracked_regions": [
+      "funnel_outlet_proxy",
+      "mantle_cavity_proxy",
+      "mantle_outer"
+    ]
+  },
+  "schedule_summary": {
+    "actuation_enabled_count": 0,
+    "cavity_volume_scale_max_observed": 1.0,
+    "cavity_volume_scale_min_observed": 0.6,
+    "driver_integration_enabled_count": 0,
+    "endpoint_repeatability_pass": true,
+    "finite_pass": true,
+    "funnel_aperture_scale_max_observed": 1.0,
+    "funnel_aperture_scale_min_observed": 0.35,
+    "mantle_radius_scale_max_observed": 1.0,
+    "mantle_radius_scale_min_observed": 0.85,
+    "max_abs_cavity_volume_rate": 1.711370262390659,
+    "max_abs_funnel_aperture_rate": 20.845481049562675,
+    "max_abs_mantle_radius_rate": 0.6417638483964936,
+    "phase_max": 1.0,
+    "phase_min": 0.0,
+    "row_count": 81
+  },
+  "summary": {
+    "actuation_enabled": false,
+    "actuation_enabled_count": 0,
+    "boundary_motion_mode": "prescribed_kinematic",
+    "config_validation_pass": true,
+    "config_validation_pass_count": 21,
+    "config_validation_row_count": 21,
+    "coupling_integration_enabled": false,
+    "deterministic": true,
+    "diagnostic_only": true,
+    "driver_integration_enabled": false,
+    "driver_integration_enabled_count": 0,
+    "execution_flag_enabled_count": 0,
+    "expected_motion_row_count": 243,
+    "expected_schedule_row_count": 81,
+    "expected_tracked_region_count": 3,
+    "finite_motion_pass": true,
+    "interface_id": "step34_squid_proxy_boundary_motion_driver_interface",
+    "jet_model_enabled": false,
+    "jet_model_enabled_count": 0,
+    "lbm_population_update_enabled": false,
+    "lbm_wall_velocity_enabled": false,
+    "lbm_wall_velocity_enabled_count": 0,
+    "motion_bounds_pass": true,
+    "motion_finite_pass": true,
+    "motion_mapping_config_path": "configs/step33_squid_proxy_motion_mapping.json",
+    "motion_mapping_output_path": "outputs/step33_motion_mapping/motion_mapping.json",
+    "motion_mapping_row_count": 243,
+    "moving_bounceback_update_enabled": false,
+    "mpm_grid_velocity_enabled": false,
+    "no_op_pass": true,
+    "projector_integration_enabled": false,
+    "schedule_config_path": "configs/step32_squid_proxy_kinematics_schedule.json",
+    "schedule_finite_pass": true,
+    "schedule_output_path": "outputs/step32_kinematics_schedule/kinematics_schedule.json",
+    "schedule_row_count": 81,
+    "scope_note": "Step 34 diagnostic-only boundary-motion driver interface; no LBM state update",
+    "tracked_region_count": 3,
+    "tracked_regions": [
+      "funnel_outlet_proxy",
+      "mantle_cavity_proxy",
+      "mantle_outer"
+    ]
+  },
+  "validation_rows": [
+    {
+      "check": "interface_id_present",
+      "notes": "interface_id must be nonempty",
+      "pass": true,
+      "value": "step34_squid_proxy_boundary_motion_driver_interface"
+    },
+    {
+      "check": "schedule_config_path_exists",
+      "notes": "Step 32 schedule config must exist",
+      "pass": true,
+      "value": "configs/step32_squid_proxy_kinematics_schedule.json"
+    },
+    {
+      "check": "motion_mapping_config_path_exists",
+      "notes": "Step 33 motion mapping config must exist",
+      "pass": true,
+      "value": "configs/step33_squid_proxy_motion_mapping.json"
+    },
+    {
+      "check": "schedule_output_path_exists",
+      "notes": "accepted Step 32 schedule output must exist when configured",
+      "pass": true,
+      "value": "outputs/step32_kinematics_schedule/kinematics_schedule.json"
+    },
+    {
+      "check": "motion_mapping_output_path_exists",
+      "notes": "accepted Step 33 motion mapping output must exist when configured",
+      "pass": true,
+      "value": "outputs/step33_motion_mapping/motion_mapping.json"
+    },
+    {
+      "check": "expected_schedule_row_count",
+      "notes": "Step 34 expects 81 schedule rows",
+      "pass": true,
+      "value": 81
+    },
+    {
+      "check": "expected_motion_row_count",
+      "notes": "Step 34 expects 243 motion rows",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "expected_tracked_region_count",
+      "notes": "Step 34 expects three tracked regions",
+      "pass": true,
+      "value": 3
+    },
+    {
+      "check": "diagnostic_only_true",
+      "notes": "interface must remain diagnostic-only",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "deterministic_true",
+      "notes": "interface must be deterministic",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "scope_note_valid",
+      "notes": "scope_note must state diagnostic-only and no-op behavior",
+      "pass": true,
+      "value": "Step 34 diagnostic-only boundary-motion interface; no-op driver report"
+    },
+    {
+      "check": "driver_integration_enabled_false",
+      "notes": "driver_integration_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "lbm_wall_velocity_enabled_false",
+      "notes": "lbm_wall_velocity_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "lbm_population_update_enabled_false",
+      "notes": "lbm_population_update_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "mpm_grid_velocity_enabled_false",
+      "notes": "mpm_grid_velocity_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "projector_integration_enabled_false",
+      "notes": "projector_integration_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "coupling_integration_enabled_false",
+      "notes": "coupling_integration_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "moving_bounceback_update_enabled_false",
+      "notes": "moving_bounceback_update_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "jet_model_enabled_false",
+      "notes": "jet_model_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "actuation_enabled_false",
+      "notes": "actuation_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "all_execution_flags_false",
+      "notes": "all execution flags must remain disabled",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "validation_summary": {
+    "pass_count": 21,
+    "row_count": 21,
+    "validation_pass": true
+  }
+}

@@ -37,6 +37,13 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 31 controlled squid proxy region projection and static driver smoke for existing coupling modes only
 - Step 32 controlled squid proxy prescribed kinematics schedule contract for artifact-only mantle, cavity, and funnel proxy schedules
 - Step 33 controlled squid proxy kinematics mapping to boundary-motion diagnostics for artifact-only displacement and velocity proxies
+- Step 34 controlled squid proxy boundary-motion driver interface with default static behavior preserved
+- Step 35 controlled squid proxy moving-wall velocity field diagnostics
+- Step 36 controlled moving-wall bounce-back velocity application smoke for opt-in `solid_vel` application only
+- Step 37 controlled moving-wall application short-window envelope
+- Step 38 controlled tethered jet-cycle proxy diagnostics prototype
+- Step 39 controlled jet-cycle proxy multi-cycle stability envelope
+- Step 40 controlled jet-cycle proxy parameter sensitivity smoke over wall-velocity scale values
 
 ## Not Implemented
 
@@ -383,6 +390,51 @@ The default reaction_transfer_mode remains engineering.
 The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 See docs/34_controlled_squid_proxy_boundary_motion_driver_interface.md.
+
+## Moving-Wall And Jet-Cycle Proxy Diagnostics
+
+Step 35 is controlled squid proxy moving-wall velocity field diagnostics.
+Step 35 builds diagnostic wall-velocity field artifacts from the accepted squid proxy kinematics only.
+Step 35 does not apply moving wall velocity to LBM populations.
+Step 35 does not implement a jet model.
+Step 35 does not implement squid swimming.
+The default boundary_motion_mode remains static.
+The default wall_velocity_application_mode remains disabled.
+
+Step 36 is controlled moving-wall bounce-back velocity application smoke.
+Step 36 adds an opt-in `solid_vel_experimental` path that applies a capped diagnostic velocity to `lbm.solid_vel` only.
+Step 36 does not modify moving bounce-back formulas.
+Step 36 does not update LBM populations directly.
+Step 36 does not apply wall velocity to MPM or projection.
+The default boundary_motion_mode remains static.
+The default wall_velocity_application_mode remains disabled.
+
+Step 37 is controlled moving-wall application short-window envelope.
+Step 37 runs 48^3 short-window static and experimental moving-boundary rows to confirm the opt-in application path stays bounded.
+Step 37 does not change default behavior, coupling formulas, LBM formulas, MPM formulas, or projection formulas.
+
+Step 38 is controlled tethered jet-cycle proxy diagnostics prototype.
+Step 38 checks one-cycle schedule, cavity, funnel, wall-velocity, force, and bounce-back proxy diagnostics in tethered mode.
+Step 38 does not implement free-body motion.
+Step 38 does not implement squid swimming.
+Step 38 does not validate a real jet.
+
+Step 39 is controlled jet-cycle proxy multi-cycle stability envelope.
+Step 39 repeats tethered proxy diagnostics over two cycles using the accepted moving-wall path.
+Step 39 keeps free-body motion disabled and does not change moving bounce-back formulas.
+
+Step 40 is controlled jet-cycle proxy parameter sensitivity smoke.
+Step 40 varies wall velocity scale only over `0.025`, `0.05`, and `0.075`, with `wall_velocity_cap_lbm = 0.01`.
+Step 40 remains tethered and proxy-only.
+Step 40 does not validate a real jet.
+Step 40 does not validate jet propulsion.
+Step 40 does not implement free-body motion.
+Step 40 does not implement squid swimming.
+Step 40 does not implement real squid validation.
+Step 40 does not change moving bounce-back formulas.
+The default boundary_motion_mode remains static.
+The default wall_velocity_application_mode remains disabled.
+See docs/40_controlled_jet_cycle_proxy_parameter_sensitivity_smoke.md.
 
 ## Upstream LBM Note
 

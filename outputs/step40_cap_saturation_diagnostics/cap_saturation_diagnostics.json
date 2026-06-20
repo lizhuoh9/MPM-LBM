@@ -1,0 +1,90 @@
+{
+  "rows": [
+    {
+      "cap_hit_count": 0,
+      "cap_hit_observed": false,
+      "cap_pass": true,
+      "case": "experimental_48_moving_boundary_scale_0025",
+      "finite_pass": true,
+      "max_applied_velocity_norm": 0.0035108916550343544,
+      "reaction_transfer_mode": "engineering",
+      "timeseries_row_count": 40,
+      "transfer_mode": "engineering",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.025
+    },
+    {
+      "cap_hit_count": 0,
+      "cap_hit_observed": false,
+      "cap_pass": true,
+      "case": "experimental_48_moving_boundary_scale_0050",
+      "finite_pass": true,
+      "max_applied_velocity_norm": 0.007021783310068709,
+      "reaction_transfer_mode": "engineering",
+      "timeseries_row_count": 40,
+      "transfer_mode": "engineering",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.05
+    },
+    {
+      "cap_hit_count": 0,
+      "cap_hit_observed": false,
+      "cap_pass": true,
+      "case": "experimental_48_moving_boundary_scale_0075",
+      "finite_pass": true,
+      "max_applied_velocity_norm": 0.00967813097947864,
+      "reaction_transfer_mode": "engineering",
+      "timeseries_row_count": 40,
+      "transfer_mode": "engineering",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.075
+    },
+    {
+      "cap_hit_count": 0,
+      "cap_hit_observed": false,
+      "cap_pass": true,
+      "case": "experimental_48_link_area_scale_0025",
+      "finite_pass": true,
+      "max_applied_velocity_norm": 0.0035108916550343544,
+      "reaction_transfer_mode": "link_area_experimental",
+      "timeseries_row_count": 40,
+      "transfer_mode": "link_area_experimental",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.025
+    },
+    {
+      "cap_hit_count": 0,
+      "cap_hit_observed": false,
+      "cap_pass": true,
+      "case": "experimental_48_link_area_scale_0050",
+      "finite_pass": true,
+      "max_applied_velocity_norm": 0.007021783310068709,
+      "reaction_transfer_mode": "link_area_experimental",
+      "timeseries_row_count": 40,
+      "transfer_mode": "link_area_experimental",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.05
+    },
+    {
+      "cap_hit_count": 0,
+      "cap_hit_observed": false,
+      "cap_pass": true,
+      "case": "experimental_48_link_area_scale_0075",
+      "finite_pass": true,
+      "max_applied_velocity_norm": 0.009677064006429106,
+      "reaction_transfer_mode": "link_area_experimental",
+      "timeseries_row_count": 40,
+      "transfer_mode": "link_area_experimental",
+      "wall_velocity_cap_lbm": 0.01,
+      "wall_velocity_scale": 0.075
+    }
+  ],
+  "summary": {
+    "cap_hit_count": 0,
+    "cap_hit_observed": false,
+    "cap_pass": true,
+    "cap_saturation_diagnostics_pass": true,
+    "cap_value": 0.01,
+    "row_count": 6
+  }
+}

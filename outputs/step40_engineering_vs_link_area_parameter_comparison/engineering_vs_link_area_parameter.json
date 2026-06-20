@@ -1,0 +1,57 @@
+{
+  "rows": [
+    {
+      "both_stable": true,
+      "comparison": "engineering_vs_link_area_scale_0025",
+      "comparison_pass": true,
+      "engineering_case": "experimental_48_moving_boundary_scale_0025",
+      "lbm_max_v_delta": -6.1425380408763885e-06,
+      "link_area_case": "experimental_48_link_area_scale_0025",
+      "link_area_scale_final": 0.7795953750610352,
+      "mpm_min_J_delta": 3.8564205169677734e-05,
+      "notes": "bounded engineering-vs-link-area parameter proxy comparison",
+      "projected_mass_delta": -1.1175870895385742e-08,
+      "rho_max_delta": -1.2278556823730469e-05,
+      "rho_min_delta": 1.1920928955078125e-05,
+      "wall_velocity_scale": 0.025
+    },
+    {
+      "both_stable": true,
+      "comparison": "engineering_vs_link_area_scale_0050",
+      "comparison_pass": true,
+      "engineering_case": "experimental_48_moving_boundary_scale_0050",
+      "lbm_max_v_delta": -6.634742021560669e-06,
+      "link_area_case": "experimental_48_link_area_scale_0050",
+      "link_area_scale_final": 0.8936212062835693,
+      "mpm_min_J_delta": 3.8623809814453125e-05,
+      "notes": "bounded engineering-vs-link-area parameter proxy comparison",
+      "projected_mass_delta": 5.587935447692871e-09,
+      "rho_max_delta": -9.417533874511719e-06,
+      "rho_min_delta": 1.0192394256591797e-05,
+      "wall_velocity_scale": 0.05
+    },
+    {
+      "both_stable": true,
+      "comparison": "engineering_vs_link_area_scale_0075",
+      "comparison_pass": true,
+      "engineering_case": "experimental_48_moving_boundary_scale_0075",
+      "lbm_max_v_delta": -1.735985279083252e-06,
+      "link_area_case": "experimental_48_link_area_scale_0075",
+      "link_area_scale_final": 0.8563711643218994,
+      "mpm_min_J_delta": 3.796815872192383e-05,
+      "notes": "bounded engineering-vs-link-area parameter proxy comparison",
+      "projected_mass_delta": 1.862645149230957e-09,
+      "rho_max_delta": -2.9802322387695312e-06,
+      "rho_min_delta": 9.5367431640625e-06,
+      "wall_velocity_scale": 0.075
+    }
+  ],
+  "summary": {
+    "comparison_pass": true,
+    "comparison_pass_count": 3,
+    "force_impulse_parameter_response_pass": true,
+    "pass_count": 3,
+    "response_finite_pass_count": 3,
+    "row_count": 3
+  }
+}

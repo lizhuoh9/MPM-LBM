@@ -1,0 +1,11 @@
+check,pass,value,notes
+step39_report_exists,True,STEP39 report,Step 39 report remains present
+step39_driver_row_count,True,4,Step 39 driver row count stays 4
+step39_driver_stable_count,True,4,Step 39 driver rows stay stable
+step39_multicycle_proxy,True,True,Step 39 multicycle proxy diagnostics stay passing
+step39_drift_summary,True,True,Step 39 cycle-to-cycle drift stays passing
+step39_wall_velocity_quality,True,True,Step 39 wall velocity quality stays passing
+step39_tethered_guard,True,True,Step 39 tethered guard stays passing
+step39_large_file_count,True,0,Step 39 artifact large-file count stays 0
+step39_vtr_count,True,0,Step 39 wrote no VTR outputs
+step39_particle_npy_count,True,0,Step 39 wrote no particle NPY outputs

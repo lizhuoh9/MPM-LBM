@@ -1,0 +1,12 @@
+kind,path,wall_velocity_scale,wall_velocity_cap_lbm,application_mode,apply_to_lbm_solid_vel,apply_to_lbm_populations,modify_bounceback_formula,jet_model_enabled,actuation_claim_enabled,pass
+application,configs/step40_wall_velocity_application_scale_0025.json,0.025,0.01,solid_vel_experimental,True,False,False,False,False,True
+application,configs/step40_wall_velocity_application_scale_0050.json,0.05,0.01,solid_vel_experimental,True,False,False,False,False,True
+application,configs/step40_wall_velocity_application_scale_0075.json,0.075,0.01,solid_vel_experimental,True,False,False,False,False,True
+driver,configs/step40_static_48_moving_boundary.json,0.0,0.0,disabled,False,False,False,False,False,True
+driver,configs/step40_static_48_link_area.json,0.0,0.0,disabled,False,False,False,False,False,True
+driver,configs/step40_experimental_48_moving_boundary_scale_0025.json,0.025,0.01,solid_vel_experimental,True,False,False,False,False,True
+driver,configs/step40_experimental_48_moving_boundary_scale_0050.json,0.05,0.01,solid_vel_experimental,True,False,False,False,False,True
+driver,configs/step40_experimental_48_moving_boundary_scale_0075.json,0.075,0.01,solid_vel_experimental,True,False,False,False,False,True
+driver,configs/step40_experimental_48_link_area_scale_0025.json,0.025,0.01,solid_vel_experimental,True,False,False,False,False,True
+driver,configs/step40_experimental_48_link_area_scale_0050.json,0.05,0.01,solid_vel_experimental,True,False,False,False,False,True
+driver,configs/step40_experimental_48_link_area_scale_0075.json,0.075,0.01,solid_vel_experimental,True,False,False,False,False,True
