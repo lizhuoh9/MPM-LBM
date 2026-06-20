@@ -1,0 +1,3 @@
+candidate_id,geometry_type,n_grid,area_scale_initial,area_scale_min_observed,area_scale_max_observed,area_scale_final,area_scale_config_min,area_scale_config_max,raw_area_scale_min,raw_area_scale_max,hit_lower_bound,hit_upper_bound,finite_pass,bounded_pass
+real_candidate_smoke_mesh,mesh,64,1.0,0.7903904318809509,1.0,0.7903904318809509,0.25,2.0,0.7903904318809509,1.0,False,False,True,True
+real_candidate_smoke_voxel,voxel,64,1.0,0.7920417189598083,1.0,0.7920417189598083,0.25,2.0,0.7920417189598083,1.0,False,False,True,True

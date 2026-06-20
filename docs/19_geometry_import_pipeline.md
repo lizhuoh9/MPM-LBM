@@ -231,3 +231,29 @@ Primary Step 27 outputs:
 - `outputs/step27_64_driver_summary/driver_64_summary.json`
 - `outputs/step27_quality_report_aggregation/quality_report_summary.json`
 - `outputs/step27_artifact_manifest/artifact_summary.json`
+
+## Step 28 Transfer Diagnostics
+
+Step 28 is controlled real geometry 64^3 transfer diagnostics.
+Step 28 compares engineering and link_area_experimental transfer diagnostically.
+Step 28 is not real squid validation.
+Step 28 does not implement squid actuation.
+Step 28 does not implement squid swimming.
+Step 28 does not implement new FSI physics.
+Step 28 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Primary Step 28 outputs:
+
+- `outputs/step28_candidate_fingerprint_guard/fingerprint_guard.csv`
+- `outputs/step28_64_transfer_pair_driver/transfer_pair_driver_results.csv`
+- `outputs/step28_engineering_vs_link_area_comparison/engineering_vs_link_area.csv`
+- `outputs/step28_force_reaction_diagnostics/force_reaction_diagnostics.csv`
+- `outputs/step28_area_scale_envelope/area_scale_envelope.csv`
+- `outputs/step28_step27_prefix_regression/step27_prefix_regression.csv`
+- `outputs/step28_quality_report_aggregation/quality_report_summary.json`
+- `outputs/step28_artifact_manifest/artifact_summary.json`

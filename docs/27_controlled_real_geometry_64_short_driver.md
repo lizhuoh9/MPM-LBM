@@ -92,3 +92,20 @@ abs(active_cell_count_delta) <= 32
 ## Decision For Step 28
 
 If Step 27 passes, Step 28 should stay conservative and compare engineering versus link-area transfer at 64^3 with additional force/reaction diagnostics and a stability envelope. It should not jump to actuation or swimming.
+
+## Step 28 Accepted Scope
+
+Step 28 is controlled real geometry 64^3 transfer diagnostics.
+Step 28 compares engineering and link_area_experimental transfer diagnostically.
+Step 28 is not real squid validation.
+Step 28 does not implement squid actuation.
+Step 28 does not implement squid swimming.
+Step 28 does not implement new FSI physics.
+Step 28 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 28 narrows from the Step 27 six-row coupling subset to four moving_boundary rows so the 10-step window can report transfer-pair deltas, force/reaction diagnostics, area-scale envelope values, and Step 27 step-5 prefix regression.

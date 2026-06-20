@@ -185,3 +185,20 @@ Step 27 is controlled real geometry 64^3 short driver feasibility. Step 27 is no
 - main fields: static helper class, no persistent simulation fields
 - main methods: `lbm_fluid_stats`, `mpm_particle_stats`, `projection_zone_fluid_mean_velocity`, `far_field_fluid_mean_velocity`, `projected_solid_mean_velocity`, `force_stats`, `solid_mean_velocity_norm`, `solid_momentum_norm`, `lbm_velocity_profile_x_over_y`
 - mode: used by validation scripts and `FSIDriver3D.collect_diagnostics`
+
+## Step 28 Diagnostics Surface
+
+Step 28 is controlled real geometry 64^3 transfer diagnostics.
+Step 28 compares engineering and link_area_experimental transfer diagnostically.
+Step 28 is not real squid validation.
+Step 28 does not implement squid actuation.
+Step 28 does not implement squid swimming.
+Step 28 does not implement new FSI physics.
+Step 28 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 28 uses existing driver diagnostics and baseline scripts to summarize force, reaction, transfer-pair, and area-scale evidence for four 64^3 moving_boundary rows.

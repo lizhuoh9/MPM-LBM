@@ -119,3 +119,20 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 27 runs only the 64^3 coupling subset for the accepted mesh and voxel candidates: penalty engineering, moving_boundary engineering, and moving_boundary link_area_experimental. It keeps VTK and particle outputs disabled.
+
+## Step 28 Follow-Up Boundary
+
+Step 28 is controlled real geometry 64^3 transfer diagnostics.
+Step 28 compares engineering and link_area_experimental transfer diagnostically.
+Step 28 is not real squid validation.
+Step 28 does not implement squid actuation.
+Step 28 does not implement squid swimming.
+Step 28 does not implement new FSI physics.
+Step 28 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 28 keeps the Step 26 strict geometry configs and compares only four 64^3 moving_boundary transfer rows with per-step diagnostics enabled.

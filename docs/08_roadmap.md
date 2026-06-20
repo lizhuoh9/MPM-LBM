@@ -4,7 +4,7 @@ The next steps should preserve the existing regression baselines and mode matrix
 
 ## Current Status
 
-Step 27 is controlled real geometry 64^3 short driver feasibility. It preserves Step 25 intake evidence and Step 26 projection/short-driver evidence while adding a six-row 64^3 coupling subset before any actuation, swimming, or production sharp-interface FSI claims.
+Step 28 is controlled real geometry 64^3 transfer diagnostics. It preserves Step 25 intake evidence, Step 26 projection/short-driver evidence, and Step 27 64^3 short-driver evidence while comparing engineering and link_area_experimental transfer diagnostically before any actuation, swimming, or production sharp-interface FSI claims.
 
 ## Proposed Steps
 
@@ -26,6 +26,7 @@ Step 27 is controlled real geometry 64^3 short driver feasibility. It preserves 
 | Step 25 | controlled real geometry intake | manifest, fingerprinting, QA, normalization, deterministic sampling, and projection-only smoke only |
 | Step 26 | controlled real geometry projection-only and short driver feasibility | no squid actuation, swimming, production sharp-interface FSI, or final readiness claim |
 | Step 27 | controlled real geometry 64^3 short driver feasibility | six coupling rows only; no squid actuation, swimming, production sharp-interface FSI, or final readiness claim |
+| Step 28 | controlled real geometry 64^3 transfer diagnostics | four moving_boundary transfer rows only; diagnostic comparison, force/reaction summary, area-scale envelope, and Step 27 prefix regression |
 
 ## Regression Rule
 
@@ -53,6 +54,7 @@ Step 24 strict quality-gated imported geometry long-run contracts
 Step 25 controlled real geometry intake contracts
 Step 26 controlled real geometry projection-only and short driver feasibility contracts
 Step 27 controlled real geometry 64^3 short driver feasibility contracts
+Step 28 controlled real geometry 64^3 transfer diagnostics contracts
 ```
 
 New physics should be added behind explicit modes or new configs, not by silently changing validated behavior.
@@ -80,3 +82,5 @@ Step 25 is controlled real geometry intake, not real squid validation. Step 25 p
 Step 26 is controlled real geometry projection-only and short driver feasibility. Step 26 is not real squid validation. Step 26 does not implement squid actuation. Step 26 does not implement squid swimming. Step 26 does not implement new FSI physics. Step 26 does not validate production sharp-interface FSI. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 27 is controlled real geometry 64^3 short driver feasibility. Step 27 is not real squid validation. Step 27 does not implement squid actuation. Step 27 does not implement squid swimming. Step 27 does not implement new FSI physics. Step 27 does not validate production sharp-interface FSI. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 28 is controlled real geometry 64^3 transfer diagnostics. Step 28 compares engineering and link_area_experimental transfer diagnostically. Step 28 is not real squid validation. Step 28 does not implement squid actuation. Step 28 does not implement squid swimming. Step 28 does not implement new FSI physics. Step 28 does not validate production sharp-interface FSI. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.

@@ -12,6 +12,23 @@ The default quality_check_strict remains false.
 The default reaction_transfer_mode remains engineering.
 The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+## Step 28 Carry-Forward Boundary
+
+Step 28 is controlled real geometry 64^3 transfer diagnostics.
+Step 28 compares engineering and link_area_experimental transfer diagnostically.
+Step 28 is not real squid validation.
+Step 28 does not implement squid actuation.
+Step 28 does not implement squid swimming.
+Step 28 does not implement new FSI physics.
+Step 28 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 28 must keep the Step 25 accepted candidate fingerprints unchanged while running the four 64^3 moving_boundary transfer diagnostics.
 Candidate intake does not perform production mesh repair or automatic remeshing.
 Raw large real geometry files and scan data are not committed.
 

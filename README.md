@@ -31,6 +31,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 25 controlled real geometry candidate intake with manifest, fingerprinting, normalization reports, deterministic sampling reproducibility, and projection-only smoke diagnostics
 - Step 26 controlled real geometry projection-only and short driver feasibility with strict quality reports for every very short driver row
 - Step 27 controlled real geometry 64^3 short driver feasibility for a six-row coupling subset with strict quality reports
+- Step 28 controlled real geometry 64^3 transfer diagnostics comparing engineering and link_area_experimental moving_boundary transfer rows
 
 ## Not Implemented
 
@@ -90,6 +91,23 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 27 reuses the accepted Step 25 candidates and Step 26 strict driver-ready geometry configs, then runs only six 64^3 short coupling rows: penalty engineering, moving_boundary engineering, and moving_boundary link_area_experimental for both mesh and voxel candidates.
+
+## Step 28 Transfer Diagnostics Boundary
+
+Step 28 is controlled real geometry 64^3 transfer diagnostics.
+Step 28 compares engineering and link_area_experimental transfer diagnostically.
+Step 28 is not real squid validation.
+Step 28 does not implement squid actuation.
+Step 28 does not implement squid swimming.
+Step 28 does not implement new FSI physics.
+Step 28 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 28 reuses the accepted Step 25 candidates and Step 26 strict driver-ready geometry configs, then runs four 64^3 moving_boundary rows: engineering and link_area_experimental transfer for both mesh and voxel candidates.
 
 ## Quick Start
 

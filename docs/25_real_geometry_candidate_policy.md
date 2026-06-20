@@ -83,3 +83,20 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 27 reuses the accepted Step 25 descriptors and Step 26 driver-ready geometry configs only after fingerprint comparison. Generated Step 27 driver configs must keep strict quality gates enabled and must keep VTK and particle outputs disabled.
+
+## Step 28 Candidate Policy
+
+Step 28 is controlled real geometry 64^3 transfer diagnostics.
+Step 28 compares engineering and link_area_experimental transfer diagnostically.
+Step 28 is not real squid validation.
+Step 28 does not implement squid actuation.
+Step 28 does not implement squid swimming.
+Step 28 does not implement new FSI physics.
+Step 28 does not validate production sharp-interface FSI.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 28 continues to use only the accepted mesh and voxel smoke candidates. The candidate fingerprint guard must pass before the 64^3 transfer-pair driver rows are accepted.

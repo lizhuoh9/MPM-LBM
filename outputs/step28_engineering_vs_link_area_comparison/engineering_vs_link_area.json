@@ -1,0 +1,58 @@
+{
+  "rows": [
+    {
+      "candidate_id": "real_candidate_smoke_mesh",
+      "comparison_pass": true,
+      "engineering_hydro_force_max_norm": 0.4173511266708374,
+      "engineering_lbm_max_v": 0.005641019903123379,
+      "engineering_mpm_min_J": 0.9999977350234985,
+      "engineering_projected_mass": 0.605825662612915,
+      "engineering_rho_max": 1.0041377544403076,
+      "engineering_rho_min": 0.9956843852996826,
+      "geometry_type": "mesh",
+      "hydro_force_max_norm_delta": -5.960464477539063e-08,
+      "lbm_max_v_delta": 0.0,
+      "link_area_area_scale_final": 0.7903904318809509,
+      "link_area_hydro_force_max_norm": 0.4173510670661926,
+      "link_area_lbm_max_v": 0.005641019903123379,
+      "link_area_mpm_min_J": 0.9999977350234985,
+      "link_area_projected_mass": 0.6058269143104553,
+      "link_area_rho_max": 1.0041377544403076,
+      "link_area_rho_min": 0.9956842660903931,
+      "mpm_min_J_delta": 0.0,
+      "n_grid": 64,
+      "projected_mass_delta": 1.2516975402832031e-06,
+      "rho_max_delta": 0.0,
+      "rho_min_delta": -1.1920928955078125e-07
+    },
+    {
+      "candidate_id": "real_candidate_smoke_voxel",
+      "comparison_pass": true,
+      "engineering_hydro_force_max_norm": 0.41878190636634827,
+      "engineering_lbm_max_v": 0.006151681300252676,
+      "engineering_mpm_min_J": 0.9997254014015198,
+      "engineering_projected_mass": 0.09944126754999161,
+      "engineering_rho_max": 1.008886456489563,
+      "engineering_rho_min": 0.9925971627235413,
+      "geometry_type": "voxel",
+      "hydro_force_max_norm_delta": 8.940696716308594e-08,
+      "lbm_max_v_delta": 9.313225746154785e-10,
+      "link_area_area_scale_final": 0.7920417189598083,
+      "link_area_hydro_force_max_norm": 0.41878199577331543,
+      "link_area_lbm_max_v": 0.006151682231575251,
+      "link_area_mpm_min_J": 0.9997256398200989,
+      "link_area_projected_mass": 0.09944119304418564,
+      "link_area_rho_max": 1.008886456489563,
+      "link_area_rho_min": 0.9925969839096069,
+      "mpm_min_J_delta": 2.384185791015625e-07,
+      "n_grid": 64,
+      "projected_mass_delta": -7.450580596923828e-08,
+      "rho_max_delta": 0.0,
+      "rho_min_delta": -1.7881393432617188e-07
+    }
+  ],
+  "summary": {
+    "pass_count": 2,
+    "row_count": 2
+  }
+}

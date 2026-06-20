@@ -1,0 +1,8 @@
+check,pass,value,notes
+step27_report_exists,True,STEP27_CONTROLLED_REAL_GEOMETRY_64_SHORT_DRIVER_REPORT.md,required Step 27 artifact
+step27_driver_64_summary,True,6,expected 6 stable rows
+step27_quality_report_aggregation,True,6,expected 6 passing reports
+step27_large_file_count,True,0,expected 0
+step27_raw_candidate_large_file_count,True,0,expected 0
+step27_scan_data_file_count,True,0,expected 0
+step27_private_absolute_path_count,True,0,expected 0

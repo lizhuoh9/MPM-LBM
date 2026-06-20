@@ -1,0 +1,42 @@
+{
+  "rows": [
+    {
+      "area_scale_config_max": 2.0,
+      "area_scale_config_min": 0.25,
+      "area_scale_final": 0.7903904318809509,
+      "area_scale_initial": 1.0,
+      "area_scale_max_observed": 1.0,
+      "area_scale_min_observed": 0.7903904318809509,
+      "bounded_pass": true,
+      "candidate_id": "real_candidate_smoke_mesh",
+      "finite_pass": true,
+      "geometry_type": "mesh",
+      "hit_lower_bound": false,
+      "hit_upper_bound": false,
+      "n_grid": 64,
+      "raw_area_scale_max": 1.0,
+      "raw_area_scale_min": 0.7903904318809509
+    },
+    {
+      "area_scale_config_max": 2.0,
+      "area_scale_config_min": 0.25,
+      "area_scale_final": 0.7920417189598083,
+      "area_scale_initial": 1.0,
+      "area_scale_max_observed": 1.0,
+      "area_scale_min_observed": 0.7920417189598083,
+      "bounded_pass": true,
+      "candidate_id": "real_candidate_smoke_voxel",
+      "finite_pass": true,
+      "geometry_type": "voxel",
+      "hit_lower_bound": false,
+      "hit_upper_bound": false,
+      "n_grid": 64,
+      "raw_area_scale_max": 1.0,
+      "raw_area_scale_min": 0.7920417189598083
+    }
+  ],
+  "summary": {
+    "pass_count": 2,
+    "row_count": 2
+  }
+}
