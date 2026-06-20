@@ -9,6 +9,7 @@ from .sim_config import UnifiedSimConfig
 VALID_COUPLING_MODES = ("none", "penalty", "moving_boundary")
 VALID_REACTION_TRANSFER_MODES = ("engineering", "link_area_experimental")
 VALID_LINK_AREA_POLICIES = ("uniform", "inverse_length", "length")
+VALID_BOUNDARY_MOTION_MODES = ("static", "prescribed_kinematic")
 
 
 def _as_float_tuple(values, name):
@@ -46,6 +47,9 @@ class FSIDriverConfig:
     link_area_policy: str = "inverse_length"
     link_area_scale_min: float = 0.25
     link_area_scale_max: float = 2.0
+    boundary_motion_mode: str = "static"
+    boundary_motion_config_path: Optional[str] = None
+    boundary_motion_report_enabled: bool = False
 
     output_interval: int = 10
     write_vtk: bool = True
@@ -63,6 +67,12 @@ class FSIDriverConfig:
             raise ValueError("reaction_transfer_mode='link_area_experimental' requires coupling_mode='moving_boundary'")
         if self.link_area_policy not in VALID_LINK_AREA_POLICIES:
             raise ValueError(f"link_area_policy must be one of {VALID_LINK_AREA_POLICIES}")
+        if self.boundary_motion_mode not in VALID_BOUNDARY_MOTION_MODES:
+            raise ValueError(f"boundary_motion_mode must be one of {VALID_BOUNDARY_MOTION_MODES}")
+        if self.boundary_motion_mode == "static" and self.boundary_motion_config_path is not None:
+            raise ValueError("boundary_motion_config_path must be None when boundary_motion_mode='static'")
+        if self.boundary_motion_mode == "prescribed_kinematic" and not self.boundary_motion_config_path:
+            raise ValueError("boundary_motion_config_path is required when boundary_motion_mode='prescribed_kinematic'")
         if self.geometry_type not in VALID_GEOMETRY_TYPES:
             raise ValueError(f"geometry_type must be one of {VALID_GEOMETRY_TYPES}")
         if self.n_grid <= 0:

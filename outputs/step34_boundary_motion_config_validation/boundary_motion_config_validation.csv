@@ -1,0 +1,22 @@
+check,pass,value,notes
+interface_id_present,True,step34_squid_proxy_boundary_motion_driver_interface,interface_id must be nonempty
+schedule_config_path_exists,True,configs/step32_squid_proxy_kinematics_schedule.json,Step 32 schedule config must exist
+motion_mapping_config_path_exists,True,configs/step33_squid_proxy_motion_mapping.json,Step 33 motion mapping config must exist
+schedule_output_path_exists,True,outputs/step32_kinematics_schedule/kinematics_schedule.json,accepted Step 32 schedule output must exist when configured
+motion_mapping_output_path_exists,True,outputs/step33_motion_mapping/motion_mapping.json,accepted Step 33 motion mapping output must exist when configured
+expected_schedule_row_count,True,81,Step 34 expects 81 schedule rows
+expected_motion_row_count,True,243,Step 34 expects 243 motion rows
+expected_tracked_region_count,True,3,Step 34 expects three tracked regions
+diagnostic_only_true,True,True,interface must remain diagnostic-only
+deterministic_true,True,True,interface must be deterministic
+scope_note_valid,True,Step 34 diagnostic-only boundary-motion interface; no-op driver report,scope_note must state diagnostic-only and no-op behavior
+driver_integration_enabled_false,True,False,driver_integration_enabled must be false
+lbm_wall_velocity_enabled_false,True,False,lbm_wall_velocity_enabled must be false
+lbm_population_update_enabled_false,True,False,lbm_population_update_enabled must be false
+mpm_grid_velocity_enabled_false,True,False,mpm_grid_velocity_enabled must be false
+projector_integration_enabled_false,True,False,projector_integration_enabled must be false
+coupling_integration_enabled_false,True,False,coupling_integration_enabled must be false
+moving_bounceback_update_enabled_false,True,False,moving_bounceback_update_enabled must be false
+jet_model_enabled_false,True,False,jet_model_enabled must be false
+actuation_enabled_false,True,False,actuation_enabled must be false
+all_execution_flags_false,True,0,all execution flags must remain disabled

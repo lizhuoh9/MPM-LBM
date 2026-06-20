@@ -1,0 +1,22 @@
+{
+  "interface_id": "step34_squid_proxy_boundary_motion_driver_interface",
+  "schedule_config_path": "configs/step32_squid_proxy_kinematics_schedule.json",
+  "motion_mapping_config_path": "configs/step33_squid_proxy_motion_mapping.json",
+  "schedule_output_path": "outputs/step32_kinematics_schedule/kinematics_schedule.json",
+  "motion_mapping_output_path": "outputs/step33_motion_mapping/motion_mapping.json",
+  "expected_schedule_row_count": 81,
+  "expected_motion_row_count": 243,
+  "expected_tracked_region_count": 3,
+  "diagnostic_only": true,
+  "driver_integration_enabled": false,
+  "lbm_wall_velocity_enabled": false,
+  "lbm_population_update_enabled": false,
+  "mpm_grid_velocity_enabled": false,
+  "projector_integration_enabled": false,
+  "coupling_integration_enabled": false,
+  "moving_bounceback_update_enabled": false,
+  "jet_model_enabled": false,
+  "actuation_enabled": false,
+  "deterministic": true,
+  "scope_note": "Step 34 diagnostic-only boundary-motion interface; no-op driver report"
+}

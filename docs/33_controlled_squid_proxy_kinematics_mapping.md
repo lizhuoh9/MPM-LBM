@@ -83,4 +83,4 @@ No FSIDriver3D, LBM, MPM, moving bounce-back, link-area, or projection formula f
 
 ## Decision For Step 34
 
-Step 34 should be `Controlled Squid Proxy Boundary-Motion Driver Interface Contract`. It may define a guarded driver interface schema such as `boundary_motion_mode = "static" | "prescribed_kinematic"` and verify default no-op behavior. Actual LBM boundary-motion application should wait until Step 35 or later.
+Step 34 is now `Controlled Squid Proxy Boundary-Motion Driver Interface Contract`. It defines `boundary_motion_mode = "static" | "prescribed_kinematic"` and verifies default no-op behavior. Actual LBM boundary-motion application should still wait for a later explicitly validated contract.

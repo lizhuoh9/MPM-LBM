@@ -229,3 +229,23 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 The Step 33 artifact manifest requires `large_file_count == 0`, Step 33 total size below 5 MB, repository total size below 195 MB, no raw candidate large files, no scan data, no private absolute paths, no Step 33 `.vtr`, and no Step 33 particle `.npy` files.
+
+## Step 34 Squid Proxy Boundary-Motion Driver Interface Artifacts
+
+Step 34 commits small config, CSV, JSON, NPZ, Markdown, and log artifacts only. Step 34 does not write `.vtr` outputs or particle `.npy` outputs.
+
+Step 34 is controlled squid proxy boundary-motion driver interface.
+Step 34 defines a guarded driver interface only.
+Step 34 keeps prescribed kinematics diagnostic-only.
+Step 34 does not apply moving wall velocity to LBM.
+Step 34 does not implement a jet model.
+Step 34 does not implement squid swimming.
+Step 34 does not implement new FSI physics.
+The default boundary_motion_mode remains static.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+The Step 34 artifact manifest requires `large_file_count == 0`, Step 34 total size below 10 MB, repository total size below 205 MB, no raw candidate large files, no scan data, no private absolute paths, no Step 34 `.vtr`, and no Step 34 particle `.npy` files.

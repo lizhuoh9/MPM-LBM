@@ -292,17 +292,31 @@ Step 27 is controlled real geometry 64^3 short driver feasibility. Step 27 is no
 ## FSIDriverConfig
 
 - purpose: common JSON-loadable driver configuration
-- main fields: `coupling_mode`, `reaction_transfer_mode`, `link_area_policy`, `link_area_scale_min`, `link_area_scale_max`, `geometry_type`, `geometry_config_path`, `quality_check_enabled`, `quality_check_strict`, `quality_report_path`, `n_grid`, `n_particles`, `n_lbm_steps`, `mpm_substeps_per_lbm_step`, `mpm_dt`, `target_u_lbm`, `gravity`, `beta_lbm`, `penalty_force_cap_lbm`, `mb_reaction_scale`, `mb_force_cap_norm`
+- main fields: `coupling_mode`, `reaction_transfer_mode`, `link_area_policy`, `link_area_scale_min`, `link_area_scale_max`, `boundary_motion_mode`, `boundary_motion_config_path`, `boundary_motion_report_enabled`, `geometry_type`, `geometry_config_path`, `quality_check_enabled`, `quality_check_strict`, `quality_report_path`, `n_grid`, `n_particles`, `n_lbm_steps`, `mpm_substeps_per_lbm_step`, `mpm_dt`, `target_u_lbm`, `gravity`, `beta_lbm`, `penalty_force_cap_lbm`, `mb_reaction_scale`, `mb_force_cap_norm`
 - main methods: `from_json`, `to_dict`, `make_unified_sim_config`
-- mode: selects none, penalty, or moving_boundary, selects procedural or imported geometry initialization through `geometry_type`, and selects moving_boundary reaction transfer through `reaction_transfer_mode`
+- mode: selects none, penalty, or moving_boundary, selects procedural or imported geometry initialization through `geometry_type`, selects moving_boundary reaction transfer through `reaction_transfer_mode`, and selects static or prescribed-kinematic boundary-motion reporting through `boundary_motion_mode`
 
 ## FSIDriver3D
 
 - purpose: unified engineering driver for initialization, stepping, diagnostics, output, and timing
-- main fields: `config`, `sim`, `mapper`, `lbm`, `solid`, `projector`, `penalty_coupler`, `mb_coupler`, `link_area_coupler`, `diagnostics_rows`, `timing`
+- main fields: `config`, `sim`, `mapper`, `lbm`, `solid`, `projector`, `penalty_coupler`, `mb_coupler`, `link_area_coupler`, `boundary_motion_interface_report`, `diagnostics_rows`, `timing`
 - main methods: `initialize`, `step_once`, `run`, `collect_diagnostics`, `export_outputs`, `save_timeseries`, `final_diagnostics`, `performance_row`
 - mode: dispatches to `_step_none`, `_step_penalty`, or `_step_moving_boundary`
 - quality gate: when enabled by config, writes `geometry_quality_report.json` before imported-geometry sampling and raises `ValueError` only for strict gate failures
+- boundary-motion hook: Step 34 writes `boundary_motion_interface_report.json` only when explicitly enabled; the hook is diagnostic-only and does not alter LBM, MPM, projector, or coupler state
+
+## BoundaryMotionInterfaceConfig
+
+- purpose: immutable Step 34 config schema for guarded boundary-motion report generation
+- main fields: `schedule_config_path`, `motion_mapping_config_path`, `schedule_output_path`, `motion_mapping_output_path`, `expected_schedule_row_count`, `expected_motion_row_count`, `expected_tracked_region_count`, `diagnostic_only`, and disabled execution flags
+- main methods: `from_json`, `to_dict`, `validate_boundary_motion_interface_config`, `summarize_boundary_motion_config_validation`
+- mode: diagnostic-only interface validation; all execution flags must remain false
+
+## boundary_motion_interface
+
+- purpose: load Step 34 interface config and summarize accepted Step 32/33 schedule and motion artifacts
+- main methods: `build_boundary_motion_interface_report`, `write_boundary_motion_interface_report`, `write_static_boundary_motion_interface_report`
+- mode: report-only no-op surface; it does not update fluid populations, solid state, projection state, or coupling state
 
 ## FSIDiagnostics3D
 

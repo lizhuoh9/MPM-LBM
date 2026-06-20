@@ -1,0 +1,135 @@
+{
+  "rows": [
+    {
+      "check": "interface_id_present",
+      "notes": "interface_id must be nonempty",
+      "pass": true,
+      "value": "step34_squid_proxy_boundary_motion_driver_interface"
+    },
+    {
+      "check": "schedule_config_path_exists",
+      "notes": "Step 32 schedule config must exist",
+      "pass": true,
+      "value": "configs/step32_squid_proxy_kinematics_schedule.json"
+    },
+    {
+      "check": "motion_mapping_config_path_exists",
+      "notes": "Step 33 motion mapping config must exist",
+      "pass": true,
+      "value": "configs/step33_squid_proxy_motion_mapping.json"
+    },
+    {
+      "check": "schedule_output_path_exists",
+      "notes": "accepted Step 32 schedule output must exist when configured",
+      "pass": true,
+      "value": "outputs/step32_kinematics_schedule/kinematics_schedule.json"
+    },
+    {
+      "check": "motion_mapping_output_path_exists",
+      "notes": "accepted Step 33 motion mapping output must exist when configured",
+      "pass": true,
+      "value": "outputs/step33_motion_mapping/motion_mapping.json"
+    },
+    {
+      "check": "expected_schedule_row_count",
+      "notes": "Step 34 expects 81 schedule rows",
+      "pass": true,
+      "value": 81
+    },
+    {
+      "check": "expected_motion_row_count",
+      "notes": "Step 34 expects 243 motion rows",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "expected_tracked_region_count",
+      "notes": "Step 34 expects three tracked regions",
+      "pass": true,
+      "value": 3
+    },
+    {
+      "check": "diagnostic_only_true",
+      "notes": "interface must remain diagnostic-only",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "deterministic_true",
+      "notes": "interface must be deterministic",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "scope_note_valid",
+      "notes": "scope_note must state diagnostic-only and no-op behavior",
+      "pass": true,
+      "value": "Step 34 diagnostic-only boundary-motion interface; no-op driver report"
+    },
+    {
+      "check": "driver_integration_enabled_false",
+      "notes": "driver_integration_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "lbm_wall_velocity_enabled_false",
+      "notes": "lbm_wall_velocity_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "lbm_population_update_enabled_false",
+      "notes": "lbm_population_update_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "mpm_grid_velocity_enabled_false",
+      "notes": "mpm_grid_velocity_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "projector_integration_enabled_false",
+      "notes": "projector_integration_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "coupling_integration_enabled_false",
+      "notes": "coupling_integration_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "moving_bounceback_update_enabled_false",
+      "notes": "moving_bounceback_update_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "jet_model_enabled_false",
+      "notes": "jet_model_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "actuation_enabled_false",
+      "notes": "actuation_enabled must be false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "all_execution_flags_false",
+      "notes": "all execution flags must remain disabled",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "pass_count": 21,
+    "row_count": 21,
+    "validation_pass": true
+  }
+}

@@ -315,3 +315,21 @@ The moving bounce-back formula is unchanged.
 PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 29 reuses the accepted Step 25 candidate descriptors and Step 26 strict driver-ready GeometryConfig files. It does not add mesh cleanup, mesh fixing, or new geometry ingestion behavior.
+
+## Step 34 Boundary-Motion Interface Boundary
+
+Step 34 is controlled squid proxy boundary-motion driver interface.
+Step 34 defines a guarded driver interface only.
+Step 34 keeps prescribed kinematics diagnostic-only.
+Step 34 does not apply moving wall velocity to LBM.
+Step 34 does not implement a jet model.
+Step 34 does not implement squid swimming.
+Step 34 does not implement new FSI physics.
+The default boundary_motion_mode remains static.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 34 reuses the accepted Step 30 squid proxy geometry, Step 32 schedule, and Step 33 motion mapping artifacts. It does not add mesh cleanup, mesh fixing, new geometry ingestion behavior, or real geometry validation.

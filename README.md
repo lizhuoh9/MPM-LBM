@@ -367,6 +367,23 @@ Imported geometry remains limited to small synthetic voxel and mesh fixtures.
 The Step 23 mesh path is not production mesh repair or automatic remeshing.
 See docs/22_quality_gated_imported_geometry_validation.md.
 
+## Boundary-Motion Driver Interface
+
+Step 34 is controlled squid proxy boundary-motion driver interface.
+Step 34 defines a guarded driver interface only.
+Step 34 keeps prescribed kinematics diagnostic-only.
+Step 34 does not apply moving wall velocity to LBM.
+Step 34 does not implement a jet model.
+Step 34 does not implement squid swimming.
+Step 34 does not implement new FSI physics.
+The default boundary_motion_mode remains static.
+The default quality_check_enabled remains false.
+The default quality_check_strict remains false.
+The default reaction_transfer_mode remains engineering.
+The moving bounce-back formula is unchanged.
+PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+See docs/34_controlled_squid_proxy_boundary_motion_driver_interface.md.
+
 ## Upstream LBM Note
 
 The LBM backend is derived from the vendored taichi_LBM3D single-phase solver under external/taichi_LBM3D. The external source is kept unmodified in this project workflow. For license details, see the upstream repository and vendored license files if present.

@@ -1,0 +1,9 @@
+check,pass,value,notes
+step33_report_exists,True,STEP33_CONTROLLED_SQUID_PROXY_KINEMATICS_MAPPING_REPORT.md,required Step 33 artifact
+step33_motion_row_count,True,243,expected 243 motion rows
+step33_motion_quality_pass,True,True,Step 33 quality must pass
+step33_repeatability_pass,True,True,Step 33 repeatability must pass
+step33_consistency_pass,True,True,Step 33 schedule-motion consistency must pass
+step33_large_file_count,True,0,expected 0
+step33_step33_vtr_count,True,0,expected 0
+step33_step33_particle_npy_count,True,0,expected 0

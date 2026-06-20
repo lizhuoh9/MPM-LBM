@@ -32,7 +32,7 @@ Step 33 is controlled squid proxy kinematics mapping to boundary-motion diagnost
 | Step 31 | controlled squid proxy region projection and static driver smoke | static region semantics only; existing modes only; no squid actuation, swimming, mantle contraction, funnel actuation, new FSI physics, or real squid validation |
 | Step 32 | completed: controlled squid proxy prescribed kinematics schedule contract | schedule contract only; no driver integration, no moving wall velocity, no new FSI physics |
 | Step 33 | completed: controlled squid proxy kinematics mapping to boundary-motion diagnostics | diagnostic mapping only; no driver integration, no LBM wall velocity, no jet model, no new FSI physics |
-| Step 34 | proposed: controlled squid proxy boundary-motion driver interface contract | interface schema and guarded no-op/default behavior only; actual LBM boundary-motion application should wait |
+| Step 34 | completed: controlled squid proxy boundary-motion driver interface contract | interface schema and guarded no-op/default behavior only; no LBM population update |
 
 ## Regression Rule
 
@@ -66,6 +66,7 @@ Step 30 controlled squid proxy region geometry contracts
 Step 31 controlled squid proxy region projection and static driver smoke contracts
 Step 32 controlled squid proxy prescribed kinematics schedule contracts
 Step 33 controlled squid proxy kinematics mapping to boundary-motion diagnostics contracts
+Step 34 controlled squid proxy boundary-motion driver interface contracts
 ```
 
 New physics should be added behind explicit modes or new configs, not by silently changing validated behavior.
@@ -105,3 +106,5 @@ Step 31 is controlled squid proxy region projection and static driver smoke. Ste
 Step 32 is controlled squid proxy prescribed kinematics schedule. Step 32 defines kinematics schedules only. Step 32 does not integrate kinematics into FSIDriver3D. Step 32 does not apply moving wall velocity. Step 32 does not implement mantle contraction in the driver. Step 32 does not implement funnel actuation in the driver. Step 32 does not implement squid swimming. Step 32 does not implement new FSI physics. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
 
 Step 33 is controlled squid proxy kinematics mapping to boundary-motion diagnostics. Step 33 maps schedules to displacement and velocity proxies only. Step 33 does not integrate kinematics into FSIDriver3D. Step 33 does not apply moving wall velocity to LBM. Step 33 does not implement a jet model. Step 33 does not implement squid swimming. Step 33 does not implement new FSI physics. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.
+
+Step 34 is controlled squid proxy boundary-motion driver interface. Step 34 defines a guarded driver interface only. Step 34 keeps prescribed kinematics diagnostic-only. Step 34 does not apply moving wall velocity to LBM. Step 34 does not implement a jet model. Step 34 does not implement squid swimming. Step 34 does not implement new FSI physics. The default boundary_motion_mode remains static. The default quality_check_enabled remains false. The default quality_check_strict remains false. The default reaction_transfer_mode remains engineering. The moving bounce-back formula is unchanged. PenaltyFSICoupler3D, MovingBoundaryFSICoupler3D, and LinkAreaMovingBoundaryCoupler3D are unchanged.

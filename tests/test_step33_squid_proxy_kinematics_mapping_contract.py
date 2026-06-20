@@ -251,7 +251,6 @@ def test_step33_default_modes_remain_unchanged():
     assert 'reaction_transfer_mode: str = "engineering"' in fsi_config
 
     formula_files = [
-        "src/fsi_driver.py",
         "src/coupling.py",
         "src/moving_boundary_coupling.py",
         "src/link_area_coupling.py",

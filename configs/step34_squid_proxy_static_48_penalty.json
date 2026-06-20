@@ -1,0 +1,31 @@
+{
+  "coupling_mode": "penalty",
+  "reaction_transfer_mode": "engineering",
+  "boundary_motion_mode": "static",
+  "boundary_motion_config_path": null,
+  "boundary_motion_report_enabled": false,
+  "geometry_type": "squid_proxy",
+  "geometry_config_path": "configs/step30_squid_proxy_geometry.json",
+  "n_grid": 48,
+  "n_particles": 4096,
+  "n_lbm_steps": 5,
+  "mpm_substeps_per_lbm_step": 5,
+  "mpm_dt": 0.0004,
+  "target_u_lbm": [
+    0.005,
+    0.0,
+    0.0
+  ],
+  "gravity": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "beta_lbm": 0.001,
+  "penalty_force_cap_lbm": 0.00005,
+  "output_interval": 1,
+  "quality_check_enabled": true,
+  "quality_check_strict": true,
+  "write_vtk": false,
+  "write_particles": false
+}

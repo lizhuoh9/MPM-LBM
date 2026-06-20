@@ -76,12 +76,14 @@ class FSIDriver3D:
         self.mb_coupler = None
         self.link_area_coupler = None
         self.geometry_quality_report = None
+        self.boundary_motion_interface_report = None
 
     def initialize(self):
         t0 = time.perf_counter()
         ensure_output_dir(self.out_dir)
         make_all_fluid_geo(self.geo_path, self.config.n_grid)
         save_json_config(self.config, os.path.join(self.out_dir, "driver_config.json"))
+        self._run_boundary_motion_interface_report()
 
         self.lbm = LBMFluid3D(self.sim.make_lbm_config())
         self.lbm.init_geo(self.geo_path)
@@ -189,6 +191,29 @@ class FSIDriver3D:
         if not gate_result["pass"]:
             raise ValueError("Geometry quality gate failed: " + "; ".join(gate_result["reasons"]))
         return payload
+
+    def _run_boundary_motion_interface_report(self):
+        if not self.config.boundary_motion_report_enabled:
+            return None
+
+        report_path = os.path.join(self.out_dir, "boundary_motion_interface_report.json")
+        if self.config.boundary_motion_mode == "static":
+            from .boundary_motion_interface import write_static_boundary_motion_interface_report
+
+            self.boundary_motion_interface_report = write_static_boundary_motion_interface_report(report_path)
+            return self.boundary_motion_interface_report
+
+        if self.config.boundary_motion_mode == "prescribed_kinematic":
+            from .boundary_motion_interface import write_boundary_motion_interface_report
+
+            self.boundary_motion_interface_report = write_boundary_motion_interface_report(
+                self.config.boundary_motion_config_path,
+                report_path,
+                boundary_motion_mode=self.config.boundary_motion_mode,
+            )
+            return self.boundary_motion_interface_report
+
+        raise ValueError(f"unsupported boundary_motion_mode: {self.config.boundary_motion_mode}")
 
     def step_once(self):
         if not self.initialized:

@@ -1,0 +1,11 @@
+{
+  "pass_count": 8,
+  "row_count": 8,
+  "step33_consistency_pass": true,
+  "step33_large_file_count": 0,
+  "step33_motion_quality_pass": true,
+  "step33_motion_row_count": 243,
+  "step33_particle_npy_count": 0,
+  "step33_repeatability_pass": true,
+  "step33_vtr_count": 0
+}
