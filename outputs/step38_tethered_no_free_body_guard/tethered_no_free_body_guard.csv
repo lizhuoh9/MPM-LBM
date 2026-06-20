@@ -1,0 +1,6 @@
+check,pass,value,notes
+free_body_state_file_count,True,0,no free-body state files are written
+rigid_body_integrator_enabled,True,False,no rigid-body swimming integrator is enabled
+body_position_state_enabled,True,False,no body position state is enabled
+swimming_displacement_claim_enabled,True,False,no swimming displacement claim is enabled
+target_u_lbm_zero_for_cycle_configs,True,True,all cycle configs use zero background target velocity

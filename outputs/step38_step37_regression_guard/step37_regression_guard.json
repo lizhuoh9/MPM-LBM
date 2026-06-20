@@ -1,0 +1,63 @@
+{
+  "rows": [
+    {
+      "check": "step37_report_exists",
+      "notes": "Step 37 report remains present",
+      "pass": true,
+      "value": "STEP37 report"
+    },
+    {
+      "check": "step37_driver_row_count",
+      "notes": "Step 37 driver row count stays 4",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step37_driver_stable_count",
+      "notes": "Step 37 driver rows stay stable",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step37_experimental_report_count",
+      "notes": "Step 37 experimental rows still wrote 20 application reports",
+      "pass": true,
+      "value": 20
+    },
+    {
+      "check": "step37_application_envelope",
+      "notes": "Step 37 application envelope stays passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step37_step36_guard",
+      "notes": "Step 37 Step 36 guard stays passing",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step37_large_file_count",
+      "notes": "Step 37 artifact large-file count stays 0",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step37_vtr_count",
+      "notes": "Step 37 wrote no VTR outputs",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step37_particle_npy_count",
+      "notes": "Step 37 wrote no particle NPY outputs",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "pass_count": 9,
+    "regression_pass": true,
+    "row_count": 9
+  }
+}

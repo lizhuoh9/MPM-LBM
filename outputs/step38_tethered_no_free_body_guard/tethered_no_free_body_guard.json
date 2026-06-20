@@ -1,0 +1,47 @@
+{
+  "rows": [
+    {
+      "check": "free_body_state_file_count",
+      "notes": "no free-body state files are written",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "rigid_body_integrator_enabled",
+      "notes": "no rigid-body swimming integrator is enabled",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "body_position_state_enabled",
+      "notes": "no body position state is enabled",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "swimming_displacement_claim_enabled",
+      "notes": "no swimming displacement claim is enabled",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "target_u_lbm_zero_for_cycle_configs",
+      "notes": "all cycle configs use zero background target velocity",
+      "pass": true,
+      "value": true
+    }
+  ],
+  "summary": {
+    "body_position_state_enabled": false,
+    "centroid_drift_is_diagnostic_only": true,
+    "config_count": 4,
+    "free_body_state_file_count": 0,
+    "free_body_state_files": [],
+    "guard": "Step 38 tethered no-free-body guard",
+    "guard_pass": true,
+    "notes": "tethered diagnostics only; no free-body integration and no swimming displacement claim",
+    "rigid_body_integrator_enabled": false,
+    "swimming_displacement_claim_enabled": false,
+    "target_u_lbm_zero_for_cycle_configs": true
+  }
+}

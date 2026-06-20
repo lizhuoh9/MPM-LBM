@@ -1,0 +1,10 @@
+check,pass,value,notes
+step37_report_exists,True,STEP37 report,Step 37 report remains present
+step37_driver_row_count,True,4,Step 37 driver row count stays 4
+step37_driver_stable_count,True,4,Step 37 driver rows stay stable
+step37_experimental_report_count,True,20,Step 37 experimental rows still wrote 20 application reports
+step37_application_envelope,True,True,Step 37 application envelope stays passing
+step37_step36_guard,True,True,Step 37 Step 36 guard stays passing
+step37_large_file_count,True,0,Step 37 artifact large-file count stays 0
+step37_vtr_count,True,0,Step 37 wrote no VTR outputs
+step37_particle_npy_count,True,0,Step 37 wrote no particle NPY outputs

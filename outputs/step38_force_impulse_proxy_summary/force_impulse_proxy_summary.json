@@ -1,0 +1,61 @@
+{
+  "rows": [
+    {
+      "bb_correction_integral_proxy": 0.0551506748306565,
+      "bb_link_count_integral_proxy": 265024.0,
+      "case": "experimental_48_moving_boundary",
+      "hydro_force_max_norm_integral_proxy": 16.705359667539597,
+      "impulse_proxy_finite_pass": true,
+      "max_bb_correction": 0.0024120965972542763,
+      "max_grid_reaction_norm": 1.0544597898842767e-05,
+      "max_hydro_force_max_norm": 0.4208977222442627,
+      "mode_class": "experimental",
+      "notes": "existing-diagnostics force and bounce-back proxy only; no real impulse validation claim",
+      "reaction_transfer_mode": "engineering"
+    },
+    {
+      "bb_correction_integral_proxy": 0.044296160369412974,
+      "bb_link_count_integral_proxy": 265024.0,
+      "case": "static_48_moving_boundary",
+      "hydro_force_max_norm_integral_proxy": 16.662422209978104,
+      "impulse_proxy_finite_pass": true,
+      "max_bb_correction": 0.001404486712999642,
+      "max_grid_reaction_norm": 1.0544598808337469e-05,
+      "max_hydro_force_max_norm": 0.418045312166214,
+      "mode_class": "static",
+      "notes": "existing-diagnostics force and bounce-back proxy only; no real impulse validation claim",
+      "reaction_transfer_mode": "engineering"
+    },
+    {
+      "bb_correction_integral_proxy": 0.05505718063795939,
+      "bb_link_count_integral_proxy": 265024.0,
+      "case": "experimental_48_link_area",
+      "hydro_force_max_norm_integral_proxy": 16.70522505044937,
+      "impulse_proxy_finite_pass": true,
+      "max_bb_correction": 0.0024065030738711357,
+      "max_grid_reaction_norm": 1.0544550605118275e-05,
+      "max_hydro_force_max_norm": 0.4208909571170807,
+      "mode_class": "experimental",
+      "notes": "existing-diagnostics force and bounce-back proxy only; no real impulse validation claim",
+      "reaction_transfer_mode": "link_area_experimental"
+    },
+    {
+      "bb_correction_integral_proxy": 0.04398606321774423,
+      "bb_link_count_integral_proxy": 265014.0,
+      "case": "static_48_link_area",
+      "hydro_force_max_norm_integral_proxy": 16.661619752645493,
+      "impulse_proxy_finite_pass": true,
+      "max_bb_correction": 0.0014024032279849052,
+      "max_grid_reaction_norm": 1.0544565157033503e-05,
+      "max_hydro_force_max_norm": 0.41786080598831177,
+      "mode_class": "static",
+      "notes": "existing-diagnostics force and bounce-back proxy only; no real impulse validation claim",
+      "reaction_transfer_mode": "link_area_experimental"
+    }
+  ],
+  "summary": {
+    "impulse_proxy_summary_pass": true,
+    "pass_count": 4,
+    "row_count": 4
+  }
+}

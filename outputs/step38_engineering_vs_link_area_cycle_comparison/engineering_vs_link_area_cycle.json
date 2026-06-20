@@ -1,0 +1,23 @@
+{
+  "rows": [
+    {
+      "both_stable": true,
+      "comparison": "experimental_engineering_vs_link_area_cycle",
+      "comparison_pass": true,
+      "engineering_case": "experimental_48_moving_boundary",
+      "lbm_max_v_delta": -6.575137376785278e-06,
+      "link_area_case": "experimental_48_link_area",
+      "link_area_scale_final": 0.896070122718811,
+      "mpm_min_J_delta": 3.826618194580078e-05,
+      "notes": "bounded Step 38 experimental engineering-vs-link-area one-cycle proxy comparison",
+      "projected_mass_delta": 0.0,
+      "rho_max_delta": -9.655952453613281e-06,
+      "rho_min_delta": 9.894371032714844e-06
+    }
+  ],
+  "summary": {
+    "comparison_pass": true,
+    "pass_count": 1,
+    "row_count": 1
+  }
+}

@@ -1,0 +1,3 @@
+case,reaction_transfer_mode,timeseries_row_count,requested_phase_min,requested_phase_max,selected_phase_min,selected_phase_max,phase_sequence_covers_full_cycle,repeatable_phase_sequence,applied_cell_count_min,applied_cell_count_max,max_applied_velocity_norm,mean_applied_velocity_norm_max,wall_velocity_cap_lbm,cap_pass,finite_pass,lbm_population_update_count_max,modify_bounceback_formula_any,quality_pass
+experimental_48_moving_boundary,engineering,40,0.0,0.975,0.0,1.0,True,True,2136,2136,0.007021783310068709,0.004512541910430384,0.01,True,True,0,False,True
+experimental_48_link_area,link_area_experimental,40,0.0,0.975,0.0,1.0,True,True,2136,2136,0.007021783310068709,0.004512541910430384,0.01,True,True,0,False,True
