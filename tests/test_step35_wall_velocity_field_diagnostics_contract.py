@@ -335,7 +335,6 @@ def test_step35_solver_formula_boundaries_are_valid():
         "src/lbm_fluid.py",
         "src/mpm_solid.py",
         "src/projection.py",
-        "src/fsi_driver.py",
         "external/taichi_LBM3D",
     ]
     status = subprocess.run(["git", "status", "--short", *formula_files], cwd=ROOT, check=True, capture_output=True, text=True)

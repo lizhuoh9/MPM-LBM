@@ -1,0 +1,33 @@
+metric,value
+active_cell_count,2480
+active_region_counts,"{""funnel_outlet_proxy"": 16, ""mantle_cavity_proxy"": 328, ""mantle_outer"": 2136}"
+actuation_claim_enabled,False
+application_id,step36_wall_velocity_solid_vel_experimental
+application_mode,solid_vel_experimental
+application_policy,additive_capped
+application_scale,0.05
+applied_cell_count,2136
+apply_to_lbm_populations,False
+apply_to_lbm_solid_vel,True
+apply_to_mpm,False
+apply_to_projector,False
+cap_pass,True
+finite_pass,True
+grid_size_count,3
+jet_model_enabled,False
+lbm_population_update_enabled,False
+max_capped_velocity_norm,0.005849450792213756
+max_uncapped_velocity_norm,0.005849450792213756
+mean_capped_velocity_norm,0.0037591436088628594
+modify_bounceback_formula,False
+n_grid,48
+nonzero_region_counts,"{""funnel_outlet_proxy"": 0, ""mantle_cavity_proxy"": 328, ""mantle_outer"": 2136}"
+phase_sample_count,7
+report_pass,True
+requested_phase,0.1
+scope_note,Step 36 opt-in experimental solid_vel application only; no bounce-back formula change
+selected_phase,0.1
+target_lbm_field,solid_vel
+tracked_region_count,3
+wall_velocity_cap_lbm,0.01
+wall_velocity_row_count,63

@@ -1,0 +1,158 @@
+{
+  "config": {
+    "actuation_claim_enabled": false,
+    "application_id": "step36_wall_velocity_solid_vel_experimental",
+    "application_mode": "solid_vel_experimental",
+    "application_policy": "additive_capped",
+    "apply_to_lbm_populations": false,
+    "apply_to_lbm_solid_vel": true,
+    "apply_to_mpm": false,
+    "apply_to_projector": false,
+    "boundary_motion_config_path": "configs/step34_boundary_motion_interface_prescribed_kinematic.json",
+    "diagnostic_report_enabled": true,
+    "geometry_config_path": "configs/step30_squid_proxy_geometry.json",
+    "jet_model_enabled": false,
+    "modify_bounceback_formula": false,
+    "region_config_path": "configs/step30_squid_proxy_region_config.json",
+    "scope_note": "Step 36 opt-in experimental solid_vel application smoke only",
+    "target_lbm_field": "solid_vel",
+    "wall_velocity_cap_lbm": 0.01,
+    "wall_velocity_config_path": "configs/step35_squid_proxy_wall_velocity_field.json",
+    "wall_velocity_scale": 0.05
+  },
+  "rows": [
+    {
+      "check": "application_id_present",
+      "notes": "application_id must be nonempty",
+      "pass": true,
+      "value": "step36_wall_velocity_solid_vel_experimental"
+    },
+    {
+      "check": "wall_velocity_config_path_exists",
+      "notes": "Step 35 wall velocity config must exist",
+      "pass": true,
+      "value": "configs/step35_squid_proxy_wall_velocity_field.json"
+    },
+    {
+      "check": "boundary_motion_config_path_exists",
+      "notes": "Step 34 boundary-motion config must exist",
+      "pass": true,
+      "value": "configs/step34_boundary_motion_interface_prescribed_kinematic.json"
+    },
+    {
+      "check": "geometry_config_path_exists",
+      "notes": "Step 30 geometry config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_geometry.json"
+    },
+    {
+      "check": "region_config_path_exists",
+      "notes": "Step 30 region config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_region_config.json"
+    },
+    {
+      "check": "application_mode_valid",
+      "notes": "application_mode must be solid_vel_experimental",
+      "pass": true,
+      "value": "solid_vel_experimental"
+    },
+    {
+      "check": "target_lbm_field_valid",
+      "notes": "target_lbm_field must be solid_vel",
+      "pass": true,
+      "value": "solid_vel"
+    },
+    {
+      "check": "application_policy_valid",
+      "notes": "application_policy must be supported",
+      "pass": true,
+      "value": "additive_capped"
+    },
+    {
+      "check": "wall_velocity_scale_valid",
+      "notes": "wall_velocity_scale must be in (0, 1]",
+      "pass": true,
+      "value": 0.05
+    },
+    {
+      "check": "wall_velocity_cap_lbm_valid",
+      "notes": "wall_velocity_cap_lbm must be in (0, 0.05]",
+      "pass": true,
+      "value": 0.01
+    },
+    {
+      "check": "apply_to_lbm_solid_vel_true",
+      "notes": "Step 36 applies only to lbm.solid_vel",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "apply_to_lbm_populations_false",
+      "notes": "Step 36 must not write LBM populations",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_mpm_false",
+      "notes": "Step 36 must not write MPM state",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_projector_false",
+      "notes": "Step 36 must not write projector state",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "modify_bounceback_formula_false",
+      "notes": "Step 36 must not modify bounce-back formulas",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "jet_model_enabled_false",
+      "notes": "Step 36 must not enable a jet model",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "actuation_claim_enabled_false",
+      "notes": "Step 36 must not enable actuation claims",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "diagnostic_report_enabled_true",
+      "notes": "Step 36 must write diagnostic reports",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "scope_note_valid",
+      "notes": "scope_note must state opt-in experimental solid_vel application",
+      "pass": true,
+      "value": "Step 36 opt-in experimental solid_vel application smoke only"
+    }
+  ],
+  "summary": {
+    "actuation_claim_enabled": false,
+    "application_id": "step36_wall_velocity_solid_vel_experimental",
+    "application_mode": "solid_vel_experimental",
+    "application_policy": "additive_capped",
+    "apply_to_lbm_populations": false,
+    "apply_to_lbm_solid_vel": true,
+    "apply_to_mpm": false,
+    "apply_to_projector": false,
+    "diagnostic_report_enabled": true,
+    "jet_model_enabled": false,
+    "modify_bounceback_formula": false,
+    "pass_count": 19,
+    "row_count": 19,
+    "target_lbm_field": "solid_vel",
+    "validation_pass": true,
+    "wall_velocity_cap_lbm": 0.01,
+    "wall_velocity_scale": 0.05
+  }
+}

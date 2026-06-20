@@ -1,0 +1,59 @@
+{
+  "rows": [
+    {
+      "bb_max_correction_delta": 0.001072718994691968,
+      "comparison": "static_vs_experimental_32_engineering",
+      "comparison_pass": true,
+      "experimental_applied_cell_count": 648,
+      "experimental_case": "experimental_32_moving_boundary",
+      "experimental_max_applied_velocity_norm": 0.005866361313097195,
+      "hydro_force_max_norm_delta": 0.0004061758518218994,
+      "lbm_max_v_delta": 0.0009987847879529,
+      "n_grid": 32,
+      "notes": "bounded smoke comparison; Step 36 allows physical diagnostic deltas from solid_vel application",
+      "reaction_transfer_mode": "engineering",
+      "rho_max_delta": -0.00015735626220703125,
+      "rho_min_delta": -0.002354145050048828,
+      "static_case": "static_32_moving_boundary"
+    },
+    {
+      "bb_max_correction_delta": 0.0008772732689976692,
+      "comparison": "static_vs_experimental_48_engineering",
+      "comparison_pass": true,
+      "experimental_applied_cell_count": 2136,
+      "experimental_case": "experimental_48_moving_boundary",
+      "experimental_max_applied_velocity_norm": 0.005849450792213756,
+      "hydro_force_max_norm_delta": 0.00016504526138305664,
+      "lbm_max_v_delta": 0.0008924165740609169,
+      "n_grid": 48,
+      "notes": "bounded smoke comparison; Step 36 allows physical diagnostic deltas from solid_vel application",
+      "reaction_transfer_mode": "engineering",
+      "rho_max_delta": -0.0005333423614501953,
+      "rho_min_delta": -0.005174696445465088,
+      "static_case": "static_48_moving_boundary"
+    },
+    {
+      "bb_max_correction_delta": 0.0008795959874987602,
+      "comparison": "static_vs_experimental_48_link_area_experimental",
+      "comparison_pass": true,
+      "experimental_applied_cell_count": 2136,
+      "experimental_case": "experimental_48_link_area",
+      "experimental_max_applied_velocity_norm": 0.005849450792213756,
+      "hydro_force_max_norm_delta": 0.00016954541206359863,
+      "lbm_max_v_delta": 0.0009008124470710754,
+      "n_grid": 48,
+      "notes": "bounded smoke comparison; Step 36 allows physical diagnostic deltas from solid_vel application",
+      "reaction_transfer_mode": "link_area_experimental",
+      "rho_max_delta": -0.0005334615707397461,
+      "rho_min_delta": -0.005201101303100586,
+      "static_case": "static_48_link_area"
+    }
+  ],
+  "summary": {
+    "comparison_pass": true,
+    "max_abs_lbm_max_v_delta": 0.0009987847879529,
+    "max_experimental_applied_velocity_norm": 0.005866361313097195,
+    "pass_count": 3,
+    "row_count": 3
+  }
+}

@@ -1,5 +1,6 @@
 from dataclasses import asdict, dataclass
 import json
+from pathlib import Path
 from typing import Optional, Tuple
 
 from .geometry_config import VALID_GEOMETRY_TYPES
@@ -10,6 +11,7 @@ VALID_COUPLING_MODES = ("none", "penalty", "moving_boundary")
 VALID_REACTION_TRANSFER_MODES = ("engineering", "link_area_experimental")
 VALID_LINK_AREA_POLICIES = ("uniform", "inverse_length", "length")
 VALID_BOUNDARY_MOTION_MODES = ("static", "prescribed_kinematic")
+VALID_WALL_VELOCITY_APPLICATION_MODES = ("disabled", "solid_vel_experimental")
 
 
 def _as_float_tuple(values, name):
@@ -50,6 +52,9 @@ class FSIDriverConfig:
     boundary_motion_mode: str = "static"
     boundary_motion_config_path: Optional[str] = None
     boundary_motion_report_enabled: bool = False
+    wall_velocity_application_mode: str = "disabled"
+    wall_velocity_application_config_path: Optional[str] = None
+    wall_velocity_application_report_enabled: bool = False
 
     output_interval: int = 10
     write_vtk: bool = True
@@ -73,6 +78,17 @@ class FSIDriverConfig:
             raise ValueError("boundary_motion_config_path must be None when boundary_motion_mode='static'")
         if self.boundary_motion_mode == "prescribed_kinematic" and not self.boundary_motion_config_path:
             raise ValueError("boundary_motion_config_path is required when boundary_motion_mode='prescribed_kinematic'")
+        if self.wall_velocity_application_mode not in VALID_WALL_VELOCITY_APPLICATION_MODES:
+            raise ValueError(f"wall_velocity_application_mode must be one of {VALID_WALL_VELOCITY_APPLICATION_MODES}")
+        if self.wall_velocity_application_mode == "disabled" and self.wall_velocity_application_config_path is not None:
+            raise ValueError("wall_velocity_application_config_path must be None when wall_velocity_application_mode='disabled'")
+        if self.wall_velocity_application_mode == "solid_vel_experimental":
+            if self.boundary_motion_mode != "prescribed_kinematic":
+                raise ValueError("wall_velocity_application_mode='solid_vel_experimental' requires boundary_motion_mode='prescribed_kinematic'")
+            if not self.wall_velocity_application_config_path:
+                raise ValueError("wall_velocity_application_config_path is required when wall_velocity_application_mode='solid_vel_experimental'")
+            if not _path_exists(self.wall_velocity_application_config_path):
+                raise ValueError("wall_velocity_application_config_path must exist when wall_velocity_application_mode='solid_vel_experimental'")
         if self.geometry_type not in VALID_GEOMETRY_TYPES:
             raise ValueError(f"geometry_type must be one of {VALID_GEOMETRY_TYPES}")
         if self.n_grid <= 0:
@@ -127,3 +143,14 @@ class FSIDriverConfig:
             mpm_dt=self.mpm_dt,
             mpm_substeps_per_lbm_step=self.mpm_substeps_per_lbm_step,
         )
+
+
+def _path_exists(path) -> bool:
+    path_obj = Path(path)
+    if path_obj.is_absolute():
+        return path_obj.is_file()
+    return (_repo_root() / path_obj).is_file() or path_obj.is_file()
+
+
+def _repo_root() -> Path:
+    return Path(__file__).resolve().parents[1]

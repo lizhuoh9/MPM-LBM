@@ -62,6 +62,7 @@ class FSIDriver3D:
             "mpm_substep_time": 0.0,
             "diagnostics_time": 0.0,
             "export_time": 0.0,
+            "wall_velocity_application_time": 0.0,
             "total_time": 0.0,
         }
 
@@ -77,6 +78,8 @@ class FSIDriver3D:
         self.link_area_coupler = None
         self.geometry_quality_report = None
         self.boundary_motion_interface_report = None
+        self.wall_velocity_application_report = None
+        self.wall_velocity_application_reports = []
 
     def initialize(self):
         t0 = time.perf_counter()
@@ -235,6 +238,33 @@ class FSIDriver3D:
         t0 = time.perf_counter()
         self.projector.project(self.solid, self.lbm)
         self.timing["projection_time"] += time.perf_counter() - t0
+        self._apply_wall_velocity_application_if_enabled()
+
+    def _apply_wall_velocity_application_if_enabled(self):
+        if self.config.wall_velocity_application_mode == "disabled":
+            return None
+        if self.config.wall_velocity_application_mode != "solid_vel_experimental":
+            raise ValueError(f"unsupported wall_velocity_application_mode: {self.config.wall_velocity_application_mode}")
+        if self.config.boundary_motion_mode != "prescribed_kinematic":
+            raise ValueError("solid_vel_experimental wall velocity application requires prescribed_kinematic boundary motion")
+
+        from .wall_velocity_application import apply_wall_velocity_application_to_lbm
+
+        t0 = time.perf_counter()
+        report_path = None
+        if self.config.wall_velocity_application_report_enabled:
+            report_path = os.path.join(self.out_dir, "wall_velocity_application_report.json")
+        report = apply_wall_velocity_application_to_lbm(
+            self.lbm,
+            self.config.wall_velocity_application_config_path,
+            self.config.n_grid,
+            self.current_lbm_step,
+            report_path=report_path,
+        )
+        self.wall_velocity_application_report = report
+        self.wall_velocity_application_reports.append(report)
+        self.timing["wall_velocity_application_time"] += time.perf_counter() - t0
+        return report
 
     def _step_none(self):
         self._project()

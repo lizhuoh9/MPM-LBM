@@ -1,0 +1,57 @@
+{
+  "rows": [
+    {
+      "applied_cell_count": 648,
+      "apply_to_lbm_populations": false,
+      "apply_to_lbm_solid_vel": true,
+      "cap_pass": true,
+      "case": "experimental_32_moving_boundary",
+      "finite_pass": true,
+      "lbm_population_update_count": 0,
+      "max_applied_velocity_norm": 0.005866361313097195,
+      "modify_bounceback_formula": false,
+      "quality_pass": true,
+      "report_pass": true,
+      "source_report_path": "outputs/step36_experimental_application_smoke/experimental_32_moving_boundary/wall_velocity_application_report.json",
+      "wall_velocity_cap_lbm": 0.01
+    },
+    {
+      "applied_cell_count": 2136,
+      "apply_to_lbm_populations": false,
+      "apply_to_lbm_solid_vel": true,
+      "cap_pass": true,
+      "case": "experimental_48_moving_boundary",
+      "finite_pass": true,
+      "lbm_population_update_count": 0,
+      "max_applied_velocity_norm": 0.005849450792213756,
+      "modify_bounceback_formula": false,
+      "quality_pass": true,
+      "report_pass": true,
+      "source_report_path": "outputs/step36_experimental_application_smoke/experimental_48_moving_boundary/wall_velocity_application_report.json",
+      "wall_velocity_cap_lbm": 0.01
+    },
+    {
+      "applied_cell_count": 2136,
+      "apply_to_lbm_populations": false,
+      "apply_to_lbm_solid_vel": true,
+      "cap_pass": true,
+      "case": "experimental_48_link_area",
+      "finite_pass": true,
+      "lbm_population_update_count": 0,
+      "max_applied_velocity_norm": 0.005849450792213756,
+      "modify_bounceback_formula": false,
+      "quality_pass": true,
+      "report_pass": true,
+      "source_report_path": "outputs/step36_experimental_application_smoke/experimental_48_link_area/wall_velocity_application_report.json",
+      "wall_velocity_cap_lbm": 0.01
+    }
+  ],
+  "summary": {
+    "max_applied_velocity_norm": 0.005866361313097195,
+    "max_lbm_population_update_count": 0,
+    "min_applied_cell_count": 648,
+    "pass_count": 3,
+    "quality_pass": true,
+    "row_count": 3
+  }
+}

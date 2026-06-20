@@ -1,0 +1,99 @@
+{
+  "rows": [
+    {
+      "check": "step35_config_validation_pass",
+      "notes": "Step 35 config remains valid",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step35_wall_velocity_row_count",
+      "notes": "Step 35 still has 63 diagnostic rows",
+      "pass": true,
+      "value": 63
+    },
+    {
+      "check": "step35_no_lbm_update_pass",
+      "notes": "Step 35 remains diagnostic-only",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step35_apply_to_lbm_count_zero",
+      "notes": "Step 35 does not apply to LBM",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step35_lbm_population_update_count_zero",
+      "notes": "Step 35 does not update populations",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step35_moving_bounceback_update_count_zero",
+      "notes": "Step 35 does not update moving bounce-back",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "log_marker_step35_wall_velocity_config_validation",
+      "notes": "Step 35 log marker is present",
+      "pass": true,
+      "value": "logs/step35_wall_velocity_config_validation.log"
+    },
+    {
+      "check": "log_marker_step35_generate_wall_velocity_field",
+      "notes": "Step 35 log marker is present",
+      "pass": true,
+      "value": "logs/step35_generate_wall_velocity_field.log"
+    },
+    {
+      "check": "log_marker_step35_wall_velocity_quality",
+      "notes": "Step 35 log marker is present",
+      "pass": true,
+      "value": "logs/step35_wall_velocity_quality.log"
+    },
+    {
+      "check": "log_marker_step35_wall_velocity_repeatability",
+      "notes": "Step 35 log marker is present",
+      "pass": true,
+      "value": "logs/step35_wall_velocity_repeatability.log"
+    },
+    {
+      "check": "log_marker_step35_motion_velocity_consistency",
+      "notes": "Step 35 log marker is present",
+      "pass": true,
+      "value": "logs/step35_motion_velocity_consistency.log"
+    },
+    {
+      "check": "log_marker_step35_grid_coverage_diagnostics",
+      "notes": "Step 35 log marker is present",
+      "pass": true,
+      "value": "logs/step35_grid_coverage_diagnostics.log"
+    },
+    {
+      "check": "log_marker_step35_no_lbm_update_guard",
+      "notes": "Step 35 log marker is present",
+      "pass": true,
+      "value": "logs/step35_no_lbm_update_guard.log"
+    },
+    {
+      "check": "log_marker_step35_step34_regression_guard",
+      "notes": "Step 35 log marker is present",
+      "pass": true,
+      "value": "logs/step35_step34_regression_guard.log"
+    },
+    {
+      "check": "log_marker_step35_artifact_manifest",
+      "notes": "Step 35 log marker is present",
+      "pass": true,
+      "value": "logs/step35_artifact_manifest.log"
+    }
+  ],
+  "summary": {
+    "pass_count": 15,
+    "regression_pass": true,
+    "row_count": 15
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "rows": [
+    {
+      "active_reaction_particle_count_max": 3670,
+      "applied_cell_count": 648,
+      "bb_link_count_max": 2508,
+      "bb_max_correction_global": 0.003304814686998725,
+      "case": "experimental_32_moving_boundary",
+      "hydro_force_max_norm": 0.42086970806121826,
+      "lbm_max_v_global": 0.00940057635307312,
+      "lbm_population_update_count": 0,
+      "max_applied_velocity_norm": 0.005866361313097195,
+      "mpm_max_speed_global": 0.10942521691322327,
+      "mpm_min_J_global": 0.9942772388458252,
+      "n_grid": 32,
+      "reaction_transfer_mode": "engineering",
+      "rho_max_global": 1.0080370903015137,
+      "rho_min_global": 0.9868627786636353,
+      "stability_pass": true,
+      "wall_velocity_cap_lbm": 0.01
+    },
+    {
+      "active_reaction_particle_count_max": 3257,
+      "applied_cell_count": 2136,
+      "bb_link_count_max": 6638,
+      "bb_max_correction_global": 0.0033060458954423666,
+      "case": "experimental_48_moving_boundary",
+      "hydro_force_max_norm": 0.42062535881996155,
+      "lbm_max_v_global": 0.00985103752464056,
+      "lbm_population_update_count": 0,
+      "max_applied_velocity_norm": 0.005849450792213756,
+      "mpm_max_speed_global": 0.08123750984668732,
+      "mpm_min_J_global": 0.994580090045929,
+      "n_grid": 48,
+      "reaction_transfer_mode": "engineering",
+      "rho_max_global": 1.0088709592819214,
+      "rho_min_global": 0.9811670184135437,
+      "stability_pass": true,
+      "wall_velocity_cap_lbm": 0.01
+    },
+    {
+      "active_reaction_particle_count_max": 3257,
+      "applied_cell_count": 2136,
+      "bb_link_count_max": 6638,
+      "bb_max_correction_global": 0.0033060614950954914,
+      "case": "experimental_48_link_area",
+      "hydro_force_max_norm": 0.4206315279006958,
+      "lbm_max_v_global": 0.00984907802194357,
+      "lbm_population_update_count": 0,
+      "max_applied_velocity_norm": 0.005849450792213756,
+      "mpm_max_speed_global": 0.08109777420759201,
+      "mpm_min_J_global": 0.9945948719978333,
+      "n_grid": 48,
+      "reaction_transfer_mode": "link_area_experimental",
+      "rho_max_global": 1.0088746547698975,
+      "rho_min_global": 0.9811670780181885,
+      "stability_pass": true,
+      "wall_velocity_cap_lbm": 0.01
+    }
+  ],
+  "summary": {
+    "max_bb_correction": 0.0033060614950954914,
+    "max_lbm_max_v_global": 0.00985103752464056,
+    "max_lbm_population_update_count": 0,
+    "max_rho_max_global": 1.0088746547698975,
+    "min_rho_min_global": 0.9811670184135437,
+    "pass_count": 3,
+    "row_count": 3,
+    "stability_pass": true
+  }
+}

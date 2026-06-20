@@ -1,0 +1,20 @@
+check,pass,value,notes
+application_id_present,True,step36_wall_velocity_solid_vel_experimental,application_id must be nonempty
+wall_velocity_config_path_exists,True,configs/step35_squid_proxy_wall_velocity_field.json,Step 35 wall velocity config must exist
+boundary_motion_config_path_exists,True,configs/step34_boundary_motion_interface_prescribed_kinematic.json,Step 34 boundary-motion config must exist
+geometry_config_path_exists,True,configs/step30_squid_proxy_geometry.json,Step 30 geometry config must exist
+region_config_path_exists,True,configs/step30_squid_proxy_region_config.json,Step 30 region config must exist
+application_mode_valid,True,solid_vel_experimental,application_mode must be solid_vel_experimental
+target_lbm_field_valid,True,solid_vel,target_lbm_field must be solid_vel
+application_policy_valid,True,additive_capped,application_policy must be supported
+wall_velocity_scale_valid,True,0.05,"wall_velocity_scale must be in (0, 1]"
+wall_velocity_cap_lbm_valid,True,0.01,"wall_velocity_cap_lbm must be in (0, 0.05]"
+apply_to_lbm_solid_vel_true,True,True,Step 36 applies only to lbm.solid_vel
+apply_to_lbm_populations_false,True,False,Step 36 must not write LBM populations
+apply_to_mpm_false,True,False,Step 36 must not write MPM state
+apply_to_projector_false,True,False,Step 36 must not write projector state
+modify_bounceback_formula_false,True,False,Step 36 must not modify bounce-back formulas
+jet_model_enabled_false,True,False,Step 36 must not enable a jet model
+actuation_claim_enabled_false,True,False,Step 36 must not enable actuation claims
+diagnostic_report_enabled_true,True,True,Step 36 must write diagnostic reports
+scope_note_valid,True,Step 36 opt-in experimental solid_vel application smoke only,scope_note must state opt-in experimental solid_vel application

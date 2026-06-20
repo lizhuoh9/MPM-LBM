@@ -1,0 +1,21 @@
+{
+  "application_id": "step36_wall_velocity_solid_vel_experimental",
+  "wall_velocity_config_path": "configs/step35_squid_proxy_wall_velocity_field.json",
+  "boundary_motion_config_path": "configs/step34_boundary_motion_interface_prescribed_kinematic.json",
+  "geometry_config_path": "configs/step30_squid_proxy_geometry.json",
+  "region_config_path": "configs/step30_squid_proxy_region_config.json",
+  "application_mode": "solid_vel_experimental",
+  "target_lbm_field": "solid_vel",
+  "application_policy": "additive_capped",
+  "wall_velocity_scale": 0.05,
+  "wall_velocity_cap_lbm": 0.01,
+  "apply_to_lbm_solid_vel": true,
+  "apply_to_lbm_populations": false,
+  "apply_to_mpm": false,
+  "apply_to_projector": false,
+  "modify_bounceback_formula": false,
+  "jet_model_enabled": false,
+  "actuation_claim_enabled": false,
+  "diagnostic_report_enabled": true,
+  "scope_note": "Step 36 opt-in experimental solid_vel application smoke only"
+}
