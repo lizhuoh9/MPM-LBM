@@ -1,0 +1,5 @@
+row_name,component_name,area_scale_min_observed,area_scale_max_observed,area_scale_final,raw_area_scale_final,stable,area_scale_finite_pass,area_scale_bounds_pass,link_area_row_pass
+link_area_original_static_32_40step,original_static,1.0,1.0,1.0,1.0,True,True,True,True
+link_area_runtime_geometry_only_32_40step,runtime_geometry_only,1.0,1.2094436532301125,1.0,1.0,True,True,True,True
+link_area_wall_velocity_only_32_40step,wall_velocity_only,1.0,1.0,1.0,1.0,True,True,True,True
+link_area_runtime_geometry_plus_wall_velocity_32_40step,runtime_geometry_plus_wall_velocity,1.0,1.2094436532301125,1.0,1.0,True,True,True,True

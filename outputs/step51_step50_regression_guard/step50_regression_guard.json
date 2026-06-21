@@ -1,0 +1,63 @@
+{
+  "rows": [
+    {
+      "check": "step50_report_exists",
+      "notes": "accepted Step 50 report must remain present",
+      "pass": true,
+      "value": "D:\\working\\squid robot\\LBM\\MPM-LBM\\STEP50_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_ONE_CYCLE_COUPLING_DIAGNOSTIC_ENVELOPE_REPORT.md"
+    },
+    {
+      "check": "step50_matrix_row_count",
+      "notes": "Step 50 matrix must still have four rows",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step50_matrix_stable_count",
+      "notes": "Step 50 matrix must still be stable",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step50_cycle_closure_pass",
+      "notes": "Step 50 cycle closure must remain green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step50_state_guard_pass",
+      "notes": "Step 50 state guard must remain green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step50_large_file_count",
+      "notes": "Step 50 must still have no large files",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step50_vtr_count",
+      "notes": "Step 50 must still have no VTR output",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step50_particle_npy_count",
+      "notes": "Step 50 must still have no particle NPY output",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step50_geo_all_fluid_dat_count_added",
+      "notes": "Step 50 must still have no geo_all_fluid dat output",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "pass_count": 9,
+    "regression_pass": true,
+    "row_count": 9
+  }
+}

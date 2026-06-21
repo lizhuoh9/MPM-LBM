@@ -1,0 +1,62 @@
+{
+  "rows": [
+    {
+      "area_scale_bounds_pass": true,
+      "area_scale_final": 1.0,
+      "area_scale_finite_pass": true,
+      "area_scale_max_observed": 1.0,
+      "area_scale_min_observed": 1.0,
+      "component_name": "original_static",
+      "link_area_row_pass": true,
+      "raw_area_scale_final": 1.0,
+      "row_name": "link_area_original_static_32_40step",
+      "stable": true
+    },
+    {
+      "area_scale_bounds_pass": true,
+      "area_scale_final": 1.0,
+      "area_scale_finite_pass": true,
+      "area_scale_max_observed": 1.2094436532301125,
+      "area_scale_min_observed": 1.0,
+      "component_name": "runtime_geometry_only",
+      "link_area_row_pass": true,
+      "raw_area_scale_final": 1.0,
+      "row_name": "link_area_runtime_geometry_only_32_40step",
+      "stable": true
+    },
+    {
+      "area_scale_bounds_pass": true,
+      "area_scale_final": 1.0,
+      "area_scale_finite_pass": true,
+      "area_scale_max_observed": 1.0,
+      "area_scale_min_observed": 1.0,
+      "component_name": "wall_velocity_only",
+      "link_area_row_pass": true,
+      "raw_area_scale_final": 1.0,
+      "row_name": "link_area_wall_velocity_only_32_40step",
+      "stable": true
+    },
+    {
+      "area_scale_bounds_pass": true,
+      "area_scale_final": 1.0,
+      "area_scale_finite_pass": true,
+      "area_scale_max_observed": 1.2094436532301125,
+      "area_scale_min_observed": 1.0,
+      "component_name": "runtime_geometry_plus_wall_velocity",
+      "link_area_row_pass": true,
+      "raw_area_scale_final": 1.0,
+      "row_name": "link_area_runtime_geometry_plus_wall_velocity_32_40step",
+      "stable": true
+    }
+  ],
+  "summary": {
+    "area_scale_final_max": 1.0,
+    "area_scale_final_min": 1.0,
+    "area_scale_finite_pass": true,
+    "area_scale_max_observed": 1.2094436532301125,
+    "area_scale_min_observed": 1.0,
+    "link_area_envelope_pass": true,
+    "link_area_pass_count": 4,
+    "link_area_row_count": 4
+  }
+}

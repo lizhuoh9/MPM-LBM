@@ -1,0 +1,14 @@
+metric,value
+closure_pass,True
+component_effect_pass,True
+diagnostic_only_pass,True
+link_area_pass,True
+no_persistent_state_pass,True
+projection_pass,True
+quality_pass,True
+row_count,8
+row_count_pass,True
+stability_pass,True
+step_count_pass,True
+transfer_mode_pass,True
+wall_velocity_pass,True
