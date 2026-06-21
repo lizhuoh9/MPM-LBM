@@ -1,0 +1,126 @@
+{
+  "rows": [
+    {
+      "active_cell_count_delta_transition": 0,
+      "active_cell_count_max_transition": 648,
+      "active_cell_count_min_transition": 648,
+      "applied_cell_count_max_transition": 0,
+      "bb_link_count_min_transition": 3888,
+      "has_inf": false,
+      "has_nan": false,
+      "max_applied_velocity_norm_transition": 0.0,
+      "rho_max_transition": 1.001019,
+      "rho_min_transition": 0.998981,
+      "row_name": "original_static_32_20step",
+      "runtime_geometry_projection_enabled": false,
+      "transition_pass": true,
+      "transition_phase_count": 6,
+      "transition_phases": [
+        0.35,
+        0.375,
+        0.4,
+        0.425,
+        0.45,
+        0.5
+      ],
+      "wall_velocity_application_enabled": false,
+      "wall_velocity_cap_lbm": 0.01
+    },
+    {
+      "active_cell_count_delta_transition": 9,
+      "active_cell_count_max_transition": 452,
+      "active_cell_count_min_transition": 443,
+      "applied_cell_count_max_transition": 0,
+      "bb_link_count_min_transition": 2658,
+      "has_inf": false,
+      "has_nan": false,
+      "max_applied_velocity_norm_transition": 0.0,
+      "rho_max_transition": 1.0010386,
+      "rho_min_transition": 0.9989614,
+      "row_name": "runtime_geometry_only_32_20step",
+      "runtime_geometry_projection_enabled": true,
+      "transition_pass": true,
+      "transition_phase_count": 6,
+      "transition_phases": [
+        0.35,
+        0.375,
+        0.4,
+        0.425,
+        0.45,
+        0.5
+      ],
+      "wall_velocity_application_enabled": false,
+      "wall_velocity_cap_lbm": 0.01
+    },
+    {
+      "active_cell_count_delta_transition": 0,
+      "active_cell_count_max_transition": 648,
+      "active_cell_count_min_transition": 648,
+      "applied_cell_count_max_transition": 648,
+      "bb_link_count_min_transition": 3888,
+      "has_inf": false,
+      "has_nan": false,
+      "max_applied_velocity_norm_transition": 0.002751427993795465,
+      "rho_max_transition": 1.0012941427993796,
+      "rho_min_transition": 0.9987058572006204,
+      "row_name": "wall_velocity_only_32_20step",
+      "runtime_geometry_projection_enabled": false,
+      "transition_pass": true,
+      "transition_phase_count": 6,
+      "transition_phases": [
+        0.35,
+        0.375,
+        0.4,
+        0.425,
+        0.45,
+        0.5
+      ],
+      "wall_velocity_application_enabled": true,
+      "wall_velocity_cap_lbm": 0.01
+    },
+    {
+      "active_cell_count_delta_transition": 9,
+      "active_cell_count_max_transition": 452,
+      "active_cell_count_min_transition": 443,
+      "applied_cell_count_max_transition": 648,
+      "bb_link_count_min_transition": 2658,
+      "has_inf": false,
+      "has_nan": false,
+      "max_applied_velocity_norm_transition": 0.002751427993795465,
+      "rho_max_transition": 1.0013137427993795,
+      "rho_min_transition": 0.9986862572006204,
+      "row_name": "runtime_geometry_plus_wall_velocity_32_20step",
+      "runtime_geometry_projection_enabled": true,
+      "transition_pass": true,
+      "transition_phase_count": 6,
+      "transition_phases": [
+        0.35,
+        0.375,
+        0.4,
+        0.425,
+        0.45,
+        0.5
+      ],
+      "wall_velocity_application_enabled": true,
+      "wall_velocity_cap_lbm": 0.01
+    }
+  ],
+  "summary": {
+    "has_inf_count": 0,
+    "has_nan_count": 0,
+    "runtime_geometry_active_cell_count_bounded": true,
+    "transition_pass": true,
+    "transition_pass_count": 4,
+    "transition_phase_count": 6,
+    "transition_phases": [
+      0.35,
+      0.375,
+      0.4,
+      0.425,
+      0.45,
+      0.5
+    ],
+    "wall_velocity_applied_cell_count_positive": true,
+    "wall_velocity_cap_pass": true
+  }
+}

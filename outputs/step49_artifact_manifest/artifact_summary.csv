@@ -1,0 +1,17 @@
+metric,value
+artifact_budget_pass,True
+file_count,3606
+geo_all_fluid_dat_count_added,0
+large_file_count,0
+private_absolute_path_count,0
+raw_candidate_large_file_count,0
+scan_data_file_count,0
+step49_dense_displacement_output_count,0
+step49_displaced_particle_output_count,0
+step49_file_count,59
+step49_particle_npy_count,0
+step49_total_size_bytes,564187
+step49_total_size_mb,0.538050651550293
+step49_vtr_count,0
+total_size_bytes,222651541
+total_size_mb,212.33705615997314

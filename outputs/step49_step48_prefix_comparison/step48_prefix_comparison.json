@@ -1,0 +1,106 @@
+{
+  "rows": [
+    {
+      "active_cell_count_delta_max_abs": 0.0,
+      "applied_velocity_delta_max_abs": 0.0,
+      "comparison_pass": true,
+      "matched_phases": [
+        0.0,
+        0.025,
+        0.05,
+        0.075,
+        0.1,
+        0.15,
+        0.2,
+        0.25,
+        0.3,
+        0.35
+      ],
+      "projected_mass_delta_max_abs": 0.0,
+      "row_pair": "original_static_32_20step_vs_step48_prefix",
+      "step48_row": "original_static_32_10step",
+      "step49_row": "original_static_32_20step"
+    },
+    {
+      "active_cell_count_delta_max_abs": 0.0,
+      "applied_velocity_delta_max_abs": 0.0,
+      "comparison_pass": true,
+      "matched_phases": [
+        0.0,
+        0.025,
+        0.05,
+        0.075,
+        0.1,
+        0.15,
+        0.2,
+        0.25,
+        0.3,
+        0.35
+      ],
+      "projected_mass_delta_max_abs": 0.0,
+      "row_pair": "runtime_geometry_only_32_20step_vs_step48_prefix",
+      "step48_row": "runtime_geometry_only_32_10step",
+      "step49_row": "runtime_geometry_only_32_20step"
+    },
+    {
+      "active_cell_count_delta_max_abs": 0.0,
+      "applied_velocity_delta_max_abs": 0.0,
+      "comparison_pass": true,
+      "matched_phases": [
+        0.0,
+        0.025,
+        0.05,
+        0.075,
+        0.1,
+        0.15,
+        0.2,
+        0.25,
+        0.3,
+        0.35
+      ],
+      "projected_mass_delta_max_abs": 0.0,
+      "row_pair": "runtime_geometry_plus_wall_velocity_32_20step_vs_step48_prefix",
+      "step48_row": "runtime_geometry_plus_wall_velocity_32_10step",
+      "step49_row": "runtime_geometry_plus_wall_velocity_32_20step"
+    },
+    {
+      "active_cell_count_delta_max_abs": 0.0,
+      "applied_velocity_delta_max_abs": 0.0,
+      "comparison_pass": true,
+      "matched_phases": [
+        0.0,
+        0.025,
+        0.05,
+        0.075,
+        0.1,
+        0.15,
+        0.2,
+        0.25,
+        0.3,
+        0.35
+      ],
+      "projected_mass_delta_max_abs": 0.0,
+      "row_pair": "wall_velocity_only_32_20step_vs_step48_prefix",
+      "step48_row": "wall_velocity_only_32_10step",
+      "step49_row": "wall_velocity_only_32_20step"
+    }
+  ],
+  "summary": {
+    "comparison_pass": true,
+    "comparison_pass_count": 4,
+    "matched_phase_count": 10,
+    "matched_phases": [
+      0.0,
+      0.025,
+      0.05,
+      0.075,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35
+    ],
+    "row_pair_count": 4
+  }
+}

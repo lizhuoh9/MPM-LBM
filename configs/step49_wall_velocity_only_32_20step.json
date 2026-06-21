@@ -1,0 +1,20 @@
+{
+  "row_name": "wall_velocity_only_32_20step",
+  "n_grid": 32,
+  "n_lbm_steps": 20,
+  "mpm_substeps_per_lbm_step": 5,
+  "phase_sequence": [0.0, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3, 0.325, 0.35, 0.375, 0.4, 0.425, 0.45, 0.5],
+  "coupling_mode": "moving_boundary",
+  "reaction_transfer_mode": "engineering",
+  "runtime_geometry_projection_enabled": false,
+  "wall_velocity_application_enabled": true,
+  "persist_projected_state": false,
+  "persist_displaced_geometry": false,
+  "persist_lbm_solid_vel": false,
+  "write_vtk": false,
+  "write_particles": false,
+  "diagnostic_only": true,
+  "complete_cycle_claim": false,
+  "production_geometry_claim": false,
+  "scope_note": "Step 49 wall velocity only 32^3 twenty-step engineering-only diagnostic row."
+}

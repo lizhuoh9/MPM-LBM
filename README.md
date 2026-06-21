@@ -52,6 +52,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 46 controlled runtime geometry plus wall velocity one-step coupling smoke
 - Step 47 controlled runtime geometry plus wall velocity short-step coupling envelope
 - Step 48 controlled runtime geometry plus wall velocity 10-step coupling envelope
+- Step 49 controlled runtime geometry plus wall velocity 20-step coupling envelope
 
 ## Not Implemented
 
@@ -586,6 +587,19 @@ The default geometry_motion_application_mode remains disabled.
 The default boundary_motion_mode remains static.
 The default wall_velocity_application_mode remains disabled.
 See docs/48_controlled_runtime_geometry_wall_velocity_10step_coupling_envelope.md.
+
+Step 49 is controlled runtime geometry plus wall velocity 20-step coupling envelope.
+Step 49 is opt-in and engineering-only.
+Step 49 runs a 32^3 twenty-step envelope.
+Step 49 does not run a full-cycle moving-geometry simulation.
+Step 49 does not persist displaced geometry.
+Step 49 does not persist projected state.
+Step 49 does not change moving bounce-back formulas.
+The default geometry_motion_mode remains static.
+The default geometry_motion_application_mode remains disabled.
+The default boundary_motion_mode remains static.
+The default wall_velocity_application_mode remains disabled.
+See docs/49_controlled_runtime_geometry_wall_velocity_20step_coupling_envelope.md.
 
 ## Upstream LBM Note
 

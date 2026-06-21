@@ -1,0 +1,61 @@
+{
+  "rows": [
+    {
+      "metric": "combined_row_pass",
+      "value": true
+    },
+    {
+      "metric": "diagnostic_only_pass",
+      "value": true
+    },
+    {
+      "metric": "early_refill_pass",
+      "value": true
+    },
+    {
+      "metric": "no_persistent_state_pass",
+      "value": true
+    },
+    {
+      "metric": "projection_pass",
+      "value": true
+    },
+    {
+      "metric": "quality_pass",
+      "value": true
+    },
+    {
+      "metric": "row_count",
+      "value": 4
+    },
+    {
+      "metric": "row_count_pass",
+      "value": true
+    },
+    {
+      "metric": "stability_pass",
+      "value": true
+    },
+    {
+      "metric": "step_count_pass",
+      "value": true
+    },
+    {
+      "metric": "wall_velocity_pass",
+      "value": true
+    }
+  ],
+  "summary": {
+    "combined_row_pass": true,
+    "diagnostic_only_pass": true,
+    "early_refill_pass": true,
+    "no_persistent_state_pass": true,
+    "projection_pass": true,
+    "quality_pass": true,
+    "row_count": 4,
+    "row_count_pass": true,
+    "stability_pass": true,
+    "step_count_pass": true,
+    "wall_velocity_pass": true
+  }
+}

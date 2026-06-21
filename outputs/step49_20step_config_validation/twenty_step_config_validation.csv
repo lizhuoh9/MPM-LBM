@@ -1,0 +1,41 @@
+check,pass,value,notes
+twenty_step_envelope_id_expected,True,step49_runtime_geometry_wall_velocity_20step_envelope,Step 49 envelope id must be stable
+base_step48_config_path_exists,True,configs/step48_runtime_geometry_wall_velocity_10step_envelope.json,Step 48 envelope config must exist
+runtime_projection_config_path_exists,True,configs/step45_runtime_geometry_projection_integration.json,Step 45 runtime projection config must exist
+diagnostic_geometry_update_config_path_exists,True,configs/step44_diagnostic_geometry_update.json,Step 44 diagnostic geometry config must exist
+wall_velocity_application_config_path_exists,True,configs/step41_wall_velocity_application_scale_0050_64.json,Step 41 wall velocity application config must exist
+boundary_motion_config_path_exists,True,configs/step34_boundary_motion_interface_prescribed_kinematic.json,Step 34 boundary motion config must exist
+geometry_config_path_exists,True,configs/step30_squid_proxy_geometry.json,Step 30 geometry config must exist
+region_config_path_exists,True,configs/step30_squid_proxy_region_config.json,Step 30 region config must exist
+n_grid_expected,True,32,Step 49 n_grid must be 32
+n_lbm_steps_expected,True,20,Step 49 must use twenty LBM steps
+mpm_substeps_expected,True,5,Step 49 must use five MPM substeps per LBM step
+phase_sequence_expected,True,"[0.0, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3, 0.325, 0.35, 0.375, 0.4, 0.425, 0.45, 0.5]",Step 49 phase sequence must match the twenty-step envelope
+phase_count_expected,True,20,Step 49 must use twenty phases
+phase_sequence_finite,True,"[0.0, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3, 0.325, 0.35, 0.375, 0.4, 0.425, 0.45, 0.5]",all phases must be finite
+phase_sequence_bounds,True,"[0.0, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3, 0.325, 0.35, 0.375, 0.4, 0.425, 0.45, 0.5]","all phases must be in [0, 1]"
+phase_sequence_nondecreasing,True,"[0.0, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3, 0.325, 0.35, 0.375, 0.4, 0.425, 0.45, 0.5]",phases must be nondecreasing
+phase_starts_at_0,True,0.0,Step 49 phase sequence must start at 0.0
+phase_contains_035,True,"[0.0, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3, 0.325, 0.35, 0.375, 0.4, 0.425, 0.45, 0.5]",Step 49 phase sequence must include 0.35
+phase_ends_at_05,True,0.5,Step 49 phase sequence must end at 0.5
+coupling_mode_expected,True,moving_boundary,Step 49 coupling mode must be moving_boundary
+reaction_transfer_mode_expected,True,engineering,Step 49 transfer mode must be engineering
+enable_runtime_geometry_projection_true,True,True,umbrella config must enable runtime geometry projection
+enable_wall_velocity_application_true,True,True,umbrella config must enable wall velocity application
+diagnostic_only_true,True,True,Step 49 must remain diagnostic-only
+scope_note_valid,True,32^3 twenty-step engineering-only runtime geometry plus wall velocity envelope; not a full-cycle run,scope note must state twenty-step engineering-only non-full-cycle scope
+persist_displaced_geometry_false,True,False,persist_displaced_geometry must remain false
+persist_projected_state_false,True,False,persist_projected_state must remain false
+persist_lbm_solid_vel_false,True,False,persist_lbm_solid_vel must remain false
+write_displaced_particles_false,True,False,write_displaced_particles must remain false
+write_dense_displacement_field_false,True,False,write_dense_displacement_field must remain false
+write_vtk_false,True,False,write_vtk must remain false
+write_particles_false,True,False,write_particles must remain false
+update_default_driver_geometry_false,True,False,update_default_driver_geometry must remain false
+update_default_lbm_state_false,True,False,update_default_lbm_state must remain false
+update_default_mpm_state_false,True,False,update_default_mpm_state must remain false
+update_default_projection_state_false,True,False,update_default_projection_state must remain false
+update_dynamic_solid_persistently_false,True,False,update_dynamic_solid_persistently must remain false
+recompute_production_boundary_links_false,True,False,recompute_production_boundary_links must remain false
+modify_moving_bounceback_formula_false,True,False,modify_moving_bounceback_formula must remain false
+all_mutation_flags_false,True,0,all mutation/write/formula flags must be false

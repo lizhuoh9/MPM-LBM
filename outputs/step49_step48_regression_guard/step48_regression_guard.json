@@ -1,0 +1,75 @@
+{
+  "rows": [
+    {
+      "check": "step48_report_exists",
+      "notes": "Step 48 accepted report remains present",
+      "pass": true,
+      "value": "STEP48_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_10STEP_COUPLING_ENVELOPE_REPORT.md"
+    },
+    {
+      "check": "step48_matrix_row_count",
+      "notes": "Step 48 four-row matrix remains available",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step48_matrix_stable_count",
+      "notes": "Step 48 matrix remains stable",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step48_matrix_step_count",
+      "notes": "Step 48 remains a ten-step accepted envelope",
+      "pass": true,
+      "value": 10
+    },
+    {
+      "check": "step48_combined_row_exists",
+      "notes": "Step 48 combined row remains available",
+      "pass": true,
+      "value": "runtime_geometry_plus_wall_velocity_32_10step"
+    },
+    {
+      "check": "step48_phase_progression_pass",
+      "notes": "Step 48 phase progression remains green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step48_state_guard_pass",
+      "notes": "Step 48 state guard remains green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step48_artifact_large_file_count",
+      "notes": "Step 48 artifacts remain below large-file threshold",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step48_vtr_count",
+      "notes": "Step 48 still has no VTR artifacts",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step48_particle_npy_count",
+      "notes": "Step 48 still has no particle npy artifacts",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step48_geo_all_fluid_dat_count_added",
+      "notes": "Step 48 still has no geo_all_fluid dat additions",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "pass_count": 11,
+    "regression_pass": true,
+    "row_count": 11
+  }
+}

@@ -1,0 +1,5 @@
+row_pair,step49_row,step48_row,matched_phases,projected_mass_delta_max_abs,active_cell_count_delta_max_abs,applied_velocity_delta_max_abs,comparison_pass
+original_static_32_20step_vs_step48_prefix,original_static_32_20step,original_static_32_10step,"[0.0, 0.025, 0.05, 0.075, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35]",0.0,0.0,0.0,True
+runtime_geometry_only_32_20step_vs_step48_prefix,runtime_geometry_only_32_20step,runtime_geometry_only_32_10step,"[0.0, 0.025, 0.05, 0.075, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35]",0.0,0.0,0.0,True
+runtime_geometry_plus_wall_velocity_32_20step_vs_step48_prefix,runtime_geometry_plus_wall_velocity_32_20step,runtime_geometry_plus_wall_velocity_32_10step,"[0.0, 0.025, 0.05, 0.075, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35]",0.0,0.0,0.0,True
+wall_velocity_only_32_20step_vs_step48_prefix,wall_velocity_only_32_20step,wall_velocity_only_32_10step,"[0.0, 0.025, 0.05, 0.075, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35]",0.0,0.0,0.0,True

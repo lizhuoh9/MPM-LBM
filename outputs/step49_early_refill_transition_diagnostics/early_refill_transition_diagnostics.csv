@@ -1,0 +1,5 @@
+row_name,runtime_geometry_projection_enabled,wall_velocity_application_enabled,transition_phases,transition_phase_count,rho_min_transition,rho_max_transition,active_cell_count_min_transition,active_cell_count_max_transition,active_cell_count_delta_transition,applied_cell_count_max_transition,max_applied_velocity_norm_transition,wall_velocity_cap_lbm,bb_link_count_min_transition,has_nan,has_inf,transition_pass
+original_static_32_20step,False,False,"[0.35, 0.375, 0.4, 0.425, 0.45, 0.5]",6,0.998981,1.001019,648,648,0,0,0.0,0.01,3888,False,False,True
+runtime_geometry_only_32_20step,True,False,"[0.35, 0.375, 0.4, 0.425, 0.45, 0.5]",6,0.9989614,1.0010386,443,452,9,0,0.0,0.01,2658,False,False,True
+wall_velocity_only_32_20step,False,True,"[0.35, 0.375, 0.4, 0.425, 0.45, 0.5]",6,0.9987058572006204,1.0012941427993796,648,648,0,648,0.002751427993795465,0.01,3888,False,False,True
+runtime_geometry_plus_wall_velocity_32_20step,True,True,"[0.35, 0.375, 0.4, 0.425, 0.45, 0.5]",6,0.9986862572006204,1.0013137427993795,443,452,9,648,0.002751427993795465,0.01,2658,False,False,True

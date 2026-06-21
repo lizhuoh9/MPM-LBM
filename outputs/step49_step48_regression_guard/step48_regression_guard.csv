@@ -1,0 +1,12 @@
+check,pass,value,notes
+step48_report_exists,True,STEP48_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_10STEP_COUPLING_ENVELOPE_REPORT.md,Step 48 accepted report remains present
+step48_matrix_row_count,True,4,Step 48 four-row matrix remains available
+step48_matrix_stable_count,True,4,Step 48 matrix remains stable
+step48_matrix_step_count,True,10,Step 48 remains a ten-step accepted envelope
+step48_combined_row_exists,True,runtime_geometry_plus_wall_velocity_32_10step,Step 48 combined row remains available
+step48_phase_progression_pass,True,True,Step 48 phase progression remains green
+step48_state_guard_pass,True,True,Step 48 state guard remains green
+step48_artifact_large_file_count,True,0,Step 48 artifacts remain below large-file threshold
+step48_vtr_count,True,0,Step 48 still has no VTR artifacts
+step48_particle_npy_count,True,0,Step 48 still has no particle npy artifacts
+step48_geo_all_fluid_dat_count_added,True,0,Step 48 still has no geo_all_fluid dat additions
