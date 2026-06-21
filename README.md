@@ -64,6 +64,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 58 canonical FSIDriver implementation migration wave 3
 - Step 59 canonical FSIDriver real smoke simulation
 - Step 60 controlled canonical moving-boundary duration ramp
+- Step 61 controlled canonical 32^3 moving-boundary single-step probe
 
 ## Not Implemented
 
@@ -752,6 +753,25 @@ Step 60 does not validate real squid behavior.
 Step 60 does not prove mesh convergence.
 Step 60 does not claim deployment readiness.
 See docs/60_controlled_canonical_moving_boundary_duration_ramp.md.
+
+## Step 61 Controlled Canonical 32 Moving-Boundary Single-Step Boundary
+
+Step 61 is controlled canonical 32^3 real-driver single-step probe work.
+Step 61 calls `FSIDriver3D(...).run()` through `src.mpm_lbm.sim.drivers.fsi_driver`.
+Step 61 runs one required 32^3, 1024-particle moving-boundary engineering row for one LBM step.
+Step 61 records runtime timing as a soft warning signal.
+Step 61 keeps runtime solver code unchanged.
+Step 61 keeps optional 32^3 penalty and 32^3 three-step configs disabled by default.
+Step 61 keeps outputs lightweight and rejects VTR output, particle NPY output, large Step 61 files, private absolute paths, external solver edits, and real-geometry candidate edits.
+Step 61 does not activate runtime geometry.
+Step 61 does not activate moving-wall velocity.
+Step 61 does not add a 48^3 or 64^3 row.
+Step 61 does not add a required 3-step or 5-step row.
+Step 61 does not validate propulsion.
+Step 61 does not validate real squid behavior.
+Step 61 does not prove grid convergence.
+Step 61 does not claim deployment readiness.
+See docs/61_controlled_canonical_32_moving_boundary_single_step.md.
 
 ## Upstream LBM Note
 

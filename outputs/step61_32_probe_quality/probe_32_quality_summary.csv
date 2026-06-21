@@ -1,0 +1,11 @@
+metric,value
+canonical_module_count,1
+driver_run_called_count,1
+legacy_driver_module_used_count,0
+missing_required_rows,[]
+pass_count,1
+probe_32_audit_pass,True
+required_row_count,1
+row_count,1
+runtime_warning_count,0
+stable_count,1

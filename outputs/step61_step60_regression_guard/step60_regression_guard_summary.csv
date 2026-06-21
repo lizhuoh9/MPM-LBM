@@ -1,0 +1,11 @@
+metric,value
+pass_count,5
+row_count,5
+step60_duration_quality_row_count,3
+step60_legacy_driver_module_used_count,0
+step60_missing_required_rows,[]
+step60_physics_feature_expansion,False
+step60_regression_guard_pass,True
+step60_required_row_count,3
+step60_runtime_code_changed,False
+step60_solver_behavior_changed,False

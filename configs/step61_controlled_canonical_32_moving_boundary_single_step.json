@@ -1,0 +1,22 @@
+{
+  "policy_id": "step61_controlled_canonical_32_moving_boundary_single_step",
+  "step": 61,
+  "required_probe_configs": [
+    "configs/step61_canonical_driver_moving_boundary_engineering_32_1step.json"
+  ],
+  "optional_penalty_32_configs": [
+    "configs/step61_canonical_driver_penalty_32_1step_optional.json"
+  ],
+  "optional_32_3step_configs": [
+    "configs/step61_canonical_driver_moving_boundary_engineering_32_3step_optional.json"
+  ],
+  "run_optional_penalty_32_probe": false,
+  "run_optional_32_3step_probe": false,
+  "driver_run_root": "outputs/step61_driver_runs",
+  "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+  "legacy_driver_module": "src.fsi_driver",
+  "driver_run_required": true,
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false,
+  "physics_feature_expansion": false
+}

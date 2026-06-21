@@ -1,0 +1,189 @@
+{
+  "rows": [
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step61_32_probe_matrix.log",
+      "size_bytes": 226
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step61_32_probe_quality.log",
+      "size_bytes": 53
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step61_artifact_manifest.log",
+      "size_bytes": 63
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step61_output_guard.log",
+      "size_bytes": 50
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step61_step60_regression_guard.log",
+      "size_bytes": 61
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_32_probe_matrix/probe_32_matrix.csv",
+      "size_bytes": 1278
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_32_probe_matrix/probe_32_matrix.json",
+      "size_bytes": 3076
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_32_probe_matrix/probe_32_matrix_summary.csv",
+      "size_bytes": 1031
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_32_probe_quality/probe_32_quality.csv",
+      "size_bytes": 615
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_32_probe_quality/probe_32_quality.json",
+      "size_bytes": 1231
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_32_probe_quality/probe_32_quality_summary.csv",
+      "size_bytes": 244
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_artifact_manifest/artifact_manifest.csv",
+      "size_bytes": 357393
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_artifact_manifest/artifact_summary.csv",
+      "size_bytes": 331
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_artifact_manifest/artifact_summary.json",
+      "size_bytes": 382
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_driver_runs/canonical_driver_moving_boundary_engineering_32_1step/diagnostics_timeseries.csv",
+      "size_bytes": 774
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_driver_runs/canonical_driver_moving_boundary_engineering_32_1step/diagnostics_timeseries.npz",
+      "size_bytes": 8744
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_driver_runs/canonical_driver_moving_boundary_engineering_32_1step/driver_config.json",
+      "size_bytes": 1472
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_driver_runs/canonical_driver_moving_boundary_engineering_32_1step/geo_all_fluid_32.dat",
+      "size_bytes": 98304
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_output_guard/output_guard.csv",
+      "size_bytes": 1712
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_output_guard/output_guard.json",
+      "size_bytes": 4532
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_output_guard/output_guard_summary.csv",
+      "size_bytes": 452
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_step60_regression_guard/step60_regression_guard.csv",
+      "size_bytes": 2835
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_step60_regression_guard/step60_regression_guard.json",
+      "size_bytes": 4163
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step61_step60_regression_guard/step60_regression_guard_summary.csv",
+      "size_bytes": 330
+    }
+  ],
+  "summary": {
+    "external_edit_count": 0,
+    "output_guard_pass": true,
+    "pass_count": 24,
+    "private_absolute_path_count": 0,
+    "real_geometry_candidates_edit_count": 0,
+    "row_count": 24,
+    "step61_driver_run_dir_count": 1,
+    "step61_forbidden_file_count": 0,
+    "step61_large_file_count": 0,
+    "step61_optional_driver_run_dir_count": 0,
+    "step61_particle_npy_count": 0,
+    "step61_required_driver_run_dir_count": 1,
+    "step61_total_size_bytes": 489352,
+    "step61_total_size_mb": 0.46668243408203125,
+    "step61_vtr_count": 0
+  }
+}
