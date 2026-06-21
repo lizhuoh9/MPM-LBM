@@ -110,7 +110,7 @@ def test_step17_required_artifacts_exist():
 
 def test_step17_source_keywords_exist():
     source_paths = [
-        "src/lbm_fluid.py",
+        "src/mpm_lbm/sim/lbm/fluid.py",
         "src/link_area_accounting.py",
         "src/__init__.py",
         "baseline_tests/run_step17_directional_link_sanity.py",

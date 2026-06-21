@@ -1,0 +1,10 @@
+legacy_path,canonical_path,legacy_file_exists,legacy_is_shim,legacy_imports_canonical,legacy_contains_implementation_body,nonblank_line_count,pass
+src/lbm_config.py,src/mpm_lbm/sim/lbm/config.py,True,True,True,False,2,True
+src/lbm_relaxation_semantics.py,src/mpm_lbm/sim/lbm/relaxation_semantics.py,True,True,True,False,2,True
+src/lbm_fluid.py,src/mpm_lbm/sim/lbm/fluid.py,True,True,True,False,2,True
+src/mpm_config.py,src/mpm_lbm/sim/mpm/config.py,True,True,True,False,2,True
+src/mpm_solid.py,src/mpm_lbm/sim/mpm/solid.py,True,True,True,False,2,True
+src/units.py,src/mpm_lbm/sim/units/mapper.py,True,True,True,False,2,True
+src/projection.py,src/mpm_lbm/sim/coupling/projection.py,True,True,True,False,2,True
+src/coupling.py,src/mpm_lbm/sim/coupling/penalty.py,True,True,True,False,2,True
+src/moving_boundary_coupling.py,src/mpm_lbm/sim/coupling/moving_boundary.py,True,True,True,False,2,True

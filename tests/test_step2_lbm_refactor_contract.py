@@ -40,11 +40,17 @@ def test_step2_required_artifacts_exist():
 
 
 def test_step2_source_contains_required_interfaces():
-    source = (ROOT / "src/lbm_fluid.py").read_text(encoding="utf-8")
-    config_source = (ROOT / "src/lbm_config.py").read_text(encoding="utf-8")
+    source = (ROOT / "src/mpm_lbm/sim/lbm/fluid.py").read_text(encoding="utf-8")
+    config_source = (ROOT / "src/mpm_lbm/sim/lbm/config.py").read_text(encoding="utf-8")
+    legacy_source = (ROOT / "src/lbm_fluid.py").read_text(encoding="utf-8")
+    legacy_config_source = (ROOT / "src/lbm_config.py").read_text(encoding="utf-8")
 
     assert "class LBMConfig" in config_source
     assert "class LBMFluid3D" in source
+    assert "Compatibility shim" in legacy_source
+    assert "from .mpm_lbm.sim.lbm.fluid import *" in legacy_source
+    assert "Compatibility shim" in legacy_config_source
+    assert "from .mpm_lbm.sim.lbm.config import *" in legacy_config_source
     assert "def step(self):" in source
     assert "self.colission()" in source
     assert "self.streaming1()" in source

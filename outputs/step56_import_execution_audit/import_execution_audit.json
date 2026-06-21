@@ -1,0 +1,105 @@
+{
+  "rows": [
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.lbm.config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.lbm_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "LBMConfig"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.lbm.relaxation_semantics",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.lbm_relaxation_semantics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "tau_from_legacy_external_solver_parameter"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.lbm.fluid",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.lbm_fluid",
+      "pass": true,
+      "same_object": true,
+      "symbol": "LBMFluid3D"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.mpm.config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.mpm_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "MPMConfig"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.mpm.solid",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.mpm_solid",
+      "pass": true,
+      "same_object": true,
+      "symbol": "MPMSolid3D"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.units.mapper",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.units",
+      "pass": true,
+      "same_object": true,
+      "symbol": "GridUnitMapper"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.coupling.projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "MPMToLBMProjector3D"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.coupling.penalty",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.coupling",
+      "pass": true,
+      "same_object": true,
+      "symbol": "PenaltyFSICoupler3D"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.coupling.moving_boundary",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.moving_boundary_coupling",
+      "pass": true,
+      "same_object": true,
+      "symbol": "MovingBoundaryFSICoupler3D"
+    }
+  ],
+  "summary": {
+    "canonical_import_pass_count": 9,
+    "import_execution_audit_pass": true,
+    "legacy_import_pass_count": 9,
+    "output_snapshot_unchanged": true,
+    "pass_count": 9,
+    "row_count": 9,
+    "runtime_object_construction_required": false,
+    "same_object_count": 9,
+    "solver_run": false
+  }
+}

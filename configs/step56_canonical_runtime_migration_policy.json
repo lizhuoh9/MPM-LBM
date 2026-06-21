@@ -1,0 +1,103 @@
+{
+  "policy_id": "step56_canonical_runtime_migration_policy",
+  "step": 56,
+  "migrations": [
+    {
+      "canonical_module": "src.mpm_lbm.sim.lbm.config",
+      "canonical_path": "src/mpm_lbm/sim/lbm/config.py",
+      "implementation_tokens": ["class LBMConfig"],
+      "legacy_import": "from .mpm_lbm.sim.lbm.config import *",
+      "legacy_module": "src.lbm_config",
+      "legacy_path": "src/lbm_config.py",
+      "symbols": ["LBMConfig"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.lbm.relaxation_semantics",
+      "canonical_path": "src/mpm_lbm/sim/lbm/relaxation_semantics.py",
+      "implementation_tokens": [
+        "def tau_from_legacy_external_solver_parameter",
+        "def tau_from_lattice_kinematic_viscosity",
+        "def relaxation_semantics_summary"
+      ],
+      "legacy_import": "from .mpm_lbm.sim.lbm.relaxation_semantics import *",
+      "legacy_module": "src.lbm_relaxation_semantics",
+      "legacy_path": "src/lbm_relaxation_semantics.py",
+      "symbols": [
+        "tau_from_legacy_external_solver_parameter",
+        "tau_from_lattice_kinematic_viscosity",
+        "relaxation_semantics_summary"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.lbm.fluid",
+      "canonical_path": "src/mpm_lbm/sim/lbm/fluid.py",
+      "implementation_tokens": ["class LBMFluid3D", "def step(self):", "def export_VTK"],
+      "legacy_import": "from .mpm_lbm.sim.lbm.fluid import *",
+      "legacy_module": "src.lbm_fluid",
+      "legacy_path": "src/lbm_fluid.py",
+      "symbols": ["LBMFluid3D"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.mpm.config",
+      "canonical_path": "src/mpm_lbm/sim/mpm/config.py",
+      "implementation_tokens": ["class MPMConfig"],
+      "legacy_import": "from .mpm_lbm.sim.mpm.config import *",
+      "legacy_module": "src.mpm_config",
+      "legacy_path": "src/mpm_config.py",
+      "symbols": ["MPMConfig"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.mpm.solid",
+      "canonical_path": "src/mpm_lbm/sim/mpm/solid.py",
+      "implementation_tokens": ["class MPMSolid3D", "def substep", "def export_particles"],
+      "legacy_import": "from .mpm_lbm.sim.mpm.solid import *",
+      "legacy_module": "src.mpm_solid",
+      "legacy_path": "src/mpm_solid.py",
+      "symbols": ["MPMSolid3D"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.units.mapper",
+      "canonical_path": "src/mpm_lbm/sim/units/mapper.py",
+      "implementation_tokens": ["class GridUnitMapper", "def norm_to_lbm_coord", "def velocity_lbm_to_norm"],
+      "legacy_import": "from .mpm_lbm.sim.units.mapper import *",
+      "legacy_module": "src.units",
+      "legacy_path": "src/units.py",
+      "symbols": ["GridUnitMapper"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.coupling.projection",
+      "canonical_path": "src/mpm_lbm/sim/coupling/projection.py",
+      "implementation_tokens": ["class MPMToLBMProjector3D", "def project_particles", "def normalize_projection"],
+      "legacy_import": "from .mpm_lbm.sim.coupling.projection import *",
+      "legacy_module": "src.projection",
+      "legacy_path": "src/projection.py",
+      "symbols": ["MPMToLBMProjector3D"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.coupling.penalty",
+      "canonical_path": "src/mpm_lbm/sim/coupling/penalty.py",
+      "implementation_tokens": ["class PenaltyFSICoupler3D", "def build_penalty_force", "def add_lbm_reaction_to_mpm_grid"],
+      "legacy_import": "from .mpm_lbm.sim.coupling.penalty import *",
+      "legacy_module": "src.coupling",
+      "legacy_path": "src/coupling.py",
+      "symbols": ["PenaltyFSICoupler3D"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.coupling.moving_boundary",
+      "canonical_path": "src/mpm_lbm/sim/coupling/moving_boundary.py",
+      "implementation_tokens": [
+        "class MovingBoundaryFSICoupler3D",
+        "def clear_reaction_diagnostics",
+        "def add_moving_boundary_reaction_to_mpm_grid"
+      ],
+      "legacy_import": "from .mpm_lbm.sim.coupling.moving_boundary import *",
+      "legacy_module": "src.moving_boundary_coupling",
+      "legacy_path": "src/moving_boundary_coupling.py",
+      "symbols": ["MovingBoundaryFSICoupler3D"]
+    }
+  ],
+  "canonical_forbidden_tokens": ["_LEGACY_MODULE", "legacy_getattr"],
+  "legacy_required_docstring": "Compatibility shim. Canonical implementation lives in ",
+  "solver_behavior_changed": false,
+  "physics_feature_expansion": false
+}

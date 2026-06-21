@@ -1,0 +1,101 @@
+{
+  "rows": [
+    {
+      "canonical_path": "src/mpm_lbm/sim/lbm/config.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/lbm_config.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/lbm/relaxation_semantics.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/lbm_relaxation_semantics.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/lbm/fluid.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/lbm_fluid.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/mpm/config.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/mpm_config.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/mpm/solid.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/mpm_solid.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/units/mapper.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/units.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/coupling/projection.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/projection.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/coupling/penalty.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/coupling.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/coupling/moving_boundary.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/moving_boundary_coupling.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "legacy_implementation_body_count": 0,
+    "legacy_shim_audit_pass": true,
+    "legacy_shim_count": 9,
+    "pass_count": 9,
+    "row_count": 9
+  }
+}

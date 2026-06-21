@@ -22,9 +22,11 @@ def test_step55_lazy_compatibility_surfaces_are_source_visible():
     assert '"LBMFluid3D": "src.lbm_fluid"' in src_init
 
     fluid = read_text("src/mpm_lbm/sim/lbm/fluid.py")
-    assert '_LEGACY_MODULE = "src.lbm_fluid"' in fluid
+    legacy_fluid = read_text("src/lbm_fluid.py")
     assert "LBMFluid3D" in fluid
-    assert "def __getattr__(name):" in fluid
+    assert "class LBMFluid3D" in fluid
+    assert "legacy_getattr" not in fluid
+    assert "from .mpm_lbm.sim.lbm.fluid import *" in legacy_fluid
 
     index = read_text("src/mpm_lbm/evidence/repository_evidence_index.py")
     assert '_LEGACY_MODULE = "src.repository_evidence_index"' in index

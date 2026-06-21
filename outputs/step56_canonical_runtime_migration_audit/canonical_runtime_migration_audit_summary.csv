@@ -1,0 +1,10 @@
+metric,value
+canonical_legacy_getattr_count,0
+canonical_real_implementation_count,9
+canonical_runtime_migration_audit_pass,True
+forbidden_reverse_dependency_count,0
+legacy_shim_count,9
+pass_count,9
+physics_feature_expansion,False
+row_count,9
+solver_behavior_changed,False

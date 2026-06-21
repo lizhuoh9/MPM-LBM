@@ -45,12 +45,16 @@ def test_step3_required_artifacts_exist():
 
 def test_step3_source_contains_required_interfaces():
     init_source = (ROOT / "src/__init__.py").read_text(encoding="utf-8")
-    config_source = (ROOT / "src/mpm_config.py").read_text(encoding="utf-8")
-    solid_source = (ROOT / "src/mpm_solid.py").read_text(encoding="utf-8")
-    lbm_source = (ROOT / "src/lbm_fluid.py").read_text(encoding="utf-8")
+    config_source = (ROOT / "src/mpm_lbm/sim/mpm/config.py").read_text(encoding="utf-8")
+    solid_source = (ROOT / "src/mpm_lbm/sim/mpm/solid.py").read_text(encoding="utf-8")
+    lbm_source = (ROOT / "src/mpm_lbm/sim/lbm/fluid.py").read_text(encoding="utf-8")
+    legacy_config_source = (ROOT / "src/mpm_config.py").read_text(encoding="utf-8")
+    legacy_solid_source = (ROOT / "src/mpm_solid.py").read_text(encoding="utf-8")
 
     assert "class MPMConfig" in config_source
     assert "class MPMSolid3D" in solid_source
+    assert "from .mpm_lbm.sim.mpm.config import *" in legacy_config_source
+    assert "from .mpm_lbm.sim.mpm.solid import *" in legacy_solid_source
     assert "def init_box" in solid_source
     assert "def clear_grid" in solid_source
     assert "def p2g" in solid_source

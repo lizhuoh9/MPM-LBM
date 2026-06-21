@@ -41,8 +41,9 @@ def test_step4_required_artifacts_exist():
 def test_step4_source_contains_required_interfaces():
     init_source = (ROOT / "src/__init__.py").read_text(encoding="utf-8")
     sim_source = (ROOT / "src/sim_config.py").read_text(encoding="utf-8")
-    units_source = (ROOT / "src/units.py").read_text(encoding="utf-8")
-    solid_source = (ROOT / "src/mpm_solid.py").read_text(encoding="utf-8")
+    units_source = (ROOT / "src/mpm_lbm/sim/units/mapper.py").read_text(encoding="utf-8")
+    solid_source = (ROOT / "src/mpm_lbm/sim/mpm/solid.py").read_text(encoding="utf-8")
+    legacy_units_source = (ROOT / "src/units.py").read_text(encoding="utf-8")
 
     required_keywords = [
         "class UnifiedSimConfig",
@@ -68,6 +69,7 @@ def test_step4_source_contains_required_interfaces():
 
     assert "UnifiedSimConfig" in init_source
     assert "GridUnitMapper" in init_source
+    assert "from .mpm_lbm.sim.units.mapper import *" in legacy_units_source
     assert "set_uniform_velocity" in solid_source
 
 

@@ -1,0 +1,6 @@
+{
+  "policy_id": "step56_legacy_shim_policy",
+  "max_nonblank_lines_per_shim": 4,
+  "legacy_files_must_not_contain_tokens": ["@ti.data_oriented", "class ", "def ", "_LEGACY_MODULE", "legacy_getattr"],
+  "migrations_policy_path": "configs/step56_canonical_runtime_migration_policy.json"
+}

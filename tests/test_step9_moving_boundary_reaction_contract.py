@@ -50,9 +50,10 @@ def test_step9_required_artifacts_exist():
 
 
 def test_step9_source_contains_required_interfaces():
-    source = (ROOT / "src/moving_boundary_coupling.py").read_text(encoding="utf-8")
+    source = (ROOT / "src/mpm_lbm/sim/coupling/moving_boundary.py").read_text(encoding="utf-8")
     init_source = (ROOT / "src/__init__.py").read_text(encoding="utf-8")
-    lbm_source = (ROOT / "src/lbm_fluid.py").read_text(encoding="utf-8")
+    lbm_source = (ROOT / "src/mpm_lbm/sim/lbm/fluid.py").read_text(encoding="utf-8")
+    legacy_source = (ROOT / "src/moving_boundary_coupling.py").read_text(encoding="utf-8")
 
     required_keywords = [
         "class MovingBoundaryFSICoupler3D",
@@ -72,6 +73,7 @@ def test_step9_source_contains_required_interfaces():
     missing = [keyword for keyword in required_keywords if keyword not in source + lbm_source]
     assert missing == []
     assert "MovingBoundaryFSICoupler3D" in init_source
+    assert "from .mpm_lbm.sim.coupling.moving_boundary import *" in legacy_source
 
 
 def test_step9_scripts_respect_mode_boundaries():
@@ -82,7 +84,7 @@ def test_step9_scripts_respect_mode_boundaries():
     ]
     comparison_script = ROOT / "baseline_tests/run_step9_compare_penalty_vs_moving_boundary.py"
     source_paths = [
-        ROOT / "src/moving_boundary_coupling.py",
+        ROOT / "src/mpm_lbm/sim/coupling/moving_boundary.py",
         *moving_boundary_scripts,
         comparison_script,
     ]

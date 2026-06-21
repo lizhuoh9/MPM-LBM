@@ -1,0 +1,114 @@
+{
+  "rows": [
+    {
+      "canonical_contains_real_implementation": true,
+      "canonical_path": "src/mpm_lbm/sim/lbm/config.py",
+      "canonical_uses_legacy_getattr": false,
+      "forbidden_reverse_dependency": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/lbm_config.py",
+      "migration_status": "migrated",
+      "pass": true
+    },
+    {
+      "canonical_contains_real_implementation": true,
+      "canonical_path": "src/mpm_lbm/sim/lbm/relaxation_semantics.py",
+      "canonical_uses_legacy_getattr": false,
+      "forbidden_reverse_dependency": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/lbm_relaxation_semantics.py",
+      "migration_status": "migrated",
+      "pass": true
+    },
+    {
+      "canonical_contains_real_implementation": true,
+      "canonical_path": "src/mpm_lbm/sim/lbm/fluid.py",
+      "canonical_uses_legacy_getattr": false,
+      "forbidden_reverse_dependency": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/lbm_fluid.py",
+      "migration_status": "migrated",
+      "pass": true
+    },
+    {
+      "canonical_contains_real_implementation": true,
+      "canonical_path": "src/mpm_lbm/sim/mpm/config.py",
+      "canonical_uses_legacy_getattr": false,
+      "forbidden_reverse_dependency": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/mpm_config.py",
+      "migration_status": "migrated",
+      "pass": true
+    },
+    {
+      "canonical_contains_real_implementation": true,
+      "canonical_path": "src/mpm_lbm/sim/mpm/solid.py",
+      "canonical_uses_legacy_getattr": false,
+      "forbidden_reverse_dependency": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/mpm_solid.py",
+      "migration_status": "migrated",
+      "pass": true
+    },
+    {
+      "canonical_contains_real_implementation": true,
+      "canonical_path": "src/mpm_lbm/sim/units/mapper.py",
+      "canonical_uses_legacy_getattr": false,
+      "forbidden_reverse_dependency": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/units.py",
+      "migration_status": "migrated",
+      "pass": true
+    },
+    {
+      "canonical_contains_real_implementation": true,
+      "canonical_path": "src/mpm_lbm/sim/coupling/projection.py",
+      "canonical_uses_legacy_getattr": false,
+      "forbidden_reverse_dependency": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/projection.py",
+      "migration_status": "migrated",
+      "pass": true
+    },
+    {
+      "canonical_contains_real_implementation": true,
+      "canonical_path": "src/mpm_lbm/sim/coupling/penalty.py",
+      "canonical_uses_legacy_getattr": false,
+      "forbidden_reverse_dependency": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/coupling.py",
+      "migration_status": "migrated",
+      "pass": true
+    },
+    {
+      "canonical_contains_real_implementation": true,
+      "canonical_path": "src/mpm_lbm/sim/coupling/moving_boundary.py",
+      "canonical_uses_legacy_getattr": false,
+      "forbidden_reverse_dependency": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/moving_boundary_coupling.py",
+      "migration_status": "migrated",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "canonical_legacy_getattr_count": 0,
+    "canonical_real_implementation_count": 9,
+    "canonical_runtime_migration_audit_pass": true,
+    "forbidden_reverse_dependency_count": 0,
+    "legacy_shim_count": 9,
+    "pass_count": 9,
+    "physics_feature_expansion": false,
+    "row_count": 9,
+    "solver_behavior_changed": false
+  }
+}

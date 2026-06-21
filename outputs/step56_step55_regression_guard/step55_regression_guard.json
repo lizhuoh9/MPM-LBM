@@ -1,0 +1,103 @@
+{
+  "rows": [
+    {
+      "check": "step55_code_layout_audit",
+      "details": {
+        "canonical_diagnostics_package_exists": true,
+        "canonical_evidence_package_exists": true,
+        "canonical_required_path_count": 22,
+        "canonical_required_path_pass_count": 22,
+        "canonical_sim_package_exists": true,
+        "code_layout_audit_pass": true,
+        "experiments_steps_package_exists": true,
+        "physics_feature_expansion": false,
+        "root_src_file_count": 119,
+        "solver_behavior_changed": false,
+        "step55_new_root_evidence_file_count": 0,
+        "unclassified_root_src_file_count": 0
+      },
+      "pass": true
+    },
+    {
+      "check": "step55_import_boundary_audit",
+      "details": {
+        "import_boundary_audit_pass": true,
+        "scanned_sim_file_count": 23,
+        "sim_forbidden_import_count": 0,
+        "sim_forbidden_path_count": 0,
+        "sim_step_constant_count": 0,
+        "solver_behavior_changed": false
+      },
+      "pass": true
+    },
+    {
+      "check": "step55_compatibility_shim_audit_or_step56_import_supersession",
+      "details": {
+        "step55": {
+          "avoid_heavy_runtime_imports_in_hook": true,
+          "compatibility_shim_audit_pass": true,
+          "pass_count": 10,
+          "source_text_check_only": true,
+          "surface_count": 10
+        },
+        "step56_import_execution": {
+          "canonical_import_pass_count": 9,
+          "import_execution_audit_pass": true,
+          "legacy_import_pass_count": 9,
+          "output_snapshot_unchanged": true,
+          "pass_count": 9,
+          "row_count": 9,
+          "runtime_object_construction_required": false,
+          "same_object_count": 9,
+          "solver_run": false
+        }
+      },
+      "pass": true
+    },
+    {
+      "check": "step55_test_strength_enum_audit",
+      "details": {
+        "allowed_count": 458,
+        "allowed_test_strength_level_count": 7,
+        "out_of_policy_count": 0,
+        "pytest_result_interpretation": "A passing full pytest run means contract/artifact/proxy/solver-smoke tests passed according to the test strength audit classification.",
+        "row_count": 458,
+        "test_strength_enum_audit_pass": true
+      },
+      "pass": true
+    },
+    {
+      "check": "step55_artifact_manifest",
+      "details": {
+        "artifact_budget_pass": true,
+        "file_count": 4041,
+        "large_file_count": 0,
+        "protected_external_taichi_lbm3d_step55_file_count": 0,
+        "protected_real_geometry_candidates_step55_file_count": 0,
+        "step55_dense_displacement_output_count": 0,
+        "step55_displaced_particle_output_count": 0,
+        "step55_file_count": 96,
+        "step55_particle_npy_count": 0,
+        "step55_total_size_bytes": 717573,
+        "step55_total_size_mb": 0.684330940246582,
+        "step55_vtr_count": 0
+      },
+      "pass": true
+    },
+    {
+      "check": "readme_docs_layout_boundary",
+      "details": {
+        "readme_docs_layout_boundary": true
+      },
+      "pass": true
+    }
+  ],
+  "summary": {
+    "code_layout_row_count": 141,
+    "compatibility_shim_row_count": 10,
+    "import_boundary_row_count": 23,
+    "pass_count": 6,
+    "row_count": 6,
+    "step55_regression_guard_pass": true
+  }
+}

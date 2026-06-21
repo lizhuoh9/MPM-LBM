@@ -56,8 +56,9 @@ def test_step5_required_artifacts_exist():
 
 def test_step5_projection_source_contains_required_interfaces():
     init_source = (ROOT / "src/__init__.py").read_text(encoding="utf-8")
-    lbm_source = (ROOT / "src/lbm_fluid.py").read_text(encoding="utf-8")
-    projection_source = (ROOT / "src/projection.py").read_text(encoding="utf-8")
+    lbm_source = (ROOT / "src/mpm_lbm/sim/lbm/fluid.py").read_text(encoding="utf-8")
+    projection_source = (ROOT / "src/mpm_lbm/sim/coupling/projection.py").read_text(encoding="utf-8")
+    legacy_projection_source = (ROOT / "src/projection.py").read_text(encoding="utf-8")
 
     required_keywords = [
         "class MPMToLBMProjector3D",
@@ -82,6 +83,7 @@ def test_step5_projection_source_contains_required_interfaces():
     assert missing == []
 
     assert "MPMToLBMProjector3D" in init_source
+    assert "from .mpm_lbm.sim.coupling.projection import *" in legacy_projection_source
     assert "astype(np.int8)" in lbm_source
 
 

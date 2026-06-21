@@ -1,0 +1,53 @@
+{
+  "policy_id": "step56_import_execution_policy",
+  "object_identity_required": true,
+  "no_solver_run": true,
+  "no_output_writes": true,
+  "symbol_pairs": [
+    {
+      "canonical_module": "src.mpm_lbm.sim.lbm.config",
+      "legacy_module": "src.lbm_config",
+      "symbol": "LBMConfig"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.lbm.relaxation_semantics",
+      "legacy_module": "src.lbm_relaxation_semantics",
+      "symbol": "tau_from_legacy_external_solver_parameter"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.lbm.fluid",
+      "legacy_module": "src.lbm_fluid",
+      "symbol": "LBMFluid3D"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.mpm.config",
+      "legacy_module": "src.mpm_config",
+      "symbol": "MPMConfig"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.mpm.solid",
+      "legacy_module": "src.mpm_solid",
+      "symbol": "MPMSolid3D"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.units.mapper",
+      "legacy_module": "src.units",
+      "symbol": "GridUnitMapper"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.coupling.projection",
+      "legacy_module": "src.projection",
+      "symbol": "MPMToLBMProjector3D"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.coupling.penalty",
+      "legacy_module": "src.coupling",
+      "symbol": "PenaltyFSICoupler3D"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.coupling.moving_boundary",
+      "legacy_module": "src.moving_boundary_coupling",
+      "symbol": "MovingBoundaryFSICoupler3D"
+    }
+  ]
+}

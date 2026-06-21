@@ -47,7 +47,7 @@ def test_step8_required_artifacts_exist():
 
 
 def test_step8_lbm_source_contains_required_interfaces():
-    source = (ROOT / "src/lbm_fluid.py").read_text(encoding="utf-8")
+    source = (ROOT / "src/mpm_lbm/sim/lbm/fluid.py").read_text(encoding="utf-8")
 
     required_keywords = [
         "def step(",
@@ -68,7 +68,7 @@ def test_step8_lbm_source_contains_required_interfaces():
 
 def test_step8_scripts_do_not_use_forbidden_methods():
     source_paths = [
-        ROOT / "src/lbm_fluid.py",
+        ROOT / "src/mpm_lbm/sim/lbm/fluid.py",
         ROOT / "baseline_tests/run_step8_static_bounceback_regression.py",
         ROOT / "baseline_tests/run_step8_prescribed_moving_wall_couette.py",
         ROOT / "baseline_tests/run_step8_projected_mpm_moving_boundary.py",

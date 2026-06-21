@@ -1,0 +1,65 @@
+{
+  "policy_id": "step56_behavior_preservation_policy",
+  "lbm_config_required_defaults": {
+    "bc_x_left": 0,
+    "bc_x_right": 0,
+    "bc_y_left": 0,
+    "bc_y_right": 0,
+    "bc_z_left": 0,
+    "bc_z_right": 0,
+    "force": [0.0, 0.0, 0.0],
+    "niu": 0.1,
+    "rho0": 1.0,
+    "rho_bc_x_left": 1.0,
+    "rho_bc_x_right": 1.0,
+    "rho_bc_y_left": 1.0,
+    "rho_bc_y_right": 1.0,
+    "rho_bc_z_left": 1.0,
+    "rho_bc_z_right": 1.0,
+    "sparse_storage": false,
+    "vel_bc_x_left": [0.0, 0.0, 0.0],
+    "vel_bc_x_right": [0.0, 0.0, 0.0],
+    "vel_bc_y_left": [0.0, 0.0, 0.0],
+    "vel_bc_y_right": [0.0, 0.0, 0.0],
+    "vel_bc_z_left": [0.0, 0.0, 0.0],
+    "vel_bc_z_right": [0.0, 0.0, 0.0]
+  },
+  "mapper_sample": {
+    "dx_norm": 0.03125,
+    "lbm_coord": [2.0, 16.0, 30.0],
+    "lbm_dt_phys": 0.004,
+    "n_grid": 32,
+    "norm_coord": [0.0625, 0.5, 0.9375],
+    "velocity_lbm": [0.03, 0.0, 0.0],
+    "velocity_norm": [0.234375, 0.0, 0.0]
+  },
+  "mpm_config_required_defaults": {
+    "bound": 3,
+    "box_max": [0.55, 0.65, 0.55],
+    "box_min": [0.25, 0.35, 0.25],
+    "dt": 0.0004,
+    "dx": 0.03125,
+    "gravity": [0.0, -9.8, 0.0],
+    "n_grid": 32,
+    "output_interval": 10,
+    "p_rho": 1.0,
+    "particles_per_cell": 2,
+    "poisson_ratio": 0.2,
+    "use_apic": true,
+    "young_modulus": 400.0
+  },
+  "protected_unmigrated_paths": [
+    "src/fsi_config.py",
+    "src/fsi_driver.py",
+    "src/sim_config.py",
+    "src/link_area_coupling.py",
+    "src/link_area_accounting.py",
+    "src/momentum_accounting.py"
+  ],
+  "tau_expectations": {
+    "legacy_tau_for_0_1": 0.5333333333333333,
+    "standard_tau_for_0_1": 0.8
+  },
+  "solver_behavior_changed": false,
+  "physics_feature_expansion": false
+}

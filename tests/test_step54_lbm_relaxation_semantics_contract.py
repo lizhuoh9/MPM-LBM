@@ -1,19 +1,14 @@
 import json
-import importlib.util
 import math
 from pathlib import Path
 
+from src.mpm_lbm.sim.lbm.relaxation_semantics import (
+    relaxation_semantics_summary,
+    tau_from_lattice_kinematic_viscosity,
+    tau_from_legacy_external_solver_parameter,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
-_SPEC = importlib.util.spec_from_file_location(
-    "step54_lbm_relaxation_semantics",
-    ROOT / "src" / "lbm_relaxation_semantics.py",
-)
-_MODULE = importlib.util.module_from_spec(_SPEC)
-_SPEC.loader.exec_module(_MODULE)
-relaxation_semantics_summary = _MODULE.relaxation_semantics_summary
-tau_from_lattice_kinematic_viscosity = _MODULE.tau_from_lattice_kinematic_viscosity
-tau_from_legacy_external_solver_parameter = _MODULE.tau_from_legacy_external_solver_parameter
 
 
 def test_step54_lbm_relaxation_helpers_are_explicit_and_distinct():
@@ -33,11 +28,13 @@ def test_step54_lbm_relaxation_helpers_are_explicit_and_distinct():
 
 
 def test_step54_lbm_fluid_uses_legacy_helper_without_inline_formula():
-    source = (ROOT / "src/lbm_fluid.py").read_text(encoding="utf-8")
-    assert "from .lbm_relaxation_semantics import tau_from_legacy_external_solver_parameter" in source
+    source = (ROOT / "src/mpm_lbm/sim/lbm/fluid.py").read_text(encoding="utf-8")
+    legacy_source = (ROOT / "src/lbm_fluid.py").read_text(encoding="utf-8")
+    assert "from .relaxation_semantics import tau_from_legacy_external_solver_parameter" in source
     assert "tau_from_legacy_external_solver_parameter(self.niu)" in source
     assert "self.tau_f=self.niu/3.0+0.5" not in source
     assert "self.tau_f = self.niu / 3.0 + 0.5" not in source
+    assert "from .mpm_lbm.sim.lbm.fluid import *" in legacy_source
 
 
 def test_step54_lbm_relaxation_semantics_audit_output_passes():

@@ -1,0 +1,7 @@
+metric,value
+behavior_preservation_audit_pass,True
+object_construction_required_for_lbm_fluid_or_mpm_solid,False
+pass_count,8
+physics_feature_expansion,False
+row_count,8
+solver_behavior_changed,False

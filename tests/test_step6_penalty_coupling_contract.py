@@ -51,7 +51,8 @@ def test_step6_required_artifacts_exist():
 
 def test_step6_coupling_source_contains_required_interfaces():
     init_source = (ROOT / "src/__init__.py").read_text(encoding="utf-8")
-    coupling_source = (ROOT / "src/coupling.py").read_text(encoding="utf-8")
+    coupling_source = (ROOT / "src/mpm_lbm/sim/coupling/penalty.py").read_text(encoding="utf-8")
+    legacy_coupling_source = (ROOT / "src/coupling.py").read_text(encoding="utf-8")
 
     required_keywords = [
         "class PenaltyFSICoupler3D",
@@ -76,11 +77,12 @@ def test_step6_coupling_source_contains_required_interfaces():
     assert missing == []
 
     assert "PenaltyFSICoupler3D" in init_source
+    assert "from .mpm_lbm.sim.coupling.penalty import *" in legacy_coupling_source
 
 
 def test_step6_scripts_do_not_use_forbidden_methods():
     source_paths = [
-        ROOT / "src/coupling.py",
+        ROOT / "src/mpm_lbm/sim/coupling/penalty.py",
         ROOT / "baseline_tests/run_step6_penalty_force_field.py",
         ROOT / "baseline_tests/run_step6_lbm_response_to_moving_solid.py",
         ROOT / "baseline_tests/run_step6_two_way_mpm_reaction.py",

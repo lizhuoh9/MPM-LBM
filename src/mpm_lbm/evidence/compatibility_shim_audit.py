@@ -14,7 +14,11 @@ def build_compatibility_shim_audit(root: Path, policy_path: str = "configs/step5
         symbol = surface["symbol"]
         old_text = old_path.read_text(encoding="utf-8") if old_path.is_file() else ""
         new_text = new_path.read_text(encoding="utf-8") if new_path.is_file() else ""
-        old_symbol_present = symbol in old_text
+        old_compatibility_shim_present = (
+            "Compatibility shim. Canonical implementation lives in " in old_text
+            and "from .mpm_lbm." in old_text
+        )
+        old_symbol_present = symbol in old_text or old_compatibility_shim_present
         new_symbol_present = symbol in new_text
         new_lazy_surface_present = "_LEGACY_MODULE" in new_text and "__getattr__" in new_text
         rows.append(

@@ -1,0 +1,7 @@
+metric,value
+code_layout_row_count,141
+compatibility_shim_row_count,10
+import_boundary_row_count,23
+pass_count,6
+row_count,6
+step55_regression_guard_pass,True

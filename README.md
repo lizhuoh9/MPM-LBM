@@ -59,6 +59,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 53 controlled support-scaling active-cell semantics post-processing audit
 - Step 54 repository evidence integrity repair
 - Step 55 repository code layout separation and import-boundary contract
+- Step 56 canonical runtime implementation migration wave 1
 
 ## Not Implemented
 
@@ -693,6 +694,24 @@ Step 55 does not implement squid swimming.
 Step 55 does not prove grid convergence.
 Step 55 does not claim production readiness.
 See docs/55_repository_code_layout_separation_import_boundary.md.
+
+## Step 56 Canonical Runtime Implementation Migration Boundary
+
+Step 56 is canonical runtime implementation migration wave 1.
+Step 56 moves the first leaf batch of runtime implementations into `src/mpm_lbm/sim/...`.
+Step 56 turns the corresponding legacy root modules into compatibility shims.
+Step 56 keeps legacy imports working through shims.
+Step 56 does not change default solver behavior.
+Step 56 does not add a 48^3 link-area run.
+Step 56 does not lengthen the cycle window.
+Step 56 does not add a 64^3 case.
+Step 56 does not migrate LBM tau or viscosity formulas.
+Step 56 does not validate real jet behavior.
+Step 56 does not validate jet propulsion.
+Step 56 does not implement squid swimming.
+Step 56 does not prove grid convergence.
+Step 56 does not claim production readiness.
+See docs/56_canonical_runtime_implementation_migration_wave1.md.
 
 ## Upstream LBM Note
 

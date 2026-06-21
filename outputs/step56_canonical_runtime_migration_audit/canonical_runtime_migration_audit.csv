@@ -1,0 +1,10 @@
+canonical_path,legacy_path,migration_status,canonical_contains_real_implementation,canonical_uses_legacy_getattr,legacy_is_shim,legacy_imports_canonical,forbidden_reverse_dependency,pass
+src/mpm_lbm/sim/lbm/config.py,src/lbm_config.py,migrated,True,False,True,True,False,True
+src/mpm_lbm/sim/lbm/relaxation_semantics.py,src/lbm_relaxation_semantics.py,migrated,True,False,True,True,False,True
+src/mpm_lbm/sim/lbm/fluid.py,src/lbm_fluid.py,migrated,True,False,True,True,False,True
+src/mpm_lbm/sim/mpm/config.py,src/mpm_config.py,migrated,True,False,True,True,False,True
+src/mpm_lbm/sim/mpm/solid.py,src/mpm_solid.py,migrated,True,False,True,True,False,True
+src/mpm_lbm/sim/units/mapper.py,src/units.py,migrated,True,False,True,True,False,True
+src/mpm_lbm/sim/coupling/projection.py,src/projection.py,migrated,True,False,True,True,False,True
+src/mpm_lbm/sim/coupling/penalty.py,src/coupling.py,migrated,True,False,True,True,False,True
+src/mpm_lbm/sim/coupling/moving_boundary.py,src/moving_boundary_coupling.py,migrated,True,False,True,True,False,True

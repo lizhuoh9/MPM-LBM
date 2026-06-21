@@ -1,0 +1,10 @@
+canonical_module,legacy_module,symbol,canonical_import_pass,legacy_import_pass,same_object,pass,error
+src.mpm_lbm.sim.lbm.config,src.lbm_config,LBMConfig,True,True,True,True,
+src.mpm_lbm.sim.lbm.relaxation_semantics,src.lbm_relaxation_semantics,tau_from_legacy_external_solver_parameter,True,True,True,True,
+src.mpm_lbm.sim.lbm.fluid,src.lbm_fluid,LBMFluid3D,True,True,True,True,
+src.mpm_lbm.sim.mpm.config,src.mpm_config,MPMConfig,True,True,True,True,
+src.mpm_lbm.sim.mpm.solid,src.mpm_solid,MPMSolid3D,True,True,True,True,
+src.mpm_lbm.sim.units.mapper,src.units,GridUnitMapper,True,True,True,True,
+src.mpm_lbm.sim.coupling.projection,src.projection,MPMToLBMProjector3D,True,True,True,True,
+src.mpm_lbm.sim.coupling.penalty,src.coupling,PenaltyFSICoupler3D,True,True,True,True,
+src.mpm_lbm.sim.coupling.moving_boundary,src.moving_boundary_coupling,MovingBoundaryFSICoupler3D,True,True,True,True,
