@@ -1,0 +1,35 @@
+# Activation Preconditions
+
+Step70 keeps all activation gates closed.
+
+```text
+activation_preconditions_audit_pass = true
+activation_allowed_count = 0
+activation_gate_count = 10
+pending_gate_count = 5
+```
+
+Closed gates:
+
+```text
+runtime_geometry_activation_allowed = false
+wall_velocity_activation_allowed = false
+combined_runtime_geometry_wall_velocity_activation_allowed = false
+real_geometry_activation_allowed = false
+squid_proxy_activation_allowed = false
+link_area_activation_allowed = false
+grid_48_activation_allowed = false
+grid_64_activation_allowed = false
+vtr_output_allowed = false
+particle_npy_output_allowed = false
+```
+
+Pending gates:
+
+```text
+Step71 tau convention decision pending
+Step72 runtime geometry activation readiness pending
+Step73 wall velocity activation readiness pending
+Step74 real geometry data boundary pending
+Step75 solver-complete campaign gate pending
+```

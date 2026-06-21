@@ -1,0 +1,10 @@
+metric,value
+api_group_count,9
+canonical_import_pass_count,195
+expected_count,195
+missing_symbol_count,0
+output_snapshot_unchanged,True
+public_api_surface_audit_pass,True
+row_count,195
+runtime_object_construction_required_count,0
+solver_run,False

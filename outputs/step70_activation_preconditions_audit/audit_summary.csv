@@ -1,0 +1,6 @@
+metric,value
+activation_allowed_count,0
+activation_gate_count,10
+activation_preconditions_audit_pass,True
+pending_gate_count,5
+row_count,15

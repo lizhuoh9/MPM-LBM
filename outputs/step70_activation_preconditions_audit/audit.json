@@ -1,0 +1,116 @@
+{
+  "rows": [
+    {
+      "allowed": false,
+      "check": "activation_gate_closed",
+      "gate": "combined_runtime_geometry_wall_velocity_activation_allowed",
+      "notes": "Step70 freeze keeps activation closed",
+      "pass": true
+    },
+    {
+      "allowed": false,
+      "check": "activation_gate_closed",
+      "gate": "grid_48_activation_allowed",
+      "notes": "Step70 freeze keeps activation closed",
+      "pass": true
+    },
+    {
+      "allowed": false,
+      "check": "activation_gate_closed",
+      "gate": "grid_64_activation_allowed",
+      "notes": "Step70 freeze keeps activation closed",
+      "pass": true
+    },
+    {
+      "allowed": false,
+      "check": "activation_gate_closed",
+      "gate": "link_area_activation_allowed",
+      "notes": "Step70 freeze keeps activation closed",
+      "pass": true
+    },
+    {
+      "allowed": false,
+      "check": "activation_gate_closed",
+      "gate": "particle_npy_output_allowed",
+      "notes": "Step70 freeze keeps activation closed",
+      "pass": true
+    },
+    {
+      "allowed": false,
+      "check": "activation_gate_closed",
+      "gate": "real_geometry_activation_allowed",
+      "notes": "Step70 freeze keeps activation closed",
+      "pass": true
+    },
+    {
+      "allowed": false,
+      "check": "activation_gate_closed",
+      "gate": "runtime_geometry_activation_allowed",
+      "notes": "Step70 freeze keeps activation closed",
+      "pass": true
+    },
+    {
+      "allowed": false,
+      "check": "activation_gate_closed",
+      "gate": "squid_proxy_activation_allowed",
+      "notes": "Step70 freeze keeps activation closed",
+      "pass": true
+    },
+    {
+      "allowed": false,
+      "check": "activation_gate_closed",
+      "gate": "vtr_output_allowed",
+      "notes": "Step70 freeze keeps activation closed",
+      "pass": true
+    },
+    {
+      "allowed": false,
+      "check": "activation_gate_closed",
+      "gate": "wall_velocity_activation_allowed",
+      "notes": "Step70 freeze keeps activation closed",
+      "pass": true
+    },
+    {
+      "allowed": "",
+      "check": "pending_gate_reason_recorded",
+      "gate": "",
+      "notes": "Step71 tau convention decision pending",
+      "pass": true
+    },
+    {
+      "allowed": "",
+      "check": "pending_gate_reason_recorded",
+      "gate": "",
+      "notes": "Step72 runtime geometry activation readiness pending",
+      "pass": true
+    },
+    {
+      "allowed": "",
+      "check": "pending_gate_reason_recorded",
+      "gate": "",
+      "notes": "Step73 wall velocity activation readiness pending",
+      "pass": true
+    },
+    {
+      "allowed": "",
+      "check": "pending_gate_reason_recorded",
+      "gate": "",
+      "notes": "Step74 real geometry data boundary pending",
+      "pass": true
+    },
+    {
+      "allowed": "",
+      "check": "pending_gate_reason_recorded",
+      "gate": "",
+      "notes": "Step75 solver-complete campaign gate pending",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "activation_allowed_count": 0,
+    "activation_gate_count": 10,
+    "activation_preconditions_audit_pass": true,
+    "pending_gate_count": 5,
+    "row_count": 15
+  }
+}

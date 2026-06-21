@@ -1,0 +1,20 @@
+{
+  "policy_id": "step70_report_consistency_policy",
+  "step": 70,
+  "reports": [
+    {
+      "artifact_summary_path": "outputs/step69_artifact_manifest/artifact_summary.json",
+      "file_count_key": "step69_file_count",
+      "report_path": "STEP69_ROOT_SRC_FINAL_IMPLEMENTATION_CLEANUP_REPORT.md",
+      "step_label": "Step69",
+      "total_size_mb_key": "step69_total_size_mb"
+    },
+    {
+      "artifact_summary_path": "outputs/step70_artifact_manifest/artifact_summary.json",
+      "file_count_key": "step70_file_count",
+      "report_path": "STEP70_API_CONFIG_FREEZE_BEFORE_ACTIVATION_REPORT.md",
+      "step_label": "Step70",
+      "total_size_mb_key": "step70_total_size_mb"
+    }
+  ]
+}

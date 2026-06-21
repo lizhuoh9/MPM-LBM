@@ -1,0 +1,9 @@
+metric,value
+config_schema_freeze_audit_pass,True
+from_json_available_count,11
+missing_config_class_count,0
+required_config_class_count,14
+row_count,14
+schema_hash_count,14
+schema_row_count,14
+to_json_or_to_dict_available_count,11

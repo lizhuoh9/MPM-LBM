@@ -1,0 +1,14 @@
+metric,value
+artifact_manifest_required,True
+forbidden_step70_output_dir_count,0
+output_artifact_policy_audit_pass,True
+particle_npy_default_allowed,False
+pass_count,10
+protected_external_edit_allowed,False
+protected_real_geometry_edit_allowed,False
+protected_step70_file_count,0
+report_consistency_required,True
+row_count,10
+step70_particle_npy_count,0
+step70_vtr_count,0
+vtr_default_allowed,False

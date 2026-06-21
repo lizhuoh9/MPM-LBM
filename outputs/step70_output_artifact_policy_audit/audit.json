@@ -1,0 +1,89 @@
+{
+  "rows": [
+    {
+      "actual": false,
+      "check": "vtr_default_allowed",
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": false,
+      "check": "particle_npy_default_allowed",
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": false,
+      "check": "default_write_vtk_allowed",
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": false,
+      "check": "default_write_particles_allowed",
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": false,
+      "check": "protected_external_edit_allowed",
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": false,
+      "check": "protected_real_geometry_edit_allowed",
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": true,
+      "check": "report_consistency_required",
+      "expected": true,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": true,
+      "check": "artifact_manifest_required",
+      "expected": true,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": false,
+      "check": "private_absolute_paths_allowed",
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": false,
+      "check": "driver_run_outputs_committable",
+      "expected": false,
+      "pass": true,
+      "path": ""
+    }
+  ],
+  "summary": {
+    "artifact_manifest_required": true,
+    "forbidden_step70_output_dir_count": 0,
+    "output_artifact_policy_audit_pass": true,
+    "particle_npy_default_allowed": false,
+    "pass_count": 10,
+    "protected_external_edit_allowed": false,
+    "protected_real_geometry_edit_allowed": false,
+    "protected_step70_file_count": 0,
+    "report_consistency_required": true,
+    "row_count": 10,
+    "step70_particle_npy_count": 0,
+    "step70_vtr_count": 0,
+    "vtr_default_allowed": false
+  }
+}

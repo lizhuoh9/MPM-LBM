@@ -68,7 +68,7 @@ step69_support_shim_count = 6
 | Code placement audit | pass, 6 canonical files under approved packages, no protected Step69 paths |
 | No-simulation audit | pass, 0 forbidden execution tokens, 0 driver dirs, 0 VTR, 0 particle NPY |
 | Step68 regression guard | pass, 7 Step68 artifacts still green |
-| Artifact manifest | pass, 80 Step69 files, 0.270 MB, 0 large files |
+| Artifact manifest | pass, 90 Step69 files, 0.6521368026733398 MB, 0 large files, 0 VTR, 0 particle NPY, 0 Step69 driver run output dirs |
 
 ## Protected Boundaries
 

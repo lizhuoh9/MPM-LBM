@@ -1,0 +1,22 @@
+{
+  "artifact_manifest_required": true,
+  "default_write_particles_allowed": false,
+  "default_write_vtk_allowed": false,
+  "driver_run_outputs_committable": false,
+  "external_taichi_lbm3d_edit_allowed": false,
+  "large_file_threshold_mb": 5,
+  "particle_npy_default_allowed": false,
+  "policy_id": "step70_output_artifact_policy",
+  "private_absolute_paths_allowed": false,
+  "real_geometry_candidates_edit_allowed": false,
+  "report_consistency_guard_required": true,
+  "step": 70,
+  "vtr_default_allowed": false,
+  "forbidden_step70_output_dirs": [
+    "outputs/step70_driver_runs"
+  ],
+  "protected_prefixes": [
+    "external/taichi_LBM3D/",
+    "data/real_geometry_candidates/"
+  ]
+}

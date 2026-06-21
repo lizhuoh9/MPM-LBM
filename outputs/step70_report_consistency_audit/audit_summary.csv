@@ -1,0 +1,7 @@
+metric,value
+deferred_count,0
+fail_count,0
+pass_count,2
+report_consistency_freeze_audit_pass,True
+row_count,2
+step69_report_consistency_fixed,True

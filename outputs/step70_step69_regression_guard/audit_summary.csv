@@ -1,0 +1,6 @@
+metric,value
+missing_artifact_count,0
+row_count,11
+step69_pass_count,11
+step69_required_check_count,11
+step70_step69_regression_guard_pass,True

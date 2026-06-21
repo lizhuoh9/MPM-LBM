@@ -1,0 +1,14 @@
+metric,value
+compatibility_surface_audit_pass,True
+expected_count,38
+forbidden_target_count,0
+heavy_import_during_src_import,False
+heavy_import_loaded_modules,[]
+legacy_shim_target_count,8
+legacy_shim_targets_are_shims,True
+output_snapshot_unchanged,True
+row_count,38
+same_object_count,38
+src_init_export_audit_pass,True
+src_init_export_count,38
+stale_export_count,0

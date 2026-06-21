@@ -1,0 +1,40 @@
+{
+  "rows": [
+    {
+      "artifact_exists": true,
+      "artifact_summary_path": "outputs/step69_artifact_manifest/artifact_summary.json",
+      "deferred": false,
+      "error": "",
+      "expected_file_count": 90,
+      "expected_total_size_mb": 0.6521368026733398,
+      "file_count_match": true,
+      "pass": true,
+      "report_exists": true,
+      "report_path": "STEP69_ROOT_SRC_FINAL_IMPLEMENTATION_CLEANUP_REPORT.md",
+      "step_label": "Step69",
+      "total_size_mb_match": true
+    },
+    {
+      "artifact_exists": true,
+      "artifact_summary_path": "outputs/step70_artifact_manifest/artifact_summary.json",
+      "deferred": false,
+      "error": "",
+      "expected_file_count": 67,
+      "expected_total_size_mb": 0.7225561141967773,
+      "file_count_match": true,
+      "pass": true,
+      "report_exists": true,
+      "report_path": "STEP70_API_CONFIG_FREEZE_BEFORE_ACTIVATION_REPORT.md",
+      "step_label": "Step70",
+      "total_size_mb_match": true
+    }
+  ],
+  "summary": {
+    "deferred_count": 0,
+    "fail_count": 0,
+    "pass_count": 2,
+    "report_consistency_freeze_audit_pass": true,
+    "row_count": 2,
+    "step69_report_consistency_fixed": true
+  }
+}

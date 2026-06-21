@@ -1,0 +1,20 @@
+{
+  "policy_id": "step70_config_schema_freeze_policy",
+  "step": 70,
+  "required_config_classes": [
+    {"class_name": "FSIDriverConfig", "canonical_module": "src.mpm_lbm.sim.drivers.fsi_config"},
+    {"class_name": "UnifiedSimConfig", "canonical_module": "src.mpm_lbm.sim.drivers.sim_config"},
+    {"class_name": "LBMConfig", "canonical_module": "src.mpm_lbm.sim.lbm.config"},
+    {"class_name": "MPMConfig", "canonical_module": "src.mpm_lbm.sim.mpm.config"},
+    {"class_name": "GeometryConfig", "canonical_module": "src.mpm_lbm.sim.geometry.config"},
+    {"class_name": "BoundaryMotionInterfaceConfig", "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_config"},
+    {"class_name": "GeometryMotionInterfaceConfig", "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_config"},
+    {"class_name": "WallVelocityApplicationConfig", "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_config"},
+    {"class_name": "WallVelocityFieldConfig", "canonical_module": "src.mpm_lbm.sim.wall_velocity.config"},
+    {"class_name": "RuntimeGeometryProjectionIntegrationConfig", "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config"},
+    {"class_name": "GeometryDisplacementConfig", "canonical_module": "src.mpm_lbm.sim.geometry_displacement.config"},
+    {"class_name": "SquidProxyRegionConfig", "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_config"},
+    {"class_name": "SquidKinematicsScheduleConfig", "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_config"},
+    {"class_name": "SquidMotionMappingConfig", "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_mapping_config"}
+  ]
+}

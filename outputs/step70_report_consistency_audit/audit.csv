@@ -1,0 +1,3 @@
+artifact_exists,artifact_summary_path,deferred,error,expected_file_count,expected_total_size_mb,file_count_match,pass,report_exists,report_path,step_label,total_size_mb_match
+True,outputs/step69_artifact_manifest/artifact_summary.json,False,,90,0.6521368026733398,True,True,True,STEP69_ROOT_SRC_FINAL_IMPLEMENTATION_CLEANUP_REPORT.md,Step69,True
+True,outputs/step70_artifact_manifest/artifact_summary.json,False,,67,0.7225561141967773,True,True,True,STEP70_API_CONFIG_FREEZE_BEFORE_ACTIVATION_REPORT.md,Step70,True

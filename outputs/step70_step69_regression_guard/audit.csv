@@ -1,0 +1,12 @@
+actual,artifact_exists,error,expected,pass,path,summary_key
+True,True,,True,True,outputs/step69_current_root_inventory_audit/audit.json,current_root_inventory_audit_pass
+0,True,,0,True,outputs/step69_current_root_inventory_audit/audit.json,current_migration_required_count
+0,True,,0,True,outputs/step69_current_root_inventory_audit/audit.json,current_root_step_specific_implementation_count
+0,True,,0,True,outputs/step69_current_root_inventory_audit/audit.json,current_unknown_requires_review_count
+True,True,,True,True,outputs/step69_remaining_support_migration_audit/audit.json,remaining_support_migration_audit_pass
+0,True,,0,True,outputs/step69_remaining_support_migration_audit/audit.json,remaining_migration_required_count
+True,True,,True,True,outputs/step69_import_execution_audit/audit.json,step69_import_execution_audit_pass
+True,True,,True,True,outputs/step69_legacy_shim_audit/audit.json,step69_legacy_shim_audit_pass
+True,True,,True,True,outputs/step69_src_init_export_audit/audit.json,src_init_export_audit_pass
+True,True,,True,True,outputs/step69_no_simulation_audit/audit.json,no_simulation_audit_pass
+True,True,,True,True,outputs/step69_artifact_manifest/artifact_summary.json,artifact_budget_pass

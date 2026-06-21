@@ -1,0 +1,110 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "artifact_exists": true,
+      "error": "",
+      "expected": true,
+      "pass": true,
+      "path": "outputs/step69_current_root_inventory_audit/audit.json",
+      "summary_key": "current_root_inventory_audit_pass"
+    },
+    {
+      "actual": 0,
+      "artifact_exists": true,
+      "error": "",
+      "expected": 0,
+      "pass": true,
+      "path": "outputs/step69_current_root_inventory_audit/audit.json",
+      "summary_key": "current_migration_required_count"
+    },
+    {
+      "actual": 0,
+      "artifact_exists": true,
+      "error": "",
+      "expected": 0,
+      "pass": true,
+      "path": "outputs/step69_current_root_inventory_audit/audit.json",
+      "summary_key": "current_root_step_specific_implementation_count"
+    },
+    {
+      "actual": 0,
+      "artifact_exists": true,
+      "error": "",
+      "expected": 0,
+      "pass": true,
+      "path": "outputs/step69_current_root_inventory_audit/audit.json",
+      "summary_key": "current_unknown_requires_review_count"
+    },
+    {
+      "actual": true,
+      "artifact_exists": true,
+      "error": "",
+      "expected": true,
+      "pass": true,
+      "path": "outputs/step69_remaining_support_migration_audit/audit.json",
+      "summary_key": "remaining_support_migration_audit_pass"
+    },
+    {
+      "actual": 0,
+      "artifact_exists": true,
+      "error": "",
+      "expected": 0,
+      "pass": true,
+      "path": "outputs/step69_remaining_support_migration_audit/audit.json",
+      "summary_key": "remaining_migration_required_count"
+    },
+    {
+      "actual": true,
+      "artifact_exists": true,
+      "error": "",
+      "expected": true,
+      "pass": true,
+      "path": "outputs/step69_import_execution_audit/audit.json",
+      "summary_key": "step69_import_execution_audit_pass"
+    },
+    {
+      "actual": true,
+      "artifact_exists": true,
+      "error": "",
+      "expected": true,
+      "pass": true,
+      "path": "outputs/step69_legacy_shim_audit/audit.json",
+      "summary_key": "step69_legacy_shim_audit_pass"
+    },
+    {
+      "actual": true,
+      "artifact_exists": true,
+      "error": "",
+      "expected": true,
+      "pass": true,
+      "path": "outputs/step69_src_init_export_audit/audit.json",
+      "summary_key": "src_init_export_audit_pass"
+    },
+    {
+      "actual": true,
+      "artifact_exists": true,
+      "error": "",
+      "expected": true,
+      "pass": true,
+      "path": "outputs/step69_no_simulation_audit/audit.json",
+      "summary_key": "no_simulation_audit_pass"
+    },
+    {
+      "actual": true,
+      "artifact_exists": true,
+      "error": "",
+      "expected": true,
+      "pass": true,
+      "path": "outputs/step69_artifact_manifest/artifact_summary.json",
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "summary": {
+    "missing_artifact_count": 0,
+    "row_count": 11,
+    "step69_pass_count": 11,
+    "step69_required_check_count": 11,
+    "step70_step69_regression_guard_pass": true
+  }
+}

@@ -1,0 +1,16 @@
+allowed,check,gate,notes,pass
+False,activation_gate_closed,combined_runtime_geometry_wall_velocity_activation_allowed,Step70 freeze keeps activation closed,True
+False,activation_gate_closed,grid_48_activation_allowed,Step70 freeze keeps activation closed,True
+False,activation_gate_closed,grid_64_activation_allowed,Step70 freeze keeps activation closed,True
+False,activation_gate_closed,link_area_activation_allowed,Step70 freeze keeps activation closed,True
+False,activation_gate_closed,particle_npy_output_allowed,Step70 freeze keeps activation closed,True
+False,activation_gate_closed,real_geometry_activation_allowed,Step70 freeze keeps activation closed,True
+False,activation_gate_closed,runtime_geometry_activation_allowed,Step70 freeze keeps activation closed,True
+False,activation_gate_closed,squid_proxy_activation_allowed,Step70 freeze keeps activation closed,True
+False,activation_gate_closed,vtr_output_allowed,Step70 freeze keeps activation closed,True
+False,activation_gate_closed,wall_velocity_activation_allowed,Step70 freeze keeps activation closed,True
+,pending_gate_reason_recorded,,Step71 tau convention decision pending,True
+,pending_gate_reason_recorded,,Step72 runtime geometry activation readiness pending,True
+,pending_gate_reason_recorded,,Step73 wall velocity activation readiness pending,True
+,pending_gate_reason_recorded,,Step74 real geometry data boundary pending,True
+,pending_gate_reason_recorded,,Step75 solver-complete campaign gate pending,True
