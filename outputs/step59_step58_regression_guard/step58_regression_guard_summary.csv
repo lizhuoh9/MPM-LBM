@@ -1,0 +1,10 @@
+metric,value
+pass_count,7
+row_count,7
+step58_behavior_row_count,5
+step58_bridge_row_count,3
+step58_import_row_count,6
+step58_migration_row_count,1
+step58_regression_guard_pass,True
+step58_shim_row_count,1
+step59_geo_path_naming_supersession,geo_path filename now follows n_grid; default n_grid=32 remains Step58-compatible

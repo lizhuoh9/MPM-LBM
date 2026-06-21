@@ -1,0 +1,10 @@
+metric,value
+canonical_driver_smoke_audit_pass,True
+canonical_module_count,3
+driver_run_called_count,3
+legacy_driver_module_used_count,0
+missing_required_rows,[]
+pass_count,3
+required_row_count,3
+row_count,3
+stable_count,3

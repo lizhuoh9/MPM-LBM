@@ -1,0 +1,4 @@
+n_grid,expected_filename,actual_filename,geo_path,output_dir_exists_before,output_dir_exists_after,pass
+16,geo_all_fluid_16.dat,geo_all_fluid_16.dat,outputs/step59_geo_path_naming_audit/constructor_probe_n16/geo_all_fluid_16.dat,False,False,True
+32,geo_all_fluid_32.dat,geo_all_fluid_32.dat,outputs/step59_geo_path_naming_audit/constructor_probe_n32/geo_all_fluid_32.dat,False,False,True
+48,geo_all_fluid_48.dat,geo_all_fluid_48.dat,outputs/step59_geo_path_naming_audit/constructor_probe_n48/geo_all_fluid_48.dat,False,False,True

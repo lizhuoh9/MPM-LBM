@@ -21,6 +21,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 56: canonical runtime implementation migration wave 1
 - Step 57: canonical driver support migration wave 2
 - Step 58: canonical FSIDriver implementation migration wave 3
+- Step 59: canonical FSIDriver real smoke simulation
 
 ## Current Validated Modes
 
@@ -29,6 +30,8 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - moving_boundary
 
 The current mode matrix is validated through committed Step 10 logs and outputs. The validation scale is small-scale 32^3 / 4096-particle engineering baselines.
+
+Step 59 additionally verifies that the canonical `FSIDriver3D` implementation can execute real one-step smoke runs for the `none`, `penalty`, and `moving_boundary` engineering modes at 16^3 with 512 particles. This is a post-migration canonical-driver smoke check, not a larger validation campaign.
 
 ## What Exists
 
@@ -56,3 +59,5 @@ The current mode matrix is validated through committed Step 10 logs and outputs.
 The repository is ready for documentation review, reproducibility review, and conservative next-step planning. It is not production ready and does not yet validate a real squid case.
 
 The latest repository-structure work has moved the first runtime implementation wave, the driver-support implementation wave, and the `FSIDriver3D` implementation into canonical `src/mpm_lbm/...` modules while preserving legacy root imports as compatibility shims. This is code ownership migration, not new physics validation. Step 58 adds temporary canonical bridge surfaces for optional motion and wall-velocity imports only; their real implementations remain legacy-owned until a later migration step.
+
+Step 59 proves the canonical driver can run the existing small `none`, `penalty`, and `moving_boundary` engineering smoke rows through `driver.run()`, and fixes grid-sized geometry-output naming. It does not activate runtime geometry or moving-wall velocity, add 48^3 or 64^3 validation, validate jet propulsion, validate real squid behavior, prove grid convergence, or claim production readiness.

@@ -68,7 +68,7 @@ class FSIDriver3D:
             "total_time": 0.0,
         }
 
-        self.geo_path = os.path.join(self.out_dir, "geo_all_fluid_32.dat")
+        self.geo_path = os.path.join(self.out_dir, f"geo_all_fluid_{self.config.n_grid}.dat")
         self.initialized = False
         self.start_time = None
 

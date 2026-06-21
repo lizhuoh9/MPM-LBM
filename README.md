@@ -62,6 +62,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 56 canonical runtime implementation migration wave 1
 - Step 57 canonical driver support migration wave 2
 - Step 58 canonical FSIDriver implementation migration wave 3
+- Step 59 canonical FSIDriver real smoke simulation
 
 ## Not Implemented
 
@@ -714,6 +715,24 @@ Step 56 does not implement squid swimming.
 Step 56 does not prove grid convergence.
 Step 56 does not claim production readiness.
 See docs/56_canonical_runtime_implementation_migration_wave1.md.
+
+## Step 59 Canonical FSIDriver Real Smoke Simulation Boundary
+
+Step 59 is canonical FSIDriver real smoke simulation work.
+Step 59 calls `FSIDriver3D(...).run()` through `src.mpm_lbm.sim.drivers.fsi_driver`.
+Step 59 runs the required `none`, `penalty`, and `moving_boundary` engineering rows at 16^3, 512 particles, and one LBM step.
+Step 59 fixes the driver geometry-output filename to `geo_all_fluid_{n_grid}.dat`.
+Step 59 keeps outputs lightweight and rejects VTR output, particle NPY output, large Step 59 files, external solver edits, and real-geometry candidate edits.
+Step 59 does not change solver formulas.
+Step 59 does not activate runtime geometry.
+Step 59 does not activate moving-wall velocity.
+Step 59 does not add a 48^3 or 64^3 validation row.
+Step 59 does not validate real jet behavior.
+Step 59 does not validate jet propulsion.
+Step 59 does not implement squid swimming.
+Step 59 does not prove grid convergence.
+Step 59 does not claim production readiness.
+See docs/59_canonical_fsidriver_real_smoke_simulation.md.
 
 ## Upstream LBM Note
 

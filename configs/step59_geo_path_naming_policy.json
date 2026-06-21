@@ -1,0 +1,20 @@
+{
+  "policy_id": "step59_geo_path_naming_policy",
+  "cases": [
+    {
+      "n_grid": 16,
+      "expected_filename": "geo_all_fluid_16.dat"
+    },
+    {
+      "n_grid": 32,
+      "expected_filename": "geo_all_fluid_32.dat"
+    },
+    {
+      "n_grid": 48,
+      "expected_filename": "geo_all_fluid_48.dat"
+    }
+  ],
+  "constructor_must_not_create_files": true,
+  "solver_behavior_changed": false,
+  "physics_feature_expansion": false
+}

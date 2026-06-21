@@ -1,0 +1,32 @@
+{
+  "policy_id": "step59_smoke_acceptance_policy",
+  "required_row_names": [
+    "canonical_driver_none_16_1step",
+    "canonical_driver_penalty_16_1step",
+    "canonical_driver_moving_boundary_engineering_16_1step"
+  ],
+  "n_grid": 16,
+  "n_particles": 512,
+  "n_lbm_steps": 1,
+  "mpm_substeps_per_lbm_step": 1,
+  "min_diagnostics_row_count": 2,
+  "min_total_mpm_substeps": 1,
+  "rho_min_lower_bound": 0.9,
+  "rho_max_upper_bound": 1.1,
+  "lbm_max_v_upper_bound": 0.5,
+  "mpm_min_J_lower_bound": 0.0,
+  "max_step59_total_size_mb": 5.0,
+  "expected_driver_run_dir_count": 3,
+  "allowed_driver_run_files": [
+    "diagnostics_timeseries.csv",
+    "diagnostics_timeseries.npz",
+    "driver_config.json",
+    "geo_all_fluid_16.dat"
+  ],
+  "forbidden_filename_tokens": [
+    ".vtr",
+    "particles_",
+    "displaced_particle",
+    "dense_displacement"
+  ]
+}

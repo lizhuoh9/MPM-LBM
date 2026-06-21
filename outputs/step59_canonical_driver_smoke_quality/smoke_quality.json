@@ -1,0 +1,72 @@
+{
+  "rows": [
+    {
+      "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+      "completed_lbm_steps": 1,
+      "coupling_mode": "none",
+      "diagnostics_row_count": 2,
+      "driver_run_called": true,
+      "has_inf": false,
+      "has_nan": false,
+      "lbm_max_v": 0.0,
+      "legacy_driver_module_used_as_implementation": false,
+      "mpm_min_J": 1.0,
+      "pass": true,
+      "reaction_transfer_mode": "engineering",
+      "rho_max": 1.0000003576278687,
+      "rho_min": 1.0000003576278687,
+      "row_name": "canonical_driver_none_16_1step",
+      "stable": true,
+      "total_mpm_substeps": 1
+    },
+    {
+      "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+      "completed_lbm_steps": 1,
+      "coupling_mode": "penalty",
+      "diagnostics_row_count": 2,
+      "driver_run_called": true,
+      "has_inf": false,
+      "has_nan": false,
+      "lbm_max_v": 1.2197436262795236e-05,
+      "legacy_driver_module_used_as_implementation": false,
+      "mpm_min_J": 0.9999967813491821,
+      "pass": true,
+      "reaction_transfer_mode": "engineering",
+      "rho_max": 1.0000014305114746,
+      "rho_min": 0.9999992847442627,
+      "row_name": "canonical_driver_penalty_16_1step",
+      "stable": true,
+      "total_mpm_substeps": 1
+    },
+    {
+      "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+      "completed_lbm_steps": 1,
+      "coupling_mode": "moving_boundary",
+      "diagnostics_row_count": 2,
+      "driver_run_called": true,
+      "has_inf": false,
+      "has_nan": false,
+      "lbm_max_v": 0.020408153533935547,
+      "legacy_driver_module_used_as_implementation": false,
+      "mpm_min_J": 0.9999899864196777,
+      "pass": true,
+      "reaction_transfer_mode": "engineering",
+      "rho_max": 1.0200003385543823,
+      "rho_min": 0.980000376701355,
+      "row_name": "canonical_driver_moving_boundary_engineering_16_1step",
+      "stable": true,
+      "total_mpm_substeps": 1
+    }
+  ],
+  "summary": {
+    "canonical_driver_smoke_audit_pass": true,
+    "canonical_module_count": 3,
+    "driver_run_called_count": 3,
+    "legacy_driver_module_used_count": 0,
+    "missing_required_rows": [],
+    "pass_count": 3,
+    "required_row_count": 3,
+    "row_count": 3,
+    "stable_count": 3
+  }
+}

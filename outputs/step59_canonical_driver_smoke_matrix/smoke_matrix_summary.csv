@@ -1,0 +1,23 @@
+metric,value
+canonical_driver_module,src.mpm_lbm.sim.drivers.fsi_driver
+canonical_driver_smoke_matrix_pass,True
+driver_run_called_count,3
+driver_run_required,True
+has_inf_count,0
+has_nan_count,0
+legacy_driver_module_used_count,0
+max_lbm_max_v,0.020408153533935547
+max_mpm_max_speed,3.125638723373413
+max_rho_max,1.0200003385543823
+min_completed_lbm_steps,1
+min_diagnostics_row_count,2
+min_mpm_min_J,0.9999899864196777
+min_rho_min,0.980000376701355
+min_total_mpm_substeps,1
+missing_required_rows,[]
+physics_feature_expansion,False
+required_row_count,3
+required_rows_present,"[""canonical_driver_moving_boundary_engineering_16_1step"", ""canonical_driver_none_16_1step"", ""canonical_driver_penalty_16_1step""]"
+row_count,3
+solver_behavior_changed,False
+stable_count,3

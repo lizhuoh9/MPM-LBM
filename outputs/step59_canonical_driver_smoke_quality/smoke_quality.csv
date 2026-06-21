@@ -1,0 +1,4 @@
+row_name,coupling_mode,reaction_transfer_mode,driver_run_called,stable,canonical_driver_module,legacy_driver_module_used_as_implementation,completed_lbm_steps,total_mpm_substeps,diagnostics_row_count,rho_min,rho_max,lbm_max_v,mpm_min_J,has_nan,has_inf,pass
+canonical_driver_none_16_1step,none,engineering,True,True,src.mpm_lbm.sim.drivers.fsi_driver,False,1,1,2,1.0000003576278687,1.0000003576278687,0.0,1.0,False,False,True
+canonical_driver_penalty_16_1step,penalty,engineering,True,True,src.mpm_lbm.sim.drivers.fsi_driver,False,1,1,2,0.9999992847442627,1.0000014305114746,1.2197436262795236e-05,0.9999967813491821,False,False,True
+canonical_driver_moving_boundary_engineering_16_1step,moving_boundary,engineering,True,True,src.mpm_lbm.sim.drivers.fsi_driver,False,1,1,2,0.980000376701355,1.0200003385543823,0.020408153533935547,0.9999899864196777,False,False,True

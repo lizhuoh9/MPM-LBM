@@ -1,0 +1,15 @@
+{
+  "policy_id": "step59_canonical_fsidriver_real_smoke_simulation",
+  "step": 59,
+  "required_smoke_configs": [
+    "configs/step59_canonical_driver_none_16_1step.json",
+    "configs/step59_canonical_driver_penalty_16_1step.json",
+    "configs/step59_canonical_driver_moving_boundary_engineering_16_1step.json"
+  ],
+  "driver_run_root": "outputs/step59_driver_runs",
+  "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+  "legacy_driver_module": "src.fsi_driver",
+  "driver_run_required": true,
+  "solver_behavior_changed": false,
+  "physics_feature_expansion": false
+}
