@@ -1,0 +1,38 @@
+{
+  "policy_id": "step58_driver_import_execution_policy",
+  "object_identity_required": true,
+  "no_solver_run": true,
+  "no_output_writes": true,
+  "symbol_pairs": [
+    {
+      "canonical_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+      "legacy_module": "src.fsi_driver",
+      "symbol": "FSIDriver3D",
+      "comparison": "identity"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+      "legacy_module": "src.fsi_driver",
+      "symbol": "DIAGNOSTIC_FIELDS",
+      "comparison": "equality"
+    }
+  ],
+  "bridge_imports": [
+    {
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_interface",
+      "symbol": "write_static_boundary_motion_interface_report"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_interface",
+      "symbol": "write_boundary_motion_interface_report"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_interface",
+      "symbol": "write_geometry_motion_interface_report"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "symbol": "apply_wall_velocity_application_to_lbm"
+    }
+  ]
+}

@@ -16,7 +16,7 @@ _EXPORT_MODULES = {
     "PenaltyFSICoupler3D": "src.coupling",
     "FSIDiagnostics3D": "src.mpm_lbm.diagnostics.fsi_diagnostics",
     "FSIDriverConfig": "src.mpm_lbm.sim.drivers.fsi_config",
-    "FSIDriver3D": "src.fsi_driver",
+    "FSIDriver3D": "src.mpm_lbm.sim.drivers.fsi_driver",
     "GeometryConfig": "src.mpm_lbm.sim.geometry.config",
     "GeometrySampler3D": "src.mpm_lbm.sim.geometry.sampler",
     "ImportedGeometrySampler3D": "src.mpm_lbm.sim.geometry.importers",

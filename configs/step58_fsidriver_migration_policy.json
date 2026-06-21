@@ -1,0 +1,36 @@
+{
+  "policy_id": "step58_fsidriver_migration_policy",
+  "step": 58,
+  "migration": {
+    "canonical_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+    "canonical_path": "src/mpm_lbm/sim/drivers/fsi_driver.py",
+    "legacy_import": "from src.mpm_lbm.sim.drivers.fsi_driver import *",
+    "legacy_module": "src.fsi_driver",
+    "legacy_path": "src/fsi_driver.py",
+    "required_symbols": ["FSIDriver3D", "DIAGNOSTIC_FIELDS"],
+    "implementation_tokens": ["class FSIDriver3D", "DIAGNOSTIC_FIELDS", "def initialize", "def step_once", "def run"]
+  },
+  "forbidden_legacy_import_tokens": [
+    "from .coupling",
+    "from .diagnostics",
+    "from .fsi_config",
+    "from .geometry_config",
+    "from .geometry ",
+    "from .geometry_quality",
+    "from .lbm_fluid",
+    "from .link_area_coupling",
+    "from .moving_boundary_coupling",
+    "from .mpm_solid",
+    "from .projection",
+    "from .run_utils",
+    "from .units",
+    "from .boundary_motion_interface",
+    "from .geometry_motion_interface",
+    "from .wall_velocity_application",
+    "_LEGACY_MODULE",
+    "legacy_getattr"
+  ],
+  "legacy_required_docstring": "Compatibility shim. Canonical implementation lives in ",
+  "solver_behavior_changed": false,
+  "physics_feature_expansion": false
+}

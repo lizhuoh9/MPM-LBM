@@ -60,7 +60,7 @@ def test_step13_source_contract_keywords():
         "src/mpm_lbm/sim/geometry/utils.py",
         "src/mpm_solid.py",
         "src/mpm_lbm/sim/drivers/fsi_config.py",
-        "src/fsi_driver.py",
+        "src/mpm_lbm/sim/drivers/fsi_driver.py",
         "baseline_tests/run_step13_geometry_sampler_box.py",
         "baseline_tests/run_step13_geometry_sampler_ellipsoid.py",
         "baseline_tests/run_step13_squid_proxy_geometry.py",

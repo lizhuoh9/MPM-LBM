@@ -1,0 +1,2 @@
+legacy_path,legacy_file_exists,legacy_is_shim,legacy_imports_canonical,legacy_contains_implementation_body,nonblank_line_count,pass
+src/fsi_driver.py,True,True,True,False,2,True

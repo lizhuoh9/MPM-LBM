@@ -1,0 +1,2 @@
+canonical_path,legacy_path,migration_status,canonical_path_exists,legacy_path_exists,canonical_contains_real_implementation,canonical_has_forbidden_tokens,canonical_forbidden_tokens,canonical_imports_legacy_root,legacy_is_shim,legacy_imports_canonical,forbidden_reverse_dependency,pass
+src/mpm_lbm/sim/drivers/fsi_driver.py,src/fsi_driver.py,migrated,True,True,True,False,[],False,True,True,False,True

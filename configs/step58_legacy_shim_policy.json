@@ -1,0 +1,7 @@
+{
+  "policy_id": "step58_legacy_shim_policy",
+  "max_nonblank_lines_per_shim": 4,
+  "legacy_file": "src/fsi_driver.py",
+  "canonical_import": "from src.mpm_lbm.sim.drivers.fsi_driver import *",
+  "legacy_files_must_not_contain_tokens": ["@ti.data_oriented", "class FSIDriver3D", "DIAGNOSTIC_FIELDS = [", "_LEGACY_MODULE", "legacy_getattr"]
+}

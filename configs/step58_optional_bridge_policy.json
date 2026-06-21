@@ -1,0 +1,31 @@
+{
+  "policy_id": "step58_optional_bridge_policy",
+  "bridge_is_temporary_until_step59": true,
+  "bridges": [
+    {
+      "canonical_path": "src/mpm_lbm/sim/motion/boundary_motion_interface.py",
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_interface",
+      "legacy_module": "src.boundary_motion_interface",
+      "symbols": [
+        "write_static_boundary_motion_interface_report",
+        "write_boundary_motion_interface_report"
+      ]
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/motion/geometry_motion_interface.py",
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_interface",
+      "legacy_module": "src.geometry_motion_interface",
+      "symbols": [
+        "write_geometry_motion_interface_report"
+      ]
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/application.py",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "legacy_module": "src.wall_velocity_application",
+      "symbols": [
+        "apply_wall_velocity_application_to_lbm"
+      ]
+    }
+  ]
+}

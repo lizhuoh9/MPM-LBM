@@ -1,0 +1,13 @@
+metric,value
+canonical_forbidden_token_count,0
+canonical_legacy_root_import_count,0
+canonical_missing_count,0
+canonical_real_implementation_count,1
+forbidden_reverse_dependency_count,0
+fsidriver_migration_audit_pass,True
+legacy_missing_count,0
+legacy_shim_count,1
+pass_count,1
+physics_feature_expansion,False
+row_count,1
+solver_behavior_changed,False

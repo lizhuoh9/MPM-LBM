@@ -1,0 +1,20 @@
+{
+  "rows": [
+    {
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/fsi_driver.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "fsidriver_legacy_shim_audit_pass": true,
+    "legacy_implementation_body_count": 0,
+    "legacy_shim_count": 1,
+    "pass_count": 1,
+    "row_count": 1
+  }
+}

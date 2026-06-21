@@ -1,0 +1,68 @@
+{
+  "rows": [
+    {
+      "all_symbols_listed": true,
+      "bridge_file_exists": true,
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_interface",
+      "canonical_path": "src/mpm_lbm/sim/motion/boundary_motion_interface.py",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.boundary_motion_interface",
+      "legacy_module_declared": true,
+      "pass": true,
+      "resolved_symbol_count": 2,
+      "same_object_symbol_count": 2,
+      "symbol_count": 2,
+      "temporary_marker_present": true,
+      "uses_legacy_getattr": true
+    },
+    {
+      "all_symbols_listed": true,
+      "bridge_file_exists": true,
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_interface",
+      "canonical_path": "src/mpm_lbm/sim/motion/geometry_motion_interface.py",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_motion_interface",
+      "legacy_module_declared": true,
+      "pass": true,
+      "resolved_symbol_count": 1,
+      "same_object_symbol_count": 1,
+      "symbol_count": 1,
+      "temporary_marker_present": true,
+      "uses_legacy_getattr": true
+    },
+    {
+      "all_symbols_listed": true,
+      "bridge_file_exists": true,
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/application.py",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application",
+      "legacy_module_declared": true,
+      "pass": true,
+      "resolved_symbol_count": 1,
+      "same_object_symbol_count": 1,
+      "symbol_count": 1,
+      "temporary_marker_present": true,
+      "uses_legacy_getattr": true
+    }
+  ],
+  "summary": {
+    "bridge_file_count": 3,
+    "bridge_is_temporary_until_step59": true,
+    "legacy_getattr_bridge_count": 3,
+    "optional_bridge_audit_pass": true,
+    "output_snapshot_unchanged": true,
+    "pass_count": 3,
+    "row_count": 3,
+    "same_object_symbol_count": 4,
+    "solver_run": false,
+    "symbol_count": 4,
+    "temporary_marker_count": 3
+  }
+}

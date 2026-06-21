@@ -1,0 +1,7 @@
+row_kind,canonical_module,legacy_module,symbol,comparison,canonical_import_pass,legacy_import_pass,same_object,equal_value,pass,error
+symbol_pair,src.mpm_lbm.sim.drivers.fsi_driver,src.fsi_driver,FSIDriver3D,identity,True,True,True,True,True,
+symbol_pair,src.mpm_lbm.sim.drivers.fsi_driver,src.fsi_driver,DIAGNOSTIC_FIELDS,equality,True,True,True,True,True,
+bridge_import,src.mpm_lbm.sim.motion.boundary_motion_interface,,write_static_boundary_motion_interface_report,import_only,True,,,,True,
+bridge_import,src.mpm_lbm.sim.motion.boundary_motion_interface,,write_boundary_motion_interface_report,import_only,True,,,,True,
+bridge_import,src.mpm_lbm.sim.motion.geometry_motion_interface,,write_geometry_motion_interface_report,import_only,True,,,,True,
+bridge_import,src.mpm_lbm.sim.wall_velocity.application,,apply_wall_velocity_application_to_lbm,import_only,True,,,,True,

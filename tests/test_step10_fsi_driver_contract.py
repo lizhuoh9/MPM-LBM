@@ -58,7 +58,11 @@ def test_step10_required_artifacts_exist():
 
 def test_step10_source_contains_required_interfaces():
     sources = []
-    for rel_path in ("src/mpm_lbm/sim/drivers/fsi_config.py", "src/fsi_driver.py", "src/mpm_lbm/sim/io/run_utils.py"):
+    for rel_path in (
+        "src/mpm_lbm/sim/drivers/fsi_config.py",
+        "src/mpm_lbm/sim/drivers/fsi_driver.py",
+        "src/mpm_lbm/sim/io/run_utils.py",
+    ):
         path = ROOT / rel_path
         if path.is_file():
             sources.append(path.read_text(encoding="utf-8"))
@@ -110,7 +114,7 @@ def test_step10_config_files_are_valid_json():
 def test_step10_scripts_respect_mode_boundaries():
     source_paths = [
         ROOT / "src/mpm_lbm/sim/drivers/fsi_config.py",
-        ROOT / "src/fsi_driver.py",
+        ROOT / "src/mpm_lbm/sim/drivers/fsi_driver.py",
         ROOT / "src/mpm_lbm/sim/io/run_utils.py",
         ROOT / "baseline_tests/run_step10_driver_penalty_mode.py",
         ROOT / "baseline_tests/run_step10_driver_moving_boundary_mode.py",
@@ -131,7 +135,7 @@ def test_step10_scripts_respect_mode_boundaries():
 
     assert offenders == []
 
-    driver_source = (ROOT / "src/fsi_driver.py").read_text(encoding="utf-8")
+    driver_source = (ROOT / "src/mpm_lbm/sim/drivers/fsi_driver.py").read_text(encoding="utf-8")
     assert 'coupling_mode == "none"' in driver_source
     assert 'coupling_mode == "penalty"' in driver_source
     assert 'coupling_mode == "moving_boundary"' in driver_source

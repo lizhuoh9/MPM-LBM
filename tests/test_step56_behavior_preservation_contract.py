@@ -64,15 +64,18 @@ def step56_behavior_pass_or_step57_support_supersession(rows: list[dict], summar
     step57_policy_path = ROOT / "configs" / "step57_driver_support_migration_policy.json"
     if not step57_policy_path.is_file():
         return {"pass": False, "unexpected_failures": failing_rows}
-    step57_legacy_paths = {
+    allowed_legacy_paths = {
         migration["legacy_path"]
         for migration in read_json("configs/step57_driver_support_migration_policy.json")["migrations"]
     }
+    step58_policy_path = ROOT / "configs" / "step58_fsidriver_migration_policy.json"
+    if step58_policy_path.is_file():
+        allowed_legacy_paths.add(read_json("configs/step58_fsidriver_migration_policy.json")["migration"]["legacy_path"])
     unexpected_failures = []
     superseded_paths = []
     for row in failing_rows:
         actual = set(row.get("actual", []))
-        if row.get("check") == "unmigrated_driver_and_coupling_paths_unchanged" and actual <= step57_legacy_paths:
+        if row.get("check") == "unmigrated_driver_and_coupling_paths_unchanged" and actual <= allowed_legacy_paths:
             superseded_paths.extend(sorted(actual))
         else:
             unexpected_failures.append(row)

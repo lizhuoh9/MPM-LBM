@@ -1,0 +1,171 @@
+{
+  "rows": [
+    {
+      "actual": [
+        "step",
+        "total_mpm_substeps",
+        "coupling_mode",
+        "rho_min",
+        "rho_max",
+        "lbm_max_v",
+        "fluid_mean_ux",
+        "projection_zone_fluid_mean_ux",
+        "far_field_fluid_mean_ux",
+        "solid_mean_vx_norm",
+        "mpm_min_J",
+        "mpm_max_speed",
+        "projected_mass",
+        "active_cell_count",
+        "cell_force_max_norm",
+        "hydro_force_max_norm",
+        "bb_link_count",
+        "bb_max_correction",
+        "active_reaction_particle_count",
+        "max_grid_reaction_norm",
+        "elapsed_seconds"
+      ],
+      "check": "diagnostic_fields",
+      "expected": [
+        "step",
+        "total_mpm_substeps",
+        "coupling_mode",
+        "rho_min",
+        "rho_max",
+        "lbm_max_v",
+        "fluid_mean_ux",
+        "projection_zone_fluid_mean_ux",
+        "far_field_fluid_mean_ux",
+        "solid_mean_vx_norm",
+        "mpm_min_J",
+        "mpm_max_speed",
+        "projected_mass",
+        "active_cell_count",
+        "cell_force_max_norm",
+        "hydro_force_max_norm",
+        "bb_link_count",
+        "bb_max_correction",
+        "active_reaction_particle_count",
+        "max_grid_reaction_norm",
+        "elapsed_seconds"
+      ],
+      "notes": "lightweight semantic preservation check",
+      "pass": true
+    },
+    {
+      "actual": {
+        "boundary_motion_mode": "static",
+        "coupling_mode": "penalty",
+        "geometry_motion_application_mode": "disabled",
+        "geometry_motion_mode": "static",
+        "geometry_type": "box",
+        "link_area_policy": "inverse_length",
+        "mb_force_cap_norm": 0.0001,
+        "mb_reaction_scale": 1.0,
+        "mpm_dt": 0.0004,
+        "mpm_substeps_per_lbm_step": 10,
+        "n_grid": 32,
+        "n_lbm_steps": 20,
+        "n_particles": 4096,
+        "quality_check_enabled": false,
+        "quality_check_strict": false,
+        "reaction_transfer_mode": "engineering",
+        "wall_velocity_application_mode": "disabled"
+      },
+      "check": "fsi_driver_config_selected_defaults",
+      "expected": {
+        "boundary_motion_mode": "static",
+        "coupling_mode": "penalty",
+        "geometry_motion_application_mode": "disabled",
+        "geometry_motion_mode": "static",
+        "geometry_type": "box",
+        "link_area_policy": "inverse_length",
+        "mb_force_cap_norm": 0.0001,
+        "mb_reaction_scale": 1.0,
+        "mpm_dt": 0.0004,
+        "mpm_substeps_per_lbm_step": 10,
+        "n_grid": 32,
+        "n_lbm_steps": 20,
+        "n_particles": 4096,
+        "quality_check_enabled": false,
+        "quality_check_strict": false,
+        "reaction_transfer_mode": "engineering",
+        "wall_velocity_application_mode": "disabled"
+      },
+      "notes": "lightweight semantic preservation check",
+      "pass": true
+    },
+    {
+      "actual": {
+        "current_lbm_step": 0,
+        "initialized": false,
+        "lbm_is_none": true,
+        "output_dir_exists_after": false,
+        "output_dir_exists_before": false,
+        "projector_is_none": true,
+        "solid_is_none": true,
+        "timing_keys": [
+          "init_time",
+          "projection_time",
+          "coupling_time",
+          "lbm_step_time",
+          "mpm_substep_time",
+          "diagnostics_time",
+          "export_time",
+          "wall_velocity_application_time",
+          "geometry_motion_interface_time",
+          "total_time"
+        ],
+        "total_mpm_substeps": 0
+      },
+      "check": "constructor_no_run_state",
+      "expected": {
+        "current_lbm_step": 0,
+        "initialized": false,
+        "lbm_is_none": true,
+        "output_dir_exists_after": false,
+        "output_dir_exists_before": false,
+        "projector_is_none": true,
+        "solid_is_none": true,
+        "timing_keys": [
+          "init_time",
+          "projection_time",
+          "coupling_time",
+          "lbm_step_time",
+          "mpm_substep_time",
+          "diagnostics_time",
+          "export_time",
+          "wall_velocity_application_time",
+          "geometry_motion_interface_time",
+          "total_time"
+        ],
+        "total_mpm_substeps": 0
+      },
+      "notes": "constructor only; initialize, step_once, and run are not called",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "solver_behavior_changed",
+      "expected": false,
+      "notes": "Step 58 only migrates FSIDriver3D implementation ownership.",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "physics_feature_expansion",
+      "expected": false,
+      "notes": "Step 58 does not add runtime geometry, motion, or wall velocity behavior.",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "constructor_no_run_probe_used": true,
+    "fsidriver_behavior_preservation_audit_pass": true,
+    "output_dir_created_by_constructor": false,
+    "pass_count": 5,
+    "physics_feature_expansion": false,
+    "row_count": 5,
+    "solver_behavior_changed": false,
+    "solver_run": false
+  }
+}

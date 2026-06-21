@@ -1,0 +1,6 @@
+metric,value
+fsidriver_legacy_shim_audit_pass,True
+legacy_implementation_body_count,0
+legacy_shim_count,1
+pass_count,1
+row_count,1

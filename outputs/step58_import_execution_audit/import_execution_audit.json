@@ -1,0 +1,101 @@
+{
+  "rows": [
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+      "comparison": "identity",
+      "equal_value": true,
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.fsi_driver",
+      "pass": true,
+      "row_kind": "symbol_pair",
+      "same_object": true,
+      "symbol": "FSIDriver3D"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+      "comparison": "equality",
+      "equal_value": true,
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.fsi_driver",
+      "pass": true,
+      "row_kind": "symbol_pair",
+      "same_object": true,
+      "symbol": "DIAGNOSTIC_FIELDS"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_interface",
+      "comparison": "import_only",
+      "equal_value": "",
+      "error": "",
+      "legacy_import_pass": "",
+      "legacy_module": "",
+      "pass": true,
+      "row_kind": "bridge_import",
+      "same_object": "",
+      "symbol": "write_static_boundary_motion_interface_report"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_interface",
+      "comparison": "import_only",
+      "equal_value": "",
+      "error": "",
+      "legacy_import_pass": "",
+      "legacy_module": "",
+      "pass": true,
+      "row_kind": "bridge_import",
+      "same_object": "",
+      "symbol": "write_boundary_motion_interface_report"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_interface",
+      "comparison": "import_only",
+      "equal_value": "",
+      "error": "",
+      "legacy_import_pass": "",
+      "legacy_module": "",
+      "pass": true,
+      "row_kind": "bridge_import",
+      "same_object": "",
+      "symbol": "write_geometry_motion_interface_report"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "comparison": "import_only",
+      "equal_value": "",
+      "error": "",
+      "legacy_import_pass": "",
+      "legacy_module": "",
+      "pass": true,
+      "row_kind": "bridge_import",
+      "same_object": "",
+      "symbol": "apply_wall_velocity_application_to_lbm"
+    }
+  ],
+  "summary": {
+    "bridge_import_pass_count": 4,
+    "bridge_import_row_count": 4,
+    "canonical_import_pass_count": 6,
+    "equal_value_count": 2,
+    "equality_pair_count": 1,
+    "fsidriver_import_execution_audit_pass": true,
+    "identity_pair_count": 1,
+    "legacy_import_pass_count": 2,
+    "no_output_writes": true,
+    "output_snapshot_unchanged": true,
+    "pass_count": 6,
+    "row_count": 6,
+    "runtime_object_construction_required": false,
+    "same_object_count": 2,
+    "solver_run": false,
+    "symbol_pair_pass_count": 2,
+    "symbol_pair_row_count": 2
+  }
+}

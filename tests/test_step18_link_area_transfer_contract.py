@@ -120,7 +120,7 @@ def test_step18_required_artifacts_exist():
 def test_step18_source_keywords_and_defaults_exist():
     source_paths = [
         "src/mpm_lbm/sim/drivers/fsi_config.py",
-        "src/fsi_driver.py",
+        "src/mpm_lbm/sim/drivers/fsi_driver.py",
         "src/mpm_lbm/sim/coupling/link_area.py",
         "src/__init__.py",
     ]

@@ -1,0 +1,9 @@
+metric,value
+constructor_no_run_probe_used,True
+fsidriver_behavior_preservation_audit_pass,True
+output_dir_created_by_constructor,False
+pass_count,5
+physics_feature_expansion,False
+row_count,5
+solver_behavior_changed,False
+solver_run,False
