@@ -1,0 +1,69 @@
+{
+  "rows": [
+    {
+      "check": "step51_report_exists",
+      "notes": "accepted Step 51 report must remain present",
+      "pass": true,
+      "value": "STEP51_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_TRANSFER_COMPARISON_REPORT.md"
+    },
+    {
+      "check": "step51_matrix_row_count",
+      "notes": "Step 51 matrix must still have eight rows",
+      "pass": true,
+      "value": 8
+    },
+    {
+      "check": "step51_matrix_stable_count",
+      "notes": "Step 51 matrix must still be stable",
+      "pass": true,
+      "value": 8
+    },
+    {
+      "check": "step51_link_area_envelope_pass",
+      "notes": "Step 51 link-area envelope must remain green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step51_state_guard_pass",
+      "notes": "Step 51 state guard must remain green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step51_artifact_budget_pass",
+      "notes": "Step 51 artifact budget must remain green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step51_large_file_count",
+      "notes": "Step 51 must still have no large files",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step51_vtr_count",
+      "notes": "Step 51 must still have no VTR output",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step51_particle_npy_count",
+      "notes": "Step 51 must still have no particle NPY output",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step51_geo_all_fluid_dat_count_added",
+      "notes": "Step 51 must still have no geo_all_fluid dat output",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "pass_count": 10,
+    "regression_pass": true,
+    "row_count": 10
+  }
+}

@@ -1,0 +1,11 @@
+check,pass,value,notes
+step51_report_exists,True,STEP51_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_TRANSFER_COMPARISON_REPORT.md,accepted Step 51 report must remain present
+step51_matrix_row_count,True,8,Step 51 matrix must still have eight rows
+step51_matrix_stable_count,True,8,Step 51 matrix must still be stable
+step51_link_area_envelope_pass,True,True,Step 51 link-area envelope must remain green
+step51_state_guard_pass,True,True,Step 51 state guard must remain green
+step51_artifact_budget_pass,True,True,Step 51 artifact budget must remain green
+step51_large_file_count,True,0,Step 51 must still have no large files
+step51_vtr_count,True,0,Step 51 must still have no VTR output
+step51_particle_npy_count,True,0,Step 51 must still have no particle NPY output
+step51_geo_all_fluid_dat_count_added,True,0,Step 51 must still have no geo_all_fluid dat output

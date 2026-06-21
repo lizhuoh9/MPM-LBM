@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "closure_pass": true,
+    "combined_row_pass": true,
+    "component_effect_pass": true,
+    "diagnostic_only_pass": true,
+    "no_persistent_state_pass": true,
+    "projection_pass": true,
+    "quality_pass": true,
+    "row_count": 2,
+    "row_count_pass": true,
+    "stability_pass": true,
+    "static_row_pass": true,
+    "step_count_pass": true,
+    "transfer_mode_pass": true
+  }
+}

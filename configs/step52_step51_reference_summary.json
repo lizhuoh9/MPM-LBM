@@ -1,0 +1,11 @@
+{
+  "reference_id": "step52_step51_engineering_reference",
+  "step51_commit": "c63c5d31be7ede86eda3811f625d7322befae8dd",
+  "step51_matrix_path": "outputs/step51_transfer_comparison_matrix/transfer_comparison_matrix.json",
+  "step51_link_area_envelope_path": "outputs/step51_link_area_envelope/link_area_envelope.json",
+  "step51_state_guard_path": "outputs/step51_state_mutation_guard/state_mutation_guard.json",
+  "step51_artifact_summary_path": "outputs/step51_artifact_manifest/artifact_summary.json",
+  "reference_row_name": "engineering_runtime_geometry_plus_wall_velocity_32_40step",
+  "reference_scope": "32^3 engineering combined one-cycle diagnostic row from Step 51",
+  "comparison_scope": "diagnostic scaling sanity check only, not grid convergence or physical validation"
+}

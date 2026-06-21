@@ -1,0 +1,46 @@
+check,pass,value,notes
+feasibility_id_expected,True,step52_controlled_48_engineering_one_cycle_feasibility,Step 52 feasibility id must be stable
+base_step51_config_path_exists,True,configs/step51_transfer_comparison_one_cycle_envelope.json,Step 51 config must exist
+step51_matrix_path_exists,True,outputs/step51_transfer_comparison_matrix/transfer_comparison_matrix.json,Step 51 matrix output must exist
+runtime_projection_config_path_exists,True,configs/step45_runtime_geometry_projection_integration.json,Step 45 runtime projection config must exist
+diagnostic_geometry_update_config_path_exists,True,configs/step44_diagnostic_geometry_update.json,Step 44 diagnostic geometry config must exist
+wall_velocity_application_config_path_exists,True,configs/step41_wall_velocity_application_scale_0050_64.json,Step 41 wall velocity application config must exist
+boundary_motion_config_path_exists,True,configs/step34_boundary_motion_interface_prescribed_kinematic.json,Step 34 boundary motion config must exist
+geometry_config_path_exists,True,configs/step30_squid_proxy_geometry.json,Step 30 geometry config must exist
+region_config_path_exists,True,configs/step30_squid_proxy_region_config.json,Step 30 region config must exist
+n_grid_expected_48,True,48,Step 52 n_grid must be 48
+n_lbm_steps_expected,True,40,Step 52 must use forty LBM steps
+mpm_substeps_expected,True,5,Step 52 must use five MPM substeps per LBM step
+cycle_period_steps_expected,True,40,Step 52 must use a forty-step prescribed cycle
+closure_phase_expected,True,1.0,Step 52 diagnostic closure phase must be 1.0
+phase_sequence_expected,True,"[0.0, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3, 0.325, 0.35, 0.375, 0.4, 0.425, 0.45, 0.475, 0.5, 0.525, 0.55, 0.575, 0.6, 0.625, 0.65, 0.675, 0.7, 0.725, 0.75, 0.775, 0.8, 0.825, 0.85, 0.875, 0.9, 0.925, 0.95, 0.975]",Step 52 phase sequence must match Step 50/51
+phase_count_expected,True,40,Step 52 must use forty runner phases
+phase_sequence_finite,True,"[0.0, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3, 0.325, 0.35, 0.375, 0.4, 0.425, 0.45, 0.475, 0.5, 0.525, 0.55, 0.575, 0.6, 0.625, 0.65, 0.675, 0.7, 0.725, 0.75, 0.775, 0.8, 0.825, 0.85, 0.875, 0.9, 0.925, 0.95, 0.975]",all phases must be finite
+phase_sequence_bounds,True,"[0.0, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3, 0.325, 0.35, 0.375, 0.4, 0.425, 0.45, 0.475, 0.5, 0.525, 0.55, 0.575, 0.6, 0.625, 0.65, 0.675, 0.7, 0.725, 0.75, 0.775, 0.8, 0.825, 0.85, 0.875, 0.9, 0.925, 0.95, 0.975]","all runner phases must be in [0, 1]"
+phase_sequence_nondecreasing,True,"[0.0, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3, 0.325, 0.35, 0.375, 0.4, 0.425, 0.45, 0.475, 0.5, 0.525, 0.55, 0.575, 0.6, 0.625, 0.65, 0.675, 0.7, 0.725, 0.75, 0.775, 0.8, 0.825, 0.85, 0.875, 0.9, 0.925, 0.95, 0.975]",phases must be nondecreasing
+phase_starts_at_0,True,0.0,Step 52 phase sequence must start at 0.0
+phase_ends_at_0975,True,0.975,Step 52 phase sequence must end at 0.975
+transfer_mode_engineering,True,engineering,Step 52 must use engineering transfer only
+no_link_area_transfer_mode,True,engineering,Step 52 must not include link_area_experimental
+coupling_mode_expected,True,moving_boundary,Step 52 coupling mode must be moving_boundary
+enable_runtime_geometry_projection_true,True,True,umbrella config must enable runtime geometry projection
+enable_wall_velocity_application_true,True,True,umbrella config must enable wall velocity application
+diagnostic_only_true,True,True,Step 52 must remain diagnostic-only
+scope_note_valid,True,48^3 engineering-only one-cycle static plus combined feasibility probe,scope note must state 48^3 engineering-only one-cycle scope
+no_64_grid,True,48,Step 52 must not include 64^3 rows
+no_multi_cycle,True,"{""cycle_period_steps"": 40, ""n_lbm_steps"": 40}",Step 52 must remain one-cycle
+persist_displaced_geometry_false,True,False,persist_displaced_geometry must remain false
+persist_projected_state_false,True,False,persist_projected_state must remain false
+persist_lbm_solid_vel_false,True,False,persist_lbm_solid_vel must remain false
+write_displaced_particles_false,True,False,write_displaced_particles must remain false
+write_dense_displacement_field_false,True,False,write_dense_displacement_field must remain false
+write_vtk_false,True,False,write_vtk must remain false
+write_particles_false,True,False,write_particles must remain false
+update_default_driver_geometry_false,True,False,update_default_driver_geometry must remain false
+update_default_lbm_state_false,True,False,update_default_lbm_state must remain false
+update_default_mpm_state_false,True,False,update_default_mpm_state must remain false
+update_default_projection_state_false,True,False,update_default_projection_state must remain false
+update_dynamic_solid_persistently_false,True,False,update_dynamic_solid_persistently must remain false
+recompute_production_boundary_links_false,True,False,recompute_production_boundary_links must remain false
+modify_moving_bounceback_formula_false,True,False,modify_moving_bounceback_formula must remain false
+all_mutation_flags_false,True,0,all mutation/write/formula flags must be false

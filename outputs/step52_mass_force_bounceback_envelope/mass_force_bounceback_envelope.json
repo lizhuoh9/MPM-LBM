@@ -1,0 +1,54 @@
+{
+  "rows": [
+    {
+      "bb_link_count_max": 3888,
+      "bb_link_count_min": 3888,
+      "bb_max_correction_global": 0.0,
+      "component_name": "static",
+      "envelope_pass": true,
+      "has_inf": false,
+      "has_nan": false,
+      "hydro_force_max_norm_global": 0.0,
+      "impulse_proxy_max_norm": 0.0,
+      "lbm_max_v_global": 0.0,
+      "max_applied_velocity_norm": 0.0,
+      "rho_max_global": 1.001039,
+      "rho_min_global": 0.998961,
+      "rho_span_global": 0.0020780000000000243,
+      "row_name": "engineering_static_48_40step",
+      "wall_velocity_cap_lbm": 0.01
+    },
+    {
+      "bb_link_count_max": 3888,
+      "bb_link_count_min": 3864,
+      "bb_max_correction_global": 0.007021783310068709,
+      "component_name": "runtime_geometry_plus_wall_velocity",
+      "envelope_pass": true,
+      "has_inf": false,
+      "has_nan": false,
+      "hydro_force_max_norm_global": 4.58601088618242e-05,
+      "impulse_proxy_max_norm": 0.001834404354472968,
+      "lbm_max_v_global": 0.007021783310068709,
+      "max_applied_velocity_norm": 0.007021783310068709,
+      "rho_max_global": 1.0017121783310068,
+      "rho_min_global": 0.9982878216689931,
+      "rho_span_global": 0.0034243566620136834,
+      "row_name": "engineering_runtime_geometry_plus_wall_velocity_48_40step",
+      "wall_velocity_cap_lbm": 0.01
+    }
+  ],
+  "summary": {
+    "bb_link_count_max": 3888,
+    "bb_link_count_min": 3864,
+    "bb_max_correction_global": 0.007021783310068709,
+    "envelope_pass": true,
+    "envelope_pass_count": 2,
+    "has_inf_count": 0,
+    "has_nan_count": 0,
+    "hydro_force_max_norm_global": 4.58601088618242e-05,
+    "impulse_proxy_max_norm_global": 0.001834404354472968,
+    "rho_max_global": 1.0017121783310068,
+    "rho_min_global": 0.9982878216689931,
+    "row_count": 2
+  }
+}
