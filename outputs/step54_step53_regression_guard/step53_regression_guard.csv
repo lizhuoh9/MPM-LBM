@@ -1,0 +1,9 @@
+check,pass,value,notes
+outputs/step53_reference_artifact_validation/reference_artifact_validation.json,True,True,reference_validation_pass must remain True
+outputs/step53_phasewise_support_scaling_audit/phasewise_support_scaling.json,True,True,phasewise_audit_pass must remain True
+outputs/step53_active_cell_semantics_audit/active_cell_semantics.json,True,True,semantics_pass must remain True
+outputs/step53_applied_wall_support_scaling_audit/applied_wall_support_scaling.json,True,True,applied_wall_support_audit_pass must remain True
+outputs/step53_bounceback_support_scaling_audit/bounceback_support_scaling.json,True,True,bounceback_support_audit_pass must remain True
+outputs/step53_metric_claim_guard/metric_claim_guard.json,True,True,claim_guard_pass must remain True
+outputs/step53_step52_regression_guard/step52_regression_guard.json,True,True,regression_pass must remain True
+outputs/step53_artifact_manifest/artifact_summary.json,True,True,artifact_budget_pass must remain True

@@ -1,0 +1,57 @@
+{
+  "rows": [
+    {
+      "check": "outputs/step53_reference_artifact_validation/reference_artifact_validation.json",
+      "notes": "reference_validation_pass must remain True",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "outputs/step53_phasewise_support_scaling_audit/phasewise_support_scaling.json",
+      "notes": "phasewise_audit_pass must remain True",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "outputs/step53_active_cell_semantics_audit/active_cell_semantics.json",
+      "notes": "semantics_pass must remain True",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "outputs/step53_applied_wall_support_scaling_audit/applied_wall_support_scaling.json",
+      "notes": "applied_wall_support_audit_pass must remain True",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "outputs/step53_bounceback_support_scaling_audit/bounceback_support_scaling.json",
+      "notes": "bounceback_support_audit_pass must remain True",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "outputs/step53_metric_claim_guard/metric_claim_guard.json",
+      "notes": "claim_guard_pass must remain True",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "outputs/step53_step52_regression_guard/step52_regression_guard.json",
+      "notes": "regression_pass must remain True",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "outputs/step53_artifact_manifest/artifact_summary.json",
+      "notes": "artifact_budget_pass must remain True",
+      "pass": true,
+      "value": true
+    }
+  ],
+  "summary": {
+    "pass_count": 8,
+    "row_count": 8,
+    "step53_regression_pass": true
+  }
+}

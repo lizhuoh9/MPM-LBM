@@ -1,0 +1,554 @@
+{
+  "rows": [
+    {
+      "claim_boundary": "solver smoke only, not production or physical validation",
+      "evidence_kind": "solver_smoke_baseline",
+      "primary_artifact": "STEP10_FSI_DRIVER_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "solver_smoke_record",
+      "scope_note": "early solver smoke baseline, not a full validation claim",
+      "solver_time_integration_run": true,
+      "step": 1
+    },
+    {
+      "claim_boundary": "solver smoke only, not production or physical validation",
+      "evidence_kind": "solver_smoke_baseline",
+      "primary_artifact": "STEP20_GEOMETRY_IMPORT_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "solver_smoke_record",
+      "scope_note": "early solver smoke baseline, not a full validation claim",
+      "solver_time_integration_run": true,
+      "step": 2
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP30_CONTROLLED_SQUID_PROXY_REGION_GEOMETRY_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 3
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP40_CONTROLLED_JET_CYCLE_PROXY_PARAMETER_SENSITIVITY_SMOKE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 4
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP50_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_ONE_CYCLE_COUPLING_DIAGNOSTIC_ENVELOPE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 5
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP6_PENALTY_COUPLING_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 6
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP7_FSI_VALIDATION_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 7
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP8_MOVING_BOUNCEBACK_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 8
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP9_MOVING_BOUNDARY_REACTION_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 9
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP10_FSI_DRIVER_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 10
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP11_WRITING_MODULE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 11
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP12_PERFORMANCE_MEMORY_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 12
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP13_GEOMETRY_INGESTION_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 13
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP14_LARGER_GRID_VALIDATION_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 14
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP15_MOVING_BOUNDARY_CALIBRATION_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 15
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP16_LONG_RUN_VALIDATION_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 16
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP17_LINK_AREA_ACCOUNTING_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 17
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP18_LINK_AREA_TRANSFER_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 18
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP19_LINK_AREA_LONG_RUN_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 19
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP20_GEOMETRY_IMPORT_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 20
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP21_IMPORTED_GEOMETRY_SCALE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 21
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP22_GEOMETRY_QUALITY_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 22
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP23_QUALITY_GATED_GEOMETRY_SCALE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 23
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP24_STRICT_QUALITY_GATED_IMPORTED_GEOMETRY_LONG_RUN_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 24
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP25_CONTROLLED_REAL_GEOMETRY_INTAKE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 25
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP26_CONTROLLED_REAL_GEOMETRY_SHORT_FEASIBILITY_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 26
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP27_CONTROLLED_REAL_GEOMETRY_64_SHORT_DRIVER_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 27
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP28_CONTROLLED_REAL_GEOMETRY_64_TRANSFER_DIAGNOSTICS_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 28
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP29_CONTROLLED_REAL_GEOMETRY_64_STABILITY_ENVELOPE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 29
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP30_CONTROLLED_SQUID_PROXY_REGION_GEOMETRY_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 30
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP31_CONTROLLED_SQUID_PROXY_REGION_STATIC_DRIVER_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 31
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP32_CONTROLLED_SQUID_PROXY_KINEMATICS_SCHEDULE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 32
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP33_CONTROLLED_SQUID_PROXY_KINEMATICS_MAPPING_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 33
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP34_CONTROLLED_SQUID_PROXY_BOUNDARY_MOTION_DRIVER_INTERFACE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 34
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP35_CONTROLLED_SQUID_PROXY_MOVING_WALL_VELOCITY_FIELD_DIAGNOSTIC_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 35
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP36_CONTROLLED_MOVING_WALL_BOUNCEBACK_VELOCITY_APPLICATION_SMOKE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 36
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP37_CONTROLLED_MOVING_WALL_APPLICATION_SHORT_WINDOW_ENVELOPE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 37
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP38_CONTROLLED_TETHERED_JET_CYCLE_DIAGNOSTICS_PROTOTYPE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 38
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP39_CONTROLLED_JET_CYCLE_PROXY_MULTI_CYCLE_STABILITY_ENVELOPE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 39
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP40_CONTROLLED_JET_CYCLE_PROXY_PARAMETER_SENSITIVITY_SMOKE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 40
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP41_CONTROLLED_JET_CYCLE_PROXY_SELECTED_PARAMETER_64_FEASIBILITY_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 41
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP42_CONTROLLED_SQUID_PROXY_PRESCRIBED_GEOMETRY_DISPLACEMENT_DIAGNOSTICS_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 42
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP43_CONTROLLED_SQUID_PROXY_GEOMETRY_MOTION_DRIVER_INTERFACE_CONTRACT_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 43
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP44_CONTROLLED_SQUID_PROXY_DIAGNOSTIC_GEOMETRY_UPDATE_SMOKE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 44
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP45_CONTROLLED_RUNTIME_GEOMETRY_PROJECTION_INTEGRATION_SMOKE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 45
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP46_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_ONE_STEP_COUPLING_SMOKE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 46
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP47_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_SHORT_STEP_COUPLING_ENVELOPE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 47
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP48_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_10STEP_COUPLING_ENVELOPE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 48
+    },
+    {
+      "claim_boundary": "defer to original step report",
+      "evidence_kind": "contract_or_report_artifact",
+      "primary_artifact": "STEP49_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_20STEP_COUPLING_ENVELOPE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "historical_step_record",
+      "scope_note": "historical step kept under its original committed contract",
+      "solver_time_integration_run": "unknown_from_repository_index",
+      "step": 49
+    },
+    {
+      "claim_boundary": "proxy diagnostic only, not solver time integration",
+      "evidence_kind": "proxy_diagnostic",
+      "primary_artifact": "STEP50_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_ONE_CYCLE_COUPLING_DIAGNOSTIC_ENVELOPE_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "proxy_diagnostic_record",
+      "scope_note": "config-declared one-cycle proxy diagnostics, no driver instance",
+      "solver_time_integration_run": false,
+      "step": 50
+    },
+    {
+      "claim_boundary": "proxy diagnostic only, not solver time integration",
+      "evidence_kind": "proxy_diagnostic",
+      "primary_artifact": "STEP51_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_TRANSFER_COMPARISON_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "proxy_diagnostic_record",
+      "scope_note": "config-declared transfer comparison proxy diagnostics, no driver instance",
+      "solver_time_integration_run": false,
+      "step": 51
+    },
+    {
+      "claim_boundary": "proxy diagnostic only, not solver time integration",
+      "evidence_kind": "proxy_diagnostic",
+      "primary_artifact": "STEP52_CONTROLLED_48_ENGINEERING_ONE_CYCLE_FEASIBILITY_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "proxy_diagnostic_record",
+      "scope_note": "config-declared 48-grid proxy diagnostics, no driver instance",
+      "solver_time_integration_run": false,
+      "step": 52
+    },
+    {
+      "claim_boundary": "artifact audit only, no new solver rows",
+      "evidence_kind": "post_processing_audit",
+      "primary_artifact": "STEP53_CONTROLLED_48_SUPPORT_SCALING_ACTIVE_CELL_SEMANTICS_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "post_processing_audit_record",
+      "scope_note": "post-processing audit over committed Step 51 and Step 52 artifacts",
+      "solver_time_integration_run": false,
+      "step": 53
+    },
+    {
+      "claim_boundary": "evidence repair only, no new physics scope",
+      "evidence_kind": "evidence_integrity_repair",
+      "primary_artifact": "STEP54_REPOSITORY_EVIDENCE_INTEGRITY_REPAIR_REPORT.md",
+      "primary_artifact_exists": true,
+      "record_kind": "repository_evidence_integrity_record",
+      "scope_note": "repository evidence index, claim guard, and semantics repair",
+      "solver_time_integration_run": false,
+      "step": 54
+    }
+  ],
+  "summary": {
+    "indexed_step_count": 54,
+    "positive_physical_claim_allowed": false,
+    "proxy_steps_solver_time_integration_false": true,
+    "repository_evidence_index_pass": true,
+    "step1_step2_solver_smoke_baseline_count": 2,
+    "step50_51_52_proxy_diagnostic_count": 3,
+    "step53_post_processing_audit_count": 1,
+    "step53_solver_time_integration_false": true
+  }
+}

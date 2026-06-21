@@ -1,0 +1,8 @@
+metric,value
+audited_step_count,3
+full_solver_validation_claim,False
+pass_count,9
+proxy_record_metadata_field_count,7
+proxy_truthfulness_audit_pass,True
+real_jet_validation_claim,False
+row_count,9

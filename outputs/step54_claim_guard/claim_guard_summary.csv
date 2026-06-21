@@ -1,0 +1,5 @@
+metric,value
+claim_guard_pass,True
+forbidden_claim_count,0
+required_false_flag_count,5
+scanned_file_count,42

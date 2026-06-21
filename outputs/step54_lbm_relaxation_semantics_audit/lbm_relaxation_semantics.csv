@@ -1,0 +1,7 @@
+check,pass,value,notes
+legacy_helper_formula_preserves_current_tau,True,0.5333333333333333,legacy niu helper must preserve the previous default behavior
+standard_helper_formula_is_available_but_not_default,True,0.8,standard lattice viscosity semantics must be named separately
+lbm_fluid_uses_legacy_helper,True,helper_call_present,LBMFluid3D must call the explicit legacy helper
+inline_niu_tau_assignment_removed,True,inline_assignment_absent,the legacy formula must not remain hidden inline
+policy_keeps_standard_viscosity_non_default,True,False,Step 54 names standard viscosity semantics without migrating defaults
+policy_disallows_physical_viscosity_claim,True,False,Step 54 must not claim physical viscosity validation

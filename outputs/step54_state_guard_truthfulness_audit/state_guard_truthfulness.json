@@ -1,0 +1,173 @@
+{
+  "rows": [
+    {
+      "check": "step50_default_driver_state_mutation_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "not_applicable_proxy_no_driver_instance"
+    },
+    {
+      "check": "step50_default_lbm_state_mutation_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "not_applicable_proxy_no_lbm_instance"
+    },
+    {
+      "check": "step50_default_mpm_state_mutation_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "not_applicable_proxy_no_mpm_instance"
+    },
+    {
+      "check": "step50_default_projection_state_mutation_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "not_applicable_proxy_no_projection_instance"
+    },
+    {
+      "check": "step50_persistent_projected_state_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "config_and_artifact_guard"
+    },
+    {
+      "check": "step50_persistent_displaced_geometry_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "config_and_artifact_guard"
+    },
+    {
+      "check": "step50_persistent_lbm_solid_vel_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "config_and_artifact_guard"
+    },
+    {
+      "check": "step50_state_guard_kind",
+      "notes": "state guard must disclose hash plus artifact scan plus proxy fixed-zero fields",
+      "pass": true,
+      "value": "hash_plus_artifact_scan_plus_not_applicable_proxy_fields"
+    },
+    {
+      "check": "step50_fixed_zero_fields_disclosed",
+      "notes": "fixed-zero fields must be explicitly disclosed",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step51_default_driver_state_mutation_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "not_applicable_proxy_no_driver_instance"
+    },
+    {
+      "check": "step51_default_lbm_state_mutation_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "not_applicable_proxy_no_lbm_instance"
+    },
+    {
+      "check": "step51_default_mpm_state_mutation_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "not_applicable_proxy_no_mpm_instance"
+    },
+    {
+      "check": "step51_default_projection_state_mutation_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "not_applicable_proxy_no_projection_instance"
+    },
+    {
+      "check": "step51_persistent_projected_state_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "config_and_artifact_guard"
+    },
+    {
+      "check": "step51_persistent_displaced_geometry_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "config_and_artifact_guard"
+    },
+    {
+      "check": "step51_persistent_lbm_solid_vel_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "config_and_artifact_guard"
+    },
+    {
+      "check": "step51_state_guard_kind",
+      "notes": "state guard must disclose hash plus artifact scan plus proxy fixed-zero fields",
+      "pass": true,
+      "value": "hash_plus_artifact_scan_plus_not_applicable_proxy_fields"
+    },
+    {
+      "check": "step51_fixed_zero_fields_disclosed",
+      "notes": "fixed-zero fields must be explicitly disclosed",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step52_default_driver_state_mutation_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "not_applicable_proxy_no_driver_instance"
+    },
+    {
+      "check": "step52_default_lbm_state_mutation_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "not_applicable_proxy_no_lbm_instance"
+    },
+    {
+      "check": "step52_default_mpm_state_mutation_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "not_applicable_proxy_no_mpm_instance"
+    },
+    {
+      "check": "step52_default_projection_state_mutation_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "not_applicable_proxy_no_projection_instance"
+    },
+    {
+      "check": "step52_persistent_projected_state_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "config_and_artifact_guard"
+    },
+    {
+      "check": "step52_persistent_displaced_geometry_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "config_and_artifact_guard"
+    },
+    {
+      "check": "step52_persistent_lbm_solid_vel_count_method",
+      "notes": "fixed-zero state guard fields must disclose method/source",
+      "pass": true,
+      "value": "config_and_artifact_guard"
+    },
+    {
+      "check": "step52_state_guard_kind",
+      "notes": "state guard must disclose hash plus artifact scan plus proxy fixed-zero fields",
+      "pass": true,
+      "value": "hash_plus_artifact_scan_plus_not_applicable_proxy_fields"
+    },
+    {
+      "check": "step52_fixed_zero_fields_disclosed",
+      "notes": "fixed-zero fields must be explicitly disclosed",
+      "pass": true,
+      "value": true
+    }
+  ],
+  "summary": {
+    "audited_step_count": 3,
+    "full_solver_validation_claim": false,
+    "pass_count": 27,
+    "row_count": 27,
+    "state_guard_truthfulness_audit_pass": true
+  }
+}

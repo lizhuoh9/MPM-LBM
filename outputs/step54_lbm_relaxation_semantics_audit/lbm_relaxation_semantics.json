@@ -1,0 +1,55 @@
+{
+  "rows": [
+    {
+      "check": "legacy_helper_formula_preserves_current_tau",
+      "notes": "legacy niu helper must preserve the previous default behavior",
+      "pass": true,
+      "value": 0.5333333333333333
+    },
+    {
+      "check": "standard_helper_formula_is_available_but_not_default",
+      "notes": "standard lattice viscosity semantics must be named separately",
+      "pass": true,
+      "value": 0.8
+    },
+    {
+      "check": "lbm_fluid_uses_legacy_helper",
+      "notes": "LBMFluid3D must call the explicit legacy helper",
+      "pass": true,
+      "value": "helper_call_present"
+    },
+    {
+      "check": "inline_niu_tau_assignment_removed",
+      "notes": "the legacy formula must not remain hidden inline",
+      "pass": true,
+      "value": "inline_assignment_absent"
+    },
+    {
+      "check": "policy_keeps_standard_viscosity_non_default",
+      "notes": "Step 54 names standard viscosity semantics without migrating defaults",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "policy_disallows_physical_viscosity_claim",
+      "notes": "Step 54 must not claim physical viscosity validation",
+      "pass": true,
+      "value": false
+    }
+  ],
+  "summary": {
+    "default_solver_formula": "legacy_external_solver_parameter",
+    "lbm_config_niu_semantics": "legacy_external_solver_relaxation_parameter",
+    "lbm_relaxation_semantics_audit_pass": true,
+    "legacy_tau_for_default_niu": 0.5333333333333333,
+    "legacy_tau_formula_name": "tau_from_legacy_external_solver_parameter",
+    "pass_count": 6,
+    "physical_viscosity_validation_claim": false,
+    "row_count": 6,
+    "solver_behavior_changed": false,
+    "standard_lattice_viscosity_is_default": false,
+    "standard_tau_for_default_nu_lbm": 0.8,
+    "standard_tau_formula_name": "tau_from_lattice_kinematic_viscosity",
+    "standard_viscosity_validation_claim": false
+  }
+}

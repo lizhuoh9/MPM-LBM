@@ -12,3 +12,13 @@ displaced_particle_output_count,True,0,Step 51 must not write displaced particle
 dense_displacement_output_count,True,0,Step 51 must not write dense displacement fields
 vtr_output_count,True,0,Step 51 must not write VTR
 geo_all_fluid_dat_count_added,True,0,Step 51 must not add geo_all_fluid dat artifacts
+default_driver_state_mutation_count_method_disclosed,True,not_applicable_proxy_no_driver_instance,Step 51 fixed-zero field method must be disclosed
+default_lbm_state_mutation_count_method_disclosed,True,not_applicable_proxy_no_lbm_instance,Step 51 fixed-zero field method must be disclosed
+default_mpm_state_mutation_count_method_disclosed,True,not_applicable_proxy_no_mpm_instance,Step 51 fixed-zero field method must be disclosed
+default_projection_state_mutation_count_method_disclosed,True,not_applicable_proxy_no_projection_instance,Step 51 fixed-zero field method must be disclosed
+persistent_projected_state_count_method_disclosed,True,config_and_artifact_guard,Step 51 fixed-zero field method must be disclosed
+persistent_displaced_geometry_count_method_disclosed,True,config_and_artifact_guard,Step 51 fixed-zero field method must be disclosed
+persistent_lbm_solid_vel_count_method_disclosed,True,config_and_artifact_guard,Step 51 fixed-zero field method must be disclosed
+fixed_zero_fields_disclosed,True,True,Step 51 fixed-zero state fields must be explicitly disclosed
+hash_checks_remain_measured,True,measured_config_hash_before_after,Step 51 hash checks must remain measured
+forbidden_output_scans_remain_measured,True,measured_artifact_scan,Step 51 forbidden output scans must remain measured

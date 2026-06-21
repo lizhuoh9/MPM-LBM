@@ -8,6 +8,7 @@ import numpy as np
 
 from .diagnostic_geometry_projection import runtime_displaced_union_points
 from .diagnostic_geometry_update import load_step44_inputs
+from .proxy_diagnostic_truthfulness import add_proxy_record_metadata, add_proxy_step_metadata, proxy_metadata_fields
 from .runtime_geometry_projection import original_union_points, project_transient_geometry_copy
 from .runtime_geometry_projection_config import RuntimeGeometryProjectionIntegrationConfig
 from .runtime_geometry_wall_velocity_one_cycle_config import (
@@ -74,7 +75,7 @@ ENVELOPE_FIELDS = [
     "stable",
     "step_records",
     "notes",
-]
+] + proxy_metadata_fields()
 
 
 def load_one_cycle_envelope_inputs(config_path):
@@ -254,7 +255,7 @@ def run_one_cycle_row(config, descriptor, runtime_projection_by_phase, original_
         "notes": descriptor["scope_note"],
     }
     row["stable"] = _stable_row(row)
-    return row
+    return add_proxy_record_metadata(row)
 
 
 def summarize_one_cycle_envelope_matrix(rows: list[dict]) -> dict:
@@ -344,7 +345,7 @@ def _step_record(row_name, step_index, phase, projection_row, original_projectio
     hydro_force_max_norm = float((projection_delta * 1.0e-5) + (applied_cell_count * max_applied_velocity_norm * 1.0e-6))
     lbm_max_v = max_applied_velocity_norm
     rho_span = min(0.001 + lbm_max_v * 0.1 + projection_delta * 1.0e-7 + int(step_index) * 1.0e-6, 0.04)
-    return {
+    return add_proxy_step_metadata({
         "row_name": row_name,
         "step_index": int(step_index),
         "cycle_index": 0,
@@ -365,7 +366,7 @@ def _step_record(row_name, step_index, phase, projection_row, original_projectio
         "hydro_force_max_norm": hydro_force_max_norm,
         "has_nan": False,
         "has_inf": False,
-    }
+    })
 
 
 def _validate_descriptors(descriptors, config):

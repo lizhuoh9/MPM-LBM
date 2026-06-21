@@ -1,0 +1,10 @@
+check,pass,value,notes
+step50_row_proxy_metadata_present,True,4,every top-level proxy row must disclose record/source metadata
+step50_step_record_proxy_metadata_present,True,160,every per-step proxy record must disclose record/source metadata
+step50_solver_time_integration_false,True,False,"Step 50/51/52 artifacts are proxy diagnostics, not solver time integration records"
+step51_row_proxy_metadata_present,True,8,every top-level proxy row must disclose record/source metadata
+step51_step_record_proxy_metadata_present,True,320,every per-step proxy record must disclose record/source metadata
+step51_solver_time_integration_false,True,False,"Step 50/51/52 artifacts are proxy diagnostics, not solver time integration records"
+step52_row_proxy_metadata_present,True,2,every top-level proxy row must disclose record/source metadata
+step52_step_record_proxy_metadata_present,True,80,every per-step proxy record must disclose record/source metadata
+step52_solver_time_integration_false,True,False,"Step 50/51/52 artifacts are proxy diagnostics, not solver time integration records"

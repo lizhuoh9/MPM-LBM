@@ -1,0 +1,9 @@
+metric,value
+indexed_step_count,54
+positive_physical_claim_allowed,False
+proxy_steps_solver_time_integration_false,True
+repository_evidence_index_pass,True
+step1_step2_solver_smoke_baseline_count,2
+step50_51_52_proxy_diagnostic_count,3
+step53_post_processing_audit_count,1
+step53_solver_time_integration_false,True

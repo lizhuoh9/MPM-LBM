@@ -1,0 +1,67 @@
+{
+  "rows": [
+    {
+      "check": "step50_row_proxy_metadata_present",
+      "notes": "every top-level proxy row must disclose record/source metadata",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step50_step_record_proxy_metadata_present",
+      "notes": "every per-step proxy record must disclose record/source metadata",
+      "pass": true,
+      "value": 160
+    },
+    {
+      "check": "step50_solver_time_integration_false",
+      "notes": "Step 50/51/52 artifacts are proxy diagnostics, not solver time integration records",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "step51_row_proxy_metadata_present",
+      "notes": "every top-level proxy row must disclose record/source metadata",
+      "pass": true,
+      "value": 8
+    },
+    {
+      "check": "step51_step_record_proxy_metadata_present",
+      "notes": "every per-step proxy record must disclose record/source metadata",
+      "pass": true,
+      "value": 320
+    },
+    {
+      "check": "step51_solver_time_integration_false",
+      "notes": "Step 50/51/52 artifacts are proxy diagnostics, not solver time integration records",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "step52_row_proxy_metadata_present",
+      "notes": "every top-level proxy row must disclose record/source metadata",
+      "pass": true,
+      "value": 2
+    },
+    {
+      "check": "step52_step_record_proxy_metadata_present",
+      "notes": "every per-step proxy record must disclose record/source metadata",
+      "pass": true,
+      "value": 80
+    },
+    {
+      "check": "step52_solver_time_integration_false",
+      "notes": "Step 50/51/52 artifacts are proxy diagnostics, not solver time integration records",
+      "pass": true,
+      "value": false
+    }
+  ],
+  "summary": {
+    "audited_step_count": 3,
+    "full_solver_validation_claim": false,
+    "pass_count": 9,
+    "proxy_record_metadata_field_count": 7,
+    "proxy_truthfulness_audit_pass": true,
+    "real_jet_validation_claim": false,
+    "row_count": 9
+  }
+}

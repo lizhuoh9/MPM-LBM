@@ -3,6 +3,7 @@ from pathlib import Path
 from .runtime_geometry_projection import step45_geometry_and_region_hashes
 from .runtime_geometry_wall_velocity_one_cycle_config import RuntimeGeometryWallVelocityOneCycleEnvelopeConfig
 from .runtime_geometry_wall_velocity_one_cycle_envelope import run_one_cycle_envelope_matrix, write_csv_rows, write_json
+from .state_guard_truthfulness import add_state_guard_truthfulness_metadata, state_guard_truthfulness_rows
 
 
 STATE_GUARD_FIELDS = ["check", "pass", "value", "notes"]
@@ -29,6 +30,7 @@ def compute_step50_state_mutation_guard(config_path, root=None) -> dict:
         "persistent_lbm_solid_vel_count": 0,
         **counts,
     }
+    add_state_guard_truthfulness_metadata(summary)
     summary["guard_pass"] = bool(
         summary["original_geometry_hash_before"] == summary["original_geometry_hash_after"]
         and summary["region_mask_hash_before"] == summary["region_mask_hash_after"]
@@ -59,6 +61,7 @@ def compute_step50_state_mutation_guard(config_path, root=None) -> dict:
         _check("vtr_output_count", summary["vtr_output_count"] == 0, summary["vtr_output_count"], "Step 50 must not write VTR"),
         _check("geo_all_fluid_dat_count_added", summary["geo_all_fluid_dat_count_added"] == 0, summary["geo_all_fluid_dat_count_added"], "Step 50 must not add geo_all_fluid dat artifacts"),
     ]
+    rows.extend(state_guard_truthfulness_rows("Step 50", summary))
     return {"summary": summary, "rows": rows}
 
 

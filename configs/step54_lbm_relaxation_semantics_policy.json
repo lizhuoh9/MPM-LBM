@@ -1,0 +1,11 @@
+{
+  "policy_id": "step54_lbm_relaxation_semantics_policy",
+  "lbm_config_niu_semantics": "legacy_external_solver_relaxation_parameter",
+  "legacy_tau_formula": "tau = niu / 3.0 + 0.5",
+  "standard_lattice_kinematic_viscosity_tau_formula": "tau = 3.0 * nu_lbm + 0.5",
+  "default_solver_formula": "legacy_external_solver_parameter",
+  "standard_lattice_viscosity_is_default": false,
+  "solver_behavior_changed": false,
+  "standard_viscosity_validation_claim": false,
+  "physical_viscosity_validation_claim": false
+}

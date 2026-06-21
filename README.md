@@ -54,6 +54,10 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 48 controlled runtime geometry plus wall velocity 10-step coupling envelope
 - Step 49 controlled runtime geometry plus wall velocity 20-step coupling envelope
 - Step 50 controlled runtime geometry plus wall velocity one-cycle diagnostic envelope
+- Step 51 controlled runtime geometry wall velocity transfer comparison diagnostics
+- Step 52 controlled 48^3 engineering one-cycle feasibility diagnostics
+- Step 53 controlled support-scaling active-cell semantics post-processing audit
+- Step 54 repository evidence integrity repair
 
 ## Not Implemented
 
@@ -615,6 +619,62 @@ The default geometry_motion_application_mode remains disabled.
 The default boundary_motion_mode remains static.
 The default wall_velocity_application_mode remains disabled.
 See docs/50_controlled_runtime_geometry_wall_velocity_one_cycle_coupling_diagnostic_envelope.md.
+
+## Step 51 Runtime Geometry Wall Velocity Transfer Comparison Boundary
+
+Step 51 is controlled runtime geometry wall velocity transfer comparison diagnostics.
+Step 51 compares engineering and opt-in link-area transfer proxy rows at 32^3 only.
+Step 51 remains diagnostic-only and non-persistent.
+Step 51 does not validate real jet propulsion.
+Step 51 does not implement squid swimming.
+Step 51 does not change moving bounce-back formulas.
+The default geometry_motion_mode remains static.
+The default geometry_motion_application_mode remains disabled.
+The default boundary_motion_mode remains static.
+The default wall_velocity_application_mode remains disabled.
+See docs/51_controlled_runtime_geometry_wall_velocity_transfer_comparison.md.
+
+## Step 52 Controlled 48 Engineering One-Cycle Feasibility Boundary
+
+Step 52 is controlled 48^3 engineering one-cycle feasibility diagnostics.
+Step 52 runs static and runtime-geometry-plus-wall-velocity engineering proxy rows only.
+Step 52 remains diagnostic-only and non-persistent.
+Step 52 does not validate real jet propulsion.
+Step 52 does not implement squid swimming.
+Step 52 does not change moving bounce-back formulas.
+Step 52 is not grid convergence validation.
+The default geometry_motion_mode remains static.
+The default geometry_motion_application_mode remains disabled.
+The default boundary_motion_mode remains static.
+The default wall_velocity_application_mode remains disabled.
+See docs/52_controlled_48_engineering_one_cycle_feasibility.md.
+
+## Step 53 Support Scaling Active Cell Semantics Boundary
+
+Step 53 is a controlled post-processing audit over accepted Step 51 and Step 52 artifacts.
+Step 53 reads committed JSON artifacts only and adds no new solver rows.
+Step 53 keeps runtime behavior diagnostic-only and non-persistent.
+Step 53 does not validate real jets.
+Step 53 does not validate jet propulsion.
+Step 53 does not implement squid swimming.
+Step 53 does not change moving bounce-back formulas.
+Step 53 is not a grid-convergence result.
+See docs/53_controlled_48_support_scaling_active_cell_semantics.md.
+
+## Step 54 Repository Evidence Integrity Repair Boundary
+
+Step 54 is a repository evidence integrity repair.
+Step 54 pauses feature expansion and repairs evidence labels, test-strength classification, claim guards, and LBM relaxation semantics naming.
+Step 54 keeps solver behavior unchanged.
+Step 54 does not add a 48^3 link-area run.
+Step 54 does not lengthen the cycle window.
+Step 54 does not add a 64^3 case.
+Step 54 does not validate real jet behavior.
+Step 54 does not validate jet propulsion.
+Step 54 does not implement squid swimming.
+Step 54 does not prove grid convergence.
+Step 54 does not claim production readiness.
+See docs/54_repository_evidence_integrity_repair.md.
 
 ## Upstream LBM Note
 

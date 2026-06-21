@@ -1,0 +1,292 @@
+{
+  "rows": [
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "README.md"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "docs/54_repository_evidence_integrity_repair.md"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "docs/REPOSITORY_EVIDENCE_INDEX.md"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "docs/REPOSITORY_EVIDENCE_INTEGRITY_ERRATA.md"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "STEP54_REPOSITORY_EVIDENCE_INTEGRITY_REPAIR_REPORT.md"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "configs/step54_evidence_classification_policy.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "configs/step54_lbm_relaxation_semantics_policy.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "configs/step54_repository_evidence_integrity_repair.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "baseline_tests/run_step54_artifact_manifest.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "baseline_tests/run_step54_claim_guard.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "baseline_tests/run_step54_lbm_relaxation_semantics_audit.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "baseline_tests/run_step54_proxy_diagnostic_truthfulness_audit.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "baseline_tests/run_step54_repository_evidence_index.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "baseline_tests/run_step54_state_guard_truthfulness_audit.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "baseline_tests/run_step54_step53_regression_guard.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "baseline_tests/run_step54_test_strength_audit.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "baseline_tests/step54_common.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "tests/test_step54_lbm_relaxation_semantics_contract.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "tests/test_step54_repository_evidence_integrity_repair_contract.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "src/lbm_relaxation_semantics.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "src/proxy_diagnostic_truthfulness.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "src/state_guard_truthfulness.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "src/repository_evidence_index.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "src/repository_test_strength_audit.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_lbm_relaxation_semantics_audit/lbm_relaxation_semantics.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_lbm_relaxation_semantics_audit/lbm_relaxation_semantics.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_lbm_relaxation_semantics_audit/lbm_relaxation_semantics_summary.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_proxy_diagnostic_truthfulness_audit/proxy_diagnostic_truthfulness.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_proxy_diagnostic_truthfulness_audit/proxy_diagnostic_truthfulness.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_proxy_diagnostic_truthfulness_audit/proxy_diagnostic_truthfulness_summary.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_repository_evidence_index/repository_evidence_index.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_repository_evidence_index/repository_evidence_index.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_repository_evidence_index/repository_evidence_index_summary.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_state_guard_truthfulness_audit/state_guard_truthfulness.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_state_guard_truthfulness_audit/state_guard_truthfulness.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_state_guard_truthfulness_audit/state_guard_truthfulness_summary.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_step53_regression_guard/step53_regression_guard.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_step53_regression_guard/step53_regression_guard.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_step53_regression_guard/step53_regression_guard_summary.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_test_strength_audit/test_strength_audit.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_test_strength_audit/test_strength_audit.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_test_strength_audit/test_strength_audit_summary.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_required_false_flags/outputs/step54_lbm_relaxation_semantics_audit/lbm_relaxation_semantics.json::standard_viscosity_validation_claim"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_required_false_flags/outputs/step54_lbm_relaxation_semantics_audit/lbm_relaxation_semantics.json::physical_viscosity_validation_claim"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_required_false_flags/outputs/step54_proxy_diagnostic_truthfulness_audit/proxy_diagnostic_truthfulness.json::real_jet_validation_claim"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_required_false_flags/outputs/step54_proxy_diagnostic_truthfulness_audit/proxy_diagnostic_truthfulness.json::full_solver_validation_claim"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_required_false_flags/outputs/step54_state_guard_truthfulness_audit/state_guard_truthfulness.json::full_solver_validation_claim"
+    }
+  ],
+  "summary": {
+    "claim_guard_pass": true,
+    "forbidden_claim_count": 0,
+    "required_false_flag_count": 5,
+    "scanned_file_count": 42
+  }
+}

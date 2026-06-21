@@ -1,0 +1,16 @@
+{
+  "policy_id": "step54_evidence_classification_policy",
+  "step50_51_52_evidence_kind": "proxy_diagnostic",
+  "step50_51_52_solver_time_integration_run": false,
+  "step53_evidence_kind": "post_processing_audit",
+  "step53_solver_time_integration_run": false,
+  "step1_step2_evidence_kind": "solver_smoke_baseline",
+  "test_suite_result_interpretation": "604/614 passed means contract/artifact/proxy tests passed unless explicitly classified otherwise.",
+  "positive_physical_claim_allowed": false,
+  "real_jet_validation_claim": false,
+  "jet_propulsion_validation_claim": false,
+  "squid_swimming_claim": false,
+  "grid_convergence_claim": false,
+  "production_readiness_claim": false,
+  "full_solver_validation_claim": false
+}

@@ -1,0 +1,6 @@
+metric,value
+audited_step_count,3
+full_solver_validation_claim,False
+pass_count,27
+row_count,27
+state_guard_truthfulness_audit_pass,True

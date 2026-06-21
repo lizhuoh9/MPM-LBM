@@ -3,6 +3,7 @@ from pathlib import Path
 from .runtime_geometry_projection import step45_geometry_and_region_hashes
 from .runtime_geometry_wall_velocity_48_feasibility_config import RuntimeGeometryWallVelocity48FeasibilityConfig
 from .runtime_geometry_wall_velocity_48_feasibility_envelope import run_48_feasibility_matrix, write_csv_rows, write_json
+from .state_guard_truthfulness import add_state_guard_truthfulness_metadata, state_guard_truthfulness_rows
 
 
 STATE_GUARD_FIELDS = ["check", "pass", "value", "notes"]
@@ -29,6 +30,7 @@ def compute_step52_state_mutation_guard(config_path, root=None) -> dict:
         "persistent_lbm_solid_vel_count": 0,
         **counts,
     }
+    add_state_guard_truthfulness_metadata(summary)
     summary["guard_pass"] = bool(
         summary["original_geometry_hash_before"] == summary["original_geometry_hash_after"]
         and summary["region_mask_hash_before"] == summary["region_mask_hash_after"]
@@ -61,6 +63,7 @@ def compute_step52_state_mutation_guard(config_path, root=None) -> dict:
         _check("particle_npy_output_count", summary["particle_npy_output_count"] == 0, summary["particle_npy_output_count"], "Step 52 must not write particle NPY"),
         _check("geo_all_fluid_dat_count_added", summary["geo_all_fluid_dat_count_added"] == 0, summary["geo_all_fluid_dat_count_added"], "Step 52 must not add geo_all_fluid dat artifacts"),
     ]
+    rows.extend(state_guard_truthfulness_rows("Step 52", summary))
     return {"summary": summary, "rows": rows}
 
 

@@ -4,8 +4,10 @@ from pyevtk.hl import gridToVTK
 
 try:
     from .lbm_config import LBMConfig
+    from .lbm_relaxation_semantics import tau_from_legacy_external_solver_parameter
 except ImportError:
     from lbm_config import LBMConfig
+    from lbm_relaxation_semantics import tau_from_legacy_external_solver_parameter
 
 #ti.init(arch=ti.gpu, dynamic_index=False, kernel_profiler=True, print_ir=False)
 
@@ -174,8 +176,7 @@ class LBMFluid3D:
         self.bc_vel_z_left = [self.vx_bczl, self.vy_bczl, self.vz_bczl]
         self.bc_vel_z_right = [self.vx_bczr, self.vy_bczr, self.vz_bczr]
 
-        #self.tau_f=3.0*self.niu+0.5
-        self.tau_f=self.niu/3.0+0.5
+        self.tau_f = tau_from_legacy_external_solver_parameter(self.niu)
         self.s_v=1.0/self.tau_f
         self.s_other=8.0*(2.0-self.s_v)/(8.0-self.s_v)
 
