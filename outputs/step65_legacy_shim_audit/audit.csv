@@ -1,0 +1,6 @@
+canonical_path,legacy_contains_implementation_body,legacy_imports_canonical,legacy_is_shim,legacy_path,nonblank_line_count,pass
+src/mpm_lbm/sim/runtime_geometry/projection.py,False,True,True,src/runtime_geometry_projection.py,4,True
+src/mpm_lbm/sim/runtime_geometry/projection_config.py,False,True,True,src/runtime_geometry_projection_config.py,4,True
+src/mpm_lbm/sim/runtime_geometry/projection_quality.py,False,True,True,src/runtime_geometry_projection_quality.py,4,True
+src/mpm_lbm/sim/runtime_geometry/projection_consistency.py,False,True,True,src/runtime_geometry_projection_consistency.py,4,True
+src/mpm_lbm/sim/runtime_geometry/state_guard.py,False,True,True,src/runtime_geometry_projection_state_guard.py,4,True

@@ -1,0 +1,5 @@
+metric,value
+code_placement_freeze_pass,True
+pass_count,38
+placement_violation_count,0
+row_count,38

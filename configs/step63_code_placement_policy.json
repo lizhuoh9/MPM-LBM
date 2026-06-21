@@ -1,0 +1,25 @@
+{
+  "allowed_diagnostic_prefixes": [
+    "src/mpm_lbm/diagnostics/"
+  ],
+  "allowed_evidence_prefixes": [
+    "src/mpm_lbm/evidence/"
+  ],
+  "allowed_runtime_prefixes": [
+    "src/mpm_lbm/sim/"
+  ],
+  "batch": "step63_67_solver_completion_batch_a",
+  "batch_policy_path": "configs/step63_67_solver_completion_batch_a_policy.json",
+  "forbidden_sim_prefixes": [
+    "baseline_tests/",
+    "tests/",
+    "outputs/",
+    "logs/",
+    "docs/",
+    "experiments/"
+  ],
+  "physics_feature_expansion": false,
+  "policy_id": "step63_code_placement_policy",
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false
+}

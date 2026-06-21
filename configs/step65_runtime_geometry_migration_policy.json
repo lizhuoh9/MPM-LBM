@@ -1,0 +1,132 @@
+{
+  "batch": "step63_67_solver_completion_batch_a",
+  "canonical_forbidden_tokens": [
+    "legacy_getattr",
+    "_LEGACY_MODULE",
+    "BRIDGE_IS_TEMPORARY_UNTIL_STEP59",
+    "Implementation remains legacy"
+  ],
+  "legacy_shim_required_phrase": "Compatibility shim",
+  "max_nonblank_lines_per_shim": 6,
+  "migrations": [
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "canonical_path": "src/mpm_lbm/sim/runtime_geometry/projection.py",
+      "classification": "runtime_geometry",
+      "legacy_module": "src.runtime_geometry_projection",
+      "legacy_path": "src/runtime_geometry_projection.py",
+      "required_tokens": [
+        "def load_runtime_projection_inputs",
+        "def compute_runtime_projection_rows",
+        "def compute_original_projection_rows",
+        "def original_union_points",
+        "def project_transient_geometry_copy",
+        "def summarize_runtime_projection_rows",
+        "def write_runtime_projection_rows",
+        "def write_csv_rows",
+        "def write_json",
+        "def read_json",
+        "def step45_geometry_and_region_hashes"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "load_runtime_projection_inputs",
+        "compute_runtime_projection_rows",
+        "compute_original_projection_rows",
+        "original_union_points",
+        "project_transient_geometry_copy",
+        "summarize_runtime_projection_rows",
+        "write_runtime_projection_rows",
+        "write_csv_rows",
+        "write_json",
+        "read_json",
+        "step45_geometry_and_region_hashes"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "canonical_path": "src/mpm_lbm/sim/runtime_geometry/projection_config.py",
+      "classification": "runtime_geometry",
+      "legacy_module": "src.runtime_geometry_projection_config",
+      "legacy_path": "src/runtime_geometry_projection_config.py",
+      "required_tokens": [
+        "class RuntimeGeometryProjectionIntegrationConfig",
+        "def validate_runtime_geometry_projection_config",
+        "def summarize_runtime_geometry_projection_config_validation",
+        "def mutation_flags",
+        "def mutation_flag_enabled_count"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "RuntimeGeometryProjectionIntegrationConfig",
+        "validate_runtime_geometry_projection_config",
+        "summarize_runtime_geometry_projection_config_validation",
+        "mutation_flags",
+        "mutation_flag_enabled_count"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_quality",
+      "canonical_path": "src/mpm_lbm/sim/runtime_geometry/projection_quality.py",
+      "classification": "runtime_geometry",
+      "legacy_module": "src.runtime_geometry_projection_quality",
+      "legacy_path": "src/runtime_geometry_projection_quality.py",
+      "required_tokens": [
+        "def analyze_runtime_projection_quality"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "analyze_runtime_projection_quality"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "canonical_path": "src/mpm_lbm/sim/runtime_geometry/projection_consistency.py",
+      "classification": "runtime_geometry",
+      "legacy_module": "src.runtime_geometry_projection_consistency",
+      "legacy_path": "src/runtime_geometry_projection_consistency.py",
+      "required_tokens": [
+        "def compare_original_vs_runtime_projection",
+        "def summarize_original_vs_runtime_projection",
+        "def projection_phase_closure_rows",
+        "def summarize_projection_phase_closure",
+        "def compare_step44_projection_smoke",
+        "def summarize_step44_projection_alignment"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "compare_original_vs_runtime_projection",
+        "summarize_original_vs_runtime_projection",
+        "projection_phase_closure_rows",
+        "summarize_projection_phase_closure",
+        "compare_step44_projection_smoke",
+        "summarize_step44_projection_alignment"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.state_guard",
+      "canonical_path": "src/mpm_lbm/sim/runtime_geometry/state_guard.py",
+      "classification": "runtime_geometry",
+      "legacy_module": "src.runtime_geometry_projection_state_guard",
+      "legacy_path": "src/runtime_geometry_projection_state_guard.py",
+      "required_tokens": [
+        "def compute_runtime_projection_state_guard",
+        "def forbidden_output_counts",
+        "def write_runtime_projection_state_guard"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "compute_runtime_projection_state_guard",
+        "forbidden_output_counts",
+        "write_runtime_projection_state_guard"
+      ]
+    }
+  ],
+  "no_runtime_execution": true,
+  "no_solver_activation": true,
+  "physics_feature_expansion": false,
+  "policy_id": "step65_runtime_geometry_migration_policy",
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false,
+  "step": 65
+}

@@ -1,0 +1,10 @@
+canonical_contains_real_implementation,canonical_forbidden_bridge_token_count,canonical_forbidden_bridge_tokens,canonical_imports_legacy_root,canonical_missing_symbols,canonical_path,canonical_path_exists,canonical_uses_legacy_getattr,classification,legacy_imports_canonical,legacy_is_shim,legacy_path,legacy_path_exists,pass,support_dependency
+True,0,[],False,[],src/mpm_lbm/diagnostics/geometry_update_config.py,True,False,diagnostics,True,True,src/diagnostic_geometry_update_config.py,True,True,True
+True,0,[],False,[],src/mpm_lbm/diagnostics/geometry_update.py,True,False,diagnostics,True,True,src/diagnostic_geometry_update.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/diagnostics/geometry_projection.py,True,False,diagnostics,True,True,src/diagnostic_geometry_projection.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/diagnostics/geometry_state_guard.py,True,False,diagnostics,True,True,src/diagnostic_geometry_state_guard.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/geometry_displacement/config.py,True,False,geometry_displacement,True,True,src/geometry_displacement_config.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/geometry_displacement/field.py,True,False,geometry_displacement,True,True,src/geometry_displacement_field.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/geometry_displacement/quality.py,True,False,geometry_displacement,True,True,src/geometry_displacement_quality.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/geometry_displacement/consistency.py,True,False,geometry_displacement,True,True,src/geometry_displacement_consistency.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/diagnostics/geometry_displacement_grid.py,True,False,geometry_displacement,True,True,src/geometry_displacement_grid_diagnostics.py,True,True,False

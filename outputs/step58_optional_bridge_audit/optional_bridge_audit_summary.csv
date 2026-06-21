@@ -1,7 +1,9 @@
 metric,value
+active_temporary_bridge_count,0
 bridge_file_count,3
 bridge_is_temporary_until_step59,True
-legacy_getattr_bridge_count,3
+bridge_retired_count,3
+legacy_getattr_bridge_count,0
 optional_bridge_audit_pass,True
 output_snapshot_unchanged,True
 pass_count,3
@@ -9,4 +11,4 @@ row_count,3
 same_object_symbol_count,4
 solver_run,False
 symbol_count,4
-temporary_marker_count,3
+temporary_marker_count,0

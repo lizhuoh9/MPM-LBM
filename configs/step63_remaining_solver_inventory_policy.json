@@ -1,0 +1,21 @@
+{
+  "batch": "step63_67_solver_completion_batch_a",
+  "batch_policy_path": "configs/step63_67_solver_completion_batch_a_policy.json",
+  "classifications": [
+    "root_compatibility_shim",
+    "motion_runtime_remaining",
+    "wall_velocity_runtime_remaining",
+    "runtime_geometry_remaining",
+    "diagnostic_geometry_remaining",
+    "geometry_displacement_remaining",
+    "squid_proxy_remaining",
+    "real_geometry_support_remaining",
+    "step_specific_proxy_remaining",
+    "approved_legacy_support",
+    "unknown_requires_review"
+  ],
+  "physics_feature_expansion": false,
+  "policy_id": "step63_remaining_solver_inventory_policy",
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false
+}

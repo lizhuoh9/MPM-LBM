@@ -1,0 +1,140 @@
+{
+  "rows": [
+    {
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/region_config.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/squid_region_config.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/regions.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/squid_proxy_regions.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/kinematics_config.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/squid_kinematics_config.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/kinematics_schedule.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/squid_kinematics_schedule.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/kinematics_quality.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/squid_kinematics_quality.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/region_mapping.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/squid_kinematics_region_mapping.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/motion_mapping.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/squid_motion_mapping.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/motion_mapping_config.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/squid_motion_mapping_config.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/motion_quality.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/squid_motion_quality.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/diagnostics/squid_motion_projection.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/squid_motion_projection_diagnostics.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/geometry/candidate_manifest.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/geometry_candidate_manifest.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/geometry/fingerprint.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/geometry_fingerprint.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/geometry/normalization.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/geometry_normalization.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/geometry/intake.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/geometry_intake.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "batch_legacy_shim_audit_pass": true,
+    "legacy_implementation_body_count": 0,
+    "legacy_shim_count": 14,
+    "pass_count": 14,
+    "policy_id": "step67_squid_proxy_real_geometry_migration_policy",
+    "row_count": 14,
+    "step": 67,
+    "step67_legacy_shim_pass": true
+  }
+}

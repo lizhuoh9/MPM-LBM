@@ -1,0 +1,6 @@
+canonical_contains_real_implementation,canonical_forbidden_bridge_token_count,canonical_forbidden_bridge_tokens,canonical_imports_legacy_root,canonical_missing_symbols,canonical_path,canonical_path_exists,canonical_uses_legacy_getattr,classification,legacy_imports_canonical,legacy_is_shim,legacy_path,legacy_path_exists,pass,support_dependency
+True,0,[],False,[],src/mpm_lbm/sim/runtime_geometry/projection.py,True,False,runtime_geometry,True,True,src/runtime_geometry_projection.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/runtime_geometry/projection_config.py,True,False,runtime_geometry,True,True,src/runtime_geometry_projection_config.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/runtime_geometry/projection_quality.py,True,False,runtime_geometry,True,True,src/runtime_geometry_projection_quality.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/runtime_geometry/projection_consistency.py,True,False,runtime_geometry,True,True,src/runtime_geometry_projection_consistency.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/runtime_geometry/state_guard.py,True,False,runtime_geometry,True,True,src/runtime_geometry_projection_state_guard.py,True,True,False

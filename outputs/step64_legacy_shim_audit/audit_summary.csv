@@ -1,0 +1,9 @@
+metric,value
+batch_legacy_shim_audit_pass,True
+legacy_implementation_body_count,0
+legacy_shim_count,8
+pass_count,8
+policy_id,step64_motion_wall_velocity_migration_policy
+row_count,8
+step,64
+step64_legacy_shim_pass,True

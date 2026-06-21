@@ -1,0 +1,23 @@
+{
+  "batch": "step63_67_solver_completion_batch_a",
+  "physics_feature_expansion": false,
+  "policy_id": "step63_regression_snapshot_policy",
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false,
+  "source_artifacts": [
+    "outputs/step62_step61_regression_guard/step61_regression_guard.json",
+    "outputs/step62_artifact_manifest/artifact_summary.json",
+    "outputs/step62_report_consistency_guard/report_consistency_guard.json"
+  ],
+  "stable_keys_allowed": [
+    "pass",
+    "source_artifact_path",
+    "row_count",
+    "pass_count"
+  ],
+  "volatile_keys_not_embedded": [
+    "step62_total_size_bytes",
+    "step62_total_size_mb",
+    "size_bytes"
+  ]
+}

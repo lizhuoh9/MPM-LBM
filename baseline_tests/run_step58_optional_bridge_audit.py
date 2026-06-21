@@ -12,6 +12,8 @@ FIELDS = [
     "bridge_file_exists",
     "temporary_marker_present",
     "uses_legacy_getattr",
+    "temporary_bridge_active",
+    "bridge_retired",
     "legacy_module_declared",
     "all_symbols_listed",
     "canonical_import_pass",

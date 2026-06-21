@@ -1,0 +1,9 @@
+metric,value
+batch_legacy_shim_audit_pass,True
+legacy_implementation_body_count,0
+legacy_shim_count,5
+pass_count,5
+policy_id,step65_runtime_geometry_migration_policy
+row_count,5
+step,65
+step65_legacy_shim_pass,True

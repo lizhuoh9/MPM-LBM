@@ -1,0 +1,316 @@
+{
+  "batch": "step63_67_solver_completion_batch_a",
+  "canonical_forbidden_tokens": [
+    "legacy_getattr",
+    "_LEGACY_MODULE",
+    "BRIDGE_IS_TEMPORARY_UNTIL_STEP59",
+    "Implementation remains legacy"
+  ],
+  "legacy_shim_required_phrase": "Compatibility shim",
+  "max_nonblank_lines_per_shim": 6,
+  "migrations": [
+    {
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/region_config.py",
+      "classification": "squid_proxy",
+      "legacy_module": "src.squid_region_config",
+      "legacy_path": "src/squid_region_config.py",
+      "required_tokens": [
+        "class SquidRegion",
+        "class SquidProxyRegionConfig",
+        "def default_squid_regions",
+        "def default_allowed_overlap_pairs",
+        "def default_squid_proxy_region_config",
+        "def load_squid_proxy_region_config",
+        "def validate_squid_region_config"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "SquidRegion",
+        "SquidProxyRegionConfig",
+        "default_squid_regions",
+        "default_allowed_overlap_pairs",
+        "default_squid_proxy_region_config",
+        "load_squid_proxy_region_config",
+        "validate_squid_region_config"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.regions",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/regions.py",
+      "classification": "squid_proxy",
+      "legacy_module": "src.squid_proxy_regions",
+      "legacy_path": "src/squid_proxy_regions.py",
+      "required_tokens": [
+        "def sample_squid_proxy_region_points",
+        "def sample_squid_proxy_regions",
+        "def summarize_region_masks",
+        "def sampled_position_hash",
+        "def region_assignment_hash",
+        "def mantle_normalized_radius",
+        "def write_region_manifest"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "sample_squid_proxy_region_points",
+        "sample_squid_proxy_regions",
+        "summarize_region_masks",
+        "sampled_position_hash",
+        "region_assignment_hash",
+        "mantle_normalized_radius",
+        "write_region_manifest"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_config",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/kinematics_config.py",
+      "classification": "squid_proxy",
+      "legacy_module": "src.squid_kinematics_config",
+      "legacy_path": "src/squid_kinematics_config.py",
+      "required_tokens": [
+        "class SquidKinematicsScheduleConfig",
+        "def validate_kinematics_schedule_config",
+        "def summarize_config_validation"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "SquidKinematicsScheduleConfig",
+        "validate_kinematics_schedule_config",
+        "summarize_config_validation"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_schedule",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/kinematics_schedule.py",
+      "classification": "squid_proxy",
+      "legacy_module": "src.squid_kinematics_schedule",
+      "legacy_path": "src/squid_kinematics_schedule.py",
+      "required_tokens": [
+        "def phase_samples",
+        "def smoothstep",
+        "def window_weight",
+        "def mantle_radius_scale",
+        "def cavity_volume_scale",
+        "def funnel_aperture_scale",
+        "def schedule_rows",
+        "def summarize_schedule",
+        "def write_schedule_outputs"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "phase_samples",
+        "smoothstep",
+        "window_weight",
+        "mantle_radius_scale",
+        "cavity_volume_scale",
+        "funnel_aperture_scale",
+        "schedule_rows",
+        "summarize_schedule",
+        "write_schedule_outputs"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_quality",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/kinematics_quality.py",
+      "classification": "squid_proxy",
+      "legacy_module": "src.squid_kinematics_quality",
+      "legacy_path": "src/squid_kinematics_quality.py",
+      "required_tokens": [
+        "def analyze_kinematics_schedule",
+        "def quality_rows_from_analysis",
+        "def assert_kinematics_schedule_quality"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "analyze_kinematics_schedule",
+        "quality_rows_from_analysis",
+        "assert_kinematics_schedule_quality"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_mapping",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/region_mapping.py",
+      "classification": "squid_proxy",
+      "legacy_module": "src.squid_kinematics_region_mapping",
+      "legacy_path": "src/squid_kinematics_region_mapping.py",
+      "required_tokens": [
+        "def validate_kinematics_region_mapping",
+        "def region_mapping_rows",
+        "def assert_region_mapping"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "validate_kinematics_region_mapping",
+        "region_mapping_rows",
+        "assert_region_mapping"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_mapping",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/motion_mapping.py",
+      "classification": "squid_proxy",
+      "legacy_module": "src.squid_motion_mapping",
+      "legacy_path": "src/squid_motion_mapping.py",
+      "required_tokens": [
+        "def load_motion_mapping_inputs",
+        "def compute_region_motion_rows",
+        "def mantle_displacement_proxy",
+        "def mantle_velocity_proxy",
+        "def cavity_volume_rate_proxy",
+        "def funnel_aperture_rate_proxy",
+        "def summarize_motion_rows",
+        "def write_motion_rows"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "load_motion_mapping_inputs",
+        "compute_region_motion_rows",
+        "mantle_displacement_proxy",
+        "mantle_velocity_proxy",
+        "cavity_volume_rate_proxy",
+        "funnel_aperture_rate_proxy",
+        "summarize_motion_rows",
+        "write_motion_rows"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_mapping_config",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/motion_mapping_config.py",
+      "classification": "squid_proxy",
+      "legacy_module": "src.squid_motion_mapping_config",
+      "legacy_path": "src/squid_motion_mapping_config.py",
+      "required_tokens": [
+        "class SquidMotionMappingConfig",
+        "def validate_motion_mapping_config",
+        "def summarize_motion_mapping_config_validation"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "SquidMotionMappingConfig",
+        "validate_motion_mapping_config",
+        "summarize_motion_mapping_config_validation"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_quality",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/motion_quality.py",
+      "classification": "squid_proxy",
+      "legacy_module": "src.squid_motion_quality",
+      "legacy_path": "src/squid_motion_quality.py",
+      "required_tokens": [
+        "def analyze_motion_mapping",
+        "def quality_rows_from_motion_analysis",
+        "def assert_motion_mapping_quality"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "analyze_motion_mapping",
+        "quality_rows_from_motion_analysis",
+        "assert_motion_mapping_quality"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_motion_projection",
+      "canonical_path": "src/mpm_lbm/diagnostics/squid_motion_projection.py",
+      "classification": "squid_proxy",
+      "legacy_module": "src.squid_motion_projection_diagnostics",
+      "legacy_path": "src/squid_motion_projection_diagnostics.py",
+      "required_tokens": [
+        "def summarize_motion_on_grids",
+        "def summarize_motion_grid_rows",
+        "def assert_motion_grid_diagnostics"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "summarize_motion_on_grids",
+        "summarize_motion_grid_rows",
+        "assert_motion_grid_diagnostics"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.candidate_manifest",
+      "canonical_path": "src/mpm_lbm/sim/geometry/candidate_manifest.py",
+      "classification": "real_geometry_support",
+      "legacy_module": "src.geometry_candidate_manifest",
+      "legacy_path": "src/geometry_candidate_manifest.py",
+      "required_tokens": [
+        "def load_candidate_descriptor",
+        "def validate_candidate_descriptor",
+        "def candidate_manifest_row",
+        "def write_candidate_manifest"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "load_candidate_descriptor",
+        "validate_candidate_descriptor",
+        "candidate_manifest_row",
+        "write_candidate_manifest"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.fingerprint",
+      "canonical_path": "src/mpm_lbm/sim/geometry/fingerprint.py",
+      "classification": "real_geometry_support",
+      "legacy_module": "src.geometry_fingerprint",
+      "legacy_path": "src/geometry_fingerprint.py",
+      "required_tokens": [
+        "def sha256_file",
+        "def file_size_bytes",
+        "def fingerprint_geometry_file"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "sha256_file",
+        "file_size_bytes",
+        "fingerprint_geometry_file"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.normalization",
+      "canonical_path": "src/mpm_lbm/sim/geometry/normalization.py",
+      "classification": "real_geometry_support",
+      "legacy_module": "src.geometry_normalization",
+      "legacy_path": "src/geometry_normalization.py",
+      "required_tokens": [
+        "def normalize_mesh_candidate",
+        "def normalize_voxel_candidate",
+        "def write_normalization_report",
+        "def geometry_config_from_descriptor"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "normalize_mesh_candidate",
+        "normalize_voxel_candidate",
+        "write_normalization_report",
+        "geometry_config_from_descriptor"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.intake",
+      "canonical_path": "src/mpm_lbm/sim/geometry/intake.py",
+      "classification": "real_geometry_support",
+      "legacy_module": "src.geometry_intake",
+      "legacy_path": "src/geometry_intake.py",
+      "required_tokens": [
+        "def run_candidate_intake",
+        "def run_candidate_quality_check",
+        "def run_candidate_sampling_reproducibility",
+        "def run_candidate_projection_smoke"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "run_candidate_intake",
+        "run_candidate_quality_check",
+        "run_candidate_sampling_reproducibility",
+        "run_candidate_projection_smoke"
+      ]
+    }
+  ],
+  "no_runtime_execution": true,
+  "no_solver_activation": true,
+  "physics_feature_expansion": false,
+  "policy_id": "step67_squid_proxy_real_geometry_migration_policy",
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false,
+  "step": 67
+}

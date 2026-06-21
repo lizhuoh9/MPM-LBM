@@ -1,0 +1,63 @@
+{
+  "batch": "step63_67_solver_completion_batch_a",
+  "physics_feature_expansion": false,
+  "policy_id": "step63_solver_completion_roadmap_policy",
+  "roadmap": [
+    {
+      "new_simulation_required": false,
+      "status": "planned",
+      "step": 68,
+      "title": "Step-Specific Proxy Migration To experiments/steps"
+    },
+    {
+      "new_simulation_required": false,
+      "status": "planned",
+      "step": 69,
+      "title": "Root src final implementation cleanup"
+    },
+    {
+      "new_simulation_required": false,
+      "status": "planned",
+      "step": 70,
+      "title": "API and config freeze before activation"
+    },
+    {
+      "new_simulation_required": false,
+      "status": "planned",
+      "step": 71,
+      "title": "Tau convention decision and documentation"
+    },
+    {
+      "new_simulation_required": false,
+      "status": "planned",
+      "step": 72,
+      "title": "Runtime geometry activation readiness audit"
+    },
+    {
+      "new_simulation_required": false,
+      "status": "planned",
+      "step": 73,
+      "title": "Wall velocity activation readiness audit"
+    },
+    {
+      "new_simulation_required": false,
+      "status": "planned",
+      "step": 74,
+      "title": "Real geometry data boundary audit"
+    },
+    {
+      "new_simulation_required": false,
+      "status": "planned",
+      "step": 75,
+      "title": "Solver-complete simulation campaign readiness gate"
+    },
+    {
+      "new_simulation_required": true,
+      "status": "planned",
+      "step": 76,
+      "title": "Post-gate simulation campaign only after explicit activation"
+    }
+  ],
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false
+}

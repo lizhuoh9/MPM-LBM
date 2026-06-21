@@ -1,0 +1,41 @@
+{
+  "batch": "step63_67_solver_completion_batch_a",
+  "forbidden_driver_call_attrs": [
+    "run",
+    "step_once",
+    "initialize"
+  ],
+  "forbidden_driver_names": [
+    "driver"
+  ],
+  "forbidden_output_dirs": [
+    "outputs/step63_driver_runs",
+    "outputs/step64_driver_runs",
+    "outputs/step65_driver_runs",
+    "outputs/step66_driver_runs",
+    "outputs/step67_driver_runs"
+  ],
+  "forbidden_runtime_flags": [
+    "write_vtk = true",
+    "write_particles = true",
+    "write_vtk=true",
+    "write_particles=true"
+  ],
+  "physics_feature_expansion": false,
+  "policy_id": "step63_simulation_freeze_policy",
+  "runtime_code_changed": false,
+  "scan_globs": [
+    "src/mpm_lbm/evidence/*.py",
+    "baseline_tests/run_step63_*.py",
+    "baseline_tests/run_step64_*.py",
+    "baseline_tests/run_step65_*.py",
+    "baseline_tests/run_step66_*.py",
+    "baseline_tests/run_step67_*.py",
+    "tests/test_step63_*.py",
+    "tests/test_step64_*.py",
+    "tests/test_step65_*.py",
+    "tests/test_step66_*.py",
+    "tests/test_step67_*.py"
+  ],
+  "solver_behavior_changed": false
+}

@@ -1,0 +1,488 @@
+{
+  "rows": [
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.boundary_motion_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "BoundaryMotionInterfaceConfig"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.boundary_motion_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_boundary_motion_interface_config"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.boundary_motion_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_boundary_motion_config_validation"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.boundary_motion_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "execution_flags"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.boundary_motion_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "execution_flag_enabled_count"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_motion_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "GeometryMotionInterfaceConfig"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_motion_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_geometry_motion_interface_config"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_motion_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_geometry_motion_config_validation"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_motion_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_displacement_artifact_summary"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_motion_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flags"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_motion_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flag_enabled_count"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_interface",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.boundary_motion_interface",
+      "pass": true,
+      "same_object": true,
+      "symbol": "build_boundary_motion_interface_report"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_interface",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.boundary_motion_interface",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_boundary_motion_interface_report"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_interface",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.boundary_motion_interface",
+      "pass": true,
+      "same_object": true,
+      "symbol": "build_static_boundary_motion_interface_report"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_interface",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.boundary_motion_interface",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_static_boundary_motion_interface_report"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_interface",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_motion_interface",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_geometry_motion_interface_config"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_interface",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_motion_interface",
+      "pass": true,
+      "same_object": true,
+      "symbol": "assert_geometry_motion_noop_flags"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_interface",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_motion_interface",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_geometry_motion_interface"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_interface",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_motion_interface",
+      "pass": true,
+      "same_object": true,
+      "symbol": "build_geometry_motion_interface_report"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_interface",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_motion_interface",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_geometry_motion_interface_report"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_wall_velocity_application_config"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application",
+      "pass": true,
+      "same_object": true,
+      "symbol": "phase_for_lbm_step"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application",
+      "pass": true,
+      "same_object": true,
+      "symbol": "nearest_wall_velocity_phase"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application",
+      "pass": true,
+      "same_object": true,
+      "symbol": "build_wall_velocity_grid"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application",
+      "pass": true,
+      "same_object": true,
+      "symbol": "apply_wall_velocity_to_lbm_solid_vel"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_wall_velocity_application"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application",
+      "pass": true,
+      "same_object": true,
+      "symbol": "build_wall_velocity_application_report"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application",
+      "pass": true,
+      "same_object": true,
+      "symbol": "apply_wall_velocity_application_to_lbm"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_wall_velocity_application_report"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "WallVelocityApplicationConfig"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_wall_velocity_application_config"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_wall_velocity_application_config_validation"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "assert_valid_wall_velocity_application_config"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "WallVelocityFieldConfig"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_wall_velocity_config"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "assert_valid_wall_velocity_config"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_wall_velocity_config_validation"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "step35_execution_flags"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "step35_execution_flag_enabled_count"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_wall_velocity_inputs"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "interpolate_motion_rows_to_phase"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compute_wall_velocity_summary"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "generate_wall_velocity_field_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_wall_velocity_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "wall_velocity_hashes"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "canonical_wall_velocity_hash"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_wall_velocity_rows"
+    }
+  ],
+  "summary": {
+    "batch_import_execution_audit_pass": true,
+    "canonical_import_pass_count": 47,
+    "legacy_import_pass_count": 47,
+    "output_snapshot_unchanged": true,
+    "pass_count": 47,
+    "policy_id": "step64_motion_wall_velocity_migration_policy",
+    "row_count": 47,
+    "runtime_object_construction_required": false,
+    "same_object_count": 47,
+    "solver_run": false,
+    "step": 64,
+    "step64_import_execution_pass": true
+  }
+}

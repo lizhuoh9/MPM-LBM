@@ -1,0 +1,9 @@
+canonical_contains_real_implementation,canonical_forbidden_bridge_token_count,canonical_forbidden_bridge_tokens,canonical_imports_legacy_root,canonical_missing_symbols,canonical_path,canonical_path_exists,canonical_uses_legacy_getattr,classification,legacy_imports_canonical,legacy_is_shim,legacy_path,legacy_path_exists,pass,support_dependency
+True,0,[],False,[],src/mpm_lbm/sim/motion/boundary_motion_config.py,True,False,motion,True,True,src/boundary_motion_config.py,True,True,True
+True,0,[],False,[],src/mpm_lbm/sim/motion/geometry_motion_config.py,True,False,motion,True,True,src/geometry_motion_config.py,True,True,True
+True,0,[],False,[],src/mpm_lbm/sim/motion/boundary_motion_interface.py,True,False,motion,True,True,src/boundary_motion_interface.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/motion/geometry_motion_interface.py,True,False,motion,True,True,src/geometry_motion_interface.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/wall_velocity/application.py,True,False,wall_velocity,True,True,src/wall_velocity_application.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/wall_velocity/application_config.py,True,False,wall_velocity,True,True,src/wall_velocity_application_config.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/wall_velocity/config.py,True,False,wall_velocity,True,True,src/wall_velocity_config.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/wall_velocity/field.py,True,False,wall_velocity,True,True,src/wall_velocity_field.py,True,True,False

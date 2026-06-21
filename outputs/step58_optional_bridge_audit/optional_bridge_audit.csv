@@ -1,4 +1,4 @@
-canonical_path,canonical_module,legacy_module,symbol_count,bridge_file_exists,temporary_marker_present,uses_legacy_getattr,legacy_module_declared,all_symbols_listed,canonical_import_pass,legacy_import_pass,resolved_symbol_count,same_object_symbol_count,pass,error
-src/mpm_lbm/sim/motion/boundary_motion_interface.py,src.mpm_lbm.sim.motion.boundary_motion_interface,src.boundary_motion_interface,2,True,True,True,True,True,True,True,2,2,True,
-src/mpm_lbm/sim/motion/geometry_motion_interface.py,src.mpm_lbm.sim.motion.geometry_motion_interface,src.geometry_motion_interface,1,True,True,True,True,True,True,True,1,1,True,
-src/mpm_lbm/sim/wall_velocity/application.py,src.mpm_lbm.sim.wall_velocity.application,src.wall_velocity_application,1,True,True,True,True,True,True,True,1,1,True,
+canonical_path,canonical_module,legacy_module,symbol_count,bridge_file_exists,temporary_marker_present,uses_legacy_getattr,temporary_bridge_active,bridge_retired,legacy_module_declared,all_symbols_listed,canonical_import_pass,legacy_import_pass,resolved_symbol_count,same_object_symbol_count,pass,error
+src/mpm_lbm/sim/motion/boundary_motion_interface.py,src.mpm_lbm.sim.motion.boundary_motion_interface,src.boundary_motion_interface,2,True,False,False,False,True,False,False,True,True,2,2,True,
+src/mpm_lbm/sim/motion/geometry_motion_interface.py,src.mpm_lbm.sim.motion.geometry_motion_interface,src.geometry_motion_interface,1,True,False,False,False,True,False,False,True,True,1,1,True,
+src/mpm_lbm/sim/wall_velocity/application.py,src.mpm_lbm.sim.wall_velocity.application,src.wall_velocity_application,1,True,False,False,False,True,False,False,True,True,1,1,True,

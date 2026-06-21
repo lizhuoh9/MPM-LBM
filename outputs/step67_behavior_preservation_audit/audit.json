@@ -1,0 +1,85 @@
+{
+  "rows": [
+    {
+      "actual": false,
+      "check": "runtime_code_changed",
+      "expected": false,
+      "notes": "policy-level behavior preservation flag",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "solver_behavior_changed",
+      "expected": false,
+      "notes": "policy-level behavior preservation flag",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "physics_feature_expansion",
+      "expected": false,
+      "notes": "policy-level behavior preservation flag",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "no_runtime_execution",
+      "expected": true,
+      "notes": "policy-level behavior preservation flag",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "no_solver_activation",
+      "expected": true,
+      "notes": "policy-level behavior preservation flag",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "imports_do_not_create_outputs",
+      "expected": true,
+      "notes": "",
+      "pass": true
+    },
+    {
+      "actual": 64,
+      "check": "legacy_and_canonical_symbols_same_object",
+      "expected": 64,
+      "notes": "",
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "canonical_modules_have_no_driver_calls",
+      "expected": 0,
+      "notes": "",
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "step63_67_driver_output_dirs_absent",
+      "expected": 0,
+      "notes": "",
+      "pass": true
+    },
+    {
+      "actual": "step_specific_or_experiment_runner",
+      "check": "real_geometry_feasibility_classified_not_moved_to_sim",
+      "expected": "step_specific_or_experiment_runner",
+      "notes": "Batch A classifies this existing file but does not execute or canonicalize it.",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "batch_behavior_preservation_audit_pass": true,
+    "pass_count": 10,
+    "physics_feature_expansion": false,
+    "policy_id": "step67_squid_proxy_real_geometry_migration_policy",
+    "row_count": 10,
+    "solver_behavior_changed": false,
+    "solver_object_construction_required": false,
+    "step": 67,
+    "step67_behavior_preservation_pass": true
+  }
+}

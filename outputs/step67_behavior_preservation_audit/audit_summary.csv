@@ -1,0 +1,10 @@
+metric,value
+batch_behavior_preservation_audit_pass,True
+pass_count,10
+physics_feature_expansion,False
+policy_id,step67_squid_proxy_real_geometry_migration_policy
+row_count,10
+solver_behavior_changed,False
+solver_object_construction_required,False
+step,67
+step67_behavior_preservation_pass,True

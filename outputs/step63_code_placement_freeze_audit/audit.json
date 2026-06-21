@@ -1,0 +1,314 @@
+{
+  "rows": [
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "motion",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/motion/boundary_motion_config.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "motion",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/motion/geometry_motion_config.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "motion",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/motion/boundary_motion_interface.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "motion",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/motion/geometry_motion_interface.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "wall_velocity",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/wall_velocity/application.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "wall_velocity",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/wall_velocity/application_config.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "wall_velocity",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/wall_velocity/config.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "wall_velocity",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/wall_velocity/field.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "runtime_geometry",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/runtime_geometry/projection.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "runtime_geometry",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/runtime_geometry/projection_config.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "runtime_geometry",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/runtime_geometry/projection_quality.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "runtime_geometry",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/runtime_geometry/projection_consistency.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "runtime_geometry",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/runtime_geometry/state_guard.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/diagnostics",
+      "classification": "diagnostics",
+      "expected_owner": "src/mpm_lbm/diagnostics",
+      "pass": true,
+      "path": "src/mpm_lbm/diagnostics/geometry_update_config.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/diagnostics",
+      "classification": "diagnostics",
+      "expected_owner": "src/mpm_lbm/diagnostics",
+      "pass": true,
+      "path": "src/mpm_lbm/diagnostics/geometry_update.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/diagnostics",
+      "classification": "diagnostics",
+      "expected_owner": "src/mpm_lbm/diagnostics",
+      "pass": true,
+      "path": "src/mpm_lbm/diagnostics/geometry_projection.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/diagnostics",
+      "classification": "diagnostics",
+      "expected_owner": "src/mpm_lbm/diagnostics",
+      "pass": true,
+      "path": "src/mpm_lbm/diagnostics/geometry_state_guard.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "geometry_displacement",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/geometry_displacement/config.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "geometry_displacement",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/geometry_displacement/field.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "geometry_displacement",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/geometry_displacement/quality.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "geometry_displacement",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/geometry_displacement/consistency.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/diagnostics",
+      "classification": "geometry_displacement",
+      "expected_owner": "src/mpm_lbm/diagnostics",
+      "pass": true,
+      "path": "src/mpm_lbm/diagnostics/geometry_displacement_grid.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "squid_proxy",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/squid_proxy/region_config.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "squid_proxy",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/squid_proxy/regions.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "squid_proxy",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/squid_proxy/kinematics_config.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "squid_proxy",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/squid_proxy/kinematics_schedule.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "squid_proxy",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/squid_proxy/kinematics_quality.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "squid_proxy",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/squid_proxy/region_mapping.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "squid_proxy",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/squid_proxy/motion_mapping.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "squid_proxy",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/squid_proxy/motion_mapping_config.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim",
+      "classification": "squid_proxy",
+      "expected_owner": "src/mpm_lbm/sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/squid_proxy/motion_quality.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/diagnostics",
+      "classification": "squid_proxy",
+      "expected_owner": "src/mpm_lbm/diagnostics",
+      "pass": true,
+      "path": "src/mpm_lbm/diagnostics/squid_motion_projection.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim/geometry",
+      "classification": "real_geometry_support",
+      "expected_owner": "src/mpm_lbm/sim/geometry",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/geometry/candidate_manifest.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim/geometry",
+      "classification": "real_geometry_support",
+      "expected_owner": "src/mpm_lbm/sim/geometry",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/geometry/fingerprint.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim/geometry",
+      "classification": "real_geometry_support",
+      "expected_owner": "src/mpm_lbm/sim/geometry",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/geometry/normalization.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "src/mpm_lbm/sim/geometry",
+      "classification": "real_geometry_support",
+      "expected_owner": "src/mpm_lbm/sim/geometry",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/geometry/intake.py",
+      "path_exists": true
+    },
+    {
+      "actual_owner": "not_present",
+      "classification": "real_geometry_feasibility",
+      "expected_owner": "not_src_mpm_lbm_sim",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/geometry/real_geometry_feasibility.py",
+      "path_exists": false
+    },
+    {
+      "actual_owner": "0 files under sim",
+      "classification": "evidence_audit_code",
+      "expected_owner": "src/mpm_lbm/evidence",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/**/*audit.py",
+      "path_exists": false
+    }
+  ],
+  "summary": {
+    "code_placement_freeze_pass": true,
+    "pass_count": 38,
+    "placement_violation_count": 0,
+    "row_count": 38
+  }
+}

@@ -1,0 +1,6 @@
+metric,value
+encoding_policy_audit_pass,True
+file_count,894
+non_utf8_readable_count,0
+pass_count,894
+utf8_bom_count,0

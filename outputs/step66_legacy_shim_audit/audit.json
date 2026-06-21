@@ -1,0 +1,95 @@
+{
+  "rows": [
+    {
+      "canonical_path": "src/mpm_lbm/diagnostics/geometry_update_config.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/diagnostic_geometry_update_config.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/diagnostics/geometry_update.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/diagnostic_geometry_update.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/diagnostics/geometry_projection.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/diagnostic_geometry_projection.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/diagnostics/geometry_state_guard.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/diagnostic_geometry_state_guard.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/geometry_displacement/config.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/geometry_displacement_config.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/geometry_displacement/field.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/geometry_displacement_field.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/geometry_displacement/quality.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/geometry_displacement_quality.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/geometry_displacement/consistency.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/geometry_displacement_consistency.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/diagnostics/geometry_displacement_grid.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/geometry_displacement_grid_diagnostics.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "batch_legacy_shim_audit_pass": true,
+    "legacy_implementation_body_count": 0,
+    "legacy_shim_count": 9,
+    "pass_count": 9,
+    "policy_id": "step66_diagnostic_geometry_displacement_migration_policy",
+    "row_count": 9,
+    "step": 66,
+    "step66_legacy_shim_pass": true
+  }
+}

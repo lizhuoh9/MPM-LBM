@@ -1,0 +1,9 @@
+canonical_path,legacy_contains_implementation_body,legacy_imports_canonical,legacy_is_shim,legacy_path,nonblank_line_count,pass
+src/mpm_lbm/sim/motion/boundary_motion_config.py,False,True,True,src/boundary_motion_config.py,4,True
+src/mpm_lbm/sim/motion/geometry_motion_config.py,False,True,True,src/geometry_motion_config.py,4,True
+src/mpm_lbm/sim/motion/boundary_motion_interface.py,False,True,True,src/boundary_motion_interface.py,4,True
+src/mpm_lbm/sim/motion/geometry_motion_interface.py,False,True,True,src/geometry_motion_interface.py,4,True
+src/mpm_lbm/sim/wall_velocity/application.py,False,True,True,src/wall_velocity_application.py,4,True
+src/mpm_lbm/sim/wall_velocity/application_config.py,False,True,True,src/wall_velocity_application_config.py,4,True
+src/mpm_lbm/sim/wall_velocity/config.py,False,True,True,src/wall_velocity_config.py,4,True
+src/mpm_lbm/sim/wall_velocity/field.py,False,True,True,src/wall_velocity_field.py,4,True

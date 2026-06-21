@@ -1,0 +1,278 @@
+{
+  "rows": [
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_runtime_projection_inputs"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compute_runtime_projection_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compute_original_projection_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "original_union_points"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "project_transient_geometry_copy"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_runtime_projection_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_runtime_projection_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_csv_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_json"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "read_json"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "step45_geometry_and_region_hashes"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "RuntimeGeometryProjectionIntegrationConfig"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_runtime_geometry_projection_config"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_runtime_geometry_projection_config_validation"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flags"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flag_enabled_count"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_quality",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection_quality",
+      "pass": true,
+      "same_object": true,
+      "symbol": "analyze_runtime_projection_quality"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection_consistency",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_original_vs_runtime_projection"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection_consistency",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_original_vs_runtime_projection"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection_consistency",
+      "pass": true,
+      "same_object": true,
+      "symbol": "projection_phase_closure_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection_consistency",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_projection_phase_closure"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection_consistency",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_step44_projection_smoke"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection_consistency",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_step44_projection_alignment"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.state_guard",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compute_runtime_projection_state_guard"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.state_guard",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "forbidden_output_counts"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.state_guard",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_projection_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_runtime_projection_state_guard"
+    }
+  ],
+  "summary": {
+    "batch_import_execution_audit_pass": true,
+    "canonical_import_pass_count": 26,
+    "legacy_import_pass_count": 26,
+    "output_snapshot_unchanged": true,
+    "pass_count": 26,
+    "policy_id": "step65_runtime_geometry_migration_policy",
+    "row_count": 26,
+    "runtime_object_construction_required": false,
+    "same_object_count": 26,
+    "solver_run": false,
+    "step": 65,
+    "step65_import_execution_pass": true
+  }
+}

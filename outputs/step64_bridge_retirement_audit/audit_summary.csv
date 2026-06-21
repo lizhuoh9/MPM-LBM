@@ -1,0 +1,7 @@
+metric,value
+canonical_uses_legacy_getattr_count,0
+migration_audit_pass,True
+pass_count,8
+row_count,8
+step64_bridge_retirement_pass,True
+temporary_bridge_count_for_step64_files,0

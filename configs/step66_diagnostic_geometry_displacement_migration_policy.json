@@ -1,0 +1,240 @@
+{
+  "batch": "step63_67_solver_completion_batch_a",
+  "canonical_forbidden_tokens": [
+    "legacy_getattr",
+    "_LEGACY_MODULE",
+    "BRIDGE_IS_TEMPORARY_UNTIL_STEP59",
+    "Implementation remains legacy"
+  ],
+  "legacy_shim_required_phrase": "Compatibility shim",
+  "max_nonblank_lines_per_shim": 6,
+  "migrations": [
+    {
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update_config",
+      "canonical_path": "src/mpm_lbm/diagnostics/geometry_update_config.py",
+      "classification": "diagnostics",
+      "legacy_module": "src.diagnostic_geometry_update_config",
+      "legacy_path": "src/diagnostic_geometry_update_config.py",
+      "required_tokens": [
+        "class DiagnosticGeometryUpdateConfig",
+        "def validate_diagnostic_geometry_update_config",
+        "def summarize_diagnostic_geometry_update_config_validation",
+        "def mutation_flags",
+        "def mutation_flag_enabled_count"
+      ],
+      "support_dependency": true,
+      "symbols": [
+        "DiagnosticGeometryUpdateConfig",
+        "validate_diagnostic_geometry_update_config",
+        "summarize_diagnostic_geometry_update_config_validation",
+        "mutation_flags",
+        "mutation_flag_enabled_count"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update",
+      "canonical_path": "src/mpm_lbm/diagnostics/geometry_update.py",
+      "classification": "diagnostics",
+      "legacy_module": "src.diagnostic_geometry_update",
+      "legacy_path": "src/diagnostic_geometry_update.py",
+      "required_tokens": [
+        "def load_step44_inputs",
+        "def compute_runtime_displaced_copy_rows",
+        "def runtime_copy_row",
+        "def summarize_runtime_displaced_copy_rows",
+        "def runtime_copy_quality_summary",
+        "def original_vs_displaced_rows",
+        "def summarize_original_vs_displaced",
+        "def cycle_phase_closure_rows",
+        "def summarize_cycle_phase_closure",
+        "def selected_schedule_rows",
+        "def geometry_and_region_hashes",
+        "def write_runtime_copy_rows",
+        "def write_csv_rows",
+        "def write_json",
+        "def read_json",
+        "def file_hash"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "load_step44_inputs",
+        "compute_runtime_displaced_copy_rows",
+        "runtime_copy_row",
+        "summarize_runtime_displaced_copy_rows",
+        "runtime_copy_quality_summary",
+        "original_vs_displaced_rows",
+        "summarize_original_vs_displaced",
+        "cycle_phase_closure_rows",
+        "summarize_cycle_phase_closure",
+        "selected_schedule_rows",
+        "geometry_and_region_hashes",
+        "write_runtime_copy_rows",
+        "write_csv_rows",
+        "write_json",
+        "read_json",
+        "file_hash"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_projection",
+      "canonical_path": "src/mpm_lbm/diagnostics/geometry_projection.py",
+      "classification": "diagnostics",
+      "legacy_module": "src.diagnostic_geometry_projection",
+      "legacy_path": "src/diagnostic_geometry_projection.py",
+      "required_tokens": [
+        "def compute_projection_only_rows",
+        "def runtime_displaced_union_points",
+        "def project_runtime_geometry_copy_to_grid",
+        "def summarize_projection_only_rows",
+        "def write_projection_only_rows"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "compute_projection_only_rows",
+        "runtime_displaced_union_points",
+        "project_runtime_geometry_copy_to_grid",
+        "summarize_projection_only_rows",
+        "write_projection_only_rows"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_state_guard",
+      "canonical_path": "src/mpm_lbm/diagnostics/geometry_state_guard.py",
+      "classification": "diagnostics",
+      "legacy_module": "src.diagnostic_geometry_state_guard",
+      "legacy_path": "src/diagnostic_geometry_state_guard.py",
+      "required_tokens": [
+        "def compute_state_mutation_guard",
+        "def forbidden_output_counts",
+        "def write_state_mutation_guard"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "compute_state_mutation_guard",
+        "forbidden_output_counts",
+        "write_state_mutation_guard"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.config",
+      "canonical_path": "src/mpm_lbm/sim/geometry_displacement/config.py",
+      "classification": "geometry_displacement",
+      "legacy_module": "src.geometry_displacement_config",
+      "legacy_path": "src/geometry_displacement_config.py",
+      "required_tokens": [
+        "class GeometryDisplacementConfig",
+        "def validate_geometry_displacement_config",
+        "def summarize_geometry_displacement_config_validation"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "GeometryDisplacementConfig",
+        "validate_geometry_displacement_config",
+        "summarize_geometry_displacement_config_validation"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.field",
+      "canonical_path": "src/mpm_lbm/sim/geometry_displacement/field.py",
+      "classification": "geometry_displacement",
+      "legacy_module": "src.geometry_displacement_field",
+      "legacy_path": "src/geometry_displacement_field.py",
+      "required_tokens": [
+        "def load_geometry_displacement_inputs",
+        "def compute_geometry_displacement_rows",
+        "def displacement_vectors_for_region",
+        "def mantle_radial_displacement_vectors",
+        "def cavity_volume_displacement_vectors",
+        "def funnel_aperture_displacement_vectors",
+        "def cavity_center_radii",
+        "def funnel_center_radii",
+        "def summarize_geometry_displacement_rows",
+        "def write_geometry_displacement_rows",
+        "def displacement_hashes",
+        "def canonical_displacement_hash",
+        "def assert_geometry_displacement_summary"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "load_geometry_displacement_inputs",
+        "compute_geometry_displacement_rows",
+        "displacement_vectors_for_region",
+        "mantle_radial_displacement_vectors",
+        "cavity_volume_displacement_vectors",
+        "funnel_aperture_displacement_vectors",
+        "cavity_center_radii",
+        "funnel_center_radii",
+        "summarize_geometry_displacement_rows",
+        "write_geometry_displacement_rows",
+        "displacement_hashes",
+        "canonical_displacement_hash",
+        "assert_geometry_displacement_summary"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.quality",
+      "canonical_path": "src/mpm_lbm/sim/geometry_displacement/quality.py",
+      "classification": "geometry_displacement",
+      "legacy_module": "src.geometry_displacement_quality",
+      "legacy_path": "src/geometry_displacement_quality.py",
+      "required_tokens": [
+        "def analyze_displacement_quality",
+        "def quality_rows_from_displacement_analysis",
+        "def assert_displacement_quality"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "analyze_displacement_quality",
+        "quality_rows_from_displacement_analysis",
+        "assert_displacement_quality"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.consistency",
+      "canonical_path": "src/mpm_lbm/sim/geometry_displacement/consistency.py",
+      "classification": "geometry_displacement",
+      "legacy_module": "src.geometry_displacement_consistency",
+      "legacy_path": "src/geometry_displacement_consistency.py",
+      "required_tokens": [
+        "def compare_displacement_to_schedule",
+        "def compare_displacement_to_motion_mapping",
+        "def cycle_closure_rows",
+        "def assert_consistency",
+        "def assert_cycle_closure"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "compare_displacement_to_schedule",
+        "compare_displacement_to_motion_mapping",
+        "cycle_closure_rows",
+        "assert_consistency",
+        "assert_cycle_closure"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_displacement_grid",
+      "canonical_path": "src/mpm_lbm/diagnostics/geometry_displacement_grid.py",
+      "classification": "geometry_displacement",
+      "legacy_module": "src.geometry_displacement_grid_diagnostics",
+      "legacy_path": "src/geometry_displacement_grid_diagnostics.py",
+      "required_tokens": [
+        "def summarize_displacement_on_grids",
+        "def summarize_grid_displacement_rows",
+        "def assert_grid_displacement_diagnostics"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "summarize_displacement_on_grids",
+        "summarize_grid_displacement_rows",
+        "assert_grid_displacement_diagnostics"
+      ]
+    }
+  ],
+  "no_runtime_execution": true,
+  "no_solver_activation": true,
+  "physics_feature_expansion": false,
+  "policy_id": "step66_diagnostic_geometry_displacement_migration_policy",
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false,
+  "step": 66
+}

@@ -1,0 +1,86 @@
+{
+  "rows": [
+    {
+      "canonical_path": "src/mpm_lbm/sim/motion/boundary_motion_config.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/boundary_motion_config.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/motion/geometry_motion_config.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/geometry_motion_config.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/motion/boundary_motion_interface.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/boundary_motion_interface.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/motion/geometry_motion_interface.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/geometry_motion_interface.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/application.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/wall_velocity_application.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/application_config.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/wall_velocity_application_config.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/config.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/wall_velocity_config.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/field.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/wall_velocity_field.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "batch_legacy_shim_audit_pass": true,
+    "legacy_implementation_body_count": 0,
+    "legacy_shim_count": 8,
+    "pass_count": 8,
+    "policy_id": "step64_motion_wall_velocity_migration_policy",
+    "row_count": 8,
+    "step": 64,
+    "step64_legacy_shim_pass": true
+  }
+}

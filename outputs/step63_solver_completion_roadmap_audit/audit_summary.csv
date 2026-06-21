@@ -1,0 +1,8 @@
+metric,value
+first_step,68
+last_step,76
+pass_count,9
+premature_activation_count,0
+row_count,9
+solver_completion_roadmap_pass,True
+step68_step76_roadmap_exists,True

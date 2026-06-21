@@ -1,0 +1,15 @@
+canonical_contains_real_implementation,canonical_forbidden_bridge_token_count,canonical_forbidden_bridge_tokens,canonical_imports_legacy_root,canonical_missing_symbols,canonical_path,canonical_path_exists,canonical_uses_legacy_getattr,classification,legacy_imports_canonical,legacy_is_shim,legacy_path,legacy_path_exists,pass,support_dependency
+True,0,[],False,[],src/mpm_lbm/sim/squid_proxy/region_config.py,True,False,squid_proxy,True,True,src/squid_region_config.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/squid_proxy/regions.py,True,False,squid_proxy,True,True,src/squid_proxy_regions.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/squid_proxy/kinematics_config.py,True,False,squid_proxy,True,True,src/squid_kinematics_config.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/squid_proxy/kinematics_schedule.py,True,False,squid_proxy,True,True,src/squid_kinematics_schedule.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/squid_proxy/kinematics_quality.py,True,False,squid_proxy,True,True,src/squid_kinematics_quality.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/squid_proxy/region_mapping.py,True,False,squid_proxy,True,True,src/squid_kinematics_region_mapping.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/squid_proxy/motion_mapping.py,True,False,squid_proxy,True,True,src/squid_motion_mapping.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/squid_proxy/motion_mapping_config.py,True,False,squid_proxy,True,True,src/squid_motion_mapping_config.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/squid_proxy/motion_quality.py,True,False,squid_proxy,True,True,src/squid_motion_quality.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/diagnostics/squid_motion_projection.py,True,False,squid_proxy,True,True,src/squid_motion_projection_diagnostics.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/geometry/candidate_manifest.py,True,False,real_geometry_support,True,True,src/geometry_candidate_manifest.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/geometry/fingerprint.py,True,False,real_geometry_support,True,True,src/geometry_fingerprint.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/geometry/normalization.py,True,False,real_geometry_support,True,True,src/geometry_normalization.py,True,True,False
+True,0,[],False,[],src/mpm_lbm/sim/geometry/intake.py,True,False,real_geometry_support,True,True,src/geometry_intake.py,True,True,False

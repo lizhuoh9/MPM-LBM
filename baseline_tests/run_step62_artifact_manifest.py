@@ -1,4 +1,4 @@
-﻿import os
+import os
 from pathlib import Path
 
 from step62_common import ROOT, summary_rows, write_csv_rows, write_json, write_log

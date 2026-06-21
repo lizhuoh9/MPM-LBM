@@ -1,4 +1,4 @@
-﻿import os
+import os
 
 from step62_common import ROOT, summary_rows, write_csv_rows, write_json, write_log
 from src.mpm_lbm.evidence.canonical_driver_32_duration_output_guard import (

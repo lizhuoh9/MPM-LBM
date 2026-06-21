@@ -1,0 +1,16 @@
+metric,value
+batch_migration_audit_pass,True
+canonical_forbidden_bridge_token_count,0
+canonical_imports_legacy_root_count,0
+canonical_missing_count,0
+canonical_real_implementation_count,8
+legacy_missing_count,0
+legacy_shim_count,8
+pass_count,8
+physics_feature_expansion,False
+policy_id,step64_motion_wall_velocity_migration_policy
+row_count,8
+runtime_code_changed,False
+solver_behavior_changed,False
+step,64
+step64_motion_wall_velocity_migration_pass,True

@@ -1,0 +1,13 @@
+metric,value
+batch_import_execution_audit_pass,True
+canonical_import_pass_count,56
+legacy_import_pass_count,56
+output_snapshot_unchanged,True
+pass_count,56
+policy_id,step66_diagnostic_geometry_displacement_migration_policy
+row_count,56
+runtime_object_construction_required,False
+same_object_count,56
+solver_run,False
+step,66
+step66_import_execution_pass,True

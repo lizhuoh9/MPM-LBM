@@ -1,0 +1,10 @@
+metric,value
+batch_behavior_preservation_audit_pass,True
+pass_count,10
+physics_feature_expansion,False
+policy_id,step65_runtime_geometry_migration_policy
+row_count,10
+solver_behavior_changed,False
+solver_object_construction_required,False
+step,65
+step65_behavior_preservation_pass,True

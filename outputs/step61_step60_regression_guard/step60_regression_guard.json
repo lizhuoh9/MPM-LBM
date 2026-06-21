@@ -70,8 +70,8 @@
         "step60_optional_driver_run_dir_count": 0,
         "step60_particle_npy_count": 0,
         "step60_required_driver_run_dir_count": 3,
-        "step60_total_size_bytes": 460505,
-        "step60_total_size_mb": 0.43917179107666016,
+        "step60_total_size_bytes": 460507,
+        "step60_total_size_mb": 0.43917369842529297,
         "step60_vtr_count": 0
       },
       "pass": true

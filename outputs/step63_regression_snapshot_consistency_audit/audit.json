@@ -1,0 +1,40 @@
+{
+  "rows": [
+    {
+      "check": "source_artifact_available",
+      "pass": true,
+      "source_artifact_path": "outputs/step62_step61_regression_guard/step61_regression_guard.json",
+      "stable_field_count": 3665
+    },
+    {
+      "check": "source_artifact_available",
+      "pass": true,
+      "source_artifact_path": "outputs/step62_artifact_manifest/artifact_summary.json",
+      "stable_field_count": 347
+    },
+    {
+      "check": "source_artifact_available",
+      "pass": true,
+      "source_artifact_path": "outputs/step62_report_consistency_guard/report_consistency_guard.json",
+      "stable_field_count": 1904
+    },
+    {
+      "check": "step63_67_guard_uses_stable_fields",
+      "pass": true,
+      "source_artifact_path": "build_step63_67_step62_regression_guard",
+      "stable_field_count": 6
+    },
+    {
+      "check": "step63_67_guard_rows_pass",
+      "pass": true,
+      "source_artifact_path": "build_step63_67_step62_regression_guard",
+      "stable_field_count": 4
+    }
+  ],
+  "summary": {
+    "pass_count": 5,
+    "regression_snapshot_consistency_pass": true,
+    "row_count": 5,
+    "volatile_size_snapshot_embedded": false
+  }
+}

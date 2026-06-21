@@ -1,0 +1,14 @@
+{
+  "batch": "step63_67_solver_completion_batch_a",
+  "forbid_utf8_bom": true,
+  "physics_feature_expansion": false,
+  "policy_id": "step63_encoding_policy",
+  "require_utf8_decodable": true,
+  "runtime_code_changed": false,
+  "scan_globs": [
+    "src/**/*.py",
+    "baseline_tests/*.py",
+    "tests/*.py"
+  ],
+  "solver_behavior_changed": false
+}

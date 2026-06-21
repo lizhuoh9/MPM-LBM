@@ -1,0 +1,210 @@
+{
+  "batch": "step63_67_solver_completion_batch_a",
+  "canonical_forbidden_tokens": [
+    "legacy_getattr",
+    "_LEGACY_MODULE",
+    "BRIDGE_IS_TEMPORARY_UNTIL_STEP59",
+    "Implementation remains legacy"
+  ],
+  "legacy_shim_required_phrase": "Compatibility shim",
+  "max_nonblank_lines_per_shim": 6,
+  "migrations": [
+    {
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_config",
+      "canonical_path": "src/mpm_lbm/sim/motion/boundary_motion_config.py",
+      "classification": "motion",
+      "legacy_module": "src.boundary_motion_config",
+      "legacy_path": "src/boundary_motion_config.py",
+      "required_tokens": [
+        "class BoundaryMotionInterfaceConfig",
+        "def validate_boundary_motion_interface_config",
+        "def summarize_boundary_motion_config_validation",
+        "def execution_flags",
+        "def execution_flag_enabled_count"
+      ],
+      "support_dependency": true,
+      "symbols": [
+        "BoundaryMotionInterfaceConfig",
+        "validate_boundary_motion_interface_config",
+        "summarize_boundary_motion_config_validation",
+        "execution_flags",
+        "execution_flag_enabled_count"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_config",
+      "canonical_path": "src/mpm_lbm/sim/motion/geometry_motion_config.py",
+      "classification": "motion",
+      "legacy_module": "src.geometry_motion_config",
+      "legacy_path": "src/geometry_motion_config.py",
+      "required_tokens": [
+        "class GeometryMotionInterfaceConfig",
+        "def validate_geometry_motion_interface_config",
+        "def summarize_geometry_motion_config_validation",
+        "def load_displacement_artifact_summary",
+        "def mutation_flags",
+        "def mutation_flag_enabled_count"
+      ],
+      "support_dependency": true,
+      "symbols": [
+        "GeometryMotionInterfaceConfig",
+        "validate_geometry_motion_interface_config",
+        "summarize_geometry_motion_config_validation",
+        "load_displacement_artifact_summary",
+        "mutation_flags",
+        "mutation_flag_enabled_count"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_interface",
+      "canonical_path": "src/mpm_lbm/sim/motion/boundary_motion_interface.py",
+      "classification": "motion",
+      "legacy_module": "src.boundary_motion_interface",
+      "legacy_path": "src/boundary_motion_interface.py",
+      "required_tokens": [
+        "def build_boundary_motion_interface_report",
+        "def write_boundary_motion_interface_report",
+        "def build_static_boundary_motion_interface_report",
+        "def write_static_boundary_motion_interface_report"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "build_boundary_motion_interface_report",
+        "write_boundary_motion_interface_report",
+        "build_static_boundary_motion_interface_report",
+        "write_static_boundary_motion_interface_report"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_interface",
+      "canonical_path": "src/mpm_lbm/sim/motion/geometry_motion_interface.py",
+      "classification": "motion",
+      "legacy_module": "src.geometry_motion_interface",
+      "legacy_path": "src/geometry_motion_interface.py",
+      "required_tokens": [
+        "def load_geometry_motion_interface_config",
+        "def assert_geometry_motion_noop_flags",
+        "def summarize_geometry_motion_interface",
+        "def build_geometry_motion_interface_report",
+        "def write_geometry_motion_interface_report"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "load_geometry_motion_interface_config",
+        "assert_geometry_motion_noop_flags",
+        "summarize_geometry_motion_interface",
+        "build_geometry_motion_interface_report",
+        "write_geometry_motion_interface_report"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/application.py",
+      "classification": "wall_velocity",
+      "legacy_module": "src.wall_velocity_application",
+      "legacy_path": "src/wall_velocity_application.py",
+      "required_tokens": [
+        "def load_wall_velocity_application_config",
+        "def phase_for_lbm_step",
+        "def nearest_wall_velocity_phase",
+        "def build_wall_velocity_grid",
+        "def apply_wall_velocity_to_lbm_solid_vel",
+        "def summarize_wall_velocity_application",
+        "def build_wall_velocity_application_report",
+        "def apply_wall_velocity_application_to_lbm",
+        "def write_wall_velocity_application_report"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "load_wall_velocity_application_config",
+        "phase_for_lbm_step",
+        "nearest_wall_velocity_phase",
+        "build_wall_velocity_grid",
+        "apply_wall_velocity_to_lbm_solid_vel",
+        "summarize_wall_velocity_application",
+        "build_wall_velocity_application_report",
+        "apply_wall_velocity_application_to_lbm",
+        "write_wall_velocity_application_report"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_config",
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/application_config.py",
+      "classification": "wall_velocity",
+      "legacy_module": "src.wall_velocity_application_config",
+      "legacy_path": "src/wall_velocity_application_config.py",
+      "required_tokens": [
+        "class WallVelocityApplicationConfig",
+        "def validate_wall_velocity_application_config",
+        "def summarize_wall_velocity_application_config_validation",
+        "def assert_valid_wall_velocity_application_config"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "WallVelocityApplicationConfig",
+        "validate_wall_velocity_application_config",
+        "summarize_wall_velocity_application_config_validation",
+        "assert_valid_wall_velocity_application_config"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.config",
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/config.py",
+      "classification": "wall_velocity",
+      "legacy_module": "src.wall_velocity_config",
+      "legacy_path": "src/wall_velocity_config.py",
+      "required_tokens": [
+        "class WallVelocityFieldConfig",
+        "def validate_wall_velocity_config",
+        "def assert_valid_wall_velocity_config",
+        "def summarize_wall_velocity_config_validation",
+        "def step35_execution_flags",
+        "def step35_execution_flag_enabled_count"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "WallVelocityFieldConfig",
+        "validate_wall_velocity_config",
+        "assert_valid_wall_velocity_config",
+        "summarize_wall_velocity_config_validation",
+        "step35_execution_flags",
+        "step35_execution_flag_enabled_count"
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/field.py",
+      "classification": "wall_velocity",
+      "legacy_module": "src.wall_velocity_field",
+      "legacy_path": "src/wall_velocity_field.py",
+      "required_tokens": [
+        "def load_wall_velocity_inputs",
+        "def interpolate_motion_rows_to_phase",
+        "def compute_wall_velocity_summary",
+        "def generate_wall_velocity_field_rows",
+        "def summarize_wall_velocity_rows",
+        "def wall_velocity_hashes",
+        "def canonical_wall_velocity_hash",
+        "def write_wall_velocity_rows"
+      ],
+      "support_dependency": false,
+      "symbols": [
+        "load_wall_velocity_inputs",
+        "interpolate_motion_rows_to_phase",
+        "compute_wall_velocity_summary",
+        "generate_wall_velocity_field_rows",
+        "summarize_wall_velocity_rows",
+        "wall_velocity_hashes",
+        "canonical_wall_velocity_hash",
+        "write_wall_velocity_rows"
+      ]
+    }
+  ],
+  "no_runtime_execution": true,
+  "no_solver_activation": true,
+  "physics_feature_expansion": false,
+  "policy_id": "step64_motion_wall_velocity_migration_policy",
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false,
+  "step": 64
+}

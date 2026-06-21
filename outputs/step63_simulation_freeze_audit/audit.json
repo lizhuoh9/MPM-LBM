@@ -1,0 +1,557 @@
+{
+  "rows": [
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step63_67_artifact_manifest.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step63_67_step62_regression_guard.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step63_code_placement_freeze_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step63_encoding_policy_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step63_regression_snapshot_consistency_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step63_remaining_solver_inventory_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step63_simulation_freeze_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step63_solver_completion_roadmap_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step64_behavior_preservation_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step64_bridge_retirement_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step64_import_execution_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step64_legacy_shim_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step64_motion_wall_velocity_migration_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step65_behavior_preservation_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step65_import_execution_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step65_legacy_shim_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step65_runtime_geometry_migration_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step66_behavior_preservation_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step66_diagnostic_geometry_displacement_migration_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step66_import_execution_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step66_legacy_shim_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step67_behavior_preservation_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step67_import_execution_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step67_legacy_shim_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "baseline_tests/run_step67_squid_proxy_real_geometry_migration_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/batch_behavior_preservation_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/batch_import_execution_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/batch_legacy_shim_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/batch_migration_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/code_placement_freeze_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/encoding_policy_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/regression_snapshot_consistency_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/remaining_solver_inventory_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/simulation_freeze_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/solver_completion_roadmap_audit.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step63_67_regression_guard.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step63_67_step62_regression_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step63_code_placement_freeze_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step63_encoding_policy_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step63_regression_snapshot_consistency_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step63_remaining_solver_inventory_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step63_simulation_freeze_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step63_solver_completion_roadmap_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step64_behavior_preservation_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step64_bridge_retirement_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step64_import_execution_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step64_legacy_shim_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step64_motion_wall_velocity_migration_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step65_behavior_preservation_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step65_import_execution_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step65_legacy_shim_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step65_runtime_geometry_migration_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step66_behavior_preservation_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step66_diagnostic_geometry_displacement_migration_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step66_import_execution_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step66_legacy_shim_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step67_behavior_preservation_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step67_import_execution_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step67_legacy_shim_contract.py",
+      "readable_utf8": true
+    },
+    {
+      "forbidden_driver_call_count": 0,
+      "forbidden_driver_calls": [],
+      "forbidden_runtime_flag_count": 0,
+      "forbidden_runtime_flags": [],
+      "pass": true,
+      "path": "tests/test_step67_squid_proxy_real_geometry_migration_contract.py",
+      "readable_utf8": true
+    }
+  ],
+  "summary": {
+    "file_count": 60,
+    "forbidden_runtime_flag_count": 0,
+    "new_driver_run_output_dir_count": 0,
+    "new_simulation_run_count": 0,
+    "pass_count": 60,
+    "physics_feature_expansion": false,
+    "runtime_code_changed": false,
+    "simulation_freeze_audit_pass": true,
+    "solver_behavior_changed": false,
+    "step63_67_particle_npy_count": 0,
+    "step63_67_vtr_count": 0
+  }
+}

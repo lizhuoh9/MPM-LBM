@@ -1,0 +1,578 @@
+{
+  "rows": [
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "DiagnosticGeometryUpdateConfig"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_diagnostic_geometry_update_config"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_diagnostic_geometry_update_config_validation"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flags"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flag_enabled_count"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_step44_inputs"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compute_runtime_displaced_copy_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update",
+      "pass": true,
+      "same_object": true,
+      "symbol": "runtime_copy_row"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_runtime_displaced_copy_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update",
+      "pass": true,
+      "same_object": true,
+      "symbol": "runtime_copy_quality_summary"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update",
+      "pass": true,
+      "same_object": true,
+      "symbol": "original_vs_displaced_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_original_vs_displaced"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update",
+      "pass": true,
+      "same_object": true,
+      "symbol": "cycle_phase_closure_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_cycle_phase_closure"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update",
+      "pass": true,
+      "same_object": true,
+      "symbol": "selected_schedule_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update",
+      "pass": true,
+      "same_object": true,
+      "symbol": "geometry_and_region_hashes"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_runtime_copy_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_csv_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_json"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update",
+      "pass": true,
+      "same_object": true,
+      "symbol": "read_json"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_update",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_update",
+      "pass": true,
+      "same_object": true,
+      "symbol": "file_hash"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compute_projection_only_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "runtime_displaced_union_points"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "project_runtime_geometry_copy_to_grid"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_projection_only_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_projection_only_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_state_guard",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compute_state_mutation_guard"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_state_guard",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "forbidden_output_counts"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_state_guard",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostic_geometry_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_state_mutation_guard"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "GeometryDisplacementConfig"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_geometry_displacement_config"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_geometry_displacement_config_validation"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_geometry_displacement_inputs"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compute_geometry_displacement_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "displacement_vectors_for_region"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mantle_radial_displacement_vectors"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "cavity_volume_displacement_vectors"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "funnel_aperture_displacement_vectors"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "cavity_center_radii"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "funnel_center_radii"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_geometry_displacement_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_geometry_displacement_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "displacement_hashes"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "canonical_displacement_hash"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.field",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_field",
+      "pass": true,
+      "same_object": true,
+      "symbol": "assert_geometry_displacement_summary"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.quality",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_quality",
+      "pass": true,
+      "same_object": true,
+      "symbol": "analyze_displacement_quality"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.quality",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_quality",
+      "pass": true,
+      "same_object": true,
+      "symbol": "quality_rows_from_displacement_analysis"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.quality",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_quality",
+      "pass": true,
+      "same_object": true,
+      "symbol": "assert_displacement_quality"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.consistency",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_consistency",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_displacement_to_schedule"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.consistency",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_consistency",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_displacement_to_motion_mapping"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.consistency",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_consistency",
+      "pass": true,
+      "same_object": true,
+      "symbol": "cycle_closure_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.consistency",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_consistency",
+      "pass": true,
+      "same_object": true,
+      "symbol": "assert_consistency"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.consistency",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_consistency",
+      "pass": true,
+      "same_object": true,
+      "symbol": "assert_cycle_closure"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_displacement_grid",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_grid_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_displacement_on_grids"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_displacement_grid",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_grid_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_grid_displacement_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.geometry_displacement_grid",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_displacement_grid_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "assert_grid_displacement_diagnostics"
+    }
+  ],
+  "summary": {
+    "batch_import_execution_audit_pass": true,
+    "canonical_import_pass_count": 56,
+    "legacy_import_pass_count": 56,
+    "output_snapshot_unchanged": true,
+    "pass_count": 56,
+    "policy_id": "step66_diagnostic_geometry_displacement_migration_policy",
+    "row_count": 56,
+    "runtime_object_construction_required": false,
+    "same_object_count": 56,
+    "solver_run": false,
+    "step": 66,
+    "step66_import_execution_pass": true
+  }
+}

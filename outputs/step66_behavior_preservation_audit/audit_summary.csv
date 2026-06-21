@@ -1,0 +1,10 @@
+metric,value
+batch_behavior_preservation_audit_pass,True
+pass_count,10
+physics_feature_expansion,False
+policy_id,step66_diagnostic_geometry_displacement_migration_policy
+row_count,10
+solver_behavior_changed,False
+solver_object_construction_required,False
+step,66
+step66_behavior_preservation_pass,True

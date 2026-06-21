@@ -1,0 +1,37 @@
+{
+  "rows": [
+    {
+      "check": "step62_step61_regression_guard",
+      "pass": true,
+      "source_artifact_path": "outputs/step62_step61_regression_guard/step61_regression_guard.json"
+    },
+    {
+      "check": "step62_artifact_manifest",
+      "pass": true,
+      "source_artifact_path": "outputs/step62_artifact_manifest/artifact_summary.json"
+    },
+    {
+      "check": "step62_report_consistency_guard",
+      "pass": true,
+      "source_artifact_path": "outputs/step62_report_consistency_guard/report_consistency_guard.json"
+    },
+    {
+      "check": "step63_67_driver_run_dirs_absent",
+      "pass": true,
+      "source_artifact_path": ""
+    }
+  ],
+  "summary": {
+    "pass_count": 4,
+    "row_count": 4,
+    "source_artifact_paths": [
+      "outputs/step62_step61_regression_guard/step61_regression_guard.json",
+      "outputs/step62_artifact_manifest/artifact_summary.json",
+      "outputs/step62_report_consistency_guard/report_consistency_guard.json",
+      ""
+    ],
+    "step62_regression_guard_pass": true,
+    "step63_67_regression_guard_pass": true,
+    "volatile_size_snapshot_embedded": false
+  }
+}

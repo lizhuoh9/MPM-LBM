@@ -1,0 +1,59 @@
+{
+  "rows": [
+    {
+      "canonical_path": "src/mpm_lbm/sim/runtime_geometry/projection.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/runtime_geometry_projection.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/runtime_geometry/projection_config.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/runtime_geometry_projection_config.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/runtime_geometry/projection_quality.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/runtime_geometry_projection_quality.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/runtime_geometry/projection_consistency.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/runtime_geometry_projection_consistency.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/runtime_geometry/state_guard.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/runtime_geometry_projection_state_guard.py",
+      "nonblank_line_count": 4,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "batch_legacy_shim_audit_pass": true,
+    "legacy_implementation_body_count": 0,
+    "legacy_shim_count": 5,
+    "pass_count": 5,
+    "policy_id": "step65_runtime_geometry_migration_policy",
+    "row_count": 5,
+    "step": 65,
+    "step65_legacy_shim_pass": true
+  }
+}

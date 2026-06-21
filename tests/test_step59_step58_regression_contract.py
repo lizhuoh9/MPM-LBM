@@ -23,6 +23,7 @@ def test_step59_step58_regression_guard_passes_current_source():
     assert import_summary["fsidriver_import_execution_audit_pass"] is True
     assert shim_summary["fsidriver_legacy_shim_audit_pass"] is True
     assert bridge_summary["optional_bridge_audit_pass"] is True
+    assert int(bridge_summary["bridge_retired_count"]) == 3
     assert behavior_summary["fsidriver_behavior_preservation_audit_pass"] is True
 
 
@@ -35,7 +36,7 @@ def test_step59_step58_regression_guard_artifact_passes():
     assert all(row["pass"] is True for row in payload["rows"])
 
 
-def test_step59_keeps_legacy_fsidriver_as_thin_shim_and_bridges_temporary():
+def test_step59_keeps_legacy_fsidriver_as_thin_shim_and_step64_retires_optional_bridges():
     legacy_driver = (ROOT / "src/fsi_driver.py").read_text(encoding="utf-8")
     assert "from src.mpm_lbm.sim.drivers.fsi_driver import *" in legacy_driver
     assert "class FSIDriver3D" not in legacy_driver
@@ -45,8 +46,8 @@ def test_step59_keeps_legacy_fsidriver_as_thin_shim_and_bridges_temporary():
         "src/mpm_lbm/sim/wall_velocity/application.py",
     ]:
         text = (ROOT / path).read_text(encoding="utf-8")
-        assert "Implementation remains legacy until Step 59" in text
-        assert "legacy_getattr" in text
+        assert "Implementation remains legacy until Step 59" not in text
+        assert "legacy_getattr" not in text
 
 
 def read_json(path):

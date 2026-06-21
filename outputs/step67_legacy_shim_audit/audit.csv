@@ -1,0 +1,15 @@
+canonical_path,legacy_contains_implementation_body,legacy_imports_canonical,legacy_is_shim,legacy_path,nonblank_line_count,pass
+src/mpm_lbm/sim/squid_proxy/region_config.py,False,True,True,src/squid_region_config.py,4,True
+src/mpm_lbm/sim/squid_proxy/regions.py,False,True,True,src/squid_proxy_regions.py,4,True
+src/mpm_lbm/sim/squid_proxy/kinematics_config.py,False,True,True,src/squid_kinematics_config.py,4,True
+src/mpm_lbm/sim/squid_proxy/kinematics_schedule.py,False,True,True,src/squid_kinematics_schedule.py,4,True
+src/mpm_lbm/sim/squid_proxy/kinematics_quality.py,False,True,True,src/squid_kinematics_quality.py,4,True
+src/mpm_lbm/sim/squid_proxy/region_mapping.py,False,True,True,src/squid_kinematics_region_mapping.py,4,True
+src/mpm_lbm/sim/squid_proxy/motion_mapping.py,False,True,True,src/squid_motion_mapping.py,4,True
+src/mpm_lbm/sim/squid_proxy/motion_mapping_config.py,False,True,True,src/squid_motion_mapping_config.py,4,True
+src/mpm_lbm/sim/squid_proxy/motion_quality.py,False,True,True,src/squid_motion_quality.py,4,True
+src/mpm_lbm/diagnostics/squid_motion_projection.py,False,True,True,src/squid_motion_projection_diagnostics.py,4,True
+src/mpm_lbm/sim/geometry/candidate_manifest.py,False,True,True,src/geometry_candidate_manifest.py,4,True
+src/mpm_lbm/sim/geometry/fingerprint.py,False,True,True,src/geometry_fingerprint.py,4,True
+src/mpm_lbm/sim/geometry/normalization.py,False,True,True,src/geometry_normalization.py,4,True
+src/mpm_lbm/sim/geometry/intake.py,False,True,True,src/geometry_intake.py,4,True

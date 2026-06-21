@@ -1,0 +1,9 @@
+metric,value
+batch_legacy_shim_audit_pass,True
+legacy_implementation_body_count,0
+legacy_shim_count,9
+pass_count,9
+policy_id,step66_diagnostic_geometry_displacement_migration_policy
+row_count,9
+step,66
+step66_legacy_shim_pass,True

@@ -1,4 +1,4 @@
-﻿import json
+import json
 from pathlib import Path
 
 from src.mpm_lbm.evidence.canonical_driver_32_duration_audit import build_canonical_driver_32_duration_audit

@@ -55,9 +55,11 @@
     {
       "check": "step58_optional_bridge_audit",
       "details": {
+        "active_temporary_bridge_count": 0,
         "bridge_file_count": 3,
         "bridge_is_temporary_until_step59": true,
-        "legacy_getattr_bridge_count": 3,
+        "bridge_retired_count": 3,
+        "legacy_getattr_bridge_count": 0,
         "optional_bridge_audit_pass": true,
         "output_snapshot_unchanged": true,
         "pass_count": 3,
@@ -65,7 +67,7 @@
         "same_object_symbol_count": 4,
         "solver_run": false,
         "symbol_count": 4,
-        "temporary_marker_count": 3
+        "temporary_marker_count": 0
       },
       "pass": true
     },

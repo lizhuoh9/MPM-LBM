@@ -1,0 +1,120 @@
+classification,current_owner,is_root_shim,is_temporary_bridge,migration_required,notes,pass,path,recommended_step,simulation_required_for_migration,target_owner
+approved_legacy_support,root_src,False,False,False,Classified for roadmap tracking.,True,src/__init__.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,False,False,False,Classified for roadmap tracking.,True,src/artifact_utils.py,Step69+,False,approved_legacy_support
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/boundary_motion_config.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/boundary_motion_interface.py,done,False,canonical_package
+approved_legacy_support,root_src,False,False,False,Classified for roadmap tracking.,True,src/calibration.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/coupling.py,Step69+,False,approved_legacy_support
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/diagnostic_geometry_projection.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/diagnostic_geometry_state_guard.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/diagnostic_geometry_update.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/diagnostic_geometry_update_config.py,done,False,canonical_package
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/diagnostics.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/fsi_config.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/fsi_driver.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/geometry.py,Step69+,False,approved_legacy_support
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/geometry_candidate_manifest.py,done,False,canonical_package
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/geometry_config.py,Step69+,False,approved_legacy_support
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/geometry_displacement_config.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/geometry_displacement_consistency.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/geometry_displacement_field.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/geometry_displacement_grid_diagnostics.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/geometry_displacement_quality.py,done,False,canonical_package
+approved_legacy_support,root_src,False,False,False,Classified for roadmap tracking.,True,src/geometry_driver_config.py,Step69+,False,approved_legacy_support
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/geometry_fingerprint.py,done,False,canonical_package
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/geometry_import.py,Step69+,False,approved_legacy_support
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/geometry_intake.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/geometry_motion_config.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/geometry_motion_interface.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/geometry_normalization.py,done,False,canonical_package
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/geometry_quality.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/geometry_utils.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,False,False,False,Classified for roadmap tracking.,True,src/jet_cycle_parameter_sensitivity.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,False,False,False,Classified for roadmap tracking.,True,src/jet_cycle_proxy_diagnostics.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/lbm_config.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/lbm_fluid.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/lbm_relaxation_semantics.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/link_area_accounting.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/link_area_coupling.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/mesh_io.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/mesh_quality.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/momentum_accounting.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/moving_boundary_coupling.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/mpm_config.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/mpm_solid.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,False,False,False,Classified for roadmap tracking.,True,src/multicycle_proxy_diagnostics.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,False,False,False,Classified for roadmap tracking.,True,src/performance.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/projection.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,False,False,False,Classified for roadmap tracking.,True,src/proxy_diagnostic_truthfulness.py,Step69+,False,approved_legacy_support
+step_specific_proxy_remaining,root_src,False,False,False,"Contains FSIDriver3D run helpers; classified only, not executed in Batch A.",True,src/real_geometry_feasibility.py,Step68,False,experiments/steps
+approved_legacy_support,root_src,False,False,False,Classified for roadmap tracking.,True,src/repository_evidence_index.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,False,False,False,Classified for roadmap tracking.,True,src/repository_evidence_integrity_artifact_manifest.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,False,False,False,Classified for roadmap tracking.,True,src/repository_evidence_integrity_claim_guard.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,False,False,False,Classified for roadmap tracking.,True,src/repository_evidence_integrity_regression_guard.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,False,False,False,Classified for roadmap tracking.,True,src/repository_test_strength_audit.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/run_utils.py,Step69+,False,approved_legacy_support
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/runtime_geometry_projection.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/runtime_geometry_projection_config.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/runtime_geometry_projection_consistency.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/runtime_geometry_projection_quality.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/runtime_geometry_projection_state_guard.py,done,False,canonical_package
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_10step_config.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_10step_diagnostics.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_10step_envelope.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_10step_state_guard.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_20step_config.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_20step_diagnostics.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_20step_envelope.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_20step_state_guard.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_48_feasibility_config.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_48_feasibility_diagnostics.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_48_feasibility_envelope.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_48_feasibility_state_guard.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_coupling.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_coupling_config.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_diagnostics.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_envelope.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_envelope_config.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_envelope_diagnostics.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_envelope_state_guard.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_one_cycle_config.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_one_cycle_diagnostics.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_one_cycle_envelope.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_one_cycle_state_guard.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_state_guard.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_support_scaling_artifact_guard.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_support_scaling_audit.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_support_scaling_claim_guard.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_support_scaling_config.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_support_scaling_diagnostics.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_transfer_config.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_transfer_diagnostics.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_transfer_envelope.py,Step68,False,experiments/steps
+step_specific_proxy_remaining,root_src,False,False,False,Step-specific proxy is intentionally left for Step68 experiments/steps migration.,True,src/runtime_geometry_wall_velocity_transfer_state_guard.py,Step68,False,experiments/steps
+approved_legacy_support,root_src,False,False,False,Classified for roadmap tracking.,True,src/selected_parameter_64_feasibility.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/sim_config.py,Step69+,False,approved_legacy_support
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/squid_kinematics_config.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/squid_kinematics_quality.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/squid_kinematics_region_mapping.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/squid_kinematics_schedule.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/squid_motion_mapping.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/squid_motion_mapping_config.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/squid_motion_projection_diagnostics.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/squid_motion_quality.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/squid_proxy_regions.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/squid_region_config.py,done,False,canonical_package
+squid_proxy_remaining,root_src,False,False,True,Classified for roadmap tracking.,True,src/squid_region_driver_diagnostics.py,Step69,False,src/mpm_lbm/sim/squid_proxy
+squid_proxy_remaining,root_src,False,False,True,Classified for roadmap tracking.,True,src/squid_region_projection.py,Step69,False,src/mpm_lbm/sim/squid_proxy
+squid_proxy_remaining,root_src,False,False,True,Classified for roadmap tracking.,True,src/squid_region_quality.py,Step69,False,src/mpm_lbm/sim/squid_proxy
+approved_legacy_support,root_src,False,False,False,Classified for roadmap tracking.,True,src/state_guard_truthfulness.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,False,False,False,Classified for roadmap tracking.,True,src/tethered_cycle_diagnostics.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/units.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/voxel_io.py,Step69+,False,approved_legacy_support
+approved_legacy_support,root_src,True,False,False,Classified for roadmap tracking.,True,src/voxel_quality.py,Step69+,False,approved_legacy_support
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/wall_velocity_application.py,done,False,canonical_package
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/wall_velocity_application_config.py,done,False,canonical_package
+wall_velocity_runtime_remaining,root_src,False,False,True,Classified for roadmap tracking.,True,src/wall_velocity_application_envelope.py,Step69,False,src/mpm_lbm/sim/wall_velocity
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/wall_velocity_config.py,done,False,canonical_package
+wall_velocity_runtime_remaining,root_src,False,False,True,Classified for roadmap tracking.,True,src/wall_velocity_consistency.py,Step69,False,src/mpm_lbm/sim/wall_velocity
+root_compatibility_shim,root_src,True,False,False,Batch A migrated this file and left a root compatibility shim.,True,src/wall_velocity_field.py,done,False,canonical_package
+wall_velocity_runtime_remaining,root_src,False,False,True,Classified for roadmap tracking.,True,src/wall_velocity_quality.py,Step69,False,src/mpm_lbm/sim/wall_velocity

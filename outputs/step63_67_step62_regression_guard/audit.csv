@@ -1,0 +1,5 @@
+check,pass,source_artifact_path
+step62_step61_regression_guard,True,outputs/step62_step61_regression_guard/step61_regression_guard.json
+step62_artifact_manifest,True,outputs/step62_artifact_manifest/artifact_summary.json
+step62_report_consistency_guard,True,outputs/step62_report_consistency_guard/report_consistency_guard.json
+step63_67_driver_run_dirs_absent,True,

@@ -1,0 +1,9 @@
+metric,value
+migration_required_count,6
+pass_count,119
+remaining_solver_inventory_pass,True
+root_compatibility_shim_count,36
+root_file_count,119
+step_specific_proxy_remaining_count,34
+temporary_bridge_count,0
+unknown_requires_review_count,0

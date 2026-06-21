@@ -1,0 +1,5 @@
+metric,value
+pass_count,5
+regression_snapshot_consistency_pass,True
+row_count,5
+volatile_size_snapshot_embedded,False

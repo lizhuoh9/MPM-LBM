@@ -1,0 +1,1205 @@
+{
+  "batch": "step63_67_solver_completion_batch_a",
+  "forbidden_driver_calls": [
+    "FSIDriver3D(...).run()",
+    "driver.run()",
+    "driver.step_once()",
+    "driver.initialize()"
+  ],
+  "forbidden_output_dirs": [
+    "outputs/step63_driver_runs",
+    "outputs/step64_driver_runs",
+    "outputs/step65_driver_runs",
+    "outputs/step66_driver_runs",
+    "outputs/step67_driver_runs"
+  ],
+  "forbidden_runtime_flags": [
+    "write_vtk=true",
+    "write_particles=true"
+  ],
+  "migrations": [
+    {
+      "canonical": "mpm_lbm/sim/motion/boundary_motion_config.py",
+      "canonical_path": "src/mpm_lbm/sim/motion/boundary_motion_config.py",
+      "category": "motion",
+      "legacy": "boundary_motion_config.py",
+      "legacy_path": "src/boundary_motion_config.py",
+      "module": "src.mpm_lbm.sim.motion.boundary_motion_config",
+      "step": "step64",
+      "support_dependency": true,
+      "symbols": [
+        {
+          "kind": "class",
+          "name": "BoundaryMotionInterfaceConfig"
+        },
+        {
+          "kind": "function",
+          "name": "validate_boundary_motion_interface_config"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_boundary_motion_config_validation"
+        },
+        {
+          "kind": "function",
+          "name": "execution_flags"
+        },
+        {
+          "kind": "function",
+          "name": "execution_flag_enabled_count"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/motion/geometry_motion_config.py",
+      "canonical_path": "src/mpm_lbm/sim/motion/geometry_motion_config.py",
+      "category": "motion",
+      "legacy": "geometry_motion_config.py",
+      "legacy_path": "src/geometry_motion_config.py",
+      "module": "src.mpm_lbm.sim.motion.geometry_motion_config",
+      "step": "step64",
+      "support_dependency": true,
+      "symbols": [
+        {
+          "kind": "class",
+          "name": "GeometryMotionInterfaceConfig"
+        },
+        {
+          "kind": "function",
+          "name": "validate_geometry_motion_interface_config"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_geometry_motion_config_validation"
+        },
+        {
+          "kind": "function",
+          "name": "load_displacement_artifact_summary"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flags"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flag_enabled_count"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/motion/boundary_motion_interface.py",
+      "canonical_path": "src/mpm_lbm/sim/motion/boundary_motion_interface.py",
+      "category": "motion",
+      "legacy": "boundary_motion_interface.py",
+      "legacy_path": "src/boundary_motion_interface.py",
+      "module": "src.mpm_lbm.sim.motion.boundary_motion_interface",
+      "step": "step64",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "build_boundary_motion_interface_report"
+        },
+        {
+          "kind": "function",
+          "name": "write_boundary_motion_interface_report"
+        },
+        {
+          "kind": "function",
+          "name": "build_static_boundary_motion_interface_report"
+        },
+        {
+          "kind": "function",
+          "name": "write_static_boundary_motion_interface_report"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/motion/geometry_motion_interface.py",
+      "canonical_path": "src/mpm_lbm/sim/motion/geometry_motion_interface.py",
+      "category": "motion",
+      "legacy": "geometry_motion_interface.py",
+      "legacy_path": "src/geometry_motion_interface.py",
+      "module": "src.mpm_lbm.sim.motion.geometry_motion_interface",
+      "step": "step64",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "load_geometry_motion_interface_config"
+        },
+        {
+          "kind": "function",
+          "name": "assert_geometry_motion_noop_flags"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_geometry_motion_interface"
+        },
+        {
+          "kind": "function",
+          "name": "build_geometry_motion_interface_report"
+        },
+        {
+          "kind": "function",
+          "name": "write_geometry_motion_interface_report"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/wall_velocity/application.py",
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/application.py",
+      "category": "wall_velocity",
+      "legacy": "wall_velocity_application.py",
+      "legacy_path": "src/wall_velocity_application.py",
+      "module": "src.mpm_lbm.sim.wall_velocity.application",
+      "step": "step64",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "load_wall_velocity_application_config"
+        },
+        {
+          "kind": "function",
+          "name": "phase_for_lbm_step"
+        },
+        {
+          "kind": "function",
+          "name": "nearest_wall_velocity_phase"
+        },
+        {
+          "kind": "function",
+          "name": "build_wall_velocity_grid"
+        },
+        {
+          "kind": "function",
+          "name": "apply_wall_velocity_to_lbm_solid_vel"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_wall_velocity_application"
+        },
+        {
+          "kind": "function",
+          "name": "build_wall_velocity_application_report"
+        },
+        {
+          "kind": "function",
+          "name": "apply_wall_velocity_application_to_lbm"
+        },
+        {
+          "kind": "function",
+          "name": "write_wall_velocity_application_report"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/wall_velocity/application_config.py",
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/application_config.py",
+      "category": "wall_velocity",
+      "legacy": "wall_velocity_application_config.py",
+      "legacy_path": "src/wall_velocity_application_config.py",
+      "module": "src.mpm_lbm.sim.wall_velocity.application_config",
+      "step": "step64",
+      "symbols": [
+        {
+          "kind": "class",
+          "name": "WallVelocityApplicationConfig"
+        },
+        {
+          "kind": "function",
+          "name": "validate_wall_velocity_application_config"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_wall_velocity_application_config_validation"
+        },
+        {
+          "kind": "function",
+          "name": "assert_valid_wall_velocity_application_config"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/wall_velocity/config.py",
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/config.py",
+      "category": "wall_velocity",
+      "legacy": "wall_velocity_config.py",
+      "legacy_path": "src/wall_velocity_config.py",
+      "module": "src.mpm_lbm.sim.wall_velocity.config",
+      "step": "step64",
+      "symbols": [
+        {
+          "kind": "class",
+          "name": "WallVelocityFieldConfig"
+        },
+        {
+          "kind": "function",
+          "name": "validate_wall_velocity_config"
+        },
+        {
+          "kind": "function",
+          "name": "assert_valid_wall_velocity_config"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_wall_velocity_config_validation"
+        },
+        {
+          "kind": "function",
+          "name": "step35_execution_flags"
+        },
+        {
+          "kind": "function",
+          "name": "step35_execution_flag_enabled_count"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/wall_velocity/field.py",
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/field.py",
+      "category": "wall_velocity",
+      "legacy": "wall_velocity_field.py",
+      "legacy_path": "src/wall_velocity_field.py",
+      "module": "src.mpm_lbm.sim.wall_velocity.field",
+      "step": "step64",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "load_wall_velocity_inputs"
+        },
+        {
+          "kind": "function",
+          "name": "interpolate_motion_rows_to_phase"
+        },
+        {
+          "kind": "function",
+          "name": "compute_wall_velocity_summary"
+        },
+        {
+          "kind": "function",
+          "name": "generate_wall_velocity_field_rows"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_wall_velocity_rows"
+        },
+        {
+          "kind": "function",
+          "name": "wall_velocity_hashes"
+        },
+        {
+          "kind": "function",
+          "name": "canonical_wall_velocity_hash"
+        },
+        {
+          "kind": "function",
+          "name": "write_wall_velocity_rows"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/runtime_geometry/projection.py",
+      "canonical_path": "src/mpm_lbm/sim/runtime_geometry/projection.py",
+      "category": "runtime_geometry",
+      "legacy": "runtime_geometry_projection.py",
+      "legacy_path": "src/runtime_geometry_projection.py",
+      "module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "step": "step65",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "load_runtime_projection_inputs"
+        },
+        {
+          "kind": "function",
+          "name": "compute_runtime_projection_rows"
+        },
+        {
+          "kind": "function",
+          "name": "compute_original_projection_rows"
+        },
+        {
+          "kind": "function",
+          "name": "original_union_points"
+        },
+        {
+          "kind": "function",
+          "name": "project_transient_geometry_copy"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_runtime_projection_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_runtime_projection_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_csv_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_json"
+        },
+        {
+          "kind": "function",
+          "name": "read_json"
+        },
+        {
+          "kind": "function",
+          "name": "step45_geometry_and_region_hashes"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/runtime_geometry/projection_config.py",
+      "canonical_path": "src/mpm_lbm/sim/runtime_geometry/projection_config.py",
+      "category": "runtime_geometry",
+      "legacy": "runtime_geometry_projection_config.py",
+      "legacy_path": "src/runtime_geometry_projection_config.py",
+      "module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "step": "step65",
+      "symbols": [
+        {
+          "kind": "class",
+          "name": "RuntimeGeometryProjectionIntegrationConfig"
+        },
+        {
+          "kind": "function",
+          "name": "validate_runtime_geometry_projection_config"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_runtime_geometry_projection_config_validation"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flags"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flag_enabled_count"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/runtime_geometry/projection_quality.py",
+      "canonical_path": "src/mpm_lbm/sim/runtime_geometry/projection_quality.py",
+      "category": "runtime_geometry",
+      "legacy": "runtime_geometry_projection_quality.py",
+      "legacy_path": "src/runtime_geometry_projection_quality.py",
+      "module": "src.mpm_lbm.sim.runtime_geometry.projection_quality",
+      "step": "step65",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "analyze_runtime_projection_quality"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/runtime_geometry/projection_consistency.py",
+      "canonical_path": "src/mpm_lbm/sim/runtime_geometry/projection_consistency.py",
+      "category": "runtime_geometry",
+      "legacy": "runtime_geometry_projection_consistency.py",
+      "legacy_path": "src/runtime_geometry_projection_consistency.py",
+      "module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "step": "step65",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "compare_original_vs_runtime_projection"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_original_vs_runtime_projection"
+        },
+        {
+          "kind": "function",
+          "name": "projection_phase_closure_rows"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_projection_phase_closure"
+        },
+        {
+          "kind": "function",
+          "name": "compare_step44_projection_smoke"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_step44_projection_alignment"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/runtime_geometry/state_guard.py",
+      "canonical_path": "src/mpm_lbm/sim/runtime_geometry/state_guard.py",
+      "category": "runtime_geometry",
+      "legacy": "runtime_geometry_projection_state_guard.py",
+      "legacy_path": "src/runtime_geometry_projection_state_guard.py",
+      "module": "src.mpm_lbm.sim.runtime_geometry.state_guard",
+      "step": "step65",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "compute_runtime_projection_state_guard"
+        },
+        {
+          "kind": "function",
+          "name": "forbidden_output_counts"
+        },
+        {
+          "kind": "function",
+          "name": "write_runtime_projection_state_guard"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/diagnostics/geometry_update_config.py",
+      "canonical_path": "src/mpm_lbm/diagnostics/geometry_update_config.py",
+      "category": "diagnostics",
+      "legacy": "diagnostic_geometry_update_config.py",
+      "legacy_path": "src/diagnostic_geometry_update_config.py",
+      "module": "src.mpm_lbm.diagnostics.geometry_update_config",
+      "step": "step66",
+      "support_dependency": true,
+      "symbols": [
+        {
+          "kind": "class",
+          "name": "DiagnosticGeometryUpdateConfig"
+        },
+        {
+          "kind": "function",
+          "name": "validate_diagnostic_geometry_update_config"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_diagnostic_geometry_update_config_validation"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flags"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flag_enabled_count"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/diagnostics/geometry_update.py",
+      "canonical_path": "src/mpm_lbm/diagnostics/geometry_update.py",
+      "category": "diagnostics",
+      "legacy": "diagnostic_geometry_update.py",
+      "legacy_path": "src/diagnostic_geometry_update.py",
+      "module": "src.mpm_lbm.diagnostics.geometry_update",
+      "step": "step66",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "load_step44_inputs"
+        },
+        {
+          "kind": "function",
+          "name": "compute_runtime_displaced_copy_rows"
+        },
+        {
+          "kind": "function",
+          "name": "runtime_copy_row"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_runtime_displaced_copy_rows"
+        },
+        {
+          "kind": "function",
+          "name": "runtime_copy_quality_summary"
+        },
+        {
+          "kind": "function",
+          "name": "original_vs_displaced_rows"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_original_vs_displaced"
+        },
+        {
+          "kind": "function",
+          "name": "cycle_phase_closure_rows"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_cycle_phase_closure"
+        },
+        {
+          "kind": "function",
+          "name": "selected_schedule_rows"
+        },
+        {
+          "kind": "function",
+          "name": "geometry_and_region_hashes"
+        },
+        {
+          "kind": "function",
+          "name": "write_runtime_copy_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_csv_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_json"
+        },
+        {
+          "kind": "function",
+          "name": "read_json"
+        },
+        {
+          "kind": "function",
+          "name": "file_hash"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/diagnostics/geometry_projection.py",
+      "canonical_path": "src/mpm_lbm/diagnostics/geometry_projection.py",
+      "category": "diagnostics",
+      "legacy": "diagnostic_geometry_projection.py",
+      "legacy_path": "src/diagnostic_geometry_projection.py",
+      "module": "src.mpm_lbm.diagnostics.geometry_projection",
+      "step": "step66",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "compute_projection_only_rows"
+        },
+        {
+          "kind": "function",
+          "name": "runtime_displaced_union_points"
+        },
+        {
+          "kind": "function",
+          "name": "project_runtime_geometry_copy_to_grid"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_projection_only_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_projection_only_rows"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/diagnostics/geometry_state_guard.py",
+      "canonical_path": "src/mpm_lbm/diagnostics/geometry_state_guard.py",
+      "category": "diagnostics",
+      "legacy": "diagnostic_geometry_state_guard.py",
+      "legacy_path": "src/diagnostic_geometry_state_guard.py",
+      "module": "src.mpm_lbm.diagnostics.geometry_state_guard",
+      "step": "step66",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "compute_state_mutation_guard"
+        },
+        {
+          "kind": "function",
+          "name": "forbidden_output_counts"
+        },
+        {
+          "kind": "function",
+          "name": "write_state_mutation_guard"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/geometry_displacement/config.py",
+      "canonical_path": "src/mpm_lbm/sim/geometry_displacement/config.py",
+      "category": "geometry_displacement",
+      "legacy": "geometry_displacement_config.py",
+      "legacy_path": "src/geometry_displacement_config.py",
+      "module": "src.mpm_lbm.sim.geometry_displacement.config",
+      "step": "step66",
+      "symbols": [
+        {
+          "kind": "class",
+          "name": "GeometryDisplacementConfig"
+        },
+        {
+          "kind": "function",
+          "name": "validate_geometry_displacement_config"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_geometry_displacement_config_validation"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/geometry_displacement/field.py",
+      "canonical_path": "src/mpm_lbm/sim/geometry_displacement/field.py",
+      "category": "geometry_displacement",
+      "legacy": "geometry_displacement_field.py",
+      "legacy_path": "src/geometry_displacement_field.py",
+      "module": "src.mpm_lbm.sim.geometry_displacement.field",
+      "step": "step66",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "load_geometry_displacement_inputs"
+        },
+        {
+          "kind": "function",
+          "name": "compute_geometry_displacement_rows"
+        },
+        {
+          "kind": "function",
+          "name": "displacement_vectors_for_region"
+        },
+        {
+          "kind": "function",
+          "name": "mantle_radial_displacement_vectors"
+        },
+        {
+          "kind": "function",
+          "name": "cavity_volume_displacement_vectors"
+        },
+        {
+          "kind": "function",
+          "name": "funnel_aperture_displacement_vectors"
+        },
+        {
+          "kind": "function",
+          "name": "cavity_center_radii"
+        },
+        {
+          "kind": "function",
+          "name": "funnel_center_radii"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_geometry_displacement_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_geometry_displacement_rows"
+        },
+        {
+          "kind": "function",
+          "name": "displacement_hashes"
+        },
+        {
+          "kind": "function",
+          "name": "canonical_displacement_hash"
+        },
+        {
+          "kind": "function",
+          "name": "assert_geometry_displacement_summary"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/geometry_displacement/quality.py",
+      "canonical_path": "src/mpm_lbm/sim/geometry_displacement/quality.py",
+      "category": "geometry_displacement",
+      "legacy": "geometry_displacement_quality.py",
+      "legacy_path": "src/geometry_displacement_quality.py",
+      "module": "src.mpm_lbm.sim.geometry_displacement.quality",
+      "step": "step66",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "analyze_displacement_quality"
+        },
+        {
+          "kind": "function",
+          "name": "quality_rows_from_displacement_analysis"
+        },
+        {
+          "kind": "function",
+          "name": "assert_displacement_quality"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/geometry_displacement/consistency.py",
+      "canonical_path": "src/mpm_lbm/sim/geometry_displacement/consistency.py",
+      "category": "geometry_displacement",
+      "legacy": "geometry_displacement_consistency.py",
+      "legacy_path": "src/geometry_displacement_consistency.py",
+      "module": "src.mpm_lbm.sim.geometry_displacement.consistency",
+      "step": "step66",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "compare_displacement_to_schedule"
+        },
+        {
+          "kind": "function",
+          "name": "compare_displacement_to_motion_mapping"
+        },
+        {
+          "kind": "function",
+          "name": "cycle_closure_rows"
+        },
+        {
+          "kind": "function",
+          "name": "assert_consistency"
+        },
+        {
+          "kind": "function",
+          "name": "assert_cycle_closure"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/diagnostics/geometry_displacement_grid.py",
+      "canonical_path": "src/mpm_lbm/diagnostics/geometry_displacement_grid.py",
+      "category": "geometry_displacement",
+      "legacy": "geometry_displacement_grid_diagnostics.py",
+      "legacy_path": "src/geometry_displacement_grid_diagnostics.py",
+      "module": "src.mpm_lbm.diagnostics.geometry_displacement_grid",
+      "step": "step66",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "summarize_displacement_on_grids"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_grid_displacement_rows"
+        },
+        {
+          "kind": "function",
+          "name": "assert_grid_displacement_diagnostics"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/squid_proxy/region_config.py",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/region_config.py",
+      "category": "squid_proxy",
+      "legacy": "squid_region_config.py",
+      "legacy_path": "src/squid_region_config.py",
+      "module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "step": "step67",
+      "symbols": [
+        {
+          "kind": "class",
+          "name": "SquidRegion"
+        },
+        {
+          "kind": "class",
+          "name": "SquidProxyRegionConfig"
+        },
+        {
+          "kind": "function",
+          "name": "default_squid_regions"
+        },
+        {
+          "kind": "function",
+          "name": "default_allowed_overlap_pairs"
+        },
+        {
+          "kind": "function",
+          "name": "default_squid_proxy_region_config"
+        },
+        {
+          "kind": "function",
+          "name": "load_squid_proxy_region_config"
+        },
+        {
+          "kind": "function",
+          "name": "validate_squid_region_config"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/squid_proxy/regions.py",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/regions.py",
+      "category": "squid_proxy",
+      "legacy": "squid_proxy_regions.py",
+      "legacy_path": "src/squid_proxy_regions.py",
+      "module": "src.mpm_lbm.sim.squid_proxy.regions",
+      "step": "step67",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "sample_squid_proxy_region_points"
+        },
+        {
+          "kind": "function",
+          "name": "sample_squid_proxy_regions"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_region_masks"
+        },
+        {
+          "kind": "function",
+          "name": "sampled_position_hash"
+        },
+        {
+          "kind": "function",
+          "name": "region_assignment_hash"
+        },
+        {
+          "kind": "function",
+          "name": "mantle_normalized_radius"
+        },
+        {
+          "kind": "function",
+          "name": "write_region_manifest"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/squid_proxy/kinematics_config.py",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/kinematics_config.py",
+      "category": "squid_proxy",
+      "legacy": "squid_kinematics_config.py",
+      "legacy_path": "src/squid_kinematics_config.py",
+      "module": "src.mpm_lbm.sim.squid_proxy.kinematics_config",
+      "step": "step67",
+      "symbols": [
+        {
+          "kind": "class",
+          "name": "SquidKinematicsScheduleConfig"
+        },
+        {
+          "kind": "function",
+          "name": "validate_kinematics_schedule_config"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_config_validation"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/squid_proxy/kinematics_schedule.py",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/kinematics_schedule.py",
+      "category": "squid_proxy",
+      "legacy": "squid_kinematics_schedule.py",
+      "legacy_path": "src/squid_kinematics_schedule.py",
+      "module": "src.mpm_lbm.sim.squid_proxy.kinematics_schedule",
+      "step": "step67",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "phase_samples"
+        },
+        {
+          "kind": "function",
+          "name": "smoothstep"
+        },
+        {
+          "kind": "function",
+          "name": "window_weight"
+        },
+        {
+          "kind": "function",
+          "name": "mantle_radius_scale"
+        },
+        {
+          "kind": "function",
+          "name": "cavity_volume_scale"
+        },
+        {
+          "kind": "function",
+          "name": "funnel_aperture_scale"
+        },
+        {
+          "kind": "function",
+          "name": "schedule_rows"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_schedule"
+        },
+        {
+          "kind": "function",
+          "name": "write_schedule_outputs"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/squid_proxy/kinematics_quality.py",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/kinematics_quality.py",
+      "category": "squid_proxy",
+      "legacy": "squid_kinematics_quality.py",
+      "legacy_path": "src/squid_kinematics_quality.py",
+      "module": "src.mpm_lbm.sim.squid_proxy.kinematics_quality",
+      "step": "step67",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "analyze_kinematics_schedule"
+        },
+        {
+          "kind": "function",
+          "name": "quality_rows_from_analysis"
+        },
+        {
+          "kind": "function",
+          "name": "assert_kinematics_schedule_quality"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/squid_proxy/region_mapping.py",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/region_mapping.py",
+      "category": "squid_proxy",
+      "legacy": "squid_kinematics_region_mapping.py",
+      "legacy_path": "src/squid_kinematics_region_mapping.py",
+      "module": "src.mpm_lbm.sim.squid_proxy.region_mapping",
+      "step": "step67",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "validate_kinematics_region_mapping"
+        },
+        {
+          "kind": "function",
+          "name": "region_mapping_rows"
+        },
+        {
+          "kind": "function",
+          "name": "assert_region_mapping"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/squid_proxy/motion_mapping.py",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/motion_mapping.py",
+      "category": "squid_proxy",
+      "legacy": "squid_motion_mapping.py",
+      "legacy_path": "src/squid_motion_mapping.py",
+      "module": "src.mpm_lbm.sim.squid_proxy.motion_mapping",
+      "step": "step67",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "load_motion_mapping_inputs"
+        },
+        {
+          "kind": "function",
+          "name": "compute_region_motion_rows"
+        },
+        {
+          "kind": "function",
+          "name": "mantle_displacement_proxy"
+        },
+        {
+          "kind": "function",
+          "name": "mantle_velocity_proxy"
+        },
+        {
+          "kind": "function",
+          "name": "cavity_volume_rate_proxy"
+        },
+        {
+          "kind": "function",
+          "name": "funnel_aperture_rate_proxy"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_motion_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_motion_rows"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/squid_proxy/motion_mapping_config.py",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/motion_mapping_config.py",
+      "category": "squid_proxy",
+      "legacy": "squid_motion_mapping_config.py",
+      "legacy_path": "src/squid_motion_mapping_config.py",
+      "module": "src.mpm_lbm.sim.squid_proxy.motion_mapping_config",
+      "step": "step67",
+      "symbols": [
+        {
+          "kind": "class",
+          "name": "SquidMotionMappingConfig"
+        },
+        {
+          "kind": "function",
+          "name": "validate_motion_mapping_config"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_motion_mapping_config_validation"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/squid_proxy/motion_quality.py",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/motion_quality.py",
+      "category": "squid_proxy",
+      "legacy": "squid_motion_quality.py",
+      "legacy_path": "src/squid_motion_quality.py",
+      "module": "src.mpm_lbm.sim.squid_proxy.motion_quality",
+      "step": "step67",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "analyze_motion_mapping"
+        },
+        {
+          "kind": "function",
+          "name": "quality_rows_from_motion_analysis"
+        },
+        {
+          "kind": "function",
+          "name": "assert_motion_mapping_quality"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/diagnostics/squid_motion_projection.py",
+      "canonical_path": "src/mpm_lbm/diagnostics/squid_motion_projection.py",
+      "category": "squid_proxy",
+      "legacy": "squid_motion_projection_diagnostics.py",
+      "legacy_path": "src/squid_motion_projection_diagnostics.py",
+      "module": "src.mpm_lbm.diagnostics.squid_motion_projection",
+      "step": "step67",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "summarize_motion_on_grids"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_motion_grid_rows"
+        },
+        {
+          "kind": "function",
+          "name": "assert_motion_grid_diagnostics"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/geometry/candidate_manifest.py",
+      "canonical_path": "src/mpm_lbm/sim/geometry/candidate_manifest.py",
+      "category": "real_geometry_support",
+      "legacy": "geometry_candidate_manifest.py",
+      "legacy_path": "src/geometry_candidate_manifest.py",
+      "module": "src.mpm_lbm.sim.geometry.candidate_manifest",
+      "step": "step67",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "load_candidate_descriptor"
+        },
+        {
+          "kind": "function",
+          "name": "validate_candidate_descriptor"
+        },
+        {
+          "kind": "function",
+          "name": "candidate_manifest_row"
+        },
+        {
+          "kind": "function",
+          "name": "write_candidate_manifest"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/geometry/fingerprint.py",
+      "canonical_path": "src/mpm_lbm/sim/geometry/fingerprint.py",
+      "category": "real_geometry_support",
+      "legacy": "geometry_fingerprint.py",
+      "legacy_path": "src/geometry_fingerprint.py",
+      "module": "src.mpm_lbm.sim.geometry.fingerprint",
+      "step": "step67",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "sha256_file"
+        },
+        {
+          "kind": "function",
+          "name": "file_size_bytes"
+        },
+        {
+          "kind": "function",
+          "name": "fingerprint_geometry_file"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/geometry/normalization.py",
+      "canonical_path": "src/mpm_lbm/sim/geometry/normalization.py",
+      "category": "real_geometry_support",
+      "legacy": "geometry_normalization.py",
+      "legacy_path": "src/geometry_normalization.py",
+      "module": "src.mpm_lbm.sim.geometry.normalization",
+      "step": "step67",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "normalize_mesh_candidate"
+        },
+        {
+          "kind": "function",
+          "name": "normalize_voxel_candidate"
+        },
+        {
+          "kind": "function",
+          "name": "write_normalization_report"
+        },
+        {
+          "kind": "function",
+          "name": "geometry_config_from_descriptor"
+        }
+      ]
+    },
+    {
+      "canonical": "mpm_lbm/sim/geometry/intake.py",
+      "canonical_path": "src/mpm_lbm/sim/geometry/intake.py",
+      "category": "real_geometry_support",
+      "legacy": "geometry_intake.py",
+      "legacy_path": "src/geometry_intake.py",
+      "module": "src.mpm_lbm.sim.geometry.intake",
+      "step": "step67",
+      "symbols": [
+        {
+          "kind": "function",
+          "name": "run_candidate_intake"
+        },
+        {
+          "kind": "function",
+          "name": "run_candidate_quality_check"
+        },
+        {
+          "kind": "function",
+          "name": "run_candidate_sampling_reproducibility"
+        },
+        {
+          "kind": "function",
+          "name": "run_candidate_projection_smoke"
+        }
+      ]
+    }
+  ],
+  "real_geometry_feasibility_classification": {
+    "classification": "step_specific_experiment_runner_not_canonical_sim",
+    "legacy_path": "src/real_geometry_feasibility.py",
+    "reason": "Contains FSIDriver3D run helpers from earlier evidence work; Batch A must not execute or move it into canonical sim packages."
+  },
+  "steps": [
+    "step63",
+    "step64",
+    "step65",
+    "step66",
+    "step67"
+  ]
+}

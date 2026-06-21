@@ -72,8 +72,8 @@
         "step59_forbidden_file_count": 0,
         "step59_large_file_count": 0,
         "step59_particle_npy_count": 0,
-        "step59_total_size_bytes": 449603,
-        "step59_total_size_mb": 0.4287748336791992,
+        "step59_total_size_bytes": 449751,
+        "step59_total_size_mb": 0.42891597747802734,
         "step59_vtr_count": 0
       },
       "pass": true

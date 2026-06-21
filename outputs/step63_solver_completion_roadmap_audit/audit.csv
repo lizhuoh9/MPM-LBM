@@ -1,0 +1,10 @@
+activated_in_batch_a,new_simulation_required,pass,status,step,title
+False,False,True,planned,68,Step-Specific Proxy Migration To experiments/steps
+False,False,True,planned,69,Root src final implementation cleanup
+False,False,True,planned,70,API and config freeze before activation
+False,False,True,planned,71,Tau convention decision and documentation
+False,False,True,planned,72,Runtime geometry activation readiness audit
+False,False,True,planned,73,Wall velocity activation readiness audit
+False,False,True,planned,74,Real geometry data boundary audit
+False,False,True,planned,75,Solver-complete simulation campaign readiness gate
+False,True,True,planned,76,Post-gate simulation campaign only after explicit activation

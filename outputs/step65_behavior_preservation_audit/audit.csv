@@ -1,0 +1,11 @@
+actual,check,expected,notes,pass
+False,runtime_code_changed,False,policy-level behavior preservation flag,True
+False,solver_behavior_changed,False,policy-level behavior preservation flag,True
+False,physics_feature_expansion,False,policy-level behavior preservation flag,True
+True,no_runtime_execution,True,policy-level behavior preservation flag,True
+True,no_solver_activation,True,policy-level behavior preservation flag,True
+True,imports_do_not_create_outputs,True,,True
+26,legacy_and_canonical_symbols_same_object,26,,True
+0,canonical_modules_have_no_driver_calls,0,,True
+0,step63_67_driver_output_dirs_absent,0,,True
+step_specific_or_experiment_runner,real_geometry_feasibility_classified_not_moved_to_sim,step_specific_or_experiment_runner,Batch A classifies this existing file but does not execute or canonicalize it.,True

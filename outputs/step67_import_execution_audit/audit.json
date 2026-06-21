@@ -1,0 +1,658 @@
+{
+  "rows": [
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "SquidRegion"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "SquidProxyRegionConfig"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "default_squid_regions"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "default_allowed_overlap_pairs"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "default_squid_proxy_region_config"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_squid_proxy_region_config"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_squid_region_config"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.regions",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_proxy_regions",
+      "pass": true,
+      "same_object": true,
+      "symbol": "sample_squid_proxy_region_points"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.regions",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_proxy_regions",
+      "pass": true,
+      "same_object": true,
+      "symbol": "sample_squid_proxy_regions"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.regions",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_proxy_regions",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_region_masks"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.regions",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_proxy_regions",
+      "pass": true,
+      "same_object": true,
+      "symbol": "sampled_position_hash"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.regions",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_proxy_regions",
+      "pass": true,
+      "same_object": true,
+      "symbol": "region_assignment_hash"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.regions",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_proxy_regions",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mantle_normalized_radius"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.regions",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_proxy_regions",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_region_manifest"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "SquidKinematicsScheduleConfig"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_kinematics_schedule_config"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_config_validation"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_schedule",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_schedule",
+      "pass": true,
+      "same_object": true,
+      "symbol": "phase_samples"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_schedule",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_schedule",
+      "pass": true,
+      "same_object": true,
+      "symbol": "smoothstep"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_schedule",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_schedule",
+      "pass": true,
+      "same_object": true,
+      "symbol": "window_weight"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_schedule",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_schedule",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mantle_radius_scale"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_schedule",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_schedule",
+      "pass": true,
+      "same_object": true,
+      "symbol": "cavity_volume_scale"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_schedule",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_schedule",
+      "pass": true,
+      "same_object": true,
+      "symbol": "funnel_aperture_scale"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_schedule",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_schedule",
+      "pass": true,
+      "same_object": true,
+      "symbol": "schedule_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_schedule",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_schedule",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_schedule"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_schedule",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_schedule",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_schedule_outputs"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_quality",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_quality",
+      "pass": true,
+      "same_object": true,
+      "symbol": "analyze_kinematics_schedule"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_quality",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_quality",
+      "pass": true,
+      "same_object": true,
+      "symbol": "quality_rows_from_analysis"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_quality",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_quality",
+      "pass": true,
+      "same_object": true,
+      "symbol": "assert_kinematics_schedule_quality"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_mapping",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_region_mapping",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_kinematics_region_mapping"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_mapping",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_region_mapping",
+      "pass": true,
+      "same_object": true,
+      "symbol": "region_mapping_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_mapping",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_kinematics_region_mapping",
+      "pass": true,
+      "same_object": true,
+      "symbol": "assert_region_mapping"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_mapping",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_motion_mapping",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_motion_mapping_inputs"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_mapping",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_motion_mapping",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compute_region_motion_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_mapping",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_motion_mapping",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mantle_displacement_proxy"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_mapping",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_motion_mapping",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mantle_velocity_proxy"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_mapping",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_motion_mapping",
+      "pass": true,
+      "same_object": true,
+      "symbol": "cavity_volume_rate_proxy"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_mapping",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_motion_mapping",
+      "pass": true,
+      "same_object": true,
+      "symbol": "funnel_aperture_rate_proxy"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_mapping",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_motion_mapping",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_motion_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_mapping",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_motion_mapping",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_motion_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_mapping_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_motion_mapping_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "SquidMotionMappingConfig"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_mapping_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_motion_mapping_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_motion_mapping_config"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_mapping_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_motion_mapping_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_motion_mapping_config_validation"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_quality",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_motion_quality",
+      "pass": true,
+      "same_object": true,
+      "symbol": "analyze_motion_mapping"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_quality",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_motion_quality",
+      "pass": true,
+      "same_object": true,
+      "symbol": "quality_rows_from_motion_analysis"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_quality",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_motion_quality",
+      "pass": true,
+      "same_object": true,
+      "symbol": "assert_motion_mapping_quality"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_motion_projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_motion_projection_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_motion_on_grids"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_motion_projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_motion_projection_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_motion_grid_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_motion_projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_motion_projection_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "assert_motion_grid_diagnostics"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.candidate_manifest",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_candidate_manifest",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_candidate_descriptor"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.candidate_manifest",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_candidate_manifest",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_candidate_descriptor"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.candidate_manifest",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_candidate_manifest",
+      "pass": true,
+      "same_object": true,
+      "symbol": "candidate_manifest_row"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.candidate_manifest",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_candidate_manifest",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_candidate_manifest"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.fingerprint",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_fingerprint",
+      "pass": true,
+      "same_object": true,
+      "symbol": "sha256_file"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.fingerprint",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_fingerprint",
+      "pass": true,
+      "same_object": true,
+      "symbol": "file_size_bytes"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.fingerprint",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_fingerprint",
+      "pass": true,
+      "same_object": true,
+      "symbol": "fingerprint_geometry_file"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.normalization",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_normalization",
+      "pass": true,
+      "same_object": true,
+      "symbol": "normalize_mesh_candidate"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.normalization",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_normalization",
+      "pass": true,
+      "same_object": true,
+      "symbol": "normalize_voxel_candidate"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.normalization",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_normalization",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_normalization_report"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.normalization",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_normalization",
+      "pass": true,
+      "same_object": true,
+      "symbol": "geometry_config_from_descriptor"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.intake",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_intake",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_candidate_intake"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.intake",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_intake",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_candidate_quality_check"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.intake",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_intake",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_candidate_sampling_reproducibility"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.intake",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_intake",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_candidate_projection_smoke"
+    }
+  ],
+  "summary": {
+    "batch_import_execution_audit_pass": true,
+    "canonical_import_pass_count": 64,
+    "legacy_import_pass_count": 64,
+    "output_snapshot_unchanged": true,
+    "pass_count": 64,
+    "policy_id": "step67_squid_proxy_real_geometry_migration_policy",
+    "row_count": 64,
+    "runtime_object_construction_required": false,
+    "same_object_count": 64,
+    "solver_run": false,
+    "step": 67,
+    "step67_import_execution_pass": true
+  }
+}
