@@ -1,0 +1,12 @@
+check,pass,value,notes
+step47_report_exists,True,STEP47_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_SHORT_STEP_COUPLING_ENVELOPE_REPORT.md,Step 47 accepted report remains present
+step47_matrix_row_count,True,4,Step 47 four-row matrix remains available
+step47_matrix_stable_count,True,4,Step 47 matrix remains stable
+step47_matrix_step_count,True,5,Step 47 remains a five-step accepted envelope
+step47_combined_row_exists,True,runtime_geometry_plus_wall_velocity_32_5step,Step 47 combined row remains available
+step47_phase_progression_pass,True,True,Step 47 phase progression remains green
+step47_state_guard_pass,True,True,Step 47 state guard remains green
+step47_artifact_large_file_count,True,0,Step 47 artifacts remain below large-file threshold
+step47_vtr_count,True,0,Step 47 still has no VTR artifacts
+step47_particle_npy_count,True,0,Step 47 still has no particle npy artifacts
+step47_geo_all_fluid_dat_count_added,True,0,Step 47 still has no geo_all_fluid dat additions

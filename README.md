@@ -51,6 +51,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 45 controlled runtime geometry projection integration smoke
 - Step 46 controlled runtime geometry plus wall velocity one-step coupling smoke
 - Step 47 controlled runtime geometry plus wall velocity short-step coupling envelope
+- Step 48 controlled runtime geometry plus wall velocity 10-step coupling envelope
 
 ## Not Implemented
 
@@ -552,6 +553,39 @@ The default boundary_motion_mode remains static.
 The default wall_velocity_application_mode remains disabled.
 Step 41 runs four `64^3` one-cycle rows with `wall_velocity_scale = 0.05`, `wall_velocity_cap_lbm = 0.01`, and `dynamic_solid_threshold = 0.75` in the Step 41 configs only.
 See docs/41_controlled_jet_cycle_proxy_selected_parameter_64_feasibility.md.
+
+## Runtime Geometry And Wall-Velocity Envelopes
+
+Step 42 is controlled squid proxy prescribed geometry displacement diagnostics.
+Step 42 generates prescribed displacement artifacts only and does not update driver, LBM, MPM, or projection state.
+
+Step 43 is controlled squid proxy geometry motion driver interface contract.
+Step 43 adds guarded interface fields while preserving default static geometry behavior.
+
+Step 44 is controlled squid proxy diagnostic geometry update smoke.
+Step 44 evaluates transient displaced-copy geometry diagnostics only.
+
+Step 45 is controlled runtime geometry projection integration smoke.
+Step 45 projects transient displaced-copy geometry into diagnostic projection artifacts without persistent projected state.
+
+Step 46 is controlled runtime geometry plus wall velocity one-step coupling smoke.
+Step 46 combines runtime geometry projection and wall velocity application for one bounded diagnostic step.
+
+Step 47 is controlled runtime geometry plus wall velocity short-step coupling envelope.
+Step 47 runs a `32^3` five-step engineering-only envelope with runtime projection and wall velocity rows.
+
+Step 48 is controlled runtime geometry plus wall velocity 10-step coupling envelope.
+Step 48 is opt-in and engineering-only.
+Step 48 runs a 32^3 ten-step envelope.
+Step 48 does not run a full-cycle moving-geometry simulation.
+Step 48 does not persist displaced geometry.
+Step 48 does not persist projected state.
+Step 48 does not change moving bounce-back formulas.
+The default geometry_motion_mode remains static.
+The default geometry_motion_application_mode remains disabled.
+The default boundary_motion_mode remains static.
+The default wall_velocity_application_mode remains disabled.
+See docs/48_controlled_runtime_geometry_wall_velocity_10step_coupling_envelope.md.
 
 ## Upstream LBM Note
 

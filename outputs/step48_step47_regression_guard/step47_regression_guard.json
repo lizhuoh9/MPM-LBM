@@ -1,0 +1,75 @@
+{
+  "rows": [
+    {
+      "check": "step47_report_exists",
+      "notes": "Step 47 accepted report remains present",
+      "pass": true,
+      "value": "STEP47_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_SHORT_STEP_COUPLING_ENVELOPE_REPORT.md"
+    },
+    {
+      "check": "step47_matrix_row_count",
+      "notes": "Step 47 four-row matrix remains available",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step47_matrix_stable_count",
+      "notes": "Step 47 matrix remains stable",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step47_matrix_step_count",
+      "notes": "Step 47 remains a five-step accepted envelope",
+      "pass": true,
+      "value": 5
+    },
+    {
+      "check": "step47_combined_row_exists",
+      "notes": "Step 47 combined row remains available",
+      "pass": true,
+      "value": "runtime_geometry_plus_wall_velocity_32_5step"
+    },
+    {
+      "check": "step47_phase_progression_pass",
+      "notes": "Step 47 phase progression remains green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step47_state_guard_pass",
+      "notes": "Step 47 state guard remains green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step47_artifact_large_file_count",
+      "notes": "Step 47 artifacts remain below large-file threshold",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step47_vtr_count",
+      "notes": "Step 47 still has no VTR artifacts",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step47_particle_npy_count",
+      "notes": "Step 47 still has no particle npy artifacts",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step47_geo_all_fluid_dat_count_added",
+      "notes": "Step 47 still has no geo_all_fluid dat additions",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "pass_count": 11,
+    "regression_pass": true,
+    "row_count": 11
+  }
+}

@@ -1,0 +1,5 @@
+row_name,runtime_geometry_projection_enabled,wall_velocity_application_enabled,phase_sequence,active_cell_count_phase0,active_cell_count_phase035,active_cell_count_delta_phase0_to_phase035,max_applied_velocity_phase0,max_applied_velocity_phase035,max_applied_velocity_delta_phase0_to_phase035,progression_pass
+original_static_32_10step,False,False,"[0.0, 0.025, 0.05, 0.075, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35]",648,648,0.0,0.0,0.0,0.0,True
+runtime_geometry_only_32_10step,True,False,"[0.0, 0.025, 0.05, 0.075, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35]",648,443,-205.0,0.0,0.0,0.0,True
+wall_velocity_only_32_10step,False,True,"[0.0, 0.025, 0.05, 0.075, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35]",648,648,0.0,0.0005021311353590662,0.0001774519625640706,-0.0003246791727949957,True
+runtime_geometry_plus_wall_velocity_32_10step,True,True,"[0.0, 0.025, 0.05, 0.075, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35]",648,443,-205.0,0.0005021311353590662,0.0001774519625640706,-0.0003246791727949957,True
