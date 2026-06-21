@@ -1,0 +1,23 @@
+{
+  "case_id": "step45_displaced_phase035_32_link_area_1step",
+  "n_grid": 32,
+  "n_particles": 4096,
+  "n_lbm_steps": 1,
+  "mpm_substeps_per_lbm_step": 1,
+  "output_interval": 1,
+  "quality_check_enabled": true,
+  "quality_check_strict": true,
+  "write_vtk": false,
+  "write_particles": false,
+  "geometry_update_mode": "runtime_copy_projection_integration",
+  "runtime_copy_phase": 0.35,
+  "phase": 0.35,
+  "coupling_mode": "moving_boundary",
+  "reaction_transfer_mode": "link_area_experimental",
+  "diagnostic_copy_only": true,
+  "transient_projection_only": true,
+  "persist_projected_state": false,
+  "mutate_original_geometry": false,
+  "full_coupled_geometry_claim": false,
+  "scope_note": "Step 45 phase-0.35 runtime-copy link-area projection smoke descriptor; diagnostic-copy-only and no persistent geometry mutation"
+}

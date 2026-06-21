@@ -1,0 +1,26 @@
+metric,value
+all_mutation_flags_false,True
+apply_to_default_lbm_state,False
+apply_to_default_mpm_state,False
+apply_to_default_projection_state,False
+apply_to_driver_state,False
+deterministic,True
+diagnostic_only,True
+grid_sizes,"[32, 48]"
+integration_mode,transient_projection_only
+mutate_original_geometry,False
+pass_count,29
+persist_displaced_geometry,False
+persist_projected_state,False
+projection_integration_id,step45_runtime_geometry_projection_integration_smoke
+recompute_production_boundary_links,False
+row_count,29
+selected_phase_count,5
+selected_phases,"[0.0, 0.2, 0.35, 0.5, 1.0]"
+tracked_region_count,3
+tracked_regions,"[""mantle_outer"", ""mantle_cavity_proxy"", ""funnel_outlet_proxy""]"
+update_dynamic_solid,False
+validation_pass,True
+write_dense_displacement_field,False
+write_displaced_particles,False
+write_vtk,False

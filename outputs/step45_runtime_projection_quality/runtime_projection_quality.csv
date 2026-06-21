@@ -1,0 +1,13 @@
+metric,value
+active_cell_pass,True
+bounds_pass,True
+finite_pass,True
+grid_coverage_pass,True
+no_persistent_state_pass,True
+phase_coverage_pass,True
+projected_mass_pass,True
+quality_pass,True
+row_count,10
+row_count_pass,True
+solid_phi_bounds_pass,True
+transient_only_pass,True

@@ -1,0 +1,9 @@
+check,pass,value,notes
+step44_report_exists,True,STEP44 report,Step 44 report must exist
+step44_runtime_copy_row_count,True,15,Step 44 runtime copy row count must remain 15
+step44_projection_only_row_count,True,10,Step 44 projection-only row count must remain 10
+step44_state_mutation_guard_pass,True,True,Step 44 state mutation guard must pass
+step44_large_file_count_zero,True,0,Step 44 artifact manifest must have no large files
+step44_vtr_count_zero,True,0,Step 44 must not add VTR outputs
+step44_particle_npy_count_zero,True,0,Step 44 must not add particle NPY outputs
+step44_geo_all_fluid_count_zero,True,0,Step 44 must not add geo_all_fluid dat artifacts

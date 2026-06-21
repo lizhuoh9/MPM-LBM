@@ -1,0 +1,66 @@
+{
+  "rows": [
+    {
+      "metric": "active_cell_pass",
+      "value": true
+    },
+    {
+      "metric": "bounds_pass",
+      "value": true
+    },
+    {
+      "metric": "finite_pass",
+      "value": true
+    },
+    {
+      "metric": "grid_coverage_pass",
+      "value": true
+    },
+    {
+      "metric": "no_persistent_state_pass",
+      "value": true
+    },
+    {
+      "metric": "phase_coverage_pass",
+      "value": true
+    },
+    {
+      "metric": "projected_mass_pass",
+      "value": true
+    },
+    {
+      "metric": "quality_pass",
+      "value": true
+    },
+    {
+      "metric": "row_count",
+      "value": 10
+    },
+    {
+      "metric": "row_count_pass",
+      "value": true
+    },
+    {
+      "metric": "solid_phi_bounds_pass",
+      "value": true
+    },
+    {
+      "metric": "transient_only_pass",
+      "value": true
+    }
+  ],
+  "summary": {
+    "active_cell_pass": true,
+    "bounds_pass": true,
+    "finite_pass": true,
+    "grid_coverage_pass": true,
+    "no_persistent_state_pass": true,
+    "phase_coverage_pass": true,
+    "projected_mass_pass": true,
+    "quality_pass": true,
+    "row_count": 10,
+    "row_count_pass": true,
+    "solid_phi_bounds_pass": true,
+    "transient_only_pass": true
+  }
+}

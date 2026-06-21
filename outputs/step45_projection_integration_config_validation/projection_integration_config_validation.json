@@ -1,0 +1,240 @@
+{
+  "rows": [
+    {
+      "check": "projection_integration_id_expected",
+      "notes": "Step 45 projection integration id must be stable",
+      "pass": true,
+      "value": "step45_runtime_geometry_projection_integration_smoke"
+    },
+    {
+      "check": "integration_mode_expected",
+      "notes": "Step 45 integration mode must be transient_projection_only",
+      "pass": true,
+      "value": "transient_projection_only"
+    },
+    {
+      "check": "diagnostic_only_true",
+      "notes": "Step 45 must remain diagnostic-only",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "deterministic_true",
+      "notes": "Step 45 must remain deterministic",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "diagnostic_geometry_update_config_path_exists",
+      "notes": "Step 44 diagnostic update config must exist",
+      "pass": true,
+      "value": "configs/step44_diagnostic_geometry_update.json"
+    },
+    {
+      "check": "geometry_motion_interface_config_path_exists",
+      "notes": "Step 43 geometry-motion interface config must exist",
+      "pass": true,
+      "value": "configs/step43_geometry_motion_interface_prescribed_diagnostic_only.json"
+    },
+    {
+      "check": "displacement_artifact_path_exists",
+      "notes": "Step 42 displacement artifact must exist",
+      "pass": true,
+      "value": "outputs/step42_geometry_displacement/geometry_displacement.json"
+    },
+    {
+      "check": "geometry_config_path_exists",
+      "notes": "Step 30 geometry config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_geometry.json"
+    },
+    {
+      "check": "region_config_path_exists",
+      "notes": "Step 30 region config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_region_config.json"
+    },
+    {
+      "check": "step44_projection_artifact_path_exists",
+      "notes": "Step 44 projection-only smoke artifact must exist",
+      "pass": true,
+      "value": "outputs/step44_projection_only_smoke/projection_only_smoke.json"
+    },
+    {
+      "check": "selected_phases_expected",
+      "notes": "selected phases must match Step 45 contract",
+      "pass": true,
+      "value": [
+        0.0,
+        0.2,
+        0.35,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "check": "selected_phases_bounded",
+      "notes": "selected phases must be in [0, 1]",
+      "pass": true,
+      "value": [
+        0.0,
+        0.2,
+        0.35,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "check": "grid_sizes_expected",
+      "notes": "grid sizes must be [32, 48]",
+      "pass": true,
+      "value": [
+        32,
+        48
+      ]
+    },
+    {
+      "check": "grid_sizes_positive",
+      "notes": "grid sizes must be positive",
+      "pass": true,
+      "value": [
+        32,
+        48
+      ]
+    },
+    {
+      "check": "tracked_regions_expected",
+      "notes": "tracked regions must match Step 44",
+      "pass": true,
+      "value": [
+        "mantle_outer",
+        "mantle_cavity_proxy",
+        "funnel_outlet_proxy"
+      ]
+    },
+    {
+      "check": "scope_note_valid",
+      "notes": "scope note must state transient no-persistent scope",
+      "pass": true,
+      "value": "transient projection integration smoke only; no persistent moving-geometry coupling"
+    },
+    {
+      "check": "persist_projected_state_false",
+      "notes": "persist_projected_state must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "persist_displaced_geometry_false",
+      "notes": "persist_displaced_geometry must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "write_displaced_particles_false",
+      "notes": "write_displaced_particles must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "write_dense_displacement_field_false",
+      "notes": "write_dense_displacement_field must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "write_vtk_false",
+      "notes": "write_vtk must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_driver_state_false",
+      "notes": "apply_to_driver_state must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_default_lbm_state_false",
+      "notes": "apply_to_default_lbm_state must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_default_mpm_state_false",
+      "notes": "apply_to_default_mpm_state must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_default_projection_state_false",
+      "notes": "apply_to_default_projection_state must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "update_dynamic_solid_false",
+      "notes": "update_dynamic_solid must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "recompute_production_boundary_links_false",
+      "notes": "recompute_production_boundary_links must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "mutate_original_geometry_false",
+      "notes": "mutate_original_geometry must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "all_mutation_flags_false",
+      "notes": "all mutation flags must be false",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "all_mutation_flags_false": true,
+    "apply_to_default_lbm_state": false,
+    "apply_to_default_mpm_state": false,
+    "apply_to_default_projection_state": false,
+    "apply_to_driver_state": false,
+    "deterministic": true,
+    "diagnostic_only": true,
+    "grid_sizes": [
+      32,
+      48
+    ],
+    "integration_mode": "transient_projection_only",
+    "mutate_original_geometry": false,
+    "pass_count": 29,
+    "persist_displaced_geometry": false,
+    "persist_projected_state": false,
+    "projection_integration_id": "step45_runtime_geometry_projection_integration_smoke",
+    "recompute_production_boundary_links": false,
+    "row_count": 29,
+    "selected_phase_count": 5,
+    "selected_phases": [
+      0.0,
+      0.2,
+      0.35,
+      0.5,
+      1.0
+    ],
+    "tracked_region_count": 3,
+    "tracked_regions": [
+      "mantle_outer",
+      "mantle_cavity_proxy",
+      "funnel_outlet_proxy"
+    ],
+    "update_dynamic_solid": false,
+    "validation_pass": true,
+    "write_dense_displacement_field": false,
+    "write_displaced_particles": false,
+    "write_vtk": false
+  }
+}

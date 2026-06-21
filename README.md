@@ -48,6 +48,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 42 controlled squid proxy prescribed geometry displacement diagnostics
 - Step 43 controlled squid proxy geometry motion driver interface contract
 - Step 44 controlled squid proxy diagnostic geometry update smoke
+- Step 45 controlled runtime geometry projection integration smoke
 
 ## Not Implemented
 
@@ -178,6 +179,22 @@ The default geometry_motion_mode remains static.
 The default geometry_motion_application_mode remains disabled.
 
 Step 44 summarizes phase-selected runtime displaced-copy diagnostics from the accepted Step 42 displacement artifact, runs projection-only smoke at 32^3 and 48^3, records a conservative optional one-step diagnostic descriptor, and proves that original geometry, region masks, solver formulas, and persistent driver state remain unchanged.
+
+## Step 45 Runtime Geometry Projection Integration Boundary
+
+Step 45 is controlled runtime geometry projection integration smoke.
+Step 45 uses transient projection state only.
+Step 45 does not persist projected state.
+Step 45 does not persist displaced geometry.
+Step 45 does not write displaced particles.
+Step 45 does not update default driver geometry.
+Step 45 does not persist LBM solid_phi updates.
+Step 45 does not update dynamic_solid.
+Step 45 does not change moving bounce-back formulas.
+The default geometry_motion_mode remains static.
+The default geometry_motion_application_mode remains disabled.
+
+Step 45 integrates the accepted Step 44 runtime displaced copy into an isolated transient projection target for `32^3` and `48^3` diagnostics across the selected phases `0.0`, `0.2`, `0.35`, `0.5`, and `1.0`. It records original-vs-runtime comparison, projection phase closure, Step 44 projection alignment, ultra-short smoke descriptors, state guards, and artifact-budget checks without changing default solver behavior.
 
 ## Step 25 Intake Boundary
 

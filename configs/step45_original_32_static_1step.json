@@ -1,0 +1,23 @@
+{
+  "case_id": "step45_original_32_static_1step",
+  "n_grid": 32,
+  "n_particles": 4096,
+  "n_lbm_steps": 1,
+  "mpm_substeps_per_lbm_step": 1,
+  "output_interval": 1,
+  "quality_check_enabled": true,
+  "quality_check_strict": true,
+  "write_vtk": false,
+  "write_particles": false,
+  "geometry_update_mode": "static_original_projection_reference",
+  "runtime_copy_phase": 0.0,
+  "phase": 0.0,
+  "coupling_mode": "moving_boundary",
+  "reaction_transfer_mode": "engineering",
+  "diagnostic_copy_only": false,
+  "transient_projection_only": true,
+  "persist_projected_state": false,
+  "mutate_original_geometry": false,
+  "full_coupled_geometry_claim": false,
+  "scope_note": "Step 45 original static one-step projection smoke descriptor; no persistent geometry mutation"
+}

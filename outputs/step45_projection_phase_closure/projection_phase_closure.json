@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "closure_pass": true,
+      "grid_size": 32,
+      "occupancy_hash_equal": true,
+      "phase0_phase1_active_cell_delta": 0,
+      "phase0_phase1_bbox_delta": 0.0,
+      "phase0_phase1_projected_mass_delta": 0.0
+    },
+    {
+      "closure_pass": true,
+      "grid_size": 48,
+      "occupancy_hash_equal": true,
+      "phase0_phase1_active_cell_delta": 0,
+      "phase0_phase1_bbox_delta": 0.0,
+      "phase0_phase1_projected_mass_delta": 0.0
+    }
+  ],
+  "summary": {
+    "closure_pass": true,
+    "closure_pass_count": 2,
+    "max_active_cell_delta": 0,
+    "max_bbox_delta": 0.0,
+    "max_projected_mass_delta": 0.0,
+    "row_count": 2
+  }
+}

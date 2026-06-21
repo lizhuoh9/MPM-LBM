@@ -1,0 +1,57 @@
+{
+  "rows": [
+    {
+      "check": "step44_report_exists",
+      "notes": "Step 44 report must exist",
+      "pass": true,
+      "value": "STEP44 report"
+    },
+    {
+      "check": "step44_runtime_copy_row_count",
+      "notes": "Step 44 runtime copy row count must remain 15",
+      "pass": true,
+      "value": 15
+    },
+    {
+      "check": "step44_projection_only_row_count",
+      "notes": "Step 44 projection-only row count must remain 10",
+      "pass": true,
+      "value": 10
+    },
+    {
+      "check": "step44_state_mutation_guard_pass",
+      "notes": "Step 44 state mutation guard must pass",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step44_large_file_count_zero",
+      "notes": "Step 44 artifact manifest must have no large files",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step44_vtr_count_zero",
+      "notes": "Step 44 must not add VTR outputs",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step44_particle_npy_count_zero",
+      "notes": "Step 44 must not add particle NPY outputs",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step44_geo_all_fluid_count_zero",
+      "notes": "Step 44 must not add geo_all_fluid dat artifacts",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "pass_count": 8,
+    "regression_pass": true,
+    "row_count": 8
+  }
+}

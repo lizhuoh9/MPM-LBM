@@ -1,0 +1,103 @@
+{
+  "rows": [
+    {
+      "active_cell_count_delta": 0.0,
+      "alignment_pass": true,
+      "grid_size": 32,
+      "phase": 0.0,
+      "projected_mass_delta": 0.0,
+      "solid_phi_max_delta": 0.0,
+      "solid_phi_min_delta": 0.0
+    },
+    {
+      "active_cell_count_delta": 0.0,
+      "alignment_pass": true,
+      "grid_size": 48,
+      "phase": 0.0,
+      "projected_mass_delta": 0.0,
+      "solid_phi_max_delta": 0.0,
+      "solid_phi_min_delta": 0.0
+    },
+    {
+      "active_cell_count_delta": 0.0,
+      "alignment_pass": true,
+      "grid_size": 32,
+      "phase": 0.2,
+      "projected_mass_delta": 0.0,
+      "solid_phi_max_delta": 0.0,
+      "solid_phi_min_delta": 0.0
+    },
+    {
+      "active_cell_count_delta": 0.0,
+      "alignment_pass": true,
+      "grid_size": 48,
+      "phase": 0.2,
+      "projected_mass_delta": 0.0,
+      "solid_phi_max_delta": 0.0,
+      "solid_phi_min_delta": 0.0
+    },
+    {
+      "active_cell_count_delta": 0.0,
+      "alignment_pass": true,
+      "grid_size": 32,
+      "phase": 0.35,
+      "projected_mass_delta": 0.0,
+      "solid_phi_max_delta": 0.0,
+      "solid_phi_min_delta": 0.0
+    },
+    {
+      "active_cell_count_delta": 0.0,
+      "alignment_pass": true,
+      "grid_size": 48,
+      "phase": 0.35,
+      "projected_mass_delta": 0.0,
+      "solid_phi_max_delta": 0.0,
+      "solid_phi_min_delta": 0.0
+    },
+    {
+      "active_cell_count_delta": 0.0,
+      "alignment_pass": true,
+      "grid_size": 32,
+      "phase": 0.5,
+      "projected_mass_delta": 0.0,
+      "solid_phi_max_delta": 0.0,
+      "solid_phi_min_delta": 0.0
+    },
+    {
+      "active_cell_count_delta": 0.0,
+      "alignment_pass": true,
+      "grid_size": 48,
+      "phase": 0.5,
+      "projected_mass_delta": 0.0,
+      "solid_phi_max_delta": 0.0,
+      "solid_phi_min_delta": 0.0
+    },
+    {
+      "active_cell_count_delta": 0.0,
+      "alignment_pass": true,
+      "grid_size": 32,
+      "phase": 1.0,
+      "projected_mass_delta": 0.0,
+      "solid_phi_max_delta": 0.0,
+      "solid_phi_min_delta": 0.0
+    },
+    {
+      "active_cell_count_delta": 0.0,
+      "alignment_pass": true,
+      "grid_size": 48,
+      "phase": 1.0,
+      "projected_mass_delta": 0.0,
+      "solid_phi_max_delta": 0.0,
+      "solid_phi_min_delta": 0.0
+    }
+  ],
+  "summary": {
+    "alignment_pass": true,
+    "alignment_pass_count": 10,
+    "max_active_cell_count_delta": 0.0,
+    "max_projected_mass_delta": 0.0,
+    "max_solid_phi_max_delta": 0.0,
+    "max_solid_phi_min_delta": 0.0,
+    "row_count": 10
+  }
+}

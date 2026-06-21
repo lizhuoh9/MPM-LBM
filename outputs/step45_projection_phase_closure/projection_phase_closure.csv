@@ -1,0 +1,3 @@
+grid_size,phase0_phase1_projected_mass_delta,phase0_phase1_active_cell_delta,phase0_phase1_bbox_delta,occupancy_hash_equal,closure_pass
+32,0.0,0,0.0,True,True
+48,0.0,0,0.0,True,True
