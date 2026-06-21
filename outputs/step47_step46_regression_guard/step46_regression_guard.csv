@@ -1,0 +1,10 @@
+check,pass,value,notes
+step46_report_exists,True,STEP46_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_ONE_STEP_COUPLING_SMOKE_REPORT.md,Step 46 accepted report remains present
+step46_matrix_row_count,True,4,Step 46 four-row matrix remains available
+step46_matrix_stable_count,True,4,Step 46 matrix remains stable
+step46_combined_row_exists,True,runtime_geometry_plus_wall_velocity_32_phase035_1step,Step 46 combined row remains available
+step46_state_guard_pass,True,True,Step 46 state guard remains green
+step46_artifact_large_file_count,True,0,Step 46 artifacts remain below large-file threshold
+step46_vtr_count,True,0,Step 46 still has no VTR artifacts
+step46_particle_npy_count,True,0,Step 46 still has no particle npy artifacts
+step46_geo_all_fluid_dat_count_added,True,0,Step 46 still has no geo_all_fluid dat additions

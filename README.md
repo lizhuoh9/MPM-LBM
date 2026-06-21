@@ -50,6 +50,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 44 controlled squid proxy diagnostic geometry update smoke
 - Step 45 controlled runtime geometry projection integration smoke
 - Step 46 controlled runtime geometry plus wall velocity one-step coupling smoke
+- Step 47 controlled runtime geometry plus wall velocity short-step coupling envelope
 
 ## Not Implemented
 
@@ -212,6 +213,22 @@ The default boundary_motion_mode remains static.
 The default wall_velocity_application_mode remains disabled.
 
 Step 46 records a four-row `32^3`, phase-`0.35`, one-step matrix: original static, runtime-geometry only, wall-velocity only, and runtime-geometry plus wall-velocity. It reuses the accepted Step 45 transient projection path and the accepted opt-in wall-velocity path, records quality/comparison/mass-force-bounceback diagnostics, and proves through state guards and artifact checks that no persistent geometry, default solver state, dense-field, particle, VTR, `geo_all_fluid_*.dat`, or formula update is introduced.
+
+## Step 47 Runtime Geometry Wall Velocity Short-Step Coupling Envelope Boundary
+
+Step 47 is controlled runtime geometry plus wall velocity short-step coupling envelope.
+Step 47 is opt-in and engineering-only.
+Step 47 runs a 32^3 five-step envelope.
+Step 47 does not run a full-cycle moving-geometry simulation.
+Step 47 does not persist displaced geometry.
+Step 47 does not persist projected state.
+Step 47 does not change moving bounce-back formulas.
+The default geometry_motion_mode remains static.
+The default geometry_motion_application_mode remains disabled.
+The default boundary_motion_mode remains static.
+The default wall_velocity_application_mode remains disabled.
+
+Step 47 records a four-row `32^3`, five-step, engineering-only envelope over phases `0.0`, `0.05`, `0.1`, `0.2`, and `0.35`: original static, runtime-geometry only, wall-velocity only, and runtime-geometry plus wall-velocity. It records envelope quality, component-effect, phase-progression, mass-force-bounceback, state-guard, Step 46 regression, and artifact-budget diagnostics without changing default solver behavior.
 
 ## Step 25 Intake Boundary
 

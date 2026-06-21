@@ -1,0 +1,5 @@
+row_name,runtime_geometry_projection_enabled,wall_velocity_application_enabled,rho_min_global,rho_max_global,lbm_max_v_global,bb_link_count_min,bb_max_correction_global,hydro_force_max_norm_global,max_applied_velocity_norm,wall_velocity_cap_lbm,has_nan,has_inf,envelope_pass
+original_static_32_5step,False,False,0.998996,1.001004,0.0,3888,0.0,0.0,0.0,0.01,False,False,True
+runtime_geometry_only_32_5step,True,False,0.9989755,1.0010245,0.0,2658,0.0,0.00205,0.0,0.01,False,False,True
+wall_velocity_only_32_5step,False,True,0.9982927917004111,1.0017072082995888,0.007042082995889119,3888,0.007042082995889119,4.56326978133615e-06,0.007042082995889119,0.01,False,False,True
+runtime_geometry_plus_wall_velocity_32_5step,True,True,0.9982921917004111,1.001707808299589,0.007042082995889119,2658,0.007042082995889119,0.002050114988871742,0.007042082995889119,0.01,False,False,True

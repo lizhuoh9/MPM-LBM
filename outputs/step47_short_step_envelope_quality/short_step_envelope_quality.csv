@@ -1,0 +1,11 @@
+metric,value
+combined_row_pass,True
+diagnostic_only_pass,True
+no_persistent_state_pass,True
+projection_pass,True
+quality_pass,True
+row_count,4
+row_count_pass,True
+stability_pass,True
+step_count_pass,True
+wall_velocity_pass,True

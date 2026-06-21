@@ -1,0 +1,63 @@
+{
+  "rows": [
+    {
+      "check": "step46_report_exists",
+      "notes": "Step 46 accepted report remains present",
+      "pass": true,
+      "value": "STEP46_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_ONE_STEP_COUPLING_SMOKE_REPORT.md"
+    },
+    {
+      "check": "step46_matrix_row_count",
+      "notes": "Step 46 four-row matrix remains available",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step46_matrix_stable_count",
+      "notes": "Step 46 matrix remains stable",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step46_combined_row_exists",
+      "notes": "Step 46 combined row remains available",
+      "pass": true,
+      "value": "runtime_geometry_plus_wall_velocity_32_phase035_1step"
+    },
+    {
+      "check": "step46_state_guard_pass",
+      "notes": "Step 46 state guard remains green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step46_artifact_large_file_count",
+      "notes": "Step 46 artifacts remain below large-file threshold",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step46_vtr_count",
+      "notes": "Step 46 still has no VTR artifacts",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step46_particle_npy_count",
+      "notes": "Step 46 still has no particle npy artifacts",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step46_geo_all_fluid_dat_count_added",
+      "notes": "Step 46 still has no geo_all_fluid dat additions",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "pass_count": 9,
+    "regression_pass": true,
+    "row_count": 9
+  }
+}
