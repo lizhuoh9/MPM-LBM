@@ -1,0 +1,5 @@
+row_name,runtime_geometry_projection_enabled,wall_velocity_application_enabled,phase0,closure_phase,phase0_projected_mass,closure_projected_mass,phase0_phase1_projected_mass_delta,phase0_active_cell_count,closure_active_cell_count,phase0_phase1_active_cell_delta,phase0_applied_velocity,closure_applied_velocity,phase0_phase1_applied_velocity_delta,diagnostic_only,persist_projected_state,persist_displaced_geometry,geometry_projection_closure_pass,wall_velocity_closure_pass,cycle_proxy_closure_pass,closure_pass
+original_static_32_40step,False,False,0.0,1.0,1.0,1.0,0.0,648,648,0,0.0,0.0,0.0,True,False,False,True,True,True,True
+runtime_geometry_only_32_40step,True,False,0.0,1.0,1.0,1.0,0.0,648,648,0,0.0,0.0,0.0,True,False,False,True,True,True,True
+wall_velocity_only_32_40step,False,True,0.0,1.0,1.0,1.0,0.0,648,648,0,0.0005021311353590662,0.00014722721023086792,0.00035490392512819833,True,False,False,True,True,True,True
+runtime_geometry_plus_wall_velocity_32_40step,True,True,0.0,1.0,1.0,1.0,0.0,648,648,0,0.0005021311353590662,0.00014722721023086792,0.00035490392512819833,True,False,False,True,True,True,True

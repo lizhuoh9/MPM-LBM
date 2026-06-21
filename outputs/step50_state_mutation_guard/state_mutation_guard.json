@@ -1,0 +1,100 @@
+{
+  "rows": [
+    {
+      "check": "original_geometry_hash_stable",
+      "notes": "original geometry config must not change",
+      "pass": true,
+      "value": "cfd33df0be00889460e5c2ee3669b73e1605f1eb2b2d27b5f2ac9c48df3a10d1"
+    },
+    {
+      "check": "region_mask_hash_stable",
+      "notes": "region mask assignment must not change",
+      "pass": true,
+      "value": "d2c6519395ad7c789a729511e37124f0dc65f3f79f9a0203ffc8b1cd023be0d9"
+    },
+    {
+      "check": "default_driver_state_mutation_count",
+      "notes": "Step 50 must not mutate default driver state",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "default_lbm_state_mutation_count",
+      "notes": "Step 50 must not mutate default LBM state",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "default_mpm_state_mutation_count",
+      "notes": "Step 50 must not mutate default MPM state",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "default_projection_state_mutation_count",
+      "notes": "Step 50 must not mutate default projection state",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "persistent_projected_state_count",
+      "notes": "Step 50 must not persist projected state",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "persistent_displaced_geometry_count",
+      "notes": "Step 50 must not persist displaced geometry",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "persistent_lbm_solid_vel_count",
+      "notes": "Step 50 must not persist LBM solid velocity",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "displaced_particle_output_count",
+      "notes": "Step 50 must not write displaced particles",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "dense_displacement_output_count",
+      "notes": "Step 50 must not write dense displacement fields",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "vtr_output_count",
+      "notes": "Step 50 must not write VTR",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "geo_all_fluid_dat_count_added",
+      "notes": "Step 50 must not add geo_all_fluid dat artifacts",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "default_driver_state_mutation_count": 0,
+    "default_lbm_state_mutation_count": 0,
+    "default_mpm_state_mutation_count": 0,
+    "default_projection_state_mutation_count": 0,
+    "dense_displacement_output_count": 0,
+    "displaced_particle_output_count": 0,
+    "geo_all_fluid_dat_count_added": 0,
+    "guard_pass": true,
+    "original_geometry_hash_after": "cfd33df0be00889460e5c2ee3669b73e1605f1eb2b2d27b5f2ac9c48df3a10d1",
+    "original_geometry_hash_before": "cfd33df0be00889460e5c2ee3669b73e1605f1eb2b2d27b5f2ac9c48df3a10d1",
+    "persistent_displaced_geometry_count": 0,
+    "persistent_lbm_solid_vel_count": 0,
+    "persistent_projected_state_count": 0,
+    "region_mask_hash_after": "d2c6519395ad7c789a729511e37124f0dc65f3f79f9a0203ffc8b1cd023be0d9",
+    "region_mask_hash_before": "d2c6519395ad7c789a729511e37124f0dc65f3f79f9a0203ffc8b1cd023be0d9",
+    "vtr_output_count": 0
+  }
+}

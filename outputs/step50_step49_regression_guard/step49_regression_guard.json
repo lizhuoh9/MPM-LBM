@@ -1,0 +1,63 @@
+{
+  "rows": [
+    {
+      "check": "step49_report_exists",
+      "notes": "accepted Step 49 report must remain present",
+      "pass": true,
+      "value": "D:\\working\\squid robot\\LBM\\MPM-LBM\\STEP49_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_20STEP_COUPLING_ENVELOPE_REPORT.md"
+    },
+    {
+      "check": "step49_matrix_row_count",
+      "notes": "Step 49 matrix must still have four rows",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step49_matrix_stable_count",
+      "notes": "Step 49 matrix must still be stable",
+      "pass": true,
+      "value": 4
+    },
+    {
+      "check": "step49_early_refill_pass",
+      "notes": "Step 49 early refill diagnostics must remain green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step49_state_guard_pass",
+      "notes": "Step 49 state guard must remain green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step49_large_file_count",
+      "notes": "Step 49 must still have no large files",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step49_vtr_count",
+      "notes": "Step 49 must still have no VTR output",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step49_particle_npy_count",
+      "notes": "Step 49 must still have no particle NPY output",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step49_geo_all_fluid_dat_count_added",
+      "notes": "Step 49 must still have no geo_all_fluid dat output",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "pass_count": 9,
+    "regression_pass": true,
+    "row_count": 9
+  }
+}

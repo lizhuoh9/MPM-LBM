@@ -1,0 +1,10 @@
+check,pass,value,notes
+step49_report_exists,True,D:\working\squid robot\LBM\MPM-LBM\STEP49_CONTROLLED_RUNTIME_GEOMETRY_WALL_VELOCITY_20STEP_COUPLING_ENVELOPE_REPORT.md,accepted Step 49 report must remain present
+step49_matrix_row_count,True,4,Step 49 matrix must still have four rows
+step49_matrix_stable_count,True,4,Step 49 matrix must still be stable
+step49_early_refill_pass,True,True,Step 49 early refill diagnostics must remain green
+step49_state_guard_pass,True,True,Step 49 state guard must remain green
+step49_large_file_count,True,0,Step 49 must still have no large files
+step49_vtr_count,True,0,Step 49 must still have no VTR output
+step49_particle_npy_count,True,0,Step 49 must still have no particle NPY output
+step49_geo_all_fluid_dat_count_added,True,0,Step 49 must still have no geo_all_fluid dat output

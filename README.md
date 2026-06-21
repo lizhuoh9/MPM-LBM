@@ -53,6 +53,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 47 controlled runtime geometry plus wall velocity short-step coupling envelope
 - Step 48 controlled runtime geometry plus wall velocity 10-step coupling envelope
 - Step 49 controlled runtime geometry plus wall velocity 20-step coupling envelope
+- Step 50 controlled runtime geometry plus wall velocity one-cycle diagnostic envelope
 
 ## Not Implemented
 
@@ -600,6 +601,20 @@ The default geometry_motion_application_mode remains disabled.
 The default boundary_motion_mode remains static.
 The default wall_velocity_application_mode remains disabled.
 See docs/49_controlled_runtime_geometry_wall_velocity_20step_coupling_envelope.md.
+
+Step 50 is controlled runtime geometry plus wall velocity one-cycle coupling diagnostic envelope.
+Step 50 is opt-in and engineering-only.
+Step 50 runs a 32^3 one-cycle diagnostic envelope.
+Step 50 remains non-persistent.
+Step 50 does not implement a production moving-geometry solver.
+Step 50 does not validate real jet propulsion.
+Step 50 does not implement squid swimming.
+Step 50 does not change moving bounce-back formulas.
+The default geometry_motion_mode remains static.
+The default geometry_motion_application_mode remains disabled.
+The default boundary_motion_mode remains static.
+The default wall_velocity_application_mode remains disabled.
+See docs/50_controlled_runtime_geometry_wall_velocity_one_cycle_coupling_diagnostic_envelope.md.
 
 ## Upstream LBM Note
 

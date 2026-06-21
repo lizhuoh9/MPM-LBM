@@ -1,0 +1,67 @@
+{
+  "rows": [
+    {
+      "active_cell_delta_max_abs": 205.0,
+      "applied_velocity_delta_max_abs": 0.0,
+      "bb_link_count_delta_max_abs": 1230.0,
+      "comparison": "geometry_only_minus_original_static",
+      "comparison_pass": true,
+      "hydro_force_delta_max_abs": 0.00205,
+      "left_row": "runtime_geometry_only_32_40step",
+      "projected_mass_delta_max_abs": 0.0,
+      "right_row": "original_static_32_40step"
+    },
+    {
+      "active_cell_delta_max_abs": 0.0,
+      "applied_velocity_delta_max_abs": 0.007042082995889119,
+      "bb_link_count_delta_max_abs": 0.0,
+      "comparison": "wall_velocity_only_minus_original_static",
+      "comparison_pass": true,
+      "hydro_force_delta_max_abs": 4.56326978133615e-06,
+      "left_row": "wall_velocity_only_32_40step",
+      "projected_mass_delta_max_abs": 0.0,
+      "right_row": "original_static_32_40step"
+    },
+    {
+      "active_cell_delta_max_abs": 205.0,
+      "applied_velocity_delta_max_abs": 0.007042082995889119,
+      "bb_link_count_delta_max_abs": 1230.0,
+      "comparison": "combined_minus_original_static",
+      "comparison_pass": true,
+      "hydro_force_delta_max_abs": 0.002050114988871742,
+      "left_row": "runtime_geometry_plus_wall_velocity_32_40step",
+      "projected_mass_delta_max_abs": 0.0,
+      "right_row": "original_static_32_40step"
+    },
+    {
+      "active_cell_delta_max_abs": 0.0,
+      "applied_velocity_delta_max_abs": 0.007042082995889119,
+      "bb_link_count_delta_max_abs": 0.0,
+      "comparison": "combined_minus_geometry_only",
+      "comparison_pass": true,
+      "hydro_force_delta_max_abs": 4.56326978133615e-06,
+      "left_row": "runtime_geometry_plus_wall_velocity_32_40step",
+      "projected_mass_delta_max_abs": 0.0,
+      "right_row": "runtime_geometry_only_32_40step"
+    },
+    {
+      "active_cell_delta_max_abs": 205.0,
+      "applied_velocity_delta_max_abs": 0.0,
+      "bb_link_count_delta_max_abs": 1230.0,
+      "comparison": "combined_minus_wall_velocity_only",
+      "comparison_pass": true,
+      "hydro_force_delta_max_abs": 0.00205,
+      "left_row": "runtime_geometry_plus_wall_velocity_32_40step",
+      "projected_mass_delta_max_abs": 0.0,
+      "right_row": "wall_velocity_only_32_40step"
+    }
+  ],
+  "summary": {
+    "combined_has_geometry_and_wall_velocity": true,
+    "comparison_count": 5,
+    "comparison_pass": true,
+    "comparison_pass_count": 5,
+    "geometry_effect_active_cell_delta_nonzero": true,
+    "wall_velocity_effect_applied_velocity_nonzero": true
+  }
+}
