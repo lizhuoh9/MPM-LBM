@@ -8,4 +8,4 @@ True,imports_do_not_create_outputs,True,,True
 64,legacy_and_canonical_symbols_same_object,64,,True
 0,canonical_modules_have_no_driver_calls,0,,True
 0,step63_67_driver_output_dirs_absent,0,,True
-step_specific_or_experiment_runner,real_geometry_feasibility_classified_not_moved_to_sim,step_specific_or_experiment_runner,Batch A classifies this existing file but does not execute or canonicalize it.,True
+step_specific_or_experiment_runner,real_geometry_feasibility_classified_not_moved_to_sim,step_specific_or_experiment_runner,Batch A classified this existing file; Step68 may move it to experiments/steps while keeping it out of sim.,True

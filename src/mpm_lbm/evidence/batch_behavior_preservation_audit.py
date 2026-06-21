@@ -124,16 +124,21 @@ def forbidden_output_dirs_absent_row(root: Path) -> dict:
 
 def real_geometry_feasibility_classification_row(root: Path) -> dict:
     source = root / "src" / "real_geometry_feasibility.py"
+    experiment = root / "experiments" / "steps" / "real_geometry_feasibility" / "feasibility.py"
     forbidden_target = root / "src" / "mpm_lbm" / "sim" / "geometry" / "real_geometry_feasibility.py"
     text = source.read_text(encoding="utf-8-sig") if source.is_file() else ""
-    classified_as_runner = "FSIDriver3D" in text and ".run(" in text
+    experiment_text = experiment.read_text(encoding="utf-8-sig") if experiment.is_file() else ""
+    source_is_shim = "Compatibility shim" in text and "experiments.steps.real_geometry_feasibility.feasibility" in text
+    classified_in_source = "FSIDriver3D" in text and ".run(" in text
+    classified_in_experiment = "FSIDriver3D" in experiment_text and ".run(" in experiment_text
+    classified_as_runner = classified_in_source or (source_is_shim and classified_in_experiment)
     passed = bool(source.is_file() and classified_as_runner and not forbidden_target.exists())
     return {
         "check": "real_geometry_feasibility_classified_not_moved_to_sim",
         "expected": "step_specific_or_experiment_runner",
         "actual": "step_specific_or_experiment_runner" if classified_as_runner else "unclassified",
         "pass": passed,
-        "notes": "Batch A classifies this existing file but does not execute or canonicalize it.",
+        "notes": "Batch A classified this existing file; Step68 may move it to experiments/steps while keeping it out of sim.",
     }
 
 

@@ -1,0 +1,176 @@
+{
+  "rows": [
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "baseline_tests/run_step68_artifact_manifest.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "baseline_tests/run_step68_experiment_boundary_audit.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "baseline_tests/run_step68_import_execution_audit.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "baseline_tests/run_step68_legacy_shim_audit.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "baseline_tests/run_step68_step63_67_regression_guard.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "baseline_tests/run_step68_step_specific_proxy_migration_audit.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "baseline_tests/run_step68_step_specific_proxy_policy_audit.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/experiment_boundary_audit.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step68_regression_guard.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step_specific_proxy_import_execution_audit.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step_specific_proxy_legacy_shim_audit.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step_specific_proxy_migration_audit.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step_specific_proxy_policy_audit.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "tests/test_step68_experiment_boundary_contract.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "tests/test_step68_import_execution_contract.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "tests/test_step68_legacy_shim_contract.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "tests/test_step68_step63_67_regression_contract.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "tests/test_step68_step_specific_proxy_migration_contract.py"
+    },
+    {
+      "driver_call_hits": [],
+      "driver_initialize_call_count": 0,
+      "driver_run_call_count": 0,
+      "driver_step_once_call_count": 0,
+      "pass": true,
+      "path": "tests/test_step68_step_specific_proxy_policy_contract.py"
+    }
+  ],
+  "summary": {
+    "driver_initialize_call_count": 0,
+    "driver_run_call_count": 0,
+    "driver_step_once_call_count": 0,
+    "experiment_boundary_audit_pass": true,
+    "experiment_file_count": 34,
+    "pass_count": 19,
+    "physics_feature_expansion": false,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "quarantined_driver_helper_count": 1,
+    "quarantined_driver_helper_executed": false,
+    "real_geometry_feasibility_under_sim": false,
+    "row_count": 19,
+    "runtime_code_changed": false,
+    "solver_behavior_changed": false,
+    "step68_driver_run_output_dir_count": 0,
+    "step68_particle_npy_count": 0,
+    "step68_vtr_count": 0
+  }
+}

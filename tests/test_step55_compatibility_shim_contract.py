@@ -33,8 +33,10 @@ def test_step55_lazy_compatibility_surfaces_are_source_visible():
     assert "build_repository_evidence_index" in index
 
     step52 = read_text("experiments/steps/step52_48_feasibility_proxy/envelope.py")
-    assert '_LEGACY_MODULE = "src.runtime_geometry_wall_velocity_48_feasibility_envelope"' in step52
+    legacy_step52 = read_text("src/runtime_geometry_wall_velocity_48_feasibility_envelope.py")
+    assert "legacy_getattr" not in step52
     assert "run_48_feasibility_matrix" in step52
+    assert "from experiments.steps.step52_48_feasibility_proxy.envelope import *" in legacy_step52
 
 
 def read_json(path):

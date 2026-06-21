@@ -1,0 +1,14 @@
+metric,value
+extra_policy_path_count,0
+extra_policy_paths,[]
+inventory_source,outputs/step63_remaining_solver_inventory_audit/audit.json
+inventory_step_specific_proxy_remaining_count,34
+missing_inventory_path_count,0
+missing_inventory_paths,[]
+pass_count,34
+physics_feature_expansion,False
+policy_migration_count,34
+row_count,34
+runtime_code_changed,False
+solver_behavior_changed,False
+step68_proxy_policy_audit_pass,True

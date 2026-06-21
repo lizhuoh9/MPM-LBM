@@ -1,0 +1,5 @@
+{
+  "migration_policy_path": "configs/step68_step_specific_proxy_migration_policy.json",
+  "policy_id": "step68_legacy_shim_policy",
+  "step": 68
+}

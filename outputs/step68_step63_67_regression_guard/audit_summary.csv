@@ -1,0 +1,7 @@
+metric,value
+pass_count,8
+row_count,8
+step63_67_pass_count,8
+step63_67_required_artifact_count,8
+step68_regression_guard_pass,True
+volatile_size_snapshot_embedded,False

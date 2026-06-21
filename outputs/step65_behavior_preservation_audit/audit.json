@@ -67,7 +67,7 @@
       "actual": "step_specific_or_experiment_runner",
       "check": "real_geometry_feasibility_classified_not_moved_to_sim",
       "expected": "step_specific_or_experiment_runner",
-      "notes": "Batch A classifies this existing file but does not execute or canonicalize it.",
+      "notes": "Batch A classified this existing file; Step68 may move it to experiments/steps while keeping it out of sim.",
       "pass": true
     }
   ],

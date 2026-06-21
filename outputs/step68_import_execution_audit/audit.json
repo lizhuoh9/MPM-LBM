@@ -1,0 +1,3185 @@
+{
+  "rows": [
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.real_geometry_feasibility.feasibility",
+      "legacy_import_pass": true,
+      "legacy_module": "src.real_geometry_feasibility",
+      "pass": true,
+      "same_object": true,
+      "symbol": "PROJECTION_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.real_geometry_feasibility.feasibility",
+      "legacy_import_pass": true,
+      "legacy_module": "src.real_geometry_feasibility",
+      "pass": true,
+      "same_object": true,
+      "symbol": "SHORT_DRIVER_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.real_geometry_feasibility.feasibility",
+      "legacy_import_pass": true,
+      "legacy_module": "src.real_geometry_feasibility",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_projection_only_scale_case"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.real_geometry_feasibility.feasibility",
+      "legacy_import_pass": true,
+      "legacy_module": "src.real_geometry_feasibility",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_short_driver_case"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.real_geometry_feasibility.feasibility",
+      "legacy_import_pass": true,
+      "legacy_module": "src.real_geometry_feasibility",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_short_driver_diagnostics"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.real_geometry_feasibility.feasibility",
+      "legacy_import_pass": true,
+      "legacy_module": "src.real_geometry_feasibility",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_step25_projection_smoke"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.real_geometry_feasibility.feasibility",
+      "legacy_import_pass": true,
+      "legacy_module": "src.real_geometry_feasibility",
+      "pass": true,
+      "same_object": true,
+      "symbol": "assert_short_driver_row"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ROW_DESCRIPTOR_PATHS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling",
+      "pass": true,
+      "same_object": true,
+      "symbol": "COUPLING_SMOKE_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_coupling_smoke_inputs"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_coupling_smoke_matrix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling",
+      "pass": true,
+      "same_object": true,
+      "symbol": "smoke_row"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_coupling_smoke_matrix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_coupling_smoke_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_csv_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_json"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling",
+      "pass": true,
+      "same_object": true,
+      "symbol": "read_json"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_COUPLING_SMOKE_ID"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_PHASE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_N_GRID"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_N_LBM_STEPS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_MPM_SUBSTEPS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_COUPLING_MODE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_REACTION_TRANSFER_MODE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "MUTATION_FLAG_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "RuntimeGeometryWallVelocityCouplingSmokeConfig"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_coupling_smoke_config"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_coupling_smoke_config_validation"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flags"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flag_enabled_count"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_coupling_smoke_quality"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_smoke_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mass_force_bounceback_diagnostics"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summary_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ROW_DESCRIPTOR_PATHS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ENVELOPE_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_short_step_envelope_inputs"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "build_step_phase_sequence"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_short_step_envelope_matrix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_short_step_row"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_short_step_envelope_matrix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_short_step_envelope_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_csv_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_json"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "read_json"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_ENVELOPE_ID"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_PHASE_SEQUENCE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_N_GRID"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_N_LBM_STEPS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_MPM_SUBSTEPS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_COUPLING_MODE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_REACTION_TRANSFER_MODE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "MUTATION_FLAG_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "RuntimeGeometryWallVelocityShortStepEnvelopeConfig"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_short_step_envelope_config"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_short_step_envelope_config_validation"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flags"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flag_enabled_count"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_short_step_envelope_quality"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_short_step_components"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_phase_progression"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mass_force_bounceback_envelope"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summary_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "STATE_GUARD_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compute_step47_state_mutation_guard"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "forbidden_output_counts"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_step47_state_mutation_guard"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "STATE_GUARD_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compute_step46_state_mutation_guard"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "forbidden_output_counts"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_step46_state_mutation_guard"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_ENVELOPE_ID"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_PHASE_SEQUENCE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_N_GRID"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_N_LBM_STEPS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_MPM_SUBSTEPS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_COUPLING_MODE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_REACTION_TRANSFER_MODE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "MUTATION_FLAG_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "RuntimeGeometryWallVelocityTenStepEnvelopeConfig"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_ten_step_envelope_config"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_ten_step_envelope_config_validation"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flags"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flag_enabled_count"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "PREFIX_PHASES"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_ten_step_envelope_quality"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_ten_step_components"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_ten_step_phase_progression"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mass_force_bounceback_ten_step_envelope"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_step47_prefix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summary_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ROW_DESCRIPTOR_PATHS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ROW_NAMES"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ENVELOPE_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_ten_step_envelope_inputs"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "build_ten_step_phase_sequence"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_ten_step_envelope_matrix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_ten_step_row"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_ten_step_envelope_matrix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_ten_step_envelope_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_csv_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_json"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "read_json"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "STATE_GUARD_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compute_step48_state_mutation_guard"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "forbidden_output_counts"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step48_10step_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_step48_state_mutation_guard"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_ENVELOPE_ID"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_PHASE_SEQUENCE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_N_GRID"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_N_LBM_STEPS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_MPM_SUBSTEPS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_COUPLING_MODE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_REACTION_TRANSFER_MODE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "MUTATION_FLAG_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "RuntimeGeometryWallVelocityTwentyStepEnvelopeConfig"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_twenty_step_envelope_config"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_twenty_step_envelope_config_validation"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flags"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flag_enabled_count"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "PREFIX_PHASES"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "TRANSITION_PHASES"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_twenty_step_envelope_quality"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_twenty_step_components"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_twenty_step_phase_progression"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_early_refill_transition"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mass_force_bounceback_twenty_step_envelope"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_step48_prefix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summary_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ROW_DESCRIPTOR_PATHS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ROW_NAMES"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ENVELOPE_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_twenty_step_envelope_inputs"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "build_twenty_step_phase_sequence"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_twenty_step_envelope_matrix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_twenty_step_row"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_twenty_step_envelope_matrix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_twenty_step_envelope_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_csv_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_json"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "read_json"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "STATE_GUARD_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compute_step49_state_mutation_guard"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "forbidden_output_counts"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step49_20step_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_step49_state_mutation_guard"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_ENVELOPE_ID"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_PHASE_SEQUENCE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_CLOSURE_PHASE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_CYCLE_PERIOD_STEPS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_N_GRID"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_N_LBM_STEPS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_MPM_SUBSTEPS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_COUPLING_MODE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_REACTION_TRANSFER_MODE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "MUTATION_FLAG_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "RuntimeGeometryWallVelocityOneCycleEnvelopeConfig"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_one_cycle_envelope_config"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_one_cycle_envelope_config_validation"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flags"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flag_enabled_count"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "PHASE_SEQUENCE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "PREFIX_PHASES"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "CONTRACTION_PHASES"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "REFILL_PHASES"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "WALL_VELOCITY_CLOSURE_TOLERANCE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_one_cycle_envelope_quality"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_one_cycle_components"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_one_cycle_phase_progression"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_contraction_refill_segments"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_cycle_closure"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mass_force_bounceback_one_cycle_envelope"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_step49_prefix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summary_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ROW_DESCRIPTOR_PATHS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ROW_NAMES"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "WALL_VELOCITY_CLOSURE_TOLERANCE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ENVELOPE_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_one_cycle_envelope_inputs"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "build_one_cycle_phase_sequence"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_one_cycle_envelope_matrix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "build_one_cycle_closure_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_one_cycle_row"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_one_cycle_envelope_matrix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_one_cycle_envelope_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_csv_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_json"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "read_json"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "STATE_GUARD_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compute_step50_state_mutation_guard"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "forbidden_output_counts"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_step50_state_mutation_guard"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_TRANSFER_COMPARISON_ID"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_PHASE_SEQUENCE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_CLOSURE_PHASE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_CYCLE_PERIOD_STEPS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_N_GRID"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_N_LBM_STEPS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_MPM_SUBSTEPS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_TRANSFER_MODES"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_COUPLING_MODE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_LINK_AREA_POLICY"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_LINK_AREA_SCALE_MIN"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_LINK_AREA_SCALE_MAX"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "MUTATION_FLAG_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "RuntimeGeometryWallVelocityTransferConfig"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_transfer_comparison_config"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_transfer_comparison_config_validation"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flags"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flag_enabled_count"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "PHASE_SEQUENCE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "WALL_VELOCITY_CLOSURE_TOLERANCE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "COMPONENT_NAMES"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_transfer_comparison"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_transfer_envelope_quality"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_engineering_link_area"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_engineering_link_area_comparison"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_link_area_envelope"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_transfer_component_effects"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_transfer_cycle_closure"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_step50_engineering_prefix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mass_force_bounceback_transfer_envelope"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summary_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ROW_DESCRIPTOR_PATHS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ROW_NAMES"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "COMPONENT_NAMES"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "WALL_VELOCITY_CLOSURE_TOLERANCE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "TRANSFER_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_transfer_comparison_config"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_transfer_comparison_inputs"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "build_transfer_row_descriptors"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_transfer_comparison_matrix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "build_transfer_closure_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_transfer_row"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_transfer_comparison_matrix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_transfer_envelope_outputs"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_csv_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_json"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "read_json"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "STATE_GUARD_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compute_step51_state_mutation_guard"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "forbidden_output_counts"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_step51_state_mutation_guard"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_FEASIBILITY_ID"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_PHASE_SEQUENCE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_N_GRID"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_N_LBM_STEPS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_MPM_SUBSTEPS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_CYCLE_PERIOD_STEPS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_CLOSURE_PHASE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_TRANSFER_MODE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "EXPECTED_COUPLING_MODE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "MUTATION_FLAG_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "RuntimeGeometryWallVelocity48FeasibilityConfig"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "validate_48_feasibility_config"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_48_feasibility_config_validation"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flags"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mutation_flag_enabled_count"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "PHASE_SEQUENCE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "WALL_VELOCITY_CLOSURE_TOLERANCE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_48_feasibility_quality"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_48_static_combined"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_48_vs_step51_engineering"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_48_cycle_closure"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "mass_force_bounceback_48_envelope"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summary_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ROW_DESCRIPTOR_PATHS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ROW_NAMES"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "FEASIBILITY_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "WALL_VELOCITY_CLOSURE_TOLERANCE"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_48_feasibility_config"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_48_feasibility_inputs"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_48_feasibility_matrix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "build_48_closure_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_48_feasibility_row"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_48_feasibility_matrix"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_48_feasibility_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_csv_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_json"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.envelope",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "read_json"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "STATE_GUARD_FIELDS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compute_step52_state_mutation_guard"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "forbidden_output_counts"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.state_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_state_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_step52_state_mutation_guard"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "SupportScalingAuditConfig"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_reference_artifacts_config"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.config",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_metric_semantics_policy"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.audit",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_audit",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_bundle"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.audit",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_audit",
+      "pass": true,
+      "same_object": true,
+      "symbol": "reference_validation_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.audit",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_audit",
+      "pass": true,
+      "same_object": true,
+      "symbol": "phasewise_support_scaling_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.audit",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_audit",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_phasewise_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.audit",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_audit",
+      "pass": true,
+      "same_object": true,
+      "symbol": "active_cell_semantics_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.audit",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_audit",
+      "pass": true,
+      "same_object": true,
+      "symbol": "applied_wall_support_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.audit",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_audit",
+      "pass": true,
+      "same_object": true,
+      "symbol": "bounceback_support_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.audit",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_audit",
+      "pass": true,
+      "same_object": true,
+      "symbol": "step52_regression_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ratio"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "finite_number"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "finite_values"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "row_by_name"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "step_by_phase"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "max_step_value"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "min_step_value"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "bool_text"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.diagnostics",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "all_ratio_fields_finite"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.claim_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_claim_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "REQUIRED_FALSE_FLAGS"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.claim_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_claim_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "claim_guard_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.claim_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_claim_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "step53_claim_surface_files"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.claim_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_claim_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "required_flag_rows"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.claim_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_claim_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "step53_json_outputs"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.claim_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_claim_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "force_impulse_interpretation"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.claim_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_claim_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "forbidden_positive_claims"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.claim_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_claim_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "flatten_dict"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.artifact_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_artifact_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "LARGE_FILE_THRESHOLD_BYTES"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.artifact_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_artifact_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "build_step53_artifact_manifest"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.artifact_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_artifact_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "repo_files"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.artifact_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_artifact_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "manifest_row"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.artifact_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_artifact_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "is_step53_related"
+    },
+    {
+      "error": "",
+      "experiment_import_pass": true,
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.artifact_guard",
+      "legacy_import_pass": true,
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_artifact_guard",
+      "pass": true,
+      "same_object": true,
+      "symbol": "private_absolute_path_count"
+    }
+  ],
+  "summary": {
+    "experiment_import_pass_count": 317,
+    "legacy_import_pass_count": 317,
+    "output_snapshot_unchanged": true,
+    "pass_count": 317,
+    "row_count": 317,
+    "same_object_count": 317,
+    "solver_run": false,
+    "step68_import_execution_audit_pass": true,
+    "symbol_count": 317
+  }
+}

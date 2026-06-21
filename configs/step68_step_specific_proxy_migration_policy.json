@@ -1,0 +1,2491 @@
+{
+  "base_commit": "f28cfc8fb3a3811220c6d98472198a3187ebda41",
+  "expected_inventory_count": 34,
+  "forbidden_experiment_tokens": [
+    "legacy_getattr",
+    "_LEGACY_MODULE",
+    "BRIDGE_IS_TEMPORARY_UNTIL_STEP59",
+    "Implementation remains legacy"
+  ],
+  "inventory_source": "outputs/step63_remaining_solver_inventory_audit/audit.json",
+  "legacy_shim_required_phrase": "Compatibility shim",
+  "max_nonblank_lines_per_shim": 6,
+  "migrations": [
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.real_geometry_feasibility.feasibility",
+      "experiment_path": "experiments/steps/real_geometry_feasibility/feasibility.py",
+      "legacy_module": "src.real_geometry_feasibility",
+      "legacy_path": "src/real_geometry_feasibility.py",
+      "package": "real_geometry_feasibility",
+      "public_symbols": [
+        "PROJECTION_FIELDS",
+        "SHORT_DRIVER_FIELDS",
+        "run_projection_only_scale_case",
+        "run_short_driver_case",
+        "summarize_short_driver_diagnostics",
+        "compare_step25_projection_smoke",
+        "assert_short_driver_row"
+      ],
+      "quarantined_historical_driver_helper": true,
+      "required_tokens": [
+        "def run_projection_only_scale_case",
+        "def run_short_driver_case",
+        "def summarize_short_driver_diagnostics",
+        "def compare_step25_projection_smoke",
+        "def assert_short_driver_row"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "PROJECTION_FIELDS"
+        },
+        {
+          "kind": "constant",
+          "name": "SHORT_DRIVER_FIELDS"
+        },
+        {
+          "kind": "function",
+          "name": "run_projection_only_scale_case"
+        },
+        {
+          "kind": "function",
+          "name": "run_short_driver_case"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_short_driver_diagnostics"
+        },
+        {
+          "kind": "function",
+          "name": "compare_step25_projection_smoke"
+        },
+        {
+          "kind": "function",
+          "name": "assert_short_driver_row"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling",
+      "experiment_path": "experiments/steps/runtime_geometry_wall_velocity_shared/coupling.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling",
+      "legacy_path": "src/runtime_geometry_wall_velocity_coupling.py",
+      "package": "runtime_geometry_wall_velocity_shared",
+      "public_symbols": [
+        "ROW_DESCRIPTOR_PATHS",
+        "COUPLING_SMOKE_FIELDS",
+        "load_coupling_smoke_inputs",
+        "run_coupling_smoke_matrix",
+        "smoke_row",
+        "summarize_coupling_smoke_matrix",
+        "write_coupling_smoke_rows",
+        "write_csv_rows",
+        "write_json",
+        "read_json"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def load_coupling_smoke_inputs",
+        "def run_coupling_smoke_matrix",
+        "def smoke_row",
+        "def summarize_coupling_smoke_matrix",
+        "def write_coupling_smoke_rows",
+        "def write_csv_rows",
+        "def write_json",
+        "def read_json"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "ROW_DESCRIPTOR_PATHS"
+        },
+        {
+          "kind": "constant",
+          "name": "COUPLING_SMOKE_FIELDS"
+        },
+        {
+          "kind": "function",
+          "name": "load_coupling_smoke_inputs"
+        },
+        {
+          "kind": "function",
+          "name": "run_coupling_smoke_matrix"
+        },
+        {
+          "kind": "function",
+          "name": "smoke_row"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_coupling_smoke_matrix"
+        },
+        {
+          "kind": "function",
+          "name": "write_coupling_smoke_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_csv_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_json"
+        },
+        {
+          "kind": "function",
+          "name": "read_json"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.coupling_config",
+      "experiment_path": "experiments/steps/runtime_geometry_wall_velocity_shared/coupling_config.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_coupling_config",
+      "legacy_path": "src/runtime_geometry_wall_velocity_coupling_config.py",
+      "package": "runtime_geometry_wall_velocity_shared",
+      "public_symbols": [
+        "EXPECTED_COUPLING_SMOKE_ID",
+        "EXPECTED_PHASE",
+        "EXPECTED_N_GRID",
+        "EXPECTED_N_LBM_STEPS",
+        "EXPECTED_MPM_SUBSTEPS",
+        "EXPECTED_COUPLING_MODE",
+        "EXPECTED_REACTION_TRANSFER_MODE",
+        "MUTATION_FLAG_FIELDS",
+        "RuntimeGeometryWallVelocityCouplingSmokeConfig",
+        "validate_coupling_smoke_config",
+        "summarize_coupling_smoke_config_validation",
+        "mutation_flags",
+        "mutation_flag_enabled_count"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "class RuntimeGeometryWallVelocityCouplingSmokeConfig",
+        "def validate_coupling_smoke_config",
+        "def summarize_coupling_smoke_config_validation",
+        "def mutation_flags",
+        "def mutation_flag_enabled_count"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "EXPECTED_COUPLING_SMOKE_ID"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_PHASE"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_N_GRID"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_N_LBM_STEPS"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_MPM_SUBSTEPS"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_COUPLING_MODE"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_REACTION_TRANSFER_MODE"
+        },
+        {
+          "kind": "constant",
+          "name": "MUTATION_FLAG_FIELDS"
+        },
+        {
+          "kind": "class",
+          "name": "RuntimeGeometryWallVelocityCouplingSmokeConfig"
+        },
+        {
+          "kind": "function",
+          "name": "validate_coupling_smoke_config"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_coupling_smoke_config_validation"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flags"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flag_enabled_count"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.diagnostics",
+      "experiment_path": "experiments/steps/runtime_geometry_wall_velocity_shared/diagnostics.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_diagnostics",
+      "legacy_path": "src/runtime_geometry_wall_velocity_diagnostics.py",
+      "package": "runtime_geometry_wall_velocity_shared",
+      "public_symbols": [
+        "summarize_coupling_smoke_quality",
+        "compare_smoke_rows",
+        "mass_force_bounceback_diagnostics",
+        "summary_rows"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def summarize_coupling_smoke_quality",
+        "def compare_smoke_rows",
+        "def mass_force_bounceback_diagnostics",
+        "def summary_rows"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "function",
+          "name": "summarize_coupling_smoke_quality"
+        },
+        {
+          "kind": "function",
+          "name": "compare_smoke_rows"
+        },
+        {
+          "kind": "function",
+          "name": "mass_force_bounceback_diagnostics"
+        },
+        {
+          "kind": "function",
+          "name": "summary_rows"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope",
+      "experiment_path": "experiments/steps/runtime_geometry_wall_velocity_shared/envelope.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope",
+      "legacy_path": "src/runtime_geometry_wall_velocity_envelope.py",
+      "package": "runtime_geometry_wall_velocity_shared",
+      "public_symbols": [
+        "ROW_DESCRIPTOR_PATHS",
+        "ENVELOPE_FIELDS",
+        "load_short_step_envelope_inputs",
+        "build_step_phase_sequence",
+        "run_short_step_envelope_matrix",
+        "run_short_step_row",
+        "summarize_short_step_envelope_matrix",
+        "write_short_step_envelope_rows",
+        "write_csv_rows",
+        "write_json",
+        "read_json"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def load_short_step_envelope_inputs",
+        "def build_step_phase_sequence",
+        "def run_short_step_envelope_matrix",
+        "def run_short_step_row",
+        "def summarize_short_step_envelope_matrix",
+        "def write_short_step_envelope_rows",
+        "def write_csv_rows",
+        "def write_json",
+        "def read_json"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "ROW_DESCRIPTOR_PATHS"
+        },
+        {
+          "kind": "constant",
+          "name": "ENVELOPE_FIELDS"
+        },
+        {
+          "kind": "function",
+          "name": "load_short_step_envelope_inputs"
+        },
+        {
+          "kind": "function",
+          "name": "build_step_phase_sequence"
+        },
+        {
+          "kind": "function",
+          "name": "run_short_step_envelope_matrix"
+        },
+        {
+          "kind": "function",
+          "name": "run_short_step_row"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_short_step_envelope_matrix"
+        },
+        {
+          "kind": "function",
+          "name": "write_short_step_envelope_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_csv_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_json"
+        },
+        {
+          "kind": "function",
+          "name": "read_json"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_config",
+      "experiment_path": "experiments/steps/runtime_geometry_wall_velocity_shared/envelope_config.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_config",
+      "legacy_path": "src/runtime_geometry_wall_velocity_envelope_config.py",
+      "package": "runtime_geometry_wall_velocity_shared",
+      "public_symbols": [
+        "EXPECTED_ENVELOPE_ID",
+        "EXPECTED_PHASE_SEQUENCE",
+        "EXPECTED_N_GRID",
+        "EXPECTED_N_LBM_STEPS",
+        "EXPECTED_MPM_SUBSTEPS",
+        "EXPECTED_COUPLING_MODE",
+        "EXPECTED_REACTION_TRANSFER_MODE",
+        "MUTATION_FLAG_FIELDS",
+        "RuntimeGeometryWallVelocityShortStepEnvelopeConfig",
+        "validate_short_step_envelope_config",
+        "summarize_short_step_envelope_config_validation",
+        "mutation_flags",
+        "mutation_flag_enabled_count"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "class RuntimeGeometryWallVelocityShortStepEnvelopeConfig",
+        "def validate_short_step_envelope_config",
+        "def summarize_short_step_envelope_config_validation",
+        "def mutation_flags",
+        "def mutation_flag_enabled_count"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "EXPECTED_ENVELOPE_ID"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_PHASE_SEQUENCE"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_N_GRID"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_N_LBM_STEPS"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_MPM_SUBSTEPS"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_COUPLING_MODE"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_REACTION_TRANSFER_MODE"
+        },
+        {
+          "kind": "constant",
+          "name": "MUTATION_FLAG_FIELDS"
+        },
+        {
+          "kind": "class",
+          "name": "RuntimeGeometryWallVelocityShortStepEnvelopeConfig"
+        },
+        {
+          "kind": "function",
+          "name": "validate_short_step_envelope_config"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_short_step_envelope_config_validation"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flags"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flag_enabled_count"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_diagnostics",
+      "experiment_path": "experiments/steps/runtime_geometry_wall_velocity_shared/envelope_diagnostics.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_diagnostics",
+      "legacy_path": "src/runtime_geometry_wall_velocity_envelope_diagnostics.py",
+      "package": "runtime_geometry_wall_velocity_shared",
+      "public_symbols": [
+        "summarize_short_step_envelope_quality",
+        "compare_short_step_components",
+        "summarize_phase_progression",
+        "mass_force_bounceback_envelope",
+        "summary_rows"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def summarize_short_step_envelope_quality",
+        "def compare_short_step_components",
+        "def summarize_phase_progression",
+        "def mass_force_bounceback_envelope",
+        "def summary_rows"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "function",
+          "name": "summarize_short_step_envelope_quality"
+        },
+        {
+          "kind": "function",
+          "name": "compare_short_step_components"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_phase_progression"
+        },
+        {
+          "kind": "function",
+          "name": "mass_force_bounceback_envelope"
+        },
+        {
+          "kind": "function",
+          "name": "summary_rows"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.envelope_state_guard",
+      "experiment_path": "experiments/steps/runtime_geometry_wall_velocity_shared/envelope_state_guard.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_envelope_state_guard",
+      "legacy_path": "src/runtime_geometry_wall_velocity_envelope_state_guard.py",
+      "package": "runtime_geometry_wall_velocity_shared",
+      "public_symbols": [
+        "STATE_GUARD_FIELDS",
+        "compute_step47_state_mutation_guard",
+        "forbidden_output_counts",
+        "write_step47_state_mutation_guard"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def compute_step47_state_mutation_guard",
+        "def forbidden_output_counts",
+        "def write_step47_state_mutation_guard"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "STATE_GUARD_FIELDS"
+        },
+        {
+          "kind": "function",
+          "name": "compute_step47_state_mutation_guard"
+        },
+        {
+          "kind": "function",
+          "name": "forbidden_output_counts"
+        },
+        {
+          "kind": "function",
+          "name": "write_step47_state_mutation_guard"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.runtime_geometry_wall_velocity_shared.state_guard",
+      "experiment_path": "experiments/steps/runtime_geometry_wall_velocity_shared/state_guard.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_state_guard",
+      "legacy_path": "src/runtime_geometry_wall_velocity_state_guard.py",
+      "package": "runtime_geometry_wall_velocity_shared",
+      "public_symbols": [
+        "STATE_GUARD_FIELDS",
+        "compute_step46_state_mutation_guard",
+        "forbidden_output_counts",
+        "write_step46_state_mutation_guard"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def compute_step46_state_mutation_guard",
+        "def forbidden_output_counts",
+        "def write_step46_state_mutation_guard"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "STATE_GUARD_FIELDS"
+        },
+        {
+          "kind": "function",
+          "name": "compute_step46_state_mutation_guard"
+        },
+        {
+          "kind": "function",
+          "name": "forbidden_output_counts"
+        },
+        {
+          "kind": "function",
+          "name": "write_step46_state_mutation_guard"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step48_10step_proxy.config",
+      "experiment_path": "experiments/steps/step48_10step_proxy/config.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_config",
+      "legacy_path": "src/runtime_geometry_wall_velocity_10step_config.py",
+      "package": "step48_10step_proxy",
+      "public_symbols": [
+        "EXPECTED_ENVELOPE_ID",
+        "EXPECTED_PHASE_SEQUENCE",
+        "EXPECTED_N_GRID",
+        "EXPECTED_N_LBM_STEPS",
+        "EXPECTED_MPM_SUBSTEPS",
+        "EXPECTED_COUPLING_MODE",
+        "EXPECTED_REACTION_TRANSFER_MODE",
+        "MUTATION_FLAG_FIELDS",
+        "RuntimeGeometryWallVelocityTenStepEnvelopeConfig",
+        "validate_ten_step_envelope_config",
+        "summarize_ten_step_envelope_config_validation",
+        "mutation_flags",
+        "mutation_flag_enabled_count"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "class RuntimeGeometryWallVelocityTenStepEnvelopeConfig",
+        "def validate_ten_step_envelope_config",
+        "def summarize_ten_step_envelope_config_validation",
+        "def mutation_flags",
+        "def mutation_flag_enabled_count"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "EXPECTED_ENVELOPE_ID"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_PHASE_SEQUENCE"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_N_GRID"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_N_LBM_STEPS"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_MPM_SUBSTEPS"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_COUPLING_MODE"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_REACTION_TRANSFER_MODE"
+        },
+        {
+          "kind": "constant",
+          "name": "MUTATION_FLAG_FIELDS"
+        },
+        {
+          "kind": "class",
+          "name": "RuntimeGeometryWallVelocityTenStepEnvelopeConfig"
+        },
+        {
+          "kind": "function",
+          "name": "validate_ten_step_envelope_config"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_ten_step_envelope_config_validation"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flags"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flag_enabled_count"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step48_10step_proxy.diagnostics",
+      "experiment_path": "experiments/steps/step48_10step_proxy/diagnostics.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_diagnostics",
+      "legacy_path": "src/runtime_geometry_wall_velocity_10step_diagnostics.py",
+      "package": "step48_10step_proxy",
+      "public_symbols": [
+        "PREFIX_PHASES",
+        "summarize_ten_step_envelope_quality",
+        "compare_ten_step_components",
+        "summarize_ten_step_phase_progression",
+        "mass_force_bounceback_ten_step_envelope",
+        "compare_step47_prefix",
+        "summary_rows"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def summarize_ten_step_envelope_quality",
+        "def compare_ten_step_components",
+        "def summarize_ten_step_phase_progression",
+        "def mass_force_bounceback_ten_step_envelope",
+        "def compare_step47_prefix",
+        "def summary_rows"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "PREFIX_PHASES"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_ten_step_envelope_quality"
+        },
+        {
+          "kind": "function",
+          "name": "compare_ten_step_components"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_ten_step_phase_progression"
+        },
+        {
+          "kind": "function",
+          "name": "mass_force_bounceback_ten_step_envelope"
+        },
+        {
+          "kind": "function",
+          "name": "compare_step47_prefix"
+        },
+        {
+          "kind": "function",
+          "name": "summary_rows"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step48_10step_proxy.envelope",
+      "experiment_path": "experiments/steps/step48_10step_proxy/envelope.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_envelope",
+      "legacy_path": "src/runtime_geometry_wall_velocity_10step_envelope.py",
+      "package": "step48_10step_proxy",
+      "public_symbols": [
+        "ROW_DESCRIPTOR_PATHS",
+        "ROW_NAMES",
+        "ENVELOPE_FIELDS",
+        "load_ten_step_envelope_inputs",
+        "build_ten_step_phase_sequence",
+        "run_ten_step_envelope_matrix",
+        "run_ten_step_row",
+        "summarize_ten_step_envelope_matrix",
+        "write_ten_step_envelope_rows",
+        "write_csv_rows",
+        "write_json",
+        "read_json"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def load_ten_step_envelope_inputs",
+        "def build_ten_step_phase_sequence",
+        "def run_ten_step_envelope_matrix",
+        "def run_ten_step_row",
+        "def summarize_ten_step_envelope_matrix",
+        "def write_ten_step_envelope_rows",
+        "def write_csv_rows",
+        "def write_json",
+        "def read_json"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "ROW_DESCRIPTOR_PATHS"
+        },
+        {
+          "kind": "constant",
+          "name": "ROW_NAMES"
+        },
+        {
+          "kind": "constant",
+          "name": "ENVELOPE_FIELDS"
+        },
+        {
+          "kind": "function",
+          "name": "load_ten_step_envelope_inputs"
+        },
+        {
+          "kind": "function",
+          "name": "build_ten_step_phase_sequence"
+        },
+        {
+          "kind": "function",
+          "name": "run_ten_step_envelope_matrix"
+        },
+        {
+          "kind": "function",
+          "name": "run_ten_step_row"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_ten_step_envelope_matrix"
+        },
+        {
+          "kind": "function",
+          "name": "write_ten_step_envelope_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_csv_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_json"
+        },
+        {
+          "kind": "function",
+          "name": "read_json"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step48_10step_proxy.state_guard",
+      "experiment_path": "experiments/steps/step48_10step_proxy/state_guard.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_10step_state_guard",
+      "legacy_path": "src/runtime_geometry_wall_velocity_10step_state_guard.py",
+      "package": "step48_10step_proxy",
+      "public_symbols": [
+        "STATE_GUARD_FIELDS",
+        "compute_step48_state_mutation_guard",
+        "forbidden_output_counts",
+        "write_step48_state_mutation_guard"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def compute_step48_state_mutation_guard",
+        "def forbidden_output_counts",
+        "def write_step48_state_mutation_guard"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "STATE_GUARD_FIELDS"
+        },
+        {
+          "kind": "function",
+          "name": "compute_step48_state_mutation_guard"
+        },
+        {
+          "kind": "function",
+          "name": "forbidden_output_counts"
+        },
+        {
+          "kind": "function",
+          "name": "write_step48_state_mutation_guard"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step49_20step_proxy.config",
+      "experiment_path": "experiments/steps/step49_20step_proxy/config.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_config",
+      "legacy_path": "src/runtime_geometry_wall_velocity_20step_config.py",
+      "package": "step49_20step_proxy",
+      "public_symbols": [
+        "EXPECTED_ENVELOPE_ID",
+        "EXPECTED_PHASE_SEQUENCE",
+        "EXPECTED_N_GRID",
+        "EXPECTED_N_LBM_STEPS",
+        "EXPECTED_MPM_SUBSTEPS",
+        "EXPECTED_COUPLING_MODE",
+        "EXPECTED_REACTION_TRANSFER_MODE",
+        "MUTATION_FLAG_FIELDS",
+        "RuntimeGeometryWallVelocityTwentyStepEnvelopeConfig",
+        "validate_twenty_step_envelope_config",
+        "summarize_twenty_step_envelope_config_validation",
+        "mutation_flags",
+        "mutation_flag_enabled_count"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "class RuntimeGeometryWallVelocityTwentyStepEnvelopeConfig",
+        "def validate_twenty_step_envelope_config",
+        "def summarize_twenty_step_envelope_config_validation",
+        "def mutation_flags",
+        "def mutation_flag_enabled_count"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "EXPECTED_ENVELOPE_ID"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_PHASE_SEQUENCE"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_N_GRID"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_N_LBM_STEPS"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_MPM_SUBSTEPS"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_COUPLING_MODE"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_REACTION_TRANSFER_MODE"
+        },
+        {
+          "kind": "constant",
+          "name": "MUTATION_FLAG_FIELDS"
+        },
+        {
+          "kind": "class",
+          "name": "RuntimeGeometryWallVelocityTwentyStepEnvelopeConfig"
+        },
+        {
+          "kind": "function",
+          "name": "validate_twenty_step_envelope_config"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_twenty_step_envelope_config_validation"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flags"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flag_enabled_count"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step49_20step_proxy.diagnostics",
+      "experiment_path": "experiments/steps/step49_20step_proxy/diagnostics.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_diagnostics",
+      "legacy_path": "src/runtime_geometry_wall_velocity_20step_diagnostics.py",
+      "package": "step49_20step_proxy",
+      "public_symbols": [
+        "PREFIX_PHASES",
+        "TRANSITION_PHASES",
+        "summarize_twenty_step_envelope_quality",
+        "compare_twenty_step_components",
+        "summarize_twenty_step_phase_progression",
+        "summarize_early_refill_transition",
+        "mass_force_bounceback_twenty_step_envelope",
+        "compare_step48_prefix",
+        "summary_rows"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def summarize_twenty_step_envelope_quality",
+        "def compare_twenty_step_components",
+        "def summarize_twenty_step_phase_progression",
+        "def summarize_early_refill_transition",
+        "def mass_force_bounceback_twenty_step_envelope",
+        "def compare_step48_prefix",
+        "def summary_rows"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "PREFIX_PHASES"
+        },
+        {
+          "kind": "constant",
+          "name": "TRANSITION_PHASES"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_twenty_step_envelope_quality"
+        },
+        {
+          "kind": "function",
+          "name": "compare_twenty_step_components"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_twenty_step_phase_progression"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_early_refill_transition"
+        },
+        {
+          "kind": "function",
+          "name": "mass_force_bounceback_twenty_step_envelope"
+        },
+        {
+          "kind": "function",
+          "name": "compare_step48_prefix"
+        },
+        {
+          "kind": "function",
+          "name": "summary_rows"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step49_20step_proxy.envelope",
+      "experiment_path": "experiments/steps/step49_20step_proxy/envelope.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_envelope",
+      "legacy_path": "src/runtime_geometry_wall_velocity_20step_envelope.py",
+      "package": "step49_20step_proxy",
+      "public_symbols": [
+        "ROW_DESCRIPTOR_PATHS",
+        "ROW_NAMES",
+        "ENVELOPE_FIELDS",
+        "load_twenty_step_envelope_inputs",
+        "build_twenty_step_phase_sequence",
+        "run_twenty_step_envelope_matrix",
+        "run_twenty_step_row",
+        "summarize_twenty_step_envelope_matrix",
+        "write_twenty_step_envelope_rows",
+        "write_csv_rows",
+        "write_json",
+        "read_json"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def load_twenty_step_envelope_inputs",
+        "def build_twenty_step_phase_sequence",
+        "def run_twenty_step_envelope_matrix",
+        "def run_twenty_step_row",
+        "def summarize_twenty_step_envelope_matrix",
+        "def write_twenty_step_envelope_rows",
+        "def write_csv_rows",
+        "def write_json",
+        "def read_json"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "ROW_DESCRIPTOR_PATHS"
+        },
+        {
+          "kind": "constant",
+          "name": "ROW_NAMES"
+        },
+        {
+          "kind": "constant",
+          "name": "ENVELOPE_FIELDS"
+        },
+        {
+          "kind": "function",
+          "name": "load_twenty_step_envelope_inputs"
+        },
+        {
+          "kind": "function",
+          "name": "build_twenty_step_phase_sequence"
+        },
+        {
+          "kind": "function",
+          "name": "run_twenty_step_envelope_matrix"
+        },
+        {
+          "kind": "function",
+          "name": "run_twenty_step_row"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_twenty_step_envelope_matrix"
+        },
+        {
+          "kind": "function",
+          "name": "write_twenty_step_envelope_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_csv_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_json"
+        },
+        {
+          "kind": "function",
+          "name": "read_json"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step49_20step_proxy.state_guard",
+      "experiment_path": "experiments/steps/step49_20step_proxy/state_guard.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_20step_state_guard",
+      "legacy_path": "src/runtime_geometry_wall_velocity_20step_state_guard.py",
+      "package": "step49_20step_proxy",
+      "public_symbols": [
+        "STATE_GUARD_FIELDS",
+        "compute_step49_state_mutation_guard",
+        "forbidden_output_counts",
+        "write_step49_state_mutation_guard"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def compute_step49_state_mutation_guard",
+        "def forbidden_output_counts",
+        "def write_step49_state_mutation_guard"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "STATE_GUARD_FIELDS"
+        },
+        {
+          "kind": "function",
+          "name": "compute_step49_state_mutation_guard"
+        },
+        {
+          "kind": "function",
+          "name": "forbidden_output_counts"
+        },
+        {
+          "kind": "function",
+          "name": "write_step49_state_mutation_guard"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.config",
+      "experiment_path": "experiments/steps/step50_one_cycle_proxy/config.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_config",
+      "legacy_path": "src/runtime_geometry_wall_velocity_one_cycle_config.py",
+      "package": "step50_one_cycle_proxy",
+      "public_symbols": [
+        "EXPECTED_ENVELOPE_ID",
+        "EXPECTED_PHASE_SEQUENCE",
+        "EXPECTED_CLOSURE_PHASE",
+        "EXPECTED_CYCLE_PERIOD_STEPS",
+        "EXPECTED_N_GRID",
+        "EXPECTED_N_LBM_STEPS",
+        "EXPECTED_MPM_SUBSTEPS",
+        "EXPECTED_COUPLING_MODE",
+        "EXPECTED_REACTION_TRANSFER_MODE",
+        "MUTATION_FLAG_FIELDS",
+        "RuntimeGeometryWallVelocityOneCycleEnvelopeConfig",
+        "validate_one_cycle_envelope_config",
+        "summarize_one_cycle_envelope_config_validation",
+        "mutation_flags",
+        "mutation_flag_enabled_count"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "class RuntimeGeometryWallVelocityOneCycleEnvelopeConfig",
+        "def validate_one_cycle_envelope_config",
+        "def summarize_one_cycle_envelope_config_validation",
+        "def mutation_flags",
+        "def mutation_flag_enabled_count"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "EXPECTED_ENVELOPE_ID"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_PHASE_SEQUENCE"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_CLOSURE_PHASE"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_CYCLE_PERIOD_STEPS"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_N_GRID"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_N_LBM_STEPS"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_MPM_SUBSTEPS"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_COUPLING_MODE"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_REACTION_TRANSFER_MODE"
+        },
+        {
+          "kind": "constant",
+          "name": "MUTATION_FLAG_FIELDS"
+        },
+        {
+          "kind": "class",
+          "name": "RuntimeGeometryWallVelocityOneCycleEnvelopeConfig"
+        },
+        {
+          "kind": "function",
+          "name": "validate_one_cycle_envelope_config"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_one_cycle_envelope_config_validation"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flags"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flag_enabled_count"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.diagnostics",
+      "experiment_path": "experiments/steps/step50_one_cycle_proxy/diagnostics.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_diagnostics",
+      "legacy_path": "src/runtime_geometry_wall_velocity_one_cycle_diagnostics.py",
+      "package": "step50_one_cycle_proxy",
+      "public_symbols": [
+        "PHASE_SEQUENCE",
+        "PREFIX_PHASES",
+        "CONTRACTION_PHASES",
+        "REFILL_PHASES",
+        "WALL_VELOCITY_CLOSURE_TOLERANCE",
+        "summarize_one_cycle_envelope_quality",
+        "compare_one_cycle_components",
+        "summarize_one_cycle_phase_progression",
+        "summarize_contraction_refill_segments",
+        "summarize_cycle_closure",
+        "mass_force_bounceback_one_cycle_envelope",
+        "compare_step49_prefix",
+        "summary_rows"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def summarize_one_cycle_envelope_quality",
+        "def compare_one_cycle_components",
+        "def summarize_one_cycle_phase_progression",
+        "def summarize_contraction_refill_segments",
+        "def summarize_cycle_closure",
+        "def mass_force_bounceback_one_cycle_envelope",
+        "def compare_step49_prefix",
+        "def summary_rows"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "PHASE_SEQUENCE"
+        },
+        {
+          "kind": "constant",
+          "name": "PREFIX_PHASES"
+        },
+        {
+          "kind": "constant",
+          "name": "CONTRACTION_PHASES"
+        },
+        {
+          "kind": "constant",
+          "name": "REFILL_PHASES"
+        },
+        {
+          "kind": "constant",
+          "name": "WALL_VELOCITY_CLOSURE_TOLERANCE"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_one_cycle_envelope_quality"
+        },
+        {
+          "kind": "function",
+          "name": "compare_one_cycle_components"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_one_cycle_phase_progression"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_contraction_refill_segments"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_cycle_closure"
+        },
+        {
+          "kind": "function",
+          "name": "mass_force_bounceback_one_cycle_envelope"
+        },
+        {
+          "kind": "function",
+          "name": "compare_step49_prefix"
+        },
+        {
+          "kind": "function",
+          "name": "summary_rows"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.envelope",
+      "experiment_path": "experiments/steps/step50_one_cycle_proxy/envelope.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_envelope",
+      "legacy_path": "src/runtime_geometry_wall_velocity_one_cycle_envelope.py",
+      "package": "step50_one_cycle_proxy",
+      "public_symbols": [
+        "ROW_DESCRIPTOR_PATHS",
+        "ROW_NAMES",
+        "WALL_VELOCITY_CLOSURE_TOLERANCE",
+        "ENVELOPE_FIELDS",
+        "load_one_cycle_envelope_inputs",
+        "build_one_cycle_phase_sequence",
+        "run_one_cycle_envelope_matrix",
+        "build_one_cycle_closure_rows",
+        "run_one_cycle_row",
+        "summarize_one_cycle_envelope_matrix",
+        "write_one_cycle_envelope_rows",
+        "write_csv_rows",
+        "write_json",
+        "read_json"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def load_one_cycle_envelope_inputs",
+        "def build_one_cycle_phase_sequence",
+        "def run_one_cycle_envelope_matrix",
+        "def build_one_cycle_closure_rows",
+        "def run_one_cycle_row",
+        "def summarize_one_cycle_envelope_matrix",
+        "def write_one_cycle_envelope_rows",
+        "def write_csv_rows",
+        "def write_json",
+        "def read_json"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "ROW_DESCRIPTOR_PATHS"
+        },
+        {
+          "kind": "constant",
+          "name": "ROW_NAMES"
+        },
+        {
+          "kind": "constant",
+          "name": "WALL_VELOCITY_CLOSURE_TOLERANCE"
+        },
+        {
+          "kind": "constant",
+          "name": "ENVELOPE_FIELDS"
+        },
+        {
+          "kind": "function",
+          "name": "load_one_cycle_envelope_inputs"
+        },
+        {
+          "kind": "function",
+          "name": "build_one_cycle_phase_sequence"
+        },
+        {
+          "kind": "function",
+          "name": "run_one_cycle_envelope_matrix"
+        },
+        {
+          "kind": "function",
+          "name": "build_one_cycle_closure_rows"
+        },
+        {
+          "kind": "function",
+          "name": "run_one_cycle_row"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_one_cycle_envelope_matrix"
+        },
+        {
+          "kind": "function",
+          "name": "write_one_cycle_envelope_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_csv_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_json"
+        },
+        {
+          "kind": "function",
+          "name": "read_json"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step50_one_cycle_proxy.state_guard",
+      "experiment_path": "experiments/steps/step50_one_cycle_proxy/state_guard.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_one_cycle_state_guard",
+      "legacy_path": "src/runtime_geometry_wall_velocity_one_cycle_state_guard.py",
+      "package": "step50_one_cycle_proxy",
+      "public_symbols": [
+        "STATE_GUARD_FIELDS",
+        "compute_step50_state_mutation_guard",
+        "forbidden_output_counts",
+        "write_step50_state_mutation_guard"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def compute_step50_state_mutation_guard",
+        "def forbidden_output_counts",
+        "def write_step50_state_mutation_guard"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "STATE_GUARD_FIELDS"
+        },
+        {
+          "kind": "function",
+          "name": "compute_step50_state_mutation_guard"
+        },
+        {
+          "kind": "function",
+          "name": "forbidden_output_counts"
+        },
+        {
+          "kind": "function",
+          "name": "write_step50_state_mutation_guard"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.config",
+      "experiment_path": "experiments/steps/step51_transfer_comparison_proxy/config.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_config",
+      "legacy_path": "src/runtime_geometry_wall_velocity_transfer_config.py",
+      "package": "step51_transfer_comparison_proxy",
+      "public_symbols": [
+        "EXPECTED_TRANSFER_COMPARISON_ID",
+        "EXPECTED_PHASE_SEQUENCE",
+        "EXPECTED_CLOSURE_PHASE",
+        "EXPECTED_CYCLE_PERIOD_STEPS",
+        "EXPECTED_N_GRID",
+        "EXPECTED_N_LBM_STEPS",
+        "EXPECTED_MPM_SUBSTEPS",
+        "EXPECTED_TRANSFER_MODES",
+        "EXPECTED_COUPLING_MODE",
+        "EXPECTED_LINK_AREA_POLICY",
+        "EXPECTED_LINK_AREA_SCALE_MIN",
+        "EXPECTED_LINK_AREA_SCALE_MAX",
+        "MUTATION_FLAG_FIELDS",
+        "RuntimeGeometryWallVelocityTransferConfig",
+        "validate_transfer_comparison_config",
+        "summarize_transfer_comparison_config_validation",
+        "mutation_flags",
+        "mutation_flag_enabled_count"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "class RuntimeGeometryWallVelocityTransferConfig",
+        "def validate_transfer_comparison_config",
+        "def summarize_transfer_comparison_config_validation",
+        "def mutation_flags",
+        "def mutation_flag_enabled_count"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "EXPECTED_TRANSFER_COMPARISON_ID"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_PHASE_SEQUENCE"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_CLOSURE_PHASE"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_CYCLE_PERIOD_STEPS"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_N_GRID"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_N_LBM_STEPS"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_MPM_SUBSTEPS"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_TRANSFER_MODES"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_COUPLING_MODE"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_LINK_AREA_POLICY"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_LINK_AREA_SCALE_MIN"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_LINK_AREA_SCALE_MAX"
+        },
+        {
+          "kind": "constant",
+          "name": "MUTATION_FLAG_FIELDS"
+        },
+        {
+          "kind": "class",
+          "name": "RuntimeGeometryWallVelocityTransferConfig"
+        },
+        {
+          "kind": "function",
+          "name": "validate_transfer_comparison_config"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_transfer_comparison_config_validation"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flags"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flag_enabled_count"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.diagnostics",
+      "experiment_path": "experiments/steps/step51_transfer_comparison_proxy/diagnostics.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_diagnostics",
+      "legacy_path": "src/runtime_geometry_wall_velocity_transfer_diagnostics.py",
+      "package": "step51_transfer_comparison_proxy",
+      "public_symbols": [
+        "PHASE_SEQUENCE",
+        "WALL_VELOCITY_CLOSURE_TOLERANCE",
+        "COMPONENT_NAMES",
+        "summarize_transfer_comparison",
+        "summarize_transfer_envelope_quality",
+        "compare_engineering_link_area",
+        "summarize_engineering_link_area_comparison",
+        "summarize_link_area_envelope",
+        "summarize_transfer_component_effects",
+        "summarize_transfer_cycle_closure",
+        "compare_step50_engineering_prefix",
+        "mass_force_bounceback_transfer_envelope",
+        "summary_rows"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def summarize_transfer_comparison",
+        "def summarize_transfer_envelope_quality",
+        "def compare_engineering_link_area",
+        "def summarize_engineering_link_area_comparison",
+        "def summarize_link_area_envelope",
+        "def summarize_transfer_component_effects",
+        "def summarize_transfer_cycle_closure",
+        "def compare_step50_engineering_prefix",
+        "def mass_force_bounceback_transfer_envelope",
+        "def summary_rows"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "PHASE_SEQUENCE"
+        },
+        {
+          "kind": "constant",
+          "name": "WALL_VELOCITY_CLOSURE_TOLERANCE"
+        },
+        {
+          "kind": "constant",
+          "name": "COMPONENT_NAMES"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_transfer_comparison"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_transfer_envelope_quality"
+        },
+        {
+          "kind": "function",
+          "name": "compare_engineering_link_area"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_engineering_link_area_comparison"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_link_area_envelope"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_transfer_component_effects"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_transfer_cycle_closure"
+        },
+        {
+          "kind": "function",
+          "name": "compare_step50_engineering_prefix"
+        },
+        {
+          "kind": "function",
+          "name": "mass_force_bounceback_transfer_envelope"
+        },
+        {
+          "kind": "function",
+          "name": "summary_rows"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.envelope",
+      "experiment_path": "experiments/steps/step51_transfer_comparison_proxy/envelope.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_envelope",
+      "legacy_path": "src/runtime_geometry_wall_velocity_transfer_envelope.py",
+      "package": "step51_transfer_comparison_proxy",
+      "public_symbols": [
+        "ROW_DESCRIPTOR_PATHS",
+        "ROW_NAMES",
+        "COMPONENT_NAMES",
+        "WALL_VELOCITY_CLOSURE_TOLERANCE",
+        "TRANSFER_FIELDS",
+        "load_transfer_comparison_config",
+        "load_transfer_comparison_inputs",
+        "build_transfer_row_descriptors",
+        "run_transfer_comparison_matrix",
+        "build_transfer_closure_rows",
+        "run_transfer_row",
+        "summarize_transfer_comparison_matrix",
+        "write_transfer_envelope_outputs",
+        "write_csv_rows",
+        "write_json",
+        "read_json"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def load_transfer_comparison_config",
+        "def load_transfer_comparison_inputs",
+        "def build_transfer_row_descriptors",
+        "def run_transfer_comparison_matrix",
+        "def build_transfer_closure_rows",
+        "def run_transfer_row",
+        "def summarize_transfer_comparison_matrix",
+        "def write_transfer_envelope_outputs",
+        "def write_csv_rows",
+        "def write_json",
+        "def read_json"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "ROW_DESCRIPTOR_PATHS"
+        },
+        {
+          "kind": "constant",
+          "name": "ROW_NAMES"
+        },
+        {
+          "kind": "constant",
+          "name": "COMPONENT_NAMES"
+        },
+        {
+          "kind": "constant",
+          "name": "WALL_VELOCITY_CLOSURE_TOLERANCE"
+        },
+        {
+          "kind": "constant",
+          "name": "TRANSFER_FIELDS"
+        },
+        {
+          "kind": "function",
+          "name": "load_transfer_comparison_config"
+        },
+        {
+          "kind": "function",
+          "name": "load_transfer_comparison_inputs"
+        },
+        {
+          "kind": "function",
+          "name": "build_transfer_row_descriptors"
+        },
+        {
+          "kind": "function",
+          "name": "run_transfer_comparison_matrix"
+        },
+        {
+          "kind": "function",
+          "name": "build_transfer_closure_rows"
+        },
+        {
+          "kind": "function",
+          "name": "run_transfer_row"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_transfer_comparison_matrix"
+        },
+        {
+          "kind": "function",
+          "name": "write_transfer_envelope_outputs"
+        },
+        {
+          "kind": "function",
+          "name": "write_csv_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_json"
+        },
+        {
+          "kind": "function",
+          "name": "read_json"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step51_transfer_comparison_proxy.state_guard",
+      "experiment_path": "experiments/steps/step51_transfer_comparison_proxy/state_guard.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_transfer_state_guard",
+      "legacy_path": "src/runtime_geometry_wall_velocity_transfer_state_guard.py",
+      "package": "step51_transfer_comparison_proxy",
+      "public_symbols": [
+        "STATE_GUARD_FIELDS",
+        "compute_step51_state_mutation_guard",
+        "forbidden_output_counts",
+        "write_step51_state_mutation_guard"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def compute_step51_state_mutation_guard",
+        "def forbidden_output_counts",
+        "def write_step51_state_mutation_guard"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "STATE_GUARD_FIELDS"
+        },
+        {
+          "kind": "function",
+          "name": "compute_step51_state_mutation_guard"
+        },
+        {
+          "kind": "function",
+          "name": "forbidden_output_counts"
+        },
+        {
+          "kind": "function",
+          "name": "write_step51_state_mutation_guard"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.config",
+      "experiment_path": "experiments/steps/step52_48_feasibility_proxy/config.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_config",
+      "legacy_path": "src/runtime_geometry_wall_velocity_48_feasibility_config.py",
+      "package": "step52_48_feasibility_proxy",
+      "public_symbols": [
+        "EXPECTED_FEASIBILITY_ID",
+        "EXPECTED_PHASE_SEQUENCE",
+        "EXPECTED_N_GRID",
+        "EXPECTED_N_LBM_STEPS",
+        "EXPECTED_MPM_SUBSTEPS",
+        "EXPECTED_CYCLE_PERIOD_STEPS",
+        "EXPECTED_CLOSURE_PHASE",
+        "EXPECTED_TRANSFER_MODE",
+        "EXPECTED_COUPLING_MODE",
+        "MUTATION_FLAG_FIELDS",
+        "RuntimeGeometryWallVelocity48FeasibilityConfig",
+        "validate_48_feasibility_config",
+        "summarize_48_feasibility_config_validation",
+        "mutation_flags",
+        "mutation_flag_enabled_count"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "class RuntimeGeometryWallVelocity48FeasibilityConfig",
+        "def validate_48_feasibility_config",
+        "def summarize_48_feasibility_config_validation",
+        "def mutation_flags",
+        "def mutation_flag_enabled_count"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "EXPECTED_FEASIBILITY_ID"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_PHASE_SEQUENCE"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_N_GRID"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_N_LBM_STEPS"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_MPM_SUBSTEPS"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_CYCLE_PERIOD_STEPS"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_CLOSURE_PHASE"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_TRANSFER_MODE"
+        },
+        {
+          "kind": "constant",
+          "name": "EXPECTED_COUPLING_MODE"
+        },
+        {
+          "kind": "constant",
+          "name": "MUTATION_FLAG_FIELDS"
+        },
+        {
+          "kind": "class",
+          "name": "RuntimeGeometryWallVelocity48FeasibilityConfig"
+        },
+        {
+          "kind": "function",
+          "name": "validate_48_feasibility_config"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_48_feasibility_config_validation"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flags"
+        },
+        {
+          "kind": "function",
+          "name": "mutation_flag_enabled_count"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.diagnostics",
+      "experiment_path": "experiments/steps/step52_48_feasibility_proxy/diagnostics.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_diagnostics",
+      "legacy_path": "src/runtime_geometry_wall_velocity_48_feasibility_diagnostics.py",
+      "package": "step52_48_feasibility_proxy",
+      "public_symbols": [
+        "PHASE_SEQUENCE",
+        "WALL_VELOCITY_CLOSURE_TOLERANCE",
+        "summarize_48_feasibility_quality",
+        "compare_48_static_combined",
+        "compare_48_vs_step51_engineering",
+        "summarize_48_cycle_closure",
+        "mass_force_bounceback_48_envelope",
+        "summary_rows"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def summarize_48_feasibility_quality",
+        "def compare_48_static_combined",
+        "def compare_48_vs_step51_engineering",
+        "def summarize_48_cycle_closure",
+        "def mass_force_bounceback_48_envelope",
+        "def summary_rows"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "PHASE_SEQUENCE"
+        },
+        {
+          "kind": "constant",
+          "name": "WALL_VELOCITY_CLOSURE_TOLERANCE"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_48_feasibility_quality"
+        },
+        {
+          "kind": "function",
+          "name": "compare_48_static_combined"
+        },
+        {
+          "kind": "function",
+          "name": "compare_48_vs_step51_engineering"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_48_cycle_closure"
+        },
+        {
+          "kind": "function",
+          "name": "mass_force_bounceback_48_envelope"
+        },
+        {
+          "kind": "function",
+          "name": "summary_rows"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.envelope",
+      "experiment_path": "experiments/steps/step52_48_feasibility_proxy/envelope.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_envelope",
+      "legacy_path": "src/runtime_geometry_wall_velocity_48_feasibility_envelope.py",
+      "package": "step52_48_feasibility_proxy",
+      "public_symbols": [
+        "ROW_DESCRIPTOR_PATHS",
+        "ROW_NAMES",
+        "FEASIBILITY_FIELDS",
+        "WALL_VELOCITY_CLOSURE_TOLERANCE",
+        "load_48_feasibility_config",
+        "load_48_feasibility_inputs",
+        "run_48_feasibility_matrix",
+        "build_48_closure_rows",
+        "run_48_feasibility_row",
+        "summarize_48_feasibility_matrix",
+        "write_48_feasibility_rows",
+        "write_csv_rows",
+        "write_json",
+        "read_json"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def load_48_feasibility_config",
+        "def load_48_feasibility_inputs",
+        "def run_48_feasibility_matrix",
+        "def build_48_closure_rows",
+        "def run_48_feasibility_row",
+        "def summarize_48_feasibility_matrix",
+        "def write_48_feasibility_rows",
+        "def write_csv_rows",
+        "def write_json",
+        "def read_json"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "ROW_DESCRIPTOR_PATHS"
+        },
+        {
+          "kind": "constant",
+          "name": "ROW_NAMES"
+        },
+        {
+          "kind": "constant",
+          "name": "FEASIBILITY_FIELDS"
+        },
+        {
+          "kind": "constant",
+          "name": "WALL_VELOCITY_CLOSURE_TOLERANCE"
+        },
+        {
+          "kind": "function",
+          "name": "load_48_feasibility_config"
+        },
+        {
+          "kind": "function",
+          "name": "load_48_feasibility_inputs"
+        },
+        {
+          "kind": "function",
+          "name": "run_48_feasibility_matrix"
+        },
+        {
+          "kind": "function",
+          "name": "build_48_closure_rows"
+        },
+        {
+          "kind": "function",
+          "name": "run_48_feasibility_row"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_48_feasibility_matrix"
+        },
+        {
+          "kind": "function",
+          "name": "write_48_feasibility_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_csv_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_json"
+        },
+        {
+          "kind": "function",
+          "name": "read_json"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step52_48_feasibility_proxy.state_guard",
+      "experiment_path": "experiments/steps/step52_48_feasibility_proxy/state_guard.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_48_feasibility_state_guard",
+      "legacy_path": "src/runtime_geometry_wall_velocity_48_feasibility_state_guard.py",
+      "package": "step52_48_feasibility_proxy",
+      "public_symbols": [
+        "STATE_GUARD_FIELDS",
+        "compute_step52_state_mutation_guard",
+        "forbidden_output_counts",
+        "write_step52_state_mutation_guard"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def compute_step52_state_mutation_guard",
+        "def forbidden_output_counts",
+        "def write_step52_state_mutation_guard"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "STATE_GUARD_FIELDS"
+        },
+        {
+          "kind": "function",
+          "name": "compute_step52_state_mutation_guard"
+        },
+        {
+          "kind": "function",
+          "name": "forbidden_output_counts"
+        },
+        {
+          "kind": "function",
+          "name": "write_step52_state_mutation_guard"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.config",
+      "experiment_path": "experiments/steps/step53_support_scaling_audit/config.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_config",
+      "legacy_path": "src/runtime_geometry_wall_velocity_support_scaling_config.py",
+      "package": "step53_support_scaling_audit",
+      "public_symbols": [
+        "SupportScalingAuditConfig",
+        "load_reference_artifacts_config",
+        "load_metric_semantics_policy"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "class SupportScalingAuditConfig",
+        "def load_reference_artifacts_config",
+        "def load_metric_semantics_policy"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "class",
+          "name": "SupportScalingAuditConfig"
+        },
+        {
+          "kind": "function",
+          "name": "load_reference_artifacts_config"
+        },
+        {
+          "kind": "function",
+          "name": "load_metric_semantics_policy"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.audit",
+      "experiment_path": "experiments/steps/step53_support_scaling_audit/audit.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_audit",
+      "legacy_path": "src/runtime_geometry_wall_velocity_support_scaling_audit.py",
+      "package": "step53_support_scaling_audit",
+      "public_symbols": [
+        "load_bundle",
+        "reference_validation_rows",
+        "phasewise_support_scaling_rows",
+        "summarize_phasewise_rows",
+        "active_cell_semantics_rows",
+        "applied_wall_support_rows",
+        "bounceback_support_rows",
+        "step52_regression_rows"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def load_bundle",
+        "def reference_validation_rows",
+        "def phasewise_support_scaling_rows",
+        "def summarize_phasewise_rows",
+        "def active_cell_semantics_rows",
+        "def applied_wall_support_rows",
+        "def bounceback_support_rows",
+        "def step52_regression_rows"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "function",
+          "name": "load_bundle"
+        },
+        {
+          "kind": "function",
+          "name": "reference_validation_rows"
+        },
+        {
+          "kind": "function",
+          "name": "phasewise_support_scaling_rows"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_phasewise_rows"
+        },
+        {
+          "kind": "function",
+          "name": "active_cell_semantics_rows"
+        },
+        {
+          "kind": "function",
+          "name": "applied_wall_support_rows"
+        },
+        {
+          "kind": "function",
+          "name": "bounceback_support_rows"
+        },
+        {
+          "kind": "function",
+          "name": "step52_regression_rows"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.diagnostics",
+      "experiment_path": "experiments/steps/step53_support_scaling_audit/diagnostics.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_diagnostics",
+      "legacy_path": "src/runtime_geometry_wall_velocity_support_scaling_diagnostics.py",
+      "package": "step53_support_scaling_audit",
+      "public_symbols": [
+        "ratio",
+        "finite_number",
+        "finite_values",
+        "row_by_name",
+        "step_by_phase",
+        "max_step_value",
+        "min_step_value",
+        "bool_text",
+        "all_ratio_fields_finite"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def ratio",
+        "def finite_number",
+        "def finite_values",
+        "def row_by_name",
+        "def step_by_phase",
+        "def max_step_value",
+        "def min_step_value",
+        "def bool_text",
+        "def all_ratio_fields_finite"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "function",
+          "name": "ratio"
+        },
+        {
+          "kind": "function",
+          "name": "finite_number"
+        },
+        {
+          "kind": "function",
+          "name": "finite_values"
+        },
+        {
+          "kind": "function",
+          "name": "row_by_name"
+        },
+        {
+          "kind": "function",
+          "name": "step_by_phase"
+        },
+        {
+          "kind": "function",
+          "name": "max_step_value"
+        },
+        {
+          "kind": "function",
+          "name": "min_step_value"
+        },
+        {
+          "kind": "function",
+          "name": "bool_text"
+        },
+        {
+          "kind": "function",
+          "name": "all_ratio_fields_finite"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.claim_guard",
+      "experiment_path": "experiments/steps/step53_support_scaling_audit/claim_guard.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_claim_guard",
+      "legacy_path": "src/runtime_geometry_wall_velocity_support_scaling_claim_guard.py",
+      "package": "step53_support_scaling_audit",
+      "public_symbols": [
+        "REQUIRED_FALSE_FLAGS",
+        "claim_guard_rows",
+        "step53_claim_surface_files",
+        "required_flag_rows",
+        "step53_json_outputs",
+        "force_impulse_interpretation",
+        "forbidden_positive_claims",
+        "flatten_dict"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def claim_guard_rows",
+        "def step53_claim_surface_files",
+        "def required_flag_rows",
+        "def step53_json_outputs",
+        "def force_impulse_interpretation",
+        "def forbidden_positive_claims",
+        "def flatten_dict"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "REQUIRED_FALSE_FLAGS"
+        },
+        {
+          "kind": "function",
+          "name": "claim_guard_rows"
+        },
+        {
+          "kind": "function",
+          "name": "step53_claim_surface_files"
+        },
+        {
+          "kind": "function",
+          "name": "required_flag_rows"
+        },
+        {
+          "kind": "function",
+          "name": "step53_json_outputs"
+        },
+        {
+          "kind": "function",
+          "name": "force_impulse_interpretation"
+        },
+        {
+          "kind": "function",
+          "name": "forbidden_positive_claims"
+        },
+        {
+          "kind": "function",
+          "name": "flatten_dict"
+        }
+      ]
+    },
+    {
+      "classification": "step_specific_proxy_remaining",
+      "experiment_module": "experiments.steps.step53_support_scaling_audit.artifact_guard",
+      "experiment_path": "experiments/steps/step53_support_scaling_audit/artifact_guard.py",
+      "legacy_module": "src.runtime_geometry_wall_velocity_support_scaling_artifact_guard",
+      "legacy_path": "src/runtime_geometry_wall_velocity_support_scaling_artifact_guard.py",
+      "package": "step53_support_scaling_audit",
+      "public_symbols": [
+        "LARGE_FILE_THRESHOLD_BYTES",
+        "build_step53_artifact_manifest",
+        "repo_files",
+        "manifest_row",
+        "is_step53_related",
+        "private_absolute_path_count"
+      ],
+      "quarantined_historical_driver_helper": false,
+      "required_tokens": [
+        "def build_step53_artifact_manifest",
+        "def repo_files",
+        "def manifest_row",
+        "def is_step53_related",
+        "def private_absolute_path_count"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "step_specific_proxy_remaining",
+      "source_inventory_recommended_step": "Step68",
+      "source_inventory_target_owner": "experiments/steps",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "LARGE_FILE_THRESHOLD_BYTES"
+        },
+        {
+          "kind": "function",
+          "name": "build_step53_artifact_manifest"
+        },
+        {
+          "kind": "function",
+          "name": "repo_files"
+        },
+        {
+          "kind": "function",
+          "name": "manifest_row"
+        },
+        {
+          "kind": "function",
+          "name": "is_step53_related"
+        },
+        {
+          "kind": "function",
+          "name": "private_absolute_path_count"
+        }
+      ]
+    }
+  ],
+  "physics_feature_expansion": false,
+  "policy_id": "step68_step_specific_proxy_migration_policy",
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false,
+  "step": 68,
+  "step47_supported_by": "experiments/steps/runtime_geometry_wall_velocity_shared"
+}

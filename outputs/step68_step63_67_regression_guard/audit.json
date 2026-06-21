@@ -1,0 +1,68 @@
+{
+  "rows": [
+    {
+      "artifact_exists": true,
+      "pass": true,
+      "pass_key": "simulation_freeze_audit_pass",
+      "pass_value": true,
+      "source_artifact_path": "outputs/step63_simulation_freeze_audit/audit.json"
+    },
+    {
+      "artifact_exists": true,
+      "pass": true,
+      "pass_key": "remaining_solver_inventory_pass",
+      "pass_value": true,
+      "source_artifact_path": "outputs/step63_remaining_solver_inventory_audit/audit.json"
+    },
+    {
+      "artifact_exists": true,
+      "pass": true,
+      "pass_key": "step64_motion_wall_velocity_migration_pass",
+      "pass_value": true,
+      "source_artifact_path": "outputs/step64_motion_wall_velocity_migration_audit/audit.json"
+    },
+    {
+      "artifact_exists": true,
+      "pass": true,
+      "pass_key": "step65_runtime_geometry_migration_pass",
+      "pass_value": true,
+      "source_artifact_path": "outputs/step65_runtime_geometry_migration_audit/audit.json"
+    },
+    {
+      "artifact_exists": true,
+      "pass": true,
+      "pass_key": "step66_diagnostic_geometry_displacement_migration_pass",
+      "pass_value": true,
+      "source_artifact_path": "outputs/step66_diagnostic_geometry_displacement_migration_audit/audit.json"
+    },
+    {
+      "artifact_exists": true,
+      "pass": true,
+      "pass_key": "step67_squid_proxy_real_geometry_migration_pass",
+      "pass_value": true,
+      "source_artifact_path": "outputs/step67_squid_proxy_real_geometry_migration_audit/audit.json"
+    },
+    {
+      "artifact_exists": true,
+      "pass": true,
+      "pass_key": "step63_67_regression_guard_pass",
+      "pass_value": true,
+      "source_artifact_path": "outputs/step63_67_step62_regression_guard/audit.json"
+    },
+    {
+      "artifact_exists": true,
+      "pass": true,
+      "pass_key": "artifact_budget_pass",
+      "pass_value": true,
+      "source_artifact_path": "outputs/step63_67_artifact_manifest/artifact_summary.json"
+    }
+  ],
+  "summary": {
+    "pass_count": 8,
+    "row_count": 8,
+    "step63_67_pass_count": 8,
+    "step63_67_required_artifact_count": 8,
+    "step68_regression_guard_pass": true,
+    "volatile_size_snapshot_embedded": false
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "forbidden_output_dirs": [
+    "outputs/step68_driver_runs"
+  ],
+  "migration_policy_path": "configs/step68_step_specific_proxy_migration_policy.json",
+  "physics_feature_expansion": false,
+  "policy_id": "step68_experiment_boundary_policy",
+  "protected_prefixes": [
+    "external/taichi_LBM3D/",
+    "data/real_geometry_candidates/"
+  ],
+  "quarantined_driver_helper_path": "experiments/steps/real_geometry_feasibility/feasibility.py",
+  "runtime_code_changed": false,
+  "scan_globs": [
+    "src/mpm_lbm/evidence/*step68*.py",
+    "src/mpm_lbm/evidence/step_specific_proxy_*.py",
+    "src/mpm_lbm/evidence/experiment_boundary_audit.py",
+    "baseline_tests/run_step68_*.py",
+    "tests/test_step68_*.py"
+  ],
+  "solver_behavior_changed": false,
+  "step": 68
+}

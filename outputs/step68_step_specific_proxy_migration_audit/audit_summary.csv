@@ -1,0 +1,10 @@
+metric,value
+experiment_legacy_getattr_count,0
+experiment_real_implementation_count,34
+experiment_root_proxy_import_count,0
+legacy_shim_count,34
+pass_count,34
+quarantined_historical_driver_helper_count,1
+root_step_specific_implementation_count,0
+row_count,34
+step68_proxy_migration_audit_pass,True

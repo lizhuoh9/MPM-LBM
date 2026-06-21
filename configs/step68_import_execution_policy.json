@@ -1,0 +1,5 @@
+{
+  "migration_policy_path": "configs/step68_step_specific_proxy_migration_policy.json",
+  "policy_id": "step68_import_execution_policy",
+  "step": 68
+}

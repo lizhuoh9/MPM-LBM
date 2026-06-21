@@ -1,0 +1,19 @@
+{
+  "policy_id": "step68_step63_67_regression_policy",
+  "required_artifacts": [
+    "outputs/step63_simulation_freeze_audit/audit.json",
+    "outputs/step63_remaining_solver_inventory_audit/audit.json",
+    "outputs/step64_motion_wall_velocity_migration_audit/audit.json",
+    "outputs/step65_runtime_geometry_migration_audit/audit.json",
+    "outputs/step66_diagnostic_geometry_displacement_migration_audit/audit.json",
+    "outputs/step67_squid_proxy_real_geometry_migration_audit/audit.json",
+    "outputs/step63_67_step62_regression_guard/audit.json",
+    "outputs/step63_67_artifact_manifest/artifact_summary.json"
+  ],
+  "step": 68,
+  "volatile_keys_not_embedded": [
+    "size_bytes",
+    "step63_67_total_size_bytes",
+    "step63_67_total_size_mb"
+  ]
+}
