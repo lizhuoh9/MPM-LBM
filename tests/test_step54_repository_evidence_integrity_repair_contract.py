@@ -98,7 +98,7 @@ REQUIRED_SCOPE_PHRASES = [
     "Step 54 does not validate jet propulsion.",
     "Step 54 does not implement squid swimming.",
     "Step 54 does not prove grid convergence.",
-    "604/614 passed means contract/artifact/proxy tests passed unless explicitly classified otherwise.",
+    "A passing full pytest run means contract/artifact/proxy/solver-smoke tests passed according to the test strength audit classification.",
 ]
 
 

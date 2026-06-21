@@ -1,0 +1,7 @@
+metric,value
+import_boundary_audit_pass,True
+scanned_sim_file_count,23
+sim_forbidden_import_count,0
+sim_forbidden_path_count,0
+sim_step_constant_count,0
+solver_behavior_changed,False

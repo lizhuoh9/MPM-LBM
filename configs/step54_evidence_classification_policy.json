@@ -5,7 +5,7 @@
   "step53_evidence_kind": "post_processing_audit",
   "step53_solver_time_integration_run": false,
   "step1_step2_evidence_kind": "solver_smoke_baseline",
-  "test_suite_result_interpretation": "604/614 passed means contract/artifact/proxy tests passed unless explicitly classified otherwise.",
+  "test_suite_result_interpretation": "A passing full pytest run means contract/artifact/proxy/solver-smoke tests passed according to the test strength audit classification.",
   "positive_physical_claim_allowed": false,
   "real_jet_validation_claim": false,
   "jet_propulsion_validation_claim": false,

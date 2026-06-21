@@ -1,0 +1,81 @@
+{
+  "rows": [
+    {
+      "check": "step54_lbm_relaxation_semantics_pass",
+      "notes": "Step 54 LBM semantics audit remains green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step54_proxy_truthfulness_pass",
+      "notes": "Step 54 proxy truthfulness audit remains green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step54_state_guard_truthfulness_pass",
+      "notes": "Step 54 state guard truthfulness audit remains green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step54_repository_evidence_index_pass",
+      "notes": "Step 54 repository evidence index remains green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step54_claim_guard_pass",
+      "notes": "Step 54 claim guard remains green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step54_artifact_manifest_pass",
+      "notes": "Step 54 artifact manifest remains green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step54_test_strength_audit_pass",
+      "notes": "Step 54 test strength audit remains green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step54_test_strength_enum_policy",
+      "notes": "Step 54 test strength rows use Step 55 policy enum",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step54_pytest_interpretation_updated",
+      "notes": "Step 54 pytest interpretation must be durable",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step54_report_no_stale_pytest_count",
+      "notes": "Step 54 report must not contain stale pytest count",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step54_config_no_stale_pytest_count",
+      "notes": "Step 54 policy config must not contain stale pytest count",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step54_tests_no_stale_pytest_count",
+      "notes": "Step 54 tests must not contain stale pytest count",
+      "pass": true,
+      "value": true
+    }
+  ],
+  "summary": {
+    "pass_count": 12,
+    "row_count": 12,
+    "step54_regression_guard_pass": true
+  }
+}

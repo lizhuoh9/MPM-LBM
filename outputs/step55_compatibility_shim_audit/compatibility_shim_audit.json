@@ -1,0 +1,121 @@
+{
+  "rows": [
+    {
+      "new_path": "src/mpm_lbm/sim/lbm/fluid.py",
+      "new_path_exists": true,
+      "new_symbol_or_lazy_export_present": true,
+      "old_path": "src/lbm_fluid.py",
+      "old_path_exists": true,
+      "old_symbol_present": true,
+      "pass": true,
+      "source_text_check_only": true,
+      "symbol": "LBMFluid3D"
+    },
+    {
+      "new_path": "src/mpm_lbm/sim/lbm/config.py",
+      "new_path_exists": true,
+      "new_symbol_or_lazy_export_present": true,
+      "old_path": "src/lbm_config.py",
+      "old_path_exists": true,
+      "old_symbol_present": true,
+      "pass": true,
+      "source_text_check_only": true,
+      "symbol": "LBMConfig"
+    },
+    {
+      "new_path": "src/mpm_lbm/sim/drivers/fsi_driver.py",
+      "new_path_exists": true,
+      "new_symbol_or_lazy_export_present": true,
+      "old_path": "src/fsi_driver.py",
+      "old_path_exists": true,
+      "old_symbol_present": true,
+      "pass": true,
+      "source_text_check_only": true,
+      "symbol": "FSIDriver3D"
+    },
+    {
+      "new_path": "src/mpm_lbm/sim/drivers/fsi_config.py",
+      "new_path_exists": true,
+      "new_symbol_or_lazy_export_present": true,
+      "old_path": "src/fsi_config.py",
+      "old_path_exists": true,
+      "old_symbol_present": true,
+      "pass": true,
+      "source_text_check_only": true,
+      "symbol": "FSIDriverConfig"
+    },
+    {
+      "new_path": "src/mpm_lbm/sim/coupling/projection.py",
+      "new_path_exists": true,
+      "new_symbol_or_lazy_export_present": true,
+      "old_path": "src/projection.py",
+      "old_path_exists": true,
+      "old_symbol_present": true,
+      "pass": true,
+      "source_text_check_only": true,
+      "symbol": "MPMToLBMProjector3D"
+    },
+    {
+      "new_path": "src/mpm_lbm/evidence/repository_evidence_index.py",
+      "new_path_exists": true,
+      "new_symbol_or_lazy_export_present": true,
+      "old_path": "src/repository_evidence_index.py",
+      "old_path_exists": true,
+      "old_symbol_present": true,
+      "pass": true,
+      "source_text_check_only": true,
+      "symbol": "build_repository_evidence_index"
+    },
+    {
+      "new_path": "src/mpm_lbm/evidence/repository_test_strength_audit.py",
+      "new_path_exists": true,
+      "new_symbol_or_lazy_export_present": true,
+      "old_path": "src/repository_test_strength_audit.py",
+      "old_path_exists": true,
+      "old_symbol_present": true,
+      "pass": true,
+      "source_text_check_only": true,
+      "symbol": "build_repository_test_strength_audit"
+    },
+    {
+      "new_path": "experiments/steps/step50_one_cycle_proxy/envelope.py",
+      "new_path_exists": true,
+      "new_symbol_or_lazy_export_present": true,
+      "old_path": "src/runtime_geometry_wall_velocity_one_cycle_envelope.py",
+      "old_path_exists": true,
+      "old_symbol_present": true,
+      "pass": true,
+      "source_text_check_only": true,
+      "symbol": "run_one_cycle_envelope_matrix"
+    },
+    {
+      "new_path": "experiments/steps/step51_transfer_comparison_proxy/envelope.py",
+      "new_path_exists": true,
+      "new_symbol_or_lazy_export_present": true,
+      "old_path": "src/runtime_geometry_wall_velocity_transfer_envelope.py",
+      "old_path_exists": true,
+      "old_symbol_present": true,
+      "pass": true,
+      "source_text_check_only": true,
+      "symbol": "run_transfer_comparison_matrix"
+    },
+    {
+      "new_path": "experiments/steps/step52_48_feasibility_proxy/envelope.py",
+      "new_path_exists": true,
+      "new_symbol_or_lazy_export_present": true,
+      "old_path": "src/runtime_geometry_wall_velocity_48_feasibility_envelope.py",
+      "old_path_exists": true,
+      "old_symbol_present": true,
+      "pass": true,
+      "source_text_check_only": true,
+      "symbol": "run_48_feasibility_matrix"
+    }
+  ],
+  "summary": {
+    "avoid_heavy_runtime_imports_in_hook": true,
+    "compatibility_shim_audit_pass": true,
+    "pass_count": 10,
+    "source_text_check_only": true,
+    "surface_count": 10
+  }
+}

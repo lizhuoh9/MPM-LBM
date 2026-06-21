@@ -5,6 +5,19 @@ from pathlib import Path
 
 
 AUDITED_PATTERNS = ("tests/test_step*.py", "baseline_tests/run_step*.py")
+ALLOWED_TEST_STRENGTH_LEVELS = {
+    "artifact_contract",
+    "artifact_plus_source_contract",
+    "runner_reexecution_contract",
+    "proxy_diagnostic_contract",
+    "solver_smoke_contract",
+    "formula_unit_contract",
+    "numerical_benchmark_contract",
+}
+PYTEST_RESULT_INTERPRETATION = (
+    "A passing full pytest run means contract/artifact/proxy/solver-smoke tests passed "
+    "according to the test strength audit classification."
+)
 
 
 def build_repository_test_strength_audit(root: Path) -> tuple[list[dict], dict]:
@@ -19,18 +32,20 @@ def build_repository_test_strength_audit(root: Path) -> tuple[list[dict], dict]:
             for row in rows
             if row["test_strength_level"]
             in {
-                "committed_artifact_contract",
+                "artifact_contract",
                 "artifact_plus_source_contract",
                 "proxy_diagnostic_contract",
-                "existence_log_report_contract",
-                "file_existence_contract",
             }
         ),
         "runner_reexecution_contract_count": sum(1 for row in rows if row["reruns_runner"]),
         "solver_runtime_contract_count": sum(1 for row in rows if row["reruns_solver"]),
-        "formula_contract_count": sum(1 for row in rows if row["validates_formula"]),
+        "formula_unit_contract_count": sum(1 for row in rows if row["validates_formula"]),
         "numerical_benchmark_contract_count": sum(1 for row in rows if row["validates_numerical_benchmark"]),
-        "test_suite_result_interpretation": "604/614 passed means contract/artifact/proxy tests passed unless explicitly classified otherwise.",
+        "test_suite_result_interpretation": PYTEST_RESULT_INTERPRETATION,
+        "allowed_test_strength_level_count": len(ALLOWED_TEST_STRENGTH_LEVELS),
+        "out_of_policy_strength_level_count": sum(
+            1 for row in rows if row["test_strength_level"] not in ALLOWED_TEST_STRENGTH_LEVELS
+        ),
         "test_strength_audit_pass": False,
     }
     summary["test_strength_audit_pass"] = bool(
@@ -38,6 +53,7 @@ def build_repository_test_strength_audit(root: Path) -> tuple[list[dict], dict]:
         and summary["audited_file_count"] == summary["classified_file_count"]
         and summary["artifact_or_proxy_contract_count"] > 0
         and summary["runner_reexecution_contract_count"] > 0
+        and summary["out_of_policy_strength_level_count"] == 0
     )
     return rows, summary
 
@@ -107,22 +123,22 @@ def classify_strength(
     if validates_numerical_benchmark:
         return "numerical_benchmark_contract"
     if reruns_solver:
-        return "solver_smoke_or_runtime_contract"
+        return "solver_smoke_contract"
     if step in {50, 51, 52}:
         return "proxy_diagnostic_contract"
     if validates_formula:
-        return "formula_contract"
+        return "formula_unit_contract"
     if is_runner:
         return "runner_reexecution_contract"
     if checks_committed_artifact_json and checks_source_string:
         return "artifact_plus_source_contract"
     if checks_committed_artifact_json:
-        return "committed_artifact_contract"
+        return "artifact_contract"
     if checks_report_text or checks_log_marker:
-        return "existence_log_report_contract"
+        return "artifact_contract"
     if checks_file_existence:
-        return "file_existence_contract"
-    return "source_presence_contract"
+        return "artifact_contract"
+    return "artifact_contract"
 
 
 def step_from_name(name: str) -> int:

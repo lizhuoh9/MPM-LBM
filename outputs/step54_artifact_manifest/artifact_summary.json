@@ -1,17 +1,17 @@
 {
   "artifact_budget_pass": true,
-  "file_count": 3908,
+  "file_count": 4003,
   "large_file_count": 0,
   "private_absolute_path_count": 0,
   "protected_external_taichi_lbm3d_step54_file_count": 0,
   "protected_real_geometry_candidates_step54_file_count": 0,
   "step54_dense_displacement_output_count": 0,
   "step54_displaced_particle_output_count": 0,
-  "step54_file_count": 55,
+  "step54_file_count": 65,
   "step54_particle_npy_count": 0,
-  "step54_total_size_bytes": 445866,
-  "step54_total_size_mb": 0.42521095275878906,
+  "step54_total_size_bytes": 796391,
+  "step54_total_size_mb": 0.7594976425170898,
   "step54_vtr_count": 0,
-  "total_size_bytes": 226778575,
-  "total_size_mb": 216.2729024887085
+  "total_size_bytes": 227751280,
+  "total_size_mb": 217.20054626464844
 }

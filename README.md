@@ -58,6 +58,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 52 controlled 48^3 engineering one-cycle feasibility diagnostics
 - Step 53 controlled support-scaling active-cell semantics post-processing audit
 - Step 54 repository evidence integrity repair
+- Step 55 repository code layout separation and import-boundary contract
 
 ## Not Implemented
 
@@ -675,6 +676,23 @@ Step 54 does not implement squid swimming.
 Step 54 does not prove grid convergence.
 Step 54 does not claim production readiness.
 See docs/54_repository_evidence_integrity_repair.md.
+
+## Step 55 Repository Code Layout Separation Boundary
+
+Step 55 is repository code layout separation and import-boundary contract work.
+Step 55 creates `src/mpm_lbm` and `experiments/steps` package boundaries while preserving legacy imports.
+Step 55 uses a copy-first compatibility strategy and audit artifacts to prevent further root `src/` mixing.
+Step 55 does not change solver behavior.
+Step 55 does not add a 48^3 link-area run.
+Step 55 does not lengthen the cycle window.
+Step 55 does not add a 64^3 case.
+Step 55 does not migrate LBM tau or viscosity formulas.
+Step 55 does not validate real jet behavior.
+Step 55 does not validate jet propulsion.
+Step 55 does not implement squid swimming.
+Step 55 does not prove grid convergence.
+Step 55 does not claim production readiness.
+See docs/55_repository_code_layout_separation_import_boundary.md.
 
 ## Upstream LBM Note
 

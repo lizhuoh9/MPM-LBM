@@ -1,0 +1,14 @@
+{
+  "policy_id": "step55_test_strength_enum_policy",
+  "allowed_test_strength_levels": [
+    "artifact_contract",
+    "artifact_plus_source_contract",
+    "runner_reexecution_contract",
+    "proxy_diagnostic_contract",
+    "solver_smoke_contract",
+    "formula_unit_contract",
+    "numerical_benchmark_contract"
+  ],
+  "pytest_result_interpretation": "A passing full pytest run means contract/artifact/proxy/solver-smoke tests passed according to the test strength audit classification.",
+  "hardcoded_pytest_pass_count_allowed": false
+}

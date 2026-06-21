@@ -1,0 +1,11 @@
+old_path,new_path,symbol,old_path_exists,new_path_exists,old_symbol_present,new_symbol_or_lazy_export_present,source_text_check_only,pass
+src/lbm_fluid.py,src/mpm_lbm/sim/lbm/fluid.py,LBMFluid3D,True,True,True,True,True,True
+src/lbm_config.py,src/mpm_lbm/sim/lbm/config.py,LBMConfig,True,True,True,True,True,True
+src/fsi_driver.py,src/mpm_lbm/sim/drivers/fsi_driver.py,FSIDriver3D,True,True,True,True,True,True
+src/fsi_config.py,src/mpm_lbm/sim/drivers/fsi_config.py,FSIDriverConfig,True,True,True,True,True,True
+src/projection.py,src/mpm_lbm/sim/coupling/projection.py,MPMToLBMProjector3D,True,True,True,True,True,True
+src/repository_evidence_index.py,src/mpm_lbm/evidence/repository_evidence_index.py,build_repository_evidence_index,True,True,True,True,True,True
+src/repository_test_strength_audit.py,src/mpm_lbm/evidence/repository_test_strength_audit.py,build_repository_test_strength_audit,True,True,True,True,True,True
+src/runtime_geometry_wall_velocity_one_cycle_envelope.py,experiments/steps/step50_one_cycle_proxy/envelope.py,run_one_cycle_envelope_matrix,True,True,True,True,True,True
+src/runtime_geometry_wall_velocity_transfer_envelope.py,experiments/steps/step51_transfer_comparison_proxy/envelope.py,run_transfer_comparison_matrix,True,True,True,True,True,True
+src/runtime_geometry_wall_velocity_48_feasibility_envelope.py,experiments/steps/step52_48_feasibility_proxy/envelope.py,run_48_feasibility_matrix,True,True,True,True,True,True

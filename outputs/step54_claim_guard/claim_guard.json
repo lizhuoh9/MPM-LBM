@@ -100,6 +100,12 @@
       "forbidden_claim_count": 0,
       "forbidden_claims_absent": true,
       "matched_claims": [],
+      "path": "baseline_tests/run_step55_step54_regression_guard.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
       "path": "baseline_tests/step54_common.py"
     },
     {
@@ -143,6 +149,42 @@
       "forbidden_claims_absent": true,
       "matched_claims": [],
       "path": "src/repository_test_strength_audit.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_artifact_manifest/artifact_manifest.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_artifact_manifest/artifact_summary.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_artifact_manifest/artifact_summary.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_claim_guard/claim_guard.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_claim_guard/claim_guard.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "matched_claims": [],
+      "path": "outputs/step54_claim_guard/claim_guard_summary.csv"
     },
     {
       "forbidden_claim_count": 0,
@@ -287,6 +329,6 @@
     "claim_guard_pass": true,
     "forbidden_claim_count": 0,
     "required_false_flag_count": 5,
-    "scanned_file_count": 42
+    "scanned_file_count": 49
   }
 }

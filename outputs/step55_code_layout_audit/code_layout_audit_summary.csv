@@ -1,0 +1,13 @@
+metric,value
+canonical_diagnostics_package_exists,True
+canonical_evidence_package_exists,True
+canonical_required_path_count,22
+canonical_required_path_pass_count,22
+canonical_sim_package_exists,True
+code_layout_audit_pass,True
+experiments_steps_package_exists,True
+physics_feature_expansion,False
+root_src_file_count,119
+solver_behavior_changed,False
+step55_new_root_evidence_file_count,0
+unclassified_root_src_file_count,0

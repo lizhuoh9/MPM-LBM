@@ -10,7 +10,7 @@
       "reruns_solver": false,
       "step": 1,
       "test_file": "tests/test_step1_artifacts.py",
-      "test_strength_level": "existence_log_report_contract",
+      "test_strength_level": "artifact_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -24,7 +24,7 @@
       "reruns_solver": false,
       "step": 2,
       "test_file": "tests/test_step2_lbm_refactor_contract.py",
-      "test_strength_level": "existence_log_report_contract",
+      "test_strength_level": "artifact_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -38,7 +38,7 @@
       "reruns_solver": false,
       "step": 3,
       "test_file": "tests/test_step3_mpm_solid_contract.py",
-      "test_strength_level": "existence_log_report_contract",
+      "test_strength_level": "artifact_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -80,7 +80,7 @@
       "reruns_solver": false,
       "step": 4,
       "test_file": "baseline_tests/run_step4_units_consistency.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -94,7 +94,7 @@
       "reruns_solver": false,
       "step": 4,
       "test_file": "tests/test_step4_units_grid_timestep_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -164,7 +164,7 @@
       "reruns_solver": false,
       "step": 5,
       "test_file": "tests/test_step5_projection_contract.py",
-      "test_strength_level": "existence_log_report_contract",
+      "test_strength_level": "artifact_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -234,7 +234,7 @@
       "reruns_solver": false,
       "step": 6,
       "test_file": "tests/test_step6_penalty_coupling_contract.py",
-      "test_strength_level": "existence_log_report_contract",
+      "test_strength_level": "artifact_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -318,7 +318,7 @@
       "reruns_solver": false,
       "step": 8,
       "test_file": "baseline_tests/run_step8_momentum_exchange_diagnostics.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -346,7 +346,7 @@
       "reruns_solver": false,
       "step": 8,
       "test_file": "baseline_tests/run_step8_projected_mpm_moving_boundary.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -360,7 +360,7 @@
       "reruns_solver": false,
       "step": 8,
       "test_file": "baseline_tests/run_step8_static_bounceback_regression.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -388,7 +388,7 @@
       "reruns_solver": false,
       "step": 9,
       "test_file": "baseline_tests/run_step9_compare_penalty_vs_moving_boundary.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -402,7 +402,7 @@
       "reruns_solver": false,
       "step": 9,
       "test_file": "baseline_tests/run_step9_moving_boundary_coupled_smoke.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -416,7 +416,7 @@
       "reruns_solver": false,
       "step": 9,
       "test_file": "baseline_tests/run_step9_moving_boundary_reaction_field.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -430,7 +430,7 @@
       "reruns_solver": false,
       "step": 9,
       "test_file": "baseline_tests/run_step9_moving_boundary_two_way_mpm_reaction.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -444,7 +444,7 @@
       "reruns_solver": false,
       "step": 9,
       "test_file": "tests/test_step9_moving_boundary_reaction_contract.py",
-      "test_strength_level": "existence_log_report_contract",
+      "test_strength_level": "artifact_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -458,7 +458,7 @@
       "reruns_solver": true,
       "step": 10,
       "test_file": "baseline_tests/run_step10_driver_mode_matrix.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -472,7 +472,7 @@
       "reruns_solver": true,
       "step": 10,
       "test_file": "baseline_tests/run_step10_driver_moving_boundary_mode.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -486,7 +486,7 @@
       "reruns_solver": true,
       "step": 10,
       "test_file": "baseline_tests/run_step10_driver_penalty_mode.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -500,7 +500,7 @@
       "reruns_solver": true,
       "step": 10,
       "test_file": "baseline_tests/run_step10_performance_profile.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -514,7 +514,7 @@
       "reruns_solver": true,
       "step": 10,
       "test_file": "tests/test_step10_fsi_driver_contract.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -528,7 +528,7 @@
       "reruns_solver": true,
       "step": 11,
       "test_file": "tests/test_step11_documentation_contract.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -556,7 +556,7 @@
       "reruns_solver": true,
       "step": 12,
       "test_file": "baseline_tests/run_step12_driver_profile_matrix.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -584,7 +584,7 @@
       "reruns_solver": true,
       "step": 12,
       "test_file": "baseline_tests/run_step12_no_physics_regression.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -598,7 +598,7 @@
       "reruns_solver": true,
       "step": 12,
       "test_file": "tests/test_step12_performance_memory_contract.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -626,7 +626,7 @@
       "reruns_solver": true,
       "step": 13,
       "test_file": "baseline_tests/run_step13_driver_squid_proxy_modes.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -682,7 +682,7 @@
       "reruns_solver": true,
       "step": 13,
       "test_file": "tests/test_step13_geometry_ingestion_contract.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -1116,7 +1116,7 @@
       "reruns_solver": false,
       "step": 18,
       "test_file": "baseline_tests/run_step18_link_area_policy_sweep_box_32.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -1144,7 +1144,7 @@
       "reruns_solver": false,
       "step": 18,
       "test_file": "baseline_tests/run_step18_link_area_transfer_sanity.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -1186,7 +1186,7 @@
       "reruns_solver": true,
       "step": 18,
       "test_file": "tests/test_step18_link_area_transfer_contract.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -1214,7 +1214,7 @@
       "reruns_solver": true,
       "step": 19,
       "test_file": "baseline_tests/run_step19_compare_48_long_engineering_vs_link_area.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -1270,7 +1270,7 @@
       "reruns_solver": false,
       "step": 19,
       "test_file": "baseline_tests/run_step19_long_run_summary.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -1298,7 +1298,7 @@
       "reruns_solver": true,
       "step": 19,
       "test_file": "baseline_tests/run_step19_regression_step18.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -1312,7 +1312,7 @@
       "reruns_solver": false,
       "step": 19,
       "test_file": "tests/test_step19_link_area_long_run_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -1396,7 +1396,7 @@
       "reruns_solver": false,
       "step": 20,
       "test_file": "tests/test_step20_geometry_import_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -1508,7 +1508,7 @@
       "reruns_solver": false,
       "step": 21,
       "test_file": "tests/test_step21_imported_geometry_scale_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -1606,7 +1606,7 @@
       "reruns_solver": true,
       "step": 22,
       "test_file": "tests/test_step22_geometry_quality_contract.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -1718,7 +1718,7 @@
       "reruns_solver": false,
       "step": 23,
       "test_file": "tests/test_step23_quality_gated_geometry_scale_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -1998,7 +1998,7 @@
       "reruns_solver": false,
       "step": 25,
       "test_file": "tests/test_step25_controlled_real_geometry_intake_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -2152,7 +2152,7 @@
       "reruns_solver": false,
       "step": 26,
       "test_file": "tests/test_step26_controlled_real_geometry_short_feasibility_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -2278,7 +2278,7 @@
       "reruns_solver": false,
       "step": 27,
       "test_file": "tests/test_step27_controlled_real_geometry_64_short_driver_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -2306,7 +2306,7 @@
       "reruns_solver": false,
       "step": 28,
       "test_file": "baseline_tests/run_step28_area_scale_envelope.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -2348,7 +2348,7 @@
       "reruns_solver": false,
       "step": 28,
       "test_file": "baseline_tests/run_step28_engineering_vs_link_area_comparison.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -2418,7 +2418,7 @@
       "reruns_solver": false,
       "step": 28,
       "test_file": "tests/test_step28_controlled_real_geometry_64_transfer_diagnostics_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -2446,7 +2446,7 @@
       "reruns_solver": false,
       "step": 29,
       "test_file": "baseline_tests/run_step29_area_scale_envelope.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -2488,7 +2488,7 @@
       "reruns_solver": false,
       "step": 29,
       "test_file": "baseline_tests/run_step29_engineering_vs_link_area_envelope.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -2572,7 +2572,7 @@
       "reruns_solver": false,
       "step": 29,
       "test_file": "tests/test_step29_controlled_real_geometry_64_stability_envelope_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -2684,7 +2684,7 @@
       "reruns_solver": false,
       "step": 30,
       "test_file": "tests/test_step30_squid_proxy_region_geometry_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -2796,7 +2796,7 @@
       "reruns_solver": false,
       "step": 31,
       "test_file": "tests/test_step31_squid_proxy_region_static_driver_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -2922,7 +2922,7 @@
       "reruns_solver": true,
       "step": 32,
       "test_file": "tests/test_step32_squid_proxy_kinematics_schedule_contract.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -3048,7 +3048,7 @@
       "reruns_solver": true,
       "step": 33,
       "test_file": "tests/test_step33_squid_proxy_kinematics_mapping_contract.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -3188,7 +3188,7 @@
       "reruns_solver": true,
       "step": 34,
       "test_file": "tests/test_step34_boundary_motion_driver_interface_contract.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -3258,7 +3258,7 @@
       "reruns_solver": false,
       "step": 35,
       "test_file": "baseline_tests/run_step35_no_lbm_update_guard.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -3286,7 +3286,7 @@
       "reruns_solver": false,
       "step": 35,
       "test_file": "baseline_tests/run_step35_wall_velocity_config_validation.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -3328,7 +3328,7 @@
       "reruns_solver": false,
       "step": 35,
       "test_file": "tests/test_step35_wall_velocity_field_diagnostics_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -3426,7 +3426,7 @@
       "reruns_solver": false,
       "step": 36,
       "test_file": "baseline_tests/run_step36_step35_regression_guard.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -3440,7 +3440,7 @@
       "reruns_solver": false,
       "step": 36,
       "test_file": "baseline_tests/run_step36_wall_velocity_application_config_validation.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -3454,7 +3454,7 @@
       "reruns_solver": false,
       "step": 36,
       "test_file": "baseline_tests/run_step36_wall_velocity_application_quality.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -3468,7 +3468,7 @@
       "reruns_solver": false,
       "step": 36,
       "test_file": "baseline_tests/run_step36_wall_velocity_application_report.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -3482,7 +3482,7 @@
       "reruns_solver": false,
       "step": 36,
       "test_file": "tests/test_step36_moving_wall_bounceback_application_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -3552,7 +3552,7 @@
       "reruns_solver": false,
       "step": 37,
       "test_file": "baseline_tests/run_step37_mass_force_bounceback_envelope.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -3594,7 +3594,7 @@
       "reruns_solver": false,
       "step": 37,
       "test_file": "baseline_tests/run_step37_step36_regression_guard.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -3608,7 +3608,7 @@
       "reruns_solver": false,
       "step": 37,
       "test_file": "baseline_tests/run_step37_wall_velocity_timeseries_quality.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -3622,7 +3622,7 @@
       "reruns_solver": false,
       "step": 37,
       "test_file": "tests/test_step37_wall_velocity_application_envelope_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -3776,7 +3776,7 @@
       "reruns_solver": false,
       "step": 38,
       "test_file": "tests/test_step38_tethered_jet_cycle_diagnostics_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -3944,7 +3944,7 @@
       "reruns_solver": false,
       "step": 39,
       "test_file": "tests/test_step39_multicycle_jet_proxy_stability_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -4014,7 +4014,7 @@
       "reruns_solver": false,
       "step": 40,
       "test_file": "baseline_tests/run_step40_parameter_config_validation.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -4112,7 +4112,7 @@
       "reruns_solver": false,
       "step": 40,
       "test_file": "tests/test_step40_jet_cycle_parameter_sensitivity_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -4224,7 +4224,7 @@
       "reruns_solver": false,
       "step": 41,
       "test_file": "baseline_tests/run_step41_selected_parameter_config_validation.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -4294,7 +4294,7 @@
       "reruns_solver": false,
       "step": 41,
       "test_file": "tests/test_step41_selected_parameter_64_feasibility_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -4420,7 +4420,7 @@
       "reruns_solver": true,
       "step": 42,
       "test_file": "baseline_tests/run_step42_no_driver_update_guard.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": false,
       "validates_numerical_benchmark": false
     },
@@ -4462,7 +4462,7 @@
       "reruns_solver": true,
       "step": 42,
       "test_file": "tests/test_step42_geometry_displacement_diagnostics_contract.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -4574,7 +4574,7 @@
       "reruns_solver": false,
       "step": 43,
       "test_file": "baseline_tests/run_step43_static_vs_diagnostic_noop_comparison.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -4602,7 +4602,7 @@
       "reruns_solver": true,
       "step": 43,
       "test_file": "tests/test_step43_geometry_motion_driver_interface_contract.py",
-      "test_strength_level": "solver_smoke_or_runtime_contract",
+      "test_strength_level": "solver_smoke_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -4756,7 +4756,7 @@
       "reruns_solver": false,
       "step": 44,
       "test_file": "tests/test_step44_diagnostic_geometry_update_smoke_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -4910,7 +4910,7 @@
       "reruns_solver": false,
       "step": 45,
       "test_file": "tests/test_step45_runtime_geometry_projection_integration_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -4980,7 +4980,7 @@
       "reruns_solver": false,
       "step": 46,
       "test_file": "baseline_tests/run_step46_mass_force_bounceback_diagnostics.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -5036,7 +5036,7 @@
       "reruns_solver": false,
       "step": 46,
       "test_file": "tests/test_step46_runtime_geometry_wall_velocity_coupling_smoke_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -5078,7 +5078,7 @@
       "reruns_solver": false,
       "step": 47,
       "test_file": "baseline_tests/run_step47_mass_force_bounceback_envelope.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -5176,7 +5176,7 @@
       "reruns_solver": false,
       "step": 47,
       "test_file": "tests/test_step47_runtime_geometry_wall_velocity_short_step_envelope_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -5260,7 +5260,7 @@
       "reruns_solver": false,
       "step": 48,
       "test_file": "baseline_tests/run_step48_mass_force_bounceback_10step_envelope.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -5330,7 +5330,7 @@
       "reruns_solver": false,
       "step": 48,
       "test_file": "tests/test_step48_runtime_geometry_wall_velocity_10step_envelope_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -5428,7 +5428,7 @@
       "reruns_solver": false,
       "step": 49,
       "test_file": "baseline_tests/run_step49_mass_force_bounceback_20step_envelope.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -5498,7 +5498,7 @@
       "reruns_solver": false,
       "step": 49,
       "test_file": "tests/test_step49_runtime_geometry_wall_velocity_20step_envelope_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -6058,7 +6058,7 @@
       "reruns_solver": false,
       "step": 53,
       "test_file": "baseline_tests/run_step53_bounceback_support_scaling_audit.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -6128,7 +6128,7 @@
       "reruns_solver": false,
       "step": 53,
       "test_file": "tests/test_step53_support_scaling_active_cell_semantics_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -6170,7 +6170,7 @@
       "reruns_solver": false,
       "step": 54,
       "test_file": "baseline_tests/run_step54_lbm_relaxation_semantics_audit.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -6254,7 +6254,7 @@
       "reruns_solver": false,
       "step": 54,
       "test_file": "tests/test_step54_lbm_relaxation_semantics_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
       "validates_numerical_benchmark": false
     },
@@ -6268,20 +6268,162 @@
       "reruns_solver": false,
       "step": 54,
       "test_file": "tests/test_step54_repository_evidence_integrity_repair_contract.py",
-      "test_strength_level": "formula_contract",
+      "test_strength_level": "formula_unit_contract",
       "validates_formula": true,
+      "validates_numerical_benchmark": false
+    },
+    {
+      "checks_committed_artifact_json": false,
+      "checks_file_existence": true,
+      "checks_log_marker": true,
+      "checks_report_text": false,
+      "checks_source_string": false,
+      "reruns_runner": true,
+      "reruns_solver": false,
+      "step": 55,
+      "test_file": "baseline_tests/run_step55_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract",
+      "validates_formula": false,
+      "validates_numerical_benchmark": false
+    },
+    {
+      "checks_committed_artifact_json": false,
+      "checks_file_existence": false,
+      "checks_log_marker": true,
+      "checks_report_text": false,
+      "checks_source_string": false,
+      "reruns_runner": true,
+      "reruns_solver": false,
+      "step": 55,
+      "test_file": "baseline_tests/run_step55_code_layout_audit.py",
+      "test_strength_level": "runner_reexecution_contract",
+      "validates_formula": false,
+      "validates_numerical_benchmark": false
+    },
+    {
+      "checks_committed_artifact_json": false,
+      "checks_file_existence": false,
+      "checks_log_marker": true,
+      "checks_report_text": false,
+      "checks_source_string": false,
+      "reruns_runner": true,
+      "reruns_solver": false,
+      "step": 55,
+      "test_file": "baseline_tests/run_step55_compatibility_shim_audit.py",
+      "test_strength_level": "runner_reexecution_contract",
+      "validates_formula": false,
+      "validates_numerical_benchmark": false
+    },
+    {
+      "checks_committed_artifact_json": false,
+      "checks_file_existence": false,
+      "checks_log_marker": true,
+      "checks_report_text": false,
+      "checks_source_string": false,
+      "reruns_runner": true,
+      "reruns_solver": false,
+      "step": 55,
+      "test_file": "baseline_tests/run_step55_import_boundary_audit.py",
+      "test_strength_level": "runner_reexecution_contract",
+      "validates_formula": false,
+      "validates_numerical_benchmark": false
+    },
+    {
+      "checks_committed_artifact_json": true,
+      "checks_file_existence": false,
+      "checks_log_marker": true,
+      "checks_report_text": true,
+      "checks_source_string": false,
+      "reruns_runner": true,
+      "reruns_solver": false,
+      "step": 55,
+      "test_file": "baseline_tests/run_step55_step54_regression_guard.py",
+      "test_strength_level": "formula_unit_contract",
+      "validates_formula": true,
+      "validates_numerical_benchmark": false
+    },
+    {
+      "checks_committed_artifact_json": true,
+      "checks_file_existence": false,
+      "checks_log_marker": true,
+      "checks_report_text": false,
+      "checks_source_string": false,
+      "reruns_runner": true,
+      "reruns_solver": false,
+      "step": 55,
+      "test_file": "baseline_tests/run_step55_test_strength_enum_audit.py",
+      "test_strength_level": "runner_reexecution_contract",
+      "validates_formula": false,
+      "validates_numerical_benchmark": false
+    },
+    {
+      "checks_committed_artifact_json": true,
+      "checks_file_existence": false,
+      "checks_log_marker": false,
+      "checks_report_text": false,
+      "checks_source_string": true,
+      "reruns_runner": false,
+      "reruns_solver": false,
+      "step": 55,
+      "test_file": "tests/test_step55_compatibility_shim_contract.py",
+      "test_strength_level": "artifact_plus_source_contract",
+      "validates_formula": false,
+      "validates_numerical_benchmark": false
+    },
+    {
+      "checks_committed_artifact_json": true,
+      "checks_file_existence": false,
+      "checks_log_marker": true,
+      "checks_report_text": false,
+      "checks_source_string": false,
+      "reruns_runner": false,
+      "reruns_solver": false,
+      "step": 55,
+      "test_file": "tests/test_step55_import_boundary_contract.py",
+      "test_strength_level": "artifact_contract",
+      "validates_formula": false,
+      "validates_numerical_benchmark": false
+    },
+    {
+      "checks_committed_artifact_json": true,
+      "checks_file_existence": true,
+      "checks_log_marker": true,
+      "checks_report_text": true,
+      "checks_source_string": true,
+      "reruns_runner": true,
+      "reruns_solver": false,
+      "step": 55,
+      "test_file": "tests/test_step55_repository_code_layout_contract.py",
+      "test_strength_level": "formula_unit_contract",
+      "validates_formula": true,
+      "validates_numerical_benchmark": false
+    },
+    {
+      "checks_committed_artifact_json": true,
+      "checks_file_existence": false,
+      "checks_log_marker": false,
+      "checks_report_text": true,
+      "checks_source_string": false,
+      "reruns_runner": false,
+      "reruns_solver": false,
+      "step": 55,
+      "test_file": "tests/test_step55_test_strength_enum_contract.py",
+      "test_strength_level": "artifact_contract",
+      "validates_formula": false,
       "validates_numerical_benchmark": false
     }
   ],
   "summary": {
-    "artifact_or_proxy_contract_count": 43,
-    "audited_file_count": 448,
-    "classified_file_count": 448,
-    "formula_contract_count": 81,
+    "allowed_test_strength_level_count": 7,
+    "artifact_or_proxy_contract_count": 46,
+    "audited_file_count": 458,
+    "classified_file_count": 458,
+    "formula_unit_contract_count": 83,
     "numerical_benchmark_contract_count": 13,
-    "runner_reexecution_contract_count": 443,
+    "out_of_policy_strength_level_count": 0,
+    "runner_reexecution_contract_count": 450,
     "solver_runtime_contract_count": 21,
     "test_strength_audit_pass": true,
-    "test_suite_result_interpretation": "604/614 passed means contract/artifact/proxy tests passed unless explicitly classified otherwise."
+    "test_suite_result_interpretation": "A passing full pytest run means contract/artifact/proxy/solver-smoke tests passed according to the test strength audit classification."
   }
 }

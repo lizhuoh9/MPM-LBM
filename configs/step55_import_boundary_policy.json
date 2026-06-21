@@ -1,0 +1,42 @@
+{
+  "policy_id": "step55_import_boundary_policy",
+  "sim_scan_root": "src/mpm_lbm/sim",
+  "sim_forbidden_import_tokens": [
+    "import experiments",
+    "from experiments",
+    "import baseline_tests",
+    "from baseline_tests",
+    "import tests",
+    "from tests",
+    "import outputs",
+    "from outputs",
+    "import logs",
+    "from logs",
+    "import docs",
+    "from docs"
+  ],
+  "sim_forbidden_path_tokens": [
+    "outputs/",
+    "outputs\\\\",
+    "logs/",
+    "logs\\\\",
+    "docs/",
+    "docs\\\\"
+  ],
+  "sim_forbidden_step_tokens": [
+    "step50",
+    "step51",
+    "step52",
+    "step53",
+    "step54",
+    "Step 50",
+    "Step 51",
+    "Step 52",
+    "Step 53",
+    "Step 54"
+  ],
+  "experiments_may_import_sim": true,
+  "experiments_may_import_diagnostics": true,
+  "experiments_may_import_evidence": true,
+  "solver_behavior_changed": false
+}

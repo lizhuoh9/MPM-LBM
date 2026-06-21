@@ -1,0 +1,13 @@
+check,pass,value,notes
+step54_lbm_relaxation_semantics_pass,True,True,Step 54 LBM semantics audit remains green
+step54_proxy_truthfulness_pass,True,True,Step 54 proxy truthfulness audit remains green
+step54_state_guard_truthfulness_pass,True,True,Step 54 state guard truthfulness audit remains green
+step54_repository_evidence_index_pass,True,True,Step 54 repository evidence index remains green
+step54_claim_guard_pass,True,True,Step 54 claim guard remains green
+step54_artifact_manifest_pass,True,True,Step 54 artifact manifest remains green
+step54_test_strength_audit_pass,True,True,Step 54 test strength audit remains green
+step54_test_strength_enum_policy,True,True,Step 54 test strength rows use Step 55 policy enum
+step54_pytest_interpretation_updated,True,True,Step 54 pytest interpretation must be durable
+step54_report_no_stale_pytest_count,True,True,Step 54 report must not contain stale pytest count
+step54_config_no_stale_pytest_count,True,True,Step 54 policy config must not contain stale pytest count
+step54_tests_no_stale_pytest_count,True,True,Step 54 tests must not contain stale pytest count

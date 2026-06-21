@@ -1,0 +1,242 @@
+{
+  "rows": [
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/__init__.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/coupling/__init__.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/coupling/link_area.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/coupling/link_area_accounting.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/coupling/momentum_accounting.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/coupling/moving_boundary.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/coupling/penalty.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/coupling/projection.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/drivers/__init__.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/drivers/fsi_config.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/drivers/fsi_driver.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/drivers/sim_config.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/io/__init__.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/io/run_utils.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/lbm/__init__.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/lbm/config.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/lbm/fluid.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/lbm/relaxation_semantics.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/mpm/__init__.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/mpm/config.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/mpm/solid.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/units/__init__.py"
+    },
+    {
+      "forbidden_import_count": 0,
+      "forbidden_import_hits": [],
+      "forbidden_path_count": 0,
+      "forbidden_path_hits": [],
+      "forbidden_step_constant_count": 0,
+      "forbidden_step_hits": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/units/mapper.py"
+    }
+  ],
+  "summary": {
+    "import_boundary_audit_pass": true,
+    "scanned_sim_file_count": 23,
+    "sim_forbidden_import_count": 0,
+    "sim_forbidden_path_count": 0,
+    "sim_step_constant_count": 0,
+    "solver_behavior_changed": false
+  }
+}

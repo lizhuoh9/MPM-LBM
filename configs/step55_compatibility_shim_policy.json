@@ -1,0 +1,57 @@
+{
+  "policy_id": "step55_compatibility_shim_policy",
+  "surfaces": [
+    {
+      "old_path": "src/lbm_fluid.py",
+      "new_path": "src/mpm_lbm/sim/lbm/fluid.py",
+      "symbol": "LBMFluid3D"
+    },
+    {
+      "old_path": "src/lbm_config.py",
+      "new_path": "src/mpm_lbm/sim/lbm/config.py",
+      "symbol": "LBMConfig"
+    },
+    {
+      "old_path": "src/fsi_driver.py",
+      "new_path": "src/mpm_lbm/sim/drivers/fsi_driver.py",
+      "symbol": "FSIDriver3D"
+    },
+    {
+      "old_path": "src/fsi_config.py",
+      "new_path": "src/mpm_lbm/sim/drivers/fsi_config.py",
+      "symbol": "FSIDriverConfig"
+    },
+    {
+      "old_path": "src/projection.py",
+      "new_path": "src/mpm_lbm/sim/coupling/projection.py",
+      "symbol": "MPMToLBMProjector3D"
+    },
+    {
+      "old_path": "src/repository_evidence_index.py",
+      "new_path": "src/mpm_lbm/evidence/repository_evidence_index.py",
+      "symbol": "build_repository_evidence_index"
+    },
+    {
+      "old_path": "src/repository_test_strength_audit.py",
+      "new_path": "src/mpm_lbm/evidence/repository_test_strength_audit.py",
+      "symbol": "build_repository_test_strength_audit"
+    },
+    {
+      "old_path": "src/runtime_geometry_wall_velocity_one_cycle_envelope.py",
+      "new_path": "experiments/steps/step50_one_cycle_proxy/envelope.py",
+      "symbol": "run_one_cycle_envelope_matrix"
+    },
+    {
+      "old_path": "src/runtime_geometry_wall_velocity_transfer_envelope.py",
+      "new_path": "experiments/steps/step51_transfer_comparison_proxy/envelope.py",
+      "symbol": "run_transfer_comparison_matrix"
+    },
+    {
+      "old_path": "src/runtime_geometry_wall_velocity_48_feasibility_envelope.py",
+      "new_path": "experiments/steps/step52_48_feasibility_proxy/envelope.py",
+      "symbol": "run_48_feasibility_matrix"
+    }
+  ],
+  "source_text_check_only": true,
+  "avoid_heavy_runtime_imports_in_hook": true
+}

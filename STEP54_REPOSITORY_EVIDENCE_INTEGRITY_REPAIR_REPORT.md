@@ -23,7 +23,7 @@ Step 54 repairs repository evidence integrity after Step 53. It does not continu
 1. LBM relaxation semantics are explicit. The legacy external solver parameter path is named by `tau_from_legacy_external_solver_parameter(niu)`, and the standard lattice kinematic viscosity path is separately named by `tau_from_lattice_kinematic_viscosity(nu_lbm)`. `LBMFluid3D` keeps the legacy formula through the helper, so default behavior is unchanged.
 2. Step 50, Step 51, and Step 52 proxy rows and per-step records now disclose `record_kind = proxy_diagnostic_record`, `solver_time_integration_run = false`, and source labels for completed step counts, density/velocity values, force values, and finite-value assumptions.
 3. Step 50, Step 51, and Step 52 state guards now disclose that fixed-zero default driver/LBM/MPM/projection fields are not applicable proxy fields, while persistent artifact counts remain config and artifact guard checks.
-4. The repository test suite is classified by evidence strength. 604/614 passed means contract/artifact/proxy tests passed unless explicitly classified otherwise.
+4. The repository test suite is classified by evidence strength. A passing full pytest run means contract/artifact/proxy/solver-smoke tests passed according to the test strength audit classification.
 5. A repository evidence index classifies Step 50/51/52 as proxy diagnostics, Step 53 as a post-processing audit, and Step 1/2 as solver smoke baselines.
 6. A claim guard keeps real-jet, jet-propulsion, squid-swimming, grid-convergence, production-readiness, full-solver-validation, and standard-viscosity-validation claims false.
 

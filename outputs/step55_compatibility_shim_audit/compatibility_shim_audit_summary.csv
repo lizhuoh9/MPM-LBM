@@ -1,0 +1,6 @@
+metric,value
+avoid_heavy_runtime_imports_in_hook,True
+compatibility_shim_audit_pass,True
+pass_count,10
+source_text_check_only,True
+surface_count,10

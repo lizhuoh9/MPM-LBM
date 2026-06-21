@@ -1,0 +1,7 @@
+metric,value
+allowed_count,458
+allowed_test_strength_level_count,7
+out_of_policy_count,0
+pytest_result_interpretation,A passing full pytest run means contract/artifact/proxy/solver-smoke tests passed according to the test strength audit classification.
+row_count,458
+test_strength_enum_audit_pass,True

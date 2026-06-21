@@ -1,0 +1,2760 @@
+{
+  "rows": [
+    {
+      "allowed": true,
+      "step": 1,
+      "test_file": "tests/test_step1_artifacts.py",
+      "test_strength_level": "artifact_contract"
+    },
+    {
+      "allowed": true,
+      "step": 2,
+      "test_file": "tests/test_step2_lbm_refactor_contract.py",
+      "test_strength_level": "artifact_contract"
+    },
+    {
+      "allowed": true,
+      "step": 3,
+      "test_file": "tests/test_step3_mpm_solid_contract.py",
+      "test_strength_level": "artifact_contract"
+    },
+    {
+      "allowed": true,
+      "step": 4,
+      "test_file": "baseline_tests/run_step4_shared_domain.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 4,
+      "test_file": "baseline_tests/run_step4_time_sync_dummy.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 4,
+      "test_file": "baseline_tests/run_step4_units_consistency.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 4,
+      "test_file": "tests/test_step4_units_grid_timestep_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 5,
+      "test_file": "baseline_tests/run_step5_dynamic_solid_mask_dryrun.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 5,
+      "test_file": "baseline_tests/run_step5_projection_after_mpm_motion.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 5,
+      "test_file": "baseline_tests/run_step5_projection_moving_block.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 5,
+      "test_file": "baseline_tests/run_step5_projection_static_block.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 5,
+      "test_file": "tests/test_step5_projection_contract.py",
+      "test_strength_level": "artifact_contract"
+    },
+    {
+      "allowed": true,
+      "step": 6,
+      "test_file": "baseline_tests/run_step6_coupled_smoke.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 6,
+      "test_file": "baseline_tests/run_step6_lbm_response_to_moving_solid.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 6,
+      "test_file": "baseline_tests/run_step6_penalty_force_field.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 6,
+      "test_file": "baseline_tests/run_step6_two_way_mpm_reaction.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 6,
+      "test_file": "tests/test_step6_penalty_coupling_contract.py",
+      "test_strength_level": "artifact_contract"
+    },
+    {
+      "allowed": true,
+      "step": 7,
+      "test_file": "baseline_tests/run_step7_beta_sweep.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 7,
+      "test_file": "baseline_tests/run_step7_couette_like_validation.py",
+      "test_strength_level": "numerical_benchmark_contract"
+    },
+    {
+      "allowed": true,
+      "step": 7,
+      "test_file": "baseline_tests/run_step7_long_coupled_stability.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 7,
+      "test_file": "baseline_tests/run_step7_momentum_impulse_diagnostics.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 7,
+      "test_file": "tests/test_step7_validation_contract.py",
+      "test_strength_level": "numerical_benchmark_contract"
+    },
+    {
+      "allowed": true,
+      "step": 8,
+      "test_file": "baseline_tests/run_step8_momentum_exchange_diagnostics.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 8,
+      "test_file": "baseline_tests/run_step8_prescribed_moving_wall_couette.py",
+      "test_strength_level": "numerical_benchmark_contract"
+    },
+    {
+      "allowed": true,
+      "step": 8,
+      "test_file": "baseline_tests/run_step8_projected_mpm_moving_boundary.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 8,
+      "test_file": "baseline_tests/run_step8_static_bounceback_regression.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 8,
+      "test_file": "tests/test_step8_moving_bounceback_contract.py",
+      "test_strength_level": "numerical_benchmark_contract"
+    },
+    {
+      "allowed": true,
+      "step": 9,
+      "test_file": "baseline_tests/run_step9_compare_penalty_vs_moving_boundary.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 9,
+      "test_file": "baseline_tests/run_step9_moving_boundary_coupled_smoke.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 9,
+      "test_file": "baseline_tests/run_step9_moving_boundary_reaction_field.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 9,
+      "test_file": "baseline_tests/run_step9_moving_boundary_two_way_mpm_reaction.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 9,
+      "test_file": "tests/test_step9_moving_boundary_reaction_contract.py",
+      "test_strength_level": "artifact_contract"
+    },
+    {
+      "allowed": true,
+      "step": 10,
+      "test_file": "baseline_tests/run_step10_driver_mode_matrix.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 10,
+      "test_file": "baseline_tests/run_step10_driver_moving_boundary_mode.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 10,
+      "test_file": "baseline_tests/run_step10_driver_penalty_mode.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 10,
+      "test_file": "baseline_tests/run_step10_performance_profile.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 10,
+      "test_file": "tests/test_step10_fsi_driver_contract.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 11,
+      "test_file": "tests/test_step11_documentation_contract.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 12,
+      "test_file": "baseline_tests/run_step12_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 12,
+      "test_file": "baseline_tests/run_step12_driver_profile_matrix.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 12,
+      "test_file": "baseline_tests/run_step12_memory_estimate.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 12,
+      "test_file": "baseline_tests/run_step12_no_physics_regression.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 12,
+      "test_file": "tests/test_step12_performance_memory_contract.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 13,
+      "test_file": "baseline_tests/run_step13_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 13,
+      "test_file": "baseline_tests/run_step13_driver_squid_proxy_modes.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 13,
+      "test_file": "baseline_tests/run_step13_geometry_sampler_box.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 13,
+      "test_file": "baseline_tests/run_step13_geometry_sampler_ellipsoid.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 13,
+      "test_file": "baseline_tests/run_step13_squid_proxy_geometry.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 13,
+      "test_file": "tests/test_step13_geometry_ingestion_contract.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 14,
+      "test_file": "baseline_tests/run_step14_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 14,
+      "test_file": "baseline_tests/run_step14_feasibility_64.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 14,
+      "test_file": "baseline_tests/run_step14_scale_box_48.py",
+      "test_strength_level": "numerical_benchmark_contract"
+    },
+    {
+      "allowed": true,
+      "step": 14,
+      "test_file": "baseline_tests/run_step14_scale_squid_proxy_48.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 14,
+      "test_file": "baseline_tests/run_step14_scaling_summary.py",
+      "test_strength_level": "numerical_benchmark_contract"
+    },
+    {
+      "allowed": true,
+      "step": 14,
+      "test_file": "tests/test_step14_larger_grid_contract.py",
+      "test_strength_level": "numerical_benchmark_contract"
+    },
+    {
+      "allowed": true,
+      "step": 15,
+      "test_file": "baseline_tests/run_step15_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 15,
+      "test_file": "baseline_tests/run_step15_calibrated_vs_original_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 15,
+      "test_file": "baseline_tests/run_step15_force_cap_sweep_box_48.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 15,
+      "test_file": "baseline_tests/run_step15_momentum_accounting_sanity.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 15,
+      "test_file": "baseline_tests/run_step15_reaction_scale_sweep_box_32.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 15,
+      "test_file": "baseline_tests/run_step15_squid_proxy_calibrated_window.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 15,
+      "test_file": "tests/test_step15_moving_boundary_calibration_contract.py",
+      "test_strength_level": "numerical_benchmark_contract"
+    },
+    {
+      "allowed": true,
+      "step": 16,
+      "test_file": "baseline_tests/run_step16_64_mode_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 16,
+      "test_file": "baseline_tests/run_step16_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 16,
+      "test_file": "baseline_tests/run_step16_feasibility_64_moving_boundary.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 16,
+      "test_file": "baseline_tests/run_step16_long_box_48_moving_boundary.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 16,
+      "test_file": "baseline_tests/run_step16_long_run_summary.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 16,
+      "test_file": "baseline_tests/run_step16_long_squid_proxy_48_moving_boundary.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 16,
+      "test_file": "tests/test_step16_long_run_validation_contract.py",
+      "test_strength_level": "artifact_plus_source_contract"
+    },
+    {
+      "allowed": true,
+      "step": 17,
+      "test_file": "baseline_tests/run_step17_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 17,
+      "test_file": "baseline_tests/run_step17_box_48_link_budget.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 17,
+      "test_file": "baseline_tests/run_step17_box_64_link_budget.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 17,
+      "test_file": "baseline_tests/run_step17_directional_link_sanity.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 17,
+      "test_file": "baseline_tests/run_step17_link_area_wall_couette.py",
+      "test_strength_level": "numerical_benchmark_contract"
+    },
+    {
+      "allowed": true,
+      "step": 17,
+      "test_file": "baseline_tests/run_step17_squid_proxy_48_link_budget.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 17,
+      "test_file": "baseline_tests/run_step17_step16_regression.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 17,
+      "test_file": "tests/test_step17_link_area_accounting_contract.py",
+      "test_strength_level": "numerical_benchmark_contract"
+    },
+    {
+      "allowed": true,
+      "step": 18,
+      "test_file": "baseline_tests/run_step18_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 18,
+      "test_file": "baseline_tests/run_step18_compare_engineering_vs_link_area.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 18,
+      "test_file": "baseline_tests/run_step18_link_area_policy_sweep_box_32.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 18,
+      "test_file": "baseline_tests/run_step18_link_area_transfer_box_48.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 18,
+      "test_file": "baseline_tests/run_step18_link_area_transfer_sanity.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 18,
+      "test_file": "baseline_tests/run_step18_link_area_transfer_squid_proxy_48.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 18,
+      "test_file": "baseline_tests/run_step18_regression_existing_modes.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 18,
+      "test_file": "tests/test_step18_link_area_transfer_contract.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 19,
+      "test_file": "baseline_tests/run_step19_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 19,
+      "test_file": "baseline_tests/run_step19_compare_48_long_engineering_vs_link_area.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 19,
+      "test_file": "baseline_tests/run_step19_compare_64_engineering_vs_link_area.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 19,
+      "test_file": "baseline_tests/run_step19_feasibility_64_link_area.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 19,
+      "test_file": "baseline_tests/run_step19_long_box_48_link_area.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 19,
+      "test_file": "baseline_tests/run_step19_long_run_summary.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 19,
+      "test_file": "baseline_tests/run_step19_long_squid_proxy_48_link_area.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 19,
+      "test_file": "baseline_tests/run_step19_regression_step18.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 19,
+      "test_file": "tests/test_step19_link_area_long_run_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 20,
+      "test_file": "baseline_tests/run_step20_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 20,
+      "test_file": "baseline_tests/run_step20_driver_imported_geometry_modes.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 20,
+      "test_file": "baseline_tests/run_step20_imported_geometry_projection.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 20,
+      "test_file": "baseline_tests/run_step20_mesh_import_sanity.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 20,
+      "test_file": "baseline_tests/run_step20_voxel_import_sanity.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 20,
+      "test_file": "tests/test_step20_geometry_import_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 21,
+      "test_file": "baseline_tests/run_step21_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 21,
+      "test_file": "baseline_tests/run_step21_imported_geometry_64_feasibility.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 21,
+      "test_file": "baseline_tests/run_step21_imported_geometry_projection_quality.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 21,
+      "test_file": "baseline_tests/run_step21_imported_geometry_scale_summary.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 21,
+      "test_file": "baseline_tests/run_step21_mesh_cube_48_modes.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 21,
+      "test_file": "baseline_tests/run_step21_mesh_ellipsoid_48_modes.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 21,
+      "test_file": "baseline_tests/run_step21_voxel_sphere_48_modes.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 21,
+      "test_file": "tests/test_step21_imported_geometry_scale_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 22,
+      "test_file": "baseline_tests/run_step22_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 22,
+      "test_file": "baseline_tests/run_step22_bad_geometry_failure_checks.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 22,
+      "test_file": "baseline_tests/run_step22_driver_quality_gate_smoke.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 22,
+      "test_file": "baseline_tests/run_step22_mesh_quality_sanity.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 22,
+      "test_file": "baseline_tests/run_step22_sampling_resolution_sensitivity.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 22,
+      "test_file": "baseline_tests/run_step22_voxel_quality_sanity.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 22,
+      "test_file": "tests/test_step22_geometry_quality_contract.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 23,
+      "test_file": "baseline_tests/run_step23_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 23,
+      "test_file": "baseline_tests/run_step23_quality_gated_imported_geometry_64_feasibility.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 23,
+      "test_file": "baseline_tests/run_step23_quality_gated_mesh_cube_48_modes.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 23,
+      "test_file": "baseline_tests/run_step23_quality_gated_mesh_ellipsoid_48_modes.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 23,
+      "test_file": "baseline_tests/run_step23_quality_gated_voxel_sphere_48_modes.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 23,
+      "test_file": "baseline_tests/run_step23_quality_report_aggregation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 23,
+      "test_file": "baseline_tests/run_step23_step21_vs_quality_gated_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 23,
+      "test_file": "tests/test_step23_quality_gated_geometry_scale_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 24,
+      "test_file": "baseline_tests/run_step24_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 24,
+      "test_file": "baseline_tests/run_step24_quality_report_aggregation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 24,
+      "test_file": "baseline_tests/run_step24_step23_prefix_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 24,
+      "test_file": "baseline_tests/run_step24_strict_imported_geometry_64_feasibility.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 24,
+      "test_file": "baseline_tests/run_step24_strict_mesh_cube_48_long.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 24,
+      "test_file": "baseline_tests/run_step24_strict_mesh_ellipsoid_48_long.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 24,
+      "test_file": "baseline_tests/run_step24_strict_non_strict_report_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 24,
+      "test_file": "baseline_tests/run_step24_strict_voxel_sphere_48_long.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 24,
+      "test_file": "baseline_tests/run_step24_timing_overhead_summary.py",
+      "test_strength_level": "numerical_benchmark_contract"
+    },
+    {
+      "allowed": true,
+      "step": 24,
+      "test_file": "tests/test_step24_strict_quality_gated_imported_geometry_long_run_contract.py",
+      "test_strength_level": "numerical_benchmark_contract"
+    },
+    {
+      "allowed": true,
+      "step": 25,
+      "test_file": "baseline_tests/run_step25_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 25,
+      "test_file": "baseline_tests/run_step25_candidate_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 25,
+      "test_file": "baseline_tests/run_step25_mesh_candidate_quality.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 25,
+      "test_file": "baseline_tests/run_step25_normalization_reports.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 25,
+      "test_file": "baseline_tests/run_step25_projection_smoke.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 25,
+      "test_file": "baseline_tests/run_step25_real_geometry_intake_smoke.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 25,
+      "test_file": "baseline_tests/run_step25_sampling_reproducibility.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 25,
+      "test_file": "baseline_tests/run_step25_step24_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 25,
+      "test_file": "baseline_tests/run_step25_voxel_candidate_quality.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 25,
+      "test_file": "tests/test_step25_controlled_real_geometry_intake_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 26,
+      "test_file": "baseline_tests/run_step26_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 26,
+      "test_file": "baseline_tests/run_step26_candidate_fingerprint_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 26,
+      "test_file": "baseline_tests/run_step26_generate_driver_geometry_configs.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 26,
+      "test_file": "baseline_tests/run_step26_projection_scale_diagnostics.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 26,
+      "test_file": "baseline_tests/run_step26_quality_report_aggregation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 26,
+      "test_file": "baseline_tests/run_step26_short_driver_mesh_48_modes.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 26,
+      "test_file": "baseline_tests/run_step26_short_driver_summary.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 26,
+      "test_file": "baseline_tests/run_step26_short_driver_voxel_48_modes.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 26,
+      "test_file": "baseline_tests/run_step26_step25_projection_regression.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 26,
+      "test_file": "baseline_tests/run_step26_step25_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 26,
+      "test_file": "tests/test_step26_controlled_real_geometry_short_feasibility_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 27,
+      "test_file": "baseline_tests/run_step27_64_driver_mesh_feasibility.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 27,
+      "test_file": "baseline_tests/run_step27_64_driver_summary.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 27,
+      "test_file": "baseline_tests/run_step27_64_driver_voxel_feasibility.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 27,
+      "test_file": "baseline_tests/run_step27_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 27,
+      "test_file": "baseline_tests/run_step27_candidate_fingerprint_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 27,
+      "test_file": "baseline_tests/run_step27_driver_projection_alignment.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 27,
+      "test_file": "baseline_tests/run_step27_quality_report_aggregation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 27,
+      "test_file": "baseline_tests/run_step27_step26_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 27,
+      "test_file": "tests/test_step27_controlled_real_geometry_64_short_driver_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 28,
+      "test_file": "baseline_tests/run_step28_64_transfer_pair_driver.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 28,
+      "test_file": "baseline_tests/run_step28_area_scale_envelope.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 28,
+      "test_file": "baseline_tests/run_step28_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 28,
+      "test_file": "baseline_tests/run_step28_candidate_fingerprint_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 28,
+      "test_file": "baseline_tests/run_step28_engineering_vs_link_area_comparison.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 28,
+      "test_file": "baseline_tests/run_step28_force_reaction_diagnostics.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 28,
+      "test_file": "baseline_tests/run_step28_quality_report_aggregation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 28,
+      "test_file": "baseline_tests/run_step28_step27_prefix_regression.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 28,
+      "test_file": "baseline_tests/run_step28_step27_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 28,
+      "test_file": "tests/test_step28_controlled_real_geometry_64_transfer_diagnostics_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 29,
+      "test_file": "baseline_tests/run_step29_64_stability_driver.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 29,
+      "test_file": "baseline_tests/run_step29_area_scale_envelope.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 29,
+      "test_file": "baseline_tests/run_step29_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 29,
+      "test_file": "baseline_tests/run_step29_candidate_fingerprint_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 29,
+      "test_file": "baseline_tests/run_step29_engineering_vs_link_area_envelope.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 29,
+      "test_file": "baseline_tests/run_step29_force_reaction_envelope.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 29,
+      "test_file": "baseline_tests/run_step29_quality_report_aggregation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 29,
+      "test_file": "baseline_tests/run_step29_stability_envelope_summary.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 29,
+      "test_file": "baseline_tests/run_step29_step28_prefix_regression.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 29,
+      "test_file": "baseline_tests/run_step29_step28_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 29,
+      "test_file": "tests/test_step29_controlled_real_geometry_64_stability_envelope_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 30,
+      "test_file": "baseline_tests/run_step30_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 30,
+      "test_file": "baseline_tests/run_step30_region_mask_sampling.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 30,
+      "test_file": "baseline_tests/run_step30_region_overlap_diagnostics.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 30,
+      "test_file": "baseline_tests/run_step30_region_projection_smoke.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 30,
+      "test_file": "baseline_tests/run_step30_region_quality.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 30,
+      "test_file": "baseline_tests/run_step30_region_schema_validation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 30,
+      "test_file": "baseline_tests/run_step30_step29_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 30,
+      "test_file": "tests/test_step30_squid_proxy_region_geometry_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 31,
+      "test_file": "baseline_tests/run_step31_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 31,
+      "test_file": "baseline_tests/run_step31_engineering_vs_link_area_static_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 31,
+      "test_file": "baseline_tests/run_step31_quality_report_aggregation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 31,
+      "test_file": "baseline_tests/run_step31_region_driver_alignment.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 31,
+      "test_file": "baseline_tests/run_step31_region_projection_scale.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 31,
+      "test_file": "baseline_tests/run_step31_static_driver_smoke.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 31,
+      "test_file": "baseline_tests/run_step31_step30_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 31,
+      "test_file": "tests/test_step31_squid_proxy_region_static_driver_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 32,
+      "test_file": "baseline_tests/run_step32_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 32,
+      "test_file": "baseline_tests/run_step32_generate_kinematics_schedule.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 32,
+      "test_file": "baseline_tests/run_step32_region_mapping_validation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 32,
+      "test_file": "baseline_tests/run_step32_schedule_config_validation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 32,
+      "test_file": "baseline_tests/run_step32_schedule_envelope_summary.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 32,
+      "test_file": "baseline_tests/run_step32_schedule_quality.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 32,
+      "test_file": "baseline_tests/run_step32_schedule_repeatability.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 32,
+      "test_file": "baseline_tests/run_step32_step31_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 32,
+      "test_file": "tests/test_step32_squid_proxy_kinematics_schedule_contract.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 33,
+      "test_file": "baseline_tests/run_step33_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 33,
+      "test_file": "baseline_tests/run_step33_generate_motion_mapping.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 33,
+      "test_file": "baseline_tests/run_step33_motion_grid_diagnostics.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 33,
+      "test_file": "baseline_tests/run_step33_motion_mapping_config_validation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 33,
+      "test_file": "baseline_tests/run_step33_motion_quality.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 33,
+      "test_file": "baseline_tests/run_step33_motion_repeatability.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 33,
+      "test_file": "baseline_tests/run_step33_schedule_motion_consistency.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 33,
+      "test_file": "baseline_tests/run_step33_step32_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 33,
+      "test_file": "tests/test_step33_squid_proxy_kinematics_mapping_contract.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 34,
+      "test_file": "baseline_tests/run_step34_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 34,
+      "test_file": "baseline_tests/run_step34_boundary_motion_config_validation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 34,
+      "test_file": "baseline_tests/run_step34_boundary_motion_interface_report.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 34,
+      "test_file": "baseline_tests/run_step34_noop_state_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 34,
+      "test_file": "baseline_tests/run_step34_prescribed_interface_noop_smoke.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 34,
+      "test_file": "baseline_tests/run_step34_quality_report_aggregation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 34,
+      "test_file": "baseline_tests/run_step34_static_driver_regression.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 34,
+      "test_file": "baseline_tests/run_step34_step31_static_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 34,
+      "test_file": "baseline_tests/run_step34_step33_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 34,
+      "test_file": "tests/test_step34_boundary_motion_driver_interface_contract.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 35,
+      "test_file": "baseline_tests/run_step35_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 35,
+      "test_file": "baseline_tests/run_step35_generate_wall_velocity_field.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 35,
+      "test_file": "baseline_tests/run_step35_grid_coverage_diagnostics.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 35,
+      "test_file": "baseline_tests/run_step35_motion_velocity_consistency.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 35,
+      "test_file": "baseline_tests/run_step35_no_lbm_update_guard.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 35,
+      "test_file": "baseline_tests/run_step35_step34_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 35,
+      "test_file": "baseline_tests/run_step35_wall_velocity_config_validation.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 35,
+      "test_file": "baseline_tests/run_step35_wall_velocity_quality.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 35,
+      "test_file": "baseline_tests/run_step35_wall_velocity_repeatability.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 35,
+      "test_file": "tests/test_step35_wall_velocity_field_diagnostics_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 36,
+      "test_file": "baseline_tests/run_step36_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 36,
+      "test_file": "baseline_tests/run_step36_experimental_application_smoke.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 36,
+      "test_file": "baseline_tests/run_step36_mass_force_stability_diagnostics.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 36,
+      "test_file": "baseline_tests/run_step36_quality_report_aggregation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 36,
+      "test_file": "baseline_tests/run_step36_static_regression_smoke.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 36,
+      "test_file": "baseline_tests/run_step36_static_vs_experimental_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 36,
+      "test_file": "baseline_tests/run_step36_step35_regression_guard.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 36,
+      "test_file": "baseline_tests/run_step36_wall_velocity_application_config_validation.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 36,
+      "test_file": "baseline_tests/run_step36_wall_velocity_application_quality.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 36,
+      "test_file": "baseline_tests/run_step36_wall_velocity_application_report.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 36,
+      "test_file": "tests/test_step36_moving_wall_bounceback_application_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 37,
+      "test_file": "baseline_tests/run_step37_application_envelope_summary.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 37,
+      "test_file": "baseline_tests/run_step37_application_window_driver.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 37,
+      "test_file": "baseline_tests/run_step37_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 37,
+      "test_file": "baseline_tests/run_step37_engineering_vs_link_area_envelope.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 37,
+      "test_file": "baseline_tests/run_step37_mass_force_bounceback_envelope.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 37,
+      "test_file": "baseline_tests/run_step37_quality_report_aggregation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 37,
+      "test_file": "baseline_tests/run_step37_static_vs_experimental_envelope.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 37,
+      "test_file": "baseline_tests/run_step37_step36_regression_guard.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 37,
+      "test_file": "baseline_tests/run_step37_wall_velocity_timeseries_quality.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 37,
+      "test_file": "tests/test_step37_wall_velocity_application_envelope_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 38,
+      "test_file": "baseline_tests/run_step38_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 38,
+      "test_file": "baseline_tests/run_step38_cycle_driver.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 38,
+      "test_file": "baseline_tests/run_step38_cycle_proxy_diagnostics.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 38,
+      "test_file": "baseline_tests/run_step38_engineering_vs_link_area_cycle_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 38,
+      "test_file": "baseline_tests/run_step38_force_impulse_proxy_summary.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 38,
+      "test_file": "baseline_tests/run_step38_quality_report_aggregation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 38,
+      "test_file": "baseline_tests/run_step38_static_vs_experimental_cycle_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 38,
+      "test_file": "baseline_tests/run_step38_step37_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 38,
+      "test_file": "baseline_tests/run_step38_tethered_no_free_body_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 38,
+      "test_file": "baseline_tests/run_step38_wall_velocity_cycle_quality.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 38,
+      "test_file": "tests/test_step38_tethered_jet_cycle_diagnostics_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 39,
+      "test_file": "baseline_tests/run_step39_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 39,
+      "test_file": "baseline_tests/run_step39_cycle_to_cycle_drift_summary.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 39,
+      "test_file": "baseline_tests/run_step39_engineering_vs_link_area_multicycle_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 39,
+      "test_file": "baseline_tests/run_step39_force_impulse_multicycle_summary.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 39,
+      "test_file": "baseline_tests/run_step39_multicycle_driver.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 39,
+      "test_file": "baseline_tests/run_step39_multicycle_proxy_diagnostics.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 39,
+      "test_file": "baseline_tests/run_step39_quality_report_aggregation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 39,
+      "test_file": "baseline_tests/run_step39_static_vs_experimental_multicycle_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 39,
+      "test_file": "baseline_tests/run_step39_step38_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 39,
+      "test_file": "baseline_tests/run_step39_tethered_no_free_body_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 39,
+      "test_file": "baseline_tests/run_step39_wall_velocity_multicycle_quality.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 39,
+      "test_file": "tests/test_step39_multicycle_jet_proxy_stability_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 40,
+      "test_file": "baseline_tests/run_step40_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 40,
+      "test_file": "baseline_tests/run_step40_cap_saturation_diagnostics.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 40,
+      "test_file": "baseline_tests/run_step40_engineering_vs_link_area_parameter_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 40,
+      "test_file": "baseline_tests/run_step40_force_impulse_parameter_response.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 40,
+      "test_file": "baseline_tests/run_step40_parameter_config_validation.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 40,
+      "test_file": "baseline_tests/run_step40_parameter_sensitivity_summary.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 40,
+      "test_file": "baseline_tests/run_step40_parameter_sweep_driver.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 40,
+      "test_file": "baseline_tests/run_step40_quality_report_aggregation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 40,
+      "test_file": "baseline_tests/run_step40_static_vs_parameter_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 40,
+      "test_file": "baseline_tests/run_step40_step39_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 40,
+      "test_file": "baseline_tests/run_step40_tethered_no_free_body_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 40,
+      "test_file": "tests/test_step40_jet_cycle_parameter_sensitivity_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 41,
+      "test_file": "baseline_tests/run_step41_64_feasibility_summary.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 41,
+      "test_file": "baseline_tests/run_step41_64_selected_parameter_driver.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 41,
+      "test_file": "baseline_tests/run_step41_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 41,
+      "test_file": "baseline_tests/run_step41_cycle_proxy_64_diagnostics.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 41,
+      "test_file": "baseline_tests/run_step41_engineering_vs_link_area_64_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 41,
+      "test_file": "baseline_tests/run_step41_force_impulse_64_summary.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 41,
+      "test_file": "baseline_tests/run_step41_quality_report_aggregation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 41,
+      "test_file": "baseline_tests/run_step41_selected_parameter_config_validation.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 41,
+      "test_file": "baseline_tests/run_step41_static_vs_experimental_64_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 41,
+      "test_file": "baseline_tests/run_step41_step40_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 41,
+      "test_file": "baseline_tests/run_step41_tethered_no_free_body_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 41,
+      "test_file": "baseline_tests/run_step41_wall_velocity_64_quality.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 41,
+      "test_file": "tests/test_step41_selected_parameter_64_feasibility_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 42,
+      "test_file": "baseline_tests/run_step42_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 42,
+      "test_file": "baseline_tests/run_step42_cycle_closure_diagnostics.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 42,
+      "test_file": "baseline_tests/run_step42_displacement_config_validation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 42,
+      "test_file": "baseline_tests/run_step42_displacement_quality.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 42,
+      "test_file": "baseline_tests/run_step42_displacement_repeatability.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 42,
+      "test_file": "baseline_tests/run_step42_generate_geometry_displacement.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 42,
+      "test_file": "baseline_tests/run_step42_grid_displacement_diagnostics.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 42,
+      "test_file": "baseline_tests/run_step42_motion_displacement_consistency.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 42,
+      "test_file": "baseline_tests/run_step42_no_driver_update_guard.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 42,
+      "test_file": "baseline_tests/run_step42_schedule_displacement_consistency.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 42,
+      "test_file": "baseline_tests/run_step42_step41_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 42,
+      "test_file": "tests/test_step42_geometry_displacement_diagnostics_contract.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 43,
+      "test_file": "baseline_tests/run_step43_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 43,
+      "test_file": "baseline_tests/run_step43_diagnostic_geometry_motion_noop_smoke.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 43,
+      "test_file": "baseline_tests/run_step43_geometry_motion_config_validation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 43,
+      "test_file": "baseline_tests/run_step43_geometry_motion_interface_report.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 43,
+      "test_file": "baseline_tests/run_step43_no_geometry_state_mutation_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 43,
+      "test_file": "baseline_tests/run_step43_quality_report_aggregation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 43,
+      "test_file": "baseline_tests/run_step43_static_driver_regression.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 43,
+      "test_file": "baseline_tests/run_step43_static_vs_diagnostic_noop_comparison.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 43,
+      "test_file": "baseline_tests/run_step43_step42_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 43,
+      "test_file": "tests/test_step43_geometry_motion_driver_interface_contract.py",
+      "test_strength_level": "solver_smoke_contract"
+    },
+    {
+      "allowed": true,
+      "step": 44,
+      "test_file": "baseline_tests/run_step44_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 44,
+      "test_file": "baseline_tests/run_step44_cycle_phase_closure.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 44,
+      "test_file": "baseline_tests/run_step44_diagnostic_update_config_validation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 44,
+      "test_file": "baseline_tests/run_step44_optional_1step_driver_smoke.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 44,
+      "test_file": "baseline_tests/run_step44_original_vs_displaced_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 44,
+      "test_file": "baseline_tests/run_step44_projection_only_smoke.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 44,
+      "test_file": "baseline_tests/run_step44_runtime_copy_quality.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 44,
+      "test_file": "baseline_tests/run_step44_runtime_displaced_copy.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 44,
+      "test_file": "baseline_tests/run_step44_state_mutation_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 44,
+      "test_file": "baseline_tests/run_step44_step43_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 44,
+      "test_file": "tests/test_step44_diagnostic_geometry_update_smoke_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 45,
+      "test_file": "baseline_tests/run_step45_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 45,
+      "test_file": "baseline_tests/run_step45_original_vs_runtime_projection_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 45,
+      "test_file": "baseline_tests/run_step45_projection_integration_config_validation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 45,
+      "test_file": "baseline_tests/run_step45_projection_phase_closure.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 45,
+      "test_file": "baseline_tests/run_step45_runtime_projection_integration.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 45,
+      "test_file": "baseline_tests/run_step45_runtime_projection_quality.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 45,
+      "test_file": "baseline_tests/run_step45_runtime_projection_state_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 45,
+      "test_file": "baseline_tests/run_step45_step44_projection_alignment.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 45,
+      "test_file": "baseline_tests/run_step45_step44_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 45,
+      "test_file": "baseline_tests/run_step45_ultrashort_projection_driver_smoke.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 45,
+      "test_file": "tests/test_step45_runtime_geometry_projection_integration_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 46,
+      "test_file": "baseline_tests/run_step46_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 46,
+      "test_file": "baseline_tests/run_step46_component_effect_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 46,
+      "test_file": "baseline_tests/run_step46_coupling_smoke_config_validation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 46,
+      "test_file": "baseline_tests/run_step46_coupling_smoke_quality.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 46,
+      "test_file": "baseline_tests/run_step46_mass_force_bounceback_diagnostics.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 46,
+      "test_file": "baseline_tests/run_step46_one_step_coupling_smoke_matrix.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 46,
+      "test_file": "baseline_tests/run_step46_state_mutation_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 46,
+      "test_file": "baseline_tests/run_step46_step45_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 46,
+      "test_file": "tests/test_step46_runtime_geometry_wall_velocity_coupling_smoke_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 47,
+      "test_file": "baseline_tests/run_step47_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 47,
+      "test_file": "baseline_tests/run_step47_component_effect_envelope.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 47,
+      "test_file": "baseline_tests/run_step47_mass_force_bounceback_envelope.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 47,
+      "test_file": "baseline_tests/run_step47_phase_progression_diagnostics.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 47,
+      "test_file": "baseline_tests/run_step47_short_step_config_validation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 47,
+      "test_file": "baseline_tests/run_step47_short_step_envelope_matrix.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 47,
+      "test_file": "baseline_tests/run_step47_short_step_envelope_quality.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 47,
+      "test_file": "baseline_tests/run_step47_state_mutation_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 47,
+      "test_file": "baseline_tests/run_step47_step46_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 47,
+      "test_file": "tests/test_step47_runtime_geometry_wall_velocity_short_step_envelope_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 48,
+      "test_file": "baseline_tests/run_step48_10step_config_validation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 48,
+      "test_file": "baseline_tests/run_step48_10step_envelope_matrix.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 48,
+      "test_file": "baseline_tests/run_step48_10step_envelope_quality.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 48,
+      "test_file": "baseline_tests/run_step48_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 48,
+      "test_file": "baseline_tests/run_step48_component_effect_10step_envelope.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 48,
+      "test_file": "baseline_tests/run_step48_mass_force_bounceback_10step_envelope.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 48,
+      "test_file": "baseline_tests/run_step48_phase_progression_10step_diagnostics.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 48,
+      "test_file": "baseline_tests/run_step48_state_mutation_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 48,
+      "test_file": "baseline_tests/run_step48_step47_prefix_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 48,
+      "test_file": "baseline_tests/run_step48_step47_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 48,
+      "test_file": "tests/test_step48_runtime_geometry_wall_velocity_10step_envelope_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 49,
+      "test_file": "baseline_tests/run_step49_20step_config_validation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 49,
+      "test_file": "baseline_tests/run_step49_20step_envelope_matrix.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 49,
+      "test_file": "baseline_tests/run_step49_20step_envelope_quality.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 49,
+      "test_file": "baseline_tests/run_step49_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 49,
+      "test_file": "baseline_tests/run_step49_component_effect_20step_envelope.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 49,
+      "test_file": "baseline_tests/run_step49_early_refill_transition_diagnostics.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 49,
+      "test_file": "baseline_tests/run_step49_mass_force_bounceback_20step_envelope.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 49,
+      "test_file": "baseline_tests/run_step49_phase_progression_20step_diagnostics.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 49,
+      "test_file": "baseline_tests/run_step49_state_mutation_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 49,
+      "test_file": "baseline_tests/run_step49_step48_prefix_comparison.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 49,
+      "test_file": "baseline_tests/run_step49_step48_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 49,
+      "test_file": "tests/test_step49_runtime_geometry_wall_velocity_20step_envelope_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 50,
+      "test_file": "baseline_tests/run_step50_artifact_manifest.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 50,
+      "test_file": "baseline_tests/run_step50_component_effect_one_cycle_envelope.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 50,
+      "test_file": "baseline_tests/run_step50_contraction_refill_segment_diagnostics.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 50,
+      "test_file": "baseline_tests/run_step50_cycle_closure_diagnostics.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 50,
+      "test_file": "baseline_tests/run_step50_mass_force_bounceback_one_cycle_envelope.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 50,
+      "test_file": "baseline_tests/run_step50_one_cycle_config_validation.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 50,
+      "test_file": "baseline_tests/run_step50_one_cycle_envelope_matrix.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 50,
+      "test_file": "baseline_tests/run_step50_one_cycle_envelope_quality.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 50,
+      "test_file": "baseline_tests/run_step50_phase_progression_one_cycle_diagnostics.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 50,
+      "test_file": "baseline_tests/run_step50_state_mutation_guard.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 50,
+      "test_file": "baseline_tests/run_step50_step49_prefix_comparison.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 50,
+      "test_file": "baseline_tests/run_step50_step49_regression_guard.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 50,
+      "test_file": "tests/test_step50_runtime_geometry_wall_velocity_one_cycle_envelope_contract.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 51,
+      "test_file": "baseline_tests/run_step51_artifact_manifest.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 51,
+      "test_file": "baseline_tests/run_step51_component_effect_by_transfer.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 51,
+      "test_file": "baseline_tests/run_step51_cycle_closure_by_transfer.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 51,
+      "test_file": "baseline_tests/run_step51_engineering_vs_link_area_comparison.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 51,
+      "test_file": "baseline_tests/run_step51_link_area_envelope.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 51,
+      "test_file": "baseline_tests/run_step51_mass_force_bounceback_transfer_envelope.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 51,
+      "test_file": "baseline_tests/run_step51_state_mutation_guard.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 51,
+      "test_file": "baseline_tests/run_step51_step50_engineering_prefix_comparison.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 51,
+      "test_file": "baseline_tests/run_step51_step50_regression_guard.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 51,
+      "test_file": "baseline_tests/run_step51_transfer_comparison_matrix.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 51,
+      "test_file": "baseline_tests/run_step51_transfer_config_validation.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 51,
+      "test_file": "baseline_tests/run_step51_transfer_envelope_quality.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 51,
+      "test_file": "tests/test_step51_one_cycle_transfer_comparison_contract.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 52,
+      "test_file": "baseline_tests/run_step52_48_config_validation.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 52,
+      "test_file": "baseline_tests/run_step52_48_feasibility_matrix.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 52,
+      "test_file": "baseline_tests/run_step52_48_feasibility_quality.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 52,
+      "test_file": "baseline_tests/run_step52_48_vs_step51_engineering_scaling_comparison.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 52,
+      "test_file": "baseline_tests/run_step52_artifact_manifest.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 52,
+      "test_file": "baseline_tests/run_step52_cycle_closure.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 52,
+      "test_file": "baseline_tests/run_step52_mass_force_bounceback_envelope.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 52,
+      "test_file": "baseline_tests/run_step52_state_mutation_guard.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 52,
+      "test_file": "baseline_tests/run_step52_step51_regression_guard.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 52,
+      "test_file": "tests/test_step52_48_engineering_one_cycle_feasibility_contract.py",
+      "test_strength_level": "proxy_diagnostic_contract"
+    },
+    {
+      "allowed": true,
+      "step": 53,
+      "test_file": "baseline_tests/run_step53_active_cell_semantics_audit.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 53,
+      "test_file": "baseline_tests/run_step53_applied_wall_support_scaling_audit.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 53,
+      "test_file": "baseline_tests/run_step53_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 53,
+      "test_file": "baseline_tests/run_step53_bounceback_support_scaling_audit.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 53,
+      "test_file": "baseline_tests/run_step53_metric_claim_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 53,
+      "test_file": "baseline_tests/run_step53_phasewise_support_scaling_audit.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 53,
+      "test_file": "baseline_tests/run_step53_reference_artifact_validation.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 53,
+      "test_file": "baseline_tests/run_step53_step52_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 53,
+      "test_file": "tests/test_step53_support_scaling_active_cell_semantics_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 54,
+      "test_file": "baseline_tests/run_step54_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 54,
+      "test_file": "baseline_tests/run_step54_claim_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 54,
+      "test_file": "baseline_tests/run_step54_lbm_relaxation_semantics_audit.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 54,
+      "test_file": "baseline_tests/run_step54_proxy_diagnostic_truthfulness_audit.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 54,
+      "test_file": "baseline_tests/run_step54_repository_evidence_index.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 54,
+      "test_file": "baseline_tests/run_step54_state_guard_truthfulness_audit.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 54,
+      "test_file": "baseline_tests/run_step54_step53_regression_guard.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 54,
+      "test_file": "baseline_tests/run_step54_test_strength_audit.py",
+      "test_strength_level": "numerical_benchmark_contract"
+    },
+    {
+      "allowed": true,
+      "step": 54,
+      "test_file": "tests/test_step54_lbm_relaxation_semantics_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 54,
+      "test_file": "tests/test_step54_repository_evidence_integrity_repair_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 55,
+      "test_file": "baseline_tests/run_step55_artifact_manifest.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 55,
+      "test_file": "baseline_tests/run_step55_code_layout_audit.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 55,
+      "test_file": "baseline_tests/run_step55_compatibility_shim_audit.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 55,
+      "test_file": "baseline_tests/run_step55_import_boundary_audit.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 55,
+      "test_file": "baseline_tests/run_step55_step54_regression_guard.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 55,
+      "test_file": "baseline_tests/run_step55_test_strength_enum_audit.py",
+      "test_strength_level": "runner_reexecution_contract"
+    },
+    {
+      "allowed": true,
+      "step": 55,
+      "test_file": "tests/test_step55_compatibility_shim_contract.py",
+      "test_strength_level": "artifact_plus_source_contract"
+    },
+    {
+      "allowed": true,
+      "step": 55,
+      "test_file": "tests/test_step55_import_boundary_contract.py",
+      "test_strength_level": "artifact_contract"
+    },
+    {
+      "allowed": true,
+      "step": 55,
+      "test_file": "tests/test_step55_repository_code_layout_contract.py",
+      "test_strength_level": "formula_unit_contract"
+    },
+    {
+      "allowed": true,
+      "step": 55,
+      "test_file": "tests/test_step55_test_strength_enum_contract.py",
+      "test_strength_level": "artifact_contract"
+    }
+  ],
+  "summary": {
+    "allowed_count": 458,
+    "allowed_test_strength_level_count": 7,
+    "out_of_policy_count": 0,
+    "pytest_result_interpretation": "A passing full pytest run means contract/artifact/proxy/solver-smoke tests passed according to the test strength audit classification.",
+    "row_count": 458,
+    "test_strength_enum_audit_pass": true
+  }
+}

@@ -1,0 +1,1146 @@
+{
+  "rows": [
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/__init__.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/lbm/config.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/lbm/fluid.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/lbm/relaxation_semantics.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/mpm/config.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/mpm/solid.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/coupling/projection.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/coupling/penalty.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/coupling/moving_boundary.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/coupling/link_area.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/drivers/fsi_config.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/sim/drivers/fsi_driver.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/diagnostics/__init__.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/repository_evidence_index.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/repository_test_strength_audit.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/code_layout_audit.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/import_boundary_audit.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/compatibility_shim_audit.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "experiments/steps/step50_one_cycle_proxy/envelope.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "experiments/steps/step51_transfer_comparison_proxy/envelope.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "experiments/steps/step52_48_feasibility_proxy/envelope.py",
+      "value": true
+    },
+    {
+      "category": "canonical_required_path",
+      "check": "canonical_path_exists",
+      "notes": "required Step 55 canonical package path must exist",
+      "pass": true,
+      "path": "experiments/steps/step53_support_scaling_audit/audit.py",
+      "value": true
+    },
+    {
+      "category": "compatibility_export_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/__init__.py",
+      "value": "compatibility_export_surface"
+    },
+    {
+      "category": "approved_legacy_support_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/artifact_utils.py",
+      "value": "approved_legacy_support_surface"
+    },
+    {
+      "category": "approved_legacy_sim_motion_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/boundary_motion_config.py",
+      "value": "approved_legacy_sim_motion_surface"
+    },
+    {
+      "category": "approved_legacy_sim_motion_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/boundary_motion_interface.py",
+      "value": "approved_legacy_sim_motion_surface"
+    },
+    {
+      "category": "approved_legacy_support_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/calibration.py",
+      "value": "approved_legacy_support_surface"
+    },
+    {
+      "category": "approved_legacy_sim_coupling_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/coupling.py",
+      "value": "approved_legacy_sim_coupling_surface"
+    },
+    {
+      "category": "approved_legacy_diagnostics_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/diagnostic_geometry_projection.py",
+      "value": "approved_legacy_diagnostics_surface"
+    },
+    {
+      "category": "approved_legacy_diagnostics_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/diagnostic_geometry_state_guard.py",
+      "value": "approved_legacy_diagnostics_surface"
+    },
+    {
+      "category": "approved_legacy_diagnostics_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/diagnostic_geometry_update.py",
+      "value": "approved_legacy_diagnostics_surface"
+    },
+    {
+      "category": "approved_legacy_diagnostics_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/diagnostic_geometry_update_config.py",
+      "value": "approved_legacy_diagnostics_surface"
+    },
+    {
+      "category": "approved_legacy_diagnostics_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/diagnostics.py",
+      "value": "approved_legacy_diagnostics_surface"
+    },
+    {
+      "category": "approved_legacy_sim_driver_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/fsi_config.py",
+      "value": "approved_legacy_sim_driver_surface"
+    },
+    {
+      "category": "approved_legacy_sim_driver_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/fsi_driver.py",
+      "value": "approved_legacy_sim_driver_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/geometry.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/geometry_candidate_manifest.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/geometry_config.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/geometry_displacement_config.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/geometry_displacement_consistency.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/geometry_displacement_field.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/geometry_displacement_grid_diagnostics.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/geometry_displacement_quality.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/geometry_driver_config.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/geometry_fingerprint.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/geometry_import.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/geometry_intake.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/geometry_motion_config.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/geometry_motion_interface.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/geometry_normalization.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/geometry_quality.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/geometry_utils.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_diagnostics_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/jet_cycle_parameter_sensitivity.py",
+      "value": "approved_legacy_diagnostics_surface"
+    },
+    {
+      "category": "approved_legacy_diagnostics_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/jet_cycle_proxy_diagnostics.py",
+      "value": "approved_legacy_diagnostics_surface"
+    },
+    {
+      "category": "approved_legacy_sim_lbm_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/lbm_config.py",
+      "value": "approved_legacy_sim_lbm_surface"
+    },
+    {
+      "category": "approved_legacy_sim_lbm_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/lbm_fluid.py",
+      "value": "approved_legacy_sim_lbm_surface"
+    },
+    {
+      "category": "approved_legacy_sim_lbm_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/lbm_relaxation_semantics.py",
+      "value": "approved_legacy_sim_lbm_surface"
+    },
+    {
+      "category": "approved_legacy_sim_coupling_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/link_area_accounting.py",
+      "value": "approved_legacy_sim_coupling_surface"
+    },
+    {
+      "category": "approved_legacy_sim_coupling_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/link_area_coupling.py",
+      "value": "approved_legacy_sim_coupling_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/mesh_io.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/mesh_quality.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_coupling_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/momentum_accounting.py",
+      "value": "approved_legacy_sim_coupling_surface"
+    },
+    {
+      "category": "approved_legacy_sim_coupling_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/moving_boundary_coupling.py",
+      "value": "approved_legacy_sim_coupling_surface"
+    },
+    {
+      "category": "approved_legacy_sim_mpm_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/mpm_config.py",
+      "value": "approved_legacy_sim_mpm_surface"
+    },
+    {
+      "category": "approved_legacy_sim_mpm_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/mpm_solid.py",
+      "value": "approved_legacy_sim_mpm_surface"
+    },
+    {
+      "category": "approved_legacy_diagnostics_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/multicycle_proxy_diagnostics.py",
+      "value": "approved_legacy_diagnostics_surface"
+    },
+    {
+      "category": "approved_legacy_support_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/performance.py",
+      "value": "approved_legacy_support_surface"
+    },
+    {
+      "category": "approved_legacy_sim_coupling_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/projection.py",
+      "value": "approved_legacy_sim_coupling_surface"
+    },
+    {
+      "category": "approved_legacy_evidence_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/proxy_diagnostic_truthfulness.py",
+      "value": "approved_legacy_evidence_surface"
+    },
+    {
+      "category": "approved_legacy_support_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/real_geometry_feasibility.py",
+      "value": "approved_legacy_support_surface"
+    },
+    {
+      "category": "approved_legacy_evidence_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/repository_evidence_index.py",
+      "value": "approved_legacy_evidence_surface"
+    },
+    {
+      "category": "approved_legacy_evidence_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/repository_evidence_integrity_artifact_manifest.py",
+      "value": "approved_legacy_evidence_surface"
+    },
+    {
+      "category": "approved_legacy_evidence_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/repository_evidence_integrity_claim_guard.py",
+      "value": "approved_legacy_evidence_surface"
+    },
+    {
+      "category": "approved_legacy_evidence_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/repository_evidence_integrity_regression_guard.py",
+      "value": "approved_legacy_evidence_surface"
+    },
+    {
+      "category": "approved_legacy_evidence_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/repository_test_strength_audit.py",
+      "value": "approved_legacy_evidence_surface"
+    },
+    {
+      "category": "approved_legacy_sim_io_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/run_utils.py",
+      "value": "approved_legacy_sim_io_surface"
+    },
+    {
+      "category": "approved_legacy_diagnostics_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_projection.py",
+      "value": "approved_legacy_diagnostics_surface"
+    },
+    {
+      "category": "approved_legacy_diagnostics_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_projection_config.py",
+      "value": "approved_legacy_diagnostics_surface"
+    },
+    {
+      "category": "approved_legacy_diagnostics_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_projection_consistency.py",
+      "value": "approved_legacy_diagnostics_surface"
+    },
+    {
+      "category": "approved_legacy_diagnostics_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_projection_quality.py",
+      "value": "approved_legacy_diagnostics_surface"
+    },
+    {
+      "category": "approved_legacy_diagnostics_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_projection_state_guard.py",
+      "value": "approved_legacy_diagnostics_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_10step_config.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_10step_diagnostics.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_10step_envelope.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_10step_state_guard.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_20step_config.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_20step_diagnostics.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_20step_envelope.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_20step_state_guard.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_48_feasibility_config.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_48_feasibility_diagnostics.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_48_feasibility_envelope.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_48_feasibility_state_guard.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_coupling.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_coupling_config.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_diagnostics.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_envelope.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_envelope_config.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_envelope_diagnostics.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_envelope_state_guard.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_one_cycle_config.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_one_cycle_diagnostics.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_one_cycle_envelope.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_one_cycle_state_guard.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_state_guard.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_support_scaling_artifact_guard.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_support_scaling_audit.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_support_scaling_claim_guard.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_support_scaling_config.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_support_scaling_diagnostics.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_transfer_config.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_transfer_diagnostics.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_transfer_envelope.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_step_specific_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/runtime_geometry_wall_velocity_transfer_state_guard.py",
+      "value": "approved_legacy_step_specific_surface"
+    },
+    {
+      "category": "approved_legacy_diagnostics_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/selected_parameter_64_feasibility.py",
+      "value": "approved_legacy_diagnostics_surface"
+    },
+    {
+      "category": "approved_legacy_sim_driver_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/sim_config.py",
+      "value": "approved_legacy_sim_driver_surface"
+    },
+    {
+      "category": "approved_legacy_sim_motion_or_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/squid_kinematics_config.py",
+      "value": "approved_legacy_sim_motion_or_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_motion_or_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/squid_kinematics_quality.py",
+      "value": "approved_legacy_sim_motion_or_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_motion_or_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/squid_kinematics_region_mapping.py",
+      "value": "approved_legacy_sim_motion_or_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_motion_or_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/squid_kinematics_schedule.py",
+      "value": "approved_legacy_sim_motion_or_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_motion_or_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/squid_motion_mapping.py",
+      "value": "approved_legacy_sim_motion_or_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_motion_or_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/squid_motion_mapping_config.py",
+      "value": "approved_legacy_sim_motion_or_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_motion_or_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/squid_motion_projection_diagnostics.py",
+      "value": "approved_legacy_sim_motion_or_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_motion_or_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/squid_motion_quality.py",
+      "value": "approved_legacy_sim_motion_or_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_motion_or_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/squid_proxy_regions.py",
+      "value": "approved_legacy_sim_motion_or_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_motion_or_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/squid_region_config.py",
+      "value": "approved_legacy_sim_motion_or_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_motion_or_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/squid_region_driver_diagnostics.py",
+      "value": "approved_legacy_sim_motion_or_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_motion_or_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/squid_region_projection.py",
+      "value": "approved_legacy_sim_motion_or_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_motion_or_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/squid_region_quality.py",
+      "value": "approved_legacy_sim_motion_or_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_evidence_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/state_guard_truthfulness.py",
+      "value": "approved_legacy_evidence_surface"
+    },
+    {
+      "category": "approved_legacy_diagnostics_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/tethered_cycle_diagnostics.py",
+      "value": "approved_legacy_diagnostics_surface"
+    },
+    {
+      "category": "approved_legacy_sim_units_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/units.py",
+      "value": "approved_legacy_sim_units_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/voxel_io.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_geometry_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/voxel_quality.py",
+      "value": "approved_legacy_sim_geometry_surface"
+    },
+    {
+      "category": "approved_legacy_sim_wall_velocity_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/wall_velocity_application.py",
+      "value": "approved_legacy_sim_wall_velocity_surface"
+    },
+    {
+      "category": "approved_legacy_sim_wall_velocity_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/wall_velocity_application_config.py",
+      "value": "approved_legacy_sim_wall_velocity_surface"
+    },
+    {
+      "category": "approved_legacy_sim_wall_velocity_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/wall_velocity_application_envelope.py",
+      "value": "approved_legacy_sim_wall_velocity_surface"
+    },
+    {
+      "category": "approved_legacy_sim_wall_velocity_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/wall_velocity_config.py",
+      "value": "approved_legacy_sim_wall_velocity_surface"
+    },
+    {
+      "category": "approved_legacy_sim_wall_velocity_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/wall_velocity_consistency.py",
+      "value": "approved_legacy_sim_wall_velocity_surface"
+    },
+    {
+      "category": "approved_legacy_sim_wall_velocity_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/wall_velocity_field.py",
+      "value": "approved_legacy_sim_wall_velocity_surface"
+    },
+    {
+      "category": "approved_legacy_sim_wall_velocity_surface",
+      "check": "root_src_file_classified",
+      "notes": "root src file must be compatibility or approved legacy surface",
+      "pass": true,
+      "path": "src/wall_velocity_quality.py",
+      "value": "approved_legacy_sim_wall_velocity_surface"
+    }
+  ],
+  "summary": {
+    "canonical_diagnostics_package_exists": true,
+    "canonical_evidence_package_exists": true,
+    "canonical_required_path_count": 22,
+    "canonical_required_path_pass_count": 22,
+    "canonical_sim_package_exists": true,
+    "code_layout_audit_pass": true,
+    "experiments_steps_package_exists": true,
+    "physics_feature_expansion": false,
+    "root_src_file_count": 119,
+    "solver_behavior_changed": false,
+    "step55_new_root_evidence_file_count": 0,
+    "unclassified_root_src_file_count": 0
+  }
+}
