@@ -1,0 +1,6 @@
+metric,value
+legacy_implementation_body_count_for_six_support_rows,0
+legacy_shim_count_for_six_support_rows,6
+pass_count,6
+row_count,6
+step69_legacy_shim_audit_pass,True

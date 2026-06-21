@@ -67,6 +67,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 61 controlled canonical 32^3 moving-boundary single-step probe
 - Step 62 controlled canonical 32^3 moving-boundary 3-step duration probe
 - Step 68 step-specific proxy migration from root `src/` to `experiments/steps/`
+- Step 69 root `src/` final implementation cleanup for remaining support rows, compatibility shims, current inventory, and export-surface refresh
 
 ## Not Implemented
 

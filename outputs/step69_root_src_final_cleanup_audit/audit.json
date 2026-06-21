@@ -1,0 +1,89 @@
+{
+  "rows": [
+    {
+      "check": "current_root_inventory_audit_pass",
+      "pass": true,
+      "value": {
+        "approved_legacy_support_count": 17,
+        "current_migration_required_count": 0,
+        "current_root_file_count": 119,
+        "current_root_inventory_audit_pass": true,
+        "current_root_step_specific_implementation_count": 0,
+        "current_step_specific_proxy_remaining_count": 0,
+        "current_unknown_requires_review_count": 0,
+        "root_compatibility_shim_count": 102,
+        "row_count": 119,
+        "step69_support_shim_count": 6
+      }
+    },
+    {
+      "check": "current_step_specific_proxy_remaining_count",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "current_root_step_specific_implementation_count",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "current_migration_required_count",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "current_unknown_requires_review_count",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "remaining_support_migration_audit_pass",
+      "pass": true,
+      "value": {
+        "canonical_imports_legacy_root_count": 0,
+        "legacy_implementation_body_count_for_six_support_rows": 0,
+        "legacy_shim_count_for_six_support_rows": 6,
+        "migrated_support_count": 6,
+        "migration_required_count_from_step63": 6,
+        "policy_migration_count": 6,
+        "policy_symbol_list_matches_canonical_ast_count": 6,
+        "remaining_migration_required_count": 0,
+        "remaining_support_migration_audit_pass": true,
+        "row_count": 6
+      }
+    },
+    {
+      "check": "migrated_support_count",
+      "pass": true,
+      "value": 6
+    },
+    {
+      "check": "legacy_shim_count_for_six_support_rows",
+      "pass": true,
+      "value": 6
+    },
+    {
+      "check": "canonical_imports_legacy_root_count",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "canonical_imports_legacy_root_count": 0,
+    "current_migration_required_count": 0,
+    "current_root_file_count": 119,
+    "current_root_step_specific_implementation_count": 0,
+    "current_step_specific_proxy_remaining_count": 0,
+    "current_unknown_requires_review_count": 0,
+    "inventory_row_count": 119,
+    "legacy_implementation_body_count_for_six_support_rows": 0,
+    "legacy_shim_count_for_six_support_rows": 6,
+    "migrated_support_count": 6,
+    "migration_required_count_from_step63": 6,
+    "migration_row_count": 6,
+    "pass_count": 9,
+    "remaining_migration_required_count": 0,
+    "row_count": 9,
+    "step69_root_src_final_cleanup_audit_pass": true
+  }
+}

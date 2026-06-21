@@ -1,0 +1,358 @@
+{
+  "rows": [
+    {
+      "actual_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "check": "required_export",
+      "expected_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "pass": true,
+      "symbol": "SquidProxyRegionConfig",
+      "symbol_present_in_target_source": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "check": "required_export",
+      "expected_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "pass": true,
+      "symbol": "SquidRegion",
+      "symbol_present_in_target_source": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "check": "required_export",
+      "expected_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "pass": true,
+      "symbol": "default_squid_proxy_region_config",
+      "symbol_present_in_target_source": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.squid_proxy.regions",
+      "check": "required_export",
+      "expected_module": "src.mpm_lbm.sim.squid_proxy.regions",
+      "pass": true,
+      "symbol": "sample_squid_proxy_regions",
+      "symbol_present_in_target_source": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.squid_proxy.regions",
+      "check": "required_export",
+      "expected_module": "src.mpm_lbm.sim.squid_proxy.regions",
+      "pass": true,
+      "symbol": "summarize_region_masks",
+      "symbol_present_in_target_source": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.diagnostics.fsi_diagnostics",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "FSIDiagnostics3D",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "FSIDriver3D",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.drivers.fsi_config",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "FSIDriverConfig",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.config",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "GeometryConfig",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.quality",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "GeometryQualityGate",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.sampler",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "GeometrySampler3D",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.units",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "GridUnitMapper",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.importers",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "ImportedGeometrySampler3D",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.lbm_config",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "LBMConfig",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.lbm_fluid",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "LBMFluid3D",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.coupling.link_area_accounting",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "LinkAreaMomentumAccounting3D",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.coupling.link_area",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "LinkAreaMovingBoundaryCoupler3D",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_config",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "MPMConfig",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_solid",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "MPMSolid3D",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.projection",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "MPMToLBMProjector3D",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.coupling.momentum_accounting",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "MomentumAccounting3D",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.moving_boundary_coupling",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "MovingBoundaryFSICoupler3D",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.coupling",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "PenaltyFSICoupler3D",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "SquidProxyRegionConfig",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "SquidRegion",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.drivers.sim_config",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "UnifiedSimConfig",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "VoxelGeometry",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.quality",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "analyze_geometry_config",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.mesh_quality",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "analyze_mesh",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.voxel_quality",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "analyze_voxel_occupancy",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.calibration",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "choose_recommended_row",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.calibration",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "classify_calibration_row",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "default_squid_proxy_region_config",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "load_obj",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "load_voxel_geometry",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "mesh_bounds",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "normalize_vertices",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.squid_proxy.regions",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "sample_squid_proxy_regions",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "save_voxel_geometry",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.squid_proxy.regions",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "summarize_region_masks",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "voxel_centers_to_points",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.calibration",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "write_calibration_summary",
+      "symbol_present_in_target_source": ""
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "check": "forbidden_stale_export_target",
+      "expected_module": "",
+      "pass": true,
+      "symbol": "write_obj",
+      "symbol_present_in_target_source": ""
+    }
+  ],
+  "summary": {
+    "heavy_import_during_src_import": false,
+    "heavy_import_loaded_modules": [],
+    "no_stale_export_count": 0,
+    "pass_count": 43,
+    "required_export_count": 5,
+    "required_export_pass_count": 5,
+    "row_count": 43,
+    "src_init_export_audit_pass": true
+  }
+}

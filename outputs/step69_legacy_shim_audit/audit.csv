@@ -1,0 +1,7 @@
+canonical_path,legacy_contains_implementation_body,legacy_imports_canonical,legacy_is_shim,legacy_path,nonblank_line_count,pass
+src/mpm_lbm/sim/squid_proxy/region_projection.py,False,True,True,src/squid_region_projection.py,5,True
+src/mpm_lbm/sim/squid_proxy/region_quality.py,False,True,True,src/squid_region_quality.py,5,True
+src/mpm_lbm/diagnostics/squid_region_driver.py,False,True,True,src/squid_region_driver_diagnostics.py,4,True
+src/mpm_lbm/sim/wall_velocity/application_envelope.py,False,True,True,src/wall_velocity_application_envelope.py,5,True
+src/mpm_lbm/sim/wall_velocity/consistency.py,False,True,True,src/wall_velocity_consistency.py,4,True
+src/mpm_lbm/sim/wall_velocity/quality.py,False,True,True,src/wall_velocity_quality.py,4,True

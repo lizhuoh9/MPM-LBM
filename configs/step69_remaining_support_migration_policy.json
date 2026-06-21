@@ -1,0 +1,268 @@
+{
+  "base_commit": "2ff617d17ef2f715f8a396094a13898bb5df7d09",
+  "forbidden_canonical_legacy_import_modules": [
+    "src.squid_region_projection",
+    "src.squid_region_quality",
+    "src.squid_region_driver_diagnostics",
+    "src.wall_velocity_application_envelope",
+    "src.wall_velocity_consistency",
+    "src.wall_velocity_quality"
+  ],
+  "legacy_shim_required_phrase": "Compatibility shim",
+  "max_nonblank_lines_per_shim": 7,
+  "migrations": [
+    {
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_projection",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/region_projection.py",
+      "classification": "squid_proxy_support",
+      "legacy_module": "src.squid_region_projection",
+      "legacy_path": "src/squid_region_projection.py",
+      "public_symbols": [
+        "run_squid_region_projection_smoke",
+        "summarize_projection_rows",
+        "write_projection_results"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "squid_proxy_remaining",
+      "source_inventory_recommended_step": "Step69",
+      "symbol_kinds": [
+        {
+          "kind": "function",
+          "name": "run_squid_region_projection_smoke"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_projection_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_projection_results"
+        }
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_quality",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/region_quality.py",
+      "classification": "squid_proxy_support",
+      "legacy_module": "src.squid_region_quality",
+      "legacy_path": "src/squid_region_quality.py",
+      "public_symbols": [
+        "evaluate_region_quality",
+        "overlap_matrix_rows",
+        "summarize_overlap_diagnostics"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "squid_proxy_remaining",
+      "source_inventory_recommended_step": "Step69",
+      "symbol_kinds": [
+        {
+          "kind": "function",
+          "name": "evaluate_region_quality"
+        },
+        {
+          "kind": "function",
+          "name": "overlap_matrix_rows"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_overlap_diagnostics"
+        }
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_region_driver",
+      "canonical_path": "src/mpm_lbm/diagnostics/squid_region_driver.py",
+      "classification": "squid_region_diagnostics",
+      "classification_decision": "diagnostics path used because this module only summarizes diagnostics/report rows and is not a runtime solver component",
+      "legacy_module": "src.squid_region_driver_diagnostics",
+      "legacy_path": "src/squid_region_driver_diagnostics.py",
+      "public_symbols": [
+        "SEMANTIC_OVERLAP_NOTE",
+        "SCOPE_NOTE",
+        "ALIGNMENT_FIELDS",
+        "ENGINEERING_LINK_AREA_FIELDS",
+        "load_region_driver_context",
+        "summarize_region_projection_alignment",
+        "summarize_static_driver_region_context",
+        "summarize_alignment_rows",
+        "assert_alignment_summary",
+        "compare_engineering_vs_link_area_static",
+        "summarize_engineering_vs_link_area_rows",
+        "assert_engineering_vs_link_area_summary",
+        "write_region_driver_summary"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "squid_proxy_remaining",
+      "source_inventory_recommended_step": "Step69",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "SEMANTIC_OVERLAP_NOTE"
+        },
+        {
+          "kind": "constant",
+          "name": "SCOPE_NOTE"
+        },
+        {
+          "kind": "constant",
+          "name": "ALIGNMENT_FIELDS"
+        },
+        {
+          "kind": "constant",
+          "name": "ENGINEERING_LINK_AREA_FIELDS"
+        },
+        {
+          "kind": "function",
+          "name": "load_region_driver_context"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_region_projection_alignment"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_static_driver_region_context"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_alignment_rows"
+        },
+        {
+          "kind": "function",
+          "name": "assert_alignment_summary"
+        },
+        {
+          "kind": "function",
+          "name": "compare_engineering_vs_link_area_static"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_engineering_vs_link_area_rows"
+        },
+        {
+          "kind": "function",
+          "name": "assert_engineering_vs_link_area_summary"
+        },
+        {
+          "kind": "function",
+          "name": "write_region_driver_summary"
+        }
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_envelope",
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/application_envelope.py",
+      "classification": "wall_velocity_support",
+      "legacy_module": "src.wall_velocity_application_envelope",
+      "legacy_path": "src/wall_velocity_application_envelope.py",
+      "public_symbols": [
+        "APPLICATION_TIMESERIES_FIELDS",
+        "collect_wall_velocity_application_reports",
+        "reports_to_timeseries_rows",
+        "summarize_application_envelope",
+        "summarize_driver_stability_envelope",
+        "compare_static_experimental_envelopes",
+        "compare_engineering_link_area_envelopes",
+        "write_envelope_rows",
+        "write_timeseries"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "wall_velocity_runtime_remaining",
+      "source_inventory_recommended_step": "Step69",
+      "symbol_kinds": [
+        {
+          "kind": "constant",
+          "name": "APPLICATION_TIMESERIES_FIELDS"
+        },
+        {
+          "kind": "function",
+          "name": "collect_wall_velocity_application_reports"
+        },
+        {
+          "kind": "function",
+          "name": "reports_to_timeseries_rows"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_application_envelope"
+        },
+        {
+          "kind": "function",
+          "name": "summarize_driver_stability_envelope"
+        },
+        {
+          "kind": "function",
+          "name": "compare_static_experimental_envelopes"
+        },
+        {
+          "kind": "function",
+          "name": "compare_engineering_link_area_envelopes"
+        },
+        {
+          "kind": "function",
+          "name": "write_envelope_rows"
+        },
+        {
+          "kind": "function",
+          "name": "write_timeseries"
+        }
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.consistency",
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/consistency.py",
+      "classification": "wall_velocity_support",
+      "legacy_module": "src.wall_velocity_consistency",
+      "legacy_path": "src/wall_velocity_consistency.py",
+      "public_symbols": [
+        "compare_wall_velocity_to_motion_mapping"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "wall_velocity_runtime_remaining",
+      "source_inventory_recommended_step": "Step69",
+      "symbol_kinds": [
+        {
+          "kind": "function",
+          "name": "compare_wall_velocity_to_motion_mapping"
+        }
+      ]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.quality",
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/quality.py",
+      "classification": "wall_velocity_support",
+      "legacy_module": "src.wall_velocity_quality",
+      "legacy_path": "src/wall_velocity_quality.py",
+      "public_symbols": [
+        "analyze_wall_velocity_quality",
+        "quality_summary_rows"
+      ],
+      "root_shim_required": true,
+      "simulation_required_for_migration": false,
+      "source_inventory_classification": "wall_velocity_runtime_remaining",
+      "source_inventory_recommended_step": "Step69",
+      "symbol_kinds": [
+        {
+          "kind": "function",
+          "name": "analyze_wall_velocity_quality"
+        },
+        {
+          "kind": "function",
+          "name": "quality_summary_rows"
+        }
+      ]
+    }
+  ],
+  "migration_count": 6,
+  "migration_required_source_path": "outputs/step63_remaining_solver_inventory_audit/audit.json",
+  "physics_feature_expansion": false,
+  "policy_id": "step69_remaining_support_migration_policy",
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false,
+  "step": 69
+}

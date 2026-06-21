@@ -1,0 +1,11 @@
+metric,value
+canonical_imports_legacy_root_count,0
+legacy_implementation_body_count_for_six_support_rows,0
+legacy_shim_count_for_six_support_rows,6
+migrated_support_count,6
+migration_required_count_from_step63,6
+policy_migration_count,6
+policy_symbol_list_matches_canonical_ast_count,6
+remaining_migration_required_count,0
+remaining_support_migration_audit_pass,True
+row_count,6

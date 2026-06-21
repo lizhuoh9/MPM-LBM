@@ -1,0 +1,9 @@
+metric,value
+heavy_import_during_src_import,False
+heavy_import_loaded_modules,[]
+no_stale_export_count,0
+pass_count,43
+required_export_count,5
+required_export_pass_count,5
+row_count,43
+src_init_export_audit_pass,True

@@ -1,0 +1,31 @@
+{
+  "forbidden_export_targets": [
+    "src.squid_region_config",
+    "src.squid_proxy_regions",
+    "src.squid_region_projection",
+    "src.squid_region_quality",
+    "src.squid_region_driver_diagnostics",
+    "src.wall_velocity_application_envelope",
+    "src.wall_velocity_consistency",
+    "src.wall_velocity_quality"
+  ],
+  "heavy_import_modules": [
+    "taichi",
+    "pyevtk",
+    "src.lbm_fluid",
+    "src.mpm_solid",
+    "src.fsi_driver",
+    "src.mpm_lbm.sim.drivers.fsi_driver",
+    "src.mpm_lbm.sim.drivers.driver"
+  ],
+  "policy_id": "step69_src_init_export_policy",
+  "required_exports": {
+    "SquidProxyRegionConfig": "src.mpm_lbm.sim.squid_proxy.region_config",
+    "SquidRegion": "src.mpm_lbm.sim.squid_proxy.region_config",
+    "default_squid_proxy_region_config": "src.mpm_lbm.sim.squid_proxy.region_config",
+    "sample_squid_proxy_regions": "src.mpm_lbm.sim.squid_proxy.regions",
+    "summarize_region_masks": "src.mpm_lbm.sim.squid_proxy.regions"
+  },
+  "src_init_path": "src/__init__.py",
+  "step": 69
+}

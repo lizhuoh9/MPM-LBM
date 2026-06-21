@@ -1,0 +1,11 @@
+metric,value
+canonical_allowed_prefix_count,6
+canonical_path_count,6
+code_placement_audit_pass,True
+legacy_shim_count,6
+pass_count,6
+physics_feature_expansion,False
+protected_step69_file_count,0
+row_count,6
+runtime_code_changed,False
+solver_behavior_changed,False

@@ -1,0 +1,222 @@
+{
+  "rows": [
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/squid_proxy/region_projection.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/squid_proxy/region_quality.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "src/mpm_lbm/diagnostics/squid_region_driver.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/wall_velocity/application_envelope.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/wall_velocity/consistency.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "src/mpm_lbm/sim/wall_velocity/quality.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/current_root_inventory_audit.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/remaining_support_migration_audit.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/root_src_final_cleanup_audit.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/src_init_export_refresh_audit.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step69_code_placement_audit.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step69_no_simulation_audit.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step69_regression_guard.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step69_import_execution_audit.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step69_legacy_shim_audit.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "baseline_tests/step69_common.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "baseline_tests/run_step69_current_root_inventory_audit.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "baseline_tests/run_step69_remaining_support_migration_audit.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "baseline_tests/run_step69_import_execution_audit.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "baseline_tests/run_step69_legacy_shim_audit.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "baseline_tests/run_step69_root_src_final_cleanup_audit.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "baseline_tests/run_step69_src_init_export_audit.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "baseline_tests/run_step69_code_placement_audit.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "baseline_tests/run_step69_no_simulation_audit.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "baseline_tests/run_step69_step68_regression_guard.py"
+    },
+    {
+      "check": "python_no_simulation_tokens",
+      "file_exists": true,
+      "forbidden_token_count": 0,
+      "found_tokens": [],
+      "pass": true,
+      "path": "baseline_tests/run_step69_artifact_manifest.py"
+    }
+  ],
+  "summary": {
+    "driver_run_detected": false,
+    "forbidden_output_directory_count": 0,
+    "forbidden_python_token_count": 0,
+    "no_simulation_audit_pass": true,
+    "pass_count": 26,
+    "row_count": 26,
+    "step69_particle_npy_count": 0,
+    "step69_vtr_count": 0
+  }
+}

@@ -1,0 +1,7 @@
+canonical_allowed_prefix,canonical_exists,canonical_path,check,classification,legacy_is_shim,legacy_path,pass
+True,True,src/mpm_lbm/sim/squid_proxy/region_projection.py,migration_code_placement,squid_proxy_support,True,src/squid_region_projection.py,True
+True,True,src/mpm_lbm/sim/squid_proxy/region_quality.py,migration_code_placement,squid_proxy_support,True,src/squid_region_quality.py,True
+True,True,src/mpm_lbm/diagnostics/squid_region_driver.py,migration_code_placement,squid_region_diagnostics,True,src/squid_region_driver_diagnostics.py,True
+True,True,src/mpm_lbm/sim/wall_velocity/application_envelope.py,migration_code_placement,wall_velocity_support,True,src/wall_velocity_application_envelope.py,True
+True,True,src/mpm_lbm/sim/wall_velocity/consistency.py,migration_code_placement,wall_velocity_support,True,src/wall_velocity_consistency.py,True
+True,True,src/mpm_lbm/sim/wall_velocity/quality.py,migration_code_placement,wall_velocity_support,True,src/wall_velocity_quality.py,True

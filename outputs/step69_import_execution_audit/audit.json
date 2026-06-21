@@ -1,0 +1,325 @@
+{
+  "rows": [
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "run_squid_region_projection_smoke"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_projection_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_projection",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_projection",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_projection_results"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_quality",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_quality",
+      "pass": true,
+      "same_object": true,
+      "symbol": "evaluate_region_quality"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_quality",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_quality",
+      "pass": true,
+      "same_object": true,
+      "symbol": "overlap_matrix_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_quality",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_quality",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_overlap_diagnostics"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_region_driver",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_driver_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "SEMANTIC_OVERLAP_NOTE"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_region_driver",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_driver_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "SCOPE_NOTE"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_region_driver",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_driver_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ALIGNMENT_FIELDS"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_region_driver",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_driver_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ENGINEERING_LINK_AREA_FIELDS"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_region_driver",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_driver_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_region_driver_context"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_region_driver",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_driver_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_region_projection_alignment"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_region_driver",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_driver_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_static_driver_region_context"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_region_driver",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_driver_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_alignment_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_region_driver",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_driver_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "assert_alignment_summary"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_region_driver",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_driver_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_engineering_vs_link_area_static"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_region_driver",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_driver_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_engineering_vs_link_area_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_region_driver",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_driver_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "assert_engineering_vs_link_area_summary"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_region_driver",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.squid_region_driver_diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_region_driver_summary"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_envelope",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "APPLICATION_TIMESERIES_FIELDS"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_envelope",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "collect_wall_velocity_application_reports"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_envelope",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "reports_to_timeseries_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_envelope",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_application_envelope"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_envelope",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "summarize_driver_stability_envelope"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_envelope",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_static_experimental_envelopes"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_envelope",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_engineering_link_area_envelopes"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_envelope",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_envelope_rows"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_envelope",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_application_envelope",
+      "pass": true,
+      "same_object": true,
+      "symbol": "write_timeseries"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.consistency",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_consistency",
+      "pass": true,
+      "same_object": true,
+      "symbol": "compare_wall_velocity_to_motion_mapping"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.quality",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_quality",
+      "pass": true,
+      "same_object": true,
+      "symbol": "analyze_wall_velocity_quality"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.quality",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.wall_velocity_quality",
+      "pass": true,
+      "same_object": true,
+      "symbol": "quality_summary_rows"
+    }
+  ],
+  "summary": {
+    "canonical_import_pass_count": 31,
+    "legacy_import_pass_count": 31,
+    "output_snapshot_unchanged": true,
+    "pass_count": 31,
+    "public_symbol_count": 31,
+    "row_count": 31,
+    "same_object_count": 31,
+    "solver_run": false,
+    "step69_import_execution_audit_pass": true
+  }
+}

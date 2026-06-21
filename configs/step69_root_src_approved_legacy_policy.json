@@ -1,0 +1,10 @@
+{
+  "approved_legacy_source_classification": "approved_legacy_support",
+  "legacy_shim_required_phrase": "Compatibility shim",
+  "policy_id": "step69_root_src_approved_legacy_policy",
+  "remaining_support_migration_policy_path": "configs/step69_remaining_support_migration_policy.json",
+  "source_step63_inventory_path": "outputs/step63_remaining_solver_inventory_audit/audit.json",
+  "step": 69,
+  "step68_migration_policy_path": "configs/step68_step_specific_proxy_migration_policy.json",
+  "unknown_requires_review_allowed": false
+}

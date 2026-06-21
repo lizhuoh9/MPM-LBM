@@ -1,0 +1,210 @@
+{
+  "rows": [
+    {
+      "canonical_file_exists": true,
+      "canonical_imports_legacy_root": false,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_projection",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/region_projection.py",
+      "canonical_public_symbols": [
+        "run_squid_region_projection_smoke",
+        "summarize_projection_rows",
+        "write_projection_results"
+      ],
+      "classification": "squid_proxy_support",
+      "classification_decision": "",
+      "extra_public_symbols": [],
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_is_shim": true,
+      "legacy_module": "src.squid_region_projection",
+      "legacy_path": "src/squid_region_projection.py",
+      "missing_symbols": [],
+      "pass": true,
+      "policy_public_symbols": [
+        "run_squid_region_projection_smoke",
+        "summarize_projection_rows",
+        "write_projection_results"
+      ],
+      "policy_symbol_list_matches_canonical_ast": true,
+      "source_migration_required": true
+    },
+    {
+      "canonical_file_exists": true,
+      "canonical_imports_legacy_root": false,
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_quality",
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/region_quality.py",
+      "canonical_public_symbols": [
+        "evaluate_region_quality",
+        "overlap_matrix_rows",
+        "summarize_overlap_diagnostics"
+      ],
+      "classification": "squid_proxy_support",
+      "classification_decision": "",
+      "extra_public_symbols": [],
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_is_shim": true,
+      "legacy_module": "src.squid_region_quality",
+      "legacy_path": "src/squid_region_quality.py",
+      "missing_symbols": [],
+      "pass": true,
+      "policy_public_symbols": [
+        "evaluate_region_quality",
+        "overlap_matrix_rows",
+        "summarize_overlap_diagnostics"
+      ],
+      "policy_symbol_list_matches_canonical_ast": true,
+      "source_migration_required": true
+    },
+    {
+      "canonical_file_exists": true,
+      "canonical_imports_legacy_root": false,
+      "canonical_module": "src.mpm_lbm.diagnostics.squid_region_driver",
+      "canonical_path": "src/mpm_lbm/diagnostics/squid_region_driver.py",
+      "canonical_public_symbols": [
+        "SEMANTIC_OVERLAP_NOTE",
+        "SCOPE_NOTE",
+        "ALIGNMENT_FIELDS",
+        "ENGINEERING_LINK_AREA_FIELDS",
+        "load_region_driver_context",
+        "summarize_region_projection_alignment",
+        "summarize_static_driver_region_context",
+        "summarize_alignment_rows",
+        "assert_alignment_summary",
+        "compare_engineering_vs_link_area_static",
+        "summarize_engineering_vs_link_area_rows",
+        "assert_engineering_vs_link_area_summary",
+        "write_region_driver_summary"
+      ],
+      "classification": "squid_region_diagnostics",
+      "classification_decision": "diagnostics path used because this module only summarizes diagnostics/report rows and is not a runtime solver component",
+      "extra_public_symbols": [],
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_is_shim": true,
+      "legacy_module": "src.squid_region_driver_diagnostics",
+      "legacy_path": "src/squid_region_driver_diagnostics.py",
+      "missing_symbols": [],
+      "pass": true,
+      "policy_public_symbols": [
+        "SEMANTIC_OVERLAP_NOTE",
+        "SCOPE_NOTE",
+        "ALIGNMENT_FIELDS",
+        "ENGINEERING_LINK_AREA_FIELDS",
+        "load_region_driver_context",
+        "summarize_region_projection_alignment",
+        "summarize_static_driver_region_context",
+        "summarize_alignment_rows",
+        "assert_alignment_summary",
+        "compare_engineering_vs_link_area_static",
+        "summarize_engineering_vs_link_area_rows",
+        "assert_engineering_vs_link_area_summary",
+        "write_region_driver_summary"
+      ],
+      "policy_symbol_list_matches_canonical_ast": true,
+      "source_migration_required": true
+    },
+    {
+      "canonical_file_exists": true,
+      "canonical_imports_legacy_root": false,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_envelope",
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/application_envelope.py",
+      "canonical_public_symbols": [
+        "APPLICATION_TIMESERIES_FIELDS",
+        "collect_wall_velocity_application_reports",
+        "reports_to_timeseries_rows",
+        "summarize_application_envelope",
+        "summarize_driver_stability_envelope",
+        "compare_static_experimental_envelopes",
+        "compare_engineering_link_area_envelopes",
+        "write_envelope_rows",
+        "write_timeseries"
+      ],
+      "classification": "wall_velocity_support",
+      "classification_decision": "",
+      "extra_public_symbols": [],
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_is_shim": true,
+      "legacy_module": "src.wall_velocity_application_envelope",
+      "legacy_path": "src/wall_velocity_application_envelope.py",
+      "missing_symbols": [],
+      "pass": true,
+      "policy_public_symbols": [
+        "APPLICATION_TIMESERIES_FIELDS",
+        "collect_wall_velocity_application_reports",
+        "reports_to_timeseries_rows",
+        "summarize_application_envelope",
+        "summarize_driver_stability_envelope",
+        "compare_static_experimental_envelopes",
+        "compare_engineering_link_area_envelopes",
+        "write_envelope_rows",
+        "write_timeseries"
+      ],
+      "policy_symbol_list_matches_canonical_ast": true,
+      "source_migration_required": true
+    },
+    {
+      "canonical_file_exists": true,
+      "canonical_imports_legacy_root": false,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.consistency",
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/consistency.py",
+      "canonical_public_symbols": [
+        "compare_wall_velocity_to_motion_mapping"
+      ],
+      "classification": "wall_velocity_support",
+      "classification_decision": "",
+      "extra_public_symbols": [],
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_is_shim": true,
+      "legacy_module": "src.wall_velocity_consistency",
+      "legacy_path": "src/wall_velocity_consistency.py",
+      "missing_symbols": [],
+      "pass": true,
+      "policy_public_symbols": [
+        "compare_wall_velocity_to_motion_mapping"
+      ],
+      "policy_symbol_list_matches_canonical_ast": true,
+      "source_migration_required": true
+    },
+    {
+      "canonical_file_exists": true,
+      "canonical_imports_legacy_root": false,
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.quality",
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/quality.py",
+      "canonical_public_symbols": [
+        "analyze_wall_velocity_quality",
+        "quality_summary_rows"
+      ],
+      "classification": "wall_velocity_support",
+      "classification_decision": "",
+      "extra_public_symbols": [],
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_is_shim": true,
+      "legacy_module": "src.wall_velocity_quality",
+      "legacy_path": "src/wall_velocity_quality.py",
+      "missing_symbols": [],
+      "pass": true,
+      "policy_public_symbols": [
+        "analyze_wall_velocity_quality",
+        "quality_summary_rows"
+      ],
+      "policy_symbol_list_matches_canonical_ast": true,
+      "source_migration_required": true
+    }
+  ],
+  "summary": {
+    "canonical_imports_legacy_root_count": 0,
+    "legacy_implementation_body_count_for_six_support_rows": 0,
+    "legacy_shim_count_for_six_support_rows": 6,
+    "migrated_support_count": 6,
+    "migration_required_count_from_step63": 6,
+    "policy_migration_count": 6,
+    "policy_symbol_list_matches_canonical_ast_count": 6,
+    "remaining_migration_required_count": 0,
+    "remaining_support_migration_audit_pass": true,
+    "row_count": 6
+  }
+}

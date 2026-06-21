@@ -1,0 +1,76 @@
+{
+  "rows": [
+    {
+      "canonical_allowed_prefix": true,
+      "canonical_exists": true,
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/region_projection.py",
+      "check": "migration_code_placement",
+      "classification": "squid_proxy_support",
+      "legacy_is_shim": true,
+      "legacy_path": "src/squid_region_projection.py",
+      "pass": true
+    },
+    {
+      "canonical_allowed_prefix": true,
+      "canonical_exists": true,
+      "canonical_path": "src/mpm_lbm/sim/squid_proxy/region_quality.py",
+      "check": "migration_code_placement",
+      "classification": "squid_proxy_support",
+      "legacy_is_shim": true,
+      "legacy_path": "src/squid_region_quality.py",
+      "pass": true
+    },
+    {
+      "canonical_allowed_prefix": true,
+      "canonical_exists": true,
+      "canonical_path": "src/mpm_lbm/diagnostics/squid_region_driver.py",
+      "check": "migration_code_placement",
+      "classification": "squid_region_diagnostics",
+      "legacy_is_shim": true,
+      "legacy_path": "src/squid_region_driver_diagnostics.py",
+      "pass": true
+    },
+    {
+      "canonical_allowed_prefix": true,
+      "canonical_exists": true,
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/application_envelope.py",
+      "check": "migration_code_placement",
+      "classification": "wall_velocity_support",
+      "legacy_is_shim": true,
+      "legacy_path": "src/wall_velocity_application_envelope.py",
+      "pass": true
+    },
+    {
+      "canonical_allowed_prefix": true,
+      "canonical_exists": true,
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/consistency.py",
+      "check": "migration_code_placement",
+      "classification": "wall_velocity_support",
+      "legacy_is_shim": true,
+      "legacy_path": "src/wall_velocity_consistency.py",
+      "pass": true
+    },
+    {
+      "canonical_allowed_prefix": true,
+      "canonical_exists": true,
+      "canonical_path": "src/mpm_lbm/sim/wall_velocity/quality.py",
+      "check": "migration_code_placement",
+      "classification": "wall_velocity_support",
+      "legacy_is_shim": true,
+      "legacy_path": "src/wall_velocity_quality.py",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "canonical_allowed_prefix_count": 6,
+    "canonical_path_count": 6,
+    "code_placement_audit_pass": true,
+    "legacy_shim_count": 6,
+    "pass_count": 6,
+    "physics_feature_expansion": false,
+    "protected_step69_file_count": 0,
+    "row_count": 6,
+    "runtime_code_changed": false,
+    "solver_behavior_changed": false
+  }
+}

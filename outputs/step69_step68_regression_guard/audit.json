@@ -1,0 +1,67 @@
+{
+  "rows": [
+    {
+      "artifact_exists": true,
+      "error": "",
+      "pass": true,
+      "path": "outputs/step68_step_specific_proxy_policy_audit/audit.json",
+      "summary_key": "step68_proxy_policy_audit_pass",
+      "summary_value": true
+    },
+    {
+      "artifact_exists": true,
+      "error": "",
+      "pass": true,
+      "path": "outputs/step68_step_specific_proxy_migration_audit/audit.json",
+      "summary_key": "step68_proxy_migration_audit_pass",
+      "summary_value": true
+    },
+    {
+      "artifact_exists": true,
+      "error": "",
+      "pass": true,
+      "path": "outputs/step68_import_execution_audit/audit.json",
+      "summary_key": "step68_import_execution_audit_pass",
+      "summary_value": true
+    },
+    {
+      "artifact_exists": true,
+      "error": "",
+      "pass": true,
+      "path": "outputs/step68_legacy_shim_audit/audit.json",
+      "summary_key": "step68_legacy_shim_audit_pass",
+      "summary_value": true
+    },
+    {
+      "artifact_exists": true,
+      "error": "",
+      "pass": true,
+      "path": "outputs/step68_experiment_boundary_audit/audit.json",
+      "summary_key": "experiment_boundary_audit_pass",
+      "summary_value": true
+    },
+    {
+      "artifact_exists": true,
+      "error": "",
+      "pass": true,
+      "path": "outputs/step68_step63_67_regression_guard/audit.json",
+      "summary_key": "step68_regression_guard_pass",
+      "summary_value": true
+    },
+    {
+      "artifact_exists": true,
+      "error": "",
+      "pass": true,
+      "path": "outputs/step68_artifact_manifest/artifact_summary.json",
+      "summary_key": "artifact_budget_pass",
+      "summary_value": true
+    }
+  ],
+  "summary": {
+    "missing_artifact_count": 0,
+    "row_count": 7,
+    "step68_pass_count": 7,
+    "step68_required_artifact_count": 7,
+    "step69_step68_regression_guard_pass": true
+  }
+}

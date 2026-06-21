@@ -1,0 +1,11 @@
+metric,value
+approved_legacy_support_count,17
+current_migration_required_count,0
+current_root_file_count,119
+current_root_inventory_audit_pass,True
+current_root_step_specific_implementation_count,0
+current_step_specific_proxy_remaining_count,0
+current_unknown_requires_review_count,0
+root_compatibility_shim_count,102
+row_count,119
+step69_support_shim_count,6

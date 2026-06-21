@@ -1,0 +1,51 @@
+{
+  "forbidden_output_directories": [
+    "outputs/step69_driver_runs"
+  ],
+  "forbidden_python_tokens": [
+    "driver.run(",
+    "FSIDriver3D(",
+    ".initialize(",
+    ".step_once(",
+    ".write_vtr(",
+    "particle.npy",
+    "particles.npy"
+  ],
+  "forbidden_related_extensions": [
+    ".vtr"
+  ],
+  "no_driver_run": true,
+  "no_particle_npy": true,
+  "no_simulation": true,
+  "no_vtr": true,
+  "policy_id": "step69_no_simulation_policy",
+  "scan_python_paths": [
+    "src/mpm_lbm/sim/squid_proxy/region_projection.py",
+    "src/mpm_lbm/sim/squid_proxy/region_quality.py",
+    "src/mpm_lbm/diagnostics/squid_region_driver.py",
+    "src/mpm_lbm/sim/wall_velocity/application_envelope.py",
+    "src/mpm_lbm/sim/wall_velocity/consistency.py",
+    "src/mpm_lbm/sim/wall_velocity/quality.py",
+    "src/mpm_lbm/evidence/current_root_inventory_audit.py",
+    "src/mpm_lbm/evidence/remaining_support_migration_audit.py",
+    "src/mpm_lbm/evidence/root_src_final_cleanup_audit.py",
+    "src/mpm_lbm/evidence/src_init_export_refresh_audit.py",
+    "src/mpm_lbm/evidence/step69_code_placement_audit.py",
+    "src/mpm_lbm/evidence/step69_no_simulation_audit.py",
+    "src/mpm_lbm/evidence/step69_regression_guard.py",
+    "src/mpm_lbm/evidence/step69_import_execution_audit.py",
+    "src/mpm_lbm/evidence/step69_legacy_shim_audit.py",
+    "baseline_tests/step69_common.py",
+    "baseline_tests/run_step69_current_root_inventory_audit.py",
+    "baseline_tests/run_step69_remaining_support_migration_audit.py",
+    "baseline_tests/run_step69_import_execution_audit.py",
+    "baseline_tests/run_step69_legacy_shim_audit.py",
+    "baseline_tests/run_step69_root_src_final_cleanup_audit.py",
+    "baseline_tests/run_step69_src_init_export_audit.py",
+    "baseline_tests/run_step69_code_placement_audit.py",
+    "baseline_tests/run_step69_no_simulation_audit.py",
+    "baseline_tests/run_step69_step68_regression_guard.py",
+    "baseline_tests/run_step69_artifact_manifest.py"
+  ],
+  "step": 69
+}

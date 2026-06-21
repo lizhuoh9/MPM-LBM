@@ -1,0 +1,12 @@
+{
+  "base_commit": "2ff617d17ef2f715f8a396094a13898bb5df7d09",
+  "current_inventory_note": "Step69 regenerates the current root src inventory after Step68; Step63 is an input classification, not the current state.",
+  "legacy_shim_required_phrase": "Compatibility shim",
+  "max_nonblank_lines_per_shim": 7,
+  "policy_id": "step69_current_root_inventory_policy",
+  "remaining_support_migration_policy_path": "configs/step69_remaining_support_migration_policy.json",
+  "root_src_approved_legacy_policy_path": "configs/step69_root_src_approved_legacy_policy.json",
+  "source_step63_inventory_path": "outputs/step63_remaining_solver_inventory_audit/audit.json",
+  "step": 69,
+  "step68_migration_policy_path": "configs/step68_step_specific_proxy_migration_policy.json"
+}

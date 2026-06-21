@@ -1,0 +1,19 @@
+{
+  "allowed_canonical_prefixes": [
+    "src/mpm_lbm/sim/squid_proxy/",
+    "src/mpm_lbm/sim/wall_velocity/",
+    "src/mpm_lbm/diagnostics/"
+  ],
+  "forbidden_step69_paths": [
+    "external/taichi_LBM3D/",
+    "data/real_geometry_candidates/",
+    "outputs/step69_driver_runs/"
+  ],
+  "no_experiment_activation": true,
+  "physics_feature_expansion": false,
+  "policy_id": "step69_code_placement_policy",
+  "remaining_support_migration_policy_path": "configs/step69_remaining_support_migration_policy.json",
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false,
+  "step": 69
+}

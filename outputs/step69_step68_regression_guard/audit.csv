@@ -1,0 +1,8 @@
+artifact_exists,error,pass,path,summary_key,summary_value
+True,,True,outputs/step68_step_specific_proxy_policy_audit/audit.json,step68_proxy_policy_audit_pass,True
+True,,True,outputs/step68_step_specific_proxy_migration_audit/audit.json,step68_proxy_migration_audit_pass,True
+True,,True,outputs/step68_import_execution_audit/audit.json,step68_import_execution_audit_pass,True
+True,,True,outputs/step68_legacy_shim_audit/audit.json,step68_legacy_shim_audit_pass,True
+True,,True,outputs/step68_experiment_boundary_audit/audit.json,experiment_boundary_audit_pass,True
+True,,True,outputs/step68_step63_67_regression_guard/audit.json,step68_regression_guard_pass,True
+True,,True,outputs/step68_artifact_manifest/artifact_summary.json,artifact_budget_pass,True

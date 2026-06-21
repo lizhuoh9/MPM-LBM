@@ -1,0 +1,120 @@
+approved_legacy_source,current_classification,current_migration_required,current_root_step_specific_implementation,current_step_specific_proxy_remaining,is_root_shim,pass,path,public_symbols,source_classification,source_migration_required,step68_step_specific_shim,step69_support_shim,unknown_requires_review
+True,approved_legacy_support,False,False,False,False,True,src/__init__.py,[],approved_legacy_support,False,False,False,False
+True,approved_legacy_support,False,False,False,False,True,src/artifact_utils.py,"[""LARGE_FILE_THRESHOLD_MB"", ""format_size"", ""scan_artifacts"", ""write_artifact_manifest"", ""summarize_artifacts"", ""write_artifact_summary""]",approved_legacy_support,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/boundary_motion_config.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/boundary_motion_interface.py,[],root_compatibility_shim,False,False,False,False
+True,approved_legacy_support,False,False,False,False,True,src/calibration.py,"[""classify_calibration_row"", ""choose_recommended_row"", ""write_calibration_summary""]",approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/coupling.py,[],approved_legacy_support,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/diagnostic_geometry_projection.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/diagnostic_geometry_state_guard.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/diagnostic_geometry_update.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/diagnostic_geometry_update_config.py,[],root_compatibility_shim,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/diagnostics.py,[],approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/fsi_config.py,[],approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/fsi_driver.py,[],approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/geometry.py,[],approved_legacy_support,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/geometry_candidate_manifest.py,[],root_compatibility_shim,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/geometry_config.py,[],approved_legacy_support,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/geometry_displacement_config.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/geometry_displacement_consistency.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/geometry_displacement_field.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/geometry_displacement_grid_diagnostics.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/geometry_displacement_quality.py,[],root_compatibility_shim,False,False,False,False
+True,approved_legacy_support,False,False,False,False,True,src/geometry_driver_config.py,"[""VALIDATION_SCOPE"", ""ARTIFACT_POLICY"", ""geometry_config_payload_from_candidate_descriptor"", ""write_geometry_config_from_descriptor"", ""driver_config_payload_for_candidate""]",approved_legacy_support,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/geometry_fingerprint.py,[],root_compatibility_shim,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/geometry_import.py,[],approved_legacy_support,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/geometry_intake.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/geometry_motion_config.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/geometry_motion_interface.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/geometry_normalization.py,[],root_compatibility_shim,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/geometry_quality.py,[],approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/geometry_utils.py,[],approved_legacy_support,False,False,False,False
+True,approved_legacy_support,False,False,False,False,True,src/jet_cycle_parameter_sensitivity.py,"[""SCALE_TOL"", ""scale_label"", ""parse_wall_velocity_scale_from_case"", ""summarize_parameter_driver_rows"", ""assert_parameter_driver_summary"", ""summarize_scale_response"", ""compare_static_vs_parameter_rows"", ""compare_transfer_modes_by_scale"", ""summarize_cap_saturation"", ""force_impulse_parameter_response_row"", ""summarize_response_rows"", ""write_parameter_sensitivity_outputs"", ""write_csv_rows"", ""write_json"", ""finite_values""]",approved_legacy_support,False,False,False,False
+True,approved_legacy_support,False,False,False,False,True,src/jet_cycle_proxy_diagnostics.py,"[""CYCLE_PROXY_FIELDS"", ""FORCE_IMPULSE_FIELDS"", ""load_step32_schedule"", ""load_schedule_config"", ""estimate_cavity_rest_volume"", ""compute_cavity_volume_cycle_proxy"", ""compute_funnel_aperture_cycle_proxy"", ""compute_cycle_phase_alignment"", ""summarize_cycle_proxy"", ""wall_velocity_cycle_quality_row"", ""compute_impulse_norm_proxy"", ""force_impulse_proxy_row"", ""write_cycle_proxy_outputs"", ""write_csv_rows"", ""write_json"", ""read_json""]",approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/lbm_config.py,[],approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/lbm_fluid.py,[],approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/lbm_relaxation_semantics.py,[],approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/link_area_accounting.py,[],approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/link_area_coupling.py,[],approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/mesh_io.py,[],approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/mesh_quality.py,[],approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/momentum_accounting.py,[],approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/moving_boundary_coupling.py,[],approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/mpm_config.py,[],approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/mpm_solid.py,[],approved_legacy_support,False,False,False,False
+True,approved_legacy_support,False,False,False,False,True,src/multicycle_proxy_diagnostics.py,"[""assign_cycle_index"", ""assign_application_cycle_index"", ""split_rows_by_cycle"", ""split_application_rows_by_cycle"", ""summarize_cycle_stability"", ""cycle_stability_row"", ""summarize_cycle_to_cycle_drift"", ""summarize_cavity_proxy_by_cycle"", ""summarize_funnel_proxy_by_cycle"", ""wall_velocity_proxy_by_cycle"", ""wall_velocity_cycle_row"", ""wall_velocity_multicycle_quality_row"", ""force_impulse_proxy_rows_by_cycle"", ""summarize_impulse_drift"", ""write_multicycle_summary"", ""write_csv_rows"", ""write_json""]",approved_legacy_support,False,False,False,False
+True,approved_legacy_support,False,False,False,False,True,src/performance.py,"[""BYTES_PER_MB"", ""LBM_FLOATS_PER_CELL"", ""LBM_INT8_FIELDS_PER_CELL"", ""MPM_PARTICLE_FLOATS"", ""MPM_GRID_FLOATS_PER_NODE"", ""PerformanceTimer"", ""estimate_lbm_memory_bytes"", ""estimate_mpm_memory_bytes"", ""estimate_coupling_memory_bytes"", ""estimate_total_memory_bytes""]",approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/projection.py,[],approved_legacy_support,False,False,False,False
+True,approved_legacy_support,False,False,False,False,True,src/proxy_diagnostic_truthfulness.py,"[""PROXY_RECORD_METADATA"", ""add_proxy_record_metadata"", ""add_proxy_step_metadata"", ""proxy_metadata_fields"", ""proxy_metadata_present""]",approved_legacy_support,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/real_geometry_feasibility.py,[],step_specific_proxy_remaining,False,True,False,False
+True,approved_legacy_support,False,False,False,False,True,src/repository_evidence_index.py,"[""STEP_CLASSIFICATIONS"", ""build_repository_evidence_index"", ""discovered_steps"", ""primary_step_artifact"", ""classify_step"", ""claim_boundary_for_kind""]",approved_legacy_support,False,False,False,False
+True,approved_legacy_support,False,False,False,False,True,src/repository_evidence_integrity_artifact_manifest.py,"[""LARGE_FILE_THRESHOLD_BYTES"", ""build_step54_artifact_manifest"", ""repo_files"", ""manifest_row"", ""is_step54_related"", ""private_absolute_path_count""]",approved_legacy_support,False,False,False,False
+True,approved_legacy_support,False,False,False,False,True,src/repository_evidence_integrity_claim_guard.py,"[""NEGATION_MARKERS"", ""claim_guard_rows"", ""claim_surface_files"", ""forbidden_positive_claim_hits"", ""forbidden_positive_claims"", ""required_false_claim_flag_rows"", ""flatten_dict""]",approved_legacy_support,False,False,False,False
+True,approved_legacy_support,False,False,False,False,True,src/repository_evidence_integrity_regression_guard.py,"[""STEP53_REQUIRED_OUTPUTS"", ""step53_regression_rows"", ""check_row""]",approved_legacy_support,False,False,False,False
+True,approved_legacy_support,False,False,False,False,True,src/repository_test_strength_audit.py,"[""AUDITED_PATTERNS"", ""ALLOWED_TEST_STRENGTH_LEVELS"", ""PYTEST_RESULT_INTERPRETATION"", ""build_repository_test_strength_audit"", ""audited_paths"", ""test_strength_row"", ""classify_strength"", ""step_from_name""]",approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/run_utils.py,[],approved_legacy_support,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_projection.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_projection_config.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_projection_consistency.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_projection_quality.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_projection_state_guard.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_10step_config.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_10step_diagnostics.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_10step_envelope.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_10step_state_guard.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_20step_config.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_20step_diagnostics.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_20step_envelope.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_20step_state_guard.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_48_feasibility_config.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_48_feasibility_diagnostics.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_48_feasibility_envelope.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_48_feasibility_state_guard.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_coupling.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_coupling_config.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_diagnostics.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_envelope.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_envelope_config.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_envelope_diagnostics.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_envelope_state_guard.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_one_cycle_config.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_one_cycle_diagnostics.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_one_cycle_envelope.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_one_cycle_state_guard.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_state_guard.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_support_scaling_artifact_guard.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_support_scaling_audit.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_support_scaling_claim_guard.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_support_scaling_config.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_support_scaling_diagnostics.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_transfer_config.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_transfer_diagnostics.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_transfer_envelope.py,[],step_specific_proxy_remaining,False,True,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/runtime_geometry_wall_velocity_transfer_state_guard.py,[],step_specific_proxy_remaining,False,True,False,False
+True,approved_legacy_support,False,False,False,False,True,src/selected_parameter_64_feasibility.py,"[""SELECTED_SCALE"", ""SELECTED_CAP"", ""N_GRID"", ""N_LBM_STEPS"", ""MPM_SUBSTEPS_PER_LBM_STEP"", ""SCALE_TOL"", ""summarize_selected_parameter_driver_rows"", ""assert_selected_parameter_driver_summary"", ""summarize_selected_parameter_feasibility"", ""compare_static_experimental_64_rows"", ""compare_engineering_link_area_64_rows"", ""summarize_wall_velocity_64_quality"", ""summarize_cycle_proxy_64"", ""force_impulse_64_row"", ""summarize_force_impulse_64_rows"", ""write_selected_parameter_outputs"", ""write_csv_rows"", ""write_json"", ""read_json"", ""finite_values"", ""scale_from_config_path""]",approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/sim_config.py,[],approved_legacy_support,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/squid_kinematics_config.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/squid_kinematics_quality.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/squid_kinematics_region_mapping.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/squid_kinematics_schedule.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/squid_motion_mapping.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/squid_motion_mapping_config.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/squid_motion_projection_diagnostics.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/squid_motion_quality.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/squid_proxy_regions.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/squid_region_config.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/squid_region_driver_diagnostics.py,[],squid_proxy_remaining,True,False,True,False
+False,root_compatibility_shim,False,False,False,True,True,src/squid_region_projection.py,[],squid_proxy_remaining,True,False,True,False
+False,root_compatibility_shim,False,False,False,True,True,src/squid_region_quality.py,[],squid_proxy_remaining,True,False,True,False
+True,approved_legacy_support,False,False,False,False,True,src/state_guard_truthfulness.py,"[""STATE_GUARD_METHOD_METADATA"", ""FIXED_ZERO_STATE_FIELDS"", ""add_state_guard_truthfulness_metadata"", ""state_guard_truthfulness_rows""]",approved_legacy_support,False,False,False,False
+True,approved_legacy_support,False,False,False,False,True,src/tethered_cycle_diagnostics.py,"[""FREE_BODY_MARKERS"", ""BODY_TRAJECTORY_MARKERS"", ""summarize_no_free_body_state"", ""summarize_multicycle_tethered_guard"", ""guard_rows""]",approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/units.py,[],approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/voxel_io.py,[],approved_legacy_support,False,False,False,False
+True,root_compatibility_shim,False,False,False,True,True,src/voxel_quality.py,[],approved_legacy_support,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/wall_velocity_application.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/wall_velocity_application_config.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/wall_velocity_application_envelope.py,[],wall_velocity_runtime_remaining,True,False,True,False
+False,root_compatibility_shim,False,False,False,True,True,src/wall_velocity_config.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/wall_velocity_consistency.py,[],wall_velocity_runtime_remaining,True,False,True,False
+False,root_compatibility_shim,False,False,False,True,True,src/wall_velocity_field.py,[],root_compatibility_shim,False,False,False,False
+False,root_compatibility_shim,False,False,False,True,True,src/wall_velocity_quality.py,[],wall_velocity_runtime_remaining,True,False,True,False
