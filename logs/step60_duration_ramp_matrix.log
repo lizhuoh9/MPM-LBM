@@ -1,0 +1,6 @@
+[OK] Step 60 duration ramp matrix finished
+row_count=3
+stable_count=3
+total_elapsed_seconds=630.0434217000002
+slowest_row_name=canonical_driver_moving_boundary_engineering_16_5step
+slowest_elapsed_seconds=299.3498921999999

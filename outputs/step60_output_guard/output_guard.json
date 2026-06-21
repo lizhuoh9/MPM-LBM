@@ -1,0 +1,217 @@
+{
+  "rows": [
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step60_duration_ramp_matrix.log",
+      "size_bytes": 229
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step60_duration_ramp_quality.log",
+      "size_bytes": 58
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step60_output_guard.log",
+      "size_bytes": 50
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step60_step59_regression_guard.log",
+      "size_bytes": 61
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_driver_runs/canonical_driver_moving_boundary_engineering_16_3step/diagnostics_timeseries.csv",
+      "size_bytes": 1406
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_driver_runs/canonical_driver_moving_boundary_engineering_16_3step/diagnostics_timeseries.npz",
+      "size_bytes": 9184
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_driver_runs/canonical_driver_moving_boundary_engineering_16_3step/driver_config.json",
+      "size_bytes": 1471
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_driver_runs/canonical_driver_moving_boundary_engineering_16_3step/geo_all_fluid_16.dat",
+      "size_bytes": 12288
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_driver_runs/canonical_driver_moving_boundary_engineering_16_5step/diagnostics_timeseries.csv",
+      "size_bytes": 2049
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_driver_runs/canonical_driver_moving_boundary_engineering_16_5step/diagnostics_timeseries.npz",
+      "size_bytes": 9624
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_driver_runs/canonical_driver_moving_boundary_engineering_16_5step/driver_config.json",
+      "size_bytes": 1471
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_driver_runs/canonical_driver_moving_boundary_engineering_16_5step/geo_all_fluid_16.dat",
+      "size_bytes": 12288
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_driver_runs/canonical_driver_penalty_16_5step/diagnostics_timeseries.csv",
+      "size_bytes": 2047
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_driver_runs/canonical_driver_penalty_16_5step/diagnostics_timeseries.npz",
+      "size_bytes": 9432
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_driver_runs/canonical_driver_penalty_16_5step/driver_config.json",
+      "size_bytes": 1463
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_driver_runs/canonical_driver_penalty_16_5step/geo_all_fluid_16.dat",
+      "size_bytes": 12288
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_duration_ramp_matrix/duration_ramp_matrix.csv",
+      "size_bytes": 2276
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_duration_ramp_matrix/duration_ramp_matrix.json",
+      "size_bytes": 6533
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_duration_ramp_matrix/duration_ramp_matrix_summary.csv",
+      "size_bytes": 1062
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_duration_ramp_quality/duration_ramp_quality.csv",
+      "size_bytes": 1057
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_duration_ramp_quality/duration_ramp_quality.json",
+      "size_bytes": 2715
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_duration_ramp_quality/duration_ramp_quality_summary.csv",
+      "size_bytes": 249
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_output_guard/output_guard.csv",
+      "size_bytes": 2461
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_output_guard/output_guard.json",
+      "size_bytes": 5732
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_output_guard/output_guard_summary.csv",
+      "size_bytes": 451
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_step59_regression_guard/step59_regression_guard.csv",
+      "size_bytes": 2711
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_step59_regression_guard/step59_regression_guard.json",
+      "size_bytes": 3993
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step60_step59_regression_guard/step59_regression_guard_summary.csv",
+      "size_bytes": 247
+    }
+  ],
+  "summary": {
+    "external_edit_count": 0,
+    "output_guard_pass": true,
+    "pass_count": 28,
+    "private_absolute_path_count": 0,
+    "real_geometry_candidates_edit_count": 0,
+    "row_count": 28,
+    "step60_driver_run_dir_count": 3,
+    "step60_forbidden_file_count": 0,
+    "step60_large_file_count": 0,
+    "step60_optional_driver_run_dir_count": 0,
+    "step60_particle_npy_count": 0,
+    "step60_required_driver_run_dir_count": 3,
+    "step60_total_size_bytes": 104896,
+    "step60_total_size_mb": 0.10003662109375,
+    "step60_vtr_count": 0
+  }
+}

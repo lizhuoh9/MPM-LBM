@@ -1,0 +1,123 @@
+{
+  "rows": [
+    {
+      "check": "step59_smoke_matrix",
+      "details": {
+        "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+        "canonical_driver_smoke_matrix_pass": true,
+        "driver_run_called_count": 3,
+        "driver_run_required": true,
+        "has_inf_count": 0,
+        "has_nan_count": 0,
+        "legacy_driver_module_used_count": 0,
+        "max_lbm_max_v": 0.020408153533935547,
+        "max_mpm_max_speed": 3.125638723373413,
+        "max_rho_max": 1.0200003385543823,
+        "min_completed_lbm_steps": 1,
+        "min_diagnostics_row_count": 2,
+        "min_mpm_min_J": 0.9999899864196777,
+        "min_rho_min": 0.980000376701355,
+        "min_total_mpm_substeps": 1,
+        "missing_required_rows": [],
+        "physics_feature_expansion": false,
+        "required_row_count": 3,
+        "required_rows_present": [
+          "canonical_driver_moving_boundary_engineering_16_1step",
+          "canonical_driver_none_16_1step",
+          "canonical_driver_penalty_16_1step"
+        ],
+        "row_count": 3,
+        "solver_behavior_changed": false,
+        "stable_count": 3
+      },
+      "pass": true
+    },
+    {
+      "check": "step59_smoke_quality",
+      "details": {
+        "canonical_driver_smoke_audit_pass": true,
+        "canonical_module_count": 3,
+        "driver_run_called_count": 3,
+        "legacy_driver_module_used_count": 0,
+        "missing_required_rows": [],
+        "pass_count": 3,
+        "required_row_count": 3,
+        "row_count": 3,
+        "stable_count": 3
+      },
+      "pass": true
+    },
+    {
+      "check": "step59_geo_path_naming",
+      "details": {
+        "constructor_created_file_count": 0,
+        "geo_path_naming_audit_pass": true,
+        "pass_count": 3,
+        "physics_feature_expansion": false,
+        "row_count": 3,
+        "solver_behavior_changed": false
+      },
+      "pass": true
+    },
+    {
+      "check": "step59_output_guard",
+      "details": {
+        "external_edit_count": 0,
+        "output_guard_pass": true,
+        "pass_count": 36,
+        "private_absolute_path_count": 0,
+        "real_geometry_candidates_edit_count": 0,
+        "row_count": 36,
+        "step59_driver_run_dir_count": 3,
+        "step59_forbidden_file_count": 0,
+        "step59_large_file_count": 0,
+        "step59_particle_npy_count": 0,
+        "step59_total_size_bytes": 449603,
+        "step59_total_size_mb": 0.4287748336791992,
+        "step59_vtr_count": 0
+      },
+      "pass": true
+    },
+    {
+      "check": "step59_step58_regression_guard",
+      "details": {
+        "pass_count": 7,
+        "row_count": 7,
+        "step58_behavior_row_count": 5,
+        "step58_bridge_row_count": 3,
+        "step58_import_row_count": 6,
+        "step58_migration_row_count": 1,
+        "step58_regression_guard_pass": true,
+        "step58_shim_row_count": 1,
+        "step59_geo_path_naming_supersession": "geo_path filename now follows n_grid; default n_grid=32 remains Step58-compatible"
+      },
+      "pass": true
+    },
+    {
+      "check": "step59_artifact_manifest",
+      "details": {
+        "artifact_budget_pass": true,
+        "file_count": 4231,
+        "large_file_count": 0,
+        "protected_external_taichi_lbm3d_step59_file_count": 0,
+        "protected_real_geometry_candidates_step59_file_count": 0,
+        "step59_file_count": 53,
+        "step59_particle_npy_count": 0,
+        "step59_total_size_bytes": 168078,
+        "step59_total_size_mb": 0.1602916717529297,
+        "step59_vtr_count": 0
+      },
+      "pass": true
+    }
+  ],
+  "summary": {
+    "pass_count": 6,
+    "row_count": 6,
+    "step59_canonical_module_count": 3,
+    "step59_legacy_driver_module_used_count": 0,
+    "step59_missing_required_rows": [],
+    "step59_regression_guard_pass": true,
+    "step59_required_row_count": 3,
+    "step59_smoke_quality_row_count": 3
+  }
+}

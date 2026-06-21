@@ -1,0 +1,9 @@
+metric,value
+pass_count,6
+row_count,6
+step59_canonical_module_count,3
+step59_legacy_driver_module_used_count,0
+step59_missing_required_rows,[]
+step59_regression_guard_pass,True
+step59_required_row_count,3
+step59_smoke_quality_row_count,3

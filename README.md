@@ -63,6 +63,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 57 canonical driver support migration wave 2
 - Step 58 canonical FSIDriver implementation migration wave 3
 - Step 59 canonical FSIDriver real smoke simulation
+- Step 60 controlled canonical moving-boundary duration ramp
 
 ## Not Implemented
 
@@ -733,6 +734,24 @@ Step 59 does not implement squid swimming.
 Step 59 does not prove grid convergence.
 Step 59 does not claim production readiness.
 See docs/59_canonical_fsidriver_real_smoke_simulation.md.
+
+## Step 60 Controlled Canonical Moving-Boundary Duration Ramp Boundary
+
+Step 60 is controlled canonical real-driver duration ramp work.
+Step 60 calls `FSIDriver3D(...).run()` through `src.mpm_lbm.sim.drivers.fsi_driver`.
+Step 60 runs required 16^3, 512-particle rows for moving-boundary engineering at 3 and 5 LBM steps, plus penalty at 5 LBM steps.
+Step 60 records runtime timing as a soft warning signal.
+Step 60 keeps runtime solver code unchanged.
+Step 60 keeps the optional 32^3 probe config disabled by default.
+Step 60 keeps outputs lightweight and rejects VTR output, particle NPY output, large Step 60 files, private absolute paths, external solver edits, and real-geometry candidate edits.
+Step 60 does not activate runtime geometry.
+Step 60 does not activate moving-wall velocity.
+Step 60 does not add a 48^3 or 64^3 row.
+Step 60 does not validate propulsion.
+Step 60 does not validate real squid behavior.
+Step 60 does not prove mesh convergence.
+Step 60 does not claim deployment readiness.
+See docs/60_controlled_canonical_moving_boundary_duration_ramp.md.
 
 ## Upstream LBM Note
 

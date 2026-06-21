@@ -22,6 +22,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 57: canonical driver support migration wave 2
 - Step 58: canonical FSIDriver implementation migration wave 3
 - Step 59: canonical FSIDriver real smoke simulation
+- Step 60: controlled canonical moving-boundary duration ramp
 
 ## Current Validated Modes
 
@@ -32,6 +33,8 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 The current mode matrix is validated through committed Step 10 logs and outputs. The validation scale is small-scale 32^3 / 4096-particle engineering baselines.
 
 Step 59 additionally verifies that the canonical `FSIDriver3D` implementation can execute real one-step smoke runs for the `none`, `penalty`, and `moving_boundary` engineering modes at 16^3 with 512 particles. This is a post-migration canonical-driver smoke check, not a larger validation campaign.
+
+Step 60 additionally verifies a short controlled canonical real-driver duration ramp at 16^3 with 512 particles: moving-boundary engineering rows at 3 and 5 LBM steps, plus a penalty row at 5 LBM steps. This remains a finite/bounded smoke extension, not a broader validation campaign.
 
 ## What Exists
 
@@ -61,3 +64,5 @@ The repository is ready for documentation review, reproducibility review, and co
 The latest repository-structure work has moved the first runtime implementation wave, the driver-support implementation wave, and the `FSIDriver3D` implementation into canonical `src/mpm_lbm/...` modules while preserving legacy root imports as compatibility shims. This is code ownership migration, not new physics validation. Step 58 adds temporary canonical bridge surfaces for optional motion and wall-velocity imports only; their real implementations remain legacy-owned until a later migration step.
 
 Step 59 proves the canonical driver can run the existing small `none`, `penalty`, and `moving_boundary` engineering smoke rows through `driver.run()`, and fixes grid-sized geometry-output naming. It does not activate runtime geometry or moving-wall velocity, add 48^3 or 64^3 validation, validate jet propulsion, validate real squid behavior, prove grid convergence, or claim production readiness.
+
+Step 60 proves the canonical driver can extend the existing moving-boundary engineering path to 3 and 5 LBM steps at 16^3 while keeping outputs lightweight, runtime code unchanged, and Step 59 evidence green. It does not activate runtime geometry or wall velocity, add larger-grid rows, validate propulsion, validate real squid behavior, prove mesh convergence, or claim deployment readiness.

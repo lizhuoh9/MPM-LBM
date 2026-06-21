@@ -1,0 +1,19 @@
+{
+  "policy_id": "step60_output_guard_policy",
+  "max_step60_total_size_mb": 10.0,
+  "expected_required_driver_run_dir_count": 3,
+  "allowed_driver_run_files": [
+    "diagnostics_timeseries.csv",
+    "diagnostics_timeseries.npz",
+    "driver_config.json",
+    "geo_all_fluid_16.dat",
+    "geo_all_fluid_32.dat"
+  ],
+  "forbidden_filename_tokens": [
+    ".vtr",
+    "particles_",
+    "particle_output",
+    "displaced_particle",
+    "dense_displacement"
+  ]
+}

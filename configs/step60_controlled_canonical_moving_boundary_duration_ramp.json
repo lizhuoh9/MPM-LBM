@@ -1,0 +1,20 @@
+{
+  "policy_id": "step60_controlled_canonical_moving_boundary_duration_ramp",
+  "step": 60,
+  "required_duration_configs": [
+    "configs/step60_canonical_driver_moving_boundary_engineering_16_3step.json",
+    "configs/step60_canonical_driver_moving_boundary_engineering_16_5step.json",
+    "configs/step60_canonical_driver_penalty_16_5step.json"
+  ],
+  "optional_duration_configs": [
+    "configs/step60_canonical_driver_moving_boundary_engineering_32_1step_optional.json"
+  ],
+  "run_optional_32_probe": false,
+  "driver_run_root": "outputs/step60_driver_runs",
+  "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+  "legacy_driver_module": "src.fsi_driver",
+  "driver_run_required": true,
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false,
+  "physics_feature_expansion": false
+}

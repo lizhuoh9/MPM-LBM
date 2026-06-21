@@ -1,0 +1,18 @@
+{
+  "coupling_mode": "moving_boundary",
+  "reaction_transfer_mode": "engineering",
+  "geometry_type": "box",
+  "n_grid": 16,
+  "n_particles": 512,
+  "n_lbm_steps": 3,
+  "mpm_substeps_per_lbm_step": 1,
+  "output_interval": 1,
+  "write_vtk": false,
+  "write_particles": false,
+  "quality_check_enabled": false,
+  "quality_check_strict": false,
+  "boundary_motion_mode": "static",
+  "wall_velocity_application_mode": "disabled",
+  "geometry_motion_mode": "static",
+  "geometry_motion_application_mode": "disabled"
+}
