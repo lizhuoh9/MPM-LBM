@@ -1,0 +1,15 @@
+metric,value
+active_cell_count_32,648
+active_cell_count_48,648
+active_cell_count_growth_observed,False
+active_cell_count_growth_required_for_pass,False
+active_cell_count_non_decreasing,True
+active_cell_count_ratio,1.0
+active_cell_count_used_as_grid_convergence_metric,False
+active_cell_semantics_status,non_decreasing_but_not_resolution_scaling
+grid_convergence_claim,False
+physical_validation_claim,False
+production_readiness_claim,False
+row_count,1
+semantics_pass,True
+step54_link_area_allowed,True

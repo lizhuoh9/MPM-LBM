@@ -1,0 +1,13 @@
+{
+  "reference_config_id": "step53_step51_step52_reference_artifacts",
+  "step51_transfer_matrix_path": "outputs/step51_transfer_comparison_matrix/transfer_comparison_matrix.json",
+  "step51_artifact_summary_path": "outputs/step51_artifact_manifest/artifact_summary.json",
+  "step52_feasibility_matrix_path": "outputs/step52_48_feasibility_matrix/feasibility_matrix.json",
+  "step52_scaling_comparison_path": "outputs/step52_48_vs_step51_engineering_scaling_comparison/scaling_comparison.json",
+  "step52_artifact_summary_path": "outputs/step52_artifact_manifest/artifact_summary.json",
+  "step52_state_guard_path": "outputs/step52_state_mutation_guard/state_mutation_guard.json",
+  "step52_step51_regression_guard_path": "outputs/step52_step51_regression_guard/step51_regression_guard.json",
+  "step52_report_path": "STEP52_CONTROLLED_48_ENGINEERING_ONE_CYCLE_FEASIBILITY_REPORT.md",
+  "diagnostic_only": true,
+  "post_processing_only": true
+}

@@ -1,0 +1,255 @@
+{
+  "rows": [
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "docs/53_controlled_48_support_scaling_active_cell_semantics.md"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "STEP53_CONTROLLED_48_SUPPORT_SCALING_ACTIVE_CELL_SEMANTICS_REPORT.md"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "configs/step53_metric_semantics_policy.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "configs/step53_step51_step52_reference_artifacts.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "configs/step53_support_scaling_active_cell_semantics_audit.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "baseline_tests/run_step53_active_cell_semantics_audit.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "baseline_tests/run_step53_applied_wall_support_scaling_audit.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "baseline_tests/run_step53_artifact_manifest.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "baseline_tests/run_step53_bounceback_support_scaling_audit.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "baseline_tests/run_step53_metric_claim_guard.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "baseline_tests/run_step53_phasewise_support_scaling_audit.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "baseline_tests/run_step53_reference_artifact_validation.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "baseline_tests/run_step53_step52_regression_guard.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "baseline_tests/step53_common.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "tests/test_step53_support_scaling_active_cell_semantics_contract.py"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_active_cell_semantics_audit/active_cell_semantics.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_active_cell_semantics_audit/active_cell_semantics.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_active_cell_semantics_audit/active_cell_semantics_summary.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_applied_wall_support_scaling_audit/applied_wall_support_scaling.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_applied_wall_support_scaling_audit/applied_wall_support_scaling.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_applied_wall_support_scaling_audit/applied_wall_support_scaling_summary.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_artifact_manifest/artifact_manifest.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_artifact_manifest/artifact_summary.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_artifact_manifest/artifact_summary.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_bounceback_support_scaling_audit/bounceback_support_scaling.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_bounceback_support_scaling_audit/bounceback_support_scaling.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_bounceback_support_scaling_audit/bounceback_support_scaling_summary.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_metric_claim_guard/metric_claim_guard.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_metric_claim_guard/metric_claim_guard.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_metric_claim_guard/metric_claim_guard_summary.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_phasewise_support_scaling_audit/phasewise_support_scaling.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_phasewise_support_scaling_audit/phasewise_support_scaling.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_phasewise_support_scaling_audit/phasewise_support_scaling_summary.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_reference_artifact_validation/reference_artifact_summary.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_reference_artifact_validation/reference_artifact_validation.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_reference_artifact_validation/reference_artifact_validation.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_step52_regression_guard/step52_regression_guard.csv"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_step52_regression_guard/step52_regression_guard.json"
+    },
+    {
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_step52_regression_guard/step52_regression_guard_summary.csv"
+    },
+    {
+      "flag": "grid_convergence_claim",
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_active_cell_semantics_audit/active_cell_semantics.json"
+    },
+    {
+      "flag": "physical_validation_claim",
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_active_cell_semantics_audit/active_cell_semantics.json"
+    },
+    {
+      "flag": "production_readiness_claim",
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_active_cell_semantics_audit/active_cell_semantics.json"
+    },
+    {
+      "flag": "applied_cell_growth_is_physical_validation",
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_applied_wall_support_scaling_audit/applied_wall_support_scaling.json"
+    },
+    {
+      "flag": "bb_link_used_as_area_convergence_metric",
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_bounceback_support_scaling_audit/bounceback_support_scaling.json"
+    },
+    {
+      "flag": "grid_convergence_claim",
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_phasewise_support_scaling_audit/phasewise_support_scaling.json"
+    },
+    {
+      "flag": "physical_validation_claim",
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_phasewise_support_scaling_audit/phasewise_support_scaling.json"
+    },
+    {
+      "flag": "production_readiness_claim",
+      "forbidden_claim_count": 0,
+      "forbidden_claims_absent": true,
+      "path": "outputs/step53_phasewise_support_scaling_audit/phasewise_support_scaling.json"
+    }
+  ],
+  "summary": {
+    "claim_guard_pass": true,
+    "forbidden_claim_count": 0,
+    "force_impulse_interpretation": "diagnostic_proxy_only",
+    "required_false_flag_pass_count": 8,
+    "required_flag_count": 8,
+    "scanned_file_count": 39
+  }
+}

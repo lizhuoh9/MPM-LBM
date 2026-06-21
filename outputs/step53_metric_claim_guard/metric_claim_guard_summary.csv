@@ -1,0 +1,7 @@
+metric,value
+claim_guard_pass,True
+forbidden_claim_count,0
+force_impulse_interpretation,diagnostic_proxy_only
+required_false_flag_pass_count,8
+required_flag_count,8
+scanned_file_count,39

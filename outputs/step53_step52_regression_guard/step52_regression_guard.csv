@@ -1,0 +1,10 @@
+check,pass,value,notes
+step52_report_exists,True,STEP52_CONTROLLED_48_ENGINEERING_ONE_CYCLE_FEASIBILITY_REPORT.md,Step 52 report must remain present
+step52_matrix_row_count,True,2,Step 52 matrix must still have two rows
+step52_matrix_stable_count,True,2,Step 52 matrix must still be stable
+step52_scaling_pass,True,True,Step 52 scaling comparison must remain green
+step52_active_cell_growth_reported,True,False,Step 52 active-cell growth observation must remain explicit
+step52_applied_cell_growth_observed,True,True,Step 52 applied wall-cell support growth must remain true
+step52_state_guard_pass,True,True,Step 52 state mutation guard must remain green
+step52_artifact_budget_pass,True,True,Step 52 artifact budget must remain green
+step51_regression_evidence_green,True,True,Step 51 evidence through Step 52 must remain green

@@ -1,0 +1,38 @@
+{
+  "rows": [
+    {
+      "applied_cell_count_32": 648,
+      "applied_cell_count_48": 2136,
+      "applied_cell_count_growth_observed": true,
+      "applied_cell_count_per_active_cell_32": 1.0,
+      "applied_cell_count_per_active_cell_48": 3.2962962962962963,
+      "applied_cell_count_ratio_48_vs_32": 3.2962962962962963,
+      "applied_cell_fraction_32": 0.019775390625,
+      "applied_cell_fraction_48": 0.019314236111111112,
+      "applied_cell_fraction_ratio": 0.9766803840877916,
+      "applied_cell_growth_is_physical_validation": false,
+      "applied_cell_support_growth_pass": true,
+      "audit_pass": true,
+      "metric": "applied_cell_count",
+      "wall_support_growth_claim": "diagnostic_only"
+    }
+  ],
+  "summary": {
+    "applied_cell_count_32": 648,
+    "applied_cell_count_48": 2136,
+    "applied_cell_count_growth_observed": true,
+    "applied_cell_count_per_active_cell_32": 1.0,
+    "applied_cell_count_per_active_cell_48": 3.2962962962962963,
+    "applied_cell_count_ratio_48_vs_32": 3.2962962962962963,
+    "applied_cell_fraction_32": 0.019775390625,
+    "applied_cell_fraction_48": 0.019314236111111112,
+    "applied_cell_fraction_ratio": 0.9766803840877916,
+    "applied_cell_growth_is_physical_validation": false,
+    "applied_cell_support_growth_pass": true,
+    "applied_wall_support_audit_pass": true,
+    "audit_pass": true,
+    "metric": "applied_cell_count",
+    "row_count": 1,
+    "wall_support_growth_claim": "diagnostic_only"
+  }
+}

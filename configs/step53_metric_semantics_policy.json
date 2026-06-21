@@ -1,0 +1,25 @@
+{
+  "policy_id": "step53_metric_semantics_policy",
+  "active_cell_count_is_grid_convergence_metric": false,
+  "active_cell_count_growth_required": false,
+  "active_cell_count_growth_must_be_reported": true,
+  "active_cell_growth_failure_is_step53_failure": false,
+  "applied_cell_count_growth_required": true,
+  "grid_convergence_claim_allowed": false,
+  "physical_validation_claim_allowed": false,
+  "production_readiness_claim_allowed": false,
+  "applied_cell_growth_is_physical_validation": false,
+  "bb_link_used_as_area_convergence_metric": false,
+  "force_impulse_interpretation": "diagnostic_proxy_only",
+  "wall_support_growth_claim": "diagnostic_only",
+  "allowed_active_cell_semantics_status": [
+    "resolution_invariant_under_current_diagnostic",
+    "non_decreasing_but_not_resolution_scaling",
+    "unresolved_requires_metric_rename_or_projection_audit"
+  ],
+  "allowed_bb_link_support_status": [
+    "resolution_invariant_under_current_diagnostic",
+    "non_decreasing_but_not_area_convergence",
+    "unresolved_requires_boundary_link_metric_audit"
+  ]
+}

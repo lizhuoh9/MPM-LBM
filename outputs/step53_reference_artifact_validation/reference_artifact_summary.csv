@@ -1,0 +1,10 @@
+metric,value
+audit_id,step53_controlled_48_support_scaling_active_cell_semantics
+diagnostic_only,True
+no_new_solver_rows,True
+no_new_transfer_mode,True
+pass_count,32
+phase_count,40
+post_processing_only,True
+reference_validation_pass,True
+row_count,32

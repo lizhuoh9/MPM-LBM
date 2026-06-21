@@ -1,0 +1,2 @@
+metric,bb_link_count_32,bb_link_count_48,bb_link_count_ratio,bb_link_growth_observed,bb_link_non_decreasing,bb_link_used_as_area_convergence_metric,bb_link_support_status,audit_pass
+bb_link_count,3888,3888,1.0,False,True,False,non_decreasing_but_not_area_convergence,True

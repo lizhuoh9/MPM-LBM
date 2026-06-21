@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "audit_pass": true,
+      "bb_link_count_32": 3888,
+      "bb_link_count_48": 3888,
+      "bb_link_count_ratio": 1.0,
+      "bb_link_growth_observed": false,
+      "bb_link_non_decreasing": true,
+      "bb_link_support_status": "non_decreasing_but_not_area_convergence",
+      "bb_link_used_as_area_convergence_metric": false,
+      "metric": "bb_link_count"
+    }
+  ],
+  "summary": {
+    "audit_pass": true,
+    "bb_link_count_32": 3888,
+    "bb_link_count_48": 3888,
+    "bb_link_count_ratio": 1.0,
+    "bb_link_growth_observed": false,
+    "bb_link_non_decreasing": true,
+    "bb_link_support_status": "non_decreasing_but_not_area_convergence",
+    "bb_link_used_as_area_convergence_metric": false,
+    "bounceback_support_audit_pass": true,
+    "metric": "bb_link_count",
+    "row_count": 1
+  }
+}

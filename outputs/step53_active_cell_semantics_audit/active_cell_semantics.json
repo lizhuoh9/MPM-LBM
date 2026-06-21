@@ -1,0 +1,39 @@
+{
+  "rows": [
+    {
+      "active_cell_count_32": 648,
+      "active_cell_count_48": 648,
+      "active_cell_count_growth_observed": false,
+      "active_cell_count_growth_required_for_pass": false,
+      "active_cell_count_non_decreasing": true,
+      "active_cell_count_ratio": 1.0,
+      "active_cell_count_used_as_grid_convergence_metric": false,
+      "active_cell_growth_failure_is_step53_failure": false,
+      "active_cell_semantics_status": "non_decreasing_but_not_resolution_scaling",
+      "grid_convergence_claim": false,
+      "metric": "active_cell_count",
+      "notes": "diagnostic projected support is non-decreasing but not a resolution-scaling metric",
+      "physical_validation_claim": false,
+      "production_readiness_claim": false,
+      "semantics_pass": true,
+      "step54_block_reason": "",
+      "step54_link_area_allowed": true
+    }
+  ],
+  "summary": {
+    "active_cell_count_32": 648,
+    "active_cell_count_48": 648,
+    "active_cell_count_growth_observed": false,
+    "active_cell_count_growth_required_for_pass": false,
+    "active_cell_count_non_decreasing": true,
+    "active_cell_count_ratio": 1.0,
+    "active_cell_count_used_as_grid_convergence_metric": false,
+    "active_cell_semantics_status": "non_decreasing_but_not_resolution_scaling",
+    "grid_convergence_claim": false,
+    "physical_validation_claim": false,
+    "production_readiness_claim": false,
+    "row_count": 1,
+    "semantics_pass": true,
+    "step54_link_area_allowed": true
+  }
+}

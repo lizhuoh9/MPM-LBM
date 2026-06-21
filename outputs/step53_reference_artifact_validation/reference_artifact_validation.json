@@ -1,0 +1,207 @@
+{
+  "rows": [
+    {
+      "check": "audit_id_expected",
+      "notes": "Step 53 audit id must be stable",
+      "pass": true,
+      "value": "step53_controlled_48_support_scaling_active_cell_semantics"
+    },
+    {
+      "check": "diagnostic_only",
+      "notes": "Step 53 must be diagnostic-only",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "post_processing_only",
+      "notes": "Step 53 must be post-processing only",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "no_new_solver_rows",
+      "notes": "Step 53 must not require new solver rows",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "no_new_transfer_mode",
+      "notes": "Step 53 must not introduce a new transfer mode",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "mutation_flags_false",
+      "notes": "all mutation and heavy-output flags must be false",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "phase_count_expected",
+      "notes": "Step 53 must audit forty phases",
+      "pass": true,
+      "value": 40
+    },
+    {
+      "check": "phase_sequence_starts_at_0",
+      "notes": "phase sequence must start at 0.0",
+      "pass": true,
+      "value": 0.0
+    },
+    {
+      "check": "phase_sequence_ends_at_0975",
+      "notes": "phase sequence must end at 0.975",
+      "pass": true,
+      "value": 0.975
+    },
+    {
+      "check": "step51_transfer_matrix_path_exists",
+      "notes": "referenced artifact must exist",
+      "pass": true,
+      "value": "outputs/step51_transfer_comparison_matrix/transfer_comparison_matrix.json"
+    },
+    {
+      "check": "step51_transfer_matrix_path_readable",
+      "notes": "referenced artifact must be readable",
+      "pass": true,
+      "value": "outputs/step51_transfer_comparison_matrix/transfer_comparison_matrix.json"
+    },
+    {
+      "check": "step51_artifact_summary_path_exists",
+      "notes": "referenced artifact must exist",
+      "pass": true,
+      "value": "outputs/step51_artifact_manifest/artifact_summary.json"
+    },
+    {
+      "check": "step51_artifact_summary_path_readable",
+      "notes": "referenced artifact must be readable",
+      "pass": true,
+      "value": "outputs/step51_artifact_manifest/artifact_summary.json"
+    },
+    {
+      "check": "step52_feasibility_matrix_path_exists",
+      "notes": "referenced artifact must exist",
+      "pass": true,
+      "value": "outputs/step52_48_feasibility_matrix/feasibility_matrix.json"
+    },
+    {
+      "check": "step52_feasibility_matrix_path_readable",
+      "notes": "referenced artifact must be readable",
+      "pass": true,
+      "value": "outputs/step52_48_feasibility_matrix/feasibility_matrix.json"
+    },
+    {
+      "check": "step52_scaling_comparison_path_exists",
+      "notes": "referenced artifact must exist",
+      "pass": true,
+      "value": "outputs/step52_48_vs_step51_engineering_scaling_comparison/scaling_comparison.json"
+    },
+    {
+      "check": "step52_scaling_comparison_path_readable",
+      "notes": "referenced artifact must be readable",
+      "pass": true,
+      "value": "outputs/step52_48_vs_step51_engineering_scaling_comparison/scaling_comparison.json"
+    },
+    {
+      "check": "step52_artifact_summary_path_exists",
+      "notes": "referenced artifact must exist",
+      "pass": true,
+      "value": "outputs/step52_artifact_manifest/artifact_summary.json"
+    },
+    {
+      "check": "step52_artifact_summary_path_readable",
+      "notes": "referenced artifact must be readable",
+      "pass": true,
+      "value": "outputs/step52_artifact_manifest/artifact_summary.json"
+    },
+    {
+      "check": "step52_state_guard_path_exists",
+      "notes": "referenced artifact must exist",
+      "pass": true,
+      "value": "outputs/step52_state_mutation_guard/state_mutation_guard.json"
+    },
+    {
+      "check": "step52_state_guard_path_readable",
+      "notes": "referenced artifact must be readable",
+      "pass": true,
+      "value": "outputs/step52_state_mutation_guard/state_mutation_guard.json"
+    },
+    {
+      "check": "step52_step51_regression_guard_path_exists",
+      "notes": "referenced artifact must exist",
+      "pass": true,
+      "value": "outputs/step52_step51_regression_guard/step51_regression_guard.json"
+    },
+    {
+      "check": "step52_step51_regression_guard_path_readable",
+      "notes": "referenced artifact must be readable",
+      "pass": true,
+      "value": "outputs/step52_step51_regression_guard/step51_regression_guard.json"
+    },
+    {
+      "check": "step52_report_path_exists",
+      "notes": "referenced artifact must exist",
+      "pass": true,
+      "value": "STEP52_CONTROLLED_48_ENGINEERING_ONE_CYCLE_FEASIBILITY_REPORT.md"
+    },
+    {
+      "check": "step52_report_path_readable",
+      "notes": "referenced artifact must be readable",
+      "pass": true,
+      "value": "STEP52_CONTROLLED_48_ENGINEERING_ONE_CYCLE_FEASIBILITY_REPORT.md"
+    },
+    {
+      "check": "step51_combined_row_exists",
+      "notes": "Step 51 engineering combined row must exist",
+      "pass": true,
+      "value": "engineering_runtime_geometry_plus_wall_velocity_32_40step"
+    },
+    {
+      "check": "step52_combined_row_exists",
+      "notes": "Step 52 engineering combined row must exist",
+      "pass": true,
+      "value": "engineering_runtime_geometry_plus_wall_velocity_48_40step"
+    },
+    {
+      "check": "step52_static_row_exists",
+      "notes": "Step 52 static row must exist",
+      "pass": true,
+      "value": "engineering_static_48_40step"
+    },
+    {
+      "check": "step52_scaling_pass",
+      "notes": "accepted Step 52 scaling comparison must be green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "active_cell_growth_must_be_reported",
+      "notes": "active-cell growth observation must be reported",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "applied_cell_growth_required",
+      "notes": "applied wall-cell support growth is required",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "claim_policy_false",
+      "notes": "no physical or production claims are allowed",
+      "pass": true,
+      "value": true
+    }
+  ],
+  "summary": {
+    "audit_id": "step53_controlled_48_support_scaling_active_cell_semantics",
+    "diagnostic_only": true,
+    "no_new_solver_rows": true,
+    "no_new_transfer_mode": true,
+    "pass_count": 32,
+    "phase_count": 40,
+    "post_processing_only": true,
+    "reference_validation_pass": true,
+    "row_count": 32
+  }
+}

@@ -1,0 +1,33 @@
+check,pass,value,notes
+audit_id_expected,True,step53_controlled_48_support_scaling_active_cell_semantics,Step 53 audit id must be stable
+diagnostic_only,True,True,Step 53 must be diagnostic-only
+post_processing_only,True,True,Step 53 must be post-processing only
+no_new_solver_rows,True,False,Step 53 must not require new solver rows
+no_new_transfer_mode,True,False,Step 53 must not introduce a new transfer mode
+mutation_flags_false,True,True,all mutation and heavy-output flags must be false
+phase_count_expected,True,40,Step 53 must audit forty phases
+phase_sequence_starts_at_0,True,0.0,phase sequence must start at 0.0
+phase_sequence_ends_at_0975,True,0.975,phase sequence must end at 0.975
+step51_transfer_matrix_path_exists,True,outputs/step51_transfer_comparison_matrix/transfer_comparison_matrix.json,referenced artifact must exist
+step51_transfer_matrix_path_readable,True,outputs/step51_transfer_comparison_matrix/transfer_comparison_matrix.json,referenced artifact must be readable
+step51_artifact_summary_path_exists,True,outputs/step51_artifact_manifest/artifact_summary.json,referenced artifact must exist
+step51_artifact_summary_path_readable,True,outputs/step51_artifact_manifest/artifact_summary.json,referenced artifact must be readable
+step52_feasibility_matrix_path_exists,True,outputs/step52_48_feasibility_matrix/feasibility_matrix.json,referenced artifact must exist
+step52_feasibility_matrix_path_readable,True,outputs/step52_48_feasibility_matrix/feasibility_matrix.json,referenced artifact must be readable
+step52_scaling_comparison_path_exists,True,outputs/step52_48_vs_step51_engineering_scaling_comparison/scaling_comparison.json,referenced artifact must exist
+step52_scaling_comparison_path_readable,True,outputs/step52_48_vs_step51_engineering_scaling_comparison/scaling_comparison.json,referenced artifact must be readable
+step52_artifact_summary_path_exists,True,outputs/step52_artifact_manifest/artifact_summary.json,referenced artifact must exist
+step52_artifact_summary_path_readable,True,outputs/step52_artifact_manifest/artifact_summary.json,referenced artifact must be readable
+step52_state_guard_path_exists,True,outputs/step52_state_mutation_guard/state_mutation_guard.json,referenced artifact must exist
+step52_state_guard_path_readable,True,outputs/step52_state_mutation_guard/state_mutation_guard.json,referenced artifact must be readable
+step52_step51_regression_guard_path_exists,True,outputs/step52_step51_regression_guard/step51_regression_guard.json,referenced artifact must exist
+step52_step51_regression_guard_path_readable,True,outputs/step52_step51_regression_guard/step51_regression_guard.json,referenced artifact must be readable
+step52_report_path_exists,True,STEP52_CONTROLLED_48_ENGINEERING_ONE_CYCLE_FEASIBILITY_REPORT.md,referenced artifact must exist
+step52_report_path_readable,True,STEP52_CONTROLLED_48_ENGINEERING_ONE_CYCLE_FEASIBILITY_REPORT.md,referenced artifact must be readable
+step51_combined_row_exists,True,engineering_runtime_geometry_plus_wall_velocity_32_40step,Step 51 engineering combined row must exist
+step52_combined_row_exists,True,engineering_runtime_geometry_plus_wall_velocity_48_40step,Step 52 engineering combined row must exist
+step52_static_row_exists,True,engineering_static_48_40step,Step 52 static row must exist
+step52_scaling_pass,True,True,accepted Step 52 scaling comparison must be green
+active_cell_growth_must_be_reported,True,True,active-cell growth observation must be reported
+applied_cell_growth_required,True,True,applied wall-cell support growth is required
+claim_policy_false,True,True,no physical or production claims are allowed
