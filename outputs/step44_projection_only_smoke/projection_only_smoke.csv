@@ -1,0 +1,11 @@
+grid_size,phase,sample_index,projected_mass,active_cell_count,solid_phi_min,solid_phi_max,region_coverage,has_nan,has_inf,diagnostic_only,projection_pass,notes
+32,0.0,0,1.0,648,0.0,1.0,0.019775390625,False,False,True,True,Step 44 projection-only runtime copy diagnostic; no persistent LBM state update
+48,0.0,0,1.0,648,0.0,1.0,0.005859375,False,False,True,True,Step 44 projection-only runtime copy diagnostic; no persistent LBM state update
+32,0.2,16,1.0,642,0.0,1.0,0.01959228515625,False,False,True,True,Step 44 projection-only runtime copy diagnostic; no persistent LBM state update
+48,0.2,16,1.0,648,0.0,1.0,0.005859375,False,False,True,True,Step 44 projection-only runtime copy diagnostic; no persistent LBM state update
+32,0.35,28,1.0,443,0.0,1.0,0.013519287109375,False,False,True,True,Step 44 projection-only runtime copy diagnostic; no persistent LBM state update
+48,0.35,28,1.0,648,0.0,1.0,0.005859375,False,False,True,True,Step 44 projection-only runtime copy diagnostic; no persistent LBM state update
+32,0.5,40,1.0,452,0.0,1.0,0.0137939453125,False,False,True,True,Step 44 projection-only runtime copy diagnostic; no persistent LBM state update
+48,0.5,40,1.0,644,0.0,1.0,0.005823206018518518,False,False,True,True,Step 44 projection-only runtime copy diagnostic; no persistent LBM state update
+32,1.0,80,1.0,648,0.0,1.0,0.019775390625,False,False,True,True,Step 44 projection-only runtime copy diagnostic; no persistent LBM state update
+48,1.0,80,1.0,648,0.0,1.0,0.005859375,False,False,True,True,Step 44 projection-only runtime copy diagnostic; no persistent LBM state update

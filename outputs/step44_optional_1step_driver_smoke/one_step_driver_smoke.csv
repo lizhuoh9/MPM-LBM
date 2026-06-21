@@ -1,0 +1,3 @@
+case_id,geometry_update_mode,phase,n_grid,completed_lbm_steps,total_mpm_substeps,rho_min,rho_max,lbm_max_v,projected_mass,active_cell_count,quality_pass,diagnostic_copy_only,mutate_original_geometry,stable,notes
+step44_original_32_static_1step,original_static_descriptor,0.0,32,1,1,1.0,1.0,0.0,1.0,648,True,False,False,True,Step 44 original static 32^3 one-step smoke descriptor; no moving-geometry claim
+step44_displaced_copy_32_phase035_1step,runtime_copy_diagnostic,0.35,32,1,1,1.0,1.0,0.0,1.0,443,True,True,False,True,Step 44 diagnostic runtime copy one-step smoke descriptor only; no coupled moving-geometry validation

@@ -1,0 +1,12 @@
+check,pass,value,notes
+original_geometry_hash_stable,True,cfd33df0be00889460e5c2ee3669b73e1605f1eb2b2d27b5f2ac9c48df3a10d1,original geometry config must not change
+region_mask_hash_stable,True,d2c6519395ad7c789a729511e37124f0dc65f3f79f9a0203ffc8b1cd023be0d9,region mask assignment must not change
+driver_state_mutation_count,True,0,Step 44 must not mutate driver state
+lbm_state_mutation_count,True,0,Step 44 must not mutate LBM state
+mpm_state_mutation_count,True,0,Step 44 must not mutate MPM state
+projection_state_mutation_count,True,0,Step 44 must not mutate projection state
+dynamic_solid_mutation_count,True,0,Step 44 must not update dynamic_solid
+displaced_particle_output_count,True,0,Step 44 must not write displaced particles
+dense_displacement_output_count,True,0,Step 44 must not write dense displacement fields
+vtr_output_count,True,0,Step 44 must not write VTR
+geo_all_fluid_dat_count_added,True,0,Step 44 must not add geo_all_fluid dat artifacts

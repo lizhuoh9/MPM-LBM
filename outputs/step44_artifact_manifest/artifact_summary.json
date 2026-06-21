@@ -1,0 +1,18 @@
+{
+  "artifact_budget_pass": true,
+  "file_count": 3320,
+  "geo_all_fluid_dat_count_added": 0,
+  "large_file_count": 0,
+  "private_absolute_path_count": 0,
+  "raw_candidate_large_file_count": 0,
+  "scan_data_file_count": 0,
+  "step44_dense_displacement_output_count": 0,
+  "step44_displaced_particle_output_count": 0,
+  "step44_file_count": 50,
+  "step44_particle_npy_count": 0,
+  "step44_total_size_bytes": 424112,
+  "step44_total_size_mb": 0.4044647216796875,
+  "step44_vtr_count": 0,
+  "total_size_bytes": 220084787,
+  "total_size_mb": 209.88920879364014
+}

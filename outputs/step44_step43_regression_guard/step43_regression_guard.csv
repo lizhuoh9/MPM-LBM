@@ -1,0 +1,8 @@
+check,pass,value,notes
+step43_report_exists,True,STEP43 report,Step 43 report must exist
+step43_config_validation_pass,True,True,Step 43 diagnostic config validation must pass
+step43_mutation_guard_pass,True,True,Step 43 no-mutation guard must pass
+step43_large_file_count_zero,True,0,Step 43 artifact manifest must have no large files
+step43_vtr_count_zero,True,0,Step 43 must not add VTR outputs
+step43_particle_npy_count_zero,True,0,Step 43 must not add particle NPY outputs
+step43_geometry_motion_noop_pass,True,True,Step 43 geometry-motion report must remain no-op

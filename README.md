@@ -47,6 +47,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 41 controlled jet-cycle proxy selected-parameter 64^3 feasibility for `wall_velocity_scale = 0.05`
 - Step 42 controlled squid proxy prescribed geometry displacement diagnostics
 - Step 43 controlled squid proxy geometry motion driver interface contract
+- Step 44 controlled squid proxy diagnostic geometry update smoke
 
 ## Not Implemented
 
@@ -162,6 +163,21 @@ The default boundary_motion_mode remains static.
 The default wall_velocity_application_mode remains disabled.
 
 Step 43 adds driver config fields and a report-only initialization hook that can read the accepted Step 42 displacement artifact and write a geometry-motion interface report. The diagnostic-only path is validated against static 48^3 rows and is not written into a coupled simulation state.
+
+## Step 44 Squid Proxy Diagnostic Geometry Update Boundary
+
+Step 44 is controlled squid proxy diagnostic geometry update smoke.
+Step 44 uses a runtime diagnostic geometry copy only.
+Step 44 does not persist displaced geometry.
+Step 44 does not write displaced particles.
+Step 44 does not update driver geometry state.
+Step 44 does not update LBM solid_phi.
+Step 44 does not update dynamic_solid.
+Step 44 does not change moving bounce-back formulas.
+The default geometry_motion_mode remains static.
+The default geometry_motion_application_mode remains disabled.
+
+Step 44 summarizes phase-selected runtime displaced-copy diagnostics from the accepted Step 42 displacement artifact, runs projection-only smoke at 32^3 and 48^3, records a conservative optional one-step diagnostic descriptor, and proves that original geometry, region masks, solver formulas, and persistent driver state remain unchanged.
 
 ## Step 25 Intake Boundary
 

@@ -1,0 +1,48 @@
+{
+  "rows": [
+    {
+      "active_cell_count": 648,
+      "case_id": "step44_original_32_static_1step",
+      "completed_lbm_steps": 1,
+      "diagnostic_copy_only": false,
+      "geometry_update_mode": "original_static_descriptor",
+      "lbm_max_v": 0.0,
+      "mutate_original_geometry": false,
+      "n_grid": 32,
+      "notes": "Step 44 original static 32^3 one-step smoke descriptor; no moving-geometry claim",
+      "phase": 0.0,
+      "projected_mass": 1.0,
+      "quality_pass": true,
+      "rho_max": 1.0,
+      "rho_min": 1.0,
+      "stable": true,
+      "total_mpm_substeps": 1
+    },
+    {
+      "active_cell_count": 443,
+      "case_id": "step44_displaced_copy_32_phase035_1step",
+      "completed_lbm_steps": 1,
+      "diagnostic_copy_only": true,
+      "geometry_update_mode": "runtime_copy_diagnostic",
+      "lbm_max_v": 0.0,
+      "mutate_original_geometry": false,
+      "n_grid": 32,
+      "notes": "Step 44 diagnostic runtime copy one-step smoke descriptor only; no coupled moving-geometry validation",
+      "phase": 0.35,
+      "projected_mass": 1.0,
+      "quality_pass": true,
+      "rho_max": 1.0,
+      "rho_min": 1.0,
+      "stable": true,
+      "total_mpm_substeps": 1
+    }
+  ],
+  "summary": {
+    "diagnostic_copy_only_count": 1,
+    "diagnostic_copy_only_reason": "Step 44 uses a diagnostic one-step smoke descriptor; runtime copy is not integrated into a production coupled moving-geometry driver path.",
+    "full_coupled_geometry_claim": false,
+    "row_count": 2,
+    "smoke_pass": true,
+    "stable_count": 2
+  }
+}

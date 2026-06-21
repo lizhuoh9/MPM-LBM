@@ -1,0 +1,266 @@
+{
+  "config": {
+    "apply_to_driver_state": false,
+    "apply_to_lbm_state": false,
+    "apply_to_mpm_state": false,
+    "apply_to_projection_state": false,
+    "deterministic": true,
+    "diagnostic_only": true,
+    "displacement_artifact_path": "outputs/step42_geometry_displacement/geometry_displacement.json",
+    "displacement_config_path": "configs/step42_squid_proxy_geometry_displacement.json",
+    "geometry_config_path": "configs/step30_squid_proxy_geometry.json",
+    "geometry_motion_interface_config_path": "configs/step43_geometry_motion_interface_prescribed_diagnostic_only.json",
+    "geometry_update_id": "step44_diagnostic_geometry_update_smoke",
+    "grid_sizes": [
+      32,
+      48
+    ],
+    "mutate_original_geometry": false,
+    "persist_displaced_geometry": false,
+    "recompute_production_boundary_links": false,
+    "region_config_path": "configs/step30_squid_proxy_region_config.json",
+    "scope_note": "runtime copy diagnostic geometry update only; no persistent coupled geometry mutation",
+    "selected_phases": [
+      0.0,
+      0.2,
+      0.35,
+      0.5,
+      1.0
+    ],
+    "tracked_regions": [
+      "mantle_outer",
+      "mantle_cavity_proxy",
+      "funnel_outlet_proxy"
+    ],
+    "update_dynamic_solid": false,
+    "update_mode": "runtime_copy_diagnostic",
+    "write_dense_displacement_field": false,
+    "write_displaced_particles": false,
+    "write_vtk": false
+  },
+  "rows": [
+    {
+      "check": "geometry_update_id_expected",
+      "notes": "Step 44 geometry update id must be stable",
+      "pass": true,
+      "value": "step44_diagnostic_geometry_update_smoke"
+    },
+    {
+      "check": "update_mode_expected",
+      "notes": "Step 44 update mode must be runtime_copy_diagnostic",
+      "pass": true,
+      "value": "runtime_copy_diagnostic"
+    },
+    {
+      "check": "diagnostic_only_true",
+      "notes": "Step 44 must remain diagnostic-only",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "deterministic_true",
+      "notes": "Step 44 must remain deterministic",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "geometry_motion_interface_config_path_exists",
+      "notes": "Step 43 interface config must exist",
+      "pass": true,
+      "value": "configs/step43_geometry_motion_interface_prescribed_diagnostic_only.json"
+    },
+    {
+      "check": "displacement_config_path_exists",
+      "notes": "Step 42 displacement config must exist",
+      "pass": true,
+      "value": "configs/step42_squid_proxy_geometry_displacement.json"
+    },
+    {
+      "check": "displacement_artifact_path_exists",
+      "notes": "Step 42 displacement artifact must exist",
+      "pass": true,
+      "value": "outputs/step42_geometry_displacement/geometry_displacement.json"
+    },
+    {
+      "check": "geometry_config_path_exists",
+      "notes": "Step 30 geometry config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_geometry.json"
+    },
+    {
+      "check": "region_config_path_exists",
+      "notes": "Step 30 region config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_region_config.json"
+    },
+    {
+      "check": "selected_phases_expected",
+      "notes": "selected phases must match Step 44 contract",
+      "pass": true,
+      "value": [
+        0.0,
+        0.2,
+        0.35,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "check": "selected_phases_bounded",
+      "notes": "selected phases must be in [0, 1]",
+      "pass": true,
+      "value": [
+        0.0,
+        0.2,
+        0.35,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "check": "grid_sizes_expected",
+      "notes": "grid sizes must be [32, 48]",
+      "pass": true,
+      "value": [
+        32,
+        48
+      ]
+    },
+    {
+      "check": "grid_sizes_positive",
+      "notes": "grid sizes must be positive",
+      "pass": true,
+      "value": [
+        32,
+        48
+      ]
+    },
+    {
+      "check": "tracked_regions_expected",
+      "notes": "tracked regions must match Step 42/43",
+      "pass": true,
+      "value": [
+        "mantle_outer",
+        "mantle_cavity_proxy",
+        "funnel_outlet_proxy"
+      ]
+    },
+    {
+      "check": "scope_note_valid",
+      "notes": "scope note must state runtime-copy diagnostic scope",
+      "pass": true,
+      "value": "runtime copy diagnostic geometry update only; no persistent coupled geometry mutation"
+    },
+    {
+      "check": "persist_displaced_geometry_false",
+      "notes": "persist_displaced_geometry must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "write_displaced_particles_false",
+      "notes": "write_displaced_particles must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "write_dense_displacement_field_false",
+      "notes": "write_dense_displacement_field must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "write_vtk_false",
+      "notes": "write_vtk must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_driver_state_false",
+      "notes": "apply_to_driver_state must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_lbm_state_false",
+      "notes": "apply_to_lbm_state must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_mpm_state_false",
+      "notes": "apply_to_mpm_state must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_projection_state_false",
+      "notes": "apply_to_projection_state must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "update_dynamic_solid_false",
+      "notes": "update_dynamic_solid must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "recompute_production_boundary_links_false",
+      "notes": "recompute_production_boundary_links must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "mutate_original_geometry_false",
+      "notes": "mutate_original_geometry must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "all_mutation_flags_false",
+      "notes": "all mutation flags must be false",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "all_mutation_flags_false": true,
+    "apply_to_driver_state": false,
+    "apply_to_lbm_state": false,
+    "apply_to_mpm_state": false,
+    "apply_to_projection_state": false,
+    "deterministic": true,
+    "diagnostic_only": true,
+    "geometry_update_id": "step44_diagnostic_geometry_update_smoke",
+    "grid_sizes": [
+      32,
+      48
+    ],
+    "mutate_original_geometry": false,
+    "pass_count": 27,
+    "persist_displaced_geometry": false,
+    "recompute_production_boundary_links": false,
+    "row_count": 27,
+    "selected_phase_count": 5,
+    "selected_phases": [
+      0.0,
+      0.2,
+      0.35,
+      0.5,
+      1.0
+    ],
+    "tracked_region_count": 3,
+    "tracked_regions": [
+      "mantle_outer",
+      "mantle_cavity_proxy",
+      "funnel_outlet_proxy"
+    ],
+    "update_dynamic_solid": false,
+    "update_mode": "runtime_copy_diagnostic",
+    "validation_pass": true,
+    "write_dense_displacement_field": false,
+    "write_displaced_particles": false,
+    "write_vtk": false
+  }
+}

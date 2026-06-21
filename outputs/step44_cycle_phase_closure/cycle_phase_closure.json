@@ -1,0 +1,36 @@
+{
+  "rows": [
+    {
+      "closure_pass": true,
+      "phase0_displacement_norm_max": 0.0,
+      "phase0_phase1_displacement_delta": 0.0,
+      "phase1_displacement_norm_max": 0.0,
+      "region_id": "mantle_outer"
+    },
+    {
+      "closure_pass": true,
+      "phase0_displacement_norm_max": 0.0,
+      "phase0_phase1_displacement_delta": 0.0,
+      "phase1_displacement_norm_max": 0.0,
+      "region_id": "mantle_cavity_proxy"
+    },
+    {
+      "closure_pass": true,
+      "phase0_displacement_norm_max": 0.0,
+      "phase0_phase1_displacement_delta": 0.0,
+      "phase1_displacement_norm_max": 0.0,
+      "region_id": "funnel_outlet_proxy"
+    }
+  ],
+  "summary": {
+    "closure_pass": true,
+    "closure_pass_count": 3,
+    "max_phase0_phase1_displacement_delta": 0.0,
+    "row_count": 3,
+    "tracked_regions": [
+      "mantle_outer",
+      "mantle_cavity_proxy",
+      "funnel_outlet_proxy"
+    ]
+  }
+}

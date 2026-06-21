@@ -1,0 +1,29 @@
+{
+  "summary": {
+    "bounds_pass": true,
+    "closure_support_pass": true,
+    "coverage_pass": true,
+    "diagnostic_only_pass": true,
+    "finite_pass": true,
+    "max_displacement_norm": 0.025987588251121133,
+    "no_persistent_output_pass": true,
+    "original_hash_stable": true,
+    "phase_count": 5,
+    "quality_pass": true,
+    "row_count": 15,
+    "runtime_copy_pass": true,
+    "selected_phases": [
+      0.0,
+      0.2,
+      0.35,
+      0.5,
+      1.0
+    ],
+    "tracked_region_count": 3,
+    "tracked_regions": [
+      "mantle_outer",
+      "mantle_cavity_proxy",
+      "funnel_outlet_proxy"
+    ]
+  }
+}

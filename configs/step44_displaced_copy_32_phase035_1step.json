@@ -1,0 +1,20 @@
+{
+  "case_id": "step44_displaced_copy_32_phase035_1step",
+  "geometry_update_mode": "runtime_copy_diagnostic",
+  "geometry_update_config_path": "configs/step44_diagnostic_geometry_update.json",
+  "geometry_config_path": "configs/step30_squid_proxy_geometry.json",
+  "n_grid": 32,
+  "n_particles": 4096,
+  "n_lbm_steps": 1,
+  "mpm_substeps_per_lbm_step": 1,
+  "coupling_mode": "moving_boundary",
+  "reaction_transfer_mode": "engineering",
+  "phase": 0.35,
+  "quality_check_enabled": true,
+  "quality_check_strict": true,
+  "write_vtk": false,
+  "write_particles": false,
+  "diagnostic_copy_only": true,
+  "mutate_original_geometry": false,
+  "scope_note": "Step 44 diagnostic runtime copy one-step smoke descriptor only; no coupled moving-geometry validation"
+}

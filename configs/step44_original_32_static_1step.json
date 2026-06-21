@@ -1,0 +1,19 @@
+{
+  "case_id": "step44_original_32_static_1step",
+  "geometry_update_mode": "original_static_descriptor",
+  "geometry_config_path": "configs/step30_squid_proxy_geometry.json",
+  "n_grid": 32,
+  "n_particles": 4096,
+  "n_lbm_steps": 1,
+  "mpm_substeps_per_lbm_step": 1,
+  "coupling_mode": "moving_boundary",
+  "reaction_transfer_mode": "engineering",
+  "phase": 0.0,
+  "quality_check_enabled": true,
+  "quality_check_strict": true,
+  "write_vtk": false,
+  "write_particles": false,
+  "diagnostic_copy_only": false,
+  "mutate_original_geometry": false,
+  "scope_note": "Step 44 original static 32^3 one-step smoke descriptor; no moving-geometry claim"
+}

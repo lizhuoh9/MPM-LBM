@@ -1,0 +1,28 @@
+check,pass,value,notes
+geometry_update_id_expected,True,step44_diagnostic_geometry_update_smoke,Step 44 geometry update id must be stable
+update_mode_expected,True,runtime_copy_diagnostic,Step 44 update mode must be runtime_copy_diagnostic
+diagnostic_only_true,True,True,Step 44 must remain diagnostic-only
+deterministic_true,True,True,Step 44 must remain deterministic
+geometry_motion_interface_config_path_exists,True,configs/step43_geometry_motion_interface_prescribed_diagnostic_only.json,Step 43 interface config must exist
+displacement_config_path_exists,True,configs/step42_squid_proxy_geometry_displacement.json,Step 42 displacement config must exist
+displacement_artifact_path_exists,True,outputs/step42_geometry_displacement/geometry_displacement.json,Step 42 displacement artifact must exist
+geometry_config_path_exists,True,configs/step30_squid_proxy_geometry.json,Step 30 geometry config must exist
+region_config_path_exists,True,configs/step30_squid_proxy_region_config.json,Step 30 region config must exist
+selected_phases_expected,True,"[0.0, 0.2, 0.35, 0.5, 1.0]",selected phases must match Step 44 contract
+selected_phases_bounded,True,"[0.0, 0.2, 0.35, 0.5, 1.0]","selected phases must be in [0, 1]"
+grid_sizes_expected,True,"[32, 48]","grid sizes must be [32, 48]"
+grid_sizes_positive,True,"[32, 48]",grid sizes must be positive
+tracked_regions_expected,True,"[""mantle_outer"", ""mantle_cavity_proxy"", ""funnel_outlet_proxy""]",tracked regions must match Step 42/43
+scope_note_valid,True,runtime copy diagnostic geometry update only; no persistent coupled geometry mutation,scope note must state runtime-copy diagnostic scope
+persist_displaced_geometry_false,True,False,persist_displaced_geometry must remain false
+write_displaced_particles_false,True,False,write_displaced_particles must remain false
+write_dense_displacement_field_false,True,False,write_dense_displacement_field must remain false
+write_vtk_false,True,False,write_vtk must remain false
+apply_to_driver_state_false,True,False,apply_to_driver_state must remain false
+apply_to_lbm_state_false,True,False,apply_to_lbm_state must remain false
+apply_to_mpm_state_false,True,False,apply_to_mpm_state must remain false
+apply_to_projection_state_false,True,False,apply_to_projection_state must remain false
+update_dynamic_solid_false,True,False,update_dynamic_solid must remain false
+recompute_production_boundary_links_false,True,False,recompute_production_boundary_links must remain false
+mutate_original_geometry_false,True,False,mutate_original_geometry must remain false
+all_mutation_flags_false,True,0,all mutation flags must be false

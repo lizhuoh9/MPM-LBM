@@ -1,0 +1,30 @@
+{
+  "geometry_update_id": "step44_diagnostic_geometry_update_smoke",
+  "geometry_motion_interface_config_path": "configs/step43_geometry_motion_interface_prescribed_diagnostic_only.json",
+  "displacement_config_path": "configs/step42_squid_proxy_geometry_displacement.json",
+  "displacement_artifact_path": "outputs/step42_geometry_displacement/geometry_displacement.json",
+  "geometry_config_path": "configs/step30_squid_proxy_geometry.json",
+  "region_config_path": "configs/step30_squid_proxy_region_config.json",
+  "selected_phases": [0.0, 0.2, 0.35, 0.5, 1.0],
+  "grid_sizes": [32, 48],
+  "tracked_regions": [
+    "mantle_outer",
+    "mantle_cavity_proxy",
+    "funnel_outlet_proxy"
+  ],
+  "update_mode": "runtime_copy_diagnostic",
+  "persist_displaced_geometry": false,
+  "write_displaced_particles": false,
+  "write_dense_displacement_field": false,
+  "write_vtk": false,
+  "apply_to_driver_state": false,
+  "apply_to_lbm_state": false,
+  "apply_to_mpm_state": false,
+  "apply_to_projection_state": false,
+  "update_dynamic_solid": false,
+  "recompute_production_boundary_links": false,
+  "mutate_original_geometry": false,
+  "diagnostic_only": true,
+  "deterministic": true,
+  "scope_note": "runtime copy diagnostic geometry update only; no persistent coupled geometry mutation"
+}
