@@ -307,7 +307,7 @@ def test_step40_step39_regression_guard_is_valid():
 
 
 def test_step40_default_modes_remain_unchanged():
-    text = read_text("src/fsi_config.py")
+    text = read_text("src/mpm_lbm/sim/drivers/fsi_config.py")
     assert 'boundary_motion_mode: str = "static"' in text
     assert 'wall_velocity_application_mode: str = "disabled"' in text
     assert "wall_velocity_application_config_path: Optional[str] = None" in text

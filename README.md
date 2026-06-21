@@ -60,6 +60,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 54 repository evidence integrity repair
 - Step 55 repository code layout separation and import-boundary contract
 - Step 56 canonical runtime implementation migration wave 1
+- Step 57 canonical driver support migration wave 2
 
 ## Not Implemented
 

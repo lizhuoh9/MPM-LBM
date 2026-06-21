@@ -1,0 +1,234 @@
+{
+  "rows": [
+    {
+      "actual": {
+        "domain_length": 1.0,
+        "lbm_niu": 0.1,
+        "lbm_rho0": 1.0,
+        "mpm_dt": 0.0004,
+        "mpm_substeps_per_lbm_step": 10,
+        "n_grid": 32
+      },
+      "check": "unified_sim_config_selected_defaults",
+      "expected": {
+        "domain_length": 1.0,
+        "lbm_niu": 0.1,
+        "lbm_rho0": 1.0,
+        "mpm_dt": 0.0004,
+        "mpm_substeps_per_lbm_step": 10,
+        "n_grid": 32
+      },
+      "notes": "lightweight semantic preservation check",
+      "pass": true
+    },
+    {
+      "actual": {
+        "boundary_motion_mode": "static",
+        "coupling_mode": "penalty",
+        "geometry_motion_application_mode": "disabled",
+        "geometry_motion_mode": "static",
+        "geometry_type": "box",
+        "link_area_policy": "inverse_length",
+        "mb_force_cap_norm": 0.0001,
+        "mb_reaction_scale": 1.0,
+        "mpm_dt": 0.0004,
+        "mpm_substeps_per_lbm_step": 10,
+        "n_grid": 32,
+        "n_lbm_steps": 20,
+        "n_particles": 4096,
+        "quality_check_enabled": false,
+        "quality_check_strict": false,
+        "reaction_transfer_mode": "engineering",
+        "wall_velocity_application_mode": "disabled"
+      },
+      "check": "fsi_driver_config_selected_defaults",
+      "expected": {
+        "boundary_motion_mode": "static",
+        "coupling_mode": "penalty",
+        "geometry_motion_application_mode": "disabled",
+        "geometry_motion_mode": "static",
+        "geometry_type": "box",
+        "link_area_policy": "inverse_length",
+        "mb_force_cap_norm": 0.0001,
+        "mb_reaction_scale": 1.0,
+        "mpm_dt": 0.0004,
+        "mpm_substeps_per_lbm_step": 10,
+        "n_grid": 32,
+        "n_lbm_steps": 20,
+        "n_particles": 4096,
+        "quality_check_enabled": false,
+        "quality_check_strict": false,
+        "reaction_transfer_mode": "engineering",
+        "wall_velocity_application_mode": "disabled"
+      },
+      "notes": "lightweight semantic preservation check",
+      "pass": true
+    },
+    {
+      "actual": {
+        "box_max": [
+          0.55,
+          0.65,
+          0.55
+        ],
+        "box_min": [
+          0.25,
+          0.35,
+          0.25
+        ],
+        "deterministic": true,
+        "geometry_type": "box",
+        "mesh_inside_method": "ray_cast",
+        "n_particles": 4096,
+        "normalize_to_domain": true,
+        "preserve_aspect_ratio": true,
+        "quality_check_enabled": false,
+        "quality_check_strict": false,
+        "voxel_threshold": 0.5
+      },
+      "check": "geometry_config_selected_defaults",
+      "expected": {
+        "box_max": [
+          0.55,
+          0.65,
+          0.55
+        ],
+        "box_min": [
+          0.25,
+          0.35,
+          0.25
+        ],
+        "deterministic": true,
+        "geometry_type": "box",
+        "mesh_inside_method": "ray_cast",
+        "n_particles": 4096,
+        "normalize_to_domain": true,
+        "preserve_aspect_ratio": true,
+        "quality_check_enabled": false,
+        "quality_check_strict": false,
+        "voxel_threshold": 0.5
+      },
+      "notes": "lightweight semantic preservation check",
+      "pass": true
+    },
+    {
+      "actual": {
+        "deterministic": true,
+        "particle_count": 8,
+        "same_mass": true,
+        "same_vol0": true,
+        "same_x": true
+      },
+      "check": "geometry_sampler_determinism",
+      "expected": {
+        "deterministic": true,
+        "particle_count": 8,
+        "same_mass": true,
+        "same_vol0": true,
+        "same_x": true
+      },
+      "notes": "lightweight semantic preservation check",
+      "pass": true
+    },
+    {
+      "actual": {
+        "non_strict_pass": true,
+        "non_strict_warning_count": 2,
+        "strict_pass": false,
+        "strict_reason_count": 2
+      },
+      "check": "geometry_quality_gate_strict_non_strict",
+      "expected": {
+        "non_strict_pass": true,
+        "non_strict_warning_count": 2,
+        "strict_pass": false,
+        "strict_reason_count": 2
+      },
+      "notes": "lightweight semantic preservation check",
+      "pass": true
+    },
+    {
+      "actual": [
+        "uniform",
+        "inverse_length",
+        "length"
+      ],
+      "check": "link_area_policy_constants",
+      "expected": [
+        "uniform",
+        "inverse_length",
+        "length"
+      ],
+      "notes": "lightweight semantic preservation check",
+      "pass": true
+    },
+    {
+      "actual": {
+        "valid_coupling_modes": [
+          "none",
+          "penalty",
+          "moving_boundary"
+        ],
+        "valid_reaction_transfer_modes": [
+          "engineering",
+          "link_area_experimental"
+        ]
+      },
+      "check": "fsi_mode_constants",
+      "expected": {
+        "valid_coupling_modes": [
+          "none",
+          "penalty",
+          "moving_boundary"
+        ],
+        "valid_reaction_transfer_modes": [
+          "engineering",
+          "link_area_experimental"
+        ]
+      },
+      "notes": "lightweight semantic preservation check",
+      "pass": true
+    },
+    {
+      "actual": [
+        "box",
+        "ellipsoid",
+        "squid_proxy",
+        "voxel",
+        "mesh"
+      ],
+      "check": "valid_geometry_types",
+      "expected": [
+        "box",
+        "ellipsoid",
+        "squid_proxy",
+        "voxel",
+        "mesh"
+      ],
+      "notes": "lightweight semantic preservation check",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "solver_behavior_changed",
+      "expected": false,
+      "notes": "Step 57 only migrates driver support ownership.",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "physics_feature_expansion",
+      "expected": false,
+      "notes": "Step 57 does not add or validate new physics.",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "driver_support_behavior_preservation_audit_pass": true,
+    "pass_count": 10,
+    "physics_feature_expansion": false,
+    "row_count": 10,
+    "solver_behavior_changed": false,
+    "solver_object_construction_required": false
+  }
+}

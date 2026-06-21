@@ -1,0 +1,171 @@
+{
+  "rows": [
+    {
+      "canonical_path": "src/mpm_lbm/sim/drivers/sim_config.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/sim_config.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/drivers/fsi_config.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/fsi_config.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/io/run_utils.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/run_utils.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/diagnostics/fsi_diagnostics.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/diagnostics.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/coupling/link_area_accounting.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/link_area_accounting.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/coupling/link_area.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/link_area_coupling.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/coupling/momentum_accounting.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/momentum_accounting.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/geometry/config.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/geometry_config.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/geometry/utils.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/geometry_utils.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/geometry/mesh_io.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/mesh_io.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/geometry/mesh_quality.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/mesh_quality.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/geometry/voxel_io.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/voxel_io.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/geometry/voxel_quality.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/voxel_quality.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/geometry/importers.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/geometry_import.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/geometry/sampler.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/geometry.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    },
+    {
+      "canonical_path": "src/mpm_lbm/sim/geometry/quality.py",
+      "legacy_contains_implementation_body": false,
+      "legacy_file_exists": true,
+      "legacy_imports_canonical": true,
+      "legacy_is_shim": true,
+      "legacy_path": "src/geometry_quality.py",
+      "nonblank_line_count": 2,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "driver_support_legacy_shim_audit_pass": true,
+    "legacy_implementation_body_count": 0,
+    "legacy_shim_count": 16,
+    "pass_count": 16,
+    "row_count": 16
+  }
+}

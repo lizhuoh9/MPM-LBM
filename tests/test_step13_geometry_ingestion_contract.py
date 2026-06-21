@@ -20,9 +20,9 @@ def read_csv_rows(relative_path):
 
 def test_step13_required_artifacts_exist():
     required_paths = [
-        "src/geometry_config.py",
-        "src/geometry.py",
-        "src/geometry_utils.py",
+        "src/mpm_lbm/sim/geometry/config.py",
+        "src/mpm_lbm/sim/geometry/sampler.py",
+        "src/mpm_lbm/sim/geometry/utils.py",
         "docs/12_geometry_ingestion.md",
         "configs/step13_box_geometry.json",
         "configs/step13_ellipsoid_geometry.json",
@@ -55,11 +55,11 @@ def test_step13_required_artifacts_exist():
 
 def test_step13_source_contract_keywords():
     source_paths = [
-        "src/geometry_config.py",
-        "src/geometry.py",
-        "src/geometry_utils.py",
+        "src/mpm_lbm/sim/geometry/config.py",
+        "src/mpm_lbm/sim/geometry/sampler.py",
+        "src/mpm_lbm/sim/geometry/utils.py",
         "src/mpm_solid.py",
-        "src/fsi_config.py",
+        "src/mpm_lbm/sim/drivers/fsi_config.py",
         "src/fsi_driver.py",
         "baseline_tests/run_step13_geometry_sampler_box.py",
         "baseline_tests/run_step13_geometry_sampler_ellipsoid.py",

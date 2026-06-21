@@ -1,0 +1,8 @@
+metric,value
+pass_count,6
+row_count,6
+step56_behavior_row_count,8
+step56_import_row_count,9
+step56_migration_row_count,9
+step56_regression_guard_pass,True
+step56_shim_row_count,9

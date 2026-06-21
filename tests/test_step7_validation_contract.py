@@ -16,7 +16,7 @@ def read_log(path):
 
 def test_step7_required_artifacts_exist():
     required_paths = [
-        "src/diagnostics.py",
+        "src/mpm_lbm/diagnostics/fsi_diagnostics.py",
         "baseline_tests/run_step7_couette_like_validation.py",
         "baseline_tests/run_step7_momentum_impulse_diagnostics.py",
         "baseline_tests/run_step7_beta_sweep.py",
@@ -49,7 +49,7 @@ def test_step7_required_artifacts_exist():
 
 def test_step7_diagnostics_source_contains_required_interfaces():
     init_source = (ROOT / "src/__init__.py").read_text(encoding="utf-8")
-    diagnostics_source = (ROOT / "src/diagnostics.py").read_text(encoding="utf-8")
+    diagnostics_source = (ROOT / "src/mpm_lbm/diagnostics/fsi_diagnostics.py").read_text(encoding="utf-8")
 
     required_keywords = [
         "class FSIDiagnostics3D",
@@ -72,7 +72,7 @@ def test_step7_diagnostics_source_contains_required_interfaces():
 
 def test_step7_scripts_do_not_use_forbidden_methods():
     source_paths = [
-        ROOT / "src/diagnostics.py",
+        ROOT / "src/mpm_lbm/diagnostics/fsi_diagnostics.py",
         ROOT / "baseline_tests/run_step7_couette_like_validation.py",
         ROOT / "baseline_tests/run_step7_momentum_impulse_diagnostics.py",
         ROOT / "baseline_tests/run_step7_beta_sweep.py",

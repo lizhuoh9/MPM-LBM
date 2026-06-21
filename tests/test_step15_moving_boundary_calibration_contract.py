@@ -55,7 +55,7 @@ def assert_stable_rows(rows):
 
 def test_step15_required_artifacts_exist():
     required_paths = [
-        "src/momentum_accounting.py",
+        "src/mpm_lbm/sim/coupling/momentum_accounting.py",
         "src/calibration.py",
         "configs/step15_mb_calibration_box_32.json",
         "configs/step15_mb_force_cap_box_48.json",
@@ -95,7 +95,7 @@ def test_step15_required_artifacts_exist():
 
 
 def test_step15_source_keywords_exist():
-    source = "\n".join(read_text(path) for path in ["src/momentum_accounting.py", "src/calibration.py"])
+    source = "\n".join(read_text(path) for path in ["src/mpm_lbm/sim/coupling/momentum_accounting.py", "src/calibration.py"])
     required_keywords = [
         "class MomentumAccounting3D",
         "hydro_force_sum",

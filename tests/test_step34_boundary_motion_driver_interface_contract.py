@@ -110,7 +110,7 @@ def test_step34_required_artifacts_exist():
 
 
 def test_step34_fsi_config_defaults_and_validation_are_valid():
-    fsi_config = read_text("src/fsi_config.py")
+    fsi_config = read_text("src/mpm_lbm/sim/drivers/fsi_config.py")
     assert 'VALID_BOUNDARY_MOTION_MODES = ("static", "prescribed_kinematic")' in fsi_config
     assert 'boundary_motion_mode: str = "static"' in fsi_config
     assert "boundary_motion_config_path: Optional[str] = None" in fsi_config
@@ -406,7 +406,7 @@ def test_step34_solver_formula_boundaries_are_valid():
     formula_files = [
         "src/coupling.py",
         "src/moving_boundary_coupling.py",
-        "src/link_area_coupling.py",
+        "src/mpm_lbm/sim/coupling/link_area.py",
         "src/lbm_fluid.py",
         "src/mpm_solid.py",
         "src/projection.py",

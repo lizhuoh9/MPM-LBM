@@ -1,0 +1,35 @@
+{
+  "policy_id": "step57_src_init_export_policy",
+  "src_init_path": "src/__init__.py",
+  "allow_calibration_exports_when_module_exists": true,
+  "calibration_symbols": [
+    "classify_calibration_row",
+    "choose_recommended_row",
+    "write_calibration_summary"
+  ],
+  "migrated_symbol_targets": {
+    "FSIDiagnostics3D": "src.mpm_lbm.diagnostics.fsi_diagnostics",
+    "FSIDriverConfig": "src.mpm_lbm.sim.drivers.fsi_config",
+    "GeometryConfig": "src.mpm_lbm.sim.geometry.config",
+    "GeometryQualityGate": "src.mpm_lbm.sim.geometry.quality",
+    "GeometrySampler3D": "src.mpm_lbm.sim.geometry.sampler",
+    "ImportedGeometrySampler3D": "src.mpm_lbm.sim.geometry.importers",
+    "LinkAreaMomentumAccounting3D": "src.mpm_lbm.sim.coupling.link_area_accounting",
+    "LinkAreaMovingBoundaryCoupler3D": "src.mpm_lbm.sim.coupling.link_area",
+    "MomentumAccounting3D": "src.mpm_lbm.sim.coupling.momentum_accounting",
+    "UnifiedSimConfig": "src.mpm_lbm.sim.drivers.sim_config",
+    "VoxelGeometry": "src.mpm_lbm.sim.geometry.voxel_io",
+    "analyze_geometry_config": "src.mpm_lbm.sim.geometry.quality",
+    "analyze_mesh": "src.mpm_lbm.sim.geometry.mesh_quality",
+    "analyze_voxel_occupancy": "src.mpm_lbm.sim.geometry.voxel_quality",
+    "load_obj": "src.mpm_lbm.sim.geometry.mesh_io",
+    "load_voxel_geometry": "src.mpm_lbm.sim.geometry.voxel_io",
+    "mesh_bounds": "src.mpm_lbm.sim.geometry.mesh_io",
+    "normalize_vertices": "src.mpm_lbm.sim.geometry.mesh_io",
+    "save_voxel_geometry": "src.mpm_lbm.sim.geometry.voxel_io",
+    "voxel_centers_to_points": "src.mpm_lbm.sim.geometry.voxel_io",
+    "write_obj": "src.mpm_lbm.sim.geometry.mesh_io"
+  },
+  "lazy_import_required": true,
+  "no_solver_object_construction": true
+}

@@ -71,7 +71,7 @@ def assert_area_scale_bounded(row, key="area_scale"):
 def test_step18_required_artifacts_exist():
     required_paths = [
         "STEP18_LINK_AREA_TRANSFER_GOAL.md",
-        "src/link_area_coupling.py",
+        "src/mpm_lbm/sim/coupling/link_area.py",
         "configs/step18_link_area_transfer_sanity_32.json",
         "configs/step18_link_area_policy_sweep_box_32.json",
         "configs/step18_link_area_transfer_box_48.json",
@@ -119,9 +119,9 @@ def test_step18_required_artifacts_exist():
 
 def test_step18_source_keywords_and_defaults_exist():
     source_paths = [
-        "src/fsi_config.py",
+        "src/mpm_lbm/sim/drivers/fsi_config.py",
         "src/fsi_driver.py",
-        "src/link_area_coupling.py",
+        "src/mpm_lbm/sim/coupling/link_area.py",
         "src/__init__.py",
     ]
     source = "\n".join(read_text(path) for path in source_paths if (ROOT / path).is_file())
@@ -141,7 +141,7 @@ def test_step18_source_keywords_and_defaults_exist():
     missing = [keyword for keyword in required_keywords if keyword not in source]
     assert missing == []
 
-    config_source = read_text("src/fsi_config.py")
+    config_source = read_text("src/mpm_lbm/sim/drivers/fsi_config.py")
     assert 'reaction_transfer_mode: str = "engineering"' in config_source
     assert "reaction_transfer_mode == \"link_area_experimental\"" in config_source
     assert "coupling_mode != \"moving_boundary\"" in config_source

@@ -1,0 +1,6 @@
+metric,value
+driver_support_legacy_shim_audit_pass,True
+legacy_implementation_body_count,0
+legacy_shim_count,16
+pass_count,16
+row_count,16

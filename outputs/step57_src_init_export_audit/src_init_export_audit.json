@@ -1,0 +1,636 @@
+{
+  "rows": [
+    {
+      "actual_module": "src.mpm_lbm.diagnostics.fsi_diagnostics",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.diagnostics.fsi_diagnostics",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "FSIDiagnostics3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.fsi_driver",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.fsi_driver",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "FSIDriver3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.drivers.fsi_config",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.drivers.fsi_config",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "FSIDriverConfig",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.config",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.config",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "GeometryConfig",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.quality",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.quality",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "GeometryQualityGate",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.sampler",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.sampler",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "GeometrySampler3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.units",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.units",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "GridUnitMapper",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.importers",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.importers",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "ImportedGeometrySampler3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.lbm_config",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.lbm_config",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "LBMConfig",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.lbm_fluid",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.lbm_fluid",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "LBMFluid3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.coupling.link_area_accounting",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.coupling.link_area_accounting",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "LinkAreaMomentumAccounting3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.coupling.link_area",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.coupling.link_area",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "LinkAreaMovingBoundaryCoupler3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_config",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_config",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "MPMConfig",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_solid",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_solid",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "MPMSolid3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.projection",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.projection",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "MPMToLBMProjector3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.coupling.momentum_accounting",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.coupling.momentum_accounting",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "MomentumAccounting3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.moving_boundary_coupling",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.moving_boundary_coupling",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "MovingBoundaryFSICoupler3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.coupling",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.coupling",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "PenaltyFSICoupler3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.squid_region_config",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.squid_region_config",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "SquidProxyRegionConfig",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.squid_region_config",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.squid_region_config",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "SquidRegion",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.drivers.sim_config",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.drivers.sim_config",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "UnifiedSimConfig",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "VoxelGeometry",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.quality",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.quality",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "analyze_geometry_config",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.mesh_quality",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.mesh_quality",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "analyze_mesh",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.voxel_quality",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.voxel_quality",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "analyze_voxel_occupancy",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.calibration",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.calibration",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "choose_recommended_row",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.calibration",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.calibration",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "classify_calibration_row",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.squid_region_config",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.squid_region_config",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "default_squid_proxy_region_config",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "load_obj",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "load_voxel_geometry",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "mesh_bounds",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "normalize_vertices",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.squid_proxy_regions",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.squid_proxy_regions",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "sample_squid_proxy_regions",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "save_voxel_geometry",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.squid_proxy_regions",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.squid_proxy_regions",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "summarize_region_masks",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "voxel_centers_to_points",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.calibration",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.calibration",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "write_calibration_summary",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "check": "export_resolves",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "write_obj",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.diagnostics.fsi_diagnostics",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.diagnostics.fsi_diagnostics",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "FSIDiagnostics3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.drivers.fsi_config",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.drivers.fsi_config",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "FSIDriverConfig",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.config",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.config",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "GeometryConfig",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.quality",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.quality",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "GeometryQualityGate",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.sampler",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.sampler",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "GeometrySampler3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.importers",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.importers",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "ImportedGeometrySampler3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.coupling.link_area_accounting",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.coupling.link_area_accounting",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "LinkAreaMomentumAccounting3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.coupling.link_area",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.coupling.link_area",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "LinkAreaMovingBoundaryCoupler3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.coupling.momentum_accounting",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.coupling.momentum_accounting",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "MomentumAccounting3D",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.drivers.sim_config",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.drivers.sim_config",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "UnifiedSimConfig",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "VoxelGeometry",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.quality",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.quality",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "analyze_geometry_config",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.mesh_quality",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.mesh_quality",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "analyze_mesh",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.voxel_quality",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.voxel_quality",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "analyze_voxel_occupancy",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "load_obj",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "load_voxel_geometry",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "mesh_bounds",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "normalize_vertices",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "save_voxel_geometry",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "voxel_centers_to_points",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "check": "migrated_symbol_target",
+      "error": "",
+      "expected_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "write_obj",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.calibration",
+      "check": "calibration_export",
+      "error": "",
+      "expected_module": "src.calibration",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "classify_calibration_row",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.calibration",
+      "check": "calibration_export",
+      "error": "",
+      "expected_module": "src.calibration",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "choose_recommended_row",
+      "symbol_resolve_pass": true
+    },
+    {
+      "actual_module": "src.calibration",
+      "check": "calibration_export",
+      "error": "",
+      "expected_module": "src.calibration",
+      "module_import_pass": true,
+      "pass": true,
+      "symbol": "write_calibration_summary",
+      "symbol_resolve_pass": true
+    }
+  ],
+  "summary": {
+    "calibration_export_issue_count": 0,
+    "export_count": 38,
+    "lazy_import_enabled": true,
+    "migrated_target_mismatch_count": 0,
+    "missing_module_count": 0,
+    "missing_symbol_count": 0,
+    "pass_count": 62,
+    "row_count": 62,
+    "solver_object_constructed": false,
+    "src_init_export_audit_pass": true
+  }
+}

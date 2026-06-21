@@ -109,7 +109,7 @@ def test_step43_required_artifacts_exist():
 
 
 def test_step43_fsi_config_geometry_motion_defaults_are_valid():
-    text = read_text("src/fsi_config.py")
+    text = read_text("src/mpm_lbm/sim/drivers/fsi_config.py")
     assert 'VALID_GEOMETRY_MOTION_MODES = ("static", "prescribed_kinematic")' in text
     assert 'VALID_GEOMETRY_MOTION_APPLICATION_MODES = ("disabled", "diagnostic_only")' in text
     assert 'geometry_motion_mode: str = "static"' in text
@@ -270,7 +270,7 @@ def test_step43_step42_regression_guard_is_valid():
 
 
 def test_step43_default_modes_remain_unchanged():
-    text = read_text("src/fsi_config.py")
+    text = read_text("src/mpm_lbm/sim/drivers/fsi_config.py")
     assert 'boundary_motion_mode: str = "static"' in text
     assert 'wall_velocity_application_mode: str = "disabled"' in text
     assert 'geometry_motion_mode: str = "static"' in text

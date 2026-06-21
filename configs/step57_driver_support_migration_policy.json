@@ -1,0 +1,154 @@
+{
+  "policy_id": "step57_driver_support_migration_policy",
+  "step": 57,
+  "migrations": [
+    {
+      "canonical_module": "src.mpm_lbm.sim.drivers.sim_config",
+      "canonical_path": "src/mpm_lbm/sim/drivers/sim_config.py",
+      "implementation_tokens": ["class UnifiedSimConfig", "def make_lbm_config", "def make_mpm_config"],
+      "legacy_import": "from src.mpm_lbm.sim.drivers.sim_config import *",
+      "legacy_module": "src.sim_config",
+      "legacy_path": "src/sim_config.py",
+      "symbols": ["UnifiedSimConfig"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.drivers.fsi_config",
+      "canonical_path": "src/mpm_lbm/sim/drivers/fsi_config.py",
+      "implementation_tokens": ["class FSIDriverConfig", "VALID_COUPLING_MODES", "def make_unified_sim_config"],
+      "legacy_import": "from src.mpm_lbm.sim.drivers.fsi_config import *",
+      "legacy_module": "src.fsi_config",
+      "legacy_path": "src/fsi_config.py",
+      "symbols": ["FSIDriverConfig"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.io.run_utils",
+      "canonical_path": "src/mpm_lbm/sim/io/run_utils.py",
+      "implementation_tokens": ["def assert_no_nan_inf_array", "def save_csv_rows", "def ensure_output_dir"],
+      "legacy_import": "from src.mpm_lbm.sim.io.run_utils import *",
+      "legacy_module": "src.run_utils",
+      "legacy_path": "src/run_utils.py",
+      "symbols": ["assert_no_nan_inf_array", "save_csv_rows", "ensure_output_dir"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.diagnostics.fsi_diagnostics",
+      "canonical_path": "src/mpm_lbm/diagnostics/fsi_diagnostics.py",
+      "implementation_tokens": ["class FSIDiagnostics3D", "def lbm_fluid_stats", "def force_stats"],
+      "legacy_import": "from src.mpm_lbm.diagnostics.fsi_diagnostics import *",
+      "legacy_module": "src.diagnostics",
+      "legacy_path": "src/diagnostics.py",
+      "symbols": ["FSIDiagnostics3D"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.coupling.link_area_accounting",
+      "canonical_path": "src/mpm_lbm/sim/coupling/link_area_accounting.py",
+      "implementation_tokens": ["class LinkAreaMomentumAccounting3D", "VALID_AREA_POLICIES", "def summarize_link_accounting"],
+      "legacy_import": "from src.mpm_lbm.sim.coupling.link_area_accounting import *",
+      "legacy_module": "src.link_area_accounting",
+      "legacy_path": "src/link_area_accounting.py",
+      "symbols": ["LinkAreaMomentumAccounting3D", "VALID_AREA_POLICIES"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.coupling.link_area",
+      "canonical_path": "src/mpm_lbm/sim/coupling/link_area.py",
+      "implementation_tokens": ["class LinkAreaMovingBoundaryCoupler3D", "def update_area_scale_from_lbm", "def add_link_area_reaction_to_mpm_grid"],
+      "legacy_import": "from src.mpm_lbm.sim.coupling.link_area import *",
+      "legacy_module": "src.link_area_coupling",
+      "legacy_path": "src/link_area_coupling.py",
+      "symbols": ["LinkAreaMovingBoundaryCoupler3D"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.coupling.momentum_accounting",
+      "canonical_path": "src/mpm_lbm/sim/coupling/momentum_accounting.py",
+      "implementation_tokens": ["class MomentumAccounting3D", "def moving_boundary_accounting_row", "def hydro_force_sum"],
+      "legacy_import": "from src.mpm_lbm.sim.coupling.momentum_accounting import *",
+      "legacy_module": "src.momentum_accounting",
+      "legacy_path": "src/momentum_accounting.py",
+      "symbols": ["MomentumAccounting3D"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.config",
+      "canonical_path": "src/mpm_lbm/sim/geometry/config.py",
+      "implementation_tokens": ["class GeometryConfig", "VALID_GEOMETRY_TYPES", "VALID_MESH_INSIDE_METHODS"],
+      "legacy_import": "from src.mpm_lbm.sim.geometry.config import *",
+      "legacy_module": "src.geometry_config",
+      "legacy_path": "src/geometry_config.py",
+      "symbols": ["GeometryConfig", "VALID_GEOMETRY_TYPES"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.utils",
+      "canonical_path": "src/mpm_lbm/sim/geometry/utils.py",
+      "implementation_tokens": ["def as_vec3", "def inside_box", "def inside_capsule"],
+      "legacy_import": "from src.mpm_lbm.sim.geometry.utils import *",
+      "legacy_module": "src.geometry_utils",
+      "legacy_path": "src/geometry_utils.py",
+      "symbols": ["as_vec3", "inside_box", "inside_capsule"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "canonical_path": "src/mpm_lbm/sim/geometry/mesh_io.py",
+      "implementation_tokens": ["def load_obj", "def write_obj", "def normalize_vertices"],
+      "legacy_import": "from src.mpm_lbm.sim.geometry.mesh_io import *",
+      "legacy_module": "src.mesh_io",
+      "legacy_path": "src/mesh_io.py",
+      "symbols": ["load_obj", "write_obj", "mesh_bounds", "normalize_vertices"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.mesh_quality",
+      "canonical_path": "src/mpm_lbm/sim/geometry/mesh_quality.py",
+      "implementation_tokens": ["def analyze_mesh", "vertices_count", "degenerate_face_count"],
+      "legacy_import": "from src.mpm_lbm.sim.geometry.mesh_quality import *",
+      "legacy_module": "src.mesh_quality",
+      "legacy_path": "src/mesh_quality.py",
+      "symbols": ["analyze_mesh"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "canonical_path": "src/mpm_lbm/sim/geometry/voxel_io.py",
+      "implementation_tokens": ["class VoxelGeometry", "def load_voxel_geometry", "def voxel_centers_to_points"],
+      "legacy_import": "from src.mpm_lbm.sim.geometry.voxel_io import *",
+      "legacy_module": "src.voxel_io",
+      "legacy_path": "src/voxel_io.py",
+      "symbols": ["VoxelGeometry", "load_voxel_geometry", "save_voxel_geometry", "voxel_centers_to_points"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.voxel_quality",
+      "canonical_path": "src/mpm_lbm/sim/geometry/voxel_quality.py",
+      "implementation_tokens": ["def analyze_voxel_occupancy", "connected_component_count", "touches_domain_boundary"],
+      "legacy_import": "from src.mpm_lbm.sim.geometry.voxel_quality import *",
+      "legacy_module": "src.voxel_quality",
+      "legacy_path": "src/voxel_quality.py",
+      "symbols": ["analyze_voxel_occupancy"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.importers",
+      "canonical_path": "src/mpm_lbm/sim/geometry/importers.py",
+      "implementation_tokens": ["class ImportedGeometrySampler3D", "def voxelize", "def sample_particles"],
+      "legacy_import": "from src.mpm_lbm.sim.geometry.importers import *",
+      "legacy_module": "src.geometry_import",
+      "legacy_path": "src/geometry_import.py",
+      "symbols": ["ImportedGeometrySampler3D"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.sampler",
+      "canonical_path": "src/mpm_lbm/sim/geometry/sampler.py",
+      "implementation_tokens": ["class GeometrySampler3D", "def component_masks", "def sample_particles"],
+      "legacy_import": "from src.mpm_lbm.sim.geometry.sampler import *",
+      "legacy_module": "src.geometry",
+      "legacy_path": "src/geometry.py",
+      "symbols": ["GeometrySampler3D"]
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.quality",
+      "canonical_path": "src/mpm_lbm/sim/geometry/quality.py",
+      "implementation_tokens": ["class GeometryQualityGate", "def analyze_geometry_config", "def evaluate"],
+      "legacy_import": "from src.mpm_lbm.sim.geometry.quality import *",
+      "legacy_module": "src.geometry_quality",
+      "legacy_path": "src/geometry_quality.py",
+      "symbols": ["GeometryQualityGate", "analyze_geometry_config"]
+    }
+  ],
+  "canonical_forbidden_tokens": ["_LEGACY_MODULE", "legacy_getattr"],
+  "legacy_required_docstring": "Compatibility shim. Canonical implementation lives in ",
+  "solver_behavior_changed": false,
+  "physics_feature_expansion": false
+}

@@ -105,7 +105,7 @@ def test_step36_required_artifacts_exist():
 
 
 def test_step36_config_defaults_are_safe():
-    text = read_text("src/fsi_config.py")
+    text = read_text("src/mpm_lbm/sim/drivers/fsi_config.py")
     assert 'boundary_motion_mode: str = "static"' in text
     assert "boundary_motion_config_path: Optional[str] = None" in text
     assert "boundary_motion_report_enabled: bool = False" in text

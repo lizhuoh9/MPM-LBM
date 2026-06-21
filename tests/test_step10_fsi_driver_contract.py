@@ -17,9 +17,9 @@ def read_log(path):
 
 def test_step10_required_artifacts_exist():
     required_paths = [
-        "src/fsi_config.py",
+        "src/mpm_lbm/sim/drivers/fsi_config.py",
         "src/fsi_driver.py",
-        "src/run_utils.py",
+        "src/mpm_lbm/sim/io/run_utils.py",
         "configs/step10_penalty_default.json",
         "configs/step10_moving_boundary_default.json",
         "configs/step10_mode_matrix.json",
@@ -58,7 +58,7 @@ def test_step10_required_artifacts_exist():
 
 def test_step10_source_contains_required_interfaces():
     sources = []
-    for rel_path in ("src/fsi_config.py", "src/fsi_driver.py", "src/run_utils.py"):
+    for rel_path in ("src/mpm_lbm/sim/drivers/fsi_config.py", "src/fsi_driver.py", "src/mpm_lbm/sim/io/run_utils.py"):
         path = ROOT / rel_path
         if path.is_file():
             sources.append(path.read_text(encoding="utf-8"))
@@ -109,9 +109,9 @@ def test_step10_config_files_are_valid_json():
 
 def test_step10_scripts_respect_mode_boundaries():
     source_paths = [
-        ROOT / "src/fsi_config.py",
+        ROOT / "src/mpm_lbm/sim/drivers/fsi_config.py",
         ROOT / "src/fsi_driver.py",
-        ROOT / "src/run_utils.py",
+        ROOT / "src/mpm_lbm/sim/io/run_utils.py",
         ROOT / "baseline_tests/run_step10_driver_penalty_mode.py",
         ROOT / "baseline_tests/run_step10_driver_moving_boundary_mode.py",
         ROOT / "baseline_tests/run_step10_driver_mode_matrix.py",

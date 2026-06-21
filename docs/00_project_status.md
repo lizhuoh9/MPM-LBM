@@ -19,6 +19,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 54: repository evidence integrity repair
 - Step 55: repository code layout separation and import-boundary contract
 - Step 56: canonical runtime implementation migration wave 1
+- Step 57: canonical driver support migration wave 2
 
 ## Current Validated Modes
 
@@ -53,4 +54,4 @@ The current mode matrix is validated through committed Step 10 logs and outputs.
 
 The repository is ready for documentation review, reproducibility review, and conservative next-step planning. It is not production ready and does not yet validate a real squid case.
 
-The latest repository-structure work has moved the first leaf batch of runtime implementations into canonical `src/mpm_lbm/sim/...` modules while preserving legacy root imports as compatibility shims. This is code ownership migration, not new physics validation.
+The latest repository-structure work has moved the first runtime implementation wave and the driver-support implementation wave into canonical `src/mpm_lbm/...` modules while preserving legacy root imports as compatibility shims. This is code ownership migration, not new physics validation.

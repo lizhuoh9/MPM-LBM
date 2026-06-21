@@ -1,0 +1,155 @@
+{
+  "rows": [
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.drivers.sim_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.sim_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "UnifiedSimConfig"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.drivers.fsi_config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.fsi_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "FSIDriverConfig"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.io.run_utils",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.run_utils",
+      "pass": true,
+      "same_object": true,
+      "symbol": "assert_no_nan_inf_array"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.diagnostics.fsi_diagnostics",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.diagnostics",
+      "pass": true,
+      "same_object": true,
+      "symbol": "FSIDiagnostics3D"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.coupling.link_area_accounting",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.link_area_accounting",
+      "pass": true,
+      "same_object": true,
+      "symbol": "LinkAreaMomentumAccounting3D"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.coupling.link_area",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.link_area_coupling",
+      "pass": true,
+      "same_object": true,
+      "symbol": "LinkAreaMovingBoundaryCoupler3D"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.coupling.momentum_accounting",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.momentum_accounting",
+      "pass": true,
+      "same_object": true,
+      "symbol": "MomentumAccounting3D"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.config",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_config",
+      "pass": true,
+      "same_object": true,
+      "symbol": "GeometryConfig"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.sampler",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry",
+      "pass": true,
+      "same_object": true,
+      "symbol": "GeometrySampler3D"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.importers",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_import",
+      "pass": true,
+      "same_object": true,
+      "symbol": "ImportedGeometrySampler3D"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.quality",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_quality",
+      "pass": true,
+      "same_object": true,
+      "symbol": "GeometryQualityGate"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.quality",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.geometry_quality",
+      "pass": true,
+      "same_object": true,
+      "symbol": "analyze_geometry_config"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.mesh_io",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.mesh_io",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_obj"
+    },
+    {
+      "canonical_import_pass": true,
+      "canonical_module": "src.mpm_lbm.sim.geometry.voxel_io",
+      "error": "",
+      "legacy_import_pass": true,
+      "legacy_module": "src.voxel_io",
+      "pass": true,
+      "same_object": true,
+      "symbol": "load_voxel_geometry"
+    }
+  ],
+  "summary": {
+    "canonical_import_pass_count": 14,
+    "driver_support_import_execution_audit_pass": true,
+    "legacy_import_pass_count": 14,
+    "output_snapshot_unchanged": true,
+    "pass_count": 14,
+    "row_count": 14,
+    "runtime_object_construction_required": false,
+    "same_object_count": 14,
+    "solver_run": false
+  }
+}

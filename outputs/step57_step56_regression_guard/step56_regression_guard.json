@@ -1,0 +1,106 @@
+{
+  "rows": [
+    {
+      "check": "step56_canonical_runtime_migration_audit",
+      "details": {
+        "canonical_legacy_getattr_count": 0,
+        "canonical_real_implementation_count": 9,
+        "canonical_runtime_migration_audit_pass": true,
+        "forbidden_reverse_dependency_count": 0,
+        "legacy_shim_count": 9,
+        "pass_count": 9,
+        "physics_feature_expansion": false,
+        "row_count": 9,
+        "solver_behavior_changed": false
+      },
+      "pass": true
+    },
+    {
+      "check": "step56_import_execution_audit",
+      "details": {
+        "canonical_import_pass_count": 9,
+        "import_execution_audit_pass": true,
+        "legacy_import_pass_count": 9,
+        "output_snapshot_unchanged": true,
+        "pass_count": 9,
+        "row_count": 9,
+        "runtime_object_construction_required": false,
+        "same_object_count": 9,
+        "solver_run": false
+      },
+      "pass": true
+    },
+    {
+      "check": "step56_legacy_shim_audit",
+      "details": {
+        "legacy_implementation_body_count": 0,
+        "legacy_shim_audit_pass": true,
+        "legacy_shim_count": 9,
+        "pass_count": 9,
+        "row_count": 9
+      },
+      "pass": true
+    },
+    {
+      "check": "step56_behavior_preservation_or_step57_support_supersession",
+      "details": {
+        "behavior_summary": {
+          "behavior_preservation_audit_pass": false,
+          "object_construction_required_for_lbm_fluid_or_mpm_solid": false,
+          "pass_count": 7,
+          "physics_feature_expansion": false,
+          "row_count": 8,
+          "solver_behavior_changed": false
+        },
+        "mode": "step57_support_migration_supersedes_step56_protected_paths",
+        "pass": true,
+        "superseded_paths": [
+          "src/fsi_config.py",
+          "src/link_area_accounting.py",
+          "src/link_area_coupling.py",
+          "src/momentum_accounting.py",
+          "src/sim_config.py"
+        ],
+        "unexpected_failures": []
+      },
+      "pass": true
+    },
+    {
+      "check": "step56_artifact_manifest",
+      "details": {
+        "artifact_budget_pass": true,
+        "file_count": 4045,
+        "large_file_count": 0,
+        "protected_external_taichi_lbm3d_step56_file_count": 0,
+        "protected_real_geometry_candidates_step56_file_count": 0,
+        "step56_file_count": 56,
+        "step56_particle_npy_count": 0,
+        "step56_total_size_bytes": 148658,
+        "step56_total_size_mb": 0.1417713165283203,
+        "step56_vtr_count": 0
+      },
+      "pass": true
+    },
+    {
+      "check": "step56_step55_regression_guard",
+      "details": {
+        "code_layout_row_count": 141,
+        "compatibility_shim_row_count": 10,
+        "import_boundary_row_count": 23,
+        "pass_count": 6,
+        "row_count": 6,
+        "step55_regression_guard_pass": true
+      },
+      "pass": true
+    }
+  ],
+  "summary": {
+    "pass_count": 6,
+    "row_count": 6,
+    "step56_behavior_row_count": 8,
+    "step56_import_row_count": 9,
+    "step56_migration_row_count": 9,
+    "step56_regression_guard_pass": true,
+    "step56_shim_row_count": 9
+  }
+}

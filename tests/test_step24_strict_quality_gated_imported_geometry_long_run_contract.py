@@ -125,8 +125,8 @@ def test_step24_config_contract():
 
 
 def test_step24_default_quality_gate_remains_disabled():
-    geometry_config = read_text("src/geometry_config.py")
-    fsi_config = read_text("src/fsi_config.py")
+    geometry_config = read_text("src/mpm_lbm/sim/geometry/config.py")
+    fsi_config = read_text("src/mpm_lbm/sim/drivers/fsi_config.py")
     assert "quality_check_enabled: bool = False" in geometry_config
     assert "quality_check_strict: bool = False" in geometry_config
     assert "quality_check_enabled: bool = False" in fsi_config

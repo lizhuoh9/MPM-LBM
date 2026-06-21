@@ -249,8 +249,8 @@ def test_step27_step26_regression_guard_is_valid():
 
 
 def test_step27_default_modes_remain_unchanged():
-    geometry_config = read_text("src/geometry_config.py")
-    fsi_config = read_text("src/fsi_config.py")
+    geometry_config = read_text("src/mpm_lbm/sim/geometry/config.py")
+    fsi_config = read_text("src/mpm_lbm/sim/drivers/fsi_config.py")
     assert "quality_check_enabled: bool = False" in geometry_config
     assert "quality_check_strict: bool = False" in geometry_config
     assert "quality_check_enabled: bool = False" in fsi_config
@@ -260,7 +260,7 @@ def test_step27_default_modes_remain_unchanged():
     formula_files = [
         "src/coupling.py",
         "src/moving_boundary_coupling.py",
-        "src/link_area_coupling.py",
+        "src/mpm_lbm/sim/coupling/link_area.py",
         "src/lbm_fluid.py",
         "src/mpm_solid.py",
         "src/projection.py",

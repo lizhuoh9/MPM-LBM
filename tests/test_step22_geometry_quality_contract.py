@@ -87,7 +87,7 @@ def test_step22_required_artifacts_exist():
 
 
 def test_step22_geometry_config_defaults_and_exports():
-    geometry_config = read_text("src/geometry_config.py")
+    geometry_config = read_text("src/mpm_lbm/sim/geometry/config.py")
     init_py = read_text("src/__init__.py")
     fsi_driver = read_text("src/fsi_driver.py")
 

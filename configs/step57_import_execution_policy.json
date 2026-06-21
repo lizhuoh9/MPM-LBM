@@ -1,0 +1,22 @@
+{
+  "policy_id": "step57_import_execution_policy",
+  "object_identity_required": true,
+  "no_solver_run": true,
+  "no_output_writes": true,
+  "symbol_pairs": [
+    {"canonical_module": "src.mpm_lbm.sim.drivers.sim_config", "legacy_module": "src.sim_config", "symbol": "UnifiedSimConfig"},
+    {"canonical_module": "src.mpm_lbm.sim.drivers.fsi_config", "legacy_module": "src.fsi_config", "symbol": "FSIDriverConfig"},
+    {"canonical_module": "src.mpm_lbm.sim.io.run_utils", "legacy_module": "src.run_utils", "symbol": "assert_no_nan_inf_array"},
+    {"canonical_module": "src.mpm_lbm.diagnostics.fsi_diagnostics", "legacy_module": "src.diagnostics", "symbol": "FSIDiagnostics3D"},
+    {"canonical_module": "src.mpm_lbm.sim.coupling.link_area_accounting", "legacy_module": "src.link_area_accounting", "symbol": "LinkAreaMomentumAccounting3D"},
+    {"canonical_module": "src.mpm_lbm.sim.coupling.link_area", "legacy_module": "src.link_area_coupling", "symbol": "LinkAreaMovingBoundaryCoupler3D"},
+    {"canonical_module": "src.mpm_lbm.sim.coupling.momentum_accounting", "legacy_module": "src.momentum_accounting", "symbol": "MomentumAccounting3D"},
+    {"canonical_module": "src.mpm_lbm.sim.geometry.config", "legacy_module": "src.geometry_config", "symbol": "GeometryConfig"},
+    {"canonical_module": "src.mpm_lbm.sim.geometry.sampler", "legacy_module": "src.geometry", "symbol": "GeometrySampler3D"},
+    {"canonical_module": "src.mpm_lbm.sim.geometry.importers", "legacy_module": "src.geometry_import", "symbol": "ImportedGeometrySampler3D"},
+    {"canonical_module": "src.mpm_lbm.sim.geometry.quality", "legacy_module": "src.geometry_quality", "symbol": "GeometryQualityGate"},
+    {"canonical_module": "src.mpm_lbm.sim.geometry.quality", "legacy_module": "src.geometry_quality", "symbol": "analyze_geometry_config"},
+    {"canonical_module": "src.mpm_lbm.sim.geometry.mesh_io", "legacy_module": "src.mesh_io", "symbol": "load_obj"},
+    {"canonical_module": "src.mpm_lbm.sim.geometry.voxel_io", "legacy_module": "src.voxel_io", "symbol": "load_voxel_geometry"}
+  ]
+}

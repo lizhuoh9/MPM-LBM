@@ -254,8 +254,8 @@ def test_step25_no_solver_or_coupler_formula_changes_claimed():
     offenders = [claim for claim in FORBIDDEN_CLAIMS if claim in combined]
     assert offenders == []
 
-    geometry_config = read_text("src/geometry_config.py")
-    fsi_config = read_text("src/fsi_config.py")
+    geometry_config = read_text("src/mpm_lbm/sim/geometry/config.py")
+    fsi_config = read_text("src/mpm_lbm/sim/drivers/fsi_config.py")
     assert "quality_check_enabled: bool = False" in geometry_config
     assert "quality_check_strict: bool = False" in geometry_config
     assert "quality_check_enabled: bool = False" in fsi_config

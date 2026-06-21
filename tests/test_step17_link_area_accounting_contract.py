@@ -64,7 +64,7 @@ def assert_stable_bounds(row, prefix=""):
 def test_step17_required_artifacts_exist():
     required_paths = [
         "STEP17_LINK_AREA_ACCOUNTING_GOAL.md",
-        "src/link_area_accounting.py",
+        "src/mpm_lbm/sim/coupling/link_area_accounting.py",
         "configs/step17_link_area_wall_32.json",
         "configs/step17_link_area_box_48.json",
         "configs/step17_link_area_squid_proxy_48.json",
@@ -111,7 +111,7 @@ def test_step17_required_artifacts_exist():
 def test_step17_source_keywords_exist():
     source_paths = [
         "src/mpm_lbm/sim/lbm/fluid.py",
-        "src/link_area_accounting.py",
+        "src/mpm_lbm/sim/coupling/link_area_accounting.py",
         "src/__init__.py",
         "baseline_tests/run_step17_directional_link_sanity.py",
         "baseline_tests/run_step17_link_area_wall_couette.py",

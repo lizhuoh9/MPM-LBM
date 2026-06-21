@@ -107,9 +107,9 @@ def test_step19_required_artifacts_exist():
 
 
 def test_step19_source_defaults_and_boundaries_are_preserved():
-    fsi_config = read_text("src/fsi_config.py")
+    fsi_config = read_text("src/mpm_lbm/sim/drivers/fsi_config.py")
     fsi_driver = read_text("src/fsi_driver.py")
-    link_area = read_text("src/link_area_coupling.py")
+    link_area = read_text("src/mpm_lbm/sim/coupling/link_area.py")
 
     assert 'reaction_transfer_mode: str = "engineering"' in fsi_config
     assert "reaction_transfer_mode == \"link_area_experimental\"" in fsi_config

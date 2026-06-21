@@ -1,0 +1,17 @@
+canonical_path,legacy_path,migration_status,canonical_path_exists,legacy_path_exists,canonical_contains_real_implementation,canonical_uses_legacy_getattr,canonical_imports_legacy_root,legacy_is_shim,legacy_imports_canonical,forbidden_reverse_dependency,pass
+src/mpm_lbm/sim/drivers/sim_config.py,src/sim_config.py,migrated,True,True,True,False,False,True,True,False,True
+src/mpm_lbm/sim/drivers/fsi_config.py,src/fsi_config.py,migrated,True,True,True,False,False,True,True,False,True
+src/mpm_lbm/sim/io/run_utils.py,src/run_utils.py,migrated,True,True,True,False,False,True,True,False,True
+src/mpm_lbm/diagnostics/fsi_diagnostics.py,src/diagnostics.py,migrated,True,True,True,False,False,True,True,False,True
+src/mpm_lbm/sim/coupling/link_area_accounting.py,src/link_area_accounting.py,migrated,True,True,True,False,False,True,True,False,True
+src/mpm_lbm/sim/coupling/link_area.py,src/link_area_coupling.py,migrated,True,True,True,False,False,True,True,False,True
+src/mpm_lbm/sim/coupling/momentum_accounting.py,src/momentum_accounting.py,migrated,True,True,True,False,False,True,True,False,True
+src/mpm_lbm/sim/geometry/config.py,src/geometry_config.py,migrated,True,True,True,False,False,True,True,False,True
+src/mpm_lbm/sim/geometry/utils.py,src/geometry_utils.py,migrated,True,True,True,False,False,True,True,False,True
+src/mpm_lbm/sim/geometry/mesh_io.py,src/mesh_io.py,migrated,True,True,True,False,False,True,True,False,True
+src/mpm_lbm/sim/geometry/mesh_quality.py,src/mesh_quality.py,migrated,True,True,True,False,False,True,True,False,True
+src/mpm_lbm/sim/geometry/voxel_io.py,src/voxel_io.py,migrated,True,True,True,False,False,True,True,False,True
+src/mpm_lbm/sim/geometry/voxel_quality.py,src/voxel_quality.py,migrated,True,True,True,False,False,True,True,False,True
+src/mpm_lbm/sim/geometry/importers.py,src/geometry_import.py,migrated,True,True,True,False,False,True,True,False,True
+src/mpm_lbm/sim/geometry/sampler.py,src/geometry.py,migrated,True,True,True,False,False,True,True,False,True
+src/mpm_lbm/sim/geometry/quality.py,src/geometry_quality.py,migrated,True,True,True,False,False,True,True,False,True

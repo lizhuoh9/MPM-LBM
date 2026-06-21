@@ -84,15 +84,15 @@ def test_step20_required_artifacts_exist():
 
 
 def test_step20_source_contract_and_frozen_defaults():
-    geometry_config = read_text("src/geometry_config.py")
-    geometry = read_text("src/geometry.py")
-    fsi_config = read_text("src/fsi_config.py")
+    geometry_config = read_text("src/mpm_lbm/sim/geometry/config.py")
+    geometry = read_text("src/mpm_lbm/sim/geometry/sampler.py")
+    fsi_config = read_text("src/mpm_lbm/sim/drivers/fsi_config.py")
     coupling_sources = "\n".join(
         read_text(path)
         for path in [
             "src/coupling.py",
             "src/moving_boundary_coupling.py",
-            "src/link_area_coupling.py",
+            "src/mpm_lbm/sim/coupling/link_area.py",
         ]
     )
 

@@ -1,0 +1,11 @@
+metric,value
+calibration_export_issue_count,0
+export_count,38
+lazy_import_enabled,True
+migrated_target_mismatch_count,0
+missing_module_count,0
+missing_symbol_count,0
+pass_count,62
+row_count,62
+solver_object_constructed,False
+src_init_export_audit_pass,True

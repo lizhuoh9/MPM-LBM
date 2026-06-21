@@ -1,0 +1,13 @@
+metric,value
+canonical_legacy_getattr_count,0
+canonical_legacy_root_import_count,0
+canonical_missing_count,0
+canonical_real_implementation_count,16
+driver_support_migration_audit_pass,True
+forbidden_reverse_dependency_count,0
+legacy_missing_count,0
+legacy_shim_count,16
+pass_count,16
+physics_feature_expansion,False
+row_count,16
+solver_behavior_changed,False

@@ -1,0 +1,7 @@
+metric,value
+driver_support_behavior_preservation_audit_pass,True
+pass_count,10
+physics_feature_expansion,False
+row_count,10
+solver_behavior_changed,False
+solver_object_construction_required,False

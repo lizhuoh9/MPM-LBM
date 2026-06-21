@@ -16,7 +16,7 @@ def read_log(path):
 
 def test_step4_required_artifacts_exist():
     required_paths = [
-        "src/sim_config.py",
+        "src/mpm_lbm/sim/drivers/sim_config.py",
         "src/units.py",
         "baseline_tests/run_step4_units_consistency.py",
         "baseline_tests/run_step4_shared_domain.py",
@@ -40,7 +40,7 @@ def test_step4_required_artifacts_exist():
 
 def test_step4_source_contains_required_interfaces():
     init_source = (ROOT / "src/__init__.py").read_text(encoding="utf-8")
-    sim_source = (ROOT / "src/sim_config.py").read_text(encoding="utf-8")
+    sim_source = (ROOT / "src/mpm_lbm/sim/drivers/sim_config.py").read_text(encoding="utf-8")
     units_source = (ROOT / "src/mpm_lbm/sim/units/mapper.py").read_text(encoding="utf-8")
     solid_source = (ROOT / "src/mpm_lbm/sim/mpm/solid.py").read_text(encoding="utf-8")
     legacy_units_source = (ROOT / "src/units.py").read_text(encoding="utf-8")
