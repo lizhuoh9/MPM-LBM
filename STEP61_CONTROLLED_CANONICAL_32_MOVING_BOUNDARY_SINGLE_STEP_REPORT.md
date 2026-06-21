@@ -149,7 +149,7 @@ The Step 61 output guard reports:
 | `private_absolute_path_count` | 0 |
 | `external_edit_count` | 0 |
 | `real_geometry_candidates_edit_count` | 0 |
-| `step61_total_size_mb` | 0.11867237091064453 |
+| `step61_total_size_mb` | 0.46668243408203125 |
 
 The required driver run directory contains only:
 

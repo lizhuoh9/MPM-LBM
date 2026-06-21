@@ -1,0 +1,38 @@
+{
+  "policy_id": "step62_report_consistency_policy",
+  "tolerance": 1e-12,
+  "checks": [
+    {
+      "step": 61,
+      "section": "Output Guard",
+      "metric": "step61_total_size_mb",
+      "report_path": "STEP61_CONTROLLED_CANONICAL_32_MOVING_BOUNDARY_SINGLE_STEP_REPORT.md",
+      "artifact_path": "outputs/step61_output_guard/output_guard.json",
+      "artifact_key_path": "summary.step61_total_size_mb"
+    },
+    {
+      "step": 61,
+      "section": "Artifact Manifest",
+      "metric": "step61_total_size_mb",
+      "report_path": "STEP61_CONTROLLED_CANONICAL_32_MOVING_BOUNDARY_SINGLE_STEP_REPORT.md",
+      "artifact_path": "outputs/step61_artifact_manifest/artifact_summary.json",
+      "artifact_key_path": "step61_total_size_mb"
+    },
+    {
+      "step": 62,
+      "section": "Output Guard",
+      "metric": "step62_total_size_mb",
+      "report_path": "STEP62_CONTROLLED_CANONICAL_32_MOVING_BOUNDARY_3STEP_DURATION_REPORT.md",
+      "artifact_path": "outputs/step62_output_guard/output_guard.json",
+      "artifact_key_path": "summary.step62_total_size_mb"
+    },
+    {
+      "step": 62,
+      "section": "Artifact Manifest",
+      "metric": "step62_total_size_mb",
+      "report_path": "STEP62_CONTROLLED_CANONICAL_32_MOVING_BOUNDARY_3STEP_DURATION_REPORT.md",
+      "artifact_path": "outputs/step62_artifact_manifest/artifact_summary.json",
+      "artifact_key_path": "step62_total_size_mb"
+    }
+  ]
+}

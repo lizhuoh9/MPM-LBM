@@ -1,0 +1,7 @@
+{
+  "policy_id": "step62_runtime_budget_policy",
+  "runtime_warning_seconds": 3600.0,
+  "runtime_warning_is_hard_fail": false,
+  "max_runtime_seconds": 7200.0,
+  "if_runtime_warning_then_step63": "performance_timing_audit_or_single_dimension_only"
+}

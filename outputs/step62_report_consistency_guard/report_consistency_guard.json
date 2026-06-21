@@ -1,0 +1,68 @@
+{
+  "rows": [
+    {
+      "artifact_path": "outputs/step61_output_guard/output_guard.json",
+      "artifact_value": 0.46668243408203125,
+      "delta": 0.0,
+      "metric": "step61_total_size_mb",
+      "notes": "report metric matches artifact",
+      "pass": true,
+      "report_path": "STEP61_CONTROLLED_CANONICAL_32_MOVING_BOUNDARY_SINGLE_STEP_REPORT.md",
+      "report_value": 0.46668243408203125,
+      "section": "Output Guard",
+      "step": 61,
+      "tolerance": 1e-12
+    },
+    {
+      "artifact_path": "outputs/step61_artifact_manifest/artifact_summary.json",
+      "artifact_value": 0.5198221206665039,
+      "delta": 0.0,
+      "metric": "step61_total_size_mb",
+      "notes": "report metric matches artifact",
+      "pass": true,
+      "report_path": "STEP61_CONTROLLED_CANONICAL_32_MOVING_BOUNDARY_SINGLE_STEP_REPORT.md",
+      "report_value": 0.5198221206665039,
+      "section": "Artifact Manifest",
+      "step": 61,
+      "tolerance": 1e-12
+    },
+    {
+      "artifact_path": "outputs/step62_output_guard/output_guard.json",
+      "artifact_value": 0.4743785858154297,
+      "delta": 0.0,
+      "metric": "step62_total_size_mb",
+      "notes": "report metric matches artifact",
+      "pass": true,
+      "report_path": "STEP62_CONTROLLED_CANONICAL_32_MOVING_BOUNDARY_3STEP_DURATION_REPORT.md",
+      "report_value": 0.4743785858154297,
+      "section": "Output Guard",
+      "step": 62,
+      "tolerance": 1e-12
+    },
+    {
+      "artifact_path": "outputs/step62_artifact_manifest/artifact_summary.json",
+      "artifact_value": 0.5418987274169922,
+      "delta": 0.0,
+      "metric": "step62_total_size_mb",
+      "notes": "report metric matches artifact",
+      "pass": true,
+      "report_path": "STEP62_CONTROLLED_CANONICAL_32_MOVING_BOUNDARY_3STEP_DURATION_REPORT.md",
+      "report_value": 0.5418987274169922,
+      "section": "Artifact Manifest",
+      "step": 62,
+      "tolerance": 1e-12
+    }
+  ],
+  "summary": {
+    "fail_count": 0,
+    "pass_count": 4,
+    "report_consistency_guard_pass": true,
+    "row_count": 4,
+    "step61_pass_count": 2,
+    "step61_report_consistency_issue_fixed": true,
+    "step61_row_count": 2,
+    "step62_pass_count": 2,
+    "step62_report_consistency_checked": true,
+    "step62_row_count": 2
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "rows": [
+    {
+      "bb_link_count_max": 2272,
+      "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+      "completed_lbm_steps": 3,
+      "coupling_mode": "moving_boundary",
+      "diagnostics_row_count": 4,
+      "driver_run_called": true,
+      "elapsed_seconds": 238.40363110000908,
+      "has_inf": false,
+      "has_nan": false,
+      "lbm_max_v_max": 0.028745334595441818,
+      "legacy_driver_module_used_as_implementation": false,
+      "mpm_min_J_min": 0.9998476505279541,
+      "n_grid": 32,
+      "n_particles": 1024,
+      "pass": true,
+      "reaction_transfer_mode": "engineering",
+      "rho_max_max": 1.037545919418335,
+      "rho_min_min": 0.9631504416465759,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_3step",
+      "runtime_hard_limit_exceeded": false,
+      "runtime_warning": false,
+      "soft_rho_max_warning": false,
+      "soft_rho_min_warning": false,
+      "stable": true,
+      "total_mpm_substeps": 3
+    }
+  ],
+  "summary": {
+    "canonical_module_count": 1,
+    "driver_run_called_count": 1,
+    "duration_32_audit_pass": true,
+    "legacy_driver_module_used_count": 0,
+    "missing_required_rows": [],
+    "pass_count": 1,
+    "required_row_count": 1,
+    "row_count": 1,
+    "runtime_hard_limit_exceeded_count": 0,
+    "runtime_warning_count": 0,
+    "soft_rho_max_warning_count": 0,
+    "soft_rho_min_warning_count": 0,
+    "stable_count": 1
+  }
+}

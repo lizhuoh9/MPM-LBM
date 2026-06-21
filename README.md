@@ -65,6 +65,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 59 canonical FSIDriver real smoke simulation
 - Step 60 controlled canonical moving-boundary duration ramp
 - Step 61 controlled canonical 32^3 moving-boundary single-step probe
+- Step 62 controlled canonical 32^3 moving-boundary 3-step duration probe
 
 ## Not Implemented
 
@@ -772,6 +773,27 @@ Step 61 does not validate real squid behavior.
 Step 61 does not prove grid convergence.
 Step 61 does not claim deployment readiness.
 See docs/61_controlled_canonical_32_moving_boundary_single_step.md.
+
+## Step 62 Controlled Canonical 32 Moving-Boundary 3-Step Duration Boundary
+
+Step 62 is controlled canonical 32^3 real-driver 3-step duration probe work.
+Step 62 calls `FSIDriver3D(...).run()` through `src.mpm_lbm.sim.drivers.fsi_driver`.
+Step 62 runs one required 32^3, 1024-particle moving-boundary engineering row for three LBM steps.
+Step 62 repairs the Step 61 report output-guard size mismatch and adds a report consistency guard.
+Step 62 records runtime timing as a soft warning signal and a 7200-second hard-limit guard.
+Step 62 keeps runtime solver code unchanged.
+Step 62 keeps optional 32^3 penalty 3-step and 32^3 moving-boundary 5-step configs disabled by default.
+Step 62 keeps outputs lightweight and rejects VTR output, particle NPY output, large Step 62 files, private absolute paths, external solver edits, and real-geometry candidate edits.
+Step 62 does not activate runtime geometry.
+Step 62 does not activate moving-wall velocity.
+Step 62 does not add a 48^3 or 64^3 row.
+Step 62 does not add a required 5-step row.
+Step 62 does not add a required link-area row.
+Step 62 does not validate propulsion.
+Step 62 does not validate real squid behavior.
+Step 62 does not prove grid convergence.
+Step 62 does not claim deployment readiness.
+See docs/62_controlled_canonical_32_moving_boundary_3step_duration.md.
 
 ## Upstream LBM Note
 

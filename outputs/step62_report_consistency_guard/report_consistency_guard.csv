@@ -1,0 +1,5 @@
+step,report_path,artifact_path,section,metric,report_value,artifact_value,delta,tolerance,pass,notes
+61,STEP61_CONTROLLED_CANONICAL_32_MOVING_BOUNDARY_SINGLE_STEP_REPORT.md,outputs/step61_output_guard/output_guard.json,Output Guard,step61_total_size_mb,0.46668243408203125,0.46668243408203125,0.0,1e-12,True,report metric matches artifact
+61,STEP61_CONTROLLED_CANONICAL_32_MOVING_BOUNDARY_SINGLE_STEP_REPORT.md,outputs/step61_artifact_manifest/artifact_summary.json,Artifact Manifest,step61_total_size_mb,0.5198221206665039,0.5198221206665039,0.0,1e-12,True,report metric matches artifact
+62,STEP62_CONTROLLED_CANONICAL_32_MOVING_BOUNDARY_3STEP_DURATION_REPORT.md,outputs/step62_output_guard/output_guard.json,Output Guard,step62_total_size_mb,0.4743785858154297,0.4743785858154297,0.0,1e-12,True,report metric matches artifact
+62,STEP62_CONTROLLED_CANONICAL_32_MOVING_BOUNDARY_3STEP_DURATION_REPORT.md,outputs/step62_artifact_manifest/artifact_summary.json,Artifact Manifest,step62_total_size_mb,0.5418987274169922,0.5418987274169922,0.0,1e-12,True,report metric matches artifact

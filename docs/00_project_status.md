@@ -24,6 +24,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 59: canonical FSIDriver real smoke simulation
 - Step 60: controlled canonical moving-boundary duration ramp
 - Step 61: controlled canonical 32^3 moving-boundary single-step probe
+- Step 62: controlled canonical 32^3 moving-boundary 3-step duration probe
 
 ## Current Validated Modes
 
@@ -38,6 +39,8 @@ Step 59 additionally verifies that the canonical `FSIDriver3D` implementation ca
 Step 60 additionally verifies a short controlled canonical real-driver duration ramp at 16^3 with 512 particles: moving-boundary engineering rows at 3 and 5 LBM steps, plus a penalty row at 5 LBM steps. This remains a finite/bounded smoke extension, not a broader validation campaign.
 
 Step 61 additionally verifies a controlled canonical 32^3 real-driver single-step probe for the moving-boundary engineering mode with 1024 particles. This remains a finite/bounded feasibility smoke, not 32^3 validation or grid convergence.
+
+Step 62 additionally verifies a controlled canonical 32^3 real-driver 3-step duration probe for the moving-boundary engineering mode with 1024 particles, repairs the Step 61 report output-guard size mismatch, and adds a report consistency guard. This remains a finite/bounded duration feasibility smoke, not propulsion validation, real squid validation, grid convergence, or deployment readiness.
 
 ## What Exists
 

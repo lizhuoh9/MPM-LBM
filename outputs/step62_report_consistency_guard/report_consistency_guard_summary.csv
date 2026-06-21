@@ -1,0 +1,11 @@
+metric,value
+fail_count,0
+pass_count,4
+report_consistency_guard_pass,True
+row_count,4
+step61_pass_count,2
+step61_report_consistency_issue_fixed,True
+step61_row_count,2
+step62_pass_count,2
+step62_report_consistency_checked,True
+step62_row_count,2
