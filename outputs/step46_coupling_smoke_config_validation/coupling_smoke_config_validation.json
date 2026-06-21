@@ -1,0 +1,226 @@
+{
+  "rows": [
+    {
+      "check": "coupling_smoke_id_expected",
+      "notes": "Step 46 coupling smoke id must be stable",
+      "pass": true,
+      "value": "step46_runtime_geometry_wall_velocity_one_step"
+    },
+    {
+      "check": "runtime_projection_config_path_exists",
+      "notes": "Step 45 runtime projection config must exist",
+      "pass": true,
+      "value": "configs/step45_runtime_geometry_projection_integration.json"
+    },
+    {
+      "check": "diagnostic_geometry_update_config_path_exists",
+      "notes": "Step 44 diagnostic geometry config must exist",
+      "pass": true,
+      "value": "configs/step44_diagnostic_geometry_update.json"
+    },
+    {
+      "check": "wall_velocity_application_config_path_exists",
+      "notes": "Step 41 wall velocity application config must exist",
+      "pass": true,
+      "value": "configs/step41_wall_velocity_application_scale_0050_64.json"
+    },
+    {
+      "check": "boundary_motion_config_path_exists",
+      "notes": "Step 34 boundary motion config must exist",
+      "pass": true,
+      "value": "configs/step34_boundary_motion_interface_prescribed_kinematic.json"
+    },
+    {
+      "check": "geometry_config_path_exists",
+      "notes": "Step 30 geometry config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_geometry.json"
+    },
+    {
+      "check": "region_config_path_exists",
+      "notes": "Step 30 region config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_region_config.json"
+    },
+    {
+      "check": "phase_expected",
+      "notes": "Step 46 phase must be 0.35",
+      "pass": true,
+      "value": 0.35
+    },
+    {
+      "check": "n_grid_expected",
+      "notes": "Step 46 n_grid must be 32",
+      "pass": true,
+      "value": 32
+    },
+    {
+      "check": "n_lbm_steps_expected",
+      "notes": "Step 46 must use one LBM step",
+      "pass": true,
+      "value": 1
+    },
+    {
+      "check": "mpm_substeps_expected",
+      "notes": "Step 46 must use one MPM substep",
+      "pass": true,
+      "value": 1
+    },
+    {
+      "check": "coupling_mode_expected",
+      "notes": "Step 46 coupling mode must be moving_boundary",
+      "pass": true,
+      "value": "moving_boundary"
+    },
+    {
+      "check": "reaction_transfer_mode_expected",
+      "notes": "Step 46 transfer mode must be engineering",
+      "pass": true,
+      "value": "engineering"
+    },
+    {
+      "check": "enable_runtime_geometry_projection_true",
+      "notes": "umbrella config must enable runtime geometry projection for the matrix",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "enable_wall_velocity_application_true",
+      "notes": "umbrella config must enable wall velocity application for the matrix",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "diagnostic_only_true",
+      "notes": "Step 46 must remain diagnostic-only",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "scope_note_valid",
+      "notes": "scope note must state one-step opt-in wall-velocity scope",
+      "pass": true,
+      "value": "one-step opt-in runtime geometry plus wall velocity coupling smoke only"
+    },
+    {
+      "check": "persist_displaced_geometry_false",
+      "notes": "persist_displaced_geometry must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "persist_projected_state_false",
+      "notes": "persist_projected_state must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "persist_lbm_solid_vel_false",
+      "notes": "persist_lbm_solid_vel must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "write_displaced_particles_false",
+      "notes": "write_displaced_particles must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "write_dense_displacement_field_false",
+      "notes": "write_dense_displacement_field must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "write_vtk_false",
+      "notes": "write_vtk must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "write_particles_false",
+      "notes": "write_particles must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "update_default_driver_geometry_false",
+      "notes": "update_default_driver_geometry must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "update_default_lbm_state_false",
+      "notes": "update_default_lbm_state must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "update_default_mpm_state_false",
+      "notes": "update_default_mpm_state must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "update_default_projection_state_false",
+      "notes": "update_default_projection_state must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "update_dynamic_solid_persistently_false",
+      "notes": "update_dynamic_solid_persistently must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "recompute_production_boundary_links_false",
+      "notes": "recompute_production_boundary_links must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "modify_moving_bounceback_formula_false",
+      "notes": "modify_moving_bounceback_formula must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "all_mutation_flags_false",
+      "notes": "all mutation/write/formula flags must be false",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "all_mutation_flags_false": true,
+    "coupling_mode": "moving_boundary",
+    "coupling_smoke_id": "step46_runtime_geometry_wall_velocity_one_step",
+    "diagnostic_only": true,
+    "enable_runtime_geometry_projection": true,
+    "enable_wall_velocity_application": true,
+    "modify_moving_bounceback_formula": false,
+    "mpm_substeps_per_lbm_step": 1,
+    "n_grid": 32,
+    "n_lbm_steps": 1,
+    "pass_count": 32,
+    "persist_displaced_geometry": false,
+    "persist_lbm_solid_vel": false,
+    "persist_projected_state": false,
+    "phase": 0.35,
+    "reaction_transfer_mode": "engineering",
+    "recompute_production_boundary_links": false,
+    "row_count": 32,
+    "update_default_driver_geometry": false,
+    "update_default_lbm_state": false,
+    "update_default_mpm_state": false,
+    "update_default_projection_state": false,
+    "update_dynamic_solid_persistently": false,
+    "validation_pass": true,
+    "write_dense_displacement_field": false,
+    "write_displaced_particles": false,
+    "write_particles": false,
+    "write_vtk": false
+  }
+}

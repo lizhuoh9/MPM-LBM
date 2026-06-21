@@ -1,0 +1,6 @@
+comparison,left_row,right_row,projected_mass_delta,active_cell_delta,applied_velocity_delta,hydro_force_delta,bb_link_count_delta,comparison_pass
+geometry_only_minus_original_static,runtime_geometry_only_32_phase035_1step,original_static_32_1step,0.0,-205.0,0.0,0.00205,-1230.0,True
+wall_velocity_only_minus_original_static,wall_velocity_only_32_phase035_1step,original_static_32_1step,0.0,0.0,0.0001774519625640706,1.1498887174151774e-07,0.0,True
+combined_minus_original_static,runtime_geometry_plus_wall_velocity_32_phase035_1step,original_static_32_1step,0.0,-205.0,0.0001774519625640706,0.002050114988871742,-1230.0,True
+combined_minus_geometry_only,runtime_geometry_plus_wall_velocity_32_phase035_1step,runtime_geometry_only_32_phase035_1step,0.0,0.0,0.0001774519625640706,1.1498887174171343e-07,0.0,True
+combined_minus_wall_velocity_only,runtime_geometry_plus_wall_velocity_32_phase035_1step,wall_velocity_only_32_phase035_1step,0.0,-205.0,0.0,0.00205,-1230.0,True

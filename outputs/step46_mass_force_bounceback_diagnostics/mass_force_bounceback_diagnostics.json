@@ -1,0 +1,80 @@
+{
+  "rows": [
+    {
+      "bb_link_count": 3888,
+      "bb_max_correction": 0.0,
+      "diagnostics_pass": true,
+      "has_inf": false,
+      "has_nan": false,
+      "hydro_force_max_norm": 0.0,
+      "lbm_max_v": 0.0,
+      "max_applied_velocity_norm": 0.0,
+      "rho_max": 1.001,
+      "rho_min": 0.999,
+      "row_name": "original_static_32_1step",
+      "runtime_geometry_projection_enabled": false,
+      "wall_velocity_application_enabled": false,
+      "wall_velocity_cap_lbm": 0.01
+    },
+    {
+      "bb_link_count": 2658,
+      "bb_max_correction": 0.0,
+      "diagnostics_pass": true,
+      "has_inf": false,
+      "has_nan": false,
+      "hydro_force_max_norm": 0.00205,
+      "lbm_max_v": 0.0,
+      "max_applied_velocity_norm": 0.0,
+      "rho_max": 1.0010205,
+      "rho_min": 0.9989795,
+      "row_name": "runtime_geometry_only_32_phase035_1step",
+      "runtime_geometry_projection_enabled": true,
+      "wall_velocity_application_enabled": false,
+      "wall_velocity_cap_lbm": 0.01
+    },
+    {
+      "bb_link_count": 3888,
+      "bb_max_correction": 0.0001774519625640706,
+      "diagnostics_pass": true,
+      "has_inf": false,
+      "has_nan": false,
+      "hydro_force_max_norm": 1.1498887174151774e-07,
+      "lbm_max_v": 0.0001774519625640706,
+      "max_applied_velocity_norm": 0.0001774519625640706,
+      "rho_max": 1.0010177451962563,
+      "rho_min": 0.9989822548037436,
+      "row_name": "wall_velocity_only_32_phase035_1step",
+      "runtime_geometry_projection_enabled": false,
+      "wall_velocity_application_enabled": true,
+      "wall_velocity_cap_lbm": 0.01
+    },
+    {
+      "bb_link_count": 2658,
+      "bb_max_correction": 0.0001774519625640706,
+      "diagnostics_pass": true,
+      "has_inf": false,
+      "has_nan": false,
+      "hydro_force_max_norm": 0.002050114988871742,
+      "lbm_max_v": 0.0001774519625640706,
+      "max_applied_velocity_norm": 0.0001774519625640706,
+      "rho_max": 1.0010382451962565,
+      "rho_min": 0.9989617548037436,
+      "row_name": "runtime_geometry_plus_wall_velocity_32_phase035_1step",
+      "runtime_geometry_projection_enabled": true,
+      "wall_velocity_application_enabled": true,
+      "wall_velocity_cap_lbm": 0.01
+    }
+  ],
+  "summary": {
+    "bb_link_count_min": 2658,
+    "bb_max_correction_global": 0.0001774519625640706,
+    "diagnostics_pass": true,
+    "diagnostics_pass_count": 4,
+    "has_inf_count": 0,
+    "has_nan_count": 0,
+    "hydro_force_max_norm_global": 0.002050114988871742,
+    "rho_max_global": 1.0010382451962565,
+    "rho_min_global": 0.9989617548037436,
+    "row_count": 4
+  }
+}

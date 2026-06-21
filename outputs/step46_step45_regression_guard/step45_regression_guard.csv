@@ -1,0 +1,9 @@
+check,pass,value,notes
+step45_report_exists,True,STEP45_CONTROLLED_RUNTIME_GEOMETRY_PROJECTION_INTEGRATION_SMOKE_REPORT.md,Step 45 accepted report remains present
+step45_runtime_projection_row_count,True,10,Step 45 10-row runtime projection matrix remains available
+step45_runtime_projection_pass_count,True,10,Step 45 runtime projection rows remain passing
+step45_runtime_projection_state_guard_pass,True,True,Step 45 state guard remains green
+step45_artifact_large_file_count,True,0,Step 45 artifacts remain below large-file threshold
+step45_vtr_count,True,0,Step 45 still has no VTR artifacts
+step45_particle_npy_count,True,0,Step 45 still has no particle npy artifacts
+step45_geo_all_fluid_dat_count_added,True,0,Step 45 still has no geo_all_fluid dat additions

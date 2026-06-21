@@ -49,6 +49,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 43 controlled squid proxy geometry motion driver interface contract
 - Step 44 controlled squid proxy diagnostic geometry update smoke
 - Step 45 controlled runtime geometry projection integration smoke
+- Step 46 controlled runtime geometry plus wall velocity one-step coupling smoke
 
 ## Not Implemented
 
@@ -195,6 +196,22 @@ The default geometry_motion_mode remains static.
 The default geometry_motion_application_mode remains disabled.
 
 Step 45 integrates the accepted Step 44 runtime displaced copy into an isolated transient projection target for `32^3` and `48^3` diagnostics across the selected phases `0.0`, `0.2`, `0.35`, `0.5`, and `1.0`. It records original-vs-runtime comparison, projection phase closure, Step 44 projection alignment, ultra-short smoke descriptors, state guards, and artifact-budget checks without changing default solver behavior.
+
+## Step 46 Runtime Geometry Wall Velocity Coupling Smoke Boundary
+
+Step 46 is controlled runtime geometry plus wall velocity one-step coupling smoke.
+Step 46 is opt-in and ultra-short.
+Step 46 combines transient runtime geometry projection with solid_vel wall velocity application.
+Step 46 does not persist displaced geometry.
+Step 46 does not persist projected state.
+Step 46 does not run a full-cycle moving-geometry simulation.
+Step 46 does not change moving bounce-back formulas.
+The default geometry_motion_mode remains static.
+The default geometry_motion_application_mode remains disabled.
+The default boundary_motion_mode remains static.
+The default wall_velocity_application_mode remains disabled.
+
+Step 46 records a four-row `32^3`, phase-`0.35`, one-step matrix: original static, runtime-geometry only, wall-velocity only, and runtime-geometry plus wall-velocity. It reuses the accepted Step 45 transient projection path and the accepted opt-in wall-velocity path, records quality/comparison/mass-force-bounceback diagnostics, and proves through state guards and artifact checks that no persistent geometry, default solver state, dense-field, particle, VTR, `geo_all_fluid_*.dat`, or formula update is introduced.
 
 ## Step 25 Intake Boundary
 

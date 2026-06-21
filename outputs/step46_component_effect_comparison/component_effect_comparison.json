@@ -1,0 +1,67 @@
+{
+  "rows": [
+    {
+      "active_cell_delta": -205.0,
+      "applied_velocity_delta": 0.0,
+      "bb_link_count_delta": -1230.0,
+      "comparison": "geometry_only_minus_original_static",
+      "comparison_pass": true,
+      "hydro_force_delta": 0.00205,
+      "left_row": "runtime_geometry_only_32_phase035_1step",
+      "projected_mass_delta": 0.0,
+      "right_row": "original_static_32_1step"
+    },
+    {
+      "active_cell_delta": 0.0,
+      "applied_velocity_delta": 0.0001774519625640706,
+      "bb_link_count_delta": 0.0,
+      "comparison": "wall_velocity_only_minus_original_static",
+      "comparison_pass": true,
+      "hydro_force_delta": 1.1498887174151774e-07,
+      "left_row": "wall_velocity_only_32_phase035_1step",
+      "projected_mass_delta": 0.0,
+      "right_row": "original_static_32_1step"
+    },
+    {
+      "active_cell_delta": -205.0,
+      "applied_velocity_delta": 0.0001774519625640706,
+      "bb_link_count_delta": -1230.0,
+      "comparison": "combined_minus_original_static",
+      "comparison_pass": true,
+      "hydro_force_delta": 0.002050114988871742,
+      "left_row": "runtime_geometry_plus_wall_velocity_32_phase035_1step",
+      "projected_mass_delta": 0.0,
+      "right_row": "original_static_32_1step"
+    },
+    {
+      "active_cell_delta": 0.0,
+      "applied_velocity_delta": 0.0001774519625640706,
+      "bb_link_count_delta": 0.0,
+      "comparison": "combined_minus_geometry_only",
+      "comparison_pass": true,
+      "hydro_force_delta": 1.1498887174171343e-07,
+      "left_row": "runtime_geometry_plus_wall_velocity_32_phase035_1step",
+      "projected_mass_delta": 0.0,
+      "right_row": "runtime_geometry_only_32_phase035_1step"
+    },
+    {
+      "active_cell_delta": -205.0,
+      "applied_velocity_delta": 0.0,
+      "bb_link_count_delta": -1230.0,
+      "comparison": "combined_minus_wall_velocity_only",
+      "comparison_pass": true,
+      "hydro_force_delta": 0.00205,
+      "left_row": "runtime_geometry_plus_wall_velocity_32_phase035_1step",
+      "projected_mass_delta": 0.0,
+      "right_row": "wall_velocity_only_32_phase035_1step"
+    }
+  ],
+  "summary": {
+    "combined_has_geometry_and_wall_velocity": true,
+    "comparison_count": 5,
+    "comparison_pass": true,
+    "comparison_pass_count": 5,
+    "geometry_only_projection_delta_nonzero": true,
+    "wall_velocity_only_applied_velocity_nonzero": true
+  }
+}

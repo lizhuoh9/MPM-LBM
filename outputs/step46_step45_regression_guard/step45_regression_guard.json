@@ -1,0 +1,57 @@
+{
+  "rows": [
+    {
+      "check": "step45_report_exists",
+      "notes": "Step 45 accepted report remains present",
+      "pass": true,
+      "value": "STEP45_CONTROLLED_RUNTIME_GEOMETRY_PROJECTION_INTEGRATION_SMOKE_REPORT.md"
+    },
+    {
+      "check": "step45_runtime_projection_row_count",
+      "notes": "Step 45 10-row runtime projection matrix remains available",
+      "pass": true,
+      "value": 10
+    },
+    {
+      "check": "step45_runtime_projection_pass_count",
+      "notes": "Step 45 runtime projection rows remain passing",
+      "pass": true,
+      "value": 10
+    },
+    {
+      "check": "step45_runtime_projection_state_guard_pass",
+      "notes": "Step 45 state guard remains green",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "step45_artifact_large_file_count",
+      "notes": "Step 45 artifacts remain below large-file threshold",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step45_vtr_count",
+      "notes": "Step 45 still has no VTR artifacts",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step45_particle_npy_count",
+      "notes": "Step 45 still has no particle npy artifacts",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "check": "step45_geo_all_fluid_dat_count_added",
+      "notes": "Step 45 still has no geo_all_fluid dat additions",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "summary": {
+    "pass_count": 8,
+    "regression_pass": true,
+    "row_count": 8
+  }
+}
