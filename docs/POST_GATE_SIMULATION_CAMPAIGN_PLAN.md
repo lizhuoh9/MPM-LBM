@@ -133,3 +133,26 @@ planned_for_step80 = true
 Step79 does not authorize wall velocity, real geometry, squid proxy behavior,
 link-area transfer, larger grids, VTR output, particle NPY output, solver
 formula changes, tau migration, or physical-production claims.
+
+## Step80 Runtime Geometry Diagnostic-Only Smoke
+
+Step80 executes exactly the row planned by Step79:
+
+```text
+campaign_id = step80_runtime_geometry_diagnostic_only_canonical_driver_smoke
+row_id = canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+geometry_type = box
+geometry_motion_mode = prescribed_kinematic
+geometry_motion_application_mode = diagnostic_only
+executed_in_step80 = true
+```
+
+Step80 is not a wall-velocity, real-geometry, squid-proxy, link-area,
+larger-grid, VTR, particle-output, physical-validation, or production-readiness
+campaign.

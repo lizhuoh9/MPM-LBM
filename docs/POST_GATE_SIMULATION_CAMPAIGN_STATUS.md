@@ -86,3 +86,26 @@ Step79 does not run `FSIDriver3D`, does not execute simulation, does not mutate
 geometry, does not enable wall velocity, real geometry, squid proxy behavior,
 link-area transfer, 48^3, 64^3, VTR output, or particle NPY output, and does
 not claim physical validation or production readiness.
+
+## Step80 Executed Row
+
+```text
+campaign_id = step80_runtime_geometry_diagnostic_only_canonical_driver_smoke
+row_id = canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+geometry_type = box
+geometry_motion_application_mode = diagnostic_only
+executed_in_step80 = true
+```
+
+Step80 enables only runtime geometry diagnostic-only interface reporting and
+writes `geometry_motion_interface_report.json`. It does not mutate geometry,
+displace MPM particles, update LBM `solid_phi`, update LBM `solid_vel`, update
+`dynamic_solid`, recompute boundary links, enable wall velocity, enable real
+geometry, enable squid proxy behavior, use link-area transfer, write VTR, write
+particle NPY, or claim physical validation or production readiness.

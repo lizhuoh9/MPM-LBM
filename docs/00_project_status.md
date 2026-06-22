@@ -35,6 +35,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 77: minimal post-gate canonical driver 3-step rebaseline
 - Step 78: minimal post-gate canonical driver 5-step rebaseline
 - Step 79: runtime geometry diagnostic-only activation plan and guard
+- Step 80: runtime geometry diagnostic-only canonical driver 3-step smoke
 
 ## Current Validated Modes
 
@@ -120,6 +121,14 @@ change solver formulas, enable wall velocity, enable real geometry, enable
 squid proxy behavior, enable link-area transfer, add larger grids, or write VTR
 or particle NPY output. The only Step79 claim is that runtime geometry
 diagnostic-only single-feature activation is planned and guarded for Step80.
+
+Step 80 runs that single planned runtime geometry diagnostic-only canonical
+driver row for three LBM steps at 32^3 with 1024 particles. The row writes
+`geometry_motion_interface_report.json`, confirms diagnostic-only no-op
+semantics with zero mutation flags, and keeps wall velocity, real geometry,
+squid proxy behavior, link-area transfer, larger grids, VTR output, and particle
+NPY output disabled. Step80 does not claim moving-geometry physics, real squid
+validation, physical validation, grid convergence, or production readiness.
 
 ## What Exists
 

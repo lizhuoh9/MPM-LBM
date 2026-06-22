@@ -78,6 +78,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 77 minimal post-gate canonical driver 3-step rebaseline, with one 32^3 moving-boundary engineering three-step `FSIDriver3D.run()` row, activation guards, output guards, and Step76 regression guards while advanced activation remains closed
 - Step 78 minimal post-gate canonical driver 5-step rebaseline, with one 32^3 moving-boundary engineering five-step `FSIDriver3D.run()` row, activation guards, output guards, and Step77 regression guards while advanced activation remains closed
 - Step 79 runtime geometry diagnostic-only activation plan and guard, with Step80 single-feature smoke planning, Step78 regression guards, output guards, and artifact guards while no simulation is run and advanced activation remains closed
+- Step 80 runtime geometry diagnostic-only canonical driver 3-step smoke, with one 32^3 moving-boundary engineering box row, geometry-motion interface reporting, zero mutation flags, output guards, and Step79 regression guards
 
 ## Not Implemented
 
@@ -912,6 +913,30 @@ After Step 79, the only planned Step80 row is
 32^3 / 1024-particle / 3-step / moving_boundary / engineering / box row with
 `geometry_motion_application_mode = diagnostic_only`.
 See docs/79_runtime_geometry_diagnostic_only_activation_plan_and_guard.md.
+
+## Step 80 Runtime Geometry Diagnostic-Only Canonical Driver Smoke Boundary
+
+Step 80 runs exactly one required canonical driver row:
+`canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke`.
+The row is 32^3, 1024 particles, three LBM steps, one MPM substep per LBM step,
+moving_boundary, engineering transfer, and box geometry.
+Step 80 enables only runtime geometry diagnostic-only interface reporting and
+writes `geometry_motion_interface_report.json`.
+Step 80 does not mutate geometry.
+Step 80 does not displace MPM particles.
+Step 80 does not update LBM `solid_phi`.
+Step 80 does not update LBM `solid_vel`.
+Step 80 does not update `dynamic_solid`.
+Step 80 does not recompute boundary links.
+Step 80 does not change moving bounce-back formulas.
+Step 80 does not enable wall velocity.
+Step 80 does not enable real geometry.
+Step 80 does not enable squid proxy behavior.
+Step 80 does not use link-area transfer.
+Step 80 does not write VTR or particle NPY output.
+Step 80 does not claim physical validation, real squid validation, moving
+geometry validation, grid convergence, or production readiness.
+See docs/80_runtime_geometry_diagnostic_only_canonical_driver_smoke.md.
 
 ## Upstream LBM Note
 

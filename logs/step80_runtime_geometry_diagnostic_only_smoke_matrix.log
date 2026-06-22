@@ -1,0 +1,6 @@
+[OK] Step80 runtime geometry diagnostic-only smoke matrix finished
+row_count=1
+stable_count=1
+total_elapsed_seconds=263.8073267000145
+slowest_row_name=canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke
+slowest_elapsed_seconds=263.8073267000145

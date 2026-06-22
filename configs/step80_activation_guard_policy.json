@@ -1,0 +1,23 @@
+{
+  "activation_features_must_be_false": [
+    "wall_velocity_enabled",
+    "combined_runtime_geometry_wall_velocity_enabled",
+    "real_geometry_enabled",
+    "squid_proxy_enabled",
+    "link_area_enabled",
+    "grid_48_enabled",
+    "grid_64_enabled",
+    "write_vtk",
+    "write_particles"
+  ],
+  "allowed_required_row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke",
+  "expected_activation_feature_count": 1,
+  "expected_geometry_motion_application_mode": "diagnostic_only",
+  "expected_geometry_motion_mode": "prescribed_kinematic",
+  "expected_runtime_geometry_enabled": true,
+  "expected_step79_planned_step80_activation_feature_count": 1,
+  "matrix_artifact_path": "outputs/step80_runtime_geometry_diagnostic_only_smoke_matrix/runtime_geometry_diagnostic_only_smoke_matrix.json",
+  "policy_id": "step80_activation_guard_policy",
+  "step": 80,
+  "step79_activation_guard_artifact_path": "outputs/step79_runtime_geometry_diagnostic_only_activation_guard/runtime_geometry_diagnostic_only_activation_guard.json"
+}

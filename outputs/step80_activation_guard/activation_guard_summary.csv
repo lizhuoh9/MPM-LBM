@@ -1,0 +1,9 @@
+metric,value
+activation_feature_count,1
+pass_count,35
+planned_step80_activation_feature_count,1
+row_count,35
+runtime_geometry_enabled_count,1
+step80_activation_guard_pass,True
+step80_runtime_geometry_diagnostic_only_activation_guard_pass,True
+wall_velocity_enabled_count,0

@@ -1,0 +1,7 @@
+metric,value
+finite_max_grid_reaction_norm_count,1
+geometry_motion_interface_report_pass_count,1
+pass_count,28
+row_count,28
+source_matrix_row_count,1
+step80_runtime_geometry_diagnostic_only_quality_pass,True

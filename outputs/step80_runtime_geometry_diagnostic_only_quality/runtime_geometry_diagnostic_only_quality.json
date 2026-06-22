@@ -1,0 +1,236 @@
+{
+  "rows": [
+    {
+      "actual": 0.9631504416465759,
+      "check": "rho_min_min",
+      "expected": 0.9,
+      "operator": ">",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": 1.037545919418335,
+      "check": "rho_max_max",
+      "expected": 1.1,
+      "operator": "<",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": 0.028745334595441818,
+      "check": "lbm_max_v_max",
+      "expected": 0.5,
+      "operator": "<",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": 0.9998476505279541,
+      "check": "mpm_min_J_min",
+      "expected": 0.0,
+      "operator": ">",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": 1.5669373273849487,
+      "check": "mpm_max_speed_max",
+      "expected": 10.0,
+      "operator": "<",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": 0.02699997089803219,
+      "check": "projected_mass_final",
+      "expected": 0.0,
+      "operator": ">",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": 1320,
+      "check": "active_cell_count_final",
+      "expected": 1,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": 2272,
+      "check": "bb_link_count_max",
+      "expected": 0,
+      "operator": ">",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": 0.0068721589632332325,
+      "check": "bb_max_correction_max",
+      "expected": 0.0,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": 892,
+      "check": "active_reaction_particle_count_final",
+      "expected": 0,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "has_nan",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "has_inf",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "stable",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "diagnostics_csv_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "diagnostics_npz_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "driver_config_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": "geo_all_fluid_32.dat",
+      "check": "geo_path_name",
+      "expected": "geo_all_fluid_32.dat",
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "runtime_hard_fail",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": "Step79",
+      "check": "previous_step",
+      "expected": "Step79",
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "runtime_geometry_enabled",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "geometry_motion_interface_report_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "geometry_motion_interface_report_pass",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "no_op_pass",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "config_validation_pass",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "diagnostic_only",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": 0,
+      "check": "mutation_flag_enabled_count",
+      "expected": 0,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": 3,
+      "check": "completed_lbm_steps",
+      "expected": 3,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": 4.051990254083648e-05,
+      "check": "max_grid_reaction_norm_max_finite",
+      "expected": true,
+      "operator": "is_finite",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    }
+  ],
+  "summary": {
+    "finite_max_grid_reaction_norm_count": 1,
+    "geometry_motion_interface_report_pass_count": 1,
+    "pass_count": 28,
+    "row_count": 28,
+    "source_matrix_row_count": 1,
+    "step80_runtime_geometry_diagnostic_only_quality_pass": true
+  }
+}

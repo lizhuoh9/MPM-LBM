@@ -1,0 +1,18 @@
+{
+  "allowed_next_step": "Step80",
+  "allowed_next_step_scope": "runtime geometry diagnostic-only canonical driver 3-step smoke only",
+  "campaign_id": "step80_runtime_geometry_diagnostic_only_canonical_driver_smoke",
+  "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+  "driver_run_required": true,
+  "driver_run_root": "outputs/step80_driver_runs",
+  "gate_source_step": "Step79",
+  "physics_feature_expansion": "diagnostic_only_only",
+  "post_gate_simulation_allowed": true,
+  "previous_step": "Step79",
+  "required_smoke_configs": [
+    "configs/step80_canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke.json"
+  ],
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false,
+  "step": 80
+}

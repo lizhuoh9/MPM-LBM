@@ -196,3 +196,24 @@ Step79 authorizes only the future Step80 row
 velocity, real geometry, squid proxy behavior, link-area transfer, 48^3, 64^3,
 VTR output, particle NPY output, solver formula changes, tau migration, and
 physical-production claims remain closed.
+
+Step80 executes the authorized runtime geometry diagnostic-only row:
+
+```text
+step80_runtime_geometry_diagnostic_only_smoke_matrix_pass = true
+activation_feature_count = 1
+runtime_geometry_enabled_count = 1
+geometry_motion_interface_report_pass_count = 1
+wall_velocity_enabled_count = 0
+combined_runtime_geometry_wall_velocity_enabled_count = 0
+real_geometry_enabled_count = 0
+squid_proxy_enabled_count = 0
+link_area_enabled_count = 0
+```
+
+Step80 opens only the diagnostic-only runtime geometry interface path. Geometry
+mutation, MPM particle displacement, LBM `solid_phi` updates, LBM `solid_vel`
+updates, `dynamic_solid` updates, boundary-link recomputation, wall velocity,
+real geometry, squid proxy behavior, link-area transfer, larger grids, VTR
+output, particle NPY output, solver formula changes, tau migration, and
+physical-production claims remain closed after Step80.

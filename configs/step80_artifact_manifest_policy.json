@@ -1,0 +1,19 @@
+{
+  "large_file_threshold_bytes": 5242880,
+  "max_step80_file_count": 70,
+  "max_step80_total_size_mb": 20.0,
+  "policy_id": "step80_artifact_manifest_policy",
+  "protected_prefixes": [
+    "data/real_geometry_candidates/",
+    "external/taichi_LBM3D/"
+  ],
+  "raw_geometry_extensions": [
+    ".stl",
+    ".obj",
+    ".ply",
+    ".vtk",
+    ".vtu"
+  ],
+  "required_driver_run_dir": "outputs/step80_driver_runs/canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke",
+  "step": 80
+}

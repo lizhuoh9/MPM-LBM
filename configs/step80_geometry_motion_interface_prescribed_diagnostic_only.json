@@ -1,0 +1,22 @@
+{
+  "application_mode": "diagnostic_only",
+  "apply_to_driver": false,
+  "apply_to_lbm_solid_phi": false,
+  "apply_to_lbm_solid_vel": false,
+  "apply_to_mpm_particles": false,
+  "apply_to_projection": false,
+  "deterministic": true,
+  "diagnostic_only": true,
+  "displacement_artifact_path": "outputs/step42_geometry_displacement/geometry_displacement.json",
+  "displacement_config_path": "configs/step42_squid_proxy_geometry_displacement.json",
+  "geometry_config_path": "configs/step30_squid_proxy_geometry.json",
+  "geometry_motion_id": "step43_geometry_motion_prescribed_diagnostic_only",
+  "geometry_motion_mode": "prescribed_kinematic",
+  "motion_mapping_config_path": "configs/step33_squid_proxy_motion_mapping.json",
+  "mutate_geometry_state": false,
+  "recompute_boundary_links": false,
+  "region_config_path": "configs/step30_squid_proxy_region_config.json",
+  "schedule_config_path": "configs/step32_squid_proxy_kinematics_schedule.json",
+  "scope_note": "Step 43 geometry motion driver interface only; no geometry mutation",
+  "update_dynamic_solid": false
+}

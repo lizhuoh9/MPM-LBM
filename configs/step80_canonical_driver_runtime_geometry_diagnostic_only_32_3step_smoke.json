@@ -1,0 +1,22 @@
+{
+  "boundary_motion_mode": "static",
+  "coupling_mode": "moving_boundary",
+  "geometry_motion_application_config_path": "configs/step80_geometry_motion_interface_prescribed_diagnostic_only.json",
+  "geometry_motion_application_mode": "diagnostic_only",
+  "geometry_motion_application_report_enabled": true,
+  "geometry_motion_config_path": "configs/step80_geometry_motion_interface_prescribed_diagnostic_only.json",
+  "geometry_motion_mode": "prescribed_kinematic",
+  "geometry_motion_report_enabled": true,
+  "geometry_type": "box",
+  "mpm_substeps_per_lbm_step": 1,
+  "n_grid": 32,
+  "n_lbm_steps": 3,
+  "n_particles": 1024,
+  "output_interval": 1,
+  "quality_check_enabled": false,
+  "quality_check_strict": false,
+  "reaction_transfer_mode": "engineering",
+  "wall_velocity_application_mode": "disabled",
+  "write_particles": false,
+  "write_vtk": false
+}

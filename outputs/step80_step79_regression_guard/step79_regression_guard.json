@@ -1,0 +1,91 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "artifact_path": "outputs/step79_runtime_geometry_diagnostic_only_activation_plan/runtime_geometry_diagnostic_only_activation_plan.json",
+      "check": "step79_activation_plan_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step79_runtime_geometry_diagnostic_only_activation_plan_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step79_runtime_geometry_diagnostic_only_activation_guard/runtime_geometry_diagnostic_only_activation_guard.json",
+      "check": "step79_activation_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step79_runtime_geometry_diagnostic_only_activation_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step79_step78_regression_guard/step78_regression_guard.json",
+      "check": "step79_step78_regression_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step79_step78_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step79_output_guard/output_guard.json",
+      "check": "step79_output_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step79_artifact_manifest/artifact_summary.json",
+      "check": "step79_artifact_budget_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "artifact_budget_pass"
+    },
+    {
+      "actual": 0,
+      "artifact_path": "outputs/step79_runtime_geometry_diagnostic_only_activation_plan/runtime_geometry_diagnostic_only_activation_plan.json",
+      "check": "step79_activation_feature_count",
+      "expected": 0,
+      "pass": true,
+      "summary_key": "step79_activation_feature_count"
+    },
+    {
+      "actual": 1,
+      "artifact_path": "outputs/step79_runtime_geometry_diagnostic_only_activation_plan/runtime_geometry_diagnostic_only_activation_plan.json",
+      "check": "step79_planned_step80_activation_feature_count",
+      "expected": 1,
+      "pass": true,
+      "summary_key": "planned_step80_activation_feature_count"
+    },
+    {
+      "actual": 0,
+      "artifact_path": "outputs/step79_artifact_manifest/artifact_summary.json",
+      "check": "step79_driver_run_dir_count",
+      "expected": 0,
+      "pass": true,
+      "summary_key": "step79_driver_run_dir_count"
+    },
+    {
+      "actual": 0,
+      "artifact_path": "outputs/step79_artifact_manifest/artifact_summary.json",
+      "check": "step79_vtr_count",
+      "expected": 0,
+      "pass": true,
+      "summary_key": "step79_vtr_count"
+    },
+    {
+      "actual": 0,
+      "artifact_path": "outputs/step79_artifact_manifest/artifact_summary.json",
+      "check": "step79_particle_npy_count",
+      "expected": 0,
+      "pass": true,
+      "summary_key": "step79_particle_npy_count"
+    }
+  ],
+  "summary": {
+    "artifact_check_count": 10,
+    "artifact_pass_count": 10,
+    "pass_count": 10,
+    "row_count": 10,
+    "step80_step79_regression_guard_pass": true
+  }
+}
