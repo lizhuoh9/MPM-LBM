@@ -1,0 +1,143 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "application_config_validation_pass",
+      "expected": true,
+      "notes": "Committed Step36 application config validates",
+      "pass": true
+    },
+    {
+      "actual": "solid_vel_experimental",
+      "check": "application_mode",
+      "expected": "solid_vel_experimental",
+      "notes": "Wall velocity remains explicit opt-in mode",
+      "pass": true
+    },
+    {
+      "actual": "solid_vel",
+      "check": "target_lbm_field",
+      "expected": "solid_vel",
+      "notes": "Only lbm.solid_vel is targeted",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "config_true_apply_to_lbm_solid_vel",
+      "expected": true,
+      "notes": "Required opt-in/report flag remains true",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "config_true_diagnostic_report_enabled",
+      "expected": true,
+      "notes": "Required opt-in/report flag remains true",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_false_apply_to_lbm_populations",
+      "expected": false,
+      "notes": "Unsafe application flag remains false",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_false_apply_to_mpm",
+      "expected": false,
+      "notes": "Unsafe application flag remains false",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_false_apply_to_projector",
+      "expected": false,
+      "notes": "Unsafe application flag remains false",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_false_modify_bounceback_formula",
+      "expected": false,
+      "notes": "Unsafe application flag remains false",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_false_jet_model_enabled",
+      "expected": false,
+      "notes": "Unsafe application flag remains false",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_false_actuation_claim_enabled",
+      "expected": false,
+      "notes": "Unsafe application flag remains false",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "source_contains_apply_wall_velocity_to_lbm_solid_vel",
+      "expected": true,
+      "notes": "Application source retains safety/report term",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "source_contains_lbm.solid_vel.from_numpy",
+      "expected": true,
+      "notes": "Application source retains safety/report term",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "source_contains_\"lbm_population_update_count\": 0",
+      "expected": true,
+      "notes": "Application source retains safety/report term",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "source_contains_\"apply_to_lbm_populations\"",
+      "expected": true,
+      "notes": "Application source retains safety/report term",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "source_contains_\"modify_bounceback_formula\"",
+      "expected": true,
+      "notes": "Application source retains safety/report term",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "source_contains_\"apply_to_mpm\"",
+      "expected": true,
+      "notes": "Application source retains safety/report term",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "source_contains_\"apply_to_projector\"",
+      "expected": true,
+      "notes": "Application source retains safety/report term",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "actuation_claim_allowed": false,
+    "apply_to_lbm_solid_vel": true,
+    "bounceback_formula_modification_allowed": false,
+    "diagnostic_report_enabled": true,
+    "jet_model_allowed": false,
+    "lbm_population_update_allowed": false,
+    "mpm_update_allowed": false,
+    "pass_count": 18,
+    "projector_update_allowed": false,
+    "row_count": 18,
+    "wall_velocity_application_safety_audit_pass": true
+  }
+}

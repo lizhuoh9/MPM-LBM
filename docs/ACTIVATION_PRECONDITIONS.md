@@ -60,3 +60,18 @@ The Step70 activation policy remains closed. Step72 only records that the
 runtime geometry API, config schema, driver gates, state guards, output policy,
 no-simulation guard, and Step71 regression guard are ready for a later activation
 decision.
+
+Step73 adds wall velocity activation readiness evidence without opening any gate:
+
+```text
+wall_velocity_readiness_audit_pass = true
+readiness_claim = wall_velocity_audit_ready_for_later_activation_decision_only
+activation_allowed_after_step73 = false
+required_gate_count = 10
+closed_gate_count = 10
+activation_allowed_count = 0
+```
+
+Wall velocity remains opt-in and non-activated. LBM population updates, MPM
+state updates, projector updates, moving bounce-back formula modification, jet
+claims, and actuation claims remain forbidden.

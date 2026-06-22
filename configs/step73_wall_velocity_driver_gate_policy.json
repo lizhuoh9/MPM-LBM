@@ -1,0 +1,49 @@
+{
+  "policy_id": "step73_wall_velocity_driver_gate_policy",
+  "step": 73,
+  "required_defaults": {
+    "wall_velocity_application_mode": "disabled",
+    "wall_velocity_application_config_path": null,
+    "wall_velocity_application_report_enabled": false,
+    "boundary_motion_mode": "static",
+    "boundary_motion_config_path": null,
+    "boundary_motion_report_enabled": false,
+    "write_vtk": false,
+    "write_particles": false
+  },
+  "valid_boundary_motion_config_path": "configs/step34_boundary_motion_interface_prescribed_kinematic.json",
+  "valid_wall_velocity_application_config_path": "configs/step36_wall_velocity_application_solid_vel_experimental.json",
+  "invalid_combinations": [
+    {
+      "case": "disabled_with_application_config_path",
+      "kwargs": {
+        "wall_velocity_application_mode": "disabled",
+        "wall_velocity_application_config_path": "configs/step36_wall_velocity_application_solid_vel_experimental.json"
+      }
+    },
+    {
+      "case": "solid_vel_with_static_boundary_motion",
+      "kwargs": {
+        "wall_velocity_application_mode": "solid_vel_experimental",
+        "wall_velocity_application_config_path": "configs/step36_wall_velocity_application_solid_vel_experimental.json"
+      }
+    },
+    {
+      "case": "solid_vel_missing_application_config_path",
+      "kwargs": {
+        "boundary_motion_mode": "prescribed_kinematic",
+        "boundary_motion_config_path": "configs/step34_boundary_motion_interface_prescribed_kinematic.json",
+        "wall_velocity_application_mode": "solid_vel_experimental"
+      }
+    },
+    {
+      "case": "solid_vel_nonexistent_application_config_path",
+      "kwargs": {
+        "boundary_motion_mode": "prescribed_kinematic",
+        "boundary_motion_config_path": "configs/step34_boundary_motion_interface_prescribed_kinematic.json",
+        "wall_velocity_application_mode": "solid_vel_experimental",
+        "wall_velocity_application_config_path": "configs/does_not_exist_wall_velocity_application.json"
+      }
+    }
+  ]
+}

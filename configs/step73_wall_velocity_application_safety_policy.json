@@ -1,0 +1,27 @@
+{
+  "policy_id": "step73_wall_velocity_application_safety_policy",
+  "step": 73,
+  "wall_velocity_application_config_path": "configs/step36_wall_velocity_application_solid_vel_experimental.json",
+  "wall_velocity_application_source_path": "src/mpm_lbm/sim/wall_velocity/application.py",
+  "required_true_config_fields": [
+    "apply_to_lbm_solid_vel",
+    "diagnostic_report_enabled"
+  ],
+  "required_false_config_fields": [
+    "apply_to_lbm_populations",
+    "apply_to_mpm",
+    "apply_to_projector",
+    "modify_bounceback_formula",
+    "jet_model_enabled",
+    "actuation_claim_enabled"
+  ],
+  "required_source_terms": [
+    "apply_wall_velocity_to_lbm_solid_vel",
+    "lbm.solid_vel.from_numpy",
+    "\"lbm_population_update_count\": 0",
+    "\"apply_to_lbm_populations\"",
+    "\"modify_bounceback_formula\"",
+    "\"apply_to_mpm\"",
+    "\"apply_to_projector\""
+  ]
+}

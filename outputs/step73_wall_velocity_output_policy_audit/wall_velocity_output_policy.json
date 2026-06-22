@@ -1,0 +1,155 @@
+{
+  "rows": [
+    {
+      "actual": false,
+      "check": "step70_default_write_vtk_allowed",
+      "controlled_true_count": 0,
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": false,
+      "check": "step70_default_write_particles_allowed",
+      "controlled_true_count": 0,
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": false,
+      "check": "step71_fsidriver_default_write_vtk",
+      "controlled_true_count": 0,
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": false,
+      "check": "step71_fsidriver_default_write_particles",
+      "controlled_true_count": 0,
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": false,
+      "check": "current_fsidriver_default_write_vtk",
+      "controlled_true_count": 0,
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": false,
+      "check": "current_fsidriver_default_write_particles",
+      "controlled_true_count": 0,
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step35_squid_proxy_wall_velocity_field.json"
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step36_wall_velocity_application_solid_vel_experimental.json"
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step73_wall_velocity_api_policy.json"
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step73_wall_velocity_config_schema_policy.json"
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step73_wall_velocity_driver_gate_policy.json"
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step73_wall_velocity_application_safety_policy.json"
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step73_wall_velocity_output_policy.json"
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step73_full_activation_gate_coverage_policy.json"
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step73_wall_velocity_readiness_policy.json"
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step73_no_simulation_policy.json"
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step73_step72_regression_policy.json"
+    }
+  ],
+  "summary": {
+    "current_fsidriver_default_write_particles": false,
+    "current_fsidriver_default_write_vtk": false,
+    "forbidden_output_directory_count": 0,
+    "json_controlled_true_count": 0,
+    "pass_count": 17,
+    "private_absolute_path_count": 0,
+    "protected_step73_file_count": 0,
+    "row_count": 17,
+    "step73_dense_wall_velocity_count": 0,
+    "step73_particle_npy_count": 0,
+    "step73_sparse_wall_velocity_count": 0,
+    "step73_vtr_count": 0,
+    "wall_velocity_output_policy_audit_pass": true
+  }
+}

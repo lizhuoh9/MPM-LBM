@@ -1,0 +1,97 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "step72_runtime_geometry_readiness",
+      "expected": true,
+      "pass": true,
+      "summary_key": "runtime_geometry_readiness_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step72_runtime_geometry_api",
+      "expected": true,
+      "pass": true,
+      "summary_key": "runtime_geometry_api_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step72_runtime_geometry_config_schema",
+      "expected": true,
+      "pass": true,
+      "summary_key": "runtime_geometry_config_schema_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step72_runtime_geometry_driver_gate",
+      "expected": true,
+      "pass": true,
+      "summary_key": "runtime_geometry_driver_gate_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step72_runtime_geometry_state_guard",
+      "expected": true,
+      "pass": true,
+      "summary_key": "runtime_geometry_state_guard_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step72_runtime_geometry_output_policy",
+      "expected": true,
+      "pass": true,
+      "summary_key": "runtime_geometry_output_policy_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step72_no_simulation",
+      "expected": true,
+      "pass": true,
+      "summary_key": "no_simulation_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step72_step71_regression_guard",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step72_step71_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "check": "step72_artifact_manifest",
+      "expected": true,
+      "pass": true,
+      "summary_key": "artifact_budget_pass"
+    },
+    {
+      "actual": false,
+      "check": "runtime_geometry_activation_allowed_still_closed",
+      "expected": false,
+      "pass": true,
+      "summary_key": "runtime_geometry_activation_allowed"
+    },
+    {
+      "actual": false,
+      "check": "wall_velocity_activation_allowed_still_closed",
+      "expected": false,
+      "pass": true,
+      "summary_key": "wall_velocity_activation_allowed"
+    },
+    {
+      "actual": false,
+      "check": "combined_runtime_geometry_wall_velocity_activation_allowed_still_closed",
+      "expected": false,
+      "pass": true,
+      "summary_key": "combined_runtime_geometry_wall_velocity_activation_allowed"
+    }
+  ],
+  "summary": {
+    "closed_gate_pass_count": 3,
+    "pass_count": 12,
+    "required_closed_gate_count": 3,
+    "row_count": 12,
+    "step72_artifact_check_count": 9,
+    "step72_artifact_pass_count": 9,
+    "step73_step72_regression_guard_pass": true
+  }
+}

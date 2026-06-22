@@ -1,0 +1,44 @@
+{
+  "policy_id": "step73_wall_velocity_config_schema_policy",
+  "step": 73,
+  "step70_config_schema_artifact_path": "outputs/step70_config_schema_freeze_audit/config_schema_freeze.json",
+  "wall_velocity_field_config_path": "configs/step35_squid_proxy_wall_velocity_field.json",
+  "wall_velocity_application_config_path": "configs/step36_wall_velocity_application_solid_vel_experimental.json",
+  "required_config_classes": [
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.config",
+      "class_name": "WallVelocityFieldConfig",
+      "expected_step70_schema_hash": "d30bbf4f00c4120205c544f5fe97cdc0319fe1cb2813baed7427a9208adc1c1e"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_config",
+      "class_name": "WallVelocityApplicationConfig",
+      "expected_step70_schema_hash": "d2ebebff6aabe7c00e7e0574f2afa2342aee5e2ff8038772ee9feeae3a38eafc"
+    }
+  ],
+  "field_config_false_defaults": [
+    "write_dense_field",
+    "write_sparse_samples",
+    "apply_to_lbm",
+    "lbm_population_update_enabled",
+    "moving_bounceback_update_enabled",
+    "driver_integration_enabled",
+    "jet_model_enabled",
+    "actuation_enabled"
+  ],
+  "field_config_true_defaults": [
+    "deterministic"
+  ],
+  "application_config_false_defaults": [
+    "apply_to_lbm_populations",
+    "apply_to_mpm",
+    "apply_to_projector",
+    "modify_bounceback_formula",
+    "jet_model_enabled",
+    "actuation_claim_enabled"
+  ],
+  "application_config_true_defaults": [
+    "apply_to_lbm_solid_vel",
+    "diagnostic_report_enabled"
+  ]
+}

@@ -1,0 +1,12 @@
+metric,value
+actuation_claim_allowed,False
+apply_to_lbm_solid_vel,True
+bounceback_formula_modification_allowed,False
+diagnostic_report_enabled,True
+jet_model_allowed,False
+lbm_population_update_allowed,False
+mpm_update_allowed,False
+pass_count,18
+projector_update_allowed,False
+row_count,18
+wall_velocity_application_safety_audit_pass,True

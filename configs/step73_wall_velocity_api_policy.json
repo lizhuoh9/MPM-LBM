@@ -1,0 +1,118 @@
+{
+  "policy_id": "step73_wall_velocity_api_policy",
+  "step": 73,
+  "audit_name": "wall_velocity_api_audit",
+  "construct_driver_allowed": false,
+  "required_symbols": [
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.config",
+      "symbol": "WallVelocityFieldConfig",
+      "kind": "class"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.config",
+      "symbol": "validate_wall_velocity_config",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.config",
+      "symbol": "assert_valid_wall_velocity_config",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.config",
+      "symbol": "STEP35_EXECUTION_FLAG_FIELDS",
+      "kind": "constant"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_config",
+      "symbol": "WallVelocityApplicationConfig",
+      "kind": "class"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_config",
+      "symbol": "validate_wall_velocity_application_config",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_config",
+      "symbol": "assert_valid_wall_velocity_application_config",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_config",
+      "symbol": "APPLICATION_FLAG_FIELDS",
+      "kind": "constant"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "symbol": "load_wall_velocity_inputs",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "symbol": "interpolate_motion_rows_to_phase",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "symbol": "compute_wall_velocity_summary",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "symbol": "generate_wall_velocity_field_rows",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "symbol": "summarize_wall_velocity_rows",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "symbol": "load_wall_velocity_application_config",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "symbol": "build_wall_velocity_grid",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "symbol": "summarize_wall_velocity_application",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "symbol": "build_wall_velocity_application_report",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "symbol": "apply_wall_velocity_application_to_lbm",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_envelope",
+      "symbol": "collect_wall_velocity_application_reports",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_envelope",
+      "symbol": "summarize_application_envelope",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.consistency",
+      "symbol": "compare_wall_velocity_to_motion_mapping",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.quality",
+      "symbol": "analyze_wall_velocity_quality",
+      "kind": "function"
+    }
+  ]
+}

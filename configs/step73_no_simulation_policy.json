@@ -1,0 +1,44 @@
+{
+  "policy_id": "step73_no_simulation_policy",
+  "step": 73,
+  "forbidden_call_patterns": [
+    "driver.run",
+    "FSIDriver3D(...).run",
+    "driver.initialize",
+    "driver.step_once"
+  ],
+  "scan_python_paths": [
+    "src/mpm_lbm/evidence/wall_velocity_api_audit.py",
+    "src/mpm_lbm/evidence/wall_velocity_config_schema_audit.py",
+    "src/mpm_lbm/evidence/wall_velocity_driver_gate_audit.py",
+    "src/mpm_lbm/evidence/wall_velocity_application_safety_audit.py",
+    "src/mpm_lbm/evidence/wall_velocity_output_policy_audit.py",
+    "src/mpm_lbm/evidence/full_activation_gate_coverage_audit.py",
+    "src/mpm_lbm/evidence/wall_velocity_readiness_audit.py",
+    "src/mpm_lbm/evidence/step73_no_simulation_audit.py",
+    "src/mpm_lbm/evidence/step73_regression_guard.py",
+    "baseline_tests/step73_common.py",
+    "baseline_tests/run_step73_wall_velocity_api_audit.py",
+    "baseline_tests/run_step73_wall_velocity_config_schema_audit.py",
+    "baseline_tests/run_step73_wall_velocity_driver_gate_audit.py",
+    "baseline_tests/run_step73_wall_velocity_application_safety_audit.py",
+    "baseline_tests/run_step73_wall_velocity_output_policy_audit.py",
+    "baseline_tests/run_step73_full_activation_gate_coverage_audit.py",
+    "baseline_tests/run_step73_wall_velocity_readiness_audit.py",
+    "baseline_tests/run_step73_no_simulation_audit.py",
+    "baseline_tests/run_step73_step72_regression_guard.py",
+    "baseline_tests/run_step73_artifact_manifest.py"
+  ],
+  "forbidden_output_directories": [
+    "outputs/step73_driver_runs",
+    "outputs/step73_wall_velocity_driver_runs"
+  ],
+  "protected_prefixes": [
+    "external/taichi_LBM3D/",
+    "data/real_geometry_candidates/"
+  ],
+  "vtr_output_allowed": false,
+  "particle_npy_output_allowed": false,
+  "external_taichi_lbm3d_edit_allowed": false,
+  "real_geometry_candidates_edit_allowed": false
+}

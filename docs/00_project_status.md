@@ -28,6 +28,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 70: API and config freeze before activation
 - Step 71: output default safety alignment and LBM tau convention decision
 - Step 72: runtime geometry activation readiness audit
+- Step 73: wall velocity activation readiness audit
 
 ## Current Validated Modes
 
@@ -57,6 +58,13 @@ checks canonical runtime geometry imports, schema stability, driver config gates
 state guard invariants, output policy, no-simulation constraints, and Step71
 regression evidence. It does not run `FSIDriver3D`, activate runtime geometry,
 activate wall velocity, or claim physical validation.
+
+Step 73 adds an audit-only wall velocity activation readiness layer. It checks
+canonical wall velocity imports, schema stability, driver config gates,
+application safety, output policy, all 10 Step70 activation gates, no-simulation
+constraints, and Step72 regression evidence. It does not run `FSIDriver3D`,
+activate wall velocity, update LBM populations, modify bounce-back formulas, or
+claim physical validation.
 
 ## What Exists
 

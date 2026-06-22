@@ -1,0 +1,19 @@
+actual,check,expected,notes,pass
+True,application_config_validation_pass,True,Committed Step36 application config validates,True
+solid_vel_experimental,application_mode,solid_vel_experimental,Wall velocity remains explicit opt-in mode,True
+solid_vel,target_lbm_field,solid_vel,Only lbm.solid_vel is targeted,True
+True,config_true_apply_to_lbm_solid_vel,True,Required opt-in/report flag remains true,True
+True,config_true_diagnostic_report_enabled,True,Required opt-in/report flag remains true,True
+False,config_false_apply_to_lbm_populations,False,Unsafe application flag remains false,True
+False,config_false_apply_to_mpm,False,Unsafe application flag remains false,True
+False,config_false_apply_to_projector,False,Unsafe application flag remains false,True
+False,config_false_modify_bounceback_formula,False,Unsafe application flag remains false,True
+False,config_false_jet_model_enabled,False,Unsafe application flag remains false,True
+False,config_false_actuation_claim_enabled,False,Unsafe application flag remains false,True
+True,source_contains_apply_wall_velocity_to_lbm_solid_vel,True,Application source retains safety/report term,True
+True,source_contains_lbm.solid_vel.from_numpy,True,Application source retains safety/report term,True
+True,"source_contains_""lbm_population_update_count"": 0",True,Application source retains safety/report term,True
+True,"source_contains_""apply_to_lbm_populations""",True,Application source retains safety/report term,True
+True,"source_contains_""modify_bounceback_formula""",True,Application source retains safety/report term,True
+True,"source_contains_""apply_to_mpm""",True,Application source retains safety/report term,True
+True,"source_contains_""apply_to_projector""",True,Application source retains safety/report term,True

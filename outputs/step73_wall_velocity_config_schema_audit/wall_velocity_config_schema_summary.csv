@@ -1,0 +1,10 @@
+metric,value
+field_execution_flag_enabled_count,0
+missing_required_field_count,0
+pass_count,45
+required_schema_hash_count,2
+row_count,45
+schema_hash_matches_step70_count,2
+unsafe_application_flag_count,0
+unsafe_execution_flag_count,0
+wall_velocity_config_schema_audit_pass,True

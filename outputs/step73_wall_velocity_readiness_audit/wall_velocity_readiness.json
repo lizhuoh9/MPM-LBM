@@ -1,0 +1,76 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "required_audit_pass",
+      "expected": true,
+      "name": "wall_velocity_api_audit",
+      "notes": "Step73 wall velocity readiness component must be green",
+      "pass": true,
+      "summary_key": "wall_velocity_api_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "required_audit_pass",
+      "expected": true,
+      "name": "wall_velocity_config_schema_audit",
+      "notes": "Step73 wall velocity readiness component must be green",
+      "pass": true,
+      "summary_key": "wall_velocity_config_schema_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "required_audit_pass",
+      "expected": true,
+      "name": "wall_velocity_driver_gate_audit",
+      "notes": "Step73 wall velocity readiness component must be green",
+      "pass": true,
+      "summary_key": "wall_velocity_driver_gate_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "required_audit_pass",
+      "expected": true,
+      "name": "wall_velocity_application_safety_audit",
+      "notes": "Step73 wall velocity readiness component must be green",
+      "pass": true,
+      "summary_key": "wall_velocity_application_safety_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "required_audit_pass",
+      "expected": true,
+      "name": "wall_velocity_output_policy_audit",
+      "notes": "Step73 wall velocity readiness component must be green",
+      "pass": true,
+      "summary_key": "wall_velocity_output_policy_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "required_audit_pass",
+      "expected": true,
+      "name": "full_activation_gate_coverage_audit",
+      "notes": "Step73 wall velocity readiness component must be green",
+      "pass": true,
+      "summary_key": "full_activation_gate_coverage_audit_pass"
+    },
+    {
+      "actual": false,
+      "check": "activation_allowed_after_step73",
+      "expected": false,
+      "name": "wall_velocity_activation_allowed",
+      "notes": "wall_velocity_audit_ready_for_later_activation_decision_only",
+      "pass": true,
+      "summary_key": ""
+    }
+  ],
+  "summary": {
+    "activation_allowed_after_step73": false,
+    "pass_count": 7,
+    "readiness_claim": "wall_velocity_audit_ready_for_later_activation_decision_only",
+    "required_audit_count": 6,
+    "required_audit_pass_count": 6,
+    "row_count": 7,
+    "wall_velocity_readiness_audit_pass": true
+  }
+}

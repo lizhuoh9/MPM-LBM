@@ -1,0 +1,330 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "WallVelocityFieldConfig_class_import_pass",
+      "expected": true,
+      "notes": "Required class imports",
+      "pass": true
+    },
+    {
+      "actual": "d30bbf4f00c4120205c544f5fe97cdc0319fe1cb2813baed7427a9208adc1c1e",
+      "check": "WallVelocityFieldConfig_schema_hash_matches_step70",
+      "expected": "d30bbf4f00c4120205c544f5fe97cdc0319fe1cb2813baed7427a9208adc1c1e",
+      "notes": "Step70 schema hash remains stable",
+      "pass": true
+    },
+    {
+      "actual": "d30bbf4f00c4120205c544f5fe97cdc0319fe1cb2813baed7427a9208adc1c1e",
+      "check": "WallVelocityFieldConfig_schema_hash_matches_policy",
+      "expected": "d30bbf4f00c4120205c544f5fe97cdc0319fe1cb2813baed7427a9208adc1c1e",
+      "notes": "Policy pins Step70 schema hash",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "WallVelocityFieldConfig_from_json_available",
+      "expected": true,
+      "notes": "Config remains JSON-loadable",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "WallVelocityFieldConfig_to_dict_available",
+      "expected": true,
+      "notes": "Config remains serializable",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "WallVelocityApplicationConfig_class_import_pass",
+      "expected": true,
+      "notes": "Required class imports",
+      "pass": true
+    },
+    {
+      "actual": "d2ebebff6aabe7c00e7e0574f2afa2342aee5e2ff8038772ee9feeae3a38eafc",
+      "check": "WallVelocityApplicationConfig_schema_hash_matches_step70",
+      "expected": "d2ebebff6aabe7c00e7e0574f2afa2342aee5e2ff8038772ee9feeae3a38eafc",
+      "notes": "Step70 schema hash remains stable",
+      "pass": true
+    },
+    {
+      "actual": "d2ebebff6aabe7c00e7e0574f2afa2342aee5e2ff8038772ee9feeae3a38eafc",
+      "check": "WallVelocityApplicationConfig_schema_hash_matches_policy",
+      "expected": "d2ebebff6aabe7c00e7e0574f2afa2342aee5e2ff8038772ee9feeae3a38eafc",
+      "notes": "Policy pins Step70 schema hash",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "WallVelocityApplicationConfig_from_json_available",
+      "expected": true,
+      "notes": "Config remains JSON-loadable",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "WallVelocityApplicationConfig_to_dict_available",
+      "expected": true,
+      "notes": "Config remains serializable",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "wall_velocity_field_config_validation_pass",
+      "expected": true,
+      "notes": "Committed Step35 config validates",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "wall_velocity_application_config_validation_pass",
+      "expected": true,
+      "notes": "Committed Step36 config validates",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "field_default_false_write_dense_field",
+      "expected": "False",
+      "notes": "Unsafe field execution default must be false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "field_default_false_write_sparse_samples",
+      "expected": "False",
+      "notes": "Unsafe field execution default must be false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "field_default_false_apply_to_lbm",
+      "expected": "False",
+      "notes": "Unsafe field execution default must be false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "field_default_false_lbm_population_update_enabled",
+      "expected": "False",
+      "notes": "Unsafe field execution default must be false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "field_default_false_moving_bounceback_update_enabled",
+      "expected": "False",
+      "notes": "Unsafe field execution default must be false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "field_default_false_driver_integration_enabled",
+      "expected": "False",
+      "notes": "Unsafe field execution default must be false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "field_default_false_jet_model_enabled",
+      "expected": "False",
+      "notes": "Unsafe field execution default must be false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "field_default_false_actuation_enabled",
+      "expected": "False",
+      "notes": "Unsafe field execution default must be false",
+      "pass": true
+    },
+    {
+      "actual": "True",
+      "check": "field_default_true_deterministic",
+      "expected": "True",
+      "notes": "Required field default must be true",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "field_config_false_write_dense_field",
+      "expected": false,
+      "notes": "Committed field config must remain diagnostic-only",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "field_config_false_write_sparse_samples",
+      "expected": false,
+      "notes": "Committed field config must remain diagnostic-only",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "field_config_false_apply_to_lbm",
+      "expected": false,
+      "notes": "Committed field config must remain diagnostic-only",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "field_config_false_lbm_population_update_enabled",
+      "expected": false,
+      "notes": "Committed field config must remain diagnostic-only",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "field_config_false_moving_bounceback_update_enabled",
+      "expected": false,
+      "notes": "Committed field config must remain diagnostic-only",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "field_config_false_driver_integration_enabled",
+      "expected": false,
+      "notes": "Committed field config must remain diagnostic-only",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "field_config_false_jet_model_enabled",
+      "expected": false,
+      "notes": "Committed field config must remain diagnostic-only",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "field_config_false_actuation_enabled",
+      "expected": false,
+      "notes": "Committed field config must remain diagnostic-only",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "app_default_false_apply_to_lbm_populations",
+      "expected": "False",
+      "notes": "Unsafe application default must be false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "app_default_false_apply_to_mpm",
+      "expected": "False",
+      "notes": "Unsafe application default must be false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "app_default_false_apply_to_projector",
+      "expected": "False",
+      "notes": "Unsafe application default must be false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "app_default_false_modify_bounceback_formula",
+      "expected": "False",
+      "notes": "Unsafe application default must be false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "app_default_false_jet_model_enabled",
+      "expected": "False",
+      "notes": "Unsafe application default must be false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "app_default_false_actuation_claim_enabled",
+      "expected": "False",
+      "notes": "Unsafe application default must be false",
+      "pass": true
+    },
+    {
+      "actual": "True",
+      "check": "app_default_true_apply_to_lbm_solid_vel",
+      "expected": "True",
+      "notes": "Required application default must be true",
+      "pass": true
+    },
+    {
+      "actual": "True",
+      "check": "app_default_true_diagnostic_report_enabled",
+      "expected": "True",
+      "notes": "Required application default must be true",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "app_config_false_apply_to_lbm_populations",
+      "expected": false,
+      "notes": "Committed application config must remain safe",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "app_config_false_apply_to_mpm",
+      "expected": false,
+      "notes": "Committed application config must remain safe",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "app_config_false_apply_to_projector",
+      "expected": false,
+      "notes": "Committed application config must remain safe",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "app_config_false_modify_bounceback_formula",
+      "expected": false,
+      "notes": "Committed application config must remain safe",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "app_config_false_jet_model_enabled",
+      "expected": false,
+      "notes": "Committed application config must remain safe",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "app_config_false_actuation_claim_enabled",
+      "expected": false,
+      "notes": "Committed application config must remain safe",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "app_config_true_apply_to_lbm_solid_vel",
+      "expected": true,
+      "notes": "Committed application config must remain opt-in solid_vel only",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "app_config_true_diagnostic_report_enabled",
+      "expected": true,
+      "notes": "Committed application config must remain opt-in solid_vel only",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "field_execution_flag_enabled_count": 0,
+    "missing_required_field_count": 0,
+    "pass_count": 45,
+    "required_schema_hash_count": 2,
+    "row_count": 45,
+    "schema_hash_matches_step70_count": 2,
+    "unsafe_application_flag_count": 0,
+    "unsafe_execution_flag_count": 0,
+    "wall_velocity_config_schema_audit_pass": true
+  }
+}

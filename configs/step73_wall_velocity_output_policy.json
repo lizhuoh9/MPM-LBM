@@ -1,0 +1,44 @@
+{
+  "policy_id": "step73_wall_velocity_output_policy",
+  "step": 73,
+  "step70_output_policy_path": "configs/step70_output_artifact_policy.json",
+  "step71_output_default_artifact_path": "outputs/step71_output_default_alignment_audit/output_default_alignment.json",
+  "controlled_output_keys": [
+    "write_vtk",
+    "write_particles",
+    "write_dense_field",
+    "write_sparse_samples",
+    "write_dense_displacement_field",
+    "write_displaced_particles"
+  ],
+  "scan_json_paths": [
+    "configs/step35_squid_proxy_wall_velocity_field.json",
+    "configs/step36_wall_velocity_application_solid_vel_experimental.json",
+    "configs/step73_wall_velocity_api_policy.json",
+    "configs/step73_wall_velocity_config_schema_policy.json",
+    "configs/step73_wall_velocity_driver_gate_policy.json",
+    "configs/step73_wall_velocity_application_safety_policy.json",
+    "configs/step73_wall_velocity_output_policy.json",
+    "configs/step73_full_activation_gate_coverage_policy.json",
+    "configs/step73_wall_velocity_readiness_policy.json",
+    "configs/step73_no_simulation_policy.json",
+    "configs/step73_step72_regression_policy.json"
+  ],
+  "forbidden_output_directories": [
+    "outputs/step73_driver_runs",
+    "outputs/step73_wall_velocity_driver_runs",
+    "outputs/step73_vtr",
+    "outputs/step73_particles",
+    "outputs/step73_dense_wall_velocity",
+    "outputs/step73_sparse_wall_velocity"
+  ],
+  "protected_prefixes": [
+    "external/taichi_LBM3D/",
+    "data/real_geometry_candidates/"
+  ],
+  "vtr_output_allowed": false,
+  "particle_npy_output_allowed": false,
+  "dense_wall_velocity_output_allowed": false,
+  "sparse_wall_velocity_output_allowed": false,
+  "driver_run_outputs_committable": false
+}

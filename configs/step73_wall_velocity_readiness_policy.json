@@ -1,0 +1,32 @@
+{
+  "policy_id": "step73_wall_velocity_readiness_policy",
+  "step": 73,
+  "required_audits": [
+    {
+      "name": "wall_velocity_api_audit",
+      "summary_key": "wall_velocity_api_audit_pass"
+    },
+    {
+      "name": "wall_velocity_config_schema_audit",
+      "summary_key": "wall_velocity_config_schema_audit_pass"
+    },
+    {
+      "name": "wall_velocity_driver_gate_audit",
+      "summary_key": "wall_velocity_driver_gate_audit_pass"
+    },
+    {
+      "name": "wall_velocity_application_safety_audit",
+      "summary_key": "wall_velocity_application_safety_audit_pass"
+    },
+    {
+      "name": "wall_velocity_output_policy_audit",
+      "summary_key": "wall_velocity_output_policy_audit_pass"
+    },
+    {
+      "name": "full_activation_gate_coverage_audit",
+      "summary_key": "full_activation_gate_coverage_audit_pass"
+    }
+  ],
+  "readiness_claim": "wall_velocity_audit_ready_for_later_activation_decision_only",
+  "activation_allowed_after_step73": false
+}

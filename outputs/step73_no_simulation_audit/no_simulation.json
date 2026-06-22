@@ -1,0 +1,194 @@
+{
+  "rows": [
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/wall_velocity_api_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/wall_velocity_config_schema_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/wall_velocity_driver_gate_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/wall_velocity_application_safety_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/wall_velocity_output_policy_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/full_activation_gate_coverage_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/wall_velocity_readiness_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step73_no_simulation_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step73_regression_guard.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/step73_common.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step73_wall_velocity_api_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step73_wall_velocity_config_schema_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step73_wall_velocity_driver_gate_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step73_wall_velocity_application_safety_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step73_wall_velocity_output_policy_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step73_full_activation_gate_coverage_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step73_wall_velocity_readiness_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step73_no_simulation_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step73_step72_regression_guard.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step73_artifact_manifest.py"
+    }
+  ],
+  "summary": {
+    "forbidden_output_directory_count": 0,
+    "forbidden_python_call_count": 0,
+    "no_simulation_audit_pass": true,
+    "pass_count": 20,
+    "protected_step73_file_count": 0,
+    "row_count": 20,
+    "step73_particle_npy_count": 0,
+    "step73_vtr_count": 0
+  }
+}

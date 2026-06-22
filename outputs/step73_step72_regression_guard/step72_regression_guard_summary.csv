@@ -1,0 +1,8 @@
+metric,value
+closed_gate_pass_count,3
+pass_count,12
+required_closed_gate_count,3
+row_count,12
+step72_artifact_check_count,9
+step72_artifact_pass_count,9
+step73_step72_regression_guard_pass,True

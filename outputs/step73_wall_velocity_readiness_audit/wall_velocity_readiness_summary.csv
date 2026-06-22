@@ -1,0 +1,8 @@
+metric,value
+activation_allowed_after_step73,False
+pass_count,7
+readiness_claim,wall_velocity_audit_ready_for_later_activation_decision_only
+required_audit_count,6
+required_audit_pass_count,6
+row_count,7
+wall_velocity_readiness_audit_pass,True

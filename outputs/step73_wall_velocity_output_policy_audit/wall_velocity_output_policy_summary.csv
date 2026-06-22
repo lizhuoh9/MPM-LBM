@@ -1,0 +1,14 @@
+metric,value
+current_fsidriver_default_write_particles,False
+current_fsidriver_default_write_vtk,False
+forbidden_output_directory_count,0
+json_controlled_true_count,0
+pass_count,17
+private_absolute_path_count,0
+protected_step73_file_count,0
+row_count,17
+step73_dense_wall_velocity_count,0
+step73_particle_npy_count,0
+step73_sparse_wall_velocity_count,0
+step73_vtr_count,0
+wall_velocity_output_policy_audit_pass,True

@@ -1,0 +1,16 @@
+actual,check,error,expected,field,pass
+disabled,default_gate_closed,,disabled,wall_velocity_application_mode,True
+,default_gate_closed,,,wall_velocity_application_config_path,True
+False,default_gate_closed,,False,wall_velocity_application_report_enabled,True
+static,default_gate_closed,,static,boundary_motion_mode,True
+,default_gate_closed,,,boundary_motion_config_path,True
+False,default_gate_closed,,False,boundary_motion_report_enabled,True
+False,default_gate_closed,,False,write_vtk,True
+False,default_gate_closed,,False,write_particles,True
+rejected,invalid_combination_rejected,wall_velocity_application_config_path must be None when wall_velocity_application_mode='disabled',rejected,disabled_with_application_config_path,True
+rejected,invalid_combination_rejected,wall_velocity_application_mode='solid_vel_experimental' requires boundary_motion_mode='prescribed_kinematic',rejected,solid_vel_with_static_boundary_motion,True
+rejected,invalid_combination_rejected,wall_velocity_application_config_path is required when wall_velocity_application_mode='solid_vel_experimental',rejected,solid_vel_missing_application_config_path,True
+rejected,invalid_combination_rejected,wall_velocity_application_config_path must exist when wall_velocity_application_mode='solid_vel_experimental',rejected,solid_vel_nonexistent_application_config_path,True
+False,driver_constructed,Audit only constructs config dataclasses,False,,True
+False,driver_initialized,Audit does not initialize FSIDriver3D,False,,True
+False,solver_run,Audit does not step or run solver,False,,True

@@ -1,0 +1,96 @@
+{
+  "rows": [
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "runtime_geometry_activation_allowed",
+      "notes": "Step73 full gate coverage keeps Step70 gate closed",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "wall_velocity_activation_allowed",
+      "notes": "Step73 full gate coverage keeps Step70 gate closed",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "combined_runtime_geometry_wall_velocity_activation_allowed",
+      "notes": "Step73 full gate coverage keeps Step70 gate closed",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "real_geometry_activation_allowed",
+      "notes": "Step73 full gate coverage keeps Step70 gate closed",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "squid_proxy_activation_allowed",
+      "notes": "Step73 full gate coverage keeps Step70 gate closed",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "link_area_activation_allowed",
+      "notes": "Step73 full gate coverage keeps Step70 gate closed",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "grid_48_activation_allowed",
+      "notes": "Step73 full gate coverage keeps Step70 gate closed",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "grid_64_activation_allowed",
+      "notes": "Step73 full gate coverage keeps Step70 gate closed",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "vtr_output_allowed",
+      "notes": "Step73 full gate coverage keeps Step70 gate closed",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "particle_npy_output_allowed",
+      "notes": "Step73 full gate coverage keeps Step70 gate closed",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "activation_allowed_count": 0,
+    "closed_gate_count": 10,
+    "expected_gate_count": 10,
+    "extra_gate_count": 0,
+    "full_activation_gate_coverage_audit_pass": true,
+    "missing_gate_count": 0,
+    "pass_count": 10,
+    "required_gate_count": 10,
+    "row_count": 10,
+    "step70_gate_count": 10
+  }
+}

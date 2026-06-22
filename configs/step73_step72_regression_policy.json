@@ -1,0 +1,66 @@
+{
+  "policy_id": "step73_step72_regression_policy",
+  "step": 73,
+  "step72_artifact_checks": [
+    {
+      "check": "step72_runtime_geometry_readiness",
+      "artifact_path": "outputs/step72_runtime_geometry_readiness_audit/runtime_geometry_readiness.json",
+      "summary_key": "runtime_geometry_readiness_audit_pass",
+      "expected": true
+    },
+    {
+      "check": "step72_runtime_geometry_api",
+      "artifact_path": "outputs/step72_runtime_geometry_api_audit/runtime_geometry_api.json",
+      "summary_key": "runtime_geometry_api_audit_pass",
+      "expected": true
+    },
+    {
+      "check": "step72_runtime_geometry_config_schema",
+      "artifact_path": "outputs/step72_runtime_geometry_config_schema_audit/runtime_geometry_config_schema.json",
+      "summary_key": "runtime_geometry_config_schema_audit_pass",
+      "expected": true
+    },
+    {
+      "check": "step72_runtime_geometry_driver_gate",
+      "artifact_path": "outputs/step72_runtime_geometry_driver_gate_audit/runtime_geometry_driver_gate.json",
+      "summary_key": "runtime_geometry_driver_gate_audit_pass",
+      "expected": true
+    },
+    {
+      "check": "step72_runtime_geometry_state_guard",
+      "artifact_path": "outputs/step72_runtime_geometry_state_guard_audit/runtime_geometry_state_guard.json",
+      "summary_key": "runtime_geometry_state_guard_audit_pass",
+      "expected": true
+    },
+    {
+      "check": "step72_runtime_geometry_output_policy",
+      "artifact_path": "outputs/step72_runtime_geometry_output_policy_audit/runtime_geometry_output_policy.json",
+      "summary_key": "runtime_geometry_output_policy_audit_pass",
+      "expected": true
+    },
+    {
+      "check": "step72_no_simulation",
+      "artifact_path": "outputs/step72_no_simulation_audit/no_simulation.json",
+      "summary_key": "no_simulation_audit_pass",
+      "expected": true
+    },
+    {
+      "check": "step72_step71_regression_guard",
+      "artifact_path": "outputs/step72_step71_regression_guard/step71_regression_guard.json",
+      "summary_key": "step72_step71_regression_guard_pass",
+      "expected": true
+    },
+    {
+      "check": "step72_artifact_manifest",
+      "artifact_path": "outputs/step72_artifact_manifest/artifact_summary.json",
+      "summary_key": "artifact_budget_pass",
+      "expected": true
+    }
+  ],
+  "required_closed_activation_gates": [
+    "runtime_geometry_activation_allowed",
+    "wall_velocity_activation_allowed",
+    "combined_runtime_geometry_wall_velocity_activation_allowed"
+  ],
+  "step70_activation_policy_path": "configs/step70_activation_preconditions_policy.json"
+}

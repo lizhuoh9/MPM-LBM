@@ -1,0 +1,221 @@
+{
+  "rows": [
+    {
+      "actual_kind": "class",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.config",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "class",
+      "pass": true,
+      "symbol": "WallVelocityFieldConfig"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.config",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "validate_wall_velocity_config"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.config",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "assert_valid_wall_velocity_config"
+    },
+    {
+      "actual_kind": "constant",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.config",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "constant",
+      "pass": true,
+      "symbol": "STEP35_EXECUTION_FLAG_FIELDS"
+    },
+    {
+      "actual_kind": "class",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_config",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "class",
+      "pass": true,
+      "symbol": "WallVelocityApplicationConfig"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_config",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "validate_wall_velocity_application_config"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_config",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "assert_valid_wall_velocity_application_config"
+    },
+    {
+      "actual_kind": "constant",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_config",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "constant",
+      "pass": true,
+      "symbol": "APPLICATION_FLAG_FIELDS"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "load_wall_velocity_inputs"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "interpolate_motion_rows_to_phase"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "compute_wall_velocity_summary"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "generate_wall_velocity_field_rows"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.field",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "summarize_wall_velocity_rows"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "load_wall_velocity_application_config"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "build_wall_velocity_grid"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "summarize_wall_velocity_application"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "build_wall_velocity_application_report"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "apply_wall_velocity_application_to_lbm"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_envelope",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "collect_wall_velocity_application_reports"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_envelope",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "summarize_application_envelope"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.consistency",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "compare_wall_velocity_to_motion_mapping"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.quality",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "analyze_wall_velocity_quality"
+    },
+    {
+      "actual_kind": "",
+      "canonical_module": "",
+      "check": "output_snapshot_unchanged_after_imports",
+      "error": "",
+      "expected_kind": "",
+      "pass": true,
+      "symbol": ""
+    }
+  ],
+  "summary": {
+    "canonical_import_pass_count": 22,
+    "driver_constructed": false,
+    "missing_symbol_count": 0,
+    "output_snapshot_unchanged": true,
+    "required_symbol_count": 22,
+    "row_count": 23,
+    "solver_run": false,
+    "wall_velocity_api_audit_pass": true
+  }
+}
