@@ -280,3 +280,35 @@ real geometry candidates, link-area transfer, 48^3, 64^3, VTR output, and
 particle NPY output remain disabled. Step86 does not claim physical validation,
 real squid validation, squid swimming, grid convergence, or production
 readiness.
+
+## Step87 Planned Row
+
+Step87 does not execute a driver row. It records and guards the only planned
+Step88 row:
+
+```text
+campaign_id = step87_runtime_geometry_wall_velocity_squid_proxy_combined_activation_plan_and_guard
+row_id = canonical_driver_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+geometry_type = squid_proxy
+geometry_config_path = configs/step85_squid_proxy_geometry_1024.json
+quality_check_enabled = true
+quality_check_strict = false
+geometry_motion_application_mode = diagnostic_only
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+write_vtk = false
+write_particles = false
+executed_in_step87 = false
+planned_for_step88 = true
+```
+
+Step87 does not run `FSIDriver3D`, does not execute simulation, does not enable
+the three-feature combined row, real geometry candidates, link-area transfer,
+48^3, 64^3, VTR output, or particle NPY output, and does not claim physical
+validation, real squid validation, squid swimming, or production readiness.

@@ -354,3 +354,31 @@ the single canonical driver row. It does not authorize real geometry
 candidates, runtime geometry, wall velocity, link-area transfer, larger grids,
 solver formula changes, tau migration, squid swimming, physical-validation
 claims, real squid validation claims, or production-readiness claims.
+
+Step87 plans and guards a future three-feature Step88 row without running
+simulation:
+
+```text
+step87_runtime_geometry_wall_velocity_squid_proxy_combined_activation_plan_pass = true
+step87_runtime_geometry_wall_velocity_squid_proxy_combined_activation_guard_pass = true
+step87_activation_feature_count = 0
+planned_step88_activation_feature_count = 3
+squid_proxy_planned_for_step88 = true
+runtime_geometry_planned_for_step88 = true
+runtime_geometry_application_mode_planned_for_step88 = diagnostic_only
+wall_velocity_planned_for_step88 = true
+wall_velocity_application_mode_planned_for_step88 = solid_vel_experimental
+combined_runtime_geometry_wall_velocity_planned_for_step88 = true
+real_geometry_planned_for_step88 = false
+real_geometry_candidate_data_planned_for_step88 = false
+link_area_planned_for_step88 = false
+write_vtk_planned_for_step88 = false
+write_particles_planned_for_step88 = false
+```
+
+Step87 authorizes only the future row
+`canonical_driver_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke`.
+It does not authorize real geometry candidate data, link-area transfer, larger
+grids, solver formula changes, tau migration, squid swimming, squid actuation,
+physical-validation claims, real squid validation claims, or
+production-readiness claims.

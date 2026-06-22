@@ -322,3 +322,35 @@ Step86 is not a runtime-geometry, wall-velocity, combined runtime-geometry plus
 wall-velocity, real-geometry, link-area, larger-grid, VTR, particle-output,
 physical-validation, real-squid-validation, squid-swimming, or
 production-readiness campaign.
+
+## Step87 Three-Feature Combined Activation Planning
+
+After Step86 acceptance, Step87 does not run a simulation. It plans and guards
+exactly one future Step88 row:
+
+```text
+campaign_id = step87_runtime_geometry_wall_velocity_squid_proxy_combined_activation_plan_and_guard
+row_id = canonical_driver_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+geometry_type = squid_proxy
+geometry_config_path = configs/step85_squid_proxy_geometry_1024.json
+quality_check_enabled = true
+quality_check_strict = false
+geometry_motion_application_mode = diagnostic_only
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+write_vtk = false
+write_particles = false
+executed_in_step87 = false
+planned_for_step88 = true
+```
+
+Step87 does not authorize real geometry candidate data, link-area transfer,
+larger grids, VTR output, particle NPY output, solver formula changes, tau
+migration, squid swimming, physical-validation claims, real-squid-validation
+claims, or production-readiness claims.

@@ -42,6 +42,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 84: runtime geometry diagnostic-only plus wall velocity `solid_vel` combined canonical driver 3-step smoke
 - Step 85: squid proxy static geometry activation plan and guard
 - Step 86: squid proxy static geometry canonical driver 3-step smoke
+- Step 87: runtime geometry diagnostic-only plus wall velocity `solid_vel` plus squid proxy combined activation plan and guard
 
 ## Current Validated Modes
 
@@ -236,3 +237,12 @@ geometry plus wall velocity, real geometry candidates, link-area transfer,
 migration, physical validation, real squid validation, squid swimming, and
 production-readiness claims closed. Step86 may claim only that squid_proxy
 static geometry canonical driver 3-step smoke passed.
+
+Step87 adds plan-and-guard evidence for one future Step88 row that combines
+procedural static `squid_proxy` geometry, runtime geometry diagnostic-only
+reporting, and wall velocity `solid_vel_experimental` reporting. Step87 does
+not run `FSIDriver3D`, execute simulation, activate the three-feature combined
+row, enable real geometry candidates, use link-area transfer, add larger grids,
+write VTR or particle NPY output, change solver formulas, migrate tau
+semantics, or claim physical validation, real squid validation, squid swimming,
+squid actuation, or production readiness.

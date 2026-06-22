@@ -1,0 +1,288 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "step87_runtime_geometry_wall_velocity_squid_proxy_combined_activation_plan_pass",
+      "expected": true,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": "canonical_driver_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke",
+      "check": "step88_allowed_row_name",
+      "expected": "canonical_driver_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke",
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": 0,
+      "check": "step87_activation_feature_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": 3,
+      "check": "planned_step88_activation_feature_count",
+      "expected": 3,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": "squid_proxy",
+      "check": "geometry_type_allowed_for_step88",
+      "expected": "squid_proxy",
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": "configs/step85_squid_proxy_geometry_1024.json",
+      "check": "geometry_config_path_allowed_for_step88",
+      "expected": "configs/step85_squid_proxy_geometry_1024.json",
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": "diagnostic_only",
+      "check": "geometry_motion_application_mode_allowed_for_step88",
+      "expected": "diagnostic_only",
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": "solid_vel_experimental",
+      "check": "wall_velocity_application_mode_allowed_for_step88",
+      "expected": "solid_vel_experimental",
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": "solid_vel",
+      "check": "target_lbm_field_planned_for_step88",
+      "expected": "solid_vel",
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": true,
+      "check": "geometry_quality_report_required_for_step88",
+      "expected": true,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": true,
+      "check": "squid_proxy_planned_for_step88",
+      "expected": true,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": true,
+      "check": "runtime_geometry_planned_for_step88",
+      "expected": true,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": true,
+      "check": "wall_velocity_planned_for_step88",
+      "expected": true,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": true,
+      "check": "combined_runtime_geometry_wall_velocity_planned_for_step88",
+      "expected": true,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": true,
+      "check": "apply_to_lbm_solid_vel_allowed",
+      "expected": true,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "driver_run_required",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "fsidriver_run_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "simulation_run_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "geometry_mutation_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_candidate_data_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "link_area_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "grid_48_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "grid_64_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "vtr_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "particle_npy_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "apply_to_lbm_populations_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "apply_to_mpm_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "apply_to_projector_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "modify_bounceback_formula_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "solver_formula_change_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "tau_migration_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "physical_validation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "production_readiness_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "real_squid_validation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "squid_swimming_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    },
+    {
+      "actual": false,
+      "check": "squid_actuation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "activation_plan"
+    }
+  ],
+  "summary": {
+    "apply_to_lbm_populations_planned_for_step88": false,
+    "apply_to_lbm_solid_vel_planned_for_step88": true,
+    "combined_runtime_geometry_wall_velocity_planned_for_step88": true,
+    "geometry_mutation_allowed": false,
+    "geometry_quality_report_required_for_step88": true,
+    "geometry_type_planned_for_step88": "squid_proxy",
+    "guard_pass_count": 37,
+    "guard_row_count": 37,
+    "link_area_planned_for_step88": false,
+    "modify_bounceback_formula_planned_for_step88": false,
+    "planned_step88_activation_feature_count": 3,
+    "real_geometry_candidate_data_planned_for_step88": false,
+    "real_geometry_planned_for_step88": false,
+    "row_count": 37,
+    "runtime_geometry_application_mode_planned_for_step88": "diagnostic_only",
+    "runtime_geometry_planned_for_step88": true,
+    "squid_proxy_planned_for_step88": true,
+    "step87_activation_feature_count": 0,
+    "step87_runtime_geometry_wall_velocity_squid_proxy_combined_activation_guard_pass": true,
+    "wall_velocity_application_mode_planned_for_step88": "solid_vel_experimental",
+    "wall_velocity_planned_for_step88": true,
+    "write_particles_planned_for_step88": false,
+    "write_vtk_planned_for_step88": false
+  }
+}

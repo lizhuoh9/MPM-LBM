@@ -1,0 +1,37 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step80_runtime_geometry_diagnostic_only_smoke_matrix/runtime_geometry_diagnostic_only_smoke_matrix.json",
+      "check": "step80_smoke_matrix_pass",
+      "expected": true,
+      "summary_key": "step80_runtime_geometry_diagnostic_only_smoke_matrix_pass"
+    },
+    {
+      "artifact_path": "outputs/step80_runtime_geometry_diagnostic_only_quality/runtime_geometry_diagnostic_only_quality.json",
+      "check": "step80_quality_pass",
+      "expected": true,
+      "summary_key": "step80_runtime_geometry_diagnostic_only_quality_pass"
+    },
+    {
+      "artifact_path": "outputs/step80_activation_guard/activation_guard.json",
+      "check": "step80_activation_guard_pass",
+      "expected": true,
+      "summary_key": "step80_activation_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step80_output_guard/output_guard.json",
+      "check": "step80_output_guard_pass",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step80_artifact_manifest/artifact_summary.json",
+      "check": "step80_artifact_budget_pass",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "expected_activation_feature_count": 1,
+  "expected_runtime_geometry_enabled_count": 1,
+  "expected_wall_velocity_enabled_count": 0
+}
