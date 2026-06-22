@@ -1,0 +1,26 @@
+{
+  "driver_run_root": "outputs/step81_driver_runs",
+  "forbidden_filename_tokens": [
+    ".vtr",
+    "particles_",
+    "particle_output",
+    "dense_wall_velocity",
+    "sparse_wall_velocity",
+    "displaced_particle",
+    "dense_displacement",
+    ".stl",
+    ".obj",
+    ".ply",
+    ".vtk",
+    ".vtu",
+    "raw_geometry"
+  ],
+  "large_file_threshold_bytes": 5242880,
+  "max_step81_total_size_mb": 5.0,
+  "policy_id": "step81_output_guard_policy",
+  "protected_prefixes": [
+    "data/real_geometry_candidates/",
+    "external/taichi_LBM3D/"
+  ],
+  "step": 81
+}

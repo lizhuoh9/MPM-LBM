@@ -1,0 +1,182 @@
+{
+  "rows": [
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step81_artifact_manifest.log",
+      "size_bytes": 62
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step81_focused_pytest.log",
+      "size_bytes": 204
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step81_full_pytest_anaconda.log",
+      "size_bytes": 2314
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step81_full_pytest_taichi.log",
+      "size_bytes": 2336
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step81_output_guard.log",
+      "size_bytes": 49
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step81_step80_regression_guard.log",
+      "size_bytes": 60
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step81_wall_velocity_single_feature_activation_guard.log",
+      "size_bytes": 82
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step81_wall_velocity_single_feature_activation_plan.log",
+      "size_bytes": 81
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step81_artifact_manifest/artifact_manifest.csv",
+      "size_bytes": 445228
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step81_artifact_manifest/artifact_summary.csv",
+      "size_bytes": 421
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step81_artifact_manifest/artifact_summary.json",
+      "size_bytes": 490
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step81_output_guard/output_guard.csv",
+      "size_bytes": 2065
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step81_output_guard/output_guard.json",
+      "size_bytes": 5249
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step81_output_guard/output_guard_summary.csv",
+      "size_bytes": 477
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step81_step80_regression_guard/step80_regression_guard.csv",
+      "size_bytes": 2549
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step81_step80_regression_guard/step80_regression_guard.json",
+      "size_bytes": 5104
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step81_step80_regression_guard/step80_regression_guard_summary.csv",
+      "size_bytes": 405
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step81_wall_velocity_single_feature_activation_guard/wall_velocity_single_feature_activation_guard.csv",
+      "size_bytes": 2663
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step81_wall_velocity_single_feature_activation_guard/wall_velocity_single_feature_activation_guard.json",
+      "size_bytes": 7757
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step81_wall_velocity_single_feature_activation_guard/wall_velocity_single_feature_activation_guard_summary.csv",
+      "size_bytes": 985
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step81_wall_velocity_single_feature_activation_plan/wall_velocity_single_feature_activation_plan.csv",
+      "size_bytes": 3386
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step81_wall_velocity_single_feature_activation_plan/wall_velocity_single_feature_activation_plan.json",
+      "size_bytes": 11158
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step81_wall_velocity_single_feature_activation_plan/wall_velocity_single_feature_activation_plan_summary.csv",
+      "size_bytes": 2103
+    }
+  ],
+  "summary": {
+    "output_guard_pass": true,
+    "pass_count": 23,
+    "private_absolute_path_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "row_count": 23,
+    "step81_dense_wall_velocity_output_count": 0,
+    "step81_driver_run_dir_count": 0,
+    "step81_forbidden_file_count": 0,
+    "step81_large_file_count": 0,
+    "step81_particle_npy_count": 0,
+    "step81_sparse_wall_velocity_output_count": 0,
+    "step81_total_size_bytes": 495228,
+    "step81_total_size_mb": 0.4722862243652344,
+    "step81_vtr_count": 0
+  }
+}

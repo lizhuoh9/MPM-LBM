@@ -156,3 +156,30 @@ executed_in_step80 = true
 Step80 is not a wall-velocity, real-geometry, squid-proxy, link-area,
 larger-grid, VTR, particle-output, physical-validation, or production-readiness
 campaign.
+
+## Step81 Wall Velocity Single-Feature Activation Planning
+
+After Step80 acceptance, Step81 does not run a simulation. It plans and guards
+exactly one future Step82 row:
+
+```text
+campaign_id = step81_wall_velocity_single_feature_activation_plan_and_guard
+row_id = canonical_driver_wall_velocity_solid_vel_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+geometry_type = box
+boundary_motion_mode = prescribed_kinematic
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+executed_in_step81 = false
+planned_for_step82 = true
+```
+
+Step81 does not authorize runtime geometry, combined runtime geometry plus wall
+velocity, real geometry, squid proxy behavior, link-area transfer, larger
+grids, VTR output, particle NPY output, solver formula changes, tau migration,
+or physical-production claims.

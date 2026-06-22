@@ -36,6 +36,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 78: minimal post-gate canonical driver 5-step rebaseline
 - Step 79: runtime geometry diagnostic-only activation plan and guard
 - Step 80: runtime geometry diagnostic-only canonical driver 3-step smoke
+- Step 81: wall velocity single-feature activation plan and guard
 
 ## Current Validated Modes
 
@@ -129,6 +130,14 @@ semantics with zero mutation flags, and keeps wall velocity, real geometry,
 squid proxy behavior, link-area transfer, larger grids, VTR output, and particle
 NPY output disabled. Step80 does not claim moving-geometry physics, real squid
 validation, physical validation, grid convergence, or production readiness.
+
+Step 81 adds wall velocity single-feature activation planning and guard evidence
+for exactly one future Step82 row. Step81 does not run `FSIDriver3D`, execute a
+simulation, activate wall velocity in runtime, enable runtime geometry, combine
+runtime geometry with wall velocity, enable real geometry, enable squid proxy
+behavior, enable link-area transfer, add larger grids, or write VTR or particle
+NPY output. The only Step81 claim is that wall velocity `solid_vel` activation
+is planned and guarded for Step82.
 
 ## What Exists
 

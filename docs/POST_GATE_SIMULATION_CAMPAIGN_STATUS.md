@@ -109,3 +109,30 @@ displace MPM particles, update LBM `solid_phi`, update LBM `solid_vel`, update
 `dynamic_solid`, recompute boundary links, enable wall velocity, enable real
 geometry, enable squid proxy behavior, use link-area transfer, write VTR, write
 particle NPY, or claim physical validation or production readiness.
+
+## Step81 Planned Row
+
+Step81 does not execute a driver row. It records and guards the only planned
+Step82 row:
+
+```text
+campaign_id = step81_wall_velocity_single_feature_activation_plan_and_guard
+row_id = canonical_driver_wall_velocity_solid_vel_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+geometry_type = box
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+executed_in_step81 = false
+planned_for_step82 = true
+```
+
+Step81 does not run `FSIDriver3D`, does not execute simulation, does not
+activate wall velocity in runtime, does not enable runtime geometry, does not
+combine runtime geometry with wall velocity, does not enable real geometry,
+squid proxy behavior, link-area transfer, 48^3, 64^3, VTR output, or particle
+NPY output, and does not claim physical validation or production readiness.

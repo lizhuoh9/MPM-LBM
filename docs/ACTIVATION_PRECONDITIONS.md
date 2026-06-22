@@ -217,3 +217,25 @@ updates, `dynamic_solid` updates, boundary-link recomputation, wall velocity,
 real geometry, squid proxy behavior, link-area transfer, larger grids, VTR
 output, particle NPY output, solver formula changes, tau migration, and
 physical-production claims remain closed after Step80.
+
+Step81 plans and guards a future wall-velocity-only Step82 row without opening
+runtime simulation in Step81:
+
+```text
+wall_velocity_activation_planned = true
+wall_velocity_application_mode_planned_for_step82 = solid_vel_experimental
+target_lbm_field_planned_for_step82 = solid_vel
+step81_activation_feature_count = 0
+planned_step82_activation_feature_count = 1
+fsidriver_run_allowed = false
+simulation_run_allowed = false
+runtime_geometry_allowed = false
+combined_runtime_geometry_wall_velocity_allowed = false
+```
+
+Step81 authorizes only the future Step82 row
+`canonical_driver_wall_velocity_solid_vel_32_3step_smoke`. Runtime geometry,
+combined runtime geometry plus wall velocity, real geometry, squid proxy
+behavior, link-area transfer, 48^3, 64^3, VTR output, particle NPY output,
+solver formula changes, tau migration, and physical-production claims remain
+closed.

@@ -79,6 +79,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 78 minimal post-gate canonical driver 5-step rebaseline, with one 32^3 moving-boundary engineering five-step `FSIDriver3D.run()` row, activation guards, output guards, and Step77 regression guards while advanced activation remains closed
 - Step 79 runtime geometry diagnostic-only activation plan and guard, with Step80 single-feature smoke planning, Step78 regression guards, output guards, and artifact guards while no simulation is run and advanced activation remains closed
 - Step 80 runtime geometry diagnostic-only canonical driver 3-step smoke, with one 32^3 moving-boundary engineering box row, geometry-motion interface reporting, zero mutation flags, output guards, and Step79 regression guards
+- Step 81 wall velocity single-feature activation plan and guard, with Step82 wall-velocity-only smoke planning, Step80 regression guards, output guards, and artifact guards while no simulation is run
 
 ## Not Implemented
 
