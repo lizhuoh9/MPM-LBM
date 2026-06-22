@@ -1,0 +1,184 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "smoke_matrix_pass",
+      "expected": true,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 3,
+      "check": "activation_feature_count",
+      "expected": 3,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "squid_proxy_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "procedural_geometry_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "runtime_geometry_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "wall_velocity_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "combined_runtime_geometry_wall_velocity_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": "canonical_driver_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke",
+      "check": "row_name",
+      "expected": "canonical_driver_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": "squid_proxy",
+      "check": "geometry_type",
+      "expected": "squid_proxy",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": "configs/step85_squid_proxy_geometry_1024.json",
+      "check": "geometry_config_path",
+      "expected": "configs/step85_squid_proxy_geometry_1024.json",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": "diagnostic_only",
+      "check": "geometry_motion_application_mode",
+      "expected": "diagnostic_only",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": "solid_vel_experimental",
+      "check": "wall_velocity_application_mode",
+      "expected": "solid_vel_experimental",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": "solid_vel",
+      "check": "target_lbm_field",
+      "expected": "solid_vel",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": true,
+      "check": "apply_to_lbm_solid_vel_wall_velocity",
+      "expected": true,
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": false,
+      "check": "apply_to_lbm_populations",
+      "expected": false,
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": false,
+      "check": "modify_bounceback_formula",
+      "expected": false,
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": 0,
+      "check": "real_geometry_candidate_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "real_geometry_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "link_area_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "grid_48_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "grid_64_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "write_vtk_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "write_particles_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    }
+  ],
+  "summary": {
+    "activation_feature_count": 3,
+    "combined_runtime_geometry_wall_velocity_enabled_count": 1,
+    "geometry_motion_application_mode": "diagnostic_only",
+    "geometry_type": "squid_proxy",
+    "guard_pass_count": 23,
+    "guard_row_count": 23,
+    "link_area_enabled_count": 0,
+    "real_geometry_candidate_enabled_count": 0,
+    "real_geometry_enabled_count": 0,
+    "row_count": 23,
+    "runtime_geometry_enabled_count": 1,
+    "squid_proxy_enabled_count": 1,
+    "step88_activation_guard_pass": true,
+    "wall_velocity_application_mode": "solid_vel_experimental",
+    "wall_velocity_enabled_count": 1,
+    "write_particles_count": 0,
+    "write_vtk_count": 0
+  }
+}

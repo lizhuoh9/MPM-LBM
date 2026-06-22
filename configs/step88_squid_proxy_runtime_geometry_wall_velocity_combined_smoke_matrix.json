@@ -1,0 +1,18 @@
+{
+  "allowed_next_step": "Step88",
+  "allowed_next_step_scope": "squid_proxy plus runtime geometry diagnostic-only plus wall velocity solid_vel combined canonical driver 3-step smoke only",
+  "campaign_id": "step88_squid_proxy_runtime_geometry_wall_velocity_combined_canonical_driver_smoke",
+  "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+  "driver_run_required": true,
+  "driver_run_root": "outputs/step88_driver_runs",
+  "gate_source_step": "Step87",
+  "physics_feature_expansion": "squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_only",
+  "post_gate_simulation_allowed": true,
+  "previous_step": "Step87",
+  "required_smoke_configs": [
+    "configs/step88_canonical_driver_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke.json"
+  ],
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false,
+  "step": 88
+}

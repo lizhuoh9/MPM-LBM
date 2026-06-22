@@ -43,6 +43,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 85: squid proxy static geometry activation plan and guard
 - Step 86: squid proxy static geometry canonical driver 3-step smoke
 - Step 87: runtime geometry diagnostic-only plus wall velocity `solid_vel` plus squid proxy combined activation plan and guard
+- Step 88: squid proxy plus runtime geometry diagnostic-only plus wall velocity `solid_vel` combined canonical driver 3-step smoke
 
 ## Current Validated Modes
 
@@ -246,3 +247,13 @@ row, enable real geometry candidates, use link-area transfer, add larger grids,
 write VTR or particle NPY output, change solver formulas, migrate tau
 semantics, or claim physical validation, real squid validation, squid swimming,
 squid actuation, or production readiness.
+
+Step88 executes exactly that three-feature canonical driver smoke row for three
+LBM steps at 32^3 with 1024 particles. The row combines procedural
+`squid_proxy` geometry, runtime geometry diagnostic-only reporting,
+boundary-motion reporting, and wall velocity `solid_vel_experimental`
+reporting, with `target_u_lbm = [0.0, 0.0, 0.0]` as a row-local config choice.
+Step88 keeps real geometry candidates, link-area transfer, 48^3, 64^3, VTR
+output, particle NPY output, solver formula changes, tau migration, physical
+validation, real squid validation, squid swimming, squid actuation, and
+production-readiness claims closed.

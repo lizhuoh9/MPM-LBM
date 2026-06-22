@@ -382,3 +382,30 @@ It does not authorize real geometry candidate data, link-area transfer, larger
 grids, solver formula changes, tau migration, squid swimming, squid actuation,
 physical-validation claims, real squid validation claims, or
 production-readiness claims.
+
+Step88 executes exactly that authorized three-feature row:
+
+```text
+step88_squid_proxy_runtime_geometry_wall_velocity_combined_smoke_matrix_pass = true
+activation_feature_count = 3
+squid_proxy_enabled_count = 1
+procedural_geometry_enabled_count = 1
+runtime_geometry_enabled_count = 1
+runtime_geometry_application_mode = diagnostic_only
+wall_velocity_enabled_count = 1
+wall_velocity_application_mode = solid_vel_experimental
+combined_runtime_geometry_wall_velocity_enabled_count = 1
+target_u_lbm = [0.0, 0.0, 0.0]
+real_geometry_candidate_enabled_count = 0
+real_geometry_enabled_count = 0
+link_area_enabled_count = 0
+write_vtk_count = 0
+write_particles_count = 0
+```
+
+Step88 opens only the bounded three-feature smoke row. Runtime geometry remains
+diagnostic-only/no-op, wall velocity targets LBM `solid_vel` only, and the
+`squid_proxy` geometry remains procedural. Step88 does not authorize real
+geometry candidate data, link-area transfer, larger grids, solver formula
+changes, tau migration, squid swimming, squid actuation, physical-validation
+claims, real squid validation claims, or production-readiness claims.

@@ -1,0 +1,38 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step82_wall_velocity_solid_vel_smoke_matrix/wall_velocity_solid_vel_smoke_matrix.json",
+      "check": "step82_smoke_matrix_pass",
+      "expected": true,
+      "summary_key": "step82_wall_velocity_solid_vel_smoke_matrix_pass"
+    },
+    {
+      "artifact_path": "outputs/step82_wall_velocity_solid_vel_quality/wall_velocity_solid_vel_quality.json",
+      "check": "step82_quality_pass",
+      "expected": true,
+      "summary_key": "step82_wall_velocity_solid_vel_quality_pass"
+    },
+    {
+      "artifact_path": "outputs/step82_activation_guard/activation_guard.json",
+      "check": "step82_activation_guard_pass",
+      "expected": true,
+      "summary_key": "step82_activation_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step82_output_guard/output_guard.json",
+      "check": "step82_output_guard_pass",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step82_artifact_manifest/artifact_summary.json",
+      "check": "step82_artifact_budget_pass",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "expected_activation_feature_count": 1,
+  "expected_runtime_geometry_enabled_count": 0,
+  "expected_squid_proxy_enabled_count": 0,
+  "expected_wall_velocity_enabled_count": 1
+}

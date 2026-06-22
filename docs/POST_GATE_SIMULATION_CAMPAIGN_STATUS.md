@@ -5,7 +5,8 @@ required first row from that proposal. Step77 added a separate 3-step
 post-gate rebaseline row after Step76 was accepted. Step78 added a separate
 5-step post-gate rebaseline row after Step77 was accepted. Steps 79, 81, 83,
 and 85 planned bounded single-feature rows; Steps 80, 82, 84, and 86 executed
-those planned canonical driver smoke rows.
+those planned canonical driver smoke rows. Step87 planned the first
+three-feature combined row, and Step88 executed that bounded combined smoke.
 
 ## Step76 Executed Row
 
@@ -312,3 +313,34 @@ Step87 does not run `FSIDriver3D`, does not execute simulation, does not enable
 the three-feature combined row, real geometry candidates, link-area transfer,
 48^3, 64^3, VTR output, or particle NPY output, and does not claim physical
 validation, real squid validation, squid swimming, or production readiness.
+
+## Step88 Executed Row
+
+```text
+campaign_id = step88_squid_proxy_runtime_geometry_wall_velocity_combined_canonical_driver_smoke
+row_id = canonical_driver_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+target_u_lbm = [0.0, 0.0, 0.0]
+geometry_type = squid_proxy
+geometry_config_path = configs/step85_squid_proxy_geometry_1024.json
+quality_check_enabled = true
+quality_check_strict = false
+geometry_motion_application_mode = diagnostic_only
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+write_vtk = false
+write_particles = false
+executed_in_step88 = true
+```
+
+Step88 enables only the bounded combination of procedural `squid_proxy`
+geometry, runtime geometry diagnostic-only reporting, and wall velocity
+`solid_vel_experimental` reporting. Real geometry candidates, link-area
+transfer, 48^3, 64^3, VTR output, and particle NPY output remain disabled.
+Step88 does not claim physical validation, real squid validation, squid
+swimming, squid actuation, grid convergence, or production readiness.

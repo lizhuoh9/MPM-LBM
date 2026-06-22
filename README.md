@@ -86,6 +86,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 85 squid proxy static geometry activation plan and guard, with exactly one future Step86 static `squid_proxy` 32^3 three-step smoke row planned, Step84 regression guard, Step31 reference guard, output guard, and artifact guard while no simulation is run
 - Step 86 squid proxy static geometry canonical driver 3-step smoke, with exactly one 32^3/1024-particle moving-boundary engineering `squid_proxy` row, non-strict geometry quality report, Step85/Step84/Step31 guards, output guards, and artifact guard while runtime geometry, wall velocity, real geometry candidates, link-area transfer, larger grids, VTR, particle NPY, solver formula changes, tau migration, and physical-production claims remain closed
 - Step 87 runtime geometry diagnostic-only plus wall velocity `solid_vel` plus squid proxy combined activation plan and guard, with exactly one future Step88 three-feature 32^3 smoke row planned, Step86/Step84/Step82/Step80 regression guards, output guard, and artifact guard while no simulation is run
+- Step 88 squid proxy plus runtime geometry diagnostic-only plus wall velocity `solid_vel` combined canonical driver 3-step smoke, with exactly one 32^3/1024-particle row, non-strict squid proxy geometry quality reporting, diagnostic-only runtime geometry reporting, `solid_vel_experimental` wall-velocity reporting, Step87/Step86/Step84/Step82/Step80 guards, output guard, and artifact guard while real geometry candidates, link-area transfer, larger grids, VTR, particle NPY, solver formula changes, and physical-production claims remain closed
 
 ## Not Implemented
 
@@ -944,6 +945,31 @@ Step 80 does not write VTR or particle NPY output.
 Step 80 does not claim physical validation, real squid validation, moving
 geometry validation, grid convergence, or production readiness.
 See docs/80_runtime_geometry_diagnostic_only_canonical_driver_smoke.md.
+
+## Step 88 Squid Proxy Runtime Geometry Wall Velocity Combined Canonical Driver Smoke Boundary
+
+Step 88 runs exactly one required canonical driver row:
+`canonical_driver_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke`.
+The row is 32^3, 1024 particles, three LBM steps, one MPM substep per LBM step,
+moving_boundary, engineering transfer, and procedural `squid_proxy` geometry.
+Step 88 enables only non-strict squid-proxy geometry quality reporting, runtime
+geometry diagnostic-only reporting, boundary-motion reporting, and wall velocity
+`solid_vel_experimental` reporting. The row uses
+`target_u_lbm = [0.0, 0.0, 0.0]` as a Step88-local config choice to isolate the
+wall-velocity report from default background flow.
+Step 88 does not mutate geometry.
+Step 88 does not displace MPM particles through runtime geometry.
+Step 88 does not update LBM `solid_phi` through runtime geometry.
+Step 88 does not write LBM populations through wall velocity.
+Step 88 does not modify moving bounce-back formulas.
+Step 88 does not enable real geometry candidates.
+Step 88 does not use link-area transfer.
+Step 88 does not add a 48^3 or 64^3 row.
+Step 88 does not write VTR or particle NPY output.
+Step 88 does not change solver formulas or tau semantics.
+Step 88 does not claim physical validation, real squid validation, squid
+swimming, squid actuation, grid convergence, or production readiness.
+See docs/88_squid_proxy_runtime_geometry_wall_velocity_combined_canonical_driver_smoke.md.
 
 ## Upstream LBM Note
 

@@ -354,3 +354,34 @@ Step87 does not authorize real geometry candidate data, link-area transfer,
 larger grids, VTR output, particle NPY output, solver formula changes, tau
 migration, squid swimming, physical-validation claims, real-squid-validation
 claims, or production-readiness claims.
+
+## Step88 Three-Feature Combined Smoke
+
+Step88 executes exactly the row planned by Step87:
+
+```text
+campaign_id = step88_squid_proxy_runtime_geometry_wall_velocity_combined_canonical_driver_smoke
+row_id = canonical_driver_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+target_u_lbm = [0.0, 0.0, 0.0]
+geometry_type = squid_proxy
+geometry_config_path = configs/step85_squid_proxy_geometry_1024.json
+quality_check_enabled = true
+quality_check_strict = false
+geometry_motion_application_mode = diagnostic_only
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+write_vtk = false
+write_particles = false
+executed_in_step88 = true
+```
+
+Step88 is not a real-geometry, link-area, larger-grid, VTR, particle-output,
+physical-validation, real-squid-validation, squid-swimming, squid-actuation, or
+production-readiness campaign. It is the first bounded three-feature combined
+canonical driver smoke only.
