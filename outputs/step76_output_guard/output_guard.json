@@ -1,0 +1,216 @@
+{
+  "rows": [
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step76_activation_guard.log",
+      "size_bytes": 53
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step76_artifact_manifest.log",
+      "size_bytes": 62
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step76_output_guard.log",
+      "size_bytes": 49
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step76_post_gate_rebaseline_matrix.log",
+      "size_bytes": 246
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step76_post_gate_rebaseline_quality.log",
+      "size_bytes": 65
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step76_step75_regression_guard.log",
+      "size_bytes": 60
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_activation_guard/activation_guard.csv",
+      "size_bytes": 2843
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_activation_guard/activation_guard.json",
+      "size_bytes": 6351
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_activation_guard/activation_guard_summary.csv",
+      "size_bytes": 171
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_artifact_manifest/artifact_manifest.csv",
+      "size_bytes": 424448
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_artifact_manifest/artifact_summary.csv",
+      "size_bytes": 469
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_artifact_manifest/artifact_summary.json",
+      "size_bytes": 544
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_driver_runs/canonical_driver_moving_boundary_engineering_32_1step_rebaseline/diagnostics_timeseries.csv",
+      "size_bytes": 774
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_driver_runs/canonical_driver_moving_boundary_engineering_32_1step_rebaseline/diagnostics_timeseries.npz",
+      "size_bytes": 8744
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_driver_runs/canonical_driver_moving_boundary_engineering_32_1step_rebaseline/driver_config.json",
+      "size_bytes": 1472
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_driver_runs/canonical_driver_moving_boundary_engineering_32_1step_rebaseline/geo_all_fluid_32.dat",
+      "size_bytes": 98304
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_output_guard/output_guard.csv",
+      "size_bytes": 1953
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_output_guard/output_guard.json",
+      "size_bytes": 4753
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_output_guard/output_guard_summary.csv",
+      "size_bytes": 440
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_post_gate_rebaseline_matrix/post_gate_rebaseline_matrix.csv",
+      "size_bytes": 1792
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_post_gate_rebaseline_matrix/post_gate_rebaseline_matrix.json",
+      "size_bytes": 4003
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_post_gate_rebaseline_matrix/post_gate_rebaseline_matrix_summary.csv",
+      "size_bytes": 1209
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_post_gate_rebaseline_quality/post_gate_rebaseline_quality.csv",
+      "size_bytes": 2027
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_post_gate_rebaseline_quality/post_gate_rebaseline_quality.json",
+      "size_bytes": 4544
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_post_gate_rebaseline_quality/post_gate_rebaseline_quality_summary.csv",
+      "size_bytes": 149
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_step75_regression_guard/step75_regression_guard.csv",
+      "size_bytes": 1883
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_step75_regression_guard/step75_regression_guard.json",
+      "size_bytes": 3754
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step76_step75_regression_guard/step75_regression_guard_summary.csv",
+      "size_bytes": 171
+    }
+  ],
+  "summary": {
+    "output_guard_pass": true,
+    "pass_count": 28,
+    "private_absolute_path_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "row_count": 28,
+    "step76_forbidden_file_count": 0,
+    "step76_large_file_count": 0,
+    "step76_optional_driver_run_dir_count": 0,
+    "step76_particle_npy_count": 0,
+    "step76_required_driver_run_dir_count": 1,
+    "step76_total_size_bytes": 571333,
+    "step76_total_size_mb": 0.544865608215332,
+    "step76_vtr_count": 0
+  }
+}

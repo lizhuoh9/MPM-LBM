@@ -74,6 +74,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 73 wall velocity activation readiness audit, with API, schema, driver-gate, application-safety, output-policy, full activation-gate coverage, no-simulation, and Step72 regression guards while activation remains closed
 - Step 74 real geometry data boundary audit, with API, descriptor schema, manifest policy, quarantine, output-policy, full activation-gate coverage, no-simulation, and Step73 regression guards while activation remains closed
 - Step 75 solver-complete simulation campaign readiness gate, with Step71-Step74 evidence aggregation, activation-gate closure, inactive Step76 minimal rebaseline planning, no-simulation, output-policy, and Step74 regression guards while advanced activation remains closed
+- Step 76 minimal post-gate canonical driver rebaseline, with one 32^3 moving-boundary engineering one-step `FSIDriver3D.run()` row, activation guards, output guards, and Step75 regression guards while advanced activation remains closed
 
 ## Not Implemented
 
@@ -822,6 +823,25 @@ Step 75 does not claim physical validation, real squid validation, or production
 The Step 75 gate status is `ready_for_step76_rebaseline_only`, and the only
 allowed next scope is Step76 minimal safe rebaseline.
 See docs/75_solver_complete_simulation_campaign_readiness_gate.md.
+
+## Step 76 Minimal Post-Gate Canonical Driver Rebaseline Boundary
+
+Step 76 is the minimal post-gate canonical driver rebaseline authorized by
+Step 75.
+Step 76 calls `FSIDriver3D(...).run()` through `src.mpm_lbm.sim.drivers.fsi_driver`
+for exactly one required 32^3, 1024-particle, moving-boundary engineering row
+with one LBM step and one MPM substep.
+Step 76 keeps the optional 32^3 three-step row disabled by default.
+Step 76 does not activate runtime geometry.
+Step 76 does not activate moving-wall velocity.
+Step 76 does not activate real geometry.
+Step 76 does not activate squid proxy behavior.
+Step 76 does not use link-area transfer.
+Step 76 does not add a 48^3 or 64^3 row.
+Step 76 does not write VTR or particle NPY output.
+Step 76 does not change solver formulas or tau semantics.
+Step 76 does not claim physical validation, real squid validation, grid convergence, or production readiness.
+See docs/76_minimal_post_gate_canonical_driver_rebaseline.md.
 
 ## Upstream LBM Note
 

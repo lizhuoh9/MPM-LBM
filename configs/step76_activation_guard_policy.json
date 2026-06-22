@@ -1,0 +1,23 @@
+{
+  "activation_features_must_be_false": [
+    "runtime_geometry_enabled",
+    "wall_velocity_enabled",
+    "combined_runtime_geometry_wall_velocity_enabled",
+    "real_geometry_enabled",
+    "squid_proxy_enabled",
+    "link_area_enabled",
+    "grid_48_enabled",
+    "grid_64_enabled",
+    "write_vtk",
+    "write_particles"
+  ],
+  "allowed_required_row_name": "canonical_driver_moving_boundary_engineering_32_1step_rebaseline",
+  "expected_activation_feature_count": 0,
+  "matrix_artifact_path": "outputs/step76_post_gate_rebaseline_matrix/post_gate_rebaseline_matrix.json",
+  "optional_32_3step_run_allowed": false,
+  "optional_row_name": "canonical_driver_moving_boundary_engineering_32_3step_rebaseline_optional",
+  "policy_id": "step76_activation_guard_policy",
+  "step": 76,
+  "step75_campaign_policy_path": "configs/step75_post_gate_campaign_policy.json",
+  "step75_solver_gate_artifact_path": "outputs/step75_solver_complete_gate_audit/solver_complete_gate.json"
+}

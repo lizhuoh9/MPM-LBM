@@ -1,0 +1,7 @@
+metric,value
+activation_feature_count,0
+forbidden_campaign_item_count,0
+optional_32_3step_run,False
+pass_count,30
+post_gate_activation_guard_pass,True
+row_count,30

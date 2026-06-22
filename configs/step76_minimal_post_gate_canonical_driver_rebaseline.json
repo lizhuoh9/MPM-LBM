@@ -1,0 +1,24 @@
+{
+  "allowed_next_step": "Step76",
+  "allowed_next_step_scope": "minimal safe rebaseline only",
+  "campaign_id": "step76_minimal_post_gate_real_driver_rebaseline",
+  "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+  "driver_run_required": true,
+  "driver_run_root": "outputs/step76_driver_runs",
+  "legacy_driver_module": "src.fsi_driver",
+  "physics_feature_expansion": false,
+  "policy_id": "step76_minimal_post_gate_canonical_driver_rebaseline",
+  "post_gate_simulation_allowed": true,
+  "required_rebaseline_configs": [
+    "configs/step76_canonical_driver_moving_boundary_engineering_32_1step_rebaseline.json"
+  ],
+  "run_optional_32_3step": false,
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false,
+  "step": 76,
+  "step75_campaign_policy_path": "configs/step75_post_gate_campaign_policy.json",
+  "step75_solver_gate_artifact_path": "outputs/step75_solver_complete_gate_audit/solver_complete_gate.json",
+  "optional_32_3step_configs": [
+    "configs/step76_canonical_driver_moving_boundary_engineering_32_3step_rebaseline_optional.json"
+  ]
+}

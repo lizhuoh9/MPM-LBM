@@ -52,3 +52,23 @@ runs.
 
 Step75 validates this proposal through
 `outputs/step75_post_gate_campaign_policy_audit/post_gate_campaign_policy.json`.
+
+## Step76 Execution Status
+
+Step76 executes only the required first row from this proposal:
+
+```text
+row_id = canonical_driver_moving_boundary_engineering_32_1step_rebaseline
+executed_in_step76 = true
+```
+
+The optional row remains disabled:
+
+```text
+row_id = canonical_driver_moving_boundary_engineering_32_3step_rebaseline_optional
+executed_in_step76 = false
+```
+
+Step76 does not expand the campaign beyond the Step75 plan. Runtime geometry,
+wall velocity, real geometry, squid proxy, link-area transfer, 48^3, 64^3, VTR,
+and particle NPY remain disabled.

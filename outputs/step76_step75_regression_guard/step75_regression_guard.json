@@ -1,0 +1,109 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "artifact_path": "outputs/step75_precondition_artifact_audit/precondition_artifact.json",
+      "check": "step75_precondition_artifact_audit",
+      "expected": true,
+      "pass": true,
+      "summary_key": "precondition_artifact_audit_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step75_activation_gate_closure_audit/activation_gate_closure.json",
+      "check": "step75_activation_gate_closure_audit",
+      "expected": true,
+      "pass": true,
+      "summary_key": "activation_gate_closure_audit_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step75_post_gate_campaign_policy_audit/post_gate_campaign_policy.json",
+      "check": "step75_post_gate_campaign_policy_audit",
+      "expected": true,
+      "pass": true,
+      "summary_key": "post_gate_campaign_policy_audit_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step75_solver_complete_gate_audit/solver_complete_gate.json",
+      "check": "step75_solver_complete_gate_audit",
+      "expected": true,
+      "pass": true,
+      "summary_key": "solver_complete_gate_audit_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step75_no_simulation_audit/no_simulation.json",
+      "check": "step75_no_simulation_audit",
+      "expected": true,
+      "pass": true,
+      "summary_key": "no_simulation_audit_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step75_output_artifact_policy_audit/output_artifact_policy.json",
+      "check": "step75_output_artifact_policy_audit",
+      "expected": true,
+      "pass": true,
+      "summary_key": "output_artifact_policy_audit_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step75_step74_regression_guard/step74_regression_guard.json",
+      "check": "step75_step74_regression_guard",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step75_step74_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step75_artifact_manifest/artifact_summary.json",
+      "check": "step75_artifact_manifest",
+      "expected": true,
+      "pass": true,
+      "summary_key": "artifact_budget_pass"
+    },
+    {
+      "actual": "ready_for_step76_rebaseline_only",
+      "artifact_path": "outputs/step75_solver_complete_gate_audit/solver_complete_gate.json",
+      "check": "step75_gate_status",
+      "expected": "ready_for_step76_rebaseline_only",
+      "pass": true,
+      "summary_key": "gate_status"
+    },
+    {
+      "actual": "Step76",
+      "artifact_path": "outputs/step75_solver_complete_gate_audit/solver_complete_gate.json",
+      "check": "step75_allowed_next_step",
+      "expected": "Step76",
+      "pass": true,
+      "summary_key": "allowed_next_step"
+    },
+    {
+      "actual": "minimal safe rebaseline only",
+      "artifact_path": "outputs/step75_solver_complete_gate_audit/solver_complete_gate.json",
+      "check": "step75_allowed_next_step_scope",
+      "expected": "minimal safe rebaseline only",
+      "pass": true,
+      "summary_key": "allowed_next_step_scope"
+    },
+    {
+      "actual": [],
+      "artifact_path": "outputs/step75_solver_complete_gate_audit/solver_complete_gate.json",
+      "check": "step75_activation_features_allowed",
+      "expected": [],
+      "pass": true,
+      "summary_key": "activation_features_allowed_in_next_step"
+    }
+  ],
+  "summary": {
+    "artifact_check_count": 8,
+    "artifact_pass_count": 8,
+    "gate_check_count": 4,
+    "gate_pass_count": 4,
+    "pass_count": 12,
+    "row_count": 12,
+    "step76_step75_regression_guard_pass": true
+  }
+}

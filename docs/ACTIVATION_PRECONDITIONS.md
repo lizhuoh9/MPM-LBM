@@ -109,3 +109,23 @@ The Step75 `post_gate_simulation_allowed` flag is limited to the Step76
 minimal safe rebaseline proposal. Runtime geometry, wall velocity, combined
 runtime geometry plus wall velocity, real geometry, squid proxy, link-area
 activation, 48^3, 64^3, VTR output, and particle NPY output remain closed.
+
+Step76 executes only the required minimal rebaseline row allowed by Step75 and
+does not open any advanced activation gate:
+
+```text
+post_gate_rebaseline_matrix_pass = true
+post_gate_activation_guard_pass = true
+activation_feature_count = 0
+runtime_geometry_enabled = false
+wall_velocity_enabled = false
+real_geometry_enabled = false
+squid_proxy_enabled = false
+link_area_enabled = false
+grid_48_enabled = false
+grid_64_enabled = false
+write_vtk = false
+write_particles = false
+```
+
+The optional 32^3/three-step rebaseline remains disabled after Step76.
