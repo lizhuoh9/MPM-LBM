@@ -1,0 +1,339 @@
+{
+  "rows": [
+    {
+      "actual": false,
+      "check": "driver_run_required",
+      "expected": false,
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": false,
+      "check": "fsidriver_run_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": false,
+      "check": "simulation_run_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": true,
+      "check": "runtime_geometry_planned_for_step84",
+      "expected": true,
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": "diagnostic_only",
+      "check": "geometry_motion_application_mode_allowed_for_step84",
+      "expected": "diagnostic_only",
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": false,
+      "check": "geometry_mutation_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": true,
+      "check": "wall_velocity_planned_for_step84",
+      "expected": true,
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": "solid_vel_experimental",
+      "check": "wall_velocity_application_mode_allowed_for_step84",
+      "expected": "solid_vel_experimental",
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": "solid_vel",
+      "check": "target_lbm_field_planned_for_step84",
+      "expected": "solid_vel",
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": true,
+      "check": "combined_runtime_geometry_wall_velocity_planned_for_step84",
+      "expected": true,
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": 0,
+      "check": "step83_activation_feature_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": 2,
+      "check": "planned_step84_activation_feature_count",
+      "expected": 2,
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": false,
+      "check": "squid_proxy_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": false,
+      "check": "link_area_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": false,
+      "check": "grid_48_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": false,
+      "check": "grid_64_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": false,
+      "check": "vtr_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": false,
+      "check": "particle_npy_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": "3df6bb25b32d74f16300b8ba603c843eecc725c2",
+      "check": "previous_commit",
+      "expected": "3df6bb25b32d74f16300b8ba603c843eecc725c2",
+      "pass": true,
+      "row_name": "step83_plan"
+    },
+    {
+      "actual": "canonical_driver_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke",
+      "check": "step84_allowed_row_name",
+      "expected": "canonical_driver_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke",
+      "pass": true,
+      "row_name": "step84_plan"
+    },
+    {
+      "actual": 32,
+      "check": "step84_allowed_n_grid",
+      "expected": 32,
+      "pass": true,
+      "row_name": "step84_plan"
+    },
+    {
+      "actual": 1024,
+      "check": "step84_allowed_n_particles",
+      "expected": 1024,
+      "pass": true,
+      "row_name": "step84_plan"
+    },
+    {
+      "actual": 3,
+      "check": "step84_allowed_n_lbm_steps",
+      "expected": 3,
+      "pass": true,
+      "row_name": "step84_plan"
+    },
+    {
+      "actual": 1,
+      "check": "step84_allowed_mpm_substeps_per_lbm_step",
+      "expected": 1,
+      "pass": true,
+      "row_name": "step84_plan"
+    },
+    {
+      "actual": "moving_boundary",
+      "check": "step84_allowed_coupling_mode",
+      "expected": "moving_boundary",
+      "pass": true,
+      "row_name": "step84_plan"
+    },
+    {
+      "actual": "engineering",
+      "check": "step84_allowed_reaction_transfer_mode",
+      "expected": "engineering",
+      "pass": true,
+      "row_name": "step84_plan"
+    },
+    {
+      "actual": "prescribed_kinematic",
+      "check": "boundary_motion_mode_allowed_for_step84",
+      "expected": "prescribed_kinematic",
+      "pass": true,
+      "row_name": "step84_plan"
+    },
+    {
+      "actual": "configs/step80_geometry_motion_interface_prescribed_diagnostic_only.json",
+      "check": "geometry_motion_config_path_allowed_for_step84",
+      "expected": "configs/step80_geometry_motion_interface_prescribed_diagnostic_only.json",
+      "pass": true,
+      "row_name": "step84_plan"
+    },
+    {
+      "actual": "configs/step80_geometry_motion_interface_prescribed_diagnostic_only.json",
+      "check": "geometry_motion_application_config_path_allowed_for_step84",
+      "expected": "configs/step80_geometry_motion_interface_prescribed_diagnostic_only.json",
+      "pass": true,
+      "row_name": "step84_plan"
+    },
+    {
+      "actual": "solid_vel_experimental",
+      "check": "application_mode",
+      "expected": "solid_vel_experimental",
+      "pass": true,
+      "row_name": "step36_wall_velocity_application"
+    },
+    {
+      "actual": "solid_vel",
+      "check": "target_lbm_field",
+      "expected": "solid_vel",
+      "pass": true,
+      "row_name": "step36_wall_velocity_application"
+    },
+    {
+      "actual": "configs/step34_boundary_motion_interface_prescribed_kinematic.json",
+      "check": "boundary_motion_config_path",
+      "expected": "configs/step34_boundary_motion_interface_prescribed_kinematic.json",
+      "pass": true,
+      "row_name": "step36_wall_velocity_application"
+    },
+    {
+      "actual": true,
+      "check": "apply_to_lbm_solid_vel",
+      "expected": true,
+      "pass": true,
+      "row_name": "step36_wall_velocity_application"
+    },
+    {
+      "actual": false,
+      "check": "apply_to_lbm_populations",
+      "expected": false,
+      "pass": true,
+      "row_name": "step36_wall_velocity_application"
+    },
+    {
+      "actual": false,
+      "check": "apply_to_mpm",
+      "expected": false,
+      "pass": true,
+      "row_name": "step36_wall_velocity_application"
+    },
+    {
+      "actual": false,
+      "check": "apply_to_projector",
+      "expected": false,
+      "pass": true,
+      "row_name": "step36_wall_velocity_application"
+    },
+    {
+      "actual": false,
+      "check": "modify_bounceback_formula",
+      "expected": false,
+      "pass": true,
+      "row_name": "step36_wall_velocity_application"
+    },
+    {
+      "actual": false,
+      "check": "jet_model_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "step36_wall_velocity_application"
+    },
+    {
+      "actual": false,
+      "check": "actuation_claim_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "step36_wall_velocity_application"
+    },
+    {
+      "actual": "prescribed_kinematic",
+      "check": "geometry_motion_mode",
+      "expected": "prescribed_kinematic",
+      "pass": true,
+      "row_name": "step80_runtime_geometry_diagnostic_only"
+    },
+    {
+      "actual": "diagnostic_only",
+      "check": "application_mode",
+      "expected": "diagnostic_only",
+      "pass": true,
+      "row_name": "step80_runtime_geometry_diagnostic_only"
+    },
+    {
+      "actual": true,
+      "check": "diagnostic_only",
+      "expected": true,
+      "pass": true,
+      "row_name": "step80_runtime_geometry_diagnostic_only"
+    },
+    {
+      "actual": false,
+      "check": "mutate_geometry_state",
+      "expected": false,
+      "pass": true,
+      "row_name": "step80_runtime_geometry_diagnostic_only"
+    }
+  ],
+  "summary": {
+    "actuation_claim_planned_for_step84": false,
+    "apply_to_lbm_populations_planned_for_step84": false,
+    "apply_to_lbm_solid_vel_planned_for_step84": true,
+    "apply_to_mpm_planned_for_step84": false,
+    "apply_to_projector_planned_for_step84": false,
+    "combined_runtime_geometry_wall_velocity_planned_for_step84": true,
+    "geometry_mutation_allowed": false,
+    "guard_pass_count": 44,
+    "guard_row_count": 44,
+    "jet_model_planned_for_step84": false,
+    "link_area_planned_for_step84": false,
+    "modify_bounceback_formula_planned_for_step84": false,
+    "planned_step84_activation_feature_count": 2,
+    "real_geometry_planned_for_step84": false,
+    "row_count": 44,
+    "runtime_geometry_application_mode_planned_for_step84": "diagnostic_only",
+    "runtime_geometry_planned_for_step84": true,
+    "squid_proxy_planned_for_step84": false,
+    "step83_activation_feature_count": 0,
+    "step83_runtime_geometry_wall_velocity_combined_activation_guard_pass": true,
+    "target_lbm_field_planned_for_step84": "solid_vel",
+    "wall_velocity_application_mode_planned_for_step84": "solid_vel_experimental",
+    "wall_velocity_planned_for_step84": true,
+    "write_particles_planned_for_step84": false,
+    "write_vtk_planned_for_step84": false
+  }
+}

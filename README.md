@@ -81,6 +81,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 80 runtime geometry diagnostic-only canonical driver 3-step smoke, with one 32^3 moving-boundary engineering box row, geometry-motion interface reporting, zero mutation flags, output guards, and Step79 regression guards
 - Step 81 wall velocity single-feature activation plan and guard, with Step82 wall-velocity-only smoke planning, Step80 regression guards, output guards, and artifact guards while no simulation is run
 - Step 82 wall velocity `solid_vel` canonical driver 3-step smoke, with one 32^3 moving-boundary engineering box row, `solid_vel_experimental` application reporting, boundary-motion no-op reporting, output guards, and Step81 regression guards
+- Step 83 runtime geometry diagnostic-only plus wall velocity combined activation plan and guard, with exactly one future Step84 combined smoke row planned, Step80/Step82 regression guards, output guards, and artifact guards while no simulation is run
 
 ## Not Implemented
 

@@ -1,0 +1,18 @@
+{
+  "large_file_threshold_bytes": 5242880,
+  "max_step83_file_count": 55,
+  "max_step83_total_size_mb": 5.0,
+  "policy_id": "step83_artifact_manifest_policy",
+  "protected_prefixes": [
+    "data/real_geometry_candidates/",
+    "external/taichi_LBM3D/"
+  ],
+  "raw_geometry_extensions": [
+    ".stl",
+    ".obj",
+    ".ply",
+    ".vtk",
+    ".vtu"
+  ],
+  "step": 83
+}

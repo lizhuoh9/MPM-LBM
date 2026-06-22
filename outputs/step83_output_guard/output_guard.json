@@ -1,0 +1,213 @@
+{
+  "rows": [
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step83_artifact_manifest.log",
+      "size_bytes": 62
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step83_focused_pytest.log",
+      "size_bytes": 104
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step83_full_pytest_anaconda.log",
+      "size_bytes": 1241
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step83_full_pytest_taichi.log",
+      "size_bytes": 1252
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step83_output_guard.log",
+      "size_bytes": 49
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step83_runtime_geometry_wall_velocity_combined_activation_guard.log",
+      "size_bytes": 93
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step83_runtime_geometry_wall_velocity_combined_activation_plan.log",
+      "size_bytes": 92
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step83_step80_regression_guard.log",
+      "size_bytes": 60
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step83_step82_regression_guard.log",
+      "size_bytes": 60
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_artifact_manifest/artifact_manifest.csv",
+      "size_bytes": 454034
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_artifact_manifest/artifact_summary.csv",
+      "size_bytes": 421
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_artifact_manifest/artifact_summary.json",
+      "size_bytes": 490
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_output_guard/output_guard.csv",
+      "size_bytes": 1844
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_output_guard/output_guard.json",
+      "size_bytes": 4381
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_output_guard/output_guard_summary.csv",
+      "size_bytes": 597
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_runtime_geometry_wall_velocity_combined_activation_guard/runtime_geometry_wall_velocity_combined_activation_guard.csv",
+      "size_bytes": 3695
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_runtime_geometry_wall_velocity_combined_activation_guard/runtime_geometry_wall_velocity_combined_activation_guard.json",
+      "size_bytes": 9803
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_runtime_geometry_wall_velocity_combined_activation_guard/runtime_geometry_wall_velocity_combined_activation_guard_summary.csv",
+      "size_bytes": 1097
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_runtime_geometry_wall_velocity_combined_activation_plan/runtime_geometry_wall_velocity_combined_activation_plan.csv",
+      "size_bytes": 5902
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_runtime_geometry_wall_velocity_combined_activation_plan/runtime_geometry_wall_velocity_combined_activation_plan.json",
+      "size_bytes": 15107
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_runtime_geometry_wall_velocity_combined_activation_plan/runtime_geometry_wall_velocity_combined_activation_plan_summary.csv",
+      "size_bytes": 2661
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_step80_regression_guard/step80_regression_guard.csv",
+      "size_bytes": 2582
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_step80_regression_guard/step80_regression_guard.json",
+      "size_bytes": 5209
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_step80_regression_guard/step80_regression_guard_summary.csv",
+      "size_bytes": 469
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_step82_regression_guard/step82_regression_guard.csv",
+      "size_bytes": 2384
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_step82_regression_guard/step82_regression_guard.json",
+      "size_bytes": 5011
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step83_step82_regression_guard/step82_regression_guard_summary.csv",
+      "size_bytes": 469
+    }
+  ],
+  "summary": {
+    "output_guard_pass": true,
+    "pass_count": 27,
+    "private_absolute_path_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "row_count": 27,
+    "step83_dense_displacement_output_count": 0,
+    "step83_dense_wall_velocity_output_count": 0,
+    "step83_displaced_particle_output_count": 0,
+    "step83_driver_run_dir_count": 0,
+    "step83_forbidden_file_count": 0,
+    "step83_large_file_count": 0,
+    "step83_particle_npy_count": 0,
+    "step83_raw_geometry_output_count": 0,
+    "step83_sparse_wall_velocity_output_count": 0,
+    "step83_total_size_bytes": 519169,
+    "step83_total_size_mb": 0.4951181411743164,
+    "step83_vtr_count": 0
+  }
+}

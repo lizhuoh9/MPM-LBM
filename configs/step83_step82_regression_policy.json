@@ -1,0 +1,96 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step82_wall_velocity_solid_vel_smoke_matrix/wall_velocity_solid_vel_smoke_matrix.json",
+      "check": "step82_wall_velocity_solid_vel_smoke_matrix_pass",
+      "expected": true,
+      "summary_key": "step82_wall_velocity_solid_vel_smoke_matrix_pass"
+    },
+    {
+      "artifact_path": "outputs/step82_wall_velocity_solid_vel_quality/wall_velocity_solid_vel_quality.json",
+      "check": "step82_wall_velocity_solid_vel_quality_pass",
+      "expected": true,
+      "summary_key": "step82_wall_velocity_solid_vel_quality_pass"
+    },
+    {
+      "artifact_path": "outputs/step82_activation_guard/activation_guard.json",
+      "check": "step82_activation_guard_pass",
+      "expected": true,
+      "summary_key": "step82_activation_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step82_step81_regression_guard/step81_regression_guard.json",
+      "check": "step82_step81_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step82_step81_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step82_output_guard/output_guard.json",
+      "check": "step82_output_guard_pass",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step82_artifact_manifest/artifact_summary.json",
+      "check": "step82_artifact_budget_pass",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    },
+    {
+      "artifact_path": "outputs/step82_wall_velocity_solid_vel_smoke_matrix/wall_velocity_solid_vel_smoke_matrix.json",
+      "check": "step82_activation_feature_count",
+      "expected": 1,
+      "summary_key": "activation_feature_count"
+    },
+    {
+      "artifact_path": "outputs/step82_wall_velocity_solid_vel_smoke_matrix/wall_velocity_solid_vel_smoke_matrix.json",
+      "check": "step82_wall_velocity_enabled_count",
+      "expected": 1,
+      "summary_key": "wall_velocity_enabled_count"
+    },
+    {
+      "artifact_path": "outputs/step82_wall_velocity_solid_vel_smoke_matrix/wall_velocity_solid_vel_smoke_matrix.json",
+      "check": "step82_runtime_geometry_enabled_count",
+      "expected": 0,
+      "summary_key": "runtime_geometry_enabled_count"
+    },
+    {
+      "artifact_path": "outputs/step82_wall_velocity_solid_vel_smoke_matrix/wall_velocity_solid_vel_smoke_matrix.json",
+      "check": "step82_combined_runtime_geometry_wall_velocity_enabled_count",
+      "expected": 0,
+      "summary_key": "combined_runtime_geometry_wall_velocity_enabled_count"
+    },
+    {
+      "artifact_path": "outputs/step82_wall_velocity_solid_vel_smoke_matrix/wall_velocity_solid_vel_smoke_matrix.json",
+      "check": "step82_real_geometry_enabled_count",
+      "expected": 0,
+      "summary_key": "real_geometry_enabled_count"
+    },
+    {
+      "artifact_path": "outputs/step82_wall_velocity_solid_vel_smoke_matrix/wall_velocity_solid_vel_smoke_matrix.json",
+      "check": "step82_squid_proxy_enabled_count",
+      "expected": 0,
+      "summary_key": "squid_proxy_enabled_count"
+    },
+    {
+      "artifact_path": "outputs/step82_wall_velocity_solid_vel_smoke_matrix/wall_velocity_solid_vel_smoke_matrix.json",
+      "check": "step82_link_area_enabled_count",
+      "expected": 0,
+      "summary_key": "link_area_enabled_count"
+    },
+    {
+      "artifact_path": "outputs/step82_artifact_manifest/artifact_summary.json",
+      "check": "step82_vtr_count",
+      "expected": 0,
+      "summary_key": "step82_vtr_count"
+    },
+    {
+      "artifact_path": "outputs/step82_artifact_manifest/artifact_summary.json",
+      "check": "step82_particle_npy_count",
+      "expected": 0,
+      "summary_key": "step82_particle_npy_count"
+    }
+  ],
+  "policy_id": "step83_step82_regression_policy",
+  "step": 83
+}
