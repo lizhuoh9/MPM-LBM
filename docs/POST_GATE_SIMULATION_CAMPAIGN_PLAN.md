@@ -89,3 +89,22 @@ executed_in_step77 = true
 Step77 changes duration only. It does not activate runtime geometry, wall
 velocity, real geometry, squid proxy behavior, link-area transfer, 48^3, 64^3,
 VTR output, particle NPY output, solver formula changes, or tau migration.
+
+## Step78 Follow-Up Rebaseline
+
+After Step77 acceptance, Step78 runs a separate required 5-step rebaseline row:
+
+```text
+campaign_id = step78_minimal_post_gate_canonical_driver_5step_rebaseline
+row_id = canonical_driver_moving_boundary_engineering_32_5step_rebaseline
+n_grid = 32
+n_lbm_steps = 5
+required = true
+executed_in_step78 = true
+```
+
+Step78 changes duration only. It does not activate runtime geometry, wall
+velocity, real geometry, squid proxy behavior, link-area transfer, 48^3, 64^3,
+10-step baselines, VTR output, particle NPY output, solver formula changes, or
+tau migration. After Step78, the next intended direction is runtime geometry
+diagnostic-only single-feature activation planning and guard work.

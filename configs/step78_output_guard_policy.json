@@ -1,0 +1,33 @@
+{
+  "allowed_driver_run_files": [
+    "diagnostics_timeseries.csv",
+    "diagnostics_timeseries.npz",
+    "driver_config.json",
+    "geo_all_fluid_32.dat"
+  ],
+  "driver_run_root": "outputs/step78_driver_runs",
+  "forbidden_filename_tokens": [
+    ".vtr",
+    "particles_",
+    "particle_output",
+    "displaced_particle",
+    "dense_displacement",
+    ".stl",
+    ".obj",
+    ".ply",
+    ".vtk",
+    ".vtu"
+  ],
+  "large_file_threshold_bytes": 5242880,
+  "max_step78_total_size_mb": 20.0,
+  "optional_driver_run_dirs": [],
+  "policy_id": "step78_output_guard_policy",
+  "protected_prefixes": [
+    "data/real_geometry_candidates/",
+    "external/taichi_LBM3D/"
+  ],
+  "required_driver_run_dirs": [
+    "outputs/step78_driver_runs/canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+  ],
+  "step": 78
+}

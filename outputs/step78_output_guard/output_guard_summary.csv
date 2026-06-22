@@ -1,0 +1,15 @@
+metric,value
+output_guard_pass,True
+pass_count,20
+private_absolute_path_count,0
+protected_external_edit_count,0
+protected_real_geometry_candidate_edit_count,0
+row_count,20
+step78_forbidden_file_count,0
+step78_large_file_count,0
+step78_optional_driver_run_dir_count,0
+step78_particle_npy_count,0
+step78_required_driver_run_dir_count,1
+step78_total_size_bytes,139644
+step78_total_size_mb,0.13317489624023438
+step78_vtr_count,0

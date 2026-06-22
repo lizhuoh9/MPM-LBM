@@ -1,8 +1,9 @@
 # Post-Gate Simulation Campaign Status
 
 Step75 created the inactive Step76 campaign proposal. Step76 executed only the
-required first row from that proposal. Step77 adds a separate 3-step
-post-gate rebaseline row after Step76 was accepted.
+required first row from that proposal. Step77 added a separate 3-step
+post-gate rebaseline row after Step76 was accepted. Step78 adds a separate
+5-step post-gate rebaseline row after Step77 was accepted.
 
 ## Step76 Executed Row
 
@@ -26,6 +27,17 @@ required = true
 executed_in_step77 = true
 ```
 
+## Step78 Executed Row
+
+```text
+campaign_id = step78_minimal_post_gate_canonical_driver_5step_rebaseline
+row_id = canonical_driver_moving_boundary_engineering_32_5step_rebaseline
+n_grid = 32
+n_lbm_steps = 5
+required = true
+executed_in_step78 = true
+```
+
 ## Feature State
 
 All advanced activation features remain disabled:
@@ -44,6 +56,8 @@ write_particles = false
 activation_feature_count = 0
 ```
 
-Step77 is a minimal post-gate 3-step rebaseline only. It is not a
+Step78 is a minimal post-gate 5-step rebaseline only. It is not a
 real-geometry, runtime-geometry, wall-velocity, squid-proxy, grid-convergence,
-physical-validation, or production-readiness step.
+physical-validation, or production-readiness step. After Step78, the next
+intended direction is runtime geometry diagnostic-only single-feature
+activation planning, not another pure duration baseline.

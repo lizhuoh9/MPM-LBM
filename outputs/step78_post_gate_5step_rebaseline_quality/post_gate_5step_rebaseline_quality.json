@@ -1,0 +1,179 @@
+{
+  "rows": [
+    {
+      "actual": 0.9631504416465759,
+      "check": "rho_min_min",
+      "expected": 0.9,
+      "operator": ">",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": 1.0382390022277832,
+      "check": "rho_max_max",
+      "expected": 1.1,
+      "operator": "<",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": 0.029648633673787117,
+      "check": "lbm_max_v_max",
+      "expected": 0.5,
+      "operator": "<",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": 0.9996404051780701,
+      "check": "mpm_min_J_min",
+      "expected": 0.0,
+      "operator": ">",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": 1.5697649717330933,
+      "check": "mpm_max_speed_max",
+      "expected": 10.0,
+      "operator": "<",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": 0.027000000700354576,
+      "check": "projected_mass_final",
+      "expected": 0.0,
+      "operator": ">",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": 1210,
+      "check": "active_cell_count_final",
+      "expected": 1,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": 2272,
+      "check": "bb_link_count_max",
+      "expected": 0,
+      "operator": ">",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": 0.006899189669638872,
+      "check": "bb_max_correction_max",
+      "expected": 0.0,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": 893,
+      "check": "active_reaction_particle_count_final",
+      "expected": 0,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": false,
+      "check": "has_nan",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": false,
+      "check": "has_inf",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": true,
+      "check": "stable",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": true,
+      "check": "diagnostics_csv_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": true,
+      "check": "diagnostics_npz_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": true,
+      "check": "driver_config_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": "geo_all_fluid_32.dat",
+      "check": "geo_path_name",
+      "expected": "geo_all_fluid_32.dat",
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": false,
+      "check": "runtime_hard_fail",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": "Step77",
+      "check": "previous_rebaseline_step",
+      "expected": "Step77",
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": 5,
+      "check": "completed_lbm_steps",
+      "expected": 5,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    },
+    {
+      "actual": 4.051990254083648e-05,
+      "check": "max_grid_reaction_norm_max_finite",
+      "expected": true,
+      "operator": "is_finite",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_5step_rebaseline"
+    }
+  ],
+  "summary": {
+    "finite_max_grid_reaction_norm_count": 1,
+    "pass_count": 21,
+    "post_gate_5step_rebaseline_quality_pass": true,
+    "row_count": 21,
+    "source_matrix_row_count": 1
+  }
+}

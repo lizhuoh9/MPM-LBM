@@ -1,0 +1,6 @@
+metric,value
+artifact_check_count,13
+artifact_pass_count,13
+pass_count,13
+row_count,13
+step78_step77_regression_guard_pass,True

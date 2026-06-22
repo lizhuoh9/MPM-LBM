@@ -33,6 +33,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 75: solver-complete simulation campaign readiness gate
 - Step 76: minimal post-gate canonical driver rebaseline
 - Step 77: minimal post-gate canonical driver 3-step rebaseline
+- Step 78: minimal post-gate canonical driver 5-step rebaseline
 
 ## Current Validated Modes
 
@@ -101,6 +102,15 @@ configuration. Runtime geometry, wall velocity, real geometry, squid proxy,
 link-area transfer, 48^3, 64^3, VTR output, and particle NPY output all remain
 disabled. Step77 is still a bounded rebaseline only and does not claim physical
 validation, real squid validation, grid convergence, or production readiness.
+
+Step 78 extends only that post-gate canonical driver rebaseline duration to
+five LBM steps at the same 32^3, 1024-particle, moving-boundary engineering
+configuration. Runtime geometry, wall velocity, real geometry, squid proxy,
+link-area transfer, 48^3, 64^3, 10-step baseline, VTR output, and particle NPY
+output all remain disabled. Step78 is still a bounded rebaseline only and does
+not claim physical validation, real squid validation, grid convergence, or
+production readiness. After Step78, the intended next direction is
+single-feature activation planning, not another pure duration baseline.
 
 ## What Exists
 

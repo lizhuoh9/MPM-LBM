@@ -1,0 +1,7 @@
+metric,value
+activation_feature_count,0
+optional_row_count,0
+pass_count,22
+post_gate_5step_activation_guard_pass,True
+previous_activation_feature_count,0
+row_count,22

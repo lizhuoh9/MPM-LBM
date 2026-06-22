@@ -76,6 +76,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 75 solver-complete simulation campaign readiness gate, with Step71-Step74 evidence aggregation, activation-gate closure, inactive Step76 minimal rebaseline planning, no-simulation, output-policy, and Step74 regression guards while advanced activation remains closed
 - Step 76 minimal post-gate canonical driver rebaseline, with one 32^3 moving-boundary engineering one-step `FSIDriver3D.run()` row, activation guards, output guards, and Step75 regression guards while advanced activation remains closed
 - Step 77 minimal post-gate canonical driver 3-step rebaseline, with one 32^3 moving-boundary engineering three-step `FSIDriver3D.run()` row, activation guards, output guards, and Step76 regression guards while advanced activation remains closed
+- Step 78 minimal post-gate canonical driver 5-step rebaseline, with one 32^3 moving-boundary engineering five-step `FSIDriver3D.run()` row, activation guards, output guards, and Step77 regression guards while advanced activation remains closed
 
 ## Not Implemented
 
@@ -862,6 +863,29 @@ Step 77 does not write VTR or particle NPY output.
 Step 77 does not change solver formulas or tau semantics.
 Step 77 does not claim physical validation, real squid validation, grid convergence, or production readiness.
 See docs/77_minimal_post_gate_canonical_driver_3step_rebaseline.md.
+
+## Step 78 Minimal Post-Gate Canonical Driver 5-Step Rebaseline Boundary
+
+Step 78 extends only the Step 77 post-gate canonical driver duration from three
+LBM steps to five LBM steps.
+Step 78 calls `FSIDriver3D(...).run()` through `src.mpm_lbm.sim.drivers.fsi_driver`
+for exactly one required 32^3, 1024-particle, moving-boundary engineering row
+with five LBM steps and one MPM substep per LBM step.
+Step 78 has no optional rows.
+Step 78 does not add a 10-step baseline.
+Step 78 does not activate runtime geometry.
+Step 78 does not activate moving-wall velocity.
+Step 78 does not activate real geometry.
+Step 78 does not activate squid proxy behavior.
+Step 78 does not use link-area transfer.
+Step 78 does not add a 48^3 or 64^3 row.
+Step 78 does not write VTR or particle NPY output.
+Step 78 does not change solver formulas or tau semantics.
+Step 78 does not claim physical validation, real squid validation, grid convergence, or production readiness.
+After Step 78, the next intended direction is single-feature activation planning,
+starting with runtime geometry diagnostic-only plan and guard work rather than
+another pure duration baseline.
+See docs/78_minimal_post_gate_canonical_driver_5step_rebaseline.md.
 
 ## Upstream LBM Note
 
