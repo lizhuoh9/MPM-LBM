@@ -1,0 +1,39 @@
+{
+  "policy_id": "step74_real_geometry_data_boundary_policy",
+  "step": 74,
+  "required_audits": [
+    {
+      "artifact_path": "outputs/step74_real_geometry_api_audit/real_geometry_api.json",
+      "audit_name": "real_geometry_api_audit",
+      "summary_key": "real_geometry_api_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_candidate_descriptor_schema_audit/candidate_descriptor_schema.json",
+      "audit_name": "candidate_descriptor_schema_audit",
+      "summary_key": "candidate_descriptor_schema_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_candidate_manifest_policy_audit/candidate_manifest_policy.json",
+      "audit_name": "candidate_manifest_policy_audit",
+      "summary_key": "candidate_manifest_policy_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_real_geometry_quarantine_audit/real_geometry_quarantine.json",
+      "audit_name": "real_geometry_quarantine_audit",
+      "summary_key": "real_geometry_quarantine_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_real_geometry_output_policy_audit/real_geometry_output_policy.json",
+      "audit_name": "real_geometry_output_policy_audit",
+      "summary_key": "real_geometry_output_policy_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_full_activation_gate_coverage_audit/full_activation_gate_coverage.json",
+      "audit_name": "full_activation_gate_coverage_audit",
+      "summary_key": "full_activation_gate_coverage_audit_pass"
+    }
+  ],
+  "step70_activation_policy_path": "configs/step70_activation_preconditions_policy.json",
+  "activation_gate": "real_geometry_activation_allowed",
+  "readiness_claim": "real_geometry_boundary_audit_ready_for_later_data_decision_only"
+}

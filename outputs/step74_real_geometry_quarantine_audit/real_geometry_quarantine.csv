@@ -1,0 +1,11 @@
+actual,check,expected,pass,path
+True,quarantined_experiment_path_exists,True,True,experiments/steps/real_geometry_feasibility/feasibility.py
+True,under_experiments_steps,True,True,experiments/steps/real_geometry_feasibility/feasibility.py
+False,under_sim_package,False,True,experiments/steps/real_geometry_feasibility/feasibility.py
+True,module_import_pass,True,True,experiments/steps/real_geometry_feasibility/feasibility.py
+True,output_snapshot_unchanged_after_import,True,True,experiments/steps/real_geometry_feasibility/feasibility.py
+True,run_projection_only_scale_case_detected,True,True,experiments/steps/real_geometry_feasibility/feasibility.py
+True,run_short_driver_case_detected,True,True,experiments/steps/real_geometry_feasibility/feasibility.py
+True,driver_helper_detected,True,True,experiments/steps/real_geometry_feasibility/feasibility.py
+False,driver_helper_executed,False,True,experiments/steps/real_geometry_feasibility/feasibility.py
+False,solver_run,False,True,experiments/steps/real_geometry_feasibility/feasibility.py

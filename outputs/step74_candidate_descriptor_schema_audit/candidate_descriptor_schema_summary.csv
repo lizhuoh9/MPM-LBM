@@ -1,0 +1,10 @@
+metric,value
+candidate_descriptor_schema_audit_pass,True
+external_path_rejected,True
+identity_claim_terms_rejected,True
+invalid_descriptor_rejected_count,11
+invalid_descriptor_required_count,11
+pass_count,12
+private_absolute_path_policy_enforced,True
+row_count,12
+valid_descriptor_pass_count,1

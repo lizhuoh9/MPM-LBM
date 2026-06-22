@@ -75,3 +75,19 @@ activation_allowed_count = 0
 Wall velocity remains opt-in and non-activated. LBM population updates, MPM
 state updates, projector updates, moving bounce-back formula modification, jet
 claims, and actuation claims remain forbidden.
+
+Step74 adds real geometry data-boundary evidence without opening any gate:
+
+```text
+real_geometry_data_boundary_audit_pass = true
+readiness_claim = real_geometry_boundary_audit_ready_for_later_data_decision_only
+activation_allowed_after_step74 = false
+required_gate_count = 10
+closed_gate_count = 10
+activation_allowed_count = 0
+```
+
+Real geometry remains non-activated. `data/real_geometry_candidates` remains
+protected, no real geometry data was added, `real_geometry_feasibility` remains
+quarantined experiment code, and Step74 does not execute projection smoke or
+`FSIDriver3D`.

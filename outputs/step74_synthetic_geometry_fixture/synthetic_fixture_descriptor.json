@@ -1,0 +1,17 @@
+{
+  "artifact_policy": "do_not_commit_large_raw_geometry",
+  "candidate_id": "synthetic_box_fixture",
+  "commit_policy": "small_controlled_fixture_allowed",
+  "geometry_type": "mesh",
+  "license_status": "synthetic",
+  "n_particles": 128,
+  "normalize_to_domain": true,
+  "padding": 0.05,
+  "preserve_aspect_ratio": true,
+  "quality_check_enabled": true,
+  "quality_check_strict": true,
+  "source_available": true,
+  "source_file": "outputs/step74_synthetic_geometry_fixture/synthetic_fixture.txt",
+  "source_policy": "synthetic_fixture",
+  "validation_scope": "intake_qa_normalization_sampling_projection_only"
+}

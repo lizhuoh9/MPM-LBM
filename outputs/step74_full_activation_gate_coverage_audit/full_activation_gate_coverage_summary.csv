@@ -1,0 +1,11 @@
+metric,value
+activation_allowed_count,0
+closed_gate_count,10
+expected_gate_count,10
+extra_gate_count,0
+full_activation_gate_coverage_audit_pass,True
+missing_gate_count,0
+pass_count,10
+required_gate_count,10
+row_count,10
+step70_gate_count,10

@@ -1,0 +1,50 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "valid_small_synthetic_manifest_pass",
+      "expected": true,
+      "pass": true,
+      "path": "valid_synthetic_fixture"
+    },
+    {
+      "actual": true,
+      "check": "absolute_path_redaction_pass",
+      "expected": true,
+      "pass": true,
+      "path": "fingerprint_redaction"
+    },
+    {
+      "actual": true,
+      "check": "large_file_policy_enforced",
+      "expected": true,
+      "pass": true,
+      "path": "large_policy_probe"
+    },
+    {
+      "actual": true,
+      "check": "unavailable_source_policy_enforced",
+      "expected": true,
+      "pass": true,
+      "path": "source_available_false"
+    },
+    {
+      "actual": true,
+      "check": "duplicate_candidate_id_rejected",
+      "expected": true,
+      "pass": true,
+      "path": "duplicate_manifest"
+    }
+  ],
+  "summary": {
+    "absolute_path_redaction_pass": true,
+    "candidate_manifest_policy_audit_pass": true,
+    "duplicate_candidate_id_rejected": true,
+    "large_file_policy_enforced": true,
+    "pass_count": 5,
+    "real_geometry_candidate_edit_count": 0,
+    "row_count": 5,
+    "synthetic_fixture_count": 1,
+    "unavailable_source_policy_enforced": true
+  }
+}

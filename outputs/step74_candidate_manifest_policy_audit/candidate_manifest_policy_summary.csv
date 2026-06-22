@@ -1,0 +1,10 @@
+metric,value
+absolute_path_redaction_pass,True
+candidate_manifest_policy_audit_pass,True
+duplicate_candidate_id_rejected,True
+large_file_policy_enforced,True
+pass_count,5
+real_geometry_candidate_edit_count,0
+row_count,5
+synthetic_fixture_count,1
+unavailable_source_policy_enforced,True

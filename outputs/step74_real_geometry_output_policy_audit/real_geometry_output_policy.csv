@@ -1,0 +1,2 @@
+actual,check,expected_max,pass,path
+1,synthetic_fixture_count_within_limit,1,True,outputs/step74_synthetic_geometry_fixture

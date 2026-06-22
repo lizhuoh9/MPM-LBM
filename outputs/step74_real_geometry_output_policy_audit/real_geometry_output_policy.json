@@ -1,0 +1,25 @@
+{
+  "rows": [
+    {
+      "actual": 1,
+      "check": "synthetic_fixture_count_within_limit",
+      "expected_max": 1,
+      "pass": true,
+      "path": "outputs/step74_synthetic_geometry_fixture"
+    }
+  ],
+  "summary": {
+    "external_taichi_lbm3d_edit_count": 0,
+    "forbidden_output_directory_count": 0,
+    "large_file_count": 0,
+    "particle_npy_count": 0,
+    "pass_count": 1,
+    "private_absolute_path_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "raw_geometry_file_count": 0,
+    "real_geometry_output_policy_audit_pass": true,
+    "row_count": 1,
+    "step74_vtr_count": 0,
+    "synthetic_fixture_count": 1
+  }
+}

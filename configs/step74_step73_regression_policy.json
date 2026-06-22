@@ -1,0 +1,73 @@
+{
+  "policy_id": "step74_step73_regression_policy",
+  "step": 74,
+  "step73_artifact_checks": [
+    {
+      "artifact_path": "outputs/step73_wall_velocity_readiness_audit/wall_velocity_readiness.json",
+      "check": "step73_wall_velocity_readiness",
+      "expected": true,
+      "summary_key": "wall_velocity_readiness_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_wall_velocity_api_audit/wall_velocity_api.json",
+      "check": "step73_wall_velocity_api",
+      "expected": true,
+      "summary_key": "wall_velocity_api_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_wall_velocity_config_schema_audit/wall_velocity_config_schema.json",
+      "check": "step73_wall_velocity_config_schema",
+      "expected": true,
+      "summary_key": "wall_velocity_config_schema_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_wall_velocity_driver_gate_audit/wall_velocity_driver_gate.json",
+      "check": "step73_wall_velocity_driver_gate",
+      "expected": true,
+      "summary_key": "wall_velocity_driver_gate_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_wall_velocity_application_safety_audit/wall_velocity_application_safety.json",
+      "check": "step73_wall_velocity_application_safety",
+      "expected": true,
+      "summary_key": "wall_velocity_application_safety_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_wall_velocity_output_policy_audit/wall_velocity_output_policy.json",
+      "check": "step73_wall_velocity_output_policy",
+      "expected": true,
+      "summary_key": "wall_velocity_output_policy_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_full_activation_gate_coverage_audit/full_activation_gate_coverage.json",
+      "check": "step73_full_activation_gate_coverage",
+      "expected": true,
+      "summary_key": "full_activation_gate_coverage_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_no_simulation_audit/no_simulation.json",
+      "check": "step73_no_simulation",
+      "expected": true,
+      "summary_key": "no_simulation_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_step72_regression_guard/step72_regression_guard.json",
+      "check": "step73_step72_regression_guard",
+      "expected": true,
+      "summary_key": "step73_step72_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_artifact_manifest/artifact_summary.json",
+      "check": "step73_artifact_manifest",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "required_closed_activation_gates": [
+    "runtime_geometry_activation_allowed",
+    "wall_velocity_activation_allowed",
+    "combined_runtime_geometry_wall_velocity_activation_allowed",
+    "real_geometry_activation_allowed"
+  ],
+  "step70_activation_policy_path": "configs/step70_activation_preconditions_policy.json"
+}

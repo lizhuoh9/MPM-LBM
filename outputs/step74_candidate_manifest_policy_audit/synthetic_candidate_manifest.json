@@ -1,0 +1,27 @@
+{
+  "row_count": 1,
+  "rows": [
+    {
+      "candidate_id": "synthetic_box_fixture",
+      "commit_policy": "small_controlled_fixture_allowed",
+      "descriptor_path": "outputs/step74_synthetic_geometry_fixture/synthetic_fixture_descriptor.json",
+      "geometry_type": "mesh",
+      "is_large": false,
+      "license_status": "synthetic",
+      "manifest_pass": true,
+      "n_particles": 128,
+      "normalize_to_domain": true,
+      "notes": "manifest checks passed",
+      "padding": 0.05,
+      "preserve_aspect_ratio": true,
+      "quality_check_enabled": true,
+      "quality_check_strict": true,
+      "sha256": "4d0f471081a476aa3317d64f0e0cd3c9943abba12975ac55dfa46a5ed15bbc78",
+      "size_bytes": 44,
+      "source_file": "outputs/step74_synthetic_geometry_fixture/synthetic_fixture.txt",
+      "source_file_redacted": "outputs/step74_synthetic_geometry_fixture/synthetic_fixture.txt",
+      "source_policy": "synthetic_fixture",
+      "validation_scope": "intake_qa_normalization_sampling_projection_only"
+    }
+  ]
+}

@@ -72,6 +72,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 71 output default safety alignment and LBM tau convention decision, with safe-by-default FSIDriver file outputs and legacy tau semantics preserved
 - Step 72 runtime geometry activation readiness audit, with API, schema, driver-gate, state-guard, output-policy, no-simulation, and Step71 regression guards while activation remains closed
 - Step 73 wall velocity activation readiness audit, with API, schema, driver-gate, application-safety, output-policy, full activation-gate coverage, no-simulation, and Step72 regression guards while activation remains closed
+- Step 74 real geometry data boundary audit, with API, descriptor schema, manifest policy, quarantine, output-policy, full activation-gate coverage, no-simulation, and Step73 regression guards while activation remains closed
 
 ## Not Implemented
 

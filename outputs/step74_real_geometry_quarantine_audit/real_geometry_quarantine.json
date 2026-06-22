@@ -1,0 +1,86 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "quarantined_experiment_path_exists",
+      "expected": true,
+      "pass": true,
+      "path": "experiments/steps/real_geometry_feasibility/feasibility.py"
+    },
+    {
+      "actual": true,
+      "check": "under_experiments_steps",
+      "expected": true,
+      "pass": true,
+      "path": "experiments/steps/real_geometry_feasibility/feasibility.py"
+    },
+    {
+      "actual": false,
+      "check": "under_sim_package",
+      "expected": false,
+      "pass": true,
+      "path": "experiments/steps/real_geometry_feasibility/feasibility.py"
+    },
+    {
+      "actual": true,
+      "check": "module_import_pass",
+      "expected": true,
+      "pass": true,
+      "path": "experiments/steps/real_geometry_feasibility/feasibility.py"
+    },
+    {
+      "actual": true,
+      "check": "output_snapshot_unchanged_after_import",
+      "expected": true,
+      "pass": true,
+      "path": "experiments/steps/real_geometry_feasibility/feasibility.py"
+    },
+    {
+      "actual": true,
+      "check": "run_projection_only_scale_case_detected",
+      "expected": true,
+      "pass": true,
+      "path": "experiments/steps/real_geometry_feasibility/feasibility.py"
+    },
+    {
+      "actual": true,
+      "check": "run_short_driver_case_detected",
+      "expected": true,
+      "pass": true,
+      "path": "experiments/steps/real_geometry_feasibility/feasibility.py"
+    },
+    {
+      "actual": true,
+      "check": "driver_helper_detected",
+      "expected": true,
+      "pass": true,
+      "path": "experiments/steps/real_geometry_feasibility/feasibility.py"
+    },
+    {
+      "actual": false,
+      "check": "driver_helper_executed",
+      "expected": false,
+      "pass": true,
+      "path": "experiments/steps/real_geometry_feasibility/feasibility.py"
+    },
+    {
+      "actual": false,
+      "check": "solver_run",
+      "expected": false,
+      "pass": true,
+      "path": "experiments/steps/real_geometry_feasibility/feasibility.py"
+    }
+  ],
+  "summary": {
+    "driver_helper_detected": true,
+    "driver_helper_executed": false,
+    "module_import_pass": true,
+    "output_snapshot_unchanged": true,
+    "pass_count": 10,
+    "quarantined_experiment_path_exists": true,
+    "real_geometry_quarantine_audit_pass": true,
+    "row_count": 10,
+    "solver_run": false,
+    "under_sim_package": false
+  }
+}

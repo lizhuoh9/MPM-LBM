@@ -1,0 +1,10 @@
+metric,value
+canonical_import_pass_count,18
+driver_constructed,False
+missing_symbol_count,0
+output_snapshot_unchanged,True
+projection_smoke_imported_but_not_executed,True
+real_geometry_api_audit_pass,True
+required_symbol_count,18
+row_count,20
+solver_run,False

@@ -1,0 +1,11 @@
+metric,value
+driver_helper_detected,True
+driver_helper_executed,False
+module_import_pass,True
+output_snapshot_unchanged,True
+pass_count,10
+quarantined_experiment_path_exists,True
+real_geometry_quarantine_audit_pass,True
+row_count,10
+solver_run,False
+under_sim_package,False

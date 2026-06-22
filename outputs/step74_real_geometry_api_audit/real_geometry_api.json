@@ -1,0 +1,195 @@
+{
+  "rows": [
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.geometry.intake",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "run_candidate_intake"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.geometry.intake",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "run_candidate_quality_check"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.geometry.intake",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "run_candidate_sampling_reproducibility"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.geometry.intake",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "run_candidate_projection_smoke"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.geometry.candidate_manifest",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "validate_candidate_descriptor"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.geometry.candidate_manifest",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "candidate_manifest_row"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.geometry.candidate_manifest",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "write_candidate_manifest"
+    },
+    {
+      "actual_kind": "constant",
+      "canonical_module": "src.mpm_lbm.sim.geometry.candidate_manifest",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "constant",
+      "pass": true,
+      "symbol": "VALID_COMMIT_POLICIES"
+    },
+    {
+      "actual_kind": "constant",
+      "canonical_module": "src.mpm_lbm.sim.geometry.candidate_manifest",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "constant",
+      "pass": true,
+      "symbol": "VALIDATION_SCOPE"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.geometry.fingerprint",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "fingerprint_geometry_file"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.geometry.fingerprint",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "sha256_file"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.geometry.fingerprint",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "file_size_bytes"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.geometry.normalization",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "geometry_config_from_descriptor"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.geometry.normalization",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "normalize_mesh_candidate"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.geometry.normalization",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "normalize_voxel_candidate"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.geometry.normalization",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "write_normalization_report"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "experiments.steps.real_geometry_feasibility.feasibility",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "run_projection_only_scale_case"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "experiments.steps.real_geometry_feasibility.feasibility",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "run_short_driver_case"
+    },
+    {
+      "actual_kind": "",
+      "canonical_module": "src.mpm_lbm.sim.geometry.intake",
+      "check": "projection_smoke_imported_but_not_executed",
+      "error": "",
+      "expected_kind": "",
+      "pass": true,
+      "symbol": "run_candidate_projection_smoke"
+    },
+    {
+      "actual_kind": "",
+      "canonical_module": "",
+      "check": "output_snapshot_unchanged_after_imports",
+      "error": "",
+      "expected_kind": "",
+      "pass": true,
+      "symbol": ""
+    }
+  ],
+  "summary": {
+    "canonical_import_pass_count": 18,
+    "driver_constructed": false,
+    "missing_symbol_count": 0,
+    "output_snapshot_unchanged": true,
+    "projection_smoke_imported_but_not_executed": true,
+    "real_geometry_api_audit_pass": true,
+    "required_symbol_count": 18,
+    "row_count": 20,
+    "solver_run": false
+  }
+}

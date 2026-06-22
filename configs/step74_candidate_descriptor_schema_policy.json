@@ -1,0 +1,89 @@
+{
+  "policy_id": "step74_candidate_descriptor_schema_policy",
+  "step": 74,
+  "expected_validation_scope": "intake_qa_normalization_sampling_projection_only",
+  "base_valid_descriptor": {
+    "artifact_policy": "do_not_commit_large_raw_geometry",
+    "candidate_id": "synthetic_box_fixture",
+    "commit_policy": "small_controlled_fixture_allowed",
+    "geometry_type": "mesh",
+    "license_status": "synthetic",
+    "n_particles": 128,
+    "normalize_to_domain": true,
+    "padding": 0.05,
+    "preserve_aspect_ratio": true,
+    "quality_check_enabled": true,
+    "quality_check_strict": true,
+    "source_file": "outputs/step74_synthetic_geometry_fixture/synthetic_fixture.txt",
+    "source_policy": "synthetic_fixture",
+    "validation_scope": "intake_qa_normalization_sampling_projection_only"
+  },
+  "invalid_descriptor_cases": [
+    {
+      "case_id": "candidate_id_contains_validated",
+      "updates": {
+        "candidate_id": "synthetic_validated_fixture"
+      }
+    },
+    {
+      "case_id": "candidate_id_contains_swimming",
+      "updates": {
+        "candidate_id": "synthetic_swimming_fixture"
+      }
+    },
+    {
+      "case_id": "candidate_id_contains_actuation",
+      "updates": {
+        "candidate_id": "synthetic_actuation_fixture"
+      }
+    },
+    {
+      "case_id": "candidate_id_contains_anatomical",
+      "updates": {
+        "candidate_id": "synthetic_anatomical_fixture"
+      }
+    },
+    {
+      "case_id": "unknown_geometry_type_rejected",
+      "updates": {
+        "geometry_type": "scan"
+      }
+    },
+    {
+      "case_id": "invalid_commit_policy_rejected",
+      "updates": {
+        "commit_policy": "commit_raw_scan"
+      }
+    },
+    {
+      "case_id": "quality_check_enabled_false_rejected",
+      "updates": {
+        "quality_check_enabled": false
+      }
+    },
+    {
+      "case_id": "quality_check_strict_false_rejected",
+      "updates": {
+        "quality_check_strict": false
+      }
+    },
+    {
+      "case_id": "wrong_validation_scope_rejected",
+      "updates": {
+        "validation_scope": "real_squid_validation"
+      }
+    },
+    {
+      "case_id": "private_absolute_path_requires_local_only",
+      "updates": {
+        "source_file": "C:/Users/example/private_geometry.obj"
+      }
+    },
+    {
+      "case_id": "external_taichi_lbm3d_source_rejected",
+      "updates": {
+        "source_file": "external/taichi_LBM3D/private_fixture.obj"
+      }
+    }
+  ]
+}

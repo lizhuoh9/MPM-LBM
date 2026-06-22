@@ -1,0 +1,76 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "required_audit_pass",
+      "expected": true,
+      "name": "real_geometry_api_audit",
+      "notes": "Step74 real geometry data boundary component must be green",
+      "pass": true,
+      "summary_key": "real_geometry_api_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "required_audit_pass",
+      "expected": true,
+      "name": "candidate_descriptor_schema_audit",
+      "notes": "Step74 real geometry data boundary component must be green",
+      "pass": true,
+      "summary_key": "candidate_descriptor_schema_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "required_audit_pass",
+      "expected": true,
+      "name": "candidate_manifest_policy_audit",
+      "notes": "Step74 real geometry data boundary component must be green",
+      "pass": true,
+      "summary_key": "candidate_manifest_policy_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "required_audit_pass",
+      "expected": true,
+      "name": "real_geometry_quarantine_audit",
+      "notes": "Step74 real geometry data boundary component must be green",
+      "pass": true,
+      "summary_key": "real_geometry_quarantine_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "required_audit_pass",
+      "expected": true,
+      "name": "real_geometry_output_policy_audit",
+      "notes": "Step74 real geometry data boundary component must be green",
+      "pass": true,
+      "summary_key": "real_geometry_output_policy_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "required_audit_pass",
+      "expected": true,
+      "name": "full_activation_gate_coverage_audit",
+      "notes": "Step74 real geometry data boundary component must be green",
+      "pass": true,
+      "summary_key": "full_activation_gate_coverage_audit_pass"
+    },
+    {
+      "actual": false,
+      "check": "activation_allowed_after_step74",
+      "expected": false,
+      "name": "real_geometry_activation_allowed",
+      "notes": "real_geometry_boundary_audit_ready_for_later_data_decision_only",
+      "pass": true,
+      "summary_key": ""
+    }
+  ],
+  "summary": {
+    "activation_allowed_after_step74": false,
+    "pass_count": 7,
+    "readiness_claim": "real_geometry_boundary_audit_ready_for_later_data_decision_only",
+    "real_geometry_data_boundary_audit_pass": true,
+    "required_audit_count": 6,
+    "required_audit_pass_count": 6,
+    "row_count": 7
+  }
+}

@@ -1,0 +1,13 @@
+case_id,check,error,expected,pass
+valid_synthetic_descriptor,valid_descriptor_accepted,,accepted,True
+candidate_id_contains_validated,invalid_descriptor_rejected,ValueError: candidate_id must not imply validation or anatomy: 'synthetic_validated_fixture',rejected,True
+candidate_id_contains_swimming,invalid_descriptor_rejected,ValueError: candidate_id must not imply validation or anatomy: 'synthetic_swimming_fixture',rejected,True
+candidate_id_contains_actuation,invalid_descriptor_rejected,ValueError: candidate_id must not imply validation or anatomy: 'synthetic_actuation_fixture',rejected,True
+candidate_id_contains_anatomical,invalid_descriptor_rejected,ValueError: candidate_id must not imply validation or anatomy: 'synthetic_anatomical_fixture',rejected,True
+unknown_geometry_type_rejected,invalid_descriptor_rejected,"ValueError: geometry_type must be one of ['mesh', 'voxel']",rejected,True
+invalid_commit_policy_rejected,invalid_descriptor_rejected,"ValueError: commit_policy must be one of ['do_not_commit_large_raw_geometry', 'local_candidate_only', 'small_controlled_fixture_allowed']",rejected,True
+quality_check_enabled_false_rejected,invalid_descriptor_rejected,ValueError: quality_check_enabled must be true,rejected,True
+quality_check_strict_false_rejected,invalid_descriptor_rejected,ValueError: quality_check_strict must be true,rejected,True
+wrong_validation_scope_rejected,invalid_descriptor_rejected,ValueError: validation_scope must be 'intake_qa_normalization_sampling_projection_only',rejected,True
+private_absolute_path_requires_local_only,invalid_descriptor_rejected,ValueError: absolute source_file paths require local_candidate_only commit_policy,rejected,True
+external_taichi_lbm3d_source_rejected,invalid_descriptor_rejected,ValueError: source_file must not point under external/taichi_LBM3D,rejected,True

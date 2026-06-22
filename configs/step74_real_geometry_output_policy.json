@@ -1,0 +1,27 @@
+{
+  "policy_id": "step74_real_geometry_output_policy",
+  "step": 74,
+  "forbidden_output_directories": [
+    "outputs/step74_driver_runs",
+    "outputs/step74_real_geometry_driver_runs",
+    "outputs/step74_projection_smoke"
+  ],
+  "protected_prefixes": [
+    "data/real_geometry_candidates/",
+    "external/taichi_LBM3D/"
+  ],
+  "raw_geometry_extensions": [
+    ".stl",
+    ".obj",
+    ".ply",
+    ".vtk",
+    ".vtu",
+    ".vtr",
+    ".npy",
+    ".npz"
+  ],
+  "allowed_synthetic_fixture_prefixes": [
+    "outputs/step74_synthetic_geometry_fixture/"
+  ],
+  "large_file_threshold_bytes": 5242880
+}

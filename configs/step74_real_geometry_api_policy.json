@@ -1,0 +1,96 @@
+{
+  "policy_id": "step74_real_geometry_api_policy",
+  "step": 74,
+  "required_symbols": [
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.intake",
+      "kind": "function",
+      "symbol": "run_candidate_intake"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.intake",
+      "kind": "function",
+      "symbol": "run_candidate_quality_check"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.intake",
+      "kind": "function",
+      "symbol": "run_candidate_sampling_reproducibility"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.intake",
+      "kind": "function",
+      "symbol": "run_candidate_projection_smoke"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.candidate_manifest",
+      "kind": "function",
+      "symbol": "validate_candidate_descriptor"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.candidate_manifest",
+      "kind": "function",
+      "symbol": "candidate_manifest_row"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.candidate_manifest",
+      "kind": "function",
+      "symbol": "write_candidate_manifest"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.candidate_manifest",
+      "kind": "constant",
+      "symbol": "VALID_COMMIT_POLICIES"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.candidate_manifest",
+      "kind": "constant",
+      "symbol": "VALIDATION_SCOPE"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.fingerprint",
+      "kind": "function",
+      "symbol": "fingerprint_geometry_file"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.fingerprint",
+      "kind": "function",
+      "symbol": "sha256_file"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.fingerprint",
+      "kind": "function",
+      "symbol": "file_size_bytes"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.normalization",
+      "kind": "function",
+      "symbol": "geometry_config_from_descriptor"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.normalization",
+      "kind": "function",
+      "symbol": "normalize_mesh_candidate"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.normalization",
+      "kind": "function",
+      "symbol": "normalize_voxel_candidate"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.normalization",
+      "kind": "function",
+      "symbol": "write_normalization_report"
+    },
+    {
+      "canonical_module": "experiments.steps.real_geometry_feasibility.feasibility",
+      "kind": "function",
+      "symbol": "run_projection_only_scale_case"
+    },
+    {
+      "canonical_module": "experiments.steps.real_geometry_feasibility.feasibility",
+      "kind": "function",
+      "symbol": "run_short_driver_case"
+    }
+  ]
+}

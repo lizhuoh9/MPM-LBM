@@ -1,0 +1,6 @@
+actual,check,expected,pass,path
+True,valid_small_synthetic_manifest_pass,True,True,valid_synthetic_fixture
+True,absolute_path_redaction_pass,True,True,fingerprint_redaction
+True,large_file_policy_enforced,True,True,large_policy_probe
+True,unavailable_source_policy_enforced,True,True,source_available_false
+True,duplicate_candidate_id_rejected,True,True,duplicate_manifest

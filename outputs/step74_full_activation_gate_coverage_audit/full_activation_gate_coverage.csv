@@ -1,0 +1,11 @@
+actual,check,expected,gate,notes,pass
+False,activation_gate_closed,False,runtime_geometry_activation_allowed,Step74 keeps every Step70 activation gate closed,True
+False,activation_gate_closed,False,wall_velocity_activation_allowed,Step74 keeps every Step70 activation gate closed,True
+False,activation_gate_closed,False,combined_runtime_geometry_wall_velocity_activation_allowed,Step74 keeps every Step70 activation gate closed,True
+False,activation_gate_closed,False,real_geometry_activation_allowed,Step74 keeps every Step70 activation gate closed,True
+False,activation_gate_closed,False,squid_proxy_activation_allowed,Step74 keeps every Step70 activation gate closed,True
+False,activation_gate_closed,False,link_area_activation_allowed,Step74 keeps every Step70 activation gate closed,True
+False,activation_gate_closed,False,grid_48_activation_allowed,Step74 keeps every Step70 activation gate closed,True
+False,activation_gate_closed,False,grid_64_activation_allowed,Step74 keeps every Step70 activation gate closed,True
+False,activation_gate_closed,False,vtr_output_allowed,Step74 keeps every Step70 activation gate closed,True
+False,activation_gate_closed,False,particle_npy_output_allowed,Step74 keeps every Step70 activation gate closed,True

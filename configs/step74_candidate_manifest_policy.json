@@ -1,0 +1,15 @@
+{
+  "policy_id": "step74_candidate_manifest_policy",
+  "step": 74,
+  "synthetic_fixture_dir": "outputs/step74_synthetic_geometry_fixture",
+  "synthetic_fixture_file": "outputs/step74_synthetic_geometry_fixture/synthetic_fixture.txt",
+  "synthetic_descriptor_file": "outputs/step74_synthetic_geometry_fixture/synthetic_fixture_descriptor.json",
+  "synthetic_manifest_csv": "outputs/step74_candidate_manifest_policy_audit/synthetic_candidate_manifest.csv",
+  "synthetic_manifest_json": "outputs/step74_candidate_manifest_policy_audit/synthetic_candidate_manifest.json",
+  "protected_prefixes": [
+    "data/real_geometry_candidates/",
+    "external/taichi_LBM3D/"
+  ],
+  "large_probe_path": "outputs/step74_synthetic_geometry_fixture/large_policy_probe.bin",
+  "expected_validation_scope": "intake_qa_normalization_sampling_projection_only"
+}

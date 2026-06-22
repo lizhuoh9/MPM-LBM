@@ -29,6 +29,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 71: output default safety alignment and LBM tau convention decision
 - Step 72: runtime geometry activation readiness audit
 - Step 73: wall velocity activation readiness audit
+- Step 74: real geometry data boundary audit
 
 ## Current Validated Modes
 
@@ -65,6 +66,14 @@ application safety, output policy, all 10 Step70 activation gates, no-simulation
 constraints, and Step72 regression evidence. It does not run `FSIDriver3D`,
 activate wall velocity, update LBM populations, modify bounce-back formulas, or
 claim physical validation.
+
+Step 74 adds an audit-only real geometry data boundary layer. It checks
+canonical real geometry imports, synthetic descriptor constraints, manifest and
+fingerprint policy, quarantine status for `experiments/steps/real_geometry_feasibility`,
+output policy, all 10 Step70 activation gates, no-simulation constraints, and
+Step73 regression evidence. It does not run `FSIDriver3D`, execute projection
+smoke, add real geometry data, edit `data/real_geometry_candidates`, or claim
+physical validation.
 
 ## What Exists
 

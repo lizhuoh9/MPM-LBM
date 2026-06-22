@@ -1,0 +1,99 @@
+{
+  "rows": [
+    {
+      "case_id": "valid_synthetic_descriptor",
+      "check": "valid_descriptor_accepted",
+      "error": "",
+      "expected": "accepted",
+      "pass": true
+    },
+    {
+      "case_id": "candidate_id_contains_validated",
+      "check": "invalid_descriptor_rejected",
+      "error": "ValueError: candidate_id must not imply validation or anatomy: 'synthetic_validated_fixture'",
+      "expected": "rejected",
+      "pass": true
+    },
+    {
+      "case_id": "candidate_id_contains_swimming",
+      "check": "invalid_descriptor_rejected",
+      "error": "ValueError: candidate_id must not imply validation or anatomy: 'synthetic_swimming_fixture'",
+      "expected": "rejected",
+      "pass": true
+    },
+    {
+      "case_id": "candidate_id_contains_actuation",
+      "check": "invalid_descriptor_rejected",
+      "error": "ValueError: candidate_id must not imply validation or anatomy: 'synthetic_actuation_fixture'",
+      "expected": "rejected",
+      "pass": true
+    },
+    {
+      "case_id": "candidate_id_contains_anatomical",
+      "check": "invalid_descriptor_rejected",
+      "error": "ValueError: candidate_id must not imply validation or anatomy: 'synthetic_anatomical_fixture'",
+      "expected": "rejected",
+      "pass": true
+    },
+    {
+      "case_id": "unknown_geometry_type_rejected",
+      "check": "invalid_descriptor_rejected",
+      "error": "ValueError: geometry_type must be one of ['mesh', 'voxel']",
+      "expected": "rejected",
+      "pass": true
+    },
+    {
+      "case_id": "invalid_commit_policy_rejected",
+      "check": "invalid_descriptor_rejected",
+      "error": "ValueError: commit_policy must be one of ['do_not_commit_large_raw_geometry', 'local_candidate_only', 'small_controlled_fixture_allowed']",
+      "expected": "rejected",
+      "pass": true
+    },
+    {
+      "case_id": "quality_check_enabled_false_rejected",
+      "check": "invalid_descriptor_rejected",
+      "error": "ValueError: quality_check_enabled must be true",
+      "expected": "rejected",
+      "pass": true
+    },
+    {
+      "case_id": "quality_check_strict_false_rejected",
+      "check": "invalid_descriptor_rejected",
+      "error": "ValueError: quality_check_strict must be true",
+      "expected": "rejected",
+      "pass": true
+    },
+    {
+      "case_id": "wrong_validation_scope_rejected",
+      "check": "invalid_descriptor_rejected",
+      "error": "ValueError: validation_scope must be 'intake_qa_normalization_sampling_projection_only'",
+      "expected": "rejected",
+      "pass": true
+    },
+    {
+      "case_id": "private_absolute_path_requires_local_only",
+      "check": "invalid_descriptor_rejected",
+      "error": "ValueError: absolute source_file paths require local_candidate_only commit_policy",
+      "expected": "rejected",
+      "pass": true
+    },
+    {
+      "case_id": "external_taichi_lbm3d_source_rejected",
+      "check": "invalid_descriptor_rejected",
+      "error": "ValueError: source_file must not point under external/taichi_LBM3D",
+      "expected": "rejected",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "candidate_descriptor_schema_audit_pass": true,
+    "external_path_rejected": true,
+    "identity_claim_terms_rejected": true,
+    "invalid_descriptor_rejected_count": 11,
+    "invalid_descriptor_required_count": 11,
+    "pass_count": 12,
+    "private_absolute_path_policy_enforced": true,
+    "row_count": 12,
+    "valid_descriptor_pass_count": 1
+  }
+}

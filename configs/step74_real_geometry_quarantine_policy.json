@@ -1,0 +1,14 @@
+{
+  "policy_id": "step74_real_geometry_quarantine_policy",
+  "step": 74,
+  "quarantined_module_path": "experiments/steps/real_geometry_feasibility/feasibility.py",
+  "forbidden_runtime_prefix": "src/mpm_lbm/sim/",
+  "required_detected_symbols": [
+    "run_projection_only_scale_case",
+    "run_short_driver_case"
+  ],
+  "driver_markers": [
+    "FSIDriver3D",
+    "driver.run()"
+  ]
+}

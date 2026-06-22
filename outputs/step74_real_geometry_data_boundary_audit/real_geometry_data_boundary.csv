@@ -1,0 +1,8 @@
+actual,check,expected,name,notes,pass,summary_key
+True,required_audit_pass,True,real_geometry_api_audit,Step74 real geometry data boundary component must be green,True,real_geometry_api_audit_pass
+True,required_audit_pass,True,candidate_descriptor_schema_audit,Step74 real geometry data boundary component must be green,True,candidate_descriptor_schema_audit_pass
+True,required_audit_pass,True,candidate_manifest_policy_audit,Step74 real geometry data boundary component must be green,True,candidate_manifest_policy_audit_pass
+True,required_audit_pass,True,real_geometry_quarantine_audit,Step74 real geometry data boundary component must be green,True,real_geometry_quarantine_audit_pass
+True,required_audit_pass,True,real_geometry_output_policy_audit,Step74 real geometry data boundary component must be green,True,real_geometry_output_policy_audit_pass
+True,required_audit_pass,True,full_activation_gate_coverage_audit,Step74 real geometry data boundary component must be green,True,full_activation_gate_coverage_audit_pass
+False,activation_allowed_after_step74,False,real_geometry_activation_allowed,real_geometry_boundary_audit_ready_for_later_data_decision_only,True,

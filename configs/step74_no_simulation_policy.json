@@ -1,0 +1,35 @@
+{
+  "policy_id": "step74_no_simulation_policy",
+  "step": 74,
+  "scan_python_paths": [
+    "src/mpm_lbm/evidence/real_geometry_data_boundary_audit.py",
+    "src/mpm_lbm/evidence/real_geometry_api_audit.py",
+    "src/mpm_lbm/evidence/candidate_descriptor_schema_audit.py",
+    "src/mpm_lbm/evidence/candidate_manifest_policy_audit.py",
+    "src/mpm_lbm/evidence/real_geometry_quarantine_audit.py",
+    "src/mpm_lbm/evidence/real_geometry_output_policy_audit.py",
+    "src/mpm_lbm/evidence/step74_full_activation_gate_coverage_audit.py",
+    "src/mpm_lbm/evidence/step74_no_simulation_audit.py",
+    "src/mpm_lbm/evidence/step74_regression_guard.py",
+    "baseline_tests/step74_common.py",
+    "baseline_tests/run_step74_real_geometry_api_audit.py",
+    "baseline_tests/run_step74_candidate_descriptor_schema_audit.py",
+    "baseline_tests/run_step74_candidate_manifest_policy_audit.py",
+    "baseline_tests/run_step74_real_geometry_quarantine_audit.py",
+    "baseline_tests/run_step74_real_geometry_output_policy_audit.py",
+    "baseline_tests/run_step74_full_activation_gate_coverage_audit.py",
+    "baseline_tests/run_step74_real_geometry_data_boundary_audit.py",
+    "baseline_tests/run_step74_no_simulation_audit.py",
+    "baseline_tests/run_step74_step73_regression_guard.py",
+    "baseline_tests/run_step74_artifact_manifest.py"
+  ],
+  "forbidden_output_directories": [
+    "outputs/step74_driver_runs",
+    "outputs/step74_real_geometry_driver_runs",
+    "outputs/step74_projection_smoke"
+  ],
+  "protected_prefixes": [
+    "data/real_geometry_candidates/",
+    "external/taichi_LBM3D/"
+  ]
+}
