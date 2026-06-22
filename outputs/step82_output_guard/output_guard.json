@@ -1,0 +1,254 @@
+{
+  "rows": [
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step82_activation_guard.log",
+      "size_bytes": 53
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step82_artifact_manifest.log",
+      "size_bytes": 62
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step82_focused_pytest.log",
+      "size_bytes": 104
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step82_full_pytest_anaconda.log",
+      "size_bytes": 1169
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step82_full_pytest_taichi.log",
+      "size_bytes": 1170
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step82_output_guard.log",
+      "size_bytes": 49
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step82_step81_regression_guard.log",
+      "size_bytes": 60
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step82_wall_velocity_solid_vel_quality.log",
+      "size_bytes": 68
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step82_wall_velocity_solid_vel_smoke_matrix.log",
+      "size_bytes": 265
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_activation_guard/activation_guard.csv",
+      "size_bytes": 2631
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_activation_guard/activation_guard.json",
+      "size_bytes": 6690
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_activation_guard/activation_guard_summary.csv",
+      "size_bytes": 214
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_artifact_manifest/artifact_manifest.csv",
+      "size_bytes": 450005
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_artifact_manifest/artifact_summary.csv",
+      "size_bytes": 469
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_artifact_manifest/artifact_summary.json",
+      "size_bytes": 544
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_driver_runs/canonical_driver_wall_velocity_solid_vel_32_3step_smoke/boundary_motion_interface_report.json",
+      "size_bytes": 8410
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_driver_runs/canonical_driver_wall_velocity_solid_vel_32_3step_smoke/diagnostics_timeseries.csv",
+      "size_bytes": 1448
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_driver_runs/canonical_driver_wall_velocity_solid_vel_32_3step_smoke/diagnostics_timeseries.npz",
+      "size_bytes": 9184
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_driver_runs/canonical_driver_wall_velocity_solid_vel_32_3step_smoke/driver_config.json",
+      "size_bytes": 1627
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_driver_runs/canonical_driver_wall_velocity_solid_vel_32_3step_smoke/geo_all_fluid_32.dat",
+      "size_bytes": 98304
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_driver_runs/canonical_driver_wall_velocity_solid_vel_32_3step_smoke/wall_velocity_application_report.json",
+      "size_bytes": 2857
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_output_guard/output_guard.csv",
+      "size_bytes": 3003
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_output_guard/output_guard.json",
+      "size_bytes": 7418
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_output_guard/output_guard_summary.csv",
+      "size_bytes": 562
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_step81_regression_guard/step81_regression_guard.csv",
+      "size_bytes": 1589
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_step81_regression_guard/step81_regression_guard.json",
+      "size_bytes": 3317
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_step81_regression_guard/step81_regression_guard_summary.csv",
+      "size_bytes": 292
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_wall_velocity_solid_vel_quality/wall_velocity_solid_vel_quality.csv",
+      "size_bytes": 4588
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_wall_velocity_solid_vel_quality/wall_velocity_solid_vel_quality.json",
+      "size_bytes": 10837
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_wall_velocity_solid_vel_quality/wall_velocity_solid_vel_quality_summary.csv",
+      "size_bytes": 327
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_wall_velocity_solid_vel_smoke_matrix/wall_velocity_solid_vel_smoke_matrix.csv",
+      "size_bytes": 2689
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_wall_velocity_solid_vel_smoke_matrix/wall_velocity_solid_vel_smoke_matrix.json",
+      "size_bytes": 5699
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step82_wall_velocity_solid_vel_smoke_matrix/wall_velocity_solid_vel_smoke_matrix_summary.csv",
+      "size_bytes": 1620
+    }
+  ],
+  "summary": {
+    "output_guard_pass": true,
+    "pass_count": 33,
+    "private_absolute_path_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "row_count": 33,
+    "step82_dense_wall_velocity_output_count": 0,
+    "step82_forbidden_file_count": 0,
+    "step82_large_file_count": 0,
+    "step82_optional_driver_run_dir_count": 0,
+    "step82_particle_npy_count": 0,
+    "step82_raw_geometry_output_count": 0,
+    "step82_required_driver_run_dir_count": 1,
+    "step82_sparse_wall_velocity_output_count": 0,
+    "step82_total_size_bytes": 627324,
+    "step82_total_size_mb": 0.5982627868652344,
+    "step82_vtr_count": 0
+  }
+}

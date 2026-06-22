@@ -238,4 +238,30 @@ Step81 authorizes only the future Step82 row
 combined runtime geometry plus wall velocity, real geometry, squid proxy
 behavior, link-area transfer, 48^3, 64^3, VTR output, particle NPY output,
 solver formula changes, tau migration, and physical-production claims remain
+closed in Step81.
+
+Step82 executes the authorized wall-velocity-only row:
+
+```text
+step82_wall_velocity_solid_vel_smoke_matrix_pass = true
+activation_feature_count = 1
+wall_velocity_enabled_count = 1
+wall_velocity_application_report_pass_count = 1
+boundary_motion_interface_report_pass_count = 1
+runtime_geometry_enabled_count = 0
+combined_runtime_geometry_wall_velocity_enabled_count = 0
+real_geometry_enabled_count = 0
+squid_proxy_enabled_count = 0
+link_area_enabled_count = 0
+grid_48_enabled_count = 0
+grid_64_enabled_count = 0
+```
+
+Step82 opens only the `solid_vel_experimental` wall-velocity application smoke
+for the single planned canonical driver row. It targets only LBM `solid_vel`,
+does not write LBM populations directly, does not update MPM or projector
+state, does not modify moving bounce-back formulas, does not enable runtime
+geometry, real geometry, squid proxy behavior, link-area transfer, larger grids,
+VTR output, particle NPY output, solver formula changes, tau migration, or
+physical-production claims.
 closed.

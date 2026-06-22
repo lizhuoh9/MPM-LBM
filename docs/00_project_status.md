@@ -37,6 +37,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 79: runtime geometry diagnostic-only activation plan and guard
 - Step 80: runtime geometry diagnostic-only canonical driver 3-step smoke
 - Step 81: wall velocity single-feature activation plan and guard
+- Step 82: wall velocity `solid_vel` canonical driver 3-step smoke
 
 ## Current Validated Modes
 
@@ -138,6 +139,18 @@ runtime geometry with wall velocity, enable real geometry, enable squid proxy
 behavior, enable link-area transfer, add larger grids, or write VTR or particle
 NPY output. The only Step81 claim is that wall velocity `solid_vel` activation
 is planned and guarded for Step82.
+
+Step 82 executes exactly the wall-velocity-only canonical driver row planned by
+Step81 for three LBM steps at 32^3 with 1024 particles. The row enables only
+`wall_velocity_application_mode = solid_vel_experimental`, targets only LBM
+`solid_vel`, writes `wall_velocity_application_report.json` and
+`boundary_motion_interface_report.json`, and keeps runtime geometry, combined
+runtime geometry plus wall velocity, real geometry, squid proxy behavior,
+link-area transfer, larger grids, VTR output, and particle NPY output disabled.
+The Step82 driver config uses `target_u_lbm = [0.0, 0.0, 0.0]` to isolate the
+wall-velocity cap smoke from the default background flow. Step82 does not claim
+moving-wall physics validation, real squid validation, grid convergence, or
+production readiness.
 
 ## What Exists
 

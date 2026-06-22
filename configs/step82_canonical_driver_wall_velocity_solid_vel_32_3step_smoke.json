@@ -1,0 +1,27 @@
+{
+  "boundary_motion_config_path": "configs/step34_boundary_motion_interface_prescribed_kinematic.json",
+  "boundary_motion_mode": "prescribed_kinematic",
+  "boundary_motion_report_enabled": true,
+  "coupling_mode": "moving_boundary",
+  "geometry_motion_application_mode": "disabled",
+  "geometry_motion_mode": "static",
+  "geometry_type": "box",
+  "mpm_substeps_per_lbm_step": 1,
+  "n_grid": 32,
+  "n_lbm_steps": 3,
+  "n_particles": 1024,
+  "output_interval": 1,
+  "quality_check_enabled": false,
+  "quality_check_strict": false,
+  "reaction_transfer_mode": "engineering",
+  "target_u_lbm": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "wall_velocity_application_config_path": "configs/step36_wall_velocity_application_solid_vel_experimental.json",
+  "wall_velocity_application_mode": "solid_vel_experimental",
+  "wall_velocity_application_report_enabled": true,
+  "write_particles": false,
+  "write_vtk": false
+}

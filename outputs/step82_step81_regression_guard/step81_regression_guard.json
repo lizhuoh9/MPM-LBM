@@ -1,0 +1,96 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "artifact_path": "outputs/step81_wall_velocity_single_feature_activation_plan/wall_velocity_single_feature_activation_plan.json",
+      "check": "step81_activation_plan_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step81_wall_velocity_single_feature_activation_plan_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step81_wall_velocity_single_feature_activation_guard/wall_velocity_single_feature_activation_guard.json",
+      "check": "step81_activation_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step81_wall_velocity_single_feature_activation_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step81_step80_regression_guard/step80_regression_guard.json",
+      "check": "step81_step80_regression_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step81_step80_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step81_output_guard/output_guard.json",
+      "check": "step81_output_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step81_artifact_manifest/artifact_summary.json",
+      "check": "step81_artifact_budget_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "artifact_budget_pass"
+    },
+    {
+      "actual": 0,
+      "artifact_path": "outputs/step81_wall_velocity_single_feature_activation_plan/wall_velocity_single_feature_activation_plan.json",
+      "check": "step81_activation_feature_count",
+      "expected": 0,
+      "pass": true,
+      "summary_key": "step81_activation_feature_count"
+    },
+    {
+      "actual": 1,
+      "artifact_path": "outputs/step81_wall_velocity_single_feature_activation_plan/wall_velocity_single_feature_activation_plan.json",
+      "check": "step81_planned_step82_activation_feature_count",
+      "expected": 1,
+      "pass": true,
+      "summary_key": "planned_step82_activation_feature_count"
+    },
+    {
+      "actual": 0,
+      "artifact_path": "outputs/step81_artifact_manifest/artifact_summary.json",
+      "check": "step81_driver_run_dir_count",
+      "expected": 0,
+      "pass": true,
+      "summary_key": "step81_driver_run_dir_count"
+    },
+    {
+      "actual": 0,
+      "artifact_path": "outputs/step81_artifact_manifest/artifact_summary.json",
+      "check": "step81_vtr_count",
+      "expected": 0,
+      "pass": true,
+      "summary_key": "step81_vtr_count"
+    },
+    {
+      "actual": 0,
+      "artifact_path": "outputs/step81_artifact_manifest/artifact_summary.json",
+      "check": "step81_particle_npy_count",
+      "expected": 0,
+      "pass": true,
+      "summary_key": "step81_particle_npy_count"
+    }
+  ],
+  "summary": {
+    "artifact_check_count": 10,
+    "artifact_pass_count": 10,
+    "pass_count": 10,
+    "planned_step82_activation_feature_count": 1,
+    "row_count": 10,
+    "step81_activation_feature_count": 0,
+    "step81_driver_run_dir_count": 0,
+    "step81_particle_npy_count": 0,
+    "step81_vtr_count": 0,
+    "step82_step81_regression_guard_pass": true
+  }
+}

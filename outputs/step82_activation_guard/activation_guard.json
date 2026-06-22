@@ -1,0 +1,258 @@
+{
+  "rows": [
+    {
+      "actual": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke",
+      "check": "allowed_required_row_name",
+      "expected": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke",
+      "pass": true,
+      "row_name": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke"
+    },
+    {
+      "actual": 1,
+      "check": "activation_feature_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "wall_velocity_enabled",
+      "expected": true,
+      "pass": true,
+      "row_name": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke"
+    },
+    {
+      "actual": "solid_vel_experimental",
+      "check": "wall_velocity_application_mode",
+      "expected": "solid_vel_experimental",
+      "pass": true,
+      "row_name": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke"
+    },
+    {
+      "actual": "prescribed_kinematic",
+      "check": "boundary_motion_mode",
+      "expected": "prescribed_kinematic",
+      "pass": true,
+      "row_name": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "wall_velocity_application_report_pass",
+      "expected": true,
+      "pass": true,
+      "row_name": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "boundary_motion_interface_report_pass",
+      "expected": true,
+      "pass": true,
+      "row_name": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "runtime_geometry_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "combined_runtime_geometry_wall_velocity_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "squid_proxy_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "link_area_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "grid_48_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "grid_64_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "write_vtk",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "write_particles",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_wall_velocity_solid_vel_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "step82_wall_velocity_solid_vel_smoke_matrix_pass",
+      "expected": true,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 1,
+      "check": "required_row_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "optional_row_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 1,
+      "check": "required_stable_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 1,
+      "check": "activation_feature_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 1,
+      "check": "wall_velocity_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "runtime_geometry_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "combined_runtime_geometry_wall_velocity_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "real_geometry_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "squid_proxy_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "link_area_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "grid_48_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "grid_64_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "runtime_code_changed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "solver_behavior_changed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": "wall_velocity_solid_vel_only",
+      "check": "physics_feature_expansion",
+      "expected": "wall_velocity_solid_vel_only",
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": true,
+      "check": "step81_activation_guard_pass",
+      "expected": true,
+      "pass": true,
+      "row_name": "step81_guard"
+    },
+    {
+      "actual": 1,
+      "check": "planned_step82_activation_feature_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "step81_guard"
+    },
+    {
+      "actual": 0,
+      "check": "step81_activation_feature_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "step81_guard"
+    }
+  ],
+  "summary": {
+    "activation_feature_count": 1,
+    "pass_count": 35,
+    "planned_step82_activation_feature_count": 1,
+    "row_count": 35,
+    "runtime_geometry_enabled_count": 0,
+    "step82_activation_guard_pass": true,
+    "wall_velocity_enabled_count": 1
+  }
+}

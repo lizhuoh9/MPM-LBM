@@ -183,3 +183,28 @@ Step81 does not authorize runtime geometry, combined runtime geometry plus wall
 velocity, real geometry, squid proxy behavior, link-area transfer, larger
 grids, VTR output, particle NPY output, solver formula changes, tau migration,
 or physical-production claims.
+
+## Step82 Wall Velocity Solid-Vel Smoke
+
+Step82 executes exactly the row planned by Step81:
+
+```text
+campaign_id = step82_wall_velocity_solid_vel_canonical_driver_smoke
+row_id = canonical_driver_wall_velocity_solid_vel_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+geometry_type = box
+boundary_motion_mode = prescribed_kinematic
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+target_u_lbm = [0.0, 0.0, 0.0]
+executed_in_step82 = true
+```
+
+Step82 is not a runtime-geometry, combined runtime-geometry plus wall-velocity,
+real-geometry, squid-proxy, link-area, larger-grid, VTR, particle-output,
+physical-validation, or production-readiness campaign.

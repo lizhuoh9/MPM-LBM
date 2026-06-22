@@ -136,3 +136,29 @@ activate wall velocity in runtime, does not enable runtime geometry, does not
 combine runtime geometry with wall velocity, does not enable real geometry,
 squid proxy behavior, link-area transfer, 48^3, 64^3, VTR output, or particle
 NPY output, and does not claim physical validation or production readiness.
+
+## Step82 Executed Row
+
+```text
+campaign_id = step82_wall_velocity_solid_vel_canonical_driver_smoke
+row_id = canonical_driver_wall_velocity_solid_vel_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+geometry_type = box
+boundary_motion_mode = prescribed_kinematic
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+target_u_lbm = [0.0, 0.0, 0.0]
+executed_in_step82 = true
+```
+
+Step82 enables only wall velocity application to LBM `solid_vel` and writes the
+wall-velocity and boundary-motion reports for that single row. Runtime geometry,
+combined runtime geometry plus wall velocity, real geometry, squid proxy
+behavior, link-area transfer, 48^3, 64^3, VTR output, and particle NPY output
+remain disabled. Step82 does not claim physical validation or production
+readiness.
