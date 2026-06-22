@@ -1,0 +1,23 @@
+{
+  "allowed_required_row_name": "canonical_driver_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke",
+  "expected_activation_feature_count": 2,
+  "expected_boundary_motion_mode": "prescribed_kinematic",
+  "expected_geometry_motion_application_mode": "diagnostic_only",
+  "expected_runtime_geometry_enabled": true,
+  "expected_step83_planned_step84_activation_feature_count": 2,
+  "expected_wall_velocity_application_mode": "solid_vel_experimental",
+  "expected_wall_velocity_enabled": true,
+  "matrix_artifact_path": "outputs/step84_runtime_geometry_wall_velocity_combined_smoke_matrix/runtime_geometry_wall_velocity_combined_smoke_matrix.json",
+  "policy_id": "step84_activation_guard_policy",
+  "step": 84,
+  "step83_activation_guard_artifact_path": "outputs/step83_runtime_geometry_wall_velocity_combined_activation_guard/runtime_geometry_wall_velocity_combined_activation_guard.json",
+  "activation_features_must_be_false": [
+    "real_geometry_enabled",
+    "squid_proxy_enabled",
+    "link_area_enabled",
+    "grid_48_enabled",
+    "grid_64_enabled",
+    "write_vtk",
+    "write_particles"
+  ]
+}

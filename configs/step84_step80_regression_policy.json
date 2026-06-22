@@ -1,0 +1,42 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step80_runtime_geometry_diagnostic_only_smoke_matrix/runtime_geometry_diagnostic_only_smoke_matrix.json",
+      "check": "step80_smoke_matrix_pass",
+      "expected": true,
+      "summary_key": "step80_runtime_geometry_diagnostic_only_smoke_matrix_pass"
+    },
+    {
+      "artifact_path": "outputs/step80_runtime_geometry_diagnostic_only_quality/runtime_geometry_diagnostic_only_quality.json",
+      "check": "step80_quality_pass",
+      "expected": true,
+      "summary_key": "step80_runtime_geometry_diagnostic_only_quality_pass"
+    },
+    {
+      "artifact_path": "outputs/step80_activation_guard/activation_guard.json",
+      "check": "step80_activation_guard_pass",
+      "expected": true,
+      "summary_key": "step80_activation_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step80_output_guard/output_guard.json",
+      "check": "step80_output_guard_pass",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step80_step79_regression_guard/step79_regression_guard.json",
+      "check": "step80_step79_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step80_step79_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step80_artifact_manifest/artifact_summary.json",
+      "check": "step80_artifact_budget_pass",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "policy_id": "step84_step80_regression_policy",
+  "step": 84
+}

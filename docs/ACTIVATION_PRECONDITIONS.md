@@ -264,4 +264,41 @@ state, does not modify moving bounce-back formulas, does not enable runtime
 geometry, real geometry, squid proxy behavior, link-area transfer, larger grids,
 VTR output, particle NPY output, solver formula changes, tau migration, or
 physical-production claims.
-closed.
+
+Step83 then plans and guards exactly one future combined Step84 row without
+running a simulation:
+
+```text
+combined_runtime_geometry_wall_velocity_planned_for_step84 = true
+step83_activation_feature_count = 0
+planned_step84_activation_feature_count = 2
+fsidriver_run_allowed = false
+simulation_run_allowed = false
+```
+
+Step83 authorizes only the future row
+`canonical_driver_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke`.
+It does not authorize real geometry, squid proxy behavior, link-area transfer,
+larger grids, VTR output, particle NPY output, solver formula changes, tau
+migration, or physical-production claims.
+
+Step84 executes that authorized combined row:
+
+```text
+step84_runtime_geometry_wall_velocity_combined_smoke_matrix_pass = true
+activation_feature_count = 2
+runtime_geometry_enabled_count = 1
+wall_velocity_enabled_count = 1
+combined_runtime_geometry_wall_velocity_enabled_count = 1
+real_geometry_enabled_count = 0
+squid_proxy_enabled_count = 0
+link_area_enabled_count = 0
+grid_48_enabled_count = 0
+grid_64_enabled_count = 0
+```
+
+Step84 opens only the bounded combination of runtime geometry diagnostic-only
+interface reporting and wall velocity `solid_vel_experimental` application for
+the single planned canonical driver row. Real geometry, squid proxy behavior,
+link-area transfer, larger grids, VTR output, particle NPY output, solver
+formula changes, tau migration, and physical-production claims remain closed.

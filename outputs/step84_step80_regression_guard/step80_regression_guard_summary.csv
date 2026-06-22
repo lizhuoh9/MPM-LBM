@@ -1,0 +1,13 @@
+metric,value
+artifact_check_count,6
+artifact_pass_count,6
+pass_count,6
+row_count,6
+step80_activation_feature_count,1
+step80_artifact_budget_pass,True
+step80_combined_runtime_geometry_wall_velocity_enabled_count,0
+step80_particle_npy_count,0
+step80_runtime_geometry_enabled_count,1
+step80_vtr_count,0
+step80_wall_velocity_enabled_count,0
+step84_step80_regression_guard_pass,True

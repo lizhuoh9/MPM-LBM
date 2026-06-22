@@ -162,3 +162,55 @@ combined runtime geometry plus wall velocity, real geometry, squid proxy
 behavior, link-area transfer, 48^3, 64^3, VTR output, and particle NPY output
 remain disabled. Step82 does not claim physical validation or production
 readiness.
+
+## Step83 Planned Row
+
+Step83 does not execute a driver row. It records and guards the only planned
+Step84 combined row:
+
+```text
+campaign_id = step83_runtime_geometry_wall_velocity_combined_activation_plan_and_guard
+row_id = canonical_driver_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+geometry_type = box
+geometry_motion_application_mode = diagnostic_only
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+executed_in_step83 = false
+planned_for_step84 = true
+```
+
+Step83 does not run `FSIDriver3D`, does not execute simulation, does not
+activate the combined path in runtime, does not enable real geometry, squid
+proxy behavior, link-area transfer, 48^3, 64^3, VTR output, or particle NPY
+output, and does not claim physical validation or production readiness.
+
+## Step84 Executed Row
+
+```text
+campaign_id = step84_runtime_geometry_wall_velocity_combined_canonical_driver_smoke
+row_id = canonical_driver_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+geometry_type = box
+geometry_motion_application_mode = diagnostic_only
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+target_u_lbm = [0.0, 0.0, 0.0]
+executed_in_step84 = true
+```
+
+Step84 enables only runtime geometry diagnostic-only reporting plus wall
+velocity application to LBM `solid_vel` in the single planned canonical driver
+row. Real geometry, squid proxy behavior, link-area transfer, 48^3, 64^3, VTR
+output, and particle NPY output remain disabled. Step84 does not claim physical
+validation, grid convergence, or production readiness.

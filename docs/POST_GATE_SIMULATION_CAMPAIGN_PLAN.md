@@ -208,3 +208,54 @@ executed_in_step82 = true
 Step82 is not a runtime-geometry, combined runtime-geometry plus wall-velocity,
 real-geometry, squid-proxy, link-area, larger-grid, VTR, particle-output,
 physical-validation, or production-readiness campaign.
+
+## Step83 Combined Activation Planning
+
+After Step82 acceptance, Step83 does not run a simulation. It plans and guards
+exactly one future Step84 row:
+
+```text
+campaign_id = step83_runtime_geometry_wall_velocity_combined_activation_plan_and_guard
+row_id = canonical_driver_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+geometry_type = box
+geometry_motion_application_mode = diagnostic_only
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+executed_in_step83 = false
+planned_for_step84 = true
+```
+
+Step83 does not authorize real geometry, squid proxy behavior, link-area
+transfer, larger grids, VTR output, particle NPY output, solver formula changes,
+tau migration, or physical-production claims.
+
+## Step84 Combined Smoke
+
+Step84 executes exactly the row planned by Step83:
+
+```text
+campaign_id = step84_runtime_geometry_wall_velocity_combined_canonical_driver_smoke
+row_id = canonical_driver_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+geometry_type = box
+geometry_motion_application_mode = diagnostic_only
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+target_u_lbm = [0.0, 0.0, 0.0]
+executed_in_step84 = true
+```
+
+Step84 is not a real-geometry, squid-proxy, link-area, larger-grid, VTR,
+particle-output, physical-validation, grid-convergence, or production-readiness
+campaign.
