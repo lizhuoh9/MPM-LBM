@@ -34,6 +34,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 76: minimal post-gate canonical driver rebaseline
 - Step 77: minimal post-gate canonical driver 3-step rebaseline
 - Step 78: minimal post-gate canonical driver 5-step rebaseline
+- Step 79: runtime geometry diagnostic-only activation plan and guard
 
 ## Current Validated Modes
 
@@ -111,6 +112,14 @@ output all remain disabled. Step78 is still a bounded rebaseline only and does
 not claim physical validation, real squid validation, grid convergence, or
 production readiness. After Step78, the intended next direction is
 single-feature activation planning, not another pure duration baseline.
+
+Step 79 adds runtime geometry diagnostic-only activation planning and guard
+evidence for exactly one future Step80 row. Step79 does not run `FSIDriver3D`,
+execute a simulation, apply runtime geometry to solver state, mutate geometry,
+change solver formulas, enable wall velocity, enable real geometry, enable
+squid proxy behavior, enable link-area transfer, add larger grids, or write VTR
+or particle NPY output. The only Step79 claim is that runtime geometry
+diagnostic-only single-feature activation is planned and guarded for Step80.
 
 ## What Exists
 

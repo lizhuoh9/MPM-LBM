@@ -1,0 +1,84 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step78_post_gate_5step_rebaseline_matrix/post_gate_5step_rebaseline_matrix.json",
+      "check": "step78_matrix_pass",
+      "expected": true,
+      "summary_key": "post_gate_5step_rebaseline_matrix_pass"
+    },
+    {
+      "artifact_path": "outputs/step78_post_gate_5step_rebaseline_matrix/post_gate_5step_rebaseline_matrix.json",
+      "check": "step78_optional_row_count",
+      "expected": 0,
+      "summary_key": "optional_row_count"
+    },
+    {
+      "artifact_path": "outputs/step78_post_gate_5step_rebaseline_matrix/post_gate_5step_rebaseline_matrix.json",
+      "check": "step78_activation_feature_count",
+      "expected": 0,
+      "summary_key": "activation_feature_count"
+    },
+    {
+      "artifact_path": "outputs/step78_post_gate_5step_rebaseline_quality/post_gate_5step_rebaseline_quality.json",
+      "check": "step78_quality_pass",
+      "expected": true,
+      "summary_key": "post_gate_5step_rebaseline_quality_pass"
+    },
+    {
+      "artifact_path": "outputs/step78_activation_guard/activation_guard.json",
+      "check": "step78_activation_guard_pass",
+      "expected": true,
+      "summary_key": "post_gate_5step_activation_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step78_activation_guard/activation_guard.json",
+      "check": "step78_activation_guard_feature_count",
+      "expected": 0,
+      "summary_key": "activation_feature_count"
+    },
+    {
+      "artifact_path": "outputs/step78_output_guard/output_guard.json",
+      "check": "step78_output_guard_pass",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step78_output_guard/output_guard.json",
+      "check": "step78_vtr_count",
+      "expected": 0,
+      "summary_key": "step78_vtr_count"
+    },
+    {
+      "artifact_path": "outputs/step78_output_guard/output_guard.json",
+      "check": "step78_particle_npy_count",
+      "expected": 0,
+      "summary_key": "step78_particle_npy_count"
+    },
+    {
+      "artifact_path": "outputs/step78_output_guard/output_guard.json",
+      "check": "step78_protected_external_edit_count",
+      "expected": 0,
+      "summary_key": "protected_external_edit_count"
+    },
+    {
+      "artifact_path": "outputs/step78_output_guard/output_guard.json",
+      "check": "step78_protected_real_geometry_candidate_edit_count",
+      "expected": 0,
+      "summary_key": "protected_real_geometry_candidate_edit_count"
+    },
+    {
+      "artifact_path": "outputs/step78_step77_regression_guard/step77_regression_guard.json",
+      "check": "step78_step77_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step78_step77_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step78_artifact_manifest/artifact_summary.json",
+      "check": "step78_artifact_budget_pass",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "policy_id": "step79_step78_regression_policy",
+  "step": 79
+}

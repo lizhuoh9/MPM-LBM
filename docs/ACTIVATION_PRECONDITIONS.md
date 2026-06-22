@@ -177,3 +177,22 @@ squid proxy behavior, link-area transfer, larger grids, VTR output, particle
 NPY output, 10-step baselines, or physical-production claims. The next intended
 direction is runtime geometry diagnostic-only single-feature activation
 planning and guard work.
+
+Step79 plans and guards that next runtime geometry diagnostic-only
+single-feature activation without opening runtime simulation:
+
+```text
+runtime_geometry_activation_planned = true
+runtime_geometry_application_mode_planned_for_step80 = diagnostic_only
+step79_activation_feature_count = 0
+planned_step80_activation_feature_count = 1
+fsidriver_run_allowed = false
+simulation_run_allowed = false
+geometry_mutation_allowed = false
+```
+
+Step79 authorizes only the future Step80 row
+`canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke`. Wall
+velocity, real geometry, squid proxy behavior, link-area transfer, 48^3, 64^3,
+VTR output, particle NPY output, solver formula changes, tau migration, and
+physical-production claims remain closed.

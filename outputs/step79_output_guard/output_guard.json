@@ -1,0 +1,159 @@
+{
+  "rows": [
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step79_artifact_manifest.log",
+      "size_bytes": 62
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step79_output_guard.log",
+      "size_bytes": 49
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step79_runtime_geometry_diagnostic_only_activation_guard.log",
+      "size_bytes": 86
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step79_runtime_geometry_diagnostic_only_activation_plan.log",
+      "size_bytes": 85
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step79_step78_regression_guard.log",
+      "size_bytes": 60
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step79_artifact_manifest/artifact_manifest.csv",
+      "size_bytes": 436598
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step79_artifact_manifest/artifact_summary.csv",
+      "size_bytes": 420
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step79_artifact_manifest/artifact_summary.json",
+      "size_bytes": 489
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step79_output_guard/output_guard.csv",
+      "size_bytes": 1408
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step79_output_guard/output_guard.json",
+      "size_bytes": 3247
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step79_output_guard/output_guard_summary.csv",
+      "size_bytes": 391
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step79_runtime_geometry_diagnostic_only_activation_guard/runtime_geometry_diagnostic_only_activation_guard.csv",
+      "size_bytes": 2291
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step79_runtime_geometry_diagnostic_only_activation_guard/runtime_geometry_diagnostic_only_activation_guard.json",
+      "size_bytes": 6856
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step79_runtime_geometry_diagnostic_only_activation_guard/runtime_geometry_diagnostic_only_activation_guard_summary.csv",
+      "size_bytes": 726
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step79_runtime_geometry_diagnostic_only_activation_plan/runtime_geometry_diagnostic_only_activation_plan.csv",
+      "size_bytes": 2801
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step79_runtime_geometry_diagnostic_only_activation_plan/runtime_geometry_diagnostic_only_activation_plan.json",
+      "size_bytes": 9188
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step79_runtime_geometry_diagnostic_only_activation_plan/runtime_geometry_diagnostic_only_activation_plan_summary.csv",
+      "size_bytes": 1664
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step79_step78_regression_guard/step78_regression_guard.csv",
+      "size_bytes": 1799
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step79_step78_regression_guard/step78_regression_guard.json",
+      "size_bytes": 3743
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step79_step78_regression_guard/step78_regression_guard_summary.csv",
+      "size_bytes": 134
+    }
+  ],
+  "summary": {
+    "output_guard_pass": true,
+    "pass_count": 20,
+    "private_absolute_path_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "row_count": 20,
+    "step79_driver_run_dir_count": 0,
+    "step79_forbidden_file_count": 0,
+    "step79_large_file_count": 0,
+    "step79_particle_npy_count": 0,
+    "step79_total_size_bytes": 472097,
+    "step79_total_size_mb": 0.4502267837524414,
+    "step79_vtr_count": 0
+  }
+}

@@ -1,0 +1,329 @@
+{
+  "rows": [
+    {
+      "actual": "Step79",
+      "check": "step",
+      "expected": "Step79",
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": "Step78",
+      "check": "previous_step",
+      "expected": "Step78",
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": "d226b1fc679f7d5592629a359c56f0b83372a393",
+      "check": "previous_required_commit",
+      "expected": "d226b1fc679f7d5592629a359c56f0b83372a393",
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": "single_feature_plan_only",
+      "check": "activation_kind",
+      "expected": "single_feature_plan_only",
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": "runtime_geometry",
+      "check": "feature_under_plan",
+      "expected": "runtime_geometry",
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": true,
+      "check": "runtime_geometry_activation_planned",
+      "expected": true,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": "diagnostic_only",
+      "check": "runtime_geometry_application_mode_planned_for_step80",
+      "expected": "diagnostic_only",
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "driver_run_required",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "fsidriver_run_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "simulation_run_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": true,
+      "check": "step80_allowed",
+      "expected": true,
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke",
+      "check": "step80_allowed_row_name",
+      "expected": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": 32,
+      "check": "step80_allowed_n_grid",
+      "expected": 32,
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": 1024,
+      "check": "step80_allowed_n_particles",
+      "expected": 1024,
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": 3,
+      "check": "step80_allowed_n_lbm_steps",
+      "expected": 3,
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": 1,
+      "check": "step80_allowed_mpm_substeps_per_lbm_step",
+      "expected": 1,
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": "moving_boundary",
+      "check": "step80_allowed_coupling_mode",
+      "expected": "moving_boundary",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": "engineering",
+      "check": "step80_allowed_reaction_transfer_mode",
+      "expected": "engineering",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": "box",
+      "check": "step80_allowed_geometry_type",
+      "expected": "box",
+      "pass": true,
+      "row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke"
+    },
+    {
+      "actual": "prescribed_kinematic",
+      "check": "geometry_motion_mode_allowed_for_step80",
+      "expected": "prescribed_kinematic",
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": "diagnostic_only",
+      "check": "geometry_motion_application_mode_allowed_for_step80",
+      "expected": "diagnostic_only",
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": true,
+      "check": "geometry_motion_report_required_for_step80",
+      "expected": true,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": true,
+      "check": "geometry_motion_interface_report_required_for_step80",
+      "expected": true,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "geometry_mutation_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "runtime_code_changed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "solver_behavior_changed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "solver_formula_change_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "tau_migration_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "wall_velocity_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "combined_runtime_geometry_wall_velocity_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "squid_proxy_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "link_area_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "grid_48_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "grid_64_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "vtr_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "particle_npy_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "physical_validation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "production_readiness_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "real_squid_validation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    }
+  ],
+  "summary": {
+    "combined_runtime_geometry_wall_velocity_allowed": false,
+    "driver_run_required": false,
+    "fsidriver_run_allowed": false,
+    "geometry_motion_application_mode_allowed_for_step80": "diagnostic_only",
+    "geometry_motion_interface_report_required_for_step80": true,
+    "geometry_motion_mode_allowed_for_step80": "prescribed_kinematic",
+    "geometry_motion_report_required_for_step80": true,
+    "geometry_mutation_allowed": false,
+    "grid_48_allowed": false,
+    "grid_64_allowed": false,
+    "link_area_allowed": false,
+    "particle_npy_output_allowed": false,
+    "pass_count": 40,
+    "physical_validation_claim_allowed": false,
+    "planned_step80_activation_feature_count": 1,
+    "previous_commit": "d226b1fc679f7d5592629a359c56f0b83372a393",
+    "previous_step": "Step78",
+    "production_readiness_claim_allowed": false,
+    "real_geometry_allowed": false,
+    "real_squid_validation_claim_allowed": false,
+    "row_count": 40,
+    "runtime_code_changed": false,
+    "runtime_geometry_activation_planned": true,
+    "runtime_geometry_application_mode_planned_for_step80": "diagnostic_only",
+    "simulation_run_allowed": false,
+    "solver_behavior_changed": false,
+    "solver_formula_change_allowed": false,
+    "squid_proxy_allowed": false,
+    "step79_activation_feature_count": 0,
+    "step79_runtime_geometry_diagnostic_only_activation_plan_pass": true,
+    "step80_allowed": true,
+    "step80_allowed_coupling_mode": "moving_boundary",
+    "step80_allowed_geometry_type": "box",
+    "step80_allowed_mpm_substeps_per_lbm_step": 1,
+    "step80_allowed_n_grid": 32,
+    "step80_allowed_n_lbm_steps": 3,
+    "step80_allowed_n_particles": 1024,
+    "step80_allowed_reaction_transfer_mode": "engineering",
+    "step80_allowed_row_count": 1,
+    "step80_allowed_row_name": "canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke",
+    "tau_migration_allowed": false,
+    "vtr_output_allowed": false,
+    "wall_velocity_allowed": false
+  }
+}

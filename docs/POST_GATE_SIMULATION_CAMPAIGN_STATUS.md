@@ -61,3 +61,28 @@ real-geometry, runtime-geometry, wall-velocity, squid-proxy, grid-convergence,
 physical-validation, or production-readiness step. After Step78, the next
 intended direction is runtime geometry diagnostic-only single-feature
 activation planning, not another pure duration baseline.
+
+## Step79 Planned Row
+
+Step79 does not execute a driver row. It records and guards the only planned
+Step80 row:
+
+```text
+campaign_id = step79_runtime_geometry_diagnostic_only_activation_plan_and_guard
+row_id = canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+geometry_type = box
+geometry_motion_application_mode = diagnostic_only
+executed_in_step79 = false
+planned_for_step80 = true
+```
+
+Step79 does not run `FSIDriver3D`, does not execute simulation, does not mutate
+geometry, does not enable wall velocity, real geometry, squid proxy behavior,
+link-area transfer, 48^3, 64^3, VTR output, or particle NPY output, and does
+not claim physical validation or production readiness.

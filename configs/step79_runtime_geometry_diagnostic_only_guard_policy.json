@@ -1,0 +1,69 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step78_post_gate_5step_rebaseline_matrix/post_gate_5step_rebaseline_matrix.json",
+      "check": "step78_matrix_pass",
+      "expected": true,
+      "summary_key": "post_gate_5step_rebaseline_matrix_pass"
+    },
+    {
+      "artifact_path": "outputs/step78_post_gate_5step_rebaseline_quality/post_gate_5step_rebaseline_quality.json",
+      "check": "step78_quality_pass",
+      "expected": true,
+      "summary_key": "post_gate_5step_rebaseline_quality_pass"
+    },
+    {
+      "artifact_path": "outputs/step78_activation_guard/activation_guard.json",
+      "check": "step78_activation_guard_pass",
+      "expected": true,
+      "summary_key": "post_gate_5step_activation_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step78_output_guard/output_guard.json",
+      "check": "step78_output_guard_pass",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step78_step77_regression_guard/step77_regression_guard.json",
+      "check": "step78_step77_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step78_step77_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step78_artifact_manifest/artifact_summary.json",
+      "check": "step78_artifact_budget_pass",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "expected_activation_feature_count_in_step79": 0,
+  "expected_combined_runtime_geometry_wall_velocity_allowed": false,
+  "expected_geometry_mutation_allowed": false,
+  "expected_grid_48_allowed": false,
+  "expected_grid_64_allowed": false,
+  "expected_link_area_allowed": false,
+  "expected_particle_npy_output_allowed": false,
+  "expected_planned_activation_feature_count_for_step80": 1,
+  "expected_real_geometry_allowed": false,
+  "expected_runtime_geometry_activation_planned": true,
+  "expected_runtime_geometry_application_mode_for_step80": "diagnostic_only",
+  "expected_solver_formula_change_allowed": false,
+  "expected_squid_proxy_allowed": false,
+  "expected_step79_driver_run_required": false,
+  "expected_step79_fsidriver_run_allowed": false,
+  "expected_step79_simulation_run_allowed": false,
+  "expected_vtr_output_allowed": false,
+  "expected_wall_velocity_allowed": false,
+  "plan_artifact_path": "outputs/step79_runtime_geometry_diagnostic_only_activation_plan/runtime_geometry_diagnostic_only_activation_plan.json",
+  "policy_id": "step79_runtime_geometry_diagnostic_only_guard_policy",
+  "required_previous_step": "Step78",
+  "required_step78_activation_guard_pass": true,
+  "required_step78_artifact_budget_pass": true,
+  "required_step78_commit": "d226b1fc679f7d5592629a359c56f0b83372a393",
+  "required_step78_matrix_pass": true,
+  "required_step78_output_guard_pass": true,
+  "required_step78_quality_pass": true,
+  "required_step78_step77_regression_guard_pass": true,
+  "step": 79
+}

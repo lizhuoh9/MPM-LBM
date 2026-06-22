@@ -108,3 +108,28 @@ velocity, real geometry, squid proxy behavior, link-area transfer, 48^3, 64^3,
 10-step baselines, VTR output, particle NPY output, solver formula changes, or
 tau migration. After Step78, the next intended direction is runtime geometry
 diagnostic-only single-feature activation planning and guard work.
+
+## Step79 Runtime Geometry Diagnostic-Only Activation Planning
+
+After Step78 acceptance, Step79 does not run another baseline and does not run a
+simulation. It plans and guards exactly one future Step80 row:
+
+```text
+campaign_id = step79_runtime_geometry_diagnostic_only_activation_plan_and_guard
+row_id = canonical_driver_runtime_geometry_diagnostic_only_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+geometry_type = box
+geometry_motion_mode = prescribed_kinematic
+geometry_motion_application_mode = diagnostic_only
+executed_in_step79 = false
+planned_for_step80 = true
+```
+
+Step79 does not authorize wall velocity, real geometry, squid proxy behavior,
+link-area transfer, larger grids, VTR output, particle NPY output, solver
+formula changes, tau migration, or physical-production claims.
