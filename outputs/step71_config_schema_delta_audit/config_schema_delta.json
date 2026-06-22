@@ -1,0 +1,207 @@
+{
+  "rows": [
+    {
+      "canonical_module": "src.mpm_lbm.sim.drivers.fsi_config",
+      "changed_default_fields": [
+        "write_particles",
+        "write_vtk"
+      ],
+      "class_name": "FSIDriverConfig",
+      "current_schema_hash": "535727b2a62ec646297e970d95f9992ee7ba574c19071eca21af88aca5dcbd85",
+      "expected_changed": true,
+      "expected_unchanged": false,
+      "field_delta_pass": true,
+      "pass": true,
+      "previous_schema_hash": "9a69aa348721586ab93643176305438137db19c559fcb679a1a209577f97cd87",
+      "schema_hash_changed": true
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.drivers.sim_config",
+      "changed_default_fields": [],
+      "class_name": "UnifiedSimConfig",
+      "current_schema_hash": "741f3622b9003a832075e05cdfcf806f10f67fa6e93486d0b2efbb8c4746d6c7",
+      "expected_changed": false,
+      "expected_unchanged": true,
+      "field_delta_pass": true,
+      "pass": true,
+      "previous_schema_hash": "741f3622b9003a832075e05cdfcf806f10f67fa6e93486d0b2efbb8c4746d6c7",
+      "schema_hash_changed": false
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.lbm.config",
+      "changed_default_fields": [],
+      "class_name": "LBMConfig",
+      "current_schema_hash": "9d489a94e4b50a5bf05d61de6017c0735d93abaa0ae1bc842f6b4817b85dcc6e",
+      "expected_changed": false,
+      "expected_unchanged": true,
+      "field_delta_pass": true,
+      "pass": true,
+      "previous_schema_hash": "9d489a94e4b50a5bf05d61de6017c0735d93abaa0ae1bc842f6b4817b85dcc6e",
+      "schema_hash_changed": false
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.mpm.config",
+      "changed_default_fields": [],
+      "class_name": "MPMConfig",
+      "current_schema_hash": "40d092510e3accdbe571c2ccc7a6f03bc6b422ecf2aab3147d116dc38ee32246",
+      "expected_changed": false,
+      "expected_unchanged": true,
+      "field_delta_pass": true,
+      "pass": true,
+      "previous_schema_hash": "40d092510e3accdbe571c2ccc7a6f03bc6b422ecf2aab3147d116dc38ee32246",
+      "schema_hash_changed": false
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry.config",
+      "changed_default_fields": [],
+      "class_name": "GeometryConfig",
+      "current_schema_hash": "e7cfc782d3ec8aa8fe1153a2bf0bded0d23736c3e58f76ce7eed9329e0b19640",
+      "expected_changed": false,
+      "expected_unchanged": true,
+      "field_delta_pass": true,
+      "pass": true,
+      "previous_schema_hash": "e7cfc782d3ec8aa8fe1153a2bf0bded0d23736c3e58f76ce7eed9329e0b19640",
+      "schema_hash_changed": false
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_config",
+      "changed_default_fields": [],
+      "class_name": "BoundaryMotionInterfaceConfig",
+      "current_schema_hash": "fb13e950f6fe9bedbae8cec760f0b98c76c14ba9cbb26581762d2db01baf5a2b",
+      "expected_changed": false,
+      "expected_unchanged": true,
+      "field_delta_pass": true,
+      "pass": true,
+      "previous_schema_hash": "fb13e950f6fe9bedbae8cec760f0b98c76c14ba9cbb26581762d2db01baf5a2b",
+      "schema_hash_changed": false
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.motion.geometry_motion_config",
+      "changed_default_fields": [],
+      "class_name": "GeometryMotionInterfaceConfig",
+      "current_schema_hash": "6cfae589410992131d73a8c616f48ffb783c5f389d72f9fc5e6d5ff22fe59b24",
+      "expected_changed": false,
+      "expected_unchanged": true,
+      "field_delta_pass": true,
+      "pass": true,
+      "previous_schema_hash": "6cfae589410992131d73a8c616f48ffb783c5f389d72f9fc5e6d5ff22fe59b24",
+      "schema_hash_changed": false
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.application_config",
+      "changed_default_fields": [],
+      "class_name": "WallVelocityApplicationConfig",
+      "current_schema_hash": "d2ebebff6aabe7c00e7e0574f2afa2342aee5e2ff8038772ee9feeae3a38eafc",
+      "expected_changed": false,
+      "expected_unchanged": true,
+      "field_delta_pass": true,
+      "pass": true,
+      "previous_schema_hash": "d2ebebff6aabe7c00e7e0574f2afa2342aee5e2ff8038772ee9feeae3a38eafc",
+      "schema_hash_changed": false
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.wall_velocity.config",
+      "changed_default_fields": [],
+      "class_name": "WallVelocityFieldConfig",
+      "current_schema_hash": "d30bbf4f00c4120205c544f5fe97cdc0319fe1cb2813baed7427a9208adc1c1e",
+      "expected_changed": false,
+      "expected_unchanged": true,
+      "field_delta_pass": true,
+      "pass": true,
+      "previous_schema_hash": "d30bbf4f00c4120205c544f5fe97cdc0319fe1cb2813baed7427a9208adc1c1e",
+      "schema_hash_changed": false
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "changed_default_fields": [],
+      "class_name": "RuntimeGeometryProjectionIntegrationConfig",
+      "current_schema_hash": "9cd528240c3f3518a796eb7fe259520cb09324585eccedc5e414d05bc96b16f8",
+      "expected_changed": false,
+      "expected_unchanged": true,
+      "field_delta_pass": true,
+      "pass": true,
+      "previous_schema_hash": "9cd528240c3f3518a796eb7fe259520cb09324585eccedc5e414d05bc96b16f8",
+      "schema_hash_changed": false
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.geometry_displacement.config",
+      "changed_default_fields": [],
+      "class_name": "GeometryDisplacementConfig",
+      "current_schema_hash": "46f829ef836f6afdc512341bd0defcad574bae9437155501264fd729024e0d00",
+      "expected_changed": false,
+      "expected_unchanged": true,
+      "field_delta_pass": true,
+      "pass": true,
+      "previous_schema_hash": "46f829ef836f6afdc512341bd0defcad574bae9437155501264fd729024e0d00",
+      "schema_hash_changed": false
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.region_config",
+      "changed_default_fields": [],
+      "class_name": "SquidProxyRegionConfig",
+      "current_schema_hash": "712d505ff096cbea1d45e5957ecf2eb58763408bb0e4c036235b9a850ec5c502",
+      "expected_changed": false,
+      "expected_unchanged": true,
+      "field_delta_pass": true,
+      "pass": true,
+      "previous_schema_hash": "712d505ff096cbea1d45e5957ecf2eb58763408bb0e4c036235b9a850ec5c502",
+      "schema_hash_changed": false
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.kinematics_config",
+      "changed_default_fields": [],
+      "class_name": "SquidKinematicsScheduleConfig",
+      "current_schema_hash": "ca7ef5aaba94a4936f764b455474d9b1885ecbcaf49938bac0432122e8741f7c",
+      "expected_changed": false,
+      "expected_unchanged": true,
+      "field_delta_pass": true,
+      "pass": true,
+      "previous_schema_hash": "ca7ef5aaba94a4936f764b455474d9b1885ecbcaf49938bac0432122e8741f7c",
+      "schema_hash_changed": false
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.squid_proxy.motion_mapping_config",
+      "changed_default_fields": [],
+      "class_name": "SquidMotionMappingConfig",
+      "current_schema_hash": "56a6f819b540f55c477fb757a17f141c8f03e1d7993abeccc064162b371614d8",
+      "expected_changed": false,
+      "expected_unchanged": true,
+      "field_delta_pass": true,
+      "pass": true,
+      "previous_schema_hash": "56a6f819b540f55c477fb757a17f141c8f03e1d7993abeccc064162b371614d8",
+      "schema_hash_changed": false
+    }
+  ],
+  "summary": {
+    "changed_schema_classes": [
+      "FSIDriverConfig"
+    ],
+    "config_schema_delta_audit_pass": true,
+    "expected_changed_schema_classes": [
+      "FSIDriverConfig"
+    ],
+    "fsidriver_write_particles_default_current": "False",
+    "fsidriver_write_particles_default_previous": "True",
+    "fsidriver_write_vtk_default_current": "False",
+    "fsidriver_write_vtk_default_previous": "True",
+    "missing_expected_changed_schema_count": 0,
+    "pass_count": 14,
+    "row_count": 14,
+    "unchanged_schema_classes_checked": [
+      "BoundaryMotionInterfaceConfig",
+      "GeometryConfig",
+      "GeometryDisplacementConfig",
+      "GeometryMotionInterfaceConfig",
+      "LBMConfig",
+      "MPMConfig",
+      "RuntimeGeometryProjectionIntegrationConfig",
+      "SquidKinematicsScheduleConfig",
+      "SquidMotionMappingConfig",
+      "SquidProxyRegionConfig",
+      "UnifiedSimConfig",
+      "WallVelocityApplicationConfig",
+      "WallVelocityFieldConfig"
+    ],
+    "unexpected_changed_schema_count": 0
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "policy_id": "step71_config_schema_delta_policy",
+  "step": 71,
+  "step70_schema_freeze_artifact_path": "outputs/step70_config_schema_freeze_audit/config_schema_freeze.json",
+  "step70_config_schema_policy_path": "configs/step70_config_schema_freeze_policy.json",
+  "expected_changed_schema_classes": [
+    "FSIDriverConfig"
+  ],
+  "expected_field_default_deltas": {
+    "FSIDriverConfig": {
+      "write_vtk": {
+        "previous": "True",
+        "current": "False"
+      },
+      "write_particles": {
+        "previous": "True",
+        "current": "False"
+      }
+    }
+  },
+  "expected_unchanged_schema_classes": [
+    "UnifiedSimConfig",
+    "LBMConfig",
+    "MPMConfig",
+    "GeometryConfig",
+    "BoundaryMotionInterfaceConfig",
+    "GeometryMotionInterfaceConfig",
+    "WallVelocityApplicationConfig",
+    "WallVelocityFieldConfig",
+    "RuntimeGeometryProjectionIntegrationConfig",
+    "GeometryDisplacementConfig",
+    "SquidProxyRegionConfig",
+    "SquidKinematicsScheduleConfig",
+    "SquidMotionMappingConfig"
+  ]
+}

@@ -65,8 +65,8 @@ class FSIDriverConfig:
     geometry_motion_application_report_enabled: bool = False
 
     output_interval: int = 10
-    write_vtk: bool = True
-    write_particles: bool = True
+    write_vtk: bool = False
+    write_particles: bool = False
     quality_check_enabled: bool = False
     quality_check_strict: bool = False
     quality_report_path: Optional[str] = None

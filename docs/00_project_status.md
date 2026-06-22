@@ -25,6 +25,8 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 60: controlled canonical moving-boundary duration ramp
 - Step 61: controlled canonical 32^3 moving-boundary single-step probe
 - Step 62: controlled canonical 32^3 moving-boundary 3-step duration probe
+- Step 70: API and config freeze before activation
+- Step 71: output default safety alignment and LBM tau convention decision
 
 ## Current Validated Modes
 
@@ -41,6 +43,13 @@ Step 60 additionally verifies a short controlled canonical real-driver duration 
 Step 61 additionally verifies a controlled canonical 32^3 real-driver single-step probe for the moving-boundary engineering mode with 1024 particles. This remains a finite/bounded feasibility smoke, not 32^3 validation or grid convergence.
 
 Step 62 additionally verifies a controlled canonical 32^3 real-driver 3-step duration probe for the moving-boundary engineering mode with 1024 particles, repairs the Step 61 report output-guard size mismatch, and adds a report consistency guard. This remains a finite/bounded duration feasibility smoke, not propulsion validation, real squid validation, grid convergence, or deployment readiness.
+
+Step 71 changes `FSIDriverConfig` file-output defaults so VTR and particle NPY
+outputs require explicit opt-in. It also records the tau convention decision:
+`niu` remains the legacy external solver relaxation parameter for now, and the
+standard lattice viscosity formula is available but not default. Step 71 does
+not validate physical viscosity or change the LBM tau formula used by the
+solver.
 
 ## What Exists
 
@@ -74,3 +83,9 @@ Step 59 proves the canonical driver can run the existing small `none`, `penalty`
 Step 60 proves the canonical driver can extend the existing moving-boundary engineering path to 3 and 5 LBM steps at 16^3 while keeping outputs lightweight, runtime code unchanged, and Step 59 evidence green. It does not activate runtime geometry or wall velocity, add larger-grid rows, validate propulsion, validate real squid behavior, prove mesh convergence, or claim deployment readiness.
 
 Step 61 proves the canonical driver can run the existing moving-boundary engineering path for one 32^3 single-step probe while keeping outputs lightweight, runtime code unchanged, and Step 60 evidence green. It does not activate runtime geometry or wall velocity, add required multi-step 32^3 rows, validate propulsion, validate real squid behavior, prove grid convergence, or claim deployment readiness.
+
+Step 71 keeps activation closed while aligning output defaults with the Step70
+output policy. VTR and particle persistence are now safe-by-default off in
+`FSIDriverConfig`; existing configs can still opt in explicitly. Tau semantics
+remain legacy by default and require a future baseline rerun campaign before
+any standard lattice tau migration.

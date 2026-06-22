@@ -1,0 +1,5 @@
+metric,value
+pass_count,7
+row_count,7
+schema_freeze_superseded_by_step71_delta,True
+step71_step70_regression_guard_pass,True

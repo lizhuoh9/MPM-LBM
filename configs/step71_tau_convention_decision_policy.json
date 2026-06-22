@@ -1,0 +1,17 @@
+{
+  "policy_id": "step71_tau_convention_decision_policy",
+  "step": 71,
+  "tau_convention_decision": "preserve_legacy_external_solver_parameter_for_now",
+  "default_solver_tau_formula": "tau_from_legacy_external_solver_parameter",
+  "legacy_formula": "tau = niu / 3.0 + 0.5",
+  "standard_lattice_viscosity_formula": "tau = 3.0 * nu_lbm + 0.5",
+  "standard_lattice_viscosity_formula_available": true,
+  "standard_lattice_viscosity_is_default": false,
+  "physical_viscosity_validation_claim": false,
+  "future_standard_tau_migration_requires_baseline_rerun": true,
+  "solver_numerical_behavior_changed": false,
+  "legacy_probe_input": 0.1,
+  "legacy_probe_expected_tau": 0.5333333333333333,
+  "standard_probe_input": 0.1,
+  "standard_probe_expected_tau": 0.8
+}

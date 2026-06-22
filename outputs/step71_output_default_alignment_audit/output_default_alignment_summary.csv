@@ -1,0 +1,15 @@
+metric,value
+explicit_false_write_particles,False
+explicit_false_write_vtk,False
+explicit_true_write_particles,True
+explicit_true_write_vtk,True
+fsidriver_default_write_particles,False
+fsidriver_default_write_vtk,False
+output_default_alignment_audit_pass,True
+pass_count,14
+physics_feature_expansion,False
+row_count,14
+runtime_output_default_changed,True
+solver_numerical_behavior_changed,False
+step70_default_write_particles_allowed,False
+step70_default_write_vtk_allowed,False

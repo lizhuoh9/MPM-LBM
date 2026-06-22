@@ -1,0 +1,8 @@
+actual,check,expected,pass,summary_key
+True,public_api_surface,True,True,public_api_surface_audit_pass
+True,compatibility_surface,True,True,compatibility_surface_audit_pass
+True,activation_preconditions,True,True,activation_preconditions_audit_pass
+True,output_artifact_policy,True,True,output_artifact_policy_audit_pass
+True,report_consistency,True,True,report_consistency_freeze_audit_pass
+True,step70_artifact_manifest,True,True,artifact_budget_pass
+True,step70_config_schema_freeze_superseded,True,True,schema_freeze_superseded_by_step71_delta

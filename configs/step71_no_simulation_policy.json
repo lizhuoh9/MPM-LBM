@@ -1,0 +1,35 @@
+{
+  "policy_id": "step71_no_simulation_policy",
+  "step": 71,
+  "forbidden_call_patterns": [
+    "driver.run",
+    "FSIDriver3D(...).run",
+    "driver.initialize",
+    "driver.step_once"
+  ],
+  "scan_python_paths": [
+    "src/mpm_lbm/evidence/output_default_alignment_audit.py",
+    "src/mpm_lbm/evidence/tau_convention_decision_audit.py",
+    "src/mpm_lbm/evidence/config_schema_delta_audit.py",
+    "src/mpm_lbm/evidence/step71_no_simulation_audit.py",
+    "src/mpm_lbm/evidence/step71_regression_guard.py",
+    "baseline_tests/step71_common.py",
+    "baseline_tests/run_step71_output_default_alignment_audit.py",
+    "baseline_tests/run_step71_tau_convention_decision_audit.py",
+    "baseline_tests/run_step71_config_schema_delta_audit.py",
+    "baseline_tests/run_step71_no_simulation_audit.py",
+    "baseline_tests/run_step71_step70_regression_guard.py",
+    "baseline_tests/run_step71_artifact_manifest.py"
+  ],
+  "forbidden_output_directories": [
+    "outputs/step71_driver_runs"
+  ],
+  "protected_prefixes": [
+    "external/taichi_LBM3D/",
+    "data/real_geometry_candidates/"
+  ],
+  "vtr_output_allowed": false,
+  "particle_npy_output_allowed": false,
+  "external_taichi_lbm3d_edit_allowed": false,
+  "real_geometry_candidates_edit_allowed": false
+}

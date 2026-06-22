@@ -1,0 +1,16 @@
+{
+  "policy_id": "step71_output_default_alignment_policy",
+  "step": 71,
+  "recommended_action": "safe_by_default_outputs",
+  "runtime_output_default_changed": true,
+  "solver_numerical_behavior_changed": false,
+  "physics_feature_expansion": false,
+  "required_defaults": {
+    "FSIDriverConfig.write_vtk": false,
+    "FSIDriverConfig.write_particles": false
+  },
+  "explicit_opt_in_remains_allowed": true,
+  "vtr_output_allowed_by_default": false,
+  "particle_npy_output_allowed_by_default": false,
+  "step70_output_policy_path": "configs/step70_output_artifact_policy.json"
+}

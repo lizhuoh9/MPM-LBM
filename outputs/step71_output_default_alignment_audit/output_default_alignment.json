@@ -1,0 +1,104 @@
+{
+  "rows": [
+    {
+      "actual": false,
+      "check": "default_write_vtk",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "default_write_particles",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "step70_default_write_vtk_allowed",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "step70_default_write_particles_allowed",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "step70_vtr_default_allowed",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "step70_particle_npy_default_allowed",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "explicit_true_write_vtk",
+      "expected": true,
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "explicit_true_write_particles",
+      "expected": true,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "explicit_false_write_vtk",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "explicit_false_write_particles",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "runtime_output_default_changed",
+      "expected": true,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "solver_numerical_behavior_changed",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "physics_feature_expansion",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "explicit_opt_in_remains_allowed",
+      "expected": true,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "explicit_false_write_particles": false,
+    "explicit_false_write_vtk": false,
+    "explicit_true_write_particles": true,
+    "explicit_true_write_vtk": true,
+    "fsidriver_default_write_particles": false,
+    "fsidriver_default_write_vtk": false,
+    "output_default_alignment_audit_pass": true,
+    "pass_count": 14,
+    "physics_feature_expansion": false,
+    "row_count": 14,
+    "runtime_output_default_changed": true,
+    "solver_numerical_behavior_changed": false,
+    "step70_default_write_particles_allowed": false,
+    "step70_default_write_vtk_allowed": false
+  }
+}

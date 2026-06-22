@@ -6,6 +6,11 @@ kinematic viscosity so reports and tests cannot silently treat the legacy
 """
 
 
+LEGACY_EXTERNAL_SOLVER_RELAXATION_PARAMETER = "legacy_external_solver_relaxation_parameter"
+STANDARD_LATTICE_KINEMATIC_VISCOSITY = "standard_lattice_kinematic_viscosity"
+DEFAULT_TAU_CONVENTION = LEGACY_EXTERNAL_SOLVER_RELAXATION_PARAMETER
+
+
 def tau_from_legacy_external_solver_parameter(niu: float) -> float:
     return float(niu) / 3.0 + 0.5
 
@@ -16,7 +21,9 @@ def tau_from_lattice_kinematic_viscosity(nu_lbm: float) -> float:
 
 def relaxation_semantics_summary(niu: float = 0.1) -> dict:
     return {
-        "lbm_config_niu_semantics": "legacy_external_solver_relaxation_parameter",
+        "lbm_config_niu_semantics": LEGACY_EXTERNAL_SOLVER_RELAXATION_PARAMETER,
+        "default_tau_convention": DEFAULT_TAU_CONVENTION,
+        "standard_tau_convention": STANDARD_LATTICE_KINEMATIC_VISCOSITY,
         "legacy_tau_formula_name": "tau_from_legacy_external_solver_parameter",
         "standard_tau_formula_name": "tau_from_lattice_kinematic_viscosity",
         "legacy_tau_for_default_niu": tau_from_legacy_external_solver_parameter(niu),

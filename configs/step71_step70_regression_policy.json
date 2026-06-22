@@ -1,0 +1,38 @@
+{
+  "policy_id": "step71_step70_regression_policy",
+  "step": 71,
+  "schema_freeze_superseded_by_step71_delta": true,
+  "required_step70_checks": [
+    {
+      "check": "public_api_surface",
+      "summary_key": "public_api_surface_audit_pass",
+      "expected": true
+    },
+    {
+      "check": "compatibility_surface",
+      "summary_key": "compatibility_surface_audit_pass",
+      "expected": true
+    },
+    {
+      "check": "activation_preconditions",
+      "summary_key": "activation_preconditions_audit_pass",
+      "expected": true
+    },
+    {
+      "check": "output_artifact_policy",
+      "summary_key": "output_artifact_policy_audit_pass",
+      "expected": true
+    },
+    {
+      "check": "report_consistency",
+      "summary_key": "report_consistency_freeze_audit_pass",
+      "expected": true
+    },
+    {
+      "check": "step70_artifact_manifest",
+      "summary_key": "artifact_budget_pass",
+      "expected": true,
+      "artifact_path": "outputs/step70_artifact_manifest/artifact_summary.json"
+    }
+  ]
+}

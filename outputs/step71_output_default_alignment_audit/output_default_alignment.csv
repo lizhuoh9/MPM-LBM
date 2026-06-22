@@ -1,0 +1,15 @@
+actual,check,expected,pass
+False,default_write_vtk,False,True
+False,default_write_particles,False,True
+False,step70_default_write_vtk_allowed,False,True
+False,step70_default_write_particles_allowed,False,True
+False,step70_vtr_default_allowed,False,True
+False,step70_particle_npy_default_allowed,False,True
+True,explicit_true_write_vtk,True,True
+True,explicit_true_write_particles,True,True
+False,explicit_false_write_vtk,False,True
+False,explicit_false_write_particles,False,True
+True,runtime_output_default_changed,True,True
+False,solver_numerical_behavior_changed,False,True
+False,physics_feature_expansion,False,True
+True,explicit_opt_in_remains_allowed,True,True

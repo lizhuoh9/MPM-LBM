@@ -1,0 +1,122 @@
+{
+  "rows": [
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/output_default_alignment_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/tau_convention_decision_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/config_schema_delta_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step71_no_simulation_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step71_regression_guard.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/step71_common.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step71_output_default_alignment_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step71_tau_convention_decision_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step71_config_schema_delta_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step71_no_simulation_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step71_step70_regression_guard.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step71_artifact_manifest.py"
+    }
+  ],
+  "summary": {
+    "forbidden_output_directory_count": 0,
+    "forbidden_python_call_count": 0,
+    "no_simulation_audit_pass": true,
+    "pass_count": 12,
+    "protected_step71_file_count": 0,
+    "row_count": 12,
+    "step71_particle_npy_count": 0,
+    "step71_vtr_count": 0
+  }
+}

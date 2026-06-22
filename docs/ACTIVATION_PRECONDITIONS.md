@@ -27,9 +27,22 @@ particle_npy_output_allowed = false
 Pending gates:
 
 ```text
-Step71 tau convention decision pending
 Step72 runtime geometry activation readiness pending
 Step73 wall velocity activation readiness pending
 Step74 real geometry data boundary pending
 Step75 solver-complete campaign gate pending
 ```
+
+Step71 resolves the tau convention decision without opening activation gates:
+
+```text
+tau_convention_decision = preserve_legacy_external_solver_parameter_for_now
+default_solver_tau_formula = tau_from_legacy_external_solver_parameter
+standard_lattice_viscosity_is_default = false
+physical_viscosity_validation_claim = false
+future_standard_tau_migration_requires_baseline_rerun = true
+```
+
+Activation remains closed after Step71. Runtime geometry, wall velocity, real
+geometry, squid proxy activation, VTR output, and particle NPY output remain
+blocked until later readiness steps explicitly open those gates.
