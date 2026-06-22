@@ -1,0 +1,39 @@
+{
+  "allowed_driver_run_files": [
+    "diagnostics_timeseries.csv",
+    "diagnostics_timeseries.npz",
+    "driver_config.json",
+    "driver_timing.json",
+    "geo_all_fluid_32.dat",
+    "geometry_quality_report.json"
+  ],
+  "driver_run_root": "outputs/step86_driver_runs",
+  "forbidden_filename_tokens": [
+    "boundary_motion_interface_report",
+    "dense_displacement",
+    "dense_wall_velocity",
+    "displaced_particle",
+    "geometry_motion_interface_report",
+    "real_geometry_candidate",
+    "sparse_wall_velocity",
+    "wall_velocity_application_report"
+  ],
+  "large_file_threshold_bytes": 1048576,
+  "max_step86_total_size_mb": 8.0,
+  "protected_prefixes": [
+    "external/taichi_LBM3D/",
+    "data/real_geometry_candidates/",
+    "src/mpm_lbm/sim/",
+    "src/mpm_lbm/diagnostics/"
+  ],
+  "raw_geometry_extensions": [
+    ".stl",
+    ".obj",
+    ".ply",
+    ".vtk",
+    ".vtu"
+  ],
+  "required_driver_run_dirs": [
+    "outputs/step86_driver_runs/canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+  ]
+}

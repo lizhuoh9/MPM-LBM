@@ -1,0 +1,18 @@
+{
+  "allowed_next_step": "Step86",
+  "allowed_next_step_scope": "squid_proxy static geometry canonical driver 3-step smoke only",
+  "campaign_id": "step86_squid_proxy_static_geometry_canonical_driver_smoke",
+  "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+  "driver_run_required": true,
+  "driver_run_root": "outputs/step86_driver_runs",
+  "gate_source_step": "Step85",
+  "physics_feature_expansion": "squid_proxy_static_geometry_only",
+  "post_gate_simulation_allowed": true,
+  "previous_step": "Step85",
+  "required_smoke_configs": [
+    "configs/step86_canonical_driver_squid_proxy_static_geometry_32_3step_smoke.json"
+  ],
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false,
+  "step": 86
+}

@@ -1,0 +1,8 @@
+metric,value
+finite_max_grid_reaction_norm_count,1
+geometry_quality_report_pass_count,1
+pass_count,41
+row_count,41
+source_matrix_row_count,1
+squid_proxy_enabled_count,1
+step86_squid_proxy_static_geometry_quality_pass,True

@@ -291,3 +291,34 @@ geometry plus wall velocity, real geometry candidates, link-area transfer,
 larger grids, VTR output, particle NPY output, solver formula changes, tau
 migration, squid swimming, physical-validation claims, or production-readiness
 claims.
+
+## Step86 Squid Proxy Static Geometry Smoke
+
+Step86 executes exactly the row planned by Step85:
+
+```text
+campaign_id = step86_squid_proxy_static_geometry_canonical_driver_smoke
+row_id = canonical_driver_squid_proxy_static_geometry_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+geometry_type = squid_proxy
+geometry_config_path = configs/step85_squid_proxy_geometry_1024.json
+quality_check_enabled = true
+quality_check_strict = false
+boundary_motion_mode = static
+geometry_motion_mode = static
+geometry_motion_application_mode = disabled
+wall_velocity_application_mode = disabled
+write_vtk = false
+write_particles = false
+executed_in_step86 = true
+```
+
+Step86 is not a runtime-geometry, wall-velocity, combined runtime-geometry plus
+wall-velocity, real-geometry, link-area, larger-grid, VTR, particle-output,
+physical-validation, real-squid-validation, squid-swimming, or
+production-readiness campaign.

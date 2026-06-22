@@ -1,0 +1,188 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "step86_squid_proxy_static_geometry_smoke_matrix_pass",
+      "expected": true,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 1,
+      "check": "activation_feature_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 1,
+      "check": "procedural_geometry_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 1,
+      "check": "squid_proxy_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "real_geometry_candidate_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "real_geometry_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "runtime_geometry_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "wall_velocity_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "combined_runtime_geometry_wall_velocity_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "link_area_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "grid_48_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "grid_64_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "write_vtk_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "write_particles_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke",
+      "check": "row_name",
+      "expected": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 1,
+      "check": "activation_feature_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "squid_proxy_enabled",
+      "expected": true,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "procedural_geometry_enabled",
+      "expected": true,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_candidate_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "runtime_geometry_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "wall_velocity_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "link_area_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "write_vtk",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "write_particles",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    }
+  ],
+  "summary": {
+    "activation_feature_count": 1,
+    "combined_runtime_geometry_wall_velocity_enabled_count": 0,
+    "link_area_enabled_count": 0,
+    "pass_count": 24,
+    "procedural_geometry_enabled_count": 1,
+    "real_geometry_candidate_enabled_count": 0,
+    "real_geometry_enabled_count": 0,
+    "row_count": 24,
+    "runtime_geometry_enabled_count": 0,
+    "squid_proxy_enabled_count": 1,
+    "step86_activation_guard_pass": true,
+    "wall_velocity_enabled_count": 0,
+    "write_particles_count": 0,
+    "write_vtk_count": 0
+  }
+}

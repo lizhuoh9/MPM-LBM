@@ -1,0 +1,288 @@
+{
+  "rows": [
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step86_activation_guard.log",
+      "size_bytes": 53
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step86_focused_pytest.log",
+      "size_bytes": 202
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step86_full_pytest_anaconda.log",
+      "size_bytes": 2498
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step86_full_pytest_taichi.log",
+      "size_bytes": 2500
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step86_output_guard.log",
+      "size_bytes": 49
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step86_squid_proxy_static_geometry_quality.log",
+      "size_bytes": 78
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step86_squid_proxy_static_geometry_smoke_matrix.log",
+      "size_bytes": 273
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step86_step31_reference_guard.log",
+      "size_bytes": 58
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step86_step84_regression_guard.log",
+      "size_bytes": 59
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step86_step85_regression_guard.log",
+      "size_bytes": 59
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_activation_guard/activation_guard.csv",
+      "size_bytes": 1701
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_activation_guard/activation_guard.json",
+      "size_bytes": 4839
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_activation_guard/activation_guard_summary.csv",
+      "size_bytes": 437
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_driver_runs/canonical_driver_squid_proxy_static_geometry_32_3step_smoke/diagnostics_timeseries.csv",
+      "size_bytes": 1434
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_driver_runs/canonical_driver_squid_proxy_static_geometry_32_3step_smoke/diagnostics_timeseries.npz",
+      "size_bytes": 9184
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_driver_runs/canonical_driver_squid_proxy_static_geometry_32_3step_smoke/driver_config.json",
+      "size_bytes": 1522
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_driver_runs/canonical_driver_squid_proxy_static_geometry_32_3step_smoke/driver_timing.json",
+      "size_bytes": 436
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_driver_runs/canonical_driver_squid_proxy_static_geometry_32_3step_smoke/geo_all_fluid_32.dat",
+      "size_bytes": 98304
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_driver_runs/canonical_driver_squid_proxy_static_geometry_32_3step_smoke/geometry_quality_report.json",
+      "size_bytes": 1219
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_output_guard/output_guard.csv",
+      "size_bytes": 3005
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_output_guard/output_guard.json",
+      "size_bytes": 7352
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_output_guard/output_guard_summary.csv",
+      "size_bytes": 785
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_squid_proxy_static_geometry_quality/squid_proxy_static_geometry_quality.csv",
+      "size_bytes": 4396
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_squid_proxy_static_geometry_quality/squid_proxy_static_geometry_quality.json",
+      "size_bytes": 10016
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_squid_proxy_static_geometry_quality/squid_proxy_static_geometry_quality_summary.csv",
+      "size_bytes": 230
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_squid_proxy_static_geometry_smoke_matrix/squid_proxy_static_geometry_smoke_matrix.csv",
+      "size_bytes": 2832
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_squid_proxy_static_geometry_smoke_matrix/squid_proxy_static_geometry_smoke_matrix.json",
+      "size_bytes": 6028
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_squid_proxy_static_geometry_smoke_matrix/squid_proxy_static_geometry_smoke_matrix_summary.csv",
+      "size_bytes": 1698
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_step31_reference_guard/step31_reference_guard.csv",
+      "size_bytes": 497
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_step31_reference_guard/step31_reference_guard.json",
+      "size_bytes": 1547
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_step31_reference_guard/step31_reference_guard_summary.csv",
+      "size_bytes": 331
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_step84_regression_guard/step84_regression_guard.csv",
+      "size_bytes": 851
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_step84_regression_guard/step84_regression_guard.json",
+      "size_bytes": 2198
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_step84_regression_guard/step84_regression_guard_summary.csv",
+      "size_bytes": 561
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_step85_regression_guard/step85_regression_guard.csv",
+      "size_bytes": 1007
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_step85_regression_guard/step85_regression_guard.json",
+      "size_bytes": 2461
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step86_step85_regression_guard/step85_regression_guard_summary.csv",
+      "size_bytes": 530
+    }
+  ],
+  "summary": {
+    "artifact_budget_pass": true,
+    "output_guard_pass": true,
+    "pass_count": 37,
+    "private_absolute_path_count": 0,
+    "protected_diagnostics_edit_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "protected_sim_edit_count": 0,
+    "row_count": 37,
+    "step86_dense_displacement_output_count": 0,
+    "step86_dense_wall_velocity_output_count": 0,
+    "step86_displaced_particle_output_count": 0,
+    "step86_forbidden_file_count": 0,
+    "step86_large_file_count": 0,
+    "step86_optional_driver_run_dir_count": 0,
+    "step86_particle_npy_count": 0,
+    "step86_raw_geometry_output_count": 0,
+    "step86_real_geometry_candidate_output_count": 0,
+    "step86_required_driver_run_dir_count": 1,
+    "step86_sparse_wall_velocity_output_count": 0,
+    "step86_total_size_bytes": 171230,
+    "step86_total_size_mb": 0.1632976531982422,
+    "step86_vtr_count": 0
+  }
+}

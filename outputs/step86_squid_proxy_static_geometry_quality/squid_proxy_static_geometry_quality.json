@@ -1,0 +1,341 @@
+{
+  "rows": [
+    {
+      "actual": 0.9614667892456055,
+      "check": "rho_min_min",
+      "expected": 0.9,
+      "operator": ">",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 1.0393489599227905,
+      "check": "rho_max_max",
+      "expected": 1.1,
+      "operator": "<",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 0.0288397129625082,
+      "check": "lbm_max_v_max",
+      "expected": 0.5,
+      "operator": "<",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 0.999782145023346,
+      "check": "mpm_min_J_min",
+      "expected": 0.0,
+      "operator": ">",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 1.567559003829956,
+      "check": "mpm_max_speed_max",
+      "expected": 10.0,
+      "operator": "<",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 0.02264912612736225,
+      "check": "projected_mass_final",
+      "expected": 0.0,
+      "operator": ">",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 1763,
+      "check": "active_cell_count_final",
+      "expected": 1,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 2574,
+      "check": "bb_link_count_max",
+      "expected": 0,
+      "operator": ">",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 0.006878961343318224,
+      "check": "bb_max_correction_max",
+      "expected": 0.0,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 987,
+      "check": "active_reaction_particle_count_final",
+      "expected": 0,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "has_nan",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "has_inf",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "stable",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "diagnostics_csv_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "diagnostics_npz_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "driver_config_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "driver_timing_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": "geo_all_fluid_32.dat",
+      "check": "geo_path_name",
+      "expected": "geo_all_fluid_32.dat",
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "runtime_hard_fail",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": "Step85",
+      "check": "previous_step",
+      "expected": "Step85",
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": "squid_proxy",
+      "check": "geometry_type",
+      "expected": "squid_proxy",
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "squid_proxy_enabled",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "procedural_geometry_enabled",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_candidate_enabled",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_enabled",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "runtime_geometry_enabled",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "wall_velocity_enabled",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "combined_runtime_geometry_wall_velocity_enabled",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "link_area_enabled",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "geometry_quality_report_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "geometry_quality_report_pass",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "geometry_quality_strict",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": "squid_proxy",
+      "check": "quality_report_geometry_type",
+      "expected": "squid_proxy",
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "quality_report_empty",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 774,
+      "check": "quality_report_occupied_count",
+      "expected": 0,
+      "operator": ">",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 358,
+      "check": "quality_report_surface_voxel_count",
+      "expected": 0,
+      "operator": ">",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "quality_report_touches_domain_boundary",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "sampling_stats_exist",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": "squid_proxy",
+      "check": "sampling_geometry_type",
+      "expected": "squid_proxy",
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 1024,
+      "check": "sampling_particle_count",
+      "expected": 1024,
+      "operator": "==",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 4.2154038965236396e-05,
+      "check": "max_grid_reaction_norm_max_finite",
+      "expected": true,
+      "operator": "is_finite",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    }
+  ],
+  "summary": {
+    "finite_max_grid_reaction_norm_count": 1,
+    "geometry_quality_report_pass_count": 1,
+    "pass_count": 41,
+    "row_count": 41,
+    "source_matrix_row_count": 1,
+    "squid_proxy_enabled_count": 1,
+    "step86_squid_proxy_static_geometry_quality_pass": true
+  }
+}

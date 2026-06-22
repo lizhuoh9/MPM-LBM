@@ -1,0 +1,57 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "step85_step31_reference_guard_pass",
+      "expected": true,
+      "pass": true,
+      "row_name": "step85_step31_reference"
+    },
+    {
+      "actual": true,
+      "check": "step30_squid_proxy_geometry_config_exists",
+      "expected": true,
+      "pass": true,
+      "row_name": "step85_step31_reference"
+    },
+    {
+      "actual": "squid_proxy",
+      "check": "step30_geometry_type",
+      "expected": "squid_proxy",
+      "pass": true,
+      "row_name": "step85_step31_reference"
+    },
+    {
+      "actual": true,
+      "check": "step31_static_driver_reference_exists",
+      "expected": true,
+      "pass": true,
+      "row_name": "step85_step31_reference"
+    },
+    {
+      "actual": true,
+      "check": "step31_not_real_squid_validation_claim",
+      "expected": true,
+      "pass": true,
+      "row_name": "step85_step31_reference"
+    },
+    {
+      "actual": true,
+      "check": "step31_no_squid_swimming_claim",
+      "expected": true,
+      "pass": true,
+      "row_name": "step85_step31_reference"
+    }
+  ],
+  "summary": {
+    "pass_count": 6,
+    "row_count": 6,
+    "step30_geometry_type": "squid_proxy",
+    "step30_squid_proxy_geometry_config_exists": true,
+    "step31_no_squid_swimming_claim": true,
+    "step31_not_real_squid_validation_claim": true,
+    "step31_static_driver_reference_exists": true,
+    "step85_step31_reference_guard_pass": true,
+    "step86_step31_reference_guard_pass": true
+  }
+}

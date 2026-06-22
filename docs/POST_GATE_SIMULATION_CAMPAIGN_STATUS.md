@@ -2,8 +2,10 @@
 
 Step75 created the inactive Step76 campaign proposal. Step76 executed only the
 required first row from that proposal. Step77 added a separate 3-step
-post-gate rebaseline row after Step76 was accepted. Step78 adds a separate
-5-step post-gate rebaseline row after Step77 was accepted.
+post-gate rebaseline row after Step76 was accepted. Step78 added a separate
+5-step post-gate rebaseline row after Step77 was accepted. Steps 79, 81, 83,
+and 85 planned bounded single-feature rows; Steps 80, 82, 84, and 86 executed
+those planned canonical driver smoke rows.
 
 ## Step76 Executed Row
 
@@ -245,4 +247,36 @@ Step85 does not run `FSIDriver3D`, does not execute simulation, does not enable
 runtime geometry, wall velocity, combined runtime geometry plus wall velocity,
 real geometry candidates, link-area transfer, 48^3, 64^3, VTR output, or
 particle NPY output, and does not claim physical validation or production
+readiness.
+
+## Step86 Executed Row
+
+```text
+campaign_id = step86_squid_proxy_static_geometry_canonical_driver_smoke
+row_id = canonical_driver_squid_proxy_static_geometry_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+geometry_type = squid_proxy
+geometry_config_path = configs/step85_squid_proxy_geometry_1024.json
+quality_check_enabled = true
+quality_check_strict = false
+boundary_motion_mode = static
+geometry_motion_mode = static
+geometry_motion_application_mode = disabled
+wall_velocity_application_mode = disabled
+write_vtk = false
+write_particles = false
+executed_in_step86 = true
+```
+
+Step86 executes only procedural static `squid_proxy` geometry in the single
+planned canonical driver row and writes a non-strict geometry quality report.
+Runtime geometry, wall velocity, combined runtime geometry plus wall velocity,
+real geometry candidates, link-area transfer, 48^3, 64^3, VTR output, and
+particle NPY output remain disabled. Step86 does not claim physical validation,
+real squid validation, squid swimming, grid convergence, or production
 readiness.

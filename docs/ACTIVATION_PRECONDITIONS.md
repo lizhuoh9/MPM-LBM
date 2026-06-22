@@ -328,3 +328,29 @@ Step85 authorizes only the future row
 authorize real geometry candidates, runtime geometry, wall velocity, link-area
 transfer, larger grids, solver formula changes, tau migration, squid swimming,
 physical-validation claims, or production-readiness claims.
+
+Step86 executes exactly that authorized static `squid_proxy` row:
+
+```text
+step86_squid_proxy_static_geometry_smoke_matrix_pass = true
+activation_feature_count = 1
+procedural_geometry_enabled_count = 1
+squid_proxy_enabled_count = 1
+geometry_quality_report_pass_count = 1
+runtime_geometry_enabled_count = 0
+wall_velocity_enabled_count = 0
+combined_runtime_geometry_wall_velocity_enabled_count = 0
+real_geometry_candidate_enabled_count = 0
+real_geometry_enabled_count = 0
+link_area_enabled_count = 0
+grid_48_enabled_count = 0
+grid_64_enabled_count = 0
+write_vtk_count = 0
+write_particles_count = 0
+```
+
+Step86 opens only the bounded procedural static `squid_proxy` geometry smoke for
+the single canonical driver row. It does not authorize real geometry
+candidates, runtime geometry, wall velocity, link-area transfer, larger grids,
+solver formula changes, tau migration, squid swimming, physical-validation
+claims, real squid validation claims, or production-readiness claims.

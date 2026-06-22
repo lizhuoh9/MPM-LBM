@@ -1,0 +1,15 @@
+metric,value
+activation_feature_count,1
+combined_runtime_geometry_wall_velocity_enabled_count,0
+link_area_enabled_count,0
+pass_count,24
+procedural_geometry_enabled_count,1
+real_geometry_candidate_enabled_count,0
+real_geometry_enabled_count,0
+row_count,24
+runtime_geometry_enabled_count,0
+squid_proxy_enabled_count,1
+step86_activation_guard_pass,True
+wall_velocity_enabled_count,0
+write_particles_count,0
+write_vtk_count,0

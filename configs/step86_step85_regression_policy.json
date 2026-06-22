@@ -1,0 +1,42 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step85_squid_proxy_static_geometry_activation_plan/squid_proxy_static_geometry_activation_plan.json",
+      "check": "step85_activation_plan_pass",
+      "expected": true,
+      "summary_key": "step85_squid_proxy_static_geometry_activation_plan_pass"
+    },
+    {
+      "artifact_path": "outputs/step85_squid_proxy_static_geometry_activation_guard/squid_proxy_static_geometry_activation_guard.json",
+      "check": "step85_activation_guard_pass",
+      "expected": true,
+      "summary_key": "step85_squid_proxy_static_geometry_activation_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step85_step84_regression_guard/step84_regression_guard.json",
+      "check": "step85_step84_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step85_step84_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step85_step31_reference_guard/step31_reference_guard.json",
+      "check": "step85_step31_reference_guard_pass",
+      "expected": true,
+      "summary_key": "step85_step31_reference_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step85_output_guard/output_guard.json",
+      "check": "step85_output_guard_pass",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step85_artifact_manifest/artifact_summary.json",
+      "check": "step85_artifact_budget_pass",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "expected_planned_step86_activation_feature_count": 1,
+  "expected_step85_activation_feature_count": 0
+}

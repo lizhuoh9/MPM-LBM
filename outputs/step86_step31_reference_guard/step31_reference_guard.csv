@@ -1,0 +1,7 @@
+actual,check,expected,pass,row_name
+True,step85_step31_reference_guard_pass,True,True,step85_step31_reference
+True,step30_squid_proxy_geometry_config_exists,True,True,step85_step31_reference
+squid_proxy,step30_geometry_type,squid_proxy,True,step85_step31_reference
+True,step31_static_driver_reference_exists,True,True,step85_step31_reference
+True,step31_not_real_squid_validation_claim,True,True,step85_step31_reference
+True,step31_no_squid_swimming_claim,True,True,step85_step31_reference

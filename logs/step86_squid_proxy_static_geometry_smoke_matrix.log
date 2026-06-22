@@ -1,0 +1,6 @@
+[OK] Step86 squid proxy static geometry canonical driver smoke matrix finished
+row_count=1
+stable_count=1
+total_elapsed_seconds=215.80475670000305
+slowest_row_name=canonical_driver_squid_proxy_static_geometry_32_3step_smoke
+slowest_elapsed_seconds=215.80475670000305

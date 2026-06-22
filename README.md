@@ -84,6 +84,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 83 runtime geometry diagnostic-only plus wall velocity combined activation plan and guard, with exactly one future Step84 combined smoke row planned, Step80/Step82 regression guards, output guards, and artifact guards while no simulation is run
 - Step 84 runtime geometry diagnostic-only plus wall velocity `solid_vel` combined canonical driver 3-step smoke, with exactly one 32^3 moving-boundary engineering box row, geometry-motion diagnostic-only reporting, wall-velocity `solid_vel` reporting, boundary-motion reporting, output guards, and Step80/Step82/Step83 regression guards
 - Step 85 squid proxy static geometry activation plan and guard, with exactly one future Step86 static `squid_proxy` 32^3 three-step smoke row planned, Step84 regression guard, Step31 reference guard, output guard, and artifact guard while no simulation is run
+- Step 86 squid proxy static geometry canonical driver 3-step smoke, with exactly one 32^3/1024-particle moving-boundary engineering `squid_proxy` row, non-strict geometry quality report, Step85/Step84/Step31 guards, output guards, and artifact guard while runtime geometry, wall velocity, real geometry candidates, link-area transfer, larger grids, VTR, particle NPY, solver formula changes, tau migration, and physical-production claims remain closed
 
 ## Not Implemented
 

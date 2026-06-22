@@ -1,0 +1,10 @@
+metric,value
+pass_count,6
+row_count,6
+step30_geometry_type,squid_proxy
+step30_squid_proxy_geometry_config_exists,True
+step31_no_squid_swimming_claim,True
+step31_not_real_squid_validation_claim,True
+step31_static_driver_reference_exists,True
+step85_step31_reference_guard_pass,True
+step86_step31_reference_guard_pass,True

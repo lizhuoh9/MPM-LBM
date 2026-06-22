@@ -1,0 +1,19 @@
+{
+  "boundary_motion_mode": "static",
+  "coupling_mode": "moving_boundary",
+  "geometry_config_path": "configs/step85_squid_proxy_geometry_1024.json",
+  "geometry_motion_application_mode": "disabled",
+  "geometry_motion_mode": "static",
+  "geometry_type": "squid_proxy",
+  "mpm_substeps_per_lbm_step": 1,
+  "n_grid": 32,
+  "n_lbm_steps": 3,
+  "n_particles": 1024,
+  "output_interval": 1,
+  "quality_check_enabled": true,
+  "quality_check_strict": false,
+  "reaction_transfer_mode": "engineering",
+  "wall_velocity_application_mode": "disabled",
+  "write_particles": false,
+  "write_vtk": false
+}

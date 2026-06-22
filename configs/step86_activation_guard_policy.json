@@ -1,0 +1,19 @@
+{
+  "expected_activation_feature_count": 1,
+  "expected_procedural_geometry_enabled_count": 1,
+  "expected_squid_proxy_enabled_count": 1,
+  "matrix_artifact_path": "outputs/step86_squid_proxy_static_geometry_smoke_matrix/squid_proxy_static_geometry_smoke_matrix.json",
+  "required_row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke",
+  "summary_zero_counts": [
+    "real_geometry_candidate_enabled_count",
+    "real_geometry_enabled_count",
+    "runtime_geometry_enabled_count",
+    "wall_velocity_enabled_count",
+    "combined_runtime_geometry_wall_velocity_enabled_count",
+    "link_area_enabled_count",
+    "grid_48_enabled_count",
+    "grid_64_enabled_count",
+    "write_vtk_count",
+    "write_particles_count"
+  ]
+}

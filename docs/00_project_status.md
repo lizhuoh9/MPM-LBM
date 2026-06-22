@@ -41,6 +41,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 83: runtime geometry diagnostic-only plus wall velocity combined activation plan and guard
 - Step 84: runtime geometry diagnostic-only plus wall velocity `solid_vel` combined canonical driver 3-step smoke
 - Step 85: squid proxy static geometry activation plan and guard
+- Step 86: squid proxy static geometry canonical driver 3-step smoke
 
 ## Current Validated Modes
 
@@ -224,3 +225,14 @@ particle NPY output, change solver formulas, migrate tau semantics, or claim
 physical validation, real squid validation, squid swimming, or production
 readiness. It only records that squid-proxy static geometry is planned and
 guarded for Step86.
+
+Step86 executes exactly that planned static `squid_proxy` canonical driver row
+for three LBM steps at 32^3 with 1024 particles. The row uses
+`moving_boundary` engineering coupling, reads
+`configs/step85_squid_proxy_geometry_1024.json`, writes a non-strict geometry
+quality report, and keeps runtime geometry, wall velocity, combined runtime
+geometry plus wall velocity, real geometry candidates, link-area transfer,
+48^3, 64^3, VTR output, particle NPY output, solver formula changes, tau
+migration, physical validation, real squid validation, squid swimming, and
+production-readiness claims closed. Step86 may claim only that squid_proxy
+static geometry canonical driver 3-step smoke passed.

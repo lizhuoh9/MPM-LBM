@@ -1,0 +1,16 @@
+metric,value
+artifact_check_count,6
+artifact_pass_count,6
+pass_count,6
+planned_step86_activation_feature_count,1
+row_count,6
+step85_activation_feature_count,0
+step85_artifact_budget_pass,True
+step85_driver_run_dir_count,0
+step85_particle_npy_count,0
+step85_squid_proxy_static_geometry_activation_guard_pass,True
+step85_squid_proxy_static_geometry_activation_plan_pass,True
+step85_step31_reference_guard_pass,True
+step85_step84_regression_guard_pass,True
+step85_vtr_count,0
+step86_step85_regression_guard_pass,True
