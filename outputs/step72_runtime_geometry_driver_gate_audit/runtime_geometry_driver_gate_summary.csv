@@ -1,0 +1,10 @@
+metric,value
+activation_constructed,False
+default_gate_closed,True
+driver_run,False
+invalid_combination_count,5
+invalid_combination_rejected_count,5
+pass_count,16
+row_count,16
+runtime_geometry_driver_gate_audit_pass,True
+safe_output_defaults_preserved,True

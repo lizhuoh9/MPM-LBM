@@ -1,0 +1,9 @@
+metric,value
+canonical_import_pass_count,21
+driver_constructed,False
+missing_symbol_count,0
+output_snapshot_unchanged,True
+required_symbol_count,21
+row_count,22
+runtime_geometry_api_audit_pass,True
+solver_run,False

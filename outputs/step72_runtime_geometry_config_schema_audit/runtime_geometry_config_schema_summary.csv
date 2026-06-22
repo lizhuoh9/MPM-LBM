@@ -1,0 +1,12 @@
+metric,value
+config_mutation_flag_enabled_count,0
+current_schema_hash,9cd528240c3f3518a796eb7fe259520cb09324585eccedc5e414d05bc96b16f8
+missing_required_field_count,0
+pass_count,34
+required_false_default_count,12
+required_true_default_count,2
+row_count,34
+runtime_geometry_config_schema_audit_pass,True
+schema_hash_matches_step70,True
+step70_schema_hash,9cd528240c3f3518a796eb7fe259520cb09324585eccedc5e414d05bc96b16f8
+unsafe_default_true_count,0

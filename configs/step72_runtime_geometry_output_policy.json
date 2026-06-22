@@ -1,0 +1,38 @@
+{
+  "policy_id": "step72_runtime_geometry_output_policy",
+  "step": 72,
+  "step70_output_policy_path": "configs/step70_output_artifact_policy.json",
+  "step71_output_default_artifact_path": "outputs/step71_output_default_alignment_audit/output_default_alignment.json",
+  "controlled_output_keys": [
+    "write_vtk",
+    "write_particles",
+    "write_dense_displacement_field",
+    "write_displaced_particles",
+    "persist_projected_state",
+    "persist_displaced_geometry"
+  ],
+  "scan_json_paths": [
+    "configs/step45_runtime_geometry_projection_integration.json",
+    "configs/step72_runtime_geometry_config_schema_policy.json",
+    "configs/step72_runtime_geometry_driver_gate_policy.json",
+    "configs/step72_runtime_geometry_state_guard_policy.json",
+    "configs/step72_runtime_geometry_output_policy.json",
+    "configs/step72_runtime_geometry_readiness_policy.json",
+    "configs/step72_no_simulation_policy.json",
+    "configs/step72_step71_regression_policy.json"
+  ],
+  "forbidden_output_directories": [
+    "outputs/step72_driver_runs",
+    "outputs/step72_runtime_geometry_driver_runs",
+    "outputs/step72_vtr",
+    "outputs/step72_particles"
+  ],
+  "protected_prefixes": [
+    "external/taichi_LBM3D/",
+    "data/real_geometry_candidates/"
+  ],
+  "vtr_output_allowed": false,
+  "particle_npy_output_allowed": false,
+  "dense_displacement_output_allowed": false,
+  "driver_run_outputs_committable": false
+}

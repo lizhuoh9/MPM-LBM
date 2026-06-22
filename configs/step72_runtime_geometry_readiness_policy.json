@@ -1,0 +1,38 @@
+{
+  "policy_id": "step72_runtime_geometry_readiness_policy",
+  "step": 72,
+  "step70_activation_policy_path": "configs/step70_activation_preconditions_policy.json",
+  "required_audits": [
+    {
+      "name": "runtime_geometry_api_audit",
+      "summary_key": "runtime_geometry_api_audit_pass"
+    },
+    {
+      "name": "runtime_geometry_config_schema_audit",
+      "summary_key": "runtime_geometry_config_schema_audit_pass"
+    },
+    {
+      "name": "runtime_geometry_driver_gate_audit",
+      "summary_key": "runtime_geometry_driver_gate_audit_pass"
+    },
+    {
+      "name": "runtime_geometry_state_guard_audit",
+      "summary_key": "runtime_geometry_state_guard_audit_pass"
+    },
+    {
+      "name": "runtime_geometry_output_policy_audit",
+      "summary_key": "runtime_geometry_output_policy_audit_pass"
+    }
+  ],
+  "required_closed_activation_gates": [
+    "runtime_geometry_activation_allowed",
+    "wall_velocity_activation_allowed",
+    "combined_runtime_geometry_wall_velocity_activation_allowed",
+    "real_geometry_activation_allowed",
+    "squid_proxy_activation_allowed",
+    "vtr_output_allowed",
+    "particle_npy_output_allowed"
+  ],
+  "readiness_claim": "audit_ready_for_later_activation_decision_only",
+  "activation_allowed_after_step72": false
+}

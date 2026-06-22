@@ -1,0 +1,14 @@
+actual,check,expected,name,notes,pass,summary_key
+True,required_audit_pass,True,runtime_geometry_api_audit,Step72 readiness component must be green,True,runtime_geometry_api_audit_pass
+True,required_audit_pass,True,runtime_geometry_config_schema_audit,Step72 readiness component must be green,True,runtime_geometry_config_schema_audit_pass
+True,required_audit_pass,True,runtime_geometry_driver_gate_audit,Step72 readiness component must be green,True,runtime_geometry_driver_gate_audit_pass
+True,required_audit_pass,True,runtime_geometry_state_guard_audit,Step72 readiness component must be green,True,runtime_geometry_state_guard_audit_pass
+True,required_audit_pass,True,runtime_geometry_output_policy_audit,Step72 readiness component must be green,True,runtime_geometry_output_policy_audit_pass
+False,activation_gate_remains_closed,False,runtime_geometry_activation_allowed,Step72 readiness does not open activation gates,True,
+False,activation_gate_remains_closed,False,wall_velocity_activation_allowed,Step72 readiness does not open activation gates,True,
+False,activation_gate_remains_closed,False,combined_runtime_geometry_wall_velocity_activation_allowed,Step72 readiness does not open activation gates,True,
+False,activation_gate_remains_closed,False,real_geometry_activation_allowed,Step72 readiness does not open activation gates,True,
+False,activation_gate_remains_closed,False,squid_proxy_activation_allowed,Step72 readiness does not open activation gates,True,
+False,activation_gate_remains_closed,False,vtr_output_allowed,Step72 readiness does not open activation gates,True,
+False,activation_gate_remains_closed,False,particle_npy_output_allowed,Step72 readiness does not open activation gates,True,
+False,activation_allowed_after_step72,False,runtime_geometry_activation_allowed,audit_ready_for_later_activation_decision_only,True,

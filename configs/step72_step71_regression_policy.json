@@ -1,0 +1,47 @@
+{
+  "policy_id": "step72_step71_regression_policy",
+  "step": 72,
+  "step71_artifact_checks": [
+    {
+      "check": "step71_output_default_alignment",
+      "artifact_path": "outputs/step71_output_default_alignment_audit/output_default_alignment.json",
+      "summary_key": "output_default_alignment_audit_pass",
+      "expected": true
+    },
+    {
+      "check": "step71_tau_convention_decision",
+      "artifact_path": "outputs/step71_tau_convention_decision_audit/tau_convention_decision.json",
+      "summary_key": "tau_convention_decision_audit_pass",
+      "expected": true
+    },
+    {
+      "check": "step71_config_schema_delta",
+      "artifact_path": "outputs/step71_config_schema_delta_audit/config_schema_delta.json",
+      "summary_key": "config_schema_delta_audit_pass",
+      "expected": true
+    },
+    {
+      "check": "step71_no_simulation",
+      "artifact_path": "outputs/step71_no_simulation_audit/no_simulation.json",
+      "summary_key": "no_simulation_audit_pass",
+      "expected": true
+    },
+    {
+      "check": "step71_step70_regression_guard",
+      "artifact_path": "outputs/step71_step70_regression_guard/step70_regression_guard.json",
+      "summary_key": "step71_step70_regression_guard_pass",
+      "expected": true
+    },
+    {
+      "check": "step71_artifact_manifest",
+      "artifact_path": "outputs/step71_artifact_manifest/artifact_summary.json",
+      "summary_key": "artifact_budget_pass",
+      "expected": true
+    }
+  ],
+  "required_current_defaults": {
+    "FSIDriverConfig.write_vtk": false,
+    "FSIDriverConfig.write_particles": false
+  },
+  "required_tau_decision": "preserve_legacy_external_solver_parameter_for_now"
+}

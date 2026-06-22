@@ -1,0 +1,10 @@
+metric,value
+activation_allowed_after_step72,False
+closed_gate_pass_count,7
+pass_count,13
+readiness_claim,audit_ready_for_later_activation_decision_only
+required_audit_count,5
+required_audit_pass_count,5
+required_closed_gate_count,7
+row_count,13
+runtime_geometry_readiness_audit_pass,True

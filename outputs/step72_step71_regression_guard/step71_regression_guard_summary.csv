@@ -1,0 +1,8 @@
+metric,value
+current_fsidriver_default_write_particles,False
+current_fsidriver_default_write_vtk,False
+pass_count,9
+row_count,9
+step71_artifact_check_count,6
+step71_artifact_pass_count,6
+step72_step71_regression_guard_pass,True

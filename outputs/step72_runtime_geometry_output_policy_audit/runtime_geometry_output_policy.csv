@@ -1,0 +1,15 @@
+actual,check,controlled_true_count,expected,pass,path
+False,step70_default_write_vtk_allowed,0,False,True,
+False,step70_default_write_particles_allowed,0,False,True,
+False,step71_fsidriver_default_write_vtk,0,False,True,
+False,step71_fsidriver_default_write_particles,0,False,True,
+False,current_fsidriver_default_write_vtk,0,False,True,
+False,current_fsidriver_default_write_particles,0,False,True,
+[],json_controlled_output_keys_false,0,[],True,configs/step45_runtime_geometry_projection_integration.json
+[],json_controlled_output_keys_false,0,[],True,configs/step72_runtime_geometry_config_schema_policy.json
+[],json_controlled_output_keys_false,0,[],True,configs/step72_runtime_geometry_driver_gate_policy.json
+[],json_controlled_output_keys_false,0,[],True,configs/step72_runtime_geometry_state_guard_policy.json
+[],json_controlled_output_keys_false,0,[],True,configs/step72_runtime_geometry_output_policy.json
+[],json_controlled_output_keys_false,0,[],True,configs/step72_runtime_geometry_readiness_policy.json
+[],json_controlled_output_keys_false,0,[],True,configs/step72_no_simulation_policy.json
+[],json_controlled_output_keys_false,0,[],True,configs/step72_step71_regression_policy.json

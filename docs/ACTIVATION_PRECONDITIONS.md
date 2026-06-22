@@ -46,3 +46,17 @@ future_standard_tau_migration_requires_baseline_rerun = true
 Activation remains closed after Step71. Runtime geometry, wall velocity, real
 geometry, squid proxy activation, VTR output, and particle NPY output remain
 blocked until later readiness steps explicitly open those gates.
+
+Step72 adds runtime geometry activation readiness evidence without opening any
+gate:
+
+```text
+runtime_geometry_readiness_audit_pass = true
+readiness_claim = audit_ready_for_later_activation_decision_only
+activation_allowed_after_step72 = false
+```
+
+The Step70 activation policy remains closed. Step72 only records that the
+runtime geometry API, config schema, driver gates, state guards, output policy,
+no-simulation guard, and Step71 regression guard are ready for a later activation
+decision.

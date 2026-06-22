@@ -1,0 +1,190 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "required_guard_symbol",
+      "expected": true,
+      "name": "STATE_GUARD_FIELDS",
+      "notes": "State guard public surface must remain importable",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_guard_symbol",
+      "expected": true,
+      "name": "compute_runtime_projection_state_guard",
+      "notes": "State guard public surface must remain importable",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_guard_symbol",
+      "expected": true,
+      "name": "forbidden_output_counts",
+      "notes": "State guard public surface must remain importable",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_guard_symbol",
+      "expected": true,
+      "name": "write_runtime_projection_state_guard",
+      "notes": "State guard public surface must remain importable",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_guard_check",
+      "expected": true,
+      "name": "original_geometry_hash_stable",
+      "notes": "State guard source must retain guard invariant",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_guard_check",
+      "expected": true,
+      "name": "region_mask_hash_stable",
+      "notes": "State guard source must retain guard invariant",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_guard_check",
+      "expected": true,
+      "name": "driver_state_mutation_count",
+      "notes": "State guard source must retain guard invariant",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_guard_check",
+      "expected": true,
+      "name": "default_lbm_state_mutation_count",
+      "notes": "State guard source must retain guard invariant",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_guard_check",
+      "expected": true,
+      "name": "default_mpm_state_mutation_count",
+      "notes": "State guard source must retain guard invariant",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_guard_check",
+      "expected": true,
+      "name": "default_projection_state_mutation_count",
+      "notes": "State guard source must retain guard invariant",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_guard_check",
+      "expected": true,
+      "name": "dynamic_solid_mutation_count",
+      "notes": "State guard source must retain guard invariant",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_guard_check",
+      "expected": true,
+      "name": "persistent_projected_state_count",
+      "notes": "State guard source must retain guard invariant",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_guard_check",
+      "expected": true,
+      "name": "displaced_particle_output_count",
+      "notes": "State guard source must retain guard invariant",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_guard_check",
+      "expected": true,
+      "name": "dense_displacement_output_count",
+      "notes": "State guard source must retain guard invariant",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_guard_check",
+      "expected": true,
+      "name": "vtr_output_count",
+      "notes": "State guard source must retain guard invariant",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_guard_check",
+      "expected": true,
+      "name": "geo_all_fluid_dat_count_added",
+      "notes": "State guard source must retain guard invariant",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_source_term",
+      "expected": true,
+      "name": "compute_runtime_projection_rows",
+      "notes": "State guard source must retain guard invariant",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_source_term",
+      "expected": true,
+      "name": "step45_geometry_and_region_hashes",
+      "notes": "State guard source must retain guard invariant",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_source_term",
+      "expected": true,
+      "name": "forbidden_output_counts",
+      "notes": "State guard source must retain guard invariant",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "required_source_term",
+      "expected": true,
+      "name": "guard_pass",
+      "notes": "State guard source must retain guard invariant",
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "runtime_projection_config_mutation_flags_zero",
+      "expected": 0,
+      "name": "",
+      "notes": "Committed projection config remains guardable without persistence",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "state_guard_driver_run",
+      "expected": false,
+      "name": "",
+      "notes": "State guard audit does not run FSIDriver3D",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "config_mutation_flag_enabled_count": 0,
+    "driver_run": false,
+    "pass_count": 22,
+    "required_guard_check_count": 12,
+    "required_guard_symbol_count": 4,
+    "required_source_term_count": 4,
+    "row_count": 22,
+    "runtime_geometry_state_guard_audit_pass": true
+  }
+}

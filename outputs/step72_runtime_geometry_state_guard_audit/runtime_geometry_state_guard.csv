@@ -1,0 +1,23 @@
+actual,check,expected,name,notes,pass
+True,required_guard_symbol,True,STATE_GUARD_FIELDS,State guard public surface must remain importable,True
+True,required_guard_symbol,True,compute_runtime_projection_state_guard,State guard public surface must remain importable,True
+True,required_guard_symbol,True,forbidden_output_counts,State guard public surface must remain importable,True
+True,required_guard_symbol,True,write_runtime_projection_state_guard,State guard public surface must remain importable,True
+True,required_guard_check,True,original_geometry_hash_stable,State guard source must retain guard invariant,True
+True,required_guard_check,True,region_mask_hash_stable,State guard source must retain guard invariant,True
+True,required_guard_check,True,driver_state_mutation_count,State guard source must retain guard invariant,True
+True,required_guard_check,True,default_lbm_state_mutation_count,State guard source must retain guard invariant,True
+True,required_guard_check,True,default_mpm_state_mutation_count,State guard source must retain guard invariant,True
+True,required_guard_check,True,default_projection_state_mutation_count,State guard source must retain guard invariant,True
+True,required_guard_check,True,dynamic_solid_mutation_count,State guard source must retain guard invariant,True
+True,required_guard_check,True,persistent_projected_state_count,State guard source must retain guard invariant,True
+True,required_guard_check,True,displaced_particle_output_count,State guard source must retain guard invariant,True
+True,required_guard_check,True,dense_displacement_output_count,State guard source must retain guard invariant,True
+True,required_guard_check,True,vtr_output_count,State guard source must retain guard invariant,True
+True,required_guard_check,True,geo_all_fluid_dat_count_added,State guard source must retain guard invariant,True
+True,required_source_term,True,compute_runtime_projection_rows,State guard source must retain guard invariant,True
+True,required_source_term,True,step45_geometry_and_region_hashes,State guard source must retain guard invariant,True
+True,required_source_term,True,forbidden_output_counts,State guard source must retain guard invariant,True
+True,required_source_term,True,guard_pass,State guard source must retain guard invariant,True
+0,runtime_projection_config_mutation_flags_zero,0,,Committed projection config remains guardable without persistence,True
+False,state_guard_driver_run,False,,State guard audit does not run FSIDriver3D,True

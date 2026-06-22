@@ -1,0 +1,76 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "step71_output_default_alignment",
+      "expected": true,
+      "pass": true,
+      "summary_key": "output_default_alignment_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step71_tau_convention_decision",
+      "expected": true,
+      "pass": true,
+      "summary_key": "tau_convention_decision_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step71_config_schema_delta",
+      "expected": true,
+      "pass": true,
+      "summary_key": "config_schema_delta_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step71_no_simulation",
+      "expected": true,
+      "pass": true,
+      "summary_key": "no_simulation_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step71_step70_regression_guard",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step71_step70_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "check": "step71_artifact_manifest",
+      "expected": true,
+      "pass": true,
+      "summary_key": "artifact_budget_pass"
+    },
+    {
+      "actual": false,
+      "check": "current_fsidriver_write_vtk_default",
+      "expected": false,
+      "pass": true,
+      "summary_key": "FSIDriverConfig.write_vtk"
+    },
+    {
+      "actual": false,
+      "check": "current_fsidriver_write_particles_default",
+      "expected": false,
+      "pass": true,
+      "summary_key": "FSIDriverConfig.write_particles"
+    },
+    {
+      "actual": "preserve_legacy_external_solver_parameter_for_now",
+      "check": "step71_tau_decision_preserved",
+      "expected": "preserve_legacy_external_solver_parameter_for_now",
+      "pass": true,
+      "summary_key": "tau_convention_decision"
+    }
+  ],
+  "summary": {
+    "current_fsidriver_default_write_particles": false,
+    "current_fsidriver_default_write_vtk": false,
+    "pass_count": 9,
+    "row_count": 9,
+    "step71_artifact_check_count": 6,
+    "step71_artifact_pass_count": 6,
+    "step72_step71_regression_guard_pass": true
+  }
+}

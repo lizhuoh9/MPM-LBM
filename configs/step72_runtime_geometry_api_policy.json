@@ -1,0 +1,113 @@
+{
+  "policy_id": "step72_runtime_geometry_api_policy",
+  "step": 72,
+  "audit_name": "runtime_geometry_api_audit",
+  "construct_driver_allowed": false,
+  "required_symbols": [
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "symbol": "RuntimeGeometryProjectionIntegrationConfig",
+      "kind": "class"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "symbol": "validate_runtime_geometry_projection_config",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "symbol": "summarize_runtime_geometry_projection_config_validation",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "symbol": "mutation_flags",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "symbol": "mutation_flag_enabled_count",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "symbol": "MUTATION_FLAG_FIELDS",
+      "kind": "constant"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "symbol": "RUNTIME_PROJECTION_FIELDS",
+      "kind": "constant"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "symbol": "compute_runtime_projection_rows",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "symbol": "compute_original_projection_rows",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "symbol": "project_transient_geometry_copy",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "symbol": "summarize_runtime_projection_rows",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_quality",
+      "symbol": "analyze_runtime_projection_quality",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "symbol": "compare_original_vs_runtime_projection",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "symbol": "summarize_original_vs_runtime_projection",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "symbol": "projection_phase_closure_rows",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "symbol": "summarize_projection_phase_closure",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "symbol": "compare_step44_projection_smoke",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "symbol": "summarize_step44_projection_alignment",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.state_guard",
+      "symbol": "compute_runtime_projection_state_guard",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.state_guard",
+      "symbol": "write_runtime_projection_state_guard",
+      "kind": "function"
+    },
+    {
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.state_guard",
+      "symbol": "STATE_GUARD_FIELDS",
+      "kind": "constant"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "rows": [
+    {
+      "actual_kind": "class",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "class",
+      "pass": true,
+      "symbol": "RuntimeGeometryProjectionIntegrationConfig"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "validate_runtime_geometry_projection_config"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "summarize_runtime_geometry_projection_config_validation"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "mutation_flags"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "mutation_flag_enabled_count"
+    },
+    {
+      "actual_kind": "constant",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "constant",
+      "pass": true,
+      "symbol": "MUTATION_FLAG_FIELDS"
+    },
+    {
+      "actual_kind": "constant",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "constant",
+      "pass": true,
+      "symbol": "RUNTIME_PROJECTION_FIELDS"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "compute_runtime_projection_rows"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "compute_original_projection_rows"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "project_transient_geometry_copy"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "summarize_runtime_projection_rows"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_quality",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "analyze_runtime_projection_quality"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "compare_original_vs_runtime_projection"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "summarize_original_vs_runtime_projection"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "projection_phase_closure_rows"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "summarize_projection_phase_closure"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "compare_step44_projection_smoke"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_consistency",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "summarize_step44_projection_alignment"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.state_guard",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "compute_runtime_projection_state_guard"
+    },
+    {
+      "actual_kind": "function",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.state_guard",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "function",
+      "pass": true,
+      "symbol": "write_runtime_projection_state_guard"
+    },
+    {
+      "actual_kind": "constant",
+      "canonical_module": "src.mpm_lbm.sim.runtime_geometry.state_guard",
+      "check": "canonical_symbol_import",
+      "error": "",
+      "expected_kind": "constant",
+      "pass": true,
+      "symbol": "STATE_GUARD_FIELDS"
+    },
+    {
+      "actual_kind": "",
+      "canonical_module": "",
+      "check": "output_snapshot_unchanged_after_imports",
+      "error": "",
+      "expected_kind": "",
+      "pass": true,
+      "symbol": ""
+    }
+  ],
+  "summary": {
+    "canonical_import_pass_count": 21,
+    "driver_constructed": false,
+    "missing_symbol_count": 0,
+    "output_snapshot_unchanged": true,
+    "required_symbol_count": 21,
+    "row_count": 22,
+    "runtime_geometry_api_audit_pass": true,
+    "solver_run": false
+  }
+}

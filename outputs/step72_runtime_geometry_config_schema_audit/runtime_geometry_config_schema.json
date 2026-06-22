@@ -1,0 +1,255 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "class_import_pass",
+      "expected": true,
+      "notes": "Runtime geometry projection config imports",
+      "pass": true
+    },
+    {
+      "actual": "9cd528240c3f3518a796eb7fe259520cb09324585eccedc5e414d05bc96b16f8",
+      "check": "schema_hash_matches_step70",
+      "expected": "9cd528240c3f3518a796eb7fe259520cb09324585eccedc5e414d05bc96b16f8",
+      "notes": "Step70 schema hash remains stable",
+      "pass": true
+    },
+    {
+      "actual": "9cd528240c3f3518a796eb7fe259520cb09324585eccedc5e414d05bc96b16f8",
+      "check": "schema_hash_matches_policy",
+      "expected": "9cd528240c3f3518a796eb7fe259520cb09324585eccedc5e414d05bc96b16f8",
+      "notes": "Policy pins Step70 schema hash",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "from_json_available",
+      "expected": true,
+      "notes": "Config remains loadable from JSON",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "to_json_or_to_dict_available",
+      "expected": true,
+      "notes": "Config remains serializable",
+      "pass": true
+    },
+    {
+      "actual": "transient_projection_only",
+      "check": "integration_mode",
+      "expected": "transient_projection_only",
+      "notes": "Runtime projection remains transient only",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "diagnostic_only_config",
+      "expected": true,
+      "notes": "Runtime projection config remains diagnostic-only",
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "mutation_flag_enabled_count",
+      "expected": 0,
+      "notes": "No mutation or persistence flag enabled",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "default_false_persist_projected_state",
+      "expected": "False",
+      "notes": "Runtime geometry unsafe default must remain false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "default_false_persist_displaced_geometry",
+      "expected": "False",
+      "notes": "Runtime geometry unsafe default must remain false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "default_false_write_displaced_particles",
+      "expected": "False",
+      "notes": "Runtime geometry unsafe default must remain false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "default_false_write_dense_displacement_field",
+      "expected": "False",
+      "notes": "Runtime geometry unsafe default must remain false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "default_false_write_vtk",
+      "expected": "False",
+      "notes": "Runtime geometry unsafe default must remain false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "default_false_apply_to_driver_state",
+      "expected": "False",
+      "notes": "Runtime geometry unsafe default must remain false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "default_false_apply_to_default_lbm_state",
+      "expected": "False",
+      "notes": "Runtime geometry unsafe default must remain false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "default_false_apply_to_default_mpm_state",
+      "expected": "False",
+      "notes": "Runtime geometry unsafe default must remain false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "default_false_apply_to_default_projection_state",
+      "expected": "False",
+      "notes": "Runtime geometry unsafe default must remain false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "default_false_update_dynamic_solid",
+      "expected": "False",
+      "notes": "Runtime geometry unsafe default must remain false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "default_false_recompute_production_boundary_links",
+      "expected": "False",
+      "notes": "Runtime geometry unsafe default must remain false",
+      "pass": true
+    },
+    {
+      "actual": "False",
+      "check": "default_false_mutate_original_geometry",
+      "expected": "False",
+      "notes": "Runtime geometry unsafe default must remain false",
+      "pass": true
+    },
+    {
+      "actual": "True",
+      "check": "default_true_diagnostic_only",
+      "expected": "True",
+      "notes": "Required diagnostic default must remain true",
+      "pass": true
+    },
+    {
+      "actual": "True",
+      "check": "default_true_deterministic",
+      "expected": "True",
+      "notes": "Required diagnostic default must remain true",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_flag_false_persist_projected_state",
+      "expected": false,
+      "notes": "Committed Step45 runtime projection config must remain non-mutating",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_flag_false_persist_displaced_geometry",
+      "expected": false,
+      "notes": "Committed Step45 runtime projection config must remain non-mutating",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_flag_false_write_displaced_particles",
+      "expected": false,
+      "notes": "Committed Step45 runtime projection config must remain non-mutating",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_flag_false_write_dense_displacement_field",
+      "expected": false,
+      "notes": "Committed Step45 runtime projection config must remain non-mutating",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_flag_false_write_vtk",
+      "expected": false,
+      "notes": "Committed Step45 runtime projection config must remain non-mutating",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_flag_false_apply_to_driver_state",
+      "expected": false,
+      "notes": "Committed Step45 runtime projection config must remain non-mutating",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_flag_false_apply_to_default_lbm_state",
+      "expected": false,
+      "notes": "Committed Step45 runtime projection config must remain non-mutating",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_flag_false_apply_to_default_mpm_state",
+      "expected": false,
+      "notes": "Committed Step45 runtime projection config must remain non-mutating",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_flag_false_apply_to_default_projection_state",
+      "expected": false,
+      "notes": "Committed Step45 runtime projection config must remain non-mutating",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_flag_false_update_dynamic_solid",
+      "expected": false,
+      "notes": "Committed Step45 runtime projection config must remain non-mutating",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_flag_false_recompute_production_boundary_links",
+      "expected": false,
+      "notes": "Committed Step45 runtime projection config must remain non-mutating",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "config_flag_false_mutate_original_geometry",
+      "expected": false,
+      "notes": "Committed Step45 runtime projection config must remain non-mutating",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "config_mutation_flag_enabled_count": 0,
+    "current_schema_hash": "9cd528240c3f3518a796eb7fe259520cb09324585eccedc5e414d05bc96b16f8",
+    "missing_required_field_count": 0,
+    "pass_count": 34,
+    "required_false_default_count": 12,
+    "required_true_default_count": 2,
+    "row_count": 34,
+    "runtime_geometry_config_schema_audit_pass": true,
+    "schema_hash_matches_step70": true,
+    "step70_schema_hash": "9cd528240c3f3518a796eb7fe259520cb09324585eccedc5e414d05bc96b16f8",
+    "unsafe_default_true_count": 0
+  }
+}

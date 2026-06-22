@@ -1,0 +1,143 @@
+{
+  "rows": [
+    {
+      "actual": "static",
+      "check": "default_gate_closed",
+      "error": "",
+      "expected": "static",
+      "field": "geometry_motion_mode",
+      "pass": true
+    },
+    {
+      "actual": null,
+      "check": "default_gate_closed",
+      "error": "",
+      "expected": null,
+      "field": "geometry_motion_config_path",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "default_gate_closed",
+      "error": "",
+      "expected": false,
+      "field": "geometry_motion_report_enabled",
+      "pass": true
+    },
+    {
+      "actual": "disabled",
+      "check": "default_gate_closed",
+      "error": "",
+      "expected": "disabled",
+      "field": "geometry_motion_application_mode",
+      "pass": true
+    },
+    {
+      "actual": null,
+      "check": "default_gate_closed",
+      "error": "",
+      "expected": null,
+      "field": "geometry_motion_application_config_path",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "default_gate_closed",
+      "error": "",
+      "expected": false,
+      "field": "geometry_motion_application_report_enabled",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "default_gate_closed",
+      "error": "",
+      "expected": false,
+      "field": "write_vtk",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "default_gate_closed",
+      "error": "",
+      "expected": false,
+      "field": "write_particles",
+      "pass": true
+    },
+    {
+      "actual": "rejected",
+      "check": "invalid_combination_rejected",
+      "error": "geometry_motion_config_path must be None when geometry_motion_mode='static'",
+      "expected": "rejected",
+      "field": "static_with_geometry_motion_config_path",
+      "pass": true
+    },
+    {
+      "actual": "rejected",
+      "check": "invalid_combination_rejected",
+      "error": "geometry_motion_application_mode must be disabled when geometry_motion_mode='static'",
+      "expected": "rejected",
+      "field": "static_with_diagnostic_application_mode",
+      "pass": true
+    },
+    {
+      "actual": "rejected",
+      "check": "invalid_combination_rejected",
+      "error": "geometry_motion_config_path is required when geometry_motion_mode='prescribed_kinematic'",
+      "expected": "rejected",
+      "field": "prescribed_kinematic_without_config_path",
+      "pass": true
+    },
+    {
+      "actual": "rejected",
+      "check": "invalid_combination_rejected",
+      "error": "geometry_motion_application_config_path must be None when geometry_motion_application_mode='disabled'",
+      "expected": "rejected",
+      "field": "disabled_application_with_config_path",
+      "pass": true
+    },
+    {
+      "actual": "rejected",
+      "check": "invalid_combination_rejected",
+      "error": "geometry_motion_application_config_path is required when geometry_motion_application_mode='diagnostic_only'",
+      "expected": "rejected",
+      "field": "diagnostic_application_without_config_path",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "driver_constructed",
+      "error": "Audit only constructs config dataclasses",
+      "expected": false,
+      "field": "",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "driver_initialized",
+      "error": "Audit does not initialize FSIDriver3D",
+      "expected": false,
+      "field": "",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "solver_run",
+      "error": "Audit does not step or run solver",
+      "expected": false,
+      "field": "",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "activation_constructed": false,
+    "default_gate_closed": true,
+    "driver_run": false,
+    "invalid_combination_count": 5,
+    "invalid_combination_rejected_count": 5,
+    "pass_count": 16,
+    "row_count": 16,
+    "runtime_geometry_driver_gate_audit_pass": true,
+    "safe_output_defaults_preserved": true
+  }
+}

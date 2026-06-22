@@ -1,0 +1,35 @@
+actual,check,expected,notes,pass
+True,class_import_pass,True,Runtime geometry projection config imports,True
+9cd528240c3f3518a796eb7fe259520cb09324585eccedc5e414d05bc96b16f8,schema_hash_matches_step70,9cd528240c3f3518a796eb7fe259520cb09324585eccedc5e414d05bc96b16f8,Step70 schema hash remains stable,True
+9cd528240c3f3518a796eb7fe259520cb09324585eccedc5e414d05bc96b16f8,schema_hash_matches_policy,9cd528240c3f3518a796eb7fe259520cb09324585eccedc5e414d05bc96b16f8,Policy pins Step70 schema hash,True
+True,from_json_available,True,Config remains loadable from JSON,True
+True,to_json_or_to_dict_available,True,Config remains serializable,True
+transient_projection_only,integration_mode,transient_projection_only,Runtime projection remains transient only,True
+True,diagnostic_only_config,True,Runtime projection config remains diagnostic-only,True
+0,mutation_flag_enabled_count,0,No mutation or persistence flag enabled,True
+False,default_false_persist_projected_state,False,Runtime geometry unsafe default must remain false,True
+False,default_false_persist_displaced_geometry,False,Runtime geometry unsafe default must remain false,True
+False,default_false_write_displaced_particles,False,Runtime geometry unsafe default must remain false,True
+False,default_false_write_dense_displacement_field,False,Runtime geometry unsafe default must remain false,True
+False,default_false_write_vtk,False,Runtime geometry unsafe default must remain false,True
+False,default_false_apply_to_driver_state,False,Runtime geometry unsafe default must remain false,True
+False,default_false_apply_to_default_lbm_state,False,Runtime geometry unsafe default must remain false,True
+False,default_false_apply_to_default_mpm_state,False,Runtime geometry unsafe default must remain false,True
+False,default_false_apply_to_default_projection_state,False,Runtime geometry unsafe default must remain false,True
+False,default_false_update_dynamic_solid,False,Runtime geometry unsafe default must remain false,True
+False,default_false_recompute_production_boundary_links,False,Runtime geometry unsafe default must remain false,True
+False,default_false_mutate_original_geometry,False,Runtime geometry unsafe default must remain false,True
+True,default_true_diagnostic_only,True,Required diagnostic default must remain true,True
+True,default_true_deterministic,True,Required diagnostic default must remain true,True
+False,config_flag_false_persist_projected_state,False,Committed Step45 runtime projection config must remain non-mutating,True
+False,config_flag_false_persist_displaced_geometry,False,Committed Step45 runtime projection config must remain non-mutating,True
+False,config_flag_false_write_displaced_particles,False,Committed Step45 runtime projection config must remain non-mutating,True
+False,config_flag_false_write_dense_displacement_field,False,Committed Step45 runtime projection config must remain non-mutating,True
+False,config_flag_false_write_vtk,False,Committed Step45 runtime projection config must remain non-mutating,True
+False,config_flag_false_apply_to_driver_state,False,Committed Step45 runtime projection config must remain non-mutating,True
+False,config_flag_false_apply_to_default_lbm_state,False,Committed Step45 runtime projection config must remain non-mutating,True
+False,config_flag_false_apply_to_default_mpm_state,False,Committed Step45 runtime projection config must remain non-mutating,True
+False,config_flag_false_apply_to_default_projection_state,False,Committed Step45 runtime projection config must remain non-mutating,True
+False,config_flag_false_update_dynamic_solid,False,Committed Step45 runtime projection config must remain non-mutating,True
+False,config_flag_false_recompute_production_boundary_links,False,Committed Step45 runtime projection config must remain non-mutating,True
+False,config_flag_false_mutate_original_geometry,False,Committed Step45 runtime projection config must remain non-mutating,True

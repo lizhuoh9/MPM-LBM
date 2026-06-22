@@ -1,0 +1,31 @@
+{
+  "policy_id": "step72_runtime_geometry_config_schema_policy",
+  "step": 72,
+  "step70_config_schema_artifact_path": "outputs/step70_config_schema_freeze_audit/config_schema_freeze.json",
+  "runtime_projection_config_path": "configs/step45_runtime_geometry_projection_integration.json",
+  "required_config_class": {
+    "canonical_module": "src.mpm_lbm.sim.runtime_geometry.projection_config",
+    "class_name": "RuntimeGeometryProjectionIntegrationConfig"
+  },
+  "expected_step70_schema_hash": "9cd528240c3f3518a796eb7fe259520cb09324585eccedc5e414d05bc96b16f8",
+  "required_false_defaults": [
+    "persist_projected_state",
+    "persist_displaced_geometry",
+    "write_displaced_particles",
+    "write_dense_displacement_field",
+    "write_vtk",
+    "apply_to_driver_state",
+    "apply_to_default_lbm_state",
+    "apply_to_default_mpm_state",
+    "apply_to_default_projection_state",
+    "update_dynamic_solid",
+    "recompute_production_boundary_links",
+    "mutate_original_geometry"
+  ],
+  "required_true_defaults": [
+    "diagnostic_only",
+    "deterministic"
+  ],
+  "expected_integration_mode": "transient_projection_only",
+  "expected_diagnostic_only": true
+}

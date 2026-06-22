@@ -1,0 +1,129 @@
+{
+  "rows": [
+    {
+      "actual": false,
+      "check": "step70_default_write_vtk_allowed",
+      "controlled_true_count": 0,
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": false,
+      "check": "step70_default_write_particles_allowed",
+      "controlled_true_count": 0,
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": false,
+      "check": "step71_fsidriver_default_write_vtk",
+      "controlled_true_count": 0,
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": false,
+      "check": "step71_fsidriver_default_write_particles",
+      "controlled_true_count": 0,
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": false,
+      "check": "current_fsidriver_default_write_vtk",
+      "controlled_true_count": 0,
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": false,
+      "check": "current_fsidriver_default_write_particles",
+      "controlled_true_count": 0,
+      "expected": false,
+      "pass": true,
+      "path": ""
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step45_runtime_geometry_projection_integration.json"
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step72_runtime_geometry_config_schema_policy.json"
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step72_runtime_geometry_driver_gate_policy.json"
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step72_runtime_geometry_state_guard_policy.json"
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step72_runtime_geometry_output_policy.json"
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step72_runtime_geometry_readiness_policy.json"
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step72_no_simulation_policy.json"
+    },
+    {
+      "actual": [],
+      "check": "json_controlled_output_keys_false",
+      "controlled_true_count": 0,
+      "expected": [],
+      "pass": true,
+      "path": "configs/step72_step71_regression_policy.json"
+    }
+  ],
+  "summary": {
+    "current_fsidriver_default_write_particles": false,
+    "current_fsidriver_default_write_vtk": false,
+    "forbidden_output_directory_count": 0,
+    "json_controlled_true_count": 0,
+    "pass_count": 14,
+    "protected_step72_file_count": 0,
+    "row_count": 14,
+    "runtime_geometry_output_policy_audit_pass": true,
+    "step72_dense_displacement_count": 0,
+    "step72_particle_npy_count": 0,
+    "step72_vtr_count": 0
+  }
+}

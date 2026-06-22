@@ -1,0 +1,55 @@
+{
+  "policy_id": "step72_runtime_geometry_driver_gate_policy",
+  "step": 72,
+  "required_defaults": {
+    "geometry_motion_mode": "static",
+    "geometry_motion_config_path": null,
+    "geometry_motion_report_enabled": false,
+    "geometry_motion_application_mode": "disabled",
+    "geometry_motion_application_config_path": null,
+    "geometry_motion_application_report_enabled": false,
+    "write_vtk": false,
+    "write_particles": false
+  },
+  "valid_runtime_geometry_config_path": "configs/step43_geometry_motion_interface_prescribed_diagnostic_only.json",
+  "valid_runtime_geometry_application_config_path": "configs/step45_runtime_geometry_projection_integration.json",
+  "invalid_combinations": [
+    {
+      "case": "static_with_geometry_motion_config_path",
+      "kwargs": {
+        "geometry_motion_mode": "static",
+        "geometry_motion_config_path": "configs/step43_geometry_motion_interface_prescribed_diagnostic_only.json"
+      }
+    },
+    {
+      "case": "static_with_diagnostic_application_mode",
+      "kwargs": {
+        "geometry_motion_mode": "static",
+        "geometry_motion_application_mode": "diagnostic_only"
+      }
+    },
+    {
+      "case": "prescribed_kinematic_without_config_path",
+      "kwargs": {
+        "geometry_motion_mode": "prescribed_kinematic"
+      }
+    },
+    {
+      "case": "disabled_application_with_config_path",
+      "kwargs": {
+        "geometry_motion_mode": "prescribed_kinematic",
+        "geometry_motion_config_path": "configs/step43_geometry_motion_interface_prescribed_diagnostic_only.json",
+        "geometry_motion_application_mode": "disabled",
+        "geometry_motion_application_config_path": "configs/step45_runtime_geometry_projection_integration.json"
+      }
+    },
+    {
+      "case": "diagnostic_application_without_config_path",
+      "kwargs": {
+        "geometry_motion_mode": "prescribed_kinematic",
+        "geometry_motion_config_path": "configs/step43_geometry_motion_interface_prescribed_diagnostic_only.json",
+        "geometry_motion_application_mode": "diagnostic_only"
+      }
+    }
+  ]
+}

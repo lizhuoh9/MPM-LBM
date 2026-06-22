@@ -1,0 +1,44 @@
+{
+  "policy_id": "step72_runtime_geometry_state_guard_policy",
+  "step": 72,
+  "state_guard_module_path": "src/mpm_lbm/sim/runtime_geometry/state_guard.py",
+  "runtime_projection_config_path": "configs/step45_runtime_geometry_projection_integration.json",
+  "required_guard_symbols": [
+    "STATE_GUARD_FIELDS",
+    "compute_runtime_projection_state_guard",
+    "forbidden_output_counts",
+    "write_runtime_projection_state_guard"
+  ],
+  "required_guard_checks": [
+    "original_geometry_hash_stable",
+    "region_mask_hash_stable",
+    "driver_state_mutation_count",
+    "default_lbm_state_mutation_count",
+    "default_mpm_state_mutation_count",
+    "default_projection_state_mutation_count",
+    "dynamic_solid_mutation_count",
+    "persistent_projected_state_count",
+    "displaced_particle_output_count",
+    "dense_displacement_output_count",
+    "vtr_output_count",
+    "geo_all_fluid_dat_count_added"
+  ],
+  "required_zero_summary_fields": [
+    "driver_state_mutation_count",
+    "default_lbm_state_mutation_count",
+    "default_mpm_state_mutation_count",
+    "default_projection_state_mutation_count",
+    "dynamic_solid_mutation_count",
+    "persistent_projected_state_count",
+    "displaced_particle_output_count",
+    "dense_displacement_output_count",
+    "vtr_output_count",
+    "geo_all_fluid_dat_count_added"
+  ],
+  "required_source_terms": [
+    "compute_runtime_projection_rows",
+    "step45_geometry_and_region_hashes",
+    "forbidden_output_counts",
+    "guard_pass"
+  ]
+}

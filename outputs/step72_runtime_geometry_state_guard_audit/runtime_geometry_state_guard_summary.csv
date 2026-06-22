@@ -1,0 +1,9 @@
+metric,value
+config_mutation_flag_enabled_count,0
+driver_run,False
+pass_count,22
+required_guard_check_count,12
+required_guard_symbol_count,4
+required_source_term_count,4
+row_count,22
+runtime_geometry_state_guard_audit_pass,True

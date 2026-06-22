@@ -27,6 +27,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 62: controlled canonical 32^3 moving-boundary 3-step duration probe
 - Step 70: API and config freeze before activation
 - Step 71: output default safety alignment and LBM tau convention decision
+- Step 72: runtime geometry activation readiness audit
 
 ## Current Validated Modes
 
@@ -50,6 +51,12 @@ outputs require explicit opt-in. It also records the tau convention decision:
 standard lattice viscosity formula is available but not default. Step 71 does
 not validate physical viscosity or change the LBM tau formula used by the
 solver.
+
+Step 72 adds an audit-only runtime geometry activation readiness layer. It
+checks canonical runtime geometry imports, schema stability, driver config gates,
+state guard invariants, output policy, no-simulation constraints, and Step71
+regression evidence. It does not run `FSIDriver3D`, activate runtime geometry,
+activate wall velocity, or claim physical validation.
 
 ## What Exists
 

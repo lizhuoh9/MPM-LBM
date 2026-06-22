@@ -1,0 +1,17 @@
+actual,check,error,expected,field,pass
+static,default_gate_closed,,static,geometry_motion_mode,True
+,default_gate_closed,,,geometry_motion_config_path,True
+False,default_gate_closed,,False,geometry_motion_report_enabled,True
+disabled,default_gate_closed,,disabled,geometry_motion_application_mode,True
+,default_gate_closed,,,geometry_motion_application_config_path,True
+False,default_gate_closed,,False,geometry_motion_application_report_enabled,True
+False,default_gate_closed,,False,write_vtk,True
+False,default_gate_closed,,False,write_particles,True
+rejected,invalid_combination_rejected,geometry_motion_config_path must be None when geometry_motion_mode='static',rejected,static_with_geometry_motion_config_path,True
+rejected,invalid_combination_rejected,geometry_motion_application_mode must be disabled when geometry_motion_mode='static',rejected,static_with_diagnostic_application_mode,True
+rejected,invalid_combination_rejected,geometry_motion_config_path is required when geometry_motion_mode='prescribed_kinematic',rejected,prescribed_kinematic_without_config_path,True
+rejected,invalid_combination_rejected,geometry_motion_application_config_path must be None when geometry_motion_application_mode='disabled',rejected,disabled_application_with_config_path,True
+rejected,invalid_combination_rejected,geometry_motion_application_config_path is required when geometry_motion_application_mode='diagnostic_only',rejected,diagnostic_application_without_config_path,True
+False,driver_constructed,Audit only constructs config dataclasses,False,,True
+False,driver_initialized,Audit does not initialize FSIDriver3D,False,,True
+False,solver_run,Audit does not step or run solver,False,,True

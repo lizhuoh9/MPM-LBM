@@ -1,0 +1,13 @@
+import os
+
+from step72_common import ROOT, run_named_audit
+from src.mpm_lbm.evidence.runtime_geometry_config_schema_audit import build_step72_runtime_geometry_config_schema_audit
+
+
+def main():
+    os.chdir(ROOT)
+    run_named_audit(build_step72_runtime_geometry_config_schema_audit, "outputs/step72_runtime_geometry_config_schema_audit", "logs/step72_runtime_geometry_config_schema_audit.log", "runtime_geometry_config_schema_audit_pass", "[OK] Step 72 runtime geometry config schema audit finished", "runtime_geometry_config_schema")
+
+
+if __name__ == "__main__":
+    main()

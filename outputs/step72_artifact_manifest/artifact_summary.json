@@ -1,0 +1,13 @@
+{
+  "artifact_budget_pass": true,
+  "file_count": 4986,
+  "large_file_count": 0,
+  "protected_external_taichi_lbm3d_step72_file_count": 0,
+  "protected_real_geometry_candidates_step72_file_count": 0,
+  "step72_driver_run_output_dir_count": 0,
+  "step72_file_count": 68,
+  "step72_particle_npy_count": 0,
+  "step72_total_size_bytes": 166505,
+  "step72_total_size_mb": 0.15879154205322266,
+  "step72_vtr_count": 0
+}
