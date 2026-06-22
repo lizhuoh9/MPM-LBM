@@ -40,6 +40,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 82: wall velocity `solid_vel` canonical driver 3-step smoke
 - Step 83: runtime geometry diagnostic-only plus wall velocity combined activation plan and guard
 - Step 84: runtime geometry diagnostic-only plus wall velocity `solid_vel` combined canonical driver 3-step smoke
+- Step 85: squid proxy static geometry activation plan and guard
 
 ## Current Validated Modes
 
@@ -213,3 +214,13 @@ output policy. VTR and particle persistence are now safe-by-default off in
 `FSIDriverConfig`; existing configs can still opt in explicitly. Tau semantics
 remain legacy by default and require a future baseline rerun campaign before
 any standard lattice tau migration.
+
+Step85 adds a plan-and-guard layer for one future Step86 static `squid_proxy`
+canonical driver smoke row at 32^3 with 1024 particles and three LBM steps.
+Step85 does not run `FSIDriver3D`, execute a simulation, enable runtime
+geometry, enable wall velocity, combine runtime geometry with wall velocity,
+enable real geometry, use link-area transfer, add larger grids, write VTR or
+particle NPY output, change solver formulas, migrate tau semantics, or claim
+physical validation, real squid validation, squid swimming, or production
+readiness. It only records that squid-proxy static geometry is planned and
+guarded for Step86.

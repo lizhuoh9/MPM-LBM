@@ -302,3 +302,29 @@ interface reporting and wall velocity `solid_vel_experimental` application for
 the single planned canonical driver row. Real geometry, squid proxy behavior,
 link-area transfer, larger grids, VTR output, particle NPY output, solver
 formula changes, tau migration, and physical-production claims remain closed.
+
+Step85 plans and guards a future squid-proxy static-geometry single-feature
+activation without running simulation:
+
+```text
+squid_proxy_planned_for_step86 = true
+step85_activation_feature_count = 0
+planned_step86_activation_feature_count = 1
+fsidriver_run_allowed = false
+simulation_run_allowed = false
+runtime_geometry_allowed = false
+wall_velocity_allowed = false
+combined_runtime_geometry_wall_velocity_allowed = false
+real_geometry_allowed = false
+link_area_allowed = false
+grid_48_allowed = false
+grid_64_allowed = false
+vtr_output_allowed = false
+particle_npy_output_allowed = false
+```
+
+Step85 authorizes only the future row
+`canonical_driver_squid_proxy_static_geometry_32_3step_smoke`. It does not
+authorize real geometry candidates, runtime geometry, wall velocity, link-area
+transfer, larger grids, solver formula changes, tau migration, squid swimming,
+physical-validation claims, or production-readiness claims.

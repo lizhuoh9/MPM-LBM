@@ -214,3 +214,35 @@ velocity application to LBM `solid_vel` in the single planned canonical driver
 row. Real geometry, squid proxy behavior, link-area transfer, 48^3, 64^3, VTR
 output, and particle NPY output remain disabled. Step84 does not claim physical
 validation, grid convergence, or production readiness.
+
+## Step85 Planned Row
+
+Step85 does not execute a driver row. It records and guards the only planned
+Step86 row:
+
+```text
+campaign_id = step85_squid_proxy_static_geometry_activation_plan_and_guard
+row_id = canonical_driver_squid_proxy_static_geometry_32_3step_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 3
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+geometry_type = squid_proxy
+geometry_config_path = configs/step85_squid_proxy_geometry_1024.json
+boundary_motion_mode = static
+geometry_motion_mode = static
+geometry_motion_application_mode = disabled
+wall_velocity_application_mode = disabled
+write_vtk = false
+write_particles = false
+executed_in_step85 = false
+planned_for_step86 = true
+```
+
+Step85 does not run `FSIDriver3D`, does not execute simulation, does not enable
+runtime geometry, wall velocity, combined runtime geometry plus wall velocity,
+real geometry candidates, link-area transfer, 48^3, 64^3, VTR output, or
+particle NPY output, and does not claim physical validation or production
+readiness.

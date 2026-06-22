@@ -1,0 +1,12 @@
+{
+  "max_step85_file_count": 60,
+  "max_step85_total_size_mb": 5.0,
+  "large_file_threshold_bytes": 1048576,
+  "raw_geometry_extensions": [
+    ".stl",
+    ".obj",
+    ".ply",
+    ".vtk",
+    ".vtu"
+  ]
+}

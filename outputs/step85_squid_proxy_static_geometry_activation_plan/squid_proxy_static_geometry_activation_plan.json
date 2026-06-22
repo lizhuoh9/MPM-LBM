@@ -1,0 +1,432 @@
+{
+  "rows": [
+    {
+      "actual": "Step85",
+      "check": "step",
+      "expected": "Step85",
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": "Step84",
+      "check": "previous_step",
+      "expected": "Step84",
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": "29a130ccef93f095deeaa941b44003720f2291c5",
+      "check": "previous_required_commit",
+      "expected": "29a130ccef93f095deeaa941b44003720f2291c5",
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": "single_feature_plan_only",
+      "check": "activation_kind",
+      "expected": "single_feature_plan_only",
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": "squid_proxy_static_geometry",
+      "check": "feature_under_plan",
+      "expected": "squid_proxy_static_geometry",
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "driver_run_required",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "fsidriver_run_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "simulation_run_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": true,
+      "check": "step86_allowed",
+      "expected": true,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke",
+      "check": "step86_allowed_row_name",
+      "expected": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 32,
+      "check": "step86_allowed_n_grid",
+      "expected": 32,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 1024,
+      "check": "step86_allowed_n_particles",
+      "expected": 1024,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 3,
+      "check": "step86_allowed_n_lbm_steps",
+      "expected": 3,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 1,
+      "check": "step86_allowed_mpm_substeps_per_lbm_step",
+      "expected": 1,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": "moving_boundary",
+      "check": "step86_allowed_coupling_mode",
+      "expected": "moving_boundary",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": "engineering",
+      "check": "step86_allowed_reaction_transfer_mode",
+      "expected": "engineering",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": "squid_proxy",
+      "check": "step86_allowed_geometry_type",
+      "expected": "squid_proxy",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "squid_proxy_planned_for_step86",
+      "expected": true,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": "squid_proxy",
+      "check": "geometry_type_allowed_for_step86",
+      "expected": "squid_proxy",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": "configs/step85_squid_proxy_geometry_1024.json",
+      "check": "geometry_config_path_allowed_for_step86",
+      "expected": "configs/step85_squid_proxy_geometry_1024.json",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "quality_check_enabled_allowed_for_step86",
+      "expected": true,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "quality_check_strict_allowed_for_step86",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": true,
+      "check": "geometry_quality_report_required_for_step86",
+      "expected": true,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "runtime_geometry_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": "static",
+      "check": "geometry_motion_mode_allowed_for_step86",
+      "expected": "static",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": "disabled",
+      "check": "geometry_motion_application_mode_allowed_for_step86",
+      "expected": "disabled",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "geometry_mutation_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "wall_velocity_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": "static",
+      "check": "boundary_motion_mode_allowed_for_step86",
+      "expected": "static",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": "disabled",
+      "check": "wall_velocity_application_mode_allowed_for_step86",
+      "expected": "disabled",
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "combined_runtime_geometry_wall_velocity_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_candidate_data_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "link_area_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "grid_48_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "grid_64_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "vtr_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "particle_npy_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "write_vtk_allowed_for_step86",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": false,
+      "check": "write_particles_allowed_for_step86",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 1,
+      "check": "planned_step86_activation_feature_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke"
+    },
+    {
+      "actual": 0,
+      "check": "step85_activation_feature_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "runtime_code_changed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "solver_behavior_changed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "solver_formula_change_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "tau_migration_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "physical_validation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "production_readiness_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "real_squid_validation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "squid_swimming_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "squid_actuation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "actuation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": false,
+      "check": "jet_model_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": ""
+    }
+  ],
+  "summary": {
+    "actuation_claim_allowed": false,
+    "boundary_motion_mode_allowed_for_step86": "static",
+    "combined_runtime_geometry_wall_velocity_allowed": false,
+    "driver_run_required": false,
+    "feature_under_plan": "squid_proxy_static_geometry",
+    "fsidriver_run_allowed": false,
+    "geometry_config_path_allowed_for_step86": "configs/step85_squid_proxy_geometry_1024.json",
+    "geometry_motion_application_mode_allowed_for_step86": "disabled",
+    "geometry_motion_mode_allowed_for_step86": "static",
+    "geometry_mutation_allowed": false,
+    "geometry_quality_report_required_for_step86": true,
+    "geometry_type_allowed_for_step86": "squid_proxy",
+    "grid_48_allowed": false,
+    "grid_64_allowed": false,
+    "jet_model_allowed": false,
+    "link_area_allowed": false,
+    "particle_npy_output_allowed": false,
+    "pass_count": 53,
+    "physical_validation_claim_allowed": false,
+    "planned_step86_activation_feature_count": 1,
+    "previous_commit": "29a130ccef93f095deeaa941b44003720f2291c5",
+    "previous_step": "Step84",
+    "production_readiness_claim_allowed": false,
+    "quality_check_enabled_allowed_for_step86": true,
+    "quality_check_strict_allowed_for_step86": false,
+    "real_geometry_allowed": false,
+    "real_geometry_candidate_data_allowed": false,
+    "real_squid_validation_claim_allowed": false,
+    "row_count": 53,
+    "runtime_code_changed": false,
+    "runtime_geometry_allowed": false,
+    "simulation_run_allowed": false,
+    "solver_behavior_changed": false,
+    "solver_formula_change_allowed": false,
+    "squid_actuation_claim_allowed": false,
+    "squid_proxy_planned_for_step86": true,
+    "squid_swimming_claim_allowed": false,
+    "step85_activation_feature_count": 0,
+    "step85_squid_proxy_static_geometry_activation_plan_pass": true,
+    "step86_allowed": true,
+    "step86_allowed_coupling_mode": "moving_boundary",
+    "step86_allowed_geometry_type": "squid_proxy",
+    "step86_allowed_mpm_substeps_per_lbm_step": 1,
+    "step86_allowed_n_grid": 32,
+    "step86_allowed_n_lbm_steps": 3,
+    "step86_allowed_n_particles": 1024,
+    "step86_allowed_reaction_transfer_mode": "engineering",
+    "step86_allowed_row_count": 1,
+    "step86_allowed_row_name": "canonical_driver_squid_proxy_static_geometry_32_3step_smoke",
+    "tau_migration_allowed": false,
+    "vtr_output_allowed": false,
+    "wall_velocity_allowed": false,
+    "wall_velocity_application_mode_allowed_for_step86": "disabled",
+    "write_particles_allowed_for_step86": false,
+    "write_vtk_allowed_for_step86": false
+  }
+}

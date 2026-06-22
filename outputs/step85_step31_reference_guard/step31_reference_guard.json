@@ -1,0 +1,106 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "step30_squid_proxy_geometry_config_exists",
+      "expected": true,
+      "pass": true,
+      "row_name": "step30"
+    },
+    {
+      "actual": "squid_proxy",
+      "check": "step30_geometry_type",
+      "expected": "squid_proxy",
+      "pass": true,
+      "row_name": "step30"
+    },
+    {
+      "actual": true,
+      "check": "step30_deterministic",
+      "expected": true,
+      "pass": true,
+      "row_name": "step30"
+    },
+    {
+      "actual": true,
+      "check": "step31_static_driver_reference_exists",
+      "expected": true,
+      "pass": true,
+      "row_name": "step31"
+    },
+    {
+      "actual": true,
+      "check": "Step 31 uses static squid proxy region semantics only.",
+      "expected": true,
+      "pass": true,
+      "row_name": "step31_report"
+    },
+    {
+      "actual": true,
+      "check": "Step 31 is not real squid validation.",
+      "expected": true,
+      "pass": true,
+      "row_name": "step31_report"
+    },
+    {
+      "actual": true,
+      "check": "Step 31 does not implement squid actuation.",
+      "expected": true,
+      "pass": true,
+      "row_name": "step31_report"
+    },
+    {
+      "actual": true,
+      "check": "Step 31 does not implement squid swimming.",
+      "expected": true,
+      "pass": true,
+      "row_name": "step31_report"
+    },
+    {
+      "actual": true,
+      "check": "Step 31 does not implement new FSI physics.",
+      "expected": true,
+      "pass": true,
+      "row_name": "step31_report"
+    },
+    {
+      "actual": true,
+      "check": "Step 31 is controlled squid proxy region projection and static driver smoke.",
+      "expected": true,
+      "pass": true,
+      "row_name": "readme_step31_boundary"
+    },
+    {
+      "actual": true,
+      "check": "Step 31 uses static squid proxy region semantics only.",
+      "expected": true,
+      "pass": true,
+      "row_name": "readme_step31_boundary"
+    },
+    {
+      "actual": true,
+      "check": "Step 31 is not real squid validation.",
+      "expected": true,
+      "pass": true,
+      "row_name": "readme_step31_boundary"
+    },
+    {
+      "actual": true,
+      "check": "Step 31 does not implement squid swimming.",
+      "expected": true,
+      "pass": true,
+      "row_name": "readme_step31_boundary"
+    }
+  ],
+  "summary": {
+    "pass_count": 13,
+    "row_count": 13,
+    "step30_deterministic": true,
+    "step30_geometry_type": "squid_proxy",
+    "step30_squid_proxy_geometry_config_exists": true,
+    "step31_no_squid_swimming_claim": true,
+    "step31_not_real_squid_validation_claim": true,
+    "step31_static_driver_reference_exists": true,
+    "step85_step31_reference_guard_pass": true
+  }
+}

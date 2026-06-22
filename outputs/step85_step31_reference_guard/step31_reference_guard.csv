@@ -1,0 +1,14 @@
+actual,check,expected,pass,row_name
+True,step30_squid_proxy_geometry_config_exists,True,True,step30
+squid_proxy,step30_geometry_type,squid_proxy,True,step30
+True,step30_deterministic,True,True,step30
+True,step31_static_driver_reference_exists,True,True,step31
+True,Step 31 uses static squid proxy region semantics only.,True,True,step31_report
+True,Step 31 is not real squid validation.,True,True,step31_report
+True,Step 31 does not implement squid actuation.,True,True,step31_report
+True,Step 31 does not implement squid swimming.,True,True,step31_report
+True,Step 31 does not implement new FSI physics.,True,True,step31_report
+True,Step 31 is controlled squid proxy region projection and static driver smoke.,True,True,readme_step31_boundary
+True,Step 31 uses static squid proxy region semantics only.,True,True,readme_step31_boundary
+True,Step 31 is not real squid validation.,True,True,readme_step31_boundary
+True,Step 31 does not implement squid swimming.,True,True,readme_step31_boundary

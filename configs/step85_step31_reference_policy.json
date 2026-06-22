@@ -1,0 +1,20 @@
+{
+  "step30_geometry_config_path": "configs/step30_squid_proxy_geometry.json",
+  "step31_report_path": "STEP31_CONTROLLED_SQUID_PROXY_REGION_STATIC_DRIVER_REPORT.md",
+  "step31_readme_path": "README.md",
+  "expected_step30_geometry_type": "squid_proxy",
+  "expected_step30_deterministic": true,
+  "required_report_phrases": [
+    "Step 31 uses static squid proxy region semantics only.",
+    "Step 31 is not real squid validation.",
+    "Step 31 does not implement squid actuation.",
+    "Step 31 does not implement squid swimming.",
+    "Step 31 does not implement new FSI physics."
+  ],
+  "required_readme_phrases": [
+    "Step 31 is controlled squid proxy region projection and static driver smoke.",
+    "Step 31 uses static squid proxy region semantics only.",
+    "Step 31 is not real squid validation.",
+    "Step 31 does not implement squid swimming."
+  ]
+}
