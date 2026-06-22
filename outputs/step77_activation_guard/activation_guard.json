@@ -1,0 +1,170 @@
+{
+  "rows": [
+    {
+      "actual": "canonical_driver_moving_boundary_engineering_32_3step_rebaseline",
+      "check": "allowed_required_row_name",
+      "expected": "canonical_driver_moving_boundary_engineering_32_3step_rebaseline",
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_3step_rebaseline"
+    },
+    {
+      "actual": 0,
+      "check": "activation_feature_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_3step_rebaseline"
+    },
+    {
+      "actual": false,
+      "check": "runtime_geometry_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_3step_rebaseline"
+    },
+    {
+      "actual": false,
+      "check": "wall_velocity_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_3step_rebaseline"
+    },
+    {
+      "actual": false,
+      "check": "combined_runtime_geometry_wall_velocity_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_3step_rebaseline"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_3step_rebaseline"
+    },
+    {
+      "actual": false,
+      "check": "squid_proxy_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_3step_rebaseline"
+    },
+    {
+      "actual": false,
+      "check": "link_area_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_3step_rebaseline"
+    },
+    {
+      "actual": false,
+      "check": "grid_48_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_3step_rebaseline"
+    },
+    {
+      "actual": false,
+      "check": "grid_64_enabled",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_3step_rebaseline"
+    },
+    {
+      "actual": false,
+      "check": "write_vtk",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_3step_rebaseline"
+    },
+    {
+      "actual": false,
+      "check": "write_particles",
+      "expected": false,
+      "pass": true,
+      "row_name": "canonical_driver_moving_boundary_engineering_32_3step_rebaseline"
+    },
+    {
+      "actual": true,
+      "check": "post_gate_3step_rebaseline_matrix_pass",
+      "expected": true,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": "Step77",
+      "check": "allowed_next_step",
+      "expected": "Step77",
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": "minimal post-gate canonical driver 3-step rebaseline only",
+      "check": "allowed_next_step_scope",
+      "expected": "minimal post-gate canonical driver 3-step rebaseline only",
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": "Step76",
+      "check": "previous_rebaseline_step",
+      "expected": "Step76",
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "optional_row_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "runtime_hard_fail_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": [
+        "canonical_driver_moving_boundary_engineering_32_3step_rebaseline"
+      ],
+      "check": "required_rows_present",
+      "expected": [
+        "canonical_driver_moving_boundary_engineering_32_3step_rebaseline"
+      ],
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": true,
+      "check": "step76_matrix_pass",
+      "expected": true,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "step76_activation_feature_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    },
+    {
+      "actual": 0,
+      "check": "step76_optional_row_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": ""
+    }
+  ],
+  "summary": {
+    "activation_feature_count": 0,
+    "optional_row_count": 0,
+    "pass_count": 22,
+    "post_gate_3step_activation_guard_pass": true,
+    "previous_activation_feature_count": 0,
+    "row_count": 22
+  }
+}

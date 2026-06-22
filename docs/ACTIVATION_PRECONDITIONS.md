@@ -129,3 +129,26 @@ write_particles = false
 ```
 
 The optional 32^3/three-step rebaseline remains disabled after Step76.
+
+Step77 adds a separate post-gate canonical driver 3-step rebaseline after
+Step76 acceptance and still does not open any advanced activation gate:
+
+```text
+post_gate_3step_rebaseline_matrix_pass = true
+post_gate_3step_activation_guard_pass = true
+activation_feature_count = 0
+runtime_geometry_enabled = false
+wall_velocity_enabled = false
+combined_runtime_geometry_wall_velocity_enabled = false
+real_geometry_enabled = false
+squid_proxy_enabled = false
+link_area_enabled = false
+grid_48_enabled = false
+grid_64_enabled = false
+write_vtk = false
+write_particles = false
+```
+
+Step77 does not authorize runtime geometry, wall velocity, real geometry,
+squid proxy behavior, link-area transfer, larger grids, VTR output, particle
+NPY output, or physical-production claims.

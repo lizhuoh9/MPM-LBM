@@ -1,0 +1,84 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step76_post_gate_rebaseline_matrix/post_gate_rebaseline_matrix.json",
+      "check": "step76_matrix_pass",
+      "expected": true,
+      "summary_key": "post_gate_rebaseline_matrix_pass"
+    },
+    {
+      "artifact_path": "outputs/step76_post_gate_rebaseline_matrix/post_gate_rebaseline_matrix.json",
+      "check": "step76_optional_row_count",
+      "expected": 0,
+      "summary_key": "optional_row_count"
+    },
+    {
+      "artifact_path": "outputs/step76_post_gate_rebaseline_matrix/post_gate_rebaseline_matrix.json",
+      "check": "step76_activation_feature_count",
+      "expected": 0,
+      "summary_key": "activation_feature_count"
+    },
+    {
+      "artifact_path": "outputs/step76_post_gate_rebaseline_quality/post_gate_rebaseline_quality.json",
+      "check": "step76_quality_pass",
+      "expected": true,
+      "summary_key": "post_gate_rebaseline_quality_pass"
+    },
+    {
+      "artifact_path": "outputs/step76_activation_guard/activation_guard.json",
+      "check": "step76_activation_guard_pass",
+      "expected": true,
+      "summary_key": "post_gate_activation_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step76_activation_guard/activation_guard.json",
+      "check": "step76_activation_guard_feature_count",
+      "expected": 0,
+      "summary_key": "activation_feature_count"
+    },
+    {
+      "artifact_path": "outputs/step76_output_guard/output_guard.json",
+      "check": "step76_output_guard_pass",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step76_output_guard/output_guard.json",
+      "check": "step76_vtr_count",
+      "expected": 0,
+      "summary_key": "step76_vtr_count"
+    },
+    {
+      "artifact_path": "outputs/step76_output_guard/output_guard.json",
+      "check": "step76_particle_npy_count",
+      "expected": 0,
+      "summary_key": "step76_particle_npy_count"
+    },
+    {
+      "artifact_path": "outputs/step76_output_guard/output_guard.json",
+      "check": "step76_protected_external_edit_count",
+      "expected": 0,
+      "summary_key": "protected_external_edit_count"
+    },
+    {
+      "artifact_path": "outputs/step76_output_guard/output_guard.json",
+      "check": "step76_protected_real_geometry_candidate_edit_count",
+      "expected": 0,
+      "summary_key": "protected_real_geometry_candidate_edit_count"
+    },
+    {
+      "artifact_path": "outputs/step76_step75_regression_guard/step75_regression_guard.json",
+      "check": "step76_step75_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step76_step75_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step76_artifact_manifest/artifact_summary.json",
+      "check": "step76_artifact_budget_pass",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "policy_id": "step77_step76_regression_policy",
+  "step": 77
+}

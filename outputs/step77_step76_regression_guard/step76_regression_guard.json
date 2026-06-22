@@ -1,0 +1,115 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "artifact_path": "outputs/step76_post_gate_rebaseline_matrix/post_gate_rebaseline_matrix.json",
+      "check": "step76_matrix_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "post_gate_rebaseline_matrix_pass"
+    },
+    {
+      "actual": 0,
+      "artifact_path": "outputs/step76_post_gate_rebaseline_matrix/post_gate_rebaseline_matrix.json",
+      "check": "step76_optional_row_count",
+      "expected": 0,
+      "pass": true,
+      "summary_key": "optional_row_count"
+    },
+    {
+      "actual": 0,
+      "artifact_path": "outputs/step76_post_gate_rebaseline_matrix/post_gate_rebaseline_matrix.json",
+      "check": "step76_activation_feature_count",
+      "expected": 0,
+      "pass": true,
+      "summary_key": "activation_feature_count"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step76_post_gate_rebaseline_quality/post_gate_rebaseline_quality.json",
+      "check": "step76_quality_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "post_gate_rebaseline_quality_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step76_activation_guard/activation_guard.json",
+      "check": "step76_activation_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "post_gate_activation_guard_pass"
+    },
+    {
+      "actual": 0,
+      "artifact_path": "outputs/step76_activation_guard/activation_guard.json",
+      "check": "step76_activation_guard_feature_count",
+      "expected": 0,
+      "pass": true,
+      "summary_key": "activation_feature_count"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step76_output_guard/output_guard.json",
+      "check": "step76_output_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "actual": 0,
+      "artifact_path": "outputs/step76_output_guard/output_guard.json",
+      "check": "step76_vtr_count",
+      "expected": 0,
+      "pass": true,
+      "summary_key": "step76_vtr_count"
+    },
+    {
+      "actual": 0,
+      "artifact_path": "outputs/step76_output_guard/output_guard.json",
+      "check": "step76_particle_npy_count",
+      "expected": 0,
+      "pass": true,
+      "summary_key": "step76_particle_npy_count"
+    },
+    {
+      "actual": 0,
+      "artifact_path": "outputs/step76_output_guard/output_guard.json",
+      "check": "step76_protected_external_edit_count",
+      "expected": 0,
+      "pass": true,
+      "summary_key": "protected_external_edit_count"
+    },
+    {
+      "actual": 0,
+      "artifact_path": "outputs/step76_output_guard/output_guard.json",
+      "check": "step76_protected_real_geometry_candidate_edit_count",
+      "expected": 0,
+      "pass": true,
+      "summary_key": "protected_real_geometry_candidate_edit_count"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step76_step75_regression_guard/step75_regression_guard.json",
+      "check": "step76_step75_regression_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step76_step75_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step76_artifact_manifest/artifact_summary.json",
+      "check": "step76_artifact_budget_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "summary": {
+    "artifact_check_count": 13,
+    "artifact_pass_count": 13,
+    "pass_count": 13,
+    "row_count": 13,
+    "step77_step76_regression_guard_pass": true
+  }
+}

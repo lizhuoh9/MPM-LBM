@@ -75,6 +75,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 74 real geometry data boundary audit, with API, descriptor schema, manifest policy, quarantine, output-policy, full activation-gate coverage, no-simulation, and Step73 regression guards while activation remains closed
 - Step 75 solver-complete simulation campaign readiness gate, with Step71-Step74 evidence aggregation, activation-gate closure, inactive Step76 minimal rebaseline planning, no-simulation, output-policy, and Step74 regression guards while advanced activation remains closed
 - Step 76 minimal post-gate canonical driver rebaseline, with one 32^3 moving-boundary engineering one-step `FSIDriver3D.run()` row, activation guards, output guards, and Step75 regression guards while advanced activation remains closed
+- Step 77 minimal post-gate canonical driver 3-step rebaseline, with one 32^3 moving-boundary engineering three-step `FSIDriver3D.run()` row, activation guards, output guards, and Step76 regression guards while advanced activation remains closed
 
 ## Not Implemented
 
@@ -842,6 +843,25 @@ Step 76 does not write VTR or particle NPY output.
 Step 76 does not change solver formulas or tau semantics.
 Step 76 does not claim physical validation, real squid validation, grid convergence, or production readiness.
 See docs/76_minimal_post_gate_canonical_driver_rebaseline.md.
+
+## Step 77 Minimal Post-Gate Canonical Driver 3-Step Rebaseline Boundary
+
+Step 77 extends only the Step 76 post-gate canonical driver duration from one
+LBM step to three LBM steps.
+Step 77 calls `FSIDriver3D(...).run()` through `src.mpm_lbm.sim.drivers.fsi_driver`
+for exactly one required 32^3, 1024-particle, moving-boundary engineering row
+with three LBM steps and one MPM substep per LBM step.
+Step 77 has no optional rows.
+Step 77 does not activate runtime geometry.
+Step 77 does not activate moving-wall velocity.
+Step 77 does not activate real geometry.
+Step 77 does not activate squid proxy behavior.
+Step 77 does not use link-area transfer.
+Step 77 does not add a 48^3 or 64^3 row.
+Step 77 does not write VTR or particle NPY output.
+Step 77 does not change solver formulas or tau semantics.
+Step 77 does not claim physical validation, real squid validation, grid convergence, or production readiness.
+See docs/77_minimal_post_gate_canonical_driver_3step_rebaseline.md.
 
 ## Upstream LBM Note
 

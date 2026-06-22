@@ -72,3 +72,20 @@ executed_in_step76 = false
 Step76 does not expand the campaign beyond the Step75 plan. Runtime geometry,
 wall velocity, real geometry, squid proxy, link-area transfer, 48^3, 64^3, VTR,
 and particle NPY remain disabled.
+
+## Step77 Follow-Up Rebaseline
+
+After Step76 acceptance, Step77 runs a separate required 3-step rebaseline row:
+
+```text
+campaign_id = step77_minimal_post_gate_canonical_driver_3step_rebaseline
+row_id = canonical_driver_moving_boundary_engineering_32_3step_rebaseline
+n_grid = 32
+n_lbm_steps = 3
+required = true
+executed_in_step77 = true
+```
+
+Step77 changes duration only. It does not activate runtime geometry, wall
+velocity, real geometry, squid proxy behavior, link-area transfer, 48^3, 64^3,
+VTR output, particle NPY output, solver formula changes, or tau migration.

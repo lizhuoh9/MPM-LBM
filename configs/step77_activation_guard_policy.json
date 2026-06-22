@@ -1,0 +1,21 @@
+{
+  "activation_features_must_be_false": [
+    "runtime_geometry_enabled",
+    "wall_velocity_enabled",
+    "combined_runtime_geometry_wall_velocity_enabled",
+    "real_geometry_enabled",
+    "squid_proxy_enabled",
+    "link_area_enabled",
+    "grid_48_enabled",
+    "grid_64_enabled",
+    "write_vtk",
+    "write_particles"
+  ],
+  "allowed_required_row_name": "canonical_driver_moving_boundary_engineering_32_3step_rebaseline",
+  "expected_activation_feature_count": 0,
+  "matrix_artifact_path": "outputs/step77_post_gate_3step_rebaseline_matrix/post_gate_3step_rebaseline_matrix.json",
+  "optional_row_names": [],
+  "policy_id": "step77_activation_guard_policy",
+  "previous_matrix_artifact_path": "outputs/step76_post_gate_rebaseline_matrix/post_gate_rebaseline_matrix.json",
+  "step": 77
+}
