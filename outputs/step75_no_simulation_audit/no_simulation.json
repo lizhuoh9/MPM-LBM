@@ -1,0 +1,158 @@
+{
+  "rows": [
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/solver_complete_gate_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/precondition_artifact_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/activation_gate_closure_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/post_gate_campaign_policy_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step75_no_simulation_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step75_output_artifact_policy_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "src/mpm_lbm/evidence/step75_regression_guard.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/step75_common.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step75_precondition_artifact_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step75_activation_gate_closure_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step75_post_gate_campaign_policy_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step75_solver_complete_gate_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step75_no_simulation_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step75_output_artifact_policy_audit.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step75_step74_regression_guard.py"
+    },
+    {
+      "check": "python_no_simulation_calls",
+      "error": "",
+      "file_exists": true,
+      "forbidden_call_count": 0,
+      "found_calls": [],
+      "pass": true,
+      "path": "baseline_tests/run_step75_artifact_manifest.py"
+    }
+  ],
+  "summary": {
+    "forbidden_output_directory_count": 0,
+    "forbidden_python_call_count": 0,
+    "no_simulation_audit_pass": true,
+    "pass_count": 16,
+    "protected_step75_file_count": 0,
+    "row_count": 16,
+    "step75_particle_npy_count": 0,
+    "step75_vtr_count": 0
+  }
+}

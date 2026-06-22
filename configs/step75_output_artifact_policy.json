@@ -1,0 +1,21 @@
+{
+  "forbidden_output_directories": [
+    "outputs/step75_driver_runs",
+    "outputs/step75_solver_runs",
+    "outputs/step75_rebaseline_runs"
+  ],
+  "large_file_threshold_bytes": 5242880,
+  "policy_id": "step75_output_artifact_policy",
+  "protected_prefixes": [
+    "data/real_geometry_candidates/",
+    "external/taichi_LBM3D/"
+  ],
+  "report_required_paths": [
+    "STEP75_SOLVER_COMPLETE_SIMULATION_CAMPAIGN_READINESS_GATE_GOAL.md",
+    "STEP75_SOLVER_COMPLETE_SIMULATION_CAMPAIGN_READINESS_GATE_REPORT.md",
+    "docs/75_solver_complete_simulation_campaign_readiness_gate.md",
+    "docs/SOLVER_COMPLETE_READINESS_GATE.md",
+    "docs/POST_GATE_SIMULATION_CAMPAIGN_PLAN.md"
+  ],
+  "step": 75
+}

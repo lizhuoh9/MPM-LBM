@@ -1,0 +1,132 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "step74_real_geometry_data_boundary",
+      "expected": true,
+      "pass": true,
+      "summary_key": "real_geometry_data_boundary_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step74_real_geometry_api",
+      "expected": true,
+      "pass": true,
+      "summary_key": "real_geometry_api_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step74_candidate_descriptor_schema",
+      "expected": true,
+      "pass": true,
+      "summary_key": "candidate_descriptor_schema_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step74_candidate_manifest_policy",
+      "expected": true,
+      "pass": true,
+      "summary_key": "candidate_manifest_policy_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step74_real_geometry_quarantine",
+      "expected": true,
+      "pass": true,
+      "summary_key": "real_geometry_quarantine_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step74_real_geometry_output_policy",
+      "expected": true,
+      "pass": true,
+      "summary_key": "real_geometry_output_policy_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step74_full_activation_gate_coverage",
+      "expected": true,
+      "pass": true,
+      "summary_key": "full_activation_gate_coverage_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step74_no_simulation",
+      "expected": true,
+      "pass": true,
+      "summary_key": "no_simulation_audit_pass"
+    },
+    {
+      "actual": true,
+      "check": "step74_step73_regression_guard",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step74_step73_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "check": "step74_artifact_manifest",
+      "expected": true,
+      "pass": true,
+      "summary_key": "artifact_budget_pass"
+    },
+    {
+      "actual": false,
+      "check": "runtime_geometry_activation_allowed_still_closed",
+      "expected": false,
+      "pass": true,
+      "summary_key": "runtime_geometry_activation_allowed"
+    },
+    {
+      "actual": false,
+      "check": "wall_velocity_activation_allowed_still_closed",
+      "expected": false,
+      "pass": true,
+      "summary_key": "wall_velocity_activation_allowed"
+    },
+    {
+      "actual": false,
+      "check": "combined_runtime_geometry_wall_velocity_activation_allowed_still_closed",
+      "expected": false,
+      "pass": true,
+      "summary_key": "combined_runtime_geometry_wall_velocity_activation_allowed"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_activation_allowed_still_closed",
+      "expected": false,
+      "pass": true,
+      "summary_key": "real_geometry_activation_allowed"
+    },
+    {
+      "actual": false,
+      "check": "squid_proxy_activation_allowed_still_closed",
+      "expected": false,
+      "pass": true,
+      "summary_key": "squid_proxy_activation_allowed"
+    },
+    {
+      "actual": false,
+      "check": "vtr_output_allowed_still_closed",
+      "expected": false,
+      "pass": true,
+      "summary_key": "vtr_output_allowed"
+    },
+    {
+      "actual": false,
+      "check": "particle_npy_output_allowed_still_closed",
+      "expected": false,
+      "pass": true,
+      "summary_key": "particle_npy_output_allowed"
+    }
+  ],
+  "summary": {
+    "closed_gate_pass_count": 7,
+    "pass_count": 17,
+    "required_closed_gate_count": 7,
+    "row_count": 17,
+    "step74_artifact_check_count": 10,
+    "step74_artifact_pass_count": 10,
+    "step75_step74_regression_guard_pass": true
+  }
+}

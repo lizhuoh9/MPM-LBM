@@ -1,0 +1,12 @@
+actual,check,expected,pass
+True,precondition_artifact_audit_pass,True,True
+True,activation_gate_closure_audit_pass,True,True
+True,post_gate_campaign_policy_audit_pass,True,True
+0,activation_allowed_count,0,True
+0,activation_feature_count_in_first_campaign,0,True
+False,runtime_geometry_enabled_in_next_step,False,True
+False,wall_velocity_enabled_in_next_step,False,True
+False,real_geometry_enabled_in_next_step,False,True
+False,squid_proxy_enabled_in_next_step,False,True
+False,vtr_output_allowed_in_next_step,False,True
+False,particle_npy_output_allowed_in_next_step,False,True

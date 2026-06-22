@@ -1,0 +1,10 @@
+{
+  "activation_gate_artifact_path": "outputs/step75_activation_gate_closure_audit/activation_gate_closure.json",
+  "allowed_next_step": "Step76",
+  "allowed_next_step_scope": "minimal safe rebaseline only",
+  "campaign_policy_artifact_path": "outputs/step75_post_gate_campaign_policy_audit/post_gate_campaign_policy.json",
+  "expected_gate_status": "ready_for_step76_rebaseline_only",
+  "policy_id": "step75_solver_complete_gate_policy",
+  "precondition_artifact_path": "outputs/step75_precondition_artifact_audit/precondition_artifact.json",
+  "step": 75
+}

@@ -1,0 +1,12 @@
+metric,value
+activation_allowed_count,0
+activation_gate_closure_audit_pass,True
+closed_gate_count,10
+expected_gate_count,10
+extra_gate_count,0
+gate_source_policy,configs/step70_activation_preconditions_policy.json
+latest_step_checked,Step74
+missing_gate_count,0
+pass_count,10
+required_gate_count,10
+row_count,10

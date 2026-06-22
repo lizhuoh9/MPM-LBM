@@ -1,0 +1,19 @@
+{
+  "expected_gate_count": 10,
+  "gate_source_policy": "configs/step70_activation_preconditions_policy.json",
+  "latest_step_checked": "Step74",
+  "policy_id": "step75_activation_gate_policy",
+  "required_closed_activation_gates": [
+    "runtime_geometry_activation_allowed",
+    "wall_velocity_activation_allowed",
+    "combined_runtime_geometry_wall_velocity_activation_allowed",
+    "real_geometry_activation_allowed",
+    "squid_proxy_activation_allowed",
+    "link_area_activation_allowed",
+    "grid_48_activation_allowed",
+    "grid_64_activation_allowed",
+    "vtr_output_allowed",
+    "particle_npy_output_allowed"
+  ],
+  "step": 75
+}

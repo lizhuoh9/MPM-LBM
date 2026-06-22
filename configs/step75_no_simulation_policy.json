@@ -1,0 +1,31 @@
+{
+  "forbidden_output_directories": [
+    "outputs/step75_driver_runs",
+    "outputs/step75_solver_runs",
+    "outputs/step75_rebaseline_runs"
+  ],
+  "policy_id": "step75_no_simulation_policy",
+  "protected_prefixes": [
+    "data/real_geometry_candidates/",
+    "external/taichi_LBM3D/"
+  ],
+  "scan_python_paths": [
+    "src/mpm_lbm/evidence/solver_complete_gate_audit.py",
+    "src/mpm_lbm/evidence/precondition_artifact_audit.py",
+    "src/mpm_lbm/evidence/activation_gate_closure_audit.py",
+    "src/mpm_lbm/evidence/post_gate_campaign_policy_audit.py",
+    "src/mpm_lbm/evidence/step75_no_simulation_audit.py",
+    "src/mpm_lbm/evidence/step75_output_artifact_policy_audit.py",
+    "src/mpm_lbm/evidence/step75_regression_guard.py",
+    "baseline_tests/step75_common.py",
+    "baseline_tests/run_step75_precondition_artifact_audit.py",
+    "baseline_tests/run_step75_activation_gate_closure_audit.py",
+    "baseline_tests/run_step75_post_gate_campaign_policy_audit.py",
+    "baseline_tests/run_step75_solver_complete_gate_audit.py",
+    "baseline_tests/run_step75_no_simulation_audit.py",
+    "baseline_tests/run_step75_output_artifact_policy_audit.py",
+    "baseline_tests/run_step75_step74_regression_guard.py",
+    "baseline_tests/run_step75_artifact_manifest.py"
+  ],
+  "step": 75
+}

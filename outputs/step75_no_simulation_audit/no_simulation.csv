@@ -1,0 +1,17 @@
+check,error,file_exists,forbidden_call_count,found_calls,pass,path
+python_no_simulation_calls,,True,0,[],True,src/mpm_lbm/evidence/solver_complete_gate_audit.py
+python_no_simulation_calls,,True,0,[],True,src/mpm_lbm/evidence/precondition_artifact_audit.py
+python_no_simulation_calls,,True,0,[],True,src/mpm_lbm/evidence/activation_gate_closure_audit.py
+python_no_simulation_calls,,True,0,[],True,src/mpm_lbm/evidence/post_gate_campaign_policy_audit.py
+python_no_simulation_calls,,True,0,[],True,src/mpm_lbm/evidence/step75_no_simulation_audit.py
+python_no_simulation_calls,,True,0,[],True,src/mpm_lbm/evidence/step75_output_artifact_policy_audit.py
+python_no_simulation_calls,,True,0,[],True,src/mpm_lbm/evidence/step75_regression_guard.py
+python_no_simulation_calls,,True,0,[],True,baseline_tests/step75_common.py
+python_no_simulation_calls,,True,0,[],True,baseline_tests/run_step75_precondition_artifact_audit.py
+python_no_simulation_calls,,True,0,[],True,baseline_tests/run_step75_activation_gate_closure_audit.py
+python_no_simulation_calls,,True,0,[],True,baseline_tests/run_step75_post_gate_campaign_policy_audit.py
+python_no_simulation_calls,,True,0,[],True,baseline_tests/run_step75_solver_complete_gate_audit.py
+python_no_simulation_calls,,True,0,[],True,baseline_tests/run_step75_no_simulation_audit.py
+python_no_simulation_calls,,True,0,[],True,baseline_tests/run_step75_output_artifact_policy_audit.py
+python_no_simulation_calls,,True,0,[],True,baseline_tests/run_step75_step74_regression_guard.py
+python_no_simulation_calls,,True,0,[],True,baseline_tests/run_step75_artifact_manifest.py

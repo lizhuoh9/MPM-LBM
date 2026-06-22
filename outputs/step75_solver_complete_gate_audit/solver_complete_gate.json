@@ -1,0 +1,88 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "precondition_artifact_audit_pass",
+      "expected": true,
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "activation_gate_closure_audit_pass",
+      "expected": true,
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "post_gate_campaign_policy_audit_pass",
+      "expected": true,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "activation_allowed_count",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "activation_feature_count_in_first_campaign",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "runtime_geometry_enabled_in_next_step",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "wall_velocity_enabled_in_next_step",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_enabled_in_next_step",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "squid_proxy_enabled_in_next_step",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "vtr_output_allowed_in_next_step",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "particle_npy_output_allowed_in_next_step",
+      "expected": false,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "activation_features_allowed_in_next_step": [],
+    "allowed_next_step": "Step76",
+    "allowed_next_step_scope": "minimal safe rebaseline only",
+    "gate_status": "ready_for_step76_rebaseline_only",
+    "particle_npy_output_allowed": false,
+    "pass_count": 11,
+    "physical_validation_claim": false,
+    "post_gate_simulation_allowed": true,
+    "production_readiness_claim": false,
+    "real_geometry_activation_allowed": false,
+    "row_count": 11,
+    "runtime_geometry_activation_allowed": false,
+    "solver_complete_gate_audit_pass": true,
+    "squid_proxy_activation_allowed": false,
+    "vtr_output_allowed": false,
+    "wall_velocity_activation_allowed": false
+  }
+}

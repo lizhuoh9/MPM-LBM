@@ -1,0 +1,15 @@
+metric,value
+failed_artifact_count,0
+green_artifact_count,35
+missing_artifact_count,0
+pass_count,43
+precondition_artifact_audit_pass,True
+present_artifact_count,35
+required_artifact_count,35
+row_count,43
+step71_extra_check_pass_count,8
+step71_extra_check_required_count,8
+step71_pass,True
+step72_pass,True
+step73_pass,True
+step74_pass,True

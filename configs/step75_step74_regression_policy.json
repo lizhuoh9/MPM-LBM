@@ -1,0 +1,76 @@
+{
+  "policy_id": "step75_step74_regression_policy",
+  "required_closed_activation_gates": [
+    "runtime_geometry_activation_allowed",
+    "wall_velocity_activation_allowed",
+    "combined_runtime_geometry_wall_velocity_activation_allowed",
+    "real_geometry_activation_allowed",
+    "squid_proxy_activation_allowed",
+    "vtr_output_allowed",
+    "particle_npy_output_allowed"
+  ],
+  "step": 75,
+  "step70_activation_policy_path": "configs/step70_activation_preconditions_policy.json",
+  "step74_artifact_checks": [
+    {
+      "artifact_path": "outputs/step74_real_geometry_data_boundary_audit/real_geometry_data_boundary.json",
+      "check": "step74_real_geometry_data_boundary",
+      "expected": true,
+      "summary_key": "real_geometry_data_boundary_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_real_geometry_api_audit/real_geometry_api.json",
+      "check": "step74_real_geometry_api",
+      "expected": true,
+      "summary_key": "real_geometry_api_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_candidate_descriptor_schema_audit/candidate_descriptor_schema.json",
+      "check": "step74_candidate_descriptor_schema",
+      "expected": true,
+      "summary_key": "candidate_descriptor_schema_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_candidate_manifest_policy_audit/candidate_manifest_policy.json",
+      "check": "step74_candidate_manifest_policy",
+      "expected": true,
+      "summary_key": "candidate_manifest_policy_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_real_geometry_quarantine_audit/real_geometry_quarantine.json",
+      "check": "step74_real_geometry_quarantine",
+      "expected": true,
+      "summary_key": "real_geometry_quarantine_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_real_geometry_output_policy_audit/real_geometry_output_policy.json",
+      "check": "step74_real_geometry_output_policy",
+      "expected": true,
+      "summary_key": "real_geometry_output_policy_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_full_activation_gate_coverage_audit/full_activation_gate_coverage.json",
+      "check": "step74_full_activation_gate_coverage",
+      "expected": true,
+      "summary_key": "full_activation_gate_coverage_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_no_simulation_audit/no_simulation.json",
+      "check": "step74_no_simulation",
+      "expected": true,
+      "summary_key": "no_simulation_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_step73_regression_guard/step73_regression_guard.json",
+      "check": "step74_step73_regression_guard",
+      "expected": true,
+      "summary_key": "step74_step73_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_artifact_manifest/artifact_summary.json",
+      "check": "step74_artifact_manifest",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+metric,value
+activation_feature_count_in_first_campaign,0
+allowed_campaign_count,1
+first_campaign_is_rebaseline_only,True
+forbidden_campaign_count,9
+pass_count,18
+post_gate_campaign_policy_audit_pass,True
+real_geometry_enabled,False
+row_count,18
+run_optional_32_3step,False
+runtime_geometry_enabled,False
+squid_proxy_enabled,False
+wall_velocity_enabled,False
+write_particles,False
+write_vtk,False

@@ -1,0 +1,45 @@
+{
+  "allowed_campaigns": [
+    {
+      "activation_features": [],
+      "campaign_id": "step76_minimal_post_gate_real_driver_rebaseline",
+      "campaign_kind": "inactive_policy_proposal",
+      "first_campaign_is_rebaseline_only": true,
+      "real_geometry_enabled": false,
+      "rows": [
+        {
+          "n_grid": 32,
+          "n_lbm_steps": 1,
+          "required": true,
+          "row_id": "canonical_driver_moving_boundary_engineering_32_1step_rebaseline"
+        },
+        {
+          "n_grid": 32,
+          "n_lbm_steps": 3,
+          "required": false,
+          "row_id": "canonical_driver_moving_boundary_engineering_32_3step_rebaseline_optional",
+          "run_by_default": false
+        }
+      ],
+      "run_optional_32_3step": false,
+      "runtime_geometry_enabled": false,
+      "squid_proxy_enabled": false,
+      "wall_velocity_enabled": false,
+      "write_particles": false,
+      "write_vtk": false
+    }
+  ],
+  "forbidden_campaign_items": [
+    "runtime_geometry_plus_wall_velocity_combined",
+    "real_geometry_candidate",
+    "squid_motion",
+    "48^3",
+    "64^3",
+    "VTR",
+    "particle_NPY",
+    "required_link_area_row",
+    "long_duration"
+  ],
+  "policy_id": "step75_post_gate_campaign_policy",
+  "step": 75
+}

@@ -73,6 +73,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 72 runtime geometry activation readiness audit, with API, schema, driver-gate, state-guard, output-policy, no-simulation, and Step71 regression guards while activation remains closed
 - Step 73 wall velocity activation readiness audit, with API, schema, driver-gate, application-safety, output-policy, full activation-gate coverage, no-simulation, and Step72 regression guards while activation remains closed
 - Step 74 real geometry data boundary audit, with API, descriptor schema, manifest policy, quarantine, output-policy, full activation-gate coverage, no-simulation, and Step73 regression guards while activation remains closed
+- Step 75 solver-complete simulation campaign readiness gate, with Step71-Step74 evidence aggregation, activation-gate closure, inactive Step76 minimal rebaseline planning, no-simulation, output-policy, and Step74 regression guards while advanced activation remains closed
 
 ## Not Implemented
 
@@ -801,6 +802,26 @@ Step 62 does not validate real squid behavior.
 Step 62 does not prove grid convergence.
 Step 62 does not claim deployment readiness.
 See docs/62_controlled_canonical_32_moving_boundary_3step_duration.md.
+
+## Step 75 Solver-Complete Simulation Campaign Readiness Gate Boundary
+
+Step 75 is a gate-only solver-complete simulation campaign readiness step.
+Step 75 reads committed Step71-Step74 evidence, confirms all Step70 activation
+gates remain closed, and records an inactive Step76 minimal safe rebaseline
+proposal.
+Step 75 does not run `FSIDriver3D`.
+Step 75 does not initialize or step a driver.
+Step 75 does not execute projection smoke.
+Step 75 does not activate runtime geometry.
+Step 75 does not activate moving-wall velocity.
+Step 75 does not activate real geometry.
+Step 75 does not add a squid proxy, 48^3 row, or 64^3 row.
+Step 75 does not write VTR or particle NPY output.
+Step 75 does not change solver formulas or tau semantics.
+Step 75 does not claim physical validation, real squid validation, or production readiness.
+The Step 75 gate status is `ready_for_step76_rebaseline_only`, and the only
+allowed next scope is Step76 minimal safe rebaseline.
+See docs/75_solver_complete_simulation_campaign_readiness_gate.md.
 
 ## Upstream LBM Note
 

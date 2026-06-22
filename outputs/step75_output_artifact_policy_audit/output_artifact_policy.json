@@ -1,0 +1,24 @@
+{
+  "rows": [
+    {
+      "actual": 0,
+      "check": "required_report_file_count",
+      "expected": 0,
+      "pass": true,
+      "path": "report_required_paths"
+    }
+  ],
+  "summary": {
+    "large_file_count": 0,
+    "output_artifact_policy_audit_pass": true,
+    "pass_count": 1,
+    "private_absolute_path_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "report_missing_count": 0,
+    "row_count": 1,
+    "step75_driver_run_output_dir_count": 0,
+    "step75_particle_npy_count": 0,
+    "step75_vtr_count": 0
+  }
+}

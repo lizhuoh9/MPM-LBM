@@ -24,7 +24,7 @@ vtr_output_allowed = false
 particle_npy_output_allowed = false
 ```
 
-Pending gates:
+Original Step70 pending gates:
 
 ```text
 Step72 runtime geometry activation readiness pending
@@ -91,3 +91,21 @@ Real geometry remains non-activated. `data/real_geometry_candidates` remains
 protected, no real geometry data was added, `real_geometry_feasibility` remains
 quarantined experiment code, and Step74 does not execute projection smoke or
 `FSIDriver3D`.
+
+Step75 adds a solver-complete campaign readiness gate without opening any
+advanced activation gate:
+
+```text
+solver_complete_gate_audit_pass = true
+gate_status = ready_for_step76_rebaseline_only
+post_gate_simulation_allowed = true
+allowed_next_step = Step76
+allowed_next_step_scope = minimal safe rebaseline only
+activation_features_allowed_in_next_step = []
+activation_allowed_count = 0
+```
+
+The Step75 `post_gate_simulation_allowed` flag is limited to the Step76
+minimal safe rebaseline proposal. Runtime geometry, wall velocity, combined
+runtime geometry plus wall velocity, real geometry, squid proxy, link-area
+activation, 48^3, 64^3, VTR output, and particle NPY output remain closed.

@@ -1,0 +1,301 @@
+{
+  "policy_id": "step75_precondition_artifact_policy",
+  "step": 75,
+  "required_artifacts": [
+    {
+      "artifact_path": "outputs/step71_output_default_alignment_audit/output_default_alignment.json",
+      "check": "step71_output_default_alignment",
+      "expected": true,
+      "step": 71,
+      "summary_key": "output_default_alignment_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step71_tau_convention_decision_audit/tau_convention_decision.json",
+      "check": "step71_tau_convention_decision",
+      "expected": true,
+      "step": 71,
+      "summary_key": "tau_convention_decision_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step71_config_schema_delta_audit/config_schema_delta.json",
+      "check": "step71_config_schema_delta",
+      "expected": true,
+      "step": 71,
+      "summary_key": "config_schema_delta_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step71_no_simulation_audit/no_simulation.json",
+      "check": "step71_no_simulation",
+      "expected": true,
+      "step": 71,
+      "summary_key": "no_simulation_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step71_step70_regression_guard/step70_regression_guard.json",
+      "check": "step71_step70_regression_guard",
+      "expected": true,
+      "step": 71,
+      "summary_key": "step71_step70_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step71_artifact_manifest/artifact_summary.json",
+      "check": "step71_artifact_manifest",
+      "expected": true,
+      "step": 71,
+      "summary_key": "artifact_budget_pass"
+    },
+    {
+      "artifact_path": "outputs/step72_runtime_geometry_readiness_audit/runtime_geometry_readiness.json",
+      "check": "step72_runtime_geometry_readiness",
+      "expected": true,
+      "step": 72,
+      "summary_key": "runtime_geometry_readiness_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step72_runtime_geometry_api_audit/runtime_geometry_api.json",
+      "check": "step72_runtime_geometry_api",
+      "expected": true,
+      "step": 72,
+      "summary_key": "runtime_geometry_api_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step72_runtime_geometry_config_schema_audit/runtime_geometry_config_schema.json",
+      "check": "step72_runtime_geometry_config_schema",
+      "expected": true,
+      "step": 72,
+      "summary_key": "runtime_geometry_config_schema_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step72_runtime_geometry_driver_gate_audit/runtime_geometry_driver_gate.json",
+      "check": "step72_runtime_geometry_driver_gate",
+      "expected": true,
+      "step": 72,
+      "summary_key": "runtime_geometry_driver_gate_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step72_runtime_geometry_state_guard_audit/runtime_geometry_state_guard.json",
+      "check": "step72_runtime_geometry_state_guard",
+      "expected": true,
+      "step": 72,
+      "summary_key": "runtime_geometry_state_guard_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step72_runtime_geometry_output_policy_audit/runtime_geometry_output_policy.json",
+      "check": "step72_runtime_geometry_output_policy",
+      "expected": true,
+      "step": 72,
+      "summary_key": "runtime_geometry_output_policy_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step72_no_simulation_audit/no_simulation.json",
+      "check": "step72_no_simulation",
+      "expected": true,
+      "step": 72,
+      "summary_key": "no_simulation_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step72_step71_regression_guard/step71_regression_guard.json",
+      "check": "step72_step71_regression_guard",
+      "expected": true,
+      "step": 72,
+      "summary_key": "step72_step71_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step72_artifact_manifest/artifact_summary.json",
+      "check": "step72_artifact_manifest",
+      "expected": true,
+      "step": 72,
+      "summary_key": "artifact_budget_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_wall_velocity_readiness_audit/wall_velocity_readiness.json",
+      "check": "step73_wall_velocity_readiness",
+      "expected": true,
+      "step": 73,
+      "summary_key": "wall_velocity_readiness_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_wall_velocity_api_audit/wall_velocity_api.json",
+      "check": "step73_wall_velocity_api",
+      "expected": true,
+      "step": 73,
+      "summary_key": "wall_velocity_api_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_wall_velocity_config_schema_audit/wall_velocity_config_schema.json",
+      "check": "step73_wall_velocity_config_schema",
+      "expected": true,
+      "step": 73,
+      "summary_key": "wall_velocity_config_schema_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_wall_velocity_driver_gate_audit/wall_velocity_driver_gate.json",
+      "check": "step73_wall_velocity_driver_gate",
+      "expected": true,
+      "step": 73,
+      "summary_key": "wall_velocity_driver_gate_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_wall_velocity_application_safety_audit/wall_velocity_application_safety.json",
+      "check": "step73_wall_velocity_application_safety",
+      "expected": true,
+      "step": 73,
+      "summary_key": "wall_velocity_application_safety_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_wall_velocity_output_policy_audit/wall_velocity_output_policy.json",
+      "check": "step73_wall_velocity_output_policy",
+      "expected": true,
+      "step": 73,
+      "summary_key": "wall_velocity_output_policy_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_full_activation_gate_coverage_audit/full_activation_gate_coverage.json",
+      "check": "step73_full_activation_gate_coverage",
+      "expected": true,
+      "step": 73,
+      "summary_key": "full_activation_gate_coverage_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_no_simulation_audit/no_simulation.json",
+      "check": "step73_no_simulation",
+      "expected": true,
+      "step": 73,
+      "summary_key": "no_simulation_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_step72_regression_guard/step72_regression_guard.json",
+      "check": "step73_step72_regression_guard",
+      "expected": true,
+      "step": 73,
+      "summary_key": "step73_step72_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step73_artifact_manifest/artifact_summary.json",
+      "check": "step73_artifact_manifest",
+      "expected": true,
+      "step": 73,
+      "summary_key": "artifact_budget_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_real_geometry_data_boundary_audit/real_geometry_data_boundary.json",
+      "check": "step74_real_geometry_data_boundary",
+      "expected": true,
+      "step": 74,
+      "summary_key": "real_geometry_data_boundary_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_real_geometry_api_audit/real_geometry_api.json",
+      "check": "step74_real_geometry_api",
+      "expected": true,
+      "step": 74,
+      "summary_key": "real_geometry_api_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_candidate_descriptor_schema_audit/candidate_descriptor_schema.json",
+      "check": "step74_candidate_descriptor_schema",
+      "expected": true,
+      "step": 74,
+      "summary_key": "candidate_descriptor_schema_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_candidate_manifest_policy_audit/candidate_manifest_policy.json",
+      "check": "step74_candidate_manifest_policy",
+      "expected": true,
+      "step": 74,
+      "summary_key": "candidate_manifest_policy_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_real_geometry_quarantine_audit/real_geometry_quarantine.json",
+      "check": "step74_real_geometry_quarantine",
+      "expected": true,
+      "step": 74,
+      "summary_key": "real_geometry_quarantine_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_real_geometry_output_policy_audit/real_geometry_output_policy.json",
+      "check": "step74_real_geometry_output_policy",
+      "expected": true,
+      "step": 74,
+      "summary_key": "real_geometry_output_policy_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_full_activation_gate_coverage_audit/full_activation_gate_coverage.json",
+      "check": "step74_full_activation_gate_coverage",
+      "expected": true,
+      "step": 74,
+      "summary_key": "full_activation_gate_coverage_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_no_simulation_audit/no_simulation.json",
+      "check": "step74_no_simulation",
+      "expected": true,
+      "step": 74,
+      "summary_key": "no_simulation_audit_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_step73_regression_guard/step73_regression_guard.json",
+      "check": "step74_step73_regression_guard",
+      "expected": true,
+      "step": 74,
+      "summary_key": "step74_step73_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step74_artifact_manifest/artifact_summary.json",
+      "check": "step74_artifact_manifest",
+      "expected": true,
+      "step": 74,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "required_step71_summary_values": [
+    {
+      "artifact_path": "outputs/step71_output_default_alignment_audit/output_default_alignment.json",
+      "check": "fsidriver_default_write_vtk",
+      "expected": false,
+      "summary_key": "fsidriver_default_write_vtk"
+    },
+    {
+      "artifact_path": "outputs/step71_output_default_alignment_audit/output_default_alignment.json",
+      "check": "fsidriver_default_write_particles",
+      "expected": false,
+      "summary_key": "fsidriver_default_write_particles"
+    },
+    {
+      "artifact_path": "outputs/step71_output_default_alignment_audit/output_default_alignment.json",
+      "check": "explicit_opt_in_remains_allowed",
+      "expected": true,
+      "summary_key": "explicit_true_write_vtk"
+    },
+    {
+      "artifact_path": "outputs/step71_tau_convention_decision_audit/tau_convention_decision.json",
+      "check": "tau_convention_decision",
+      "expected": "preserve_legacy_external_solver_parameter_for_now",
+      "summary_key": "tau_convention_decision"
+    },
+    {
+      "artifact_path": "outputs/step71_tau_convention_decision_audit/tau_convention_decision.json",
+      "check": "default_solver_tau_formula",
+      "expected": "tau_from_legacy_external_solver_parameter",
+      "summary_key": "default_solver_tau_formula"
+    },
+    {
+      "artifact_path": "outputs/step71_tau_convention_decision_audit/tau_convention_decision.json",
+      "check": "standard_lattice_viscosity_is_default",
+      "expected": false,
+      "summary_key": "standard_lattice_viscosity_is_default"
+    },
+    {
+      "artifact_path": "outputs/step71_tau_convention_decision_audit/tau_convention_decision.json",
+      "check": "physical_viscosity_validation_claim",
+      "expected": false,
+      "summary_key": "physical_viscosity_validation_claim"
+    },
+    {
+      "artifact_path": "outputs/step71_tau_convention_decision_audit/tau_convention_decision.json",
+      "check": "future_standard_tau_migration_requires_baseline_rerun",
+      "expected": true,
+      "summary_key": "future_standard_tau_migration_requires_baseline_rerun"
+    }
+  ]
+}

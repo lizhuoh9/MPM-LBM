@@ -1,0 +1,164 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "campaign_id": "step76_minimal_post_gate_real_driver_rebaseline",
+      "check": "first_campaign_is_rebaseline_only",
+      "expected": true,
+      "item": "",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "campaign_id": "step76_minimal_post_gate_real_driver_rebaseline",
+      "check": "run_optional_32_3step",
+      "expected": false,
+      "item": "",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "campaign_id": "step76_minimal_post_gate_real_driver_rebaseline",
+      "check": "runtime_geometry_enabled",
+      "expected": false,
+      "item": "",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "campaign_id": "step76_minimal_post_gate_real_driver_rebaseline",
+      "check": "wall_velocity_enabled",
+      "expected": false,
+      "item": "",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "campaign_id": "step76_minimal_post_gate_real_driver_rebaseline",
+      "check": "real_geometry_enabled",
+      "expected": false,
+      "item": "",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "campaign_id": "step76_minimal_post_gate_real_driver_rebaseline",
+      "check": "squid_proxy_enabled",
+      "expected": false,
+      "item": "",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "campaign_id": "step76_minimal_post_gate_real_driver_rebaseline",
+      "check": "write_vtk",
+      "expected": false,
+      "item": "",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "campaign_id": "step76_minimal_post_gate_real_driver_rebaseline",
+      "check": "write_particles",
+      "expected": false,
+      "item": "",
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "campaign_id": "step76_minimal_post_gate_real_driver_rebaseline",
+      "check": "activation_feature_count",
+      "expected": 0,
+      "item": "",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "campaign_id": "",
+      "check": "forbidden_campaign_item_not_allowed",
+      "expected": false,
+      "item": "runtime_geometry_plus_wall_velocity_combined",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "campaign_id": "",
+      "check": "forbidden_campaign_item_not_allowed",
+      "expected": false,
+      "item": "real_geometry_candidate",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "campaign_id": "",
+      "check": "forbidden_campaign_item_not_allowed",
+      "expected": false,
+      "item": "squid_motion",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "campaign_id": "",
+      "check": "forbidden_campaign_item_not_allowed",
+      "expected": false,
+      "item": "48^3",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "campaign_id": "",
+      "check": "forbidden_campaign_item_not_allowed",
+      "expected": false,
+      "item": "64^3",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "campaign_id": "",
+      "check": "forbidden_campaign_item_not_allowed",
+      "expected": false,
+      "item": "VTR",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "campaign_id": "",
+      "check": "forbidden_campaign_item_not_allowed",
+      "expected": false,
+      "item": "particle_NPY",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "campaign_id": "",
+      "check": "forbidden_campaign_item_not_allowed",
+      "expected": false,
+      "item": "required_link_area_row",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "campaign_id": "",
+      "check": "forbidden_campaign_item_not_allowed",
+      "expected": false,
+      "item": "long_duration",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "activation_feature_count_in_first_campaign": 0,
+    "allowed_campaign_count": 1,
+    "first_campaign_is_rebaseline_only": true,
+    "forbidden_campaign_count": 9,
+    "pass_count": 18,
+    "post_gate_campaign_policy_audit_pass": true,
+    "real_geometry_enabled": false,
+    "row_count": 18,
+    "run_optional_32_3step": false,
+    "runtime_geometry_enabled": false,
+    "squid_proxy_enabled": false,
+    "wall_velocity_enabled": false,
+    "write_particles": false,
+    "write_vtk": false
+  }
+}

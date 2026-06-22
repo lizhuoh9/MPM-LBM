@@ -30,6 +30,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 72: runtime geometry activation readiness audit
 - Step 73: wall velocity activation readiness audit
 - Step 74: real geometry data boundary audit
+- Step 75: solver-complete simulation campaign readiness gate
 
 ## Current Validated Modes
 
@@ -74,6 +75,16 @@ output policy, all 10 Step70 activation gates, no-simulation constraints, and
 Step73 regression evidence. It does not run `FSIDriver3D`, execute projection
 smoke, add real geometry data, edit `data/real_geometry_candidates`, or claim
 physical validation.
+
+Step 75 adds a gate-only solver-complete simulation campaign readiness layer.
+It aggregates committed Step71-Step74 evidence, confirms all Step70 activation
+gates remain closed, and records that the next allowed work is Step76 minimal
+safe rebaseline only. The inactive Step76 proposal starts with one
+32^3/one-step moving-boundary engineering rebaseline row with runtime geometry,
+wall velocity, real geometry, squid proxy, VTR output, and particle NPY output
+all disabled. Step75 does not run `FSIDriver3D`, execute projection smoke,
+change solver formulas, migrate tau semantics, add 48^3 or 64^3 rows, claim
+physical validation, or claim production readiness.
 
 ## What Exists
 

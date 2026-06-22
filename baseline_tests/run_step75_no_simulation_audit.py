@@ -1,0 +1,13 @@
+from step75_common import run_named_audit
+from src.mpm_lbm.evidence.step75_no_simulation_audit import build_step75_no_simulation_audit
+
+
+if __name__ == "__main__":
+    run_named_audit(
+        build_step75_no_simulation_audit,
+        "outputs/step75_no_simulation_audit",
+        "logs/step75_no_simulation_audit.log",
+        "no_simulation_audit_pass",
+        "[OK] Step 75 no-simulation audit finished",
+        "no_simulation",
+    )

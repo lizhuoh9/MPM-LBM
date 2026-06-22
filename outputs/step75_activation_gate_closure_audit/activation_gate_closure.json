@@ -1,0 +1,97 @@
+{
+  "rows": [
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "runtime_geometry_activation_allowed",
+      "latest_step_checked": "Step74",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "wall_velocity_activation_allowed",
+      "latest_step_checked": "Step74",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "combined_runtime_geometry_wall_velocity_activation_allowed",
+      "latest_step_checked": "Step74",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "real_geometry_activation_allowed",
+      "latest_step_checked": "Step74",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "squid_proxy_activation_allowed",
+      "latest_step_checked": "Step74",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "link_area_activation_allowed",
+      "latest_step_checked": "Step74",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "grid_48_activation_allowed",
+      "latest_step_checked": "Step74",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "grid_64_activation_allowed",
+      "latest_step_checked": "Step74",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "vtr_output_allowed",
+      "latest_step_checked": "Step74",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "activation_gate_closed",
+      "expected": false,
+      "gate": "particle_npy_output_allowed",
+      "latest_step_checked": "Step74",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "activation_allowed_count": 0,
+    "activation_gate_closure_audit_pass": true,
+    "closed_gate_count": 10,
+    "expected_gate_count": 10,
+    "extra_gate_count": 0,
+    "gate_source_policy": "configs/step70_activation_preconditions_policy.json",
+    "latest_step_checked": "Step74",
+    "missing_gate_count": 0,
+    "pass_count": 10,
+    "required_gate_count": 10,
+    "row_count": 10
+  }
+}
