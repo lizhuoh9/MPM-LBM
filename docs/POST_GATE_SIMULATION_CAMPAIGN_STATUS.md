@@ -380,3 +380,35 @@ activate the first user dry run. Real geometry candidates, link-area transfer,
 48^3, 64^3, VTR output, and particle NPY output remain disabled. Step89 does
 not claim physical validation, real squid validation, squid swimming, squid
 actuation, grid convergence, or production readiness.
+
+## Step90 Executed Row
+
+```text
+campaign_id = step90_first_user_simulation_dry_run
+row_id = first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 5
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+target_u_lbm = [0.0, 0.0, 0.0]
+geometry_type = squid_proxy
+geometry_config_path = configs/step85_squid_proxy_geometry_1024.json
+quality_check_enabled = true
+quality_check_strict = false
+geometry_motion_application_mode = diagnostic_only
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+write_vtk = false
+write_particles = false
+executed_in_step90 = true
+```
+
+Step90 executes only the bounded first user simulation dry-run row planned by
+Step89. Runtime geometry remains diagnostic-only, wall velocity targets LBM
+`solid_vel` only, and the `squid_proxy` geometry remains procedural. Real
+geometry candidates, link-area transfer, 48^3, 64^3, VTR output, and particle
+NPY output remain disabled. Step90 does not claim physical validation, real
+squid validation, squid swimming, squid actuation, grid convergence, or
+production readiness.

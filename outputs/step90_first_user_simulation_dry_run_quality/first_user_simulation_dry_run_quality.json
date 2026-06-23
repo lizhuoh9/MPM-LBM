@@ -1,0 +1,635 @@
+{
+  "rows": [
+    {
+      "actual": 0.9943161606788635,
+      "check": "rho_min_min",
+      "expected": 0.9,
+      "operator": ">",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 1.000001072883606,
+      "check": "rho_max_max",
+      "expected": 1.1,
+      "operator": "<",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 0.0036245593801140785,
+      "check": "lbm_max_v_max",
+      "expected": 0.5,
+      "operator": "<",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 0.999478816986084,
+      "check": "mpm_min_J_min",
+      "expected": 0.0,
+      "operator": ">",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 0.009026913903653622,
+      "check": "mpm_max_speed_max",
+      "expected": 10.0,
+      "operator": "<",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 0.02264910563826561,
+      "check": "projected_mass_final",
+      "expected": 0.0,
+      "operator": ">",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 1759,
+      "check": "active_cell_count_final",
+      "expected": 1,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 2574,
+      "check": "bb_link_count_max",
+      "expected": 0,
+      "operator": ">",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 0.0014045799616724253,
+      "check": "bb_max_correction_max",
+      "expected": 0.0,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 987,
+      "check": "active_reaction_particle_count_final",
+      "expected": 0,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 648,
+      "check": "applied_cell_count",
+      "expected": 1,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "has_nan",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "has_inf",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "stable",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "diagnostics_csv_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "diagnostics_npz_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "driver_config_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "driver_timing_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": "geo_all_fluid_32.dat",
+      "check": "geo_path_name",
+      "expected": "geo_all_fluid_32.dat",
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "runtime_hard_fail",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": "Step89",
+      "check": "previous_step",
+      "expected": "Step89",
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": "squid_proxy",
+      "check": "geometry_type",
+      "expected": "squid_proxy",
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "squid_proxy_enabled",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "procedural_geometry_enabled",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_candidate_enabled",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_enabled",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "runtime_geometry_enabled",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "wall_velocity_enabled",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "combined_runtime_geometry_wall_velocity_enabled",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "link_area_enabled",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "geometry_quality_report_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "geometry_quality_report_pass",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "geometry_quality_strict",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": "squid_proxy",
+      "check": "quality_report_geometry_type",
+      "expected": "squid_proxy",
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "quality_report_empty",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 774,
+      "check": "quality_report_occupied_count",
+      "expected": 1,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 358,
+      "check": "quality_report_surface_voxel_count",
+      "expected": 1,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "quality_report_touches_domain_boundary",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "sampling_stats_exist",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": "squid_proxy",
+      "check": "sampling_geometry_type",
+      "expected": "squid_proxy",
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 1024,
+      "check": "sampling_particle_count",
+      "expected": 1024,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 867,
+      "check": "mantle_particle_count",
+      "expected": 1,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 189,
+      "check": "head_particle_count",
+      "expected": 1,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 52,
+      "check": "arms_particle_count",
+      "expected": 1,
+      "operator": ">=",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "geometry_motion_interface_report_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "geometry_motion_interface_report_pass",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "diagnostic_only",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "no_op_pass",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "config_validation_pass",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 0,
+      "check": "mutation_flag_enabled_count",
+      "expected": 0,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "apply_to_driver",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "apply_to_mpm_particles",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "apply_to_lbm_solid_phi",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "apply_to_lbm_solid_vel",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "apply_to_projection",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "update_dynamic_solid",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "recompute_boundary_links",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "mutate_geometry_state",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "wall_velocity_application_report_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "wall_velocity_application_report_pass",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": "solid_vel",
+      "check": "target_lbm_field",
+      "expected": "solid_vel",
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": "additive_capped",
+      "check": "application_policy",
+      "expected": "additive_capped",
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "apply_to_lbm_solid_vel_wall_velocity",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "apply_to_lbm_populations",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "apply_to_mpm",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "apply_to_projector",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "modify_bounceback_formula",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "jet_model_enabled",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": false,
+      "check": "actuation_claim_enabled",
+      "expected": false,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "finite_pass",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "cap_pass",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "boundary_motion_interface_report_exists",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "boundary_motion_interface_report_pass",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": true,
+      "check": "boundary_motion_diagnostic_only",
+      "expected": true,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 0,
+      "check": "lbm_population_update_count",
+      "expected": 0,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 5,
+      "check": "completed_lbm_steps",
+      "expected": 5,
+      "operator": "==",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    },
+    {
+      "actual": 4.2154577386099845e-05,
+      "check": "max_grid_reaction_norm_max_finite",
+      "expected": true,
+      "operator": "is_finite",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+    }
+  ],
+  "summary": {
+    "boundary_motion_interface_report_pass_count": 1,
+    "capped_wall_velocity_report_count": 1,
+    "finite_max_grid_reaction_norm_count": 1,
+    "finite_wall_velocity_report_count": 1,
+    "geometry_motion_interface_report_pass_count": 1,
+    "geometry_quality_report_pass_count": 1,
+    "mutation_flag_enabled_count_max": 0,
+    "pass_count": 77,
+    "row_count": 77,
+    "source_matrix_row_count": 1,
+    "squid_proxy_enabled_count": 1,
+    "step90_first_user_simulation_dry_run_quality_pass": true,
+    "wall_velocity_application_report_pass_count": 1
+  }
+}

@@ -438,3 +438,27 @@ It does not run `FSIDriver3D`, execute simulation, or authorize real geometry
 candidate data, link-area transfer, larger grids, solver formula changes, tau
 migration, squid swimming, squid actuation, physical-validation claims, real
 squid validation claims, or production-readiness claims.
+
+Step90 executes that authorized dry-run row:
+
+```text
+step90_first_user_simulation_dry_run_matrix_pass = true
+activation_feature_count = 3
+squid_proxy_enabled_count = 1
+runtime_geometry_enabled_count = 1
+wall_velocity_enabled_count = 1
+combined_runtime_geometry_wall_velocity_enabled_count = 1
+min_completed_lbm_steps = 5
+min_diagnostics_row_count = 6
+real_geometry_candidate_enabled_count = 0
+link_area_enabled_count = 0
+write_vtk_count = 0
+write_particles_count = 0
+```
+
+Step90 opens only the bounded first user simulation dry run for the procedural
+`squid_proxy` diagnostic envelope. Runtime geometry remains diagnostic-only,
+wall velocity targets LBM `solid_vel` only, and real geometry candidate data,
+link-area transfer, larger grids, solver formula changes, tau migration, squid
+swimming, squid actuation, physical-validation claims, real squid validation
+claims, and production-readiness claims remain closed.

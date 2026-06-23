@@ -1,0 +1,50 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "artifact_path": "outputs/step87_runtime_geometry_wall_velocity_squid_proxy_combined_activation_plan/runtime_geometry_wall_velocity_squid_proxy_combined_activation_plan.json",
+      "check": "step87_activation_plan_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step87_runtime_geometry_wall_velocity_squid_proxy_combined_activation_plan_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step87_runtime_geometry_wall_velocity_squid_proxy_combined_activation_guard/runtime_geometry_wall_velocity_squid_proxy_combined_activation_guard.json",
+      "check": "step87_activation_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step87_runtime_geometry_wall_velocity_squid_proxy_combined_activation_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step87_output_guard/output_guard.json",
+      "check": "step87_output_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step87_artifact_manifest/artifact_summary.json",
+      "check": "step87_artifact_budget_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "summary": {
+    "artifact_check_count": 4,
+    "artifact_pass_count": 4,
+    "pass_count": 4,
+    "planned_step88_activation_feature_count": 3,
+    "row_count": 4,
+    "step87_activation_feature_count": 0,
+    "step87_artifact_budget_pass": true,
+    "step87_driver_run_dir_count": 0,
+    "step87_particle_npy_count": 0,
+    "step87_vtr_count": 0,
+    "step89_step87_regression_guard_pass": true,
+    "step90_step87_regression_guard_pass": true
+  }
+}

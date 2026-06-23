@@ -1,0 +1,14 @@
+metric,value
+boundary_motion_interface_report_pass_count,1
+capped_wall_velocity_report_count,1
+finite_max_grid_reaction_norm_count,1
+finite_wall_velocity_report_count,1
+geometry_motion_interface_report_pass_count,1
+geometry_quality_report_pass_count,1
+mutation_flag_enabled_count_max,0
+pass_count,77
+row_count,77
+source_matrix_row_count,1
+squid_proxy_enabled_count,1
+step90_first_user_simulation_dry_run_quality_pass,True
+wall_velocity_application_report_pass_count,1

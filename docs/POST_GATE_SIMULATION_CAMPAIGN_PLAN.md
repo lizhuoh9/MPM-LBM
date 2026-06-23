@@ -418,3 +418,35 @@ Step89 does not authorize real geometry candidate data, link-area transfer,
 larger grids, VTR output, particle NPY output, solver formula changes, tau
 migration, squid swimming, squid actuation, physical-validation claims,
 real-squid-validation claims, or production-readiness claims.
+
+## Step90 First User Simulation Dry Run
+
+After Step89 acceptance, Step90 executes exactly the planned first user dry-run
+row:
+
+```text
+campaign_id = step90_first_user_simulation_dry_run
+row_id = first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 5
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+target_u_lbm = [0.0, 0.0, 0.0]
+geometry_type = squid_proxy
+geometry_config_path = configs/step85_squid_proxy_geometry_1024.json
+quality_check_enabled = true
+quality_check_strict = false
+geometry_motion_application_mode = diagnostic_only
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+write_vtk = false
+write_particles = false
+executed_in_step90 = true
+```
+
+Step90 is not a real-geometry, link-area, larger-grid, VTR, particle-output,
+physical-validation, real-squid-validation, squid-swimming, squid-actuation, or
+production-readiness campaign. It is the first bounded user-facing dry run of
+the Step88 three-feature diagnostic envelope extended to five LBM steps.

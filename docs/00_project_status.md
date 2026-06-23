@@ -45,6 +45,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 87: runtime geometry diagnostic-only plus wall velocity `solid_vel` plus squid proxy combined activation plan and guard
 - Step 88: squid proxy plus runtime geometry diagnostic-only plus wall velocity `solid_vel` combined canonical driver 3-step smoke
 - Step 89: first user simulation dry run plan and guard
+- Step 90: first user simulation dry run
 
 ## Current Validated Modes
 
@@ -269,3 +270,13 @@ Step89 keeps real geometry candidates, link-area transfer, 48^3, 64^3, VTR
 output, particle NPY output, solver formula changes, tau migration, physical
 validation, real squid validation, squid swimming, squid actuation, and
 production-readiness claims closed.
+
+Step90 executes exactly that planned first user simulation dry-run row for five
+LBM steps at 32^3 with 1024 particles. The row combines procedural
+`squid_proxy` geometry, runtime geometry diagnostic-only reporting,
+boundary-motion reporting, and wall velocity `solid_vel_experimental`
+reporting, with `target_u_lbm = [0.0, 0.0, 0.0]` as the row-local config
+choice. Step90 keeps real geometry candidates, link-area transfer, 48^3, 64^3,
+VTR output, particle NPY output, solver formula changes, tau migration,
+physical validation, real squid validation, squid swimming, squid actuation,
+and production-readiness claims closed.
