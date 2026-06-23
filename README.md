@@ -87,6 +87,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 86 squid proxy static geometry canonical driver 3-step smoke, with exactly one 32^3/1024-particle moving-boundary engineering `squid_proxy` row, non-strict geometry quality report, Step85/Step84/Step31 guards, output guards, and artifact guard while runtime geometry, wall velocity, real geometry candidates, link-area transfer, larger grids, VTR, particle NPY, solver formula changes, tau migration, and physical-production claims remain closed
 - Step 87 runtime geometry diagnostic-only plus wall velocity `solid_vel` plus squid proxy combined activation plan and guard, with exactly one future Step88 three-feature 32^3 smoke row planned, Step86/Step84/Step82/Step80 regression guards, output guard, and artifact guard while no simulation is run
 - Step 88 squid proxy plus runtime geometry diagnostic-only plus wall velocity `solid_vel` combined canonical driver 3-step smoke, with exactly one 32^3/1024-particle row, non-strict squid proxy geometry quality reporting, diagnostic-only runtime geometry reporting, `solid_vel_experimental` wall-velocity reporting, Step87/Step86/Step84/Step82/Step80 guards, output guard, and artifact guard while real geometry candidates, link-area transfer, larger grids, VTR, particle NPY, solver formula changes, and physical-production claims remain closed
+- Step 89 first user simulation dry run plan and guard, with exactly one future Step90 32^3/1024-particle/5-step dry-run row planned, Step88/Step87/Step86 regression guards, output guard, and artifact guard while no simulation is run and real geometry candidates, link-area transfer, larger grids, VTR, particle NPY, solver formula changes, and physical-production claims remain closed
 
 ## Not Implemented
 
@@ -970,6 +971,28 @@ Step 88 does not change solver formulas or tau semantics.
 Step 88 does not claim physical validation, real squid validation, squid
 swimming, squid actuation, grid convergence, or production readiness.
 See docs/88_squid_proxy_runtime_geometry_wall_velocity_combined_canonical_driver_smoke.md.
+
+## Step 89 First User Simulation Dry Run Plan And Guard Boundary
+
+Step 89 is plan-and-guard only. It does not run `FSIDriver3D`, does not call
+`driver.run()`, and does not execute simulation.
+Step 89 plans exactly one future Step90 row:
+`first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run`.
+The planned row is 32^3, 1024 particles, five LBM steps, one MPM substep per
+LBM step, moving_boundary, engineering transfer, procedural `squid_proxy`
+geometry, runtime geometry diagnostic-only reporting, and wall velocity
+`solid_vel_experimental` reporting.
+Step 89 keeps `target_u_lbm = [0.0, 0.0, 0.0]` for the planned first user dry
+run so background-flow variation is not mixed into Step90.
+Step 89 does not create a driver-run directory.
+Step 89 does not enable real geometry candidates.
+Step 89 does not use link-area transfer.
+Step 89 does not add a 48^3 or 64^3 row.
+Step 89 does not write VTR or particle NPY output.
+Step 89 does not change solver formulas or tau semantics.
+Step 89 does not claim physical validation, real squid validation, squid
+swimming, squid actuation, grid convergence, or production readiness.
+See docs/89_first_user_simulation_dry_run_plan_and_guard.md.
 
 ## Upstream LBM Note
 

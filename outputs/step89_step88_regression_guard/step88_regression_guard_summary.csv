@@ -1,0 +1,16 @@
+metric,value
+artifact_check_count,10
+artifact_pass_count,10
+pass_count,10
+row_count,10
+step88_activation_feature_count,3
+step88_artifact_budget_pass,True
+step88_combined_runtime_geometry_wall_velocity_enabled_count,1
+step88_link_area_enabled_count,0
+step88_particle_npy_count,0
+step88_real_geometry_candidate_enabled_count,0
+step88_runtime_geometry_enabled_count,1
+step88_squid_proxy_enabled_count,1
+step88_vtr_count,0
+step88_wall_velocity_enabled_count,1
+step89_step88_regression_guard_pass,True

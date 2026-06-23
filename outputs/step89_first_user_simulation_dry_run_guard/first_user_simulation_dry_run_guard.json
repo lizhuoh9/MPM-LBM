@@ -1,0 +1,306 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "step89_first_user_simulation_dry_run_plan_pass",
+      "expected": true,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run",
+      "check": "step90_allowed_row_name",
+      "expected": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run",
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": 0,
+      "check": "step89_activation_feature_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": 3,
+      "check": "planned_step90_activation_feature_count",
+      "expected": 3,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": 5,
+      "check": "step90_allowed_n_lbm_steps",
+      "expected": 5,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": "squid_proxy",
+      "check": "geometry_type_allowed_for_step90",
+      "expected": "squid_proxy",
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": "configs/step85_squid_proxy_geometry_1024.json",
+      "check": "geometry_config_path_allowed_for_step90",
+      "expected": "configs/step85_squid_proxy_geometry_1024.json",
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": "diagnostic_only",
+      "check": "geometry_motion_application_mode_allowed_for_step90",
+      "expected": "diagnostic_only",
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": "solid_vel_experimental",
+      "check": "wall_velocity_application_mode_allowed_for_step90",
+      "expected": "solid_vel_experimental",
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": "solid_vel",
+      "check": "target_lbm_field_planned_for_step90",
+      "expected": "solid_vel",
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "check": "target_u_lbm_allowed_for_step90",
+      "expected": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": true,
+      "check": "squid_proxy_planned_for_step90",
+      "expected": true,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": true,
+      "check": "runtime_geometry_planned_for_step90",
+      "expected": true,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": true,
+      "check": "wall_velocity_planned_for_step90",
+      "expected": true,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": true,
+      "check": "combined_runtime_geometry_wall_velocity_planned_for_step90",
+      "expected": true,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "driver_run_required",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "fsidriver_run_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "simulation_run_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_candidate_data_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "link_area_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "grid_48_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "grid_64_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "vtr_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "particle_npy_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "write_vtk_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "write_particles_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "dense_wall_velocity_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "dense_displacement_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "runtime_code_changed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "solver_behavior_changed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "solver_formula_change_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "tau_migration_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "physical_validation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "production_readiness_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "real_squid_validation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "squid_swimming_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    },
+    {
+      "actual": false,
+      "check": "squid_actuation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "dry_run_plan"
+    }
+  ],
+  "summary": {
+    "combined_runtime_geometry_wall_velocity_planned_for_step90": true,
+    "geometry_motion_application_mode_planned_for_step90": "diagnostic_only",
+    "geometry_mutation_allowed": false,
+    "geometry_type_planned_for_step90": "squid_proxy",
+    "guard_pass_count": 38,
+    "guard_row_count": 38,
+    "link_area_planned_for_step90": false,
+    "planned_step90_activation_feature_count": 3,
+    "planned_step90_duration_lbm_steps": 5,
+    "real_geometry_candidate_data_planned_for_step90": false,
+    "real_geometry_planned_for_step90": false,
+    "row_count": 38,
+    "runtime_geometry_planned_for_step90": true,
+    "squid_proxy_planned_for_step90": true,
+    "step89_activation_feature_count": 0,
+    "step89_first_user_simulation_dry_run_guard_pass": true,
+    "target_lbm_field_planned_for_step90": "solid_vel",
+    "target_u_lbm_planned_for_step90": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "wall_velocity_application_mode_planned_for_step90": "solid_vel_experimental",
+    "wall_velocity_planned_for_step90": true,
+    "write_particles_planned_for_step90": false,
+    "write_vtk_planned_for_step90": false
+  }
+}

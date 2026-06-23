@@ -1,0 +1,40 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step86_squid_proxy_static_geometry_smoke_matrix/squid_proxy_static_geometry_smoke_matrix.json",
+      "check": "step86_smoke_matrix_pass",
+      "expected": true,
+      "summary_key": "step86_squid_proxy_static_geometry_smoke_matrix_pass"
+    },
+    {
+      "artifact_path": "outputs/step86_squid_proxy_static_geometry_quality/squid_proxy_static_geometry_quality.json",
+      "check": "step86_quality_pass",
+      "expected": true,
+      "summary_key": "step86_squid_proxy_static_geometry_quality_pass"
+    },
+    {
+      "artifact_path": "outputs/step86_activation_guard/activation_guard.json",
+      "check": "step86_activation_guard_pass",
+      "expected": true,
+      "summary_key": "step86_activation_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step86_output_guard/output_guard.json",
+      "check": "step86_output_guard_pass",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step86_artifact_manifest/artifact_summary.json",
+      "check": "step86_artifact_budget_pass",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "expected_step86_activation_feature_count": 1,
+  "expected_step86_particle_npy_count": 0,
+  "expected_step86_runtime_geometry_enabled_count": 0,
+  "expected_step86_squid_proxy_enabled_count": 1,
+  "expected_step86_vtr_count": 0,
+  "expected_step86_wall_velocity_enabled_count": 0
+}

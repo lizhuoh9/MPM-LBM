@@ -1,0 +1,42 @@
+{
+  "expected_geometry_config_path": "configs/step85_squid_proxy_geometry_1024.json",
+  "expected_geometry_motion_application_mode": "diagnostic_only",
+  "expected_geometry_type": "squid_proxy",
+  "expected_planned_step90_activation_feature_count": 3,
+  "expected_step89_activation_feature_count": 0,
+  "expected_step90_duration_lbm_steps": 5,
+  "expected_target_lbm_field": "solid_vel",
+  "expected_target_u_lbm": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "expected_wall_velocity_application_mode": "solid_vel_experimental",
+  "plan_artifact_path": "outputs/step89_first_user_simulation_dry_run_plan/first_user_simulation_dry_run_plan.json",
+  "plan_summary_flags_must_be_false": [
+    "driver_run_required",
+    "fsidriver_run_allowed",
+    "simulation_run_allowed",
+    "real_geometry_allowed",
+    "real_geometry_candidate_data_allowed",
+    "link_area_allowed",
+    "grid_48_allowed",
+    "grid_64_allowed",
+    "vtr_output_allowed",
+    "particle_npy_output_allowed",
+    "write_vtk_allowed",
+    "write_particles_allowed",
+    "dense_wall_velocity_output_allowed",
+    "dense_displacement_output_allowed",
+    "runtime_code_changed",
+    "solver_behavior_changed",
+    "solver_formula_change_allowed",
+    "tau_migration_allowed",
+    "physical_validation_claim_allowed",
+    "production_readiness_claim_allowed",
+    "real_squid_validation_claim_allowed",
+    "squid_swimming_claim_allowed",
+    "squid_actuation_claim_allowed"
+  ],
+  "step90_allowed_row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run"
+}

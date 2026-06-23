@@ -1,0 +1,30 @@
+{
+  "driver_run_root": "outputs/step89_driver_runs",
+  "forbidden_filename_tokens": [
+    ".vtr",
+    "particle.npy",
+    "particles.npy",
+    "dense_wall_velocity",
+    "sparse_wall_velocity",
+    "dense_displacement",
+    "displaced_particle",
+    "raw_geometry",
+    "real_geometry_candidate"
+  ],
+  "large_file_threshold_bytes": 1048576,
+  "max_step89_total_size_mb": 5.0,
+  "protected_prefixes": [
+    "external/taichi_LBM3D/",
+    "data/real_geometry_candidates/",
+    "src/mpm_lbm/sim/",
+    "src/mpm_lbm/diagnostics/"
+  ],
+  "raw_geometry_extensions": [
+    ".stl",
+    ".obj",
+    ".ply",
+    ".vtk",
+    ".vti",
+    ".vtp"
+  ]
+}

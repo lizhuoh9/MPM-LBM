@@ -6,7 +6,9 @@ post-gate rebaseline row after Step76 was accepted. Step78 added a separate
 5-step post-gate rebaseline row after Step77 was accepted. Steps 79, 81, 83,
 and 85 planned bounded single-feature rows; Steps 80, 82, 84, and 86 executed
 those planned canonical driver smoke rows. Step87 planned the first
-three-feature combined row, and Step88 executed that bounded combined smoke.
+three-feature combined row, Step88 executed that bounded combined smoke, and
+Step89 planned the first user simulation dry run for Step90 without executing
+simulation.
 
 ## Step76 Executed Row
 
@@ -344,3 +346,37 @@ geometry, runtime geometry diagnostic-only reporting, and wall velocity
 transfer, 48^3, 64^3, VTR output, and particle NPY output remain disabled.
 Step88 does not claim physical validation, real squid validation, squid
 swimming, squid actuation, grid convergence, or production readiness.
+
+## Step89 Planned Row
+
+Step89 does not execute a driver row. It records and guards the only planned
+Step90 first user simulation dry-run row:
+
+```text
+campaign_id = step89_first_user_simulation_dry_run_plan_and_guard
+row_id = first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 5
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+target_u_lbm = [0.0, 0.0, 0.0]
+geometry_type = squid_proxy
+geometry_config_path = configs/step85_squid_proxy_geometry_1024.json
+quality_check_enabled = true
+quality_check_strict = false
+geometry_motion_application_mode = diagnostic_only
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+write_vtk = false
+write_particles = false
+executed_in_step89 = false
+planned_for_step90 = true
+```
+
+Step89 does not run `FSIDriver3D`, does not execute simulation, and does not
+activate the first user dry run. Real geometry candidates, link-area transfer,
+48^3, 64^3, VTR output, and particle NPY output remain disabled. Step89 does
+not claim physical validation, real squid validation, squid swimming, squid
+actuation, grid convergence, or production readiness.

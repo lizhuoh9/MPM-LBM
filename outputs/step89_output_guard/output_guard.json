@@ -1,0 +1,245 @@
+{
+  "rows": [
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step89_artifact_manifest.log",
+      "size_bytes": 62
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step89_first_user_simulation_dry_run_guard.log",
+      "size_bytes": 72
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step89_first_user_simulation_dry_run_plan.log",
+      "size_bytes": 71
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step89_focused_pytest.log",
+      "size_bytes": 202
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step89_full_pytest_anaconda.log",
+      "size_bytes": 2498
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step89_full_pytest_taichi.log",
+      "size_bytes": 2500
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step89_output_guard.log",
+      "size_bytes": 49
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step89_step86_regression_guard.log",
+      "size_bytes": 59
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step89_step87_regression_guard.log",
+      "size_bytes": 59
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step89_step88_regression_guard.log",
+      "size_bytes": 60
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_artifact_manifest/artifact_manifest.csv",
+      "size_bytes": 490457
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_artifact_manifest/artifact_summary.csv",
+      "size_bytes": 420
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_artifact_manifest/artifact_summary.json",
+      "size_bytes": 489
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_first_user_simulation_dry_run_guard/first_user_simulation_dry_run_guard.csv",
+      "size_bytes": 2706
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_first_user_simulation_dry_run_guard/first_user_simulation_dry_run_guard.json",
+      "size_bytes": 8055
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_first_user_simulation_dry_run_guard/first_user_simulation_dry_run_guard_summary.csv",
+      "size_bytes": 950
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_first_user_simulation_dry_run_plan/first_user_simulation_dry_run_plan.csv",
+      "size_bytes": 10793
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_first_user_simulation_dry_run_plan/first_user_simulation_dry_run_plan.json",
+      "size_bytes": 21861
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_first_user_simulation_dry_run_plan/first_user_simulation_dry_run_plan_summary.csv",
+      "size_bytes": 3333
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_output_guard/output_guard.csv",
+      "size_bytes": 2597
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_output_guard/output_guard.json",
+      "size_bytes": 6999
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_output_guard/output_guard_summary.csv",
+      "size_bytes": 735
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_step86_regression_guard/step86_regression_guard.csv",
+      "size_bytes": 779
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_step86_regression_guard/step86_regression_guard.json",
+      "size_bytes": 1904
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_step86_regression_guard/step86_regression_guard_summary.csv",
+      "size_bytes": 363
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_step87_regression_guard/step87_regression_guard.csv",
+      "size_bytes": 1467
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_step87_regression_guard/step87_regression_guard.json",
+      "size_bytes": 2957
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_step87_regression_guard/step87_regression_guard_summary.csv",
+      "size_bytes": 322
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_step88_regression_guard/step88_regression_guard.csv",
+      "size_bytes": 1703
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_step88_regression_guard/step88_regression_guard.json",
+      "size_bytes": 3692
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step89_step88_regression_guard/step88_regression_guard_summary.csv",
+      "size_bytes": 513
+    }
+  ],
+  "summary": {
+    "artifact_budget_pass": true,
+    "output_guard_pass": true,
+    "pass_count": 31,
+    "private_absolute_path_count": 0,
+    "protected_diagnostics_edit_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "protected_sim_edit_count": 0,
+    "row_count": 31,
+    "step89_dense_displacement_output_count": 0,
+    "step89_dense_wall_velocity_output_count": 0,
+    "step89_displaced_particle_output_count": 0,
+    "step89_driver_run_dir_count": 0,
+    "step89_forbidden_file_count": 0,
+    "step89_large_file_count": 0,
+    "step89_particle_npy_count": 0,
+    "step89_raw_geometry_output_count": 0,
+    "step89_real_geometry_candidate_output_count": 0,
+    "step89_sparse_wall_velocity_output_count": 0,
+    "step89_total_size_bytes": 568727,
+    "step89_total_size_mb": 0.5423803329467773,
+    "step89_vtr_count": 0
+  }
+}

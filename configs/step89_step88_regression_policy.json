@@ -1,0 +1,73 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step88_squid_proxy_runtime_geometry_wall_velocity_combined_smoke_matrix/squid_proxy_runtime_geometry_wall_velocity_combined_smoke_matrix.json",
+      "check": "step88_smoke_matrix_pass",
+      "expected": true,
+      "summary_key": "step88_squid_proxy_runtime_geometry_wall_velocity_combined_smoke_matrix_pass"
+    },
+    {
+      "artifact_path": "outputs/step88_squid_proxy_runtime_geometry_wall_velocity_combined_quality/squid_proxy_runtime_geometry_wall_velocity_combined_quality.json",
+      "check": "step88_quality_pass",
+      "expected": true,
+      "summary_key": "step88_squid_proxy_runtime_geometry_wall_velocity_combined_quality_pass"
+    },
+    {
+      "artifact_path": "outputs/step88_activation_guard/activation_guard.json",
+      "check": "step88_activation_guard_pass",
+      "expected": true,
+      "summary_key": "step88_activation_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step88_output_guard/output_guard.json",
+      "check": "step88_output_guard_pass",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step88_step87_regression_guard/step87_regression_guard.json",
+      "check": "step88_step87_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step88_step87_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step88_step86_regression_guard/step86_regression_guard.json",
+      "check": "step88_step86_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step88_step86_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step88_step84_regression_guard/step84_regression_guard.json",
+      "check": "step88_step84_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step88_step84_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step88_step82_regression_guard/step82_regression_guard.json",
+      "check": "step88_step82_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step88_step82_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step88_step80_regression_guard/step80_regression_guard.json",
+      "check": "step88_step80_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step88_step80_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step88_artifact_manifest/artifact_summary.json",
+      "check": "step88_artifact_budget_pass",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "expected_step88_activation_feature_count": 3,
+  "expected_step88_combined_runtime_geometry_wall_velocity_enabled_count": 1,
+  "expected_step88_link_area_enabled_count": 0,
+  "expected_step88_particle_npy_count": 0,
+  "expected_step88_real_geometry_candidate_enabled_count": 0,
+  "expected_step88_runtime_geometry_enabled_count": 1,
+  "expected_step88_squid_proxy_enabled_count": 1,
+  "expected_step88_vtr_count": 0,
+  "expected_step88_wall_velocity_enabled_count": 1
+}

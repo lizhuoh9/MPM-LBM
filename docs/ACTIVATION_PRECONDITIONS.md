@@ -409,3 +409,32 @@ diagnostic-only/no-op, wall velocity targets LBM `solid_vel` only, and the
 geometry candidate data, link-area transfer, larger grids, solver formula
 changes, tau migration, squid swimming, squid actuation, physical-validation
 claims, real squid validation claims, or production-readiness claims.
+
+Step89 plans and guards the first user simulation dry run for Step90 without
+running simulation:
+
+```text
+step89_first_user_simulation_dry_run_plan_pass = true
+step89_first_user_simulation_dry_run_guard_pass = true
+step89_activation_feature_count = 0
+planned_step90_activation_feature_count = 3
+planned_step90_duration_lbm_steps = 5
+squid_proxy_planned_for_step90 = true
+runtime_geometry_planned_for_step90 = true
+geometry_motion_application_mode_planned_for_step90 = diagnostic_only
+wall_velocity_planned_for_step90 = true
+wall_velocity_application_mode_planned_for_step90 = solid_vel_experimental
+combined_runtime_geometry_wall_velocity_planned_for_step90 = true
+real_geometry_planned_for_step90 = false
+real_geometry_candidate_data_planned_for_step90 = false
+link_area_planned_for_step90 = false
+write_vtk_planned_for_step90 = false
+write_particles_planned_for_step90 = false
+```
+
+Step89 authorizes only the future row
+`first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_5step_dry_run`.
+It does not run `FSIDriver3D`, execute simulation, or authorize real geometry
+candidate data, link-area transfer, larger grids, solver formula changes, tau
+migration, squid swimming, squid actuation, physical-validation claims, real
+squid validation claims, or production-readiness claims.

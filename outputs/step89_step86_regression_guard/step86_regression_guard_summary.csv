@@ -1,0 +1,13 @@
+metric,value
+artifact_check_count,5
+artifact_pass_count,5
+pass_count,5
+row_count,5
+step86_activation_feature_count,1
+step86_artifact_budget_pass,True
+step86_particle_npy_count,0
+step86_runtime_geometry_enabled_count,0
+step86_squid_proxy_enabled_count,1
+step86_vtr_count,0
+step86_wall_velocity_enabled_count,0
+step89_step86_regression_guard_pass,True
