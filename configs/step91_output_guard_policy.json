@@ -1,0 +1,33 @@
+{
+  "forbidden_filename_tokens": [
+    ".vtr",
+    "particles_",
+    "particle_output",
+    "dense_wall_velocity",
+    "sparse_wall_velocity",
+    "displaced_particle",
+    "dense_displacement",
+    ".stl",
+    ".obj",
+    ".ply",
+    ".vtk",
+    ".vtu",
+    "raw_geometry",
+    "real_geometry_candidate"
+  ],
+  "large_file_threshold_bytes": 1048576,
+  "max_step91_total_size_mb": 5.0,
+  "protected_prefixes": [
+    "src/mpm_lbm/sim/",
+    "src/mpm_lbm/diagnostics/",
+    "external/taichi_LBM3D/",
+    "data/real_geometry_candidates/"
+  ],
+  "raw_geometry_extensions": [
+    ".stl",
+    ".obj",
+    ".ply",
+    ".vtk",
+    ".vtu"
+  ]
+}

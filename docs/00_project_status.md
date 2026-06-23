@@ -46,6 +46,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 88: squid proxy plus runtime geometry diagnostic-only plus wall velocity `solid_vel` combined canonical driver 3-step smoke
 - Step 89: first user simulation dry run plan and guard
 - Step 90: first user simulation dry run
+- Step 91: first user simulation 10-step dry run plan and guard
 
 ## Current Validated Modes
 
@@ -280,3 +281,15 @@ choice. Step90 keeps real geometry candidates, link-area transfer, 48^3, 64^3,
 VTR output, particle NPY output, solver formula changes, tau migration,
 physical validation, real squid validation, squid swimming, squid actuation,
 and production-readiness claims closed.
+
+Step91 adds plan-and-guard evidence for exactly one future Step92 ten-step
+first user simulation dry-run row. Step91 does not run `FSIDriver3D`, call
+`driver.run()`, execute simulation, or activate the 10-step dry run. The
+planned Step92 row keeps the Step90 envelope fixed at 32^3/1024 particles,
+procedural `squid_proxy` geometry, runtime geometry diagnostic-only reporting,
+wall velocity `solid_vel_experimental` reporting, and
+`target_u_lbm = [0.0, 0.0, 0.0]`, with only the duration expanded from five to
+ten LBM steps. Step91 keeps real geometry candidates, link-area transfer,
+48^3, 64^3, VTR output, particle NPY output, solver formula changes, tau
+migration, physical validation, real squid validation, squid swimming, squid
+actuation, and production-readiness claims closed.

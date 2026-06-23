@@ -462,3 +462,31 @@ wall velocity targets LBM `solid_vel` only, and real geometry candidate data,
 link-area transfer, larger grids, solver formula changes, tau migration, squid
 swimming, squid actuation, physical-validation claims, real squid validation
 claims, and production-readiness claims remain closed.
+
+Step91 plans and guards the future ten-step dry run for Step92 without running
+simulation:
+
+```text
+step91_first_user_simulation_10step_dry_run_plan_pass = true
+step91_first_user_simulation_10step_dry_run_guard_pass = true
+step91_activation_feature_count = 0
+planned_step92_activation_feature_count = 3
+planned_step92_duration_lbm_steps = 10
+only_duration_expansion_from_step90 = true
+squid_proxy_planned_for_step92 = true
+runtime_geometry_planned_for_step92 = true
+wall_velocity_planned_for_step92 = true
+combined_runtime_geometry_wall_velocity_planned_for_step92 = true
+real_geometry_planned_for_step92 = false
+real_geometry_candidate_data_planned_for_step92 = false
+link_area_planned_for_step92 = false
+write_vtk_planned_for_step92 = false
+write_particles_planned_for_step92 = false
+```
+
+Step91 authorizes only the future row
+`first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_10step_dry_run`.
+It does not run `FSIDriver3D`, execute simulation, or authorize real geometry
+candidate data, link-area transfer, larger grids, solver formula changes, tau
+migration, squid swimming, squid actuation, physical-validation claims, real
+squid validation claims, or production-readiness claims.

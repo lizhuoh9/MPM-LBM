@@ -412,3 +412,38 @@ geometry candidates, link-area transfer, 48^3, 64^3, VTR output, and particle
 NPY output remain disabled. Step90 does not claim physical validation, real
 squid validation, squid swimming, squid actuation, grid convergence, or
 production readiness.
+
+## Step91 Planned Row
+
+Step91 does not execute a driver row. It records and guards the only planned
+Step92 ten-step first user simulation dry-run row:
+
+```text
+campaign_id = step91_first_user_simulation_10step_dry_run_plan_and_guard
+row_id = first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_10step_dry_run
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 10
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+target_u_lbm = [0.0, 0.0, 0.0]
+geometry_type = squid_proxy
+geometry_config_path = configs/step85_squid_proxy_geometry_1024.json
+quality_check_enabled = true
+quality_check_strict = false
+geometry_motion_application_mode = diagnostic_only
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+write_vtk = false
+write_particles = false
+executed_in_step91 = false
+planned_for_step92 = true
+```
+
+The only planned expansion from Step90 to Step92 is `n_lbm_steps = 5 -> 10`.
+Step91 does not run `FSIDriver3D`, does not execute simulation, and does not
+activate the ten-step dry run. Real geometry candidates, link-area transfer,
+48^3, 64^3, VTR output, and particle NPY output remain disabled. Step91 does
+not claim physical validation, real squid validation, squid swimming, squid
+actuation, grid convergence, or production readiness.

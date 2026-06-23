@@ -1,0 +1,61 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "artifact_path": "outputs/step88_squid_proxy_runtime_geometry_wall_velocity_combined_smoke_matrix/squid_proxy_runtime_geometry_wall_velocity_combined_smoke_matrix.json",
+      "check": "step88_squid_proxy_runtime_geometry_wall_velocity_combined_smoke_matrix_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step88_squid_proxy_runtime_geometry_wall_velocity_combined_smoke_matrix_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step88_squid_proxy_runtime_geometry_wall_velocity_combined_quality/squid_proxy_runtime_geometry_wall_velocity_combined_quality.json",
+      "check": "step88_squid_proxy_runtime_geometry_wall_velocity_combined_quality_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step88_squid_proxy_runtime_geometry_wall_velocity_combined_quality_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step88_activation_guard/activation_guard.json",
+      "check": "step88_activation_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step88_activation_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step88_output_guard/output_guard.json",
+      "check": "step88_output_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step88_artifact_manifest/artifact_summary.json",
+      "check": "step88_artifact_budget_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "summary": {
+    "artifact_check_count": 5,
+    "artifact_pass_count": 5,
+    "pass_count": 5,
+    "row_count": 5,
+    "step88_activation_feature_count": 3,
+    "step88_artifact_budget_pass": true,
+    "step88_combined_runtime_geometry_wall_velocity_enabled_count": 1,
+    "step88_link_area_enabled_count": 0,
+    "step88_particle_npy_count": 0,
+    "step88_real_geometry_candidate_enabled_count": 0,
+    "step88_runtime_geometry_enabled_count": 1,
+    "step88_squid_proxy_enabled_count": 1,
+    "step88_vtr_count": 0,
+    "step88_wall_velocity_enabled_count": 1,
+    "step91_step88_regression_guard_pass": true
+  }
+}
