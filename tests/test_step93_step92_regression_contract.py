@@ -27,7 +27,7 @@ def test_step93_step92_regression_guard_passes():
     assert summary["step92_real_geometry_candidate_enabled_count"] == 0
     assert summary["step92_link_area_enabled_count"] == 0
     assert summary["step92_completed_lbm_steps"] == 10
-    assert summary["step92_vtr_count"] == 0
+    assert summary["vtr_file_count"] == 0
     assert summary["step92_particle_npy_count"] == 0
 
 

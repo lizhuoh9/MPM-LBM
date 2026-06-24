@@ -8,7 +8,13 @@
     "particles_",
     "raw_geometry",
     "real_geometry_candidate",
-    "sparse_wall_velocity"
+    "sparse_wall_velocity",
+    "screenshot",
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".mp4",
+    ".gif"
   ],
   "large_file_threshold_bytes": 1048576,
   "max_step93_total_size_mb": 5.0,
@@ -24,5 +30,10 @@
     ".ply",
     ".vtk",
     ".vtu"
+  ],
+  "screenshot_extensions": [
+    ".png",
+    ".jpg",
+    ".jpeg"
   ]
 }

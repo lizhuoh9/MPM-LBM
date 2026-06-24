@@ -447,3 +447,72 @@ activate the ten-step dry run. Real geometry candidates, link-area transfer,
 48^3, 64^3, VTR output, and particle NPY output remain disabled. Step91 does
 not claim physical validation, real squid validation, squid swimming, squid
 actuation, grid convergence, or production readiness.
+
+## Step92 Executed Row
+
+```text
+campaign_id = step92_first_user_simulation_10step_dry_run
+row_id = first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_10step_dry_run
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 10
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+target_u_lbm = [0.0, 0.0, 0.0]
+geometry_type = squid_proxy
+geometry_config_path = configs/step85_squid_proxy_geometry_1024.json
+quality_check_enabled = true
+quality_check_strict = false
+geometry_motion_application_mode = diagnostic_only
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+write_vtk = false
+write_particles = false
+executed_in_step92 = true
+```
+
+Step92 executes only the bounded first user simulation 10-step dry-run row
+planned by Step91. Runtime geometry remains diagnostic-only, wall velocity
+targets LBM `solid_vel` only, and the `squid_proxy` geometry remains
+procedural. Real geometry candidates, link-area transfer, 48^3, 64^3,
+file-based visualization output, and particle NPY output remain disabled.
+Step92 does not claim physical validation, real squid validation, squid
+swimming, squid actuation, grid convergence, or production readiness.
+
+## Step93 Planned Row
+
+Step93 does not execute a driver row. It records and guards the only planned
+Step94 Taichi GGUI visualization smoke row:
+
+```text
+campaign_id = step93_taichi_ggui_visualization_enablement_plan_and_guard
+row_id = first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_ggui_visual_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 1
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+target_u_lbm = [0.0, 0.0, 0.0]
+geometry_type = squid_proxy
+geometry_config_path = configs/step85_squid_proxy_geometry_1024.json
+quality_check_enabled = true
+quality_check_strict = false
+geometry_motion_application_mode = diagnostic_only
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+ggui_visualization_enabled = true
+write_vtk = false
+write_particles = false
+executed_in_step93 = false
+planned_for_step94 = true
+```
+
+The only planned expansion from Step92 to Step94 is Taichi GGUI visualization.
+Step93 does not run `FSIDriver3D`, does not open a GGUI window, does not write
+screenshots, does not execute simulation, and does not activate the visual
+smoke. Real geometry candidates, link-area transfer, 48^3, 64^3, file-based
+visualization output, and particle NPY output remain disabled. Step93 does not
+claim physical validation, real squid validation, squid swimming, squid
+actuation, grid convergence, or production readiness.

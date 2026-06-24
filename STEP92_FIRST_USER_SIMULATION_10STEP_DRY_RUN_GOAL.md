@@ -727,17 +727,17 @@ first user simulation dry run 32^3 / 10-step passed.
 
 ## Step93 Direction
 
-If Step92 is green, the next recommended direction is output-path planning, not
-another duration jump or a grid-size jump:
+If Step92 is green, the corrected next recommended direction is Taichi GGUI
+visualization planning, not another duration jump or a grid-size jump:
 
 ```text
-Step93 VTR Output Enablement Plan And Guard
-Step94 VTR Output Smoke
+Step93 Taichi GGUI Visualization Enablement Plan And Guard
+Step94 Taichi GGUI Visualization Smoke
 ```
 
-Step93 should still be plan/guard only. Step94 should be the smallest VTR
-output smoke. Do not open VTR, particle NPY, 48^3, 64^3, real geometry, or
-link-area in Step92.
+Step93 should still be plan/guard only. Step94 should be the smallest GGUI
+visualization smoke. Do not open file-based visualization output, particle NPY,
+48^3, 64^3, real geometry, or link-area in Step92.
 
 ## Completion Criteria
 

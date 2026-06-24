@@ -11,8 +11,9 @@ def test_step93_output_guard_passes():
 
     assert summary["output_guard_pass"] is True
     assert summary["step93_driver_run_dir_count"] == 0
-    assert summary["step93_vtr_count"] == 0
+    assert summary["vtr_file_count"] == 0
     assert summary["step93_particle_npy_count"] == 0
+    assert summary["step93_ggui_screenshot_count"] == 0
     assert summary["step93_raw_geometry_output_count"] == 0
     assert summary["step93_real_geometry_candidate_output_count"] == 0
     assert summary["step93_dense_wall_velocity_output_count"] == 0

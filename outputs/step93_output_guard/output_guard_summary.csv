@@ -13,11 +13,12 @@ step93_dense_wall_velocity_output_count,0
 step93_displaced_particle_output_count,0
 step93_driver_run_dir_count,0
 step93_forbidden_file_count,0
+step93_ggui_screenshot_count,0
 step93_large_file_count,0
 step93_particle_npy_count,0
 step93_raw_geometry_output_count,0
 step93_real_geometry_candidate_output_count,0
 step93_sparse_wall_velocity_output_count,0
-step93_total_size_bytes,592599
-step93_total_size_mb,0.5651464462280273
-step93_vtr_count,0
+step93_total_size_bytes,601660
+step93_total_size_mb,0.5737876892089844
+vtr_file_count,0

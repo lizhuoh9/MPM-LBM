@@ -8,5 +8,10 @@
     ".ply",
     ".vtk",
     ".vtu"
+  ],
+  "screenshot_extensions": [
+    ".png",
+    ".jpg",
+    ".jpeg"
   ]
 }

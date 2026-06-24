@@ -490,3 +490,52 @@ It does not run `FSIDriver3D`, execute simulation, or authorize real geometry
 candidate data, link-area transfer, larger grids, solver formula changes, tau
 migration, squid swimming, squid actuation, physical-validation claims, real
 squid validation claims, or production-readiness claims.
+
+Step92 executes that authorized ten-step dry-run row:
+
+```text
+step92_first_user_simulation_10step_dry_run_matrix_pass = true
+activation_feature_count = 3
+squid_proxy_enabled_count = 1
+runtime_geometry_enabled_count = 1
+wall_velocity_enabled_count = 1
+combined_runtime_geometry_wall_velocity_enabled_count = 1
+min_completed_lbm_steps = 10
+real_geometry_candidate_enabled_count = 0
+link_area_enabled_count = 0
+write_vtk_count = 0
+write_particles_count = 0
+```
+
+Step92 opens only the bounded first user simulation 10-step dry run for the
+procedural `squid_proxy` diagnostic envelope. It does not authorize real
+geometry candidate data, link-area transfer, larger grids, solver formula
+changes, tau migration, squid swimming, squid actuation, physical-validation
+claims, real squid validation claims, or production-readiness claims.
+
+Step93 plans and guards the future Taichi GGUI visualization smoke for Step94
+without running simulation:
+
+```text
+step93_taichi_ggui_visualization_enablement_plan_pass = true
+step93_taichi_ggui_visualization_enablement_guard_pass = true
+step93_activation_feature_count = 0
+planned_step94_activation_feature_count = 4
+planned_step94_duration_lbm_steps = 1
+ggui_visualization_planned_for_step94 = true
+ggui_interactive_window_allowed_for_step94 = true
+ggui_screenshot_allowed_for_step94 = true
+ggui_video_allowed_for_step94 = false
+write_vtk_allowed = false
+write_particles_allowed = false
+vtr_output_allowed = false
+particle_npy_output_allowed = false
+```
+
+Step93 authorizes only the future row
+`first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_ggui_visual_smoke`.
+It does not run `FSIDriver3D`, open a GGUI window, write screenshots, execute
+simulation, or authorize real geometry candidate data, link-area transfer,
+larger grids, solver formula changes, tau migration, squid swimming, squid
+actuation, physical-validation claims, real squid validation claims, or
+production-readiness claims.

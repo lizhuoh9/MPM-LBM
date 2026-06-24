@@ -16,6 +16,7 @@ def build_step93_output_guard(
     root = Path(root)
     policy = read_json(root / policy_path)
     raw_geometry_extensions = set(policy["raw_geometry_extensions"])
+    screenshot_extensions = set(policy["screenshot_extensions"])
     rows = [output_row(root, path, policy) for path in step93_output_files(root)]
     forbidden_rows = [row for row in rows if row["forbidden"]]
     private_paths = private_absolute_path_rows(root)
@@ -42,6 +43,7 @@ def build_step93_output_guard(
         "step93_displaced_particle_output_count": sum(1 for row in rows if "displaced_particle" in row["path"].lower()),
         "step93_driver_run_dir_count": driver_run_dir_count,
         "step93_forbidden_file_count": len(forbidden_rows),
+        "step93_ggui_screenshot_count": sum(1 for row in rows if row["extension"] in screenshot_extensions),
         "step93_large_file_count": large_file_count,
         "step93_particle_npy_count": sum(
             1 for row in rows if row["extension"] == ".npy" and "particle" in row["path"].lower()
@@ -53,14 +55,15 @@ def build_step93_output_guard(
         "step93_sparse_wall_velocity_output_count": sum(1 for row in rows if "sparse_wall_velocity" in row["path"].lower()),
         "step93_total_size_bytes": sum(int(row["size_bytes"]) for row in rows),
         "step93_total_size_mb": total_size_mb,
-        "step93_vtr_count": sum(1 for row in rows if row["extension"] == ".vtr"),
+        "vtr_file_count": sum(1 for row in rows if row["extension"] == ".vtr"),
     }
     summary["output_guard_pass"] = bool(
         rows
         and summary["row_count"] == summary["pass_count"]
         and summary["step93_driver_run_dir_count"] == 0
-        and summary["step93_vtr_count"] == 0
+        and summary["vtr_file_count"] == 0
         and summary["step93_particle_npy_count"] == 0
+        and summary["step93_ggui_screenshot_count"] == 0
         and summary["step93_dense_wall_velocity_output_count"] == 0
         and summary["step93_sparse_wall_velocity_output_count"] == 0
         and summary["step93_dense_displacement_output_count"] == 0

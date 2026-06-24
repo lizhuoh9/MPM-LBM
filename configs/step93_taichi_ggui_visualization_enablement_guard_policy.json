@@ -2,7 +2,7 @@
   "expected_geometry_config_path": "configs/step85_squid_proxy_geometry_1024.json",
   "expected_geometry_motion_application_mode": "diagnostic_only",
   "expected_geometry_type": "squid_proxy",
-  "expected_only_new_feature_from_step92": "write_vtk",
+  "expected_only_new_feature_from_step92": "taichi_ggui_visualization",
   "expected_planned_step94_activation_feature_count": 4,
   "expected_planned_step94_n_lbm_steps": 1,
   "expected_previous_step92_n_lbm_steps": 10,
@@ -14,12 +14,15 @@
     0.0
   ],
   "expected_wall_velocity_application_mode": "solid_vel_experimental",
-  "plan_artifact_path": "outputs/step93_vtr_output_enablement_plan/vtr_output_enablement_plan.json",
+  "plan_artifact_path": "outputs/step93_taichi_ggui_visualization_enablement_plan/taichi_ggui_visualization_enablement_plan.json",
   "plan_summary_flags_must_be_false": [
     "driver_run_required",
     "fsidriver_run_allowed",
     "simulation_run_allowed",
-    "write_particles_allowed_for_step94",
+    "ggui_video_allowed_for_step94",
+    "write_vtk_allowed",
+    "write_particles_allowed",
+    "vtr_output_allowed",
     "particle_npy_output_allowed",
     "real_geometry_allowed",
     "real_geometry_candidate_data_allowed",
@@ -39,5 +42,5 @@
     "squid_actuation_claim_allowed",
     "geometry_mutation_allowed"
   ],
-  "step94_allowed_row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+  "step94_allowed_row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_ggui_visual_smoke"
 }

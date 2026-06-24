@@ -56,9 +56,9 @@ def build_step93_step92_regression_guard(
         "step92_step89_regression_guard_pass": step89_summary["step92_step89_regression_guard_pass"],
         "step92_step90_regression_guard_pass": step90_summary["step92_step90_regression_guard_pass"],
         "step92_step91_regression_guard_pass": step91_summary["step92_step91_regression_guard_pass"],
-        "step92_vtr_count": output_summary["step92_vtr_count"],
         "step92_wall_velocity_enabled_count": activation_summary["wall_velocity_enabled_count"],
         "step93_step92_regression_guard_pass": False,
+        "vtr_file_count": output_summary["step92_vtr_count"],
     }
     summary["step93_step92_regression_guard_pass"] = bool(
         rows
@@ -80,7 +80,7 @@ def build_step93_step92_regression_guard(
         and summary["step92_real_geometry_candidate_enabled_count"]
         == int(policy["expected_step92_real_geometry_candidate_enabled_count"])
         and summary["step92_link_area_enabled_count"] == int(policy["expected_step92_link_area_enabled_count"])
-        and summary["step92_vtr_count"] == int(policy["expected_step92_vtr_count"])
+        and summary["vtr_file_count"] == int(policy["expected_vtr_file_count"])
         and summary["step92_particle_npy_count"] == int(policy["expected_step92_particle_npy_count"])
     )
     return rows, summary

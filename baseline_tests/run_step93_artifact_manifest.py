@@ -14,6 +14,7 @@ def main():
     policy = read_json("configs/step93_artifact_manifest_policy.json")
     rows = [manifest_row(path) for path in repo_files(ROOT)]
     step93_rows = [row for row in rows if row["step93_related"]]
+    screenshot_extensions = set(policy["screenshot_extensions"])
     summary = {
         "artifact_budget_pass": False,
         "file_count": len(rows),
@@ -32,12 +33,13 @@ def main():
         ),
         "step93_driver_run_dir_count": step93_driver_run_dir_count(ROOT),
         "step93_file_count": len(step93_rows),
+        "step93_ggui_screenshot_count": sum(1 for row in step93_rows if row["extension"] in screenshot_extensions),
         "step93_particle_npy_count": sum(
             1 for row in step93_rows if row["extension"] == ".npy" and "particle" in row["path"].lower()
         ),
         "step93_total_size_bytes": sum(int(row["size_bytes"]) for row in step93_rows),
         "step93_total_size_mb": sum(int(row["size_bytes"]) for row in step93_rows) / (1024.0 * 1024.0),
-        "step93_vtr_count": sum(1 for row in step93_rows if row["extension"] == ".vtr"),
+        "vtr_file_count": sum(1 for row in step93_rows if row["extension"] == ".vtr"),
     }
     summary["artifact_budget_pass"] = bool(
         summary["step93_file_count"] <= int(policy["max_step93_file_count"])
@@ -49,7 +51,8 @@ def main():
         and summary["raw_geometry_file_count"] == 0
         and summary["step93_driver_run_dir_count"] == 0
         and summary["step93_particle_npy_count"] == 0
-        and summary["step93_vtr_count"] == 0
+        and summary["step93_ggui_screenshot_count"] == 0
+        and summary["vtr_file_count"] == 0
     )
     if not summary["artifact_budget_pass"]:
         raise RuntimeError(f"Step93 artifact manifest failed: {summary}")
@@ -88,7 +91,7 @@ def manifest_row(path: Path):
 def is_step93_related(path: str) -> bool:
     lower = path.lower()
     return "step93" in lower or lower in {
-        "docs/93_vtr_output_enablement_plan_and_guard.md",
+        "docs/93_taichi_ggui_visualization_enablement_plan_and_guard.md",
     }
 
 

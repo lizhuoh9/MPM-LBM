@@ -293,3 +293,23 @@ ten LBM steps. Step91 keeps real geometry candidates, link-area transfer,
 48^3, 64^3, VTR output, particle NPY output, solver formula changes, tau
 migration, physical validation, real squid validation, squid swimming, squid
 actuation, and production-readiness claims closed.
+
+Step92 executes exactly that planned first user simulation dry-run row for ten
+LBM steps at 32^3 with 1024 particles. The row combines procedural
+`squid_proxy` geometry, runtime geometry diagnostic-only reporting,
+boundary-motion reporting, and wall velocity `solid_vel_experimental`
+reporting, with `target_u_lbm = [0.0, 0.0, 0.0]` as the row-local config
+choice. Step92 keeps real geometry candidates, link-area transfer, 48^3, 64^3,
+file-based visualization output, particle NPY output, solver formula changes,
+tau migration, physical validation, real squid validation, squid swimming,
+squid actuation, and production-readiness claims closed.
+
+Step93 corrects the previous Step93 planning direction and adds plan-and-guard
+evidence for exactly one future Step94 Taichi GGUI visualization smoke row.
+Step93 does not run `FSIDriver3D`, call `driver.run()`, execute simulation,
+open a GGUI window, write screenshots, write file-based visualization output,
+or write particle NPY output. The planned Step94 row keeps the Step92 envelope
+at 32^3/1024 particles with procedural `squid_proxy` geometry, runtime geometry
+diagnostic-only reporting, wall velocity `solid_vel_experimental` reporting,
+and `target_u_lbm = [0.0, 0.0, 0.0]`, but reduces duration to one LBM step for
+GGUI visualization-path isolation only.

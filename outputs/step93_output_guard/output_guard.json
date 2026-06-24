@@ -60,57 +60,57 @@
       "extension": ".log",
       "forbidden": false,
       "pass": true,
-      "path": "logs/step93_vtr_output_enablement_guard.log",
-      "size_bytes": 64
+      "path": "logs/step93_taichi_ggui_visualization_enablement_guard.log",
+      "size_bytes": 79
     },
     {
       "extension": ".log",
       "forbidden": false,
       "pass": true,
-      "path": "logs/step93_vtr_output_enablement_plan.log",
-      "size_bytes": 63
+      "path": "logs/step93_taichi_ggui_visualization_enablement_plan.log",
+      "size_bytes": 78
     },
     {
       "extension": ".csv",
       "forbidden": false,
       "pass": true,
       "path": "outputs/step93_artifact_manifest/artifact_manifest.csv",
-      "size_bytes": 512769
+      "size_bytes": 513144
     },
     {
       "extension": ".csv",
       "forbidden": false,
       "pass": true,
       "path": "outputs/step93_artifact_manifest/artifact_summary.csv",
-      "size_bytes": 421
+      "size_bytes": 451
     },
     {
       "extension": ".json",
       "forbidden": false,
       "pass": true,
       "path": "outputs/step93_artifact_manifest/artifact_summary.json",
-      "size_bytes": 490
+      "size_bytes": 526
     },
     {
       "extension": ".csv",
       "forbidden": false,
       "pass": true,
       "path": "outputs/step93_output_guard/output_guard.csv",
-      "size_bytes": 1776
+      "size_bytes": 1986
     },
     {
       "extension": ".json",
       "forbidden": false,
       "pass": true,
       "path": "outputs/step93_output_guard/output_guard.json",
-      "size_bytes": 4935
+      "size_bytes": 5183
     },
     {
       "extension": ".csv",
       "forbidden": false,
       "pass": true,
       "path": "outputs/step93_output_guard/output_guard_summary.csv",
-      "size_bytes": 735
+      "size_bytes": 765
     },
     {
       "extension": ".csv",
@@ -166,56 +166,56 @@
       "forbidden": false,
       "pass": true,
       "path": "outputs/step93_step92_regression_guard/step92_regression_guard.json",
-      "size_bytes": 3472
+      "size_bytes": 3470
     },
     {
       "extension": ".csv",
       "forbidden": false,
       "pass": true,
       "path": "outputs/step93_step92_regression_guard/step92_regression_guard_summary.csv",
-      "size_bytes": 857
+      "size_bytes": 855
     },
     {
       "extension": ".csv",
       "forbidden": false,
       "pass": true,
-      "path": "outputs/step93_vtr_output_enablement_guard/vtr_output_enablement_guard.csv",
-      "size_bytes": 3555
+      "path": "outputs/step93_taichi_ggui_visualization_enablement_guard/taichi_ggui_visualization_enablement_guard.csv",
+      "size_bytes": 4572
     },
     {
       "extension": ".json",
       "forbidden": false,
       "pass": true,
-      "path": "outputs/step93_vtr_output_enablement_guard/vtr_output_enablement_guard.json",
-      "size_bytes": 10011
+      "path": "outputs/step93_taichi_ggui_visualization_enablement_guard/taichi_ggui_visualization_enablement_guard.json",
+      "size_bytes": 12153
     },
     {
       "extension": ".csv",
       "forbidden": false,
       "pass": true,
-      "path": "outputs/step93_vtr_output_enablement_guard/vtr_output_enablement_guard_summary.csv",
-      "size_bytes": 1231
+      "path": "outputs/step93_taichi_ggui_visualization_enablement_guard/taichi_ggui_visualization_enablement_guard_summary.csv",
+      "size_bytes": 1460
     },
     {
       "extension": ".csv",
       "forbidden": false,
       "pass": true,
-      "path": "outputs/step93_vtr_output_enablement_plan/vtr_output_enablement_plan.csv",
-      "size_bytes": 11297
+      "path": "outputs/step93_taichi_ggui_visualization_enablement_plan/taichi_ggui_visualization_enablement_plan.csv",
+      "size_bytes": 12968
     },
     {
       "extension": ".json",
       "forbidden": false,
       "pass": true,
-      "path": "outputs/step93_vtr_output_enablement_plan/vtr_output_enablement_plan.json",
-      "size_bytes": 22847
+      "path": "outputs/step93_taichi_ggui_visualization_enablement_plan/taichi_ggui_visualization_enablement_plan.json",
+      "size_bytes": 25560
     },
     {
       "extension": ".csv",
       "forbidden": false,
       "pass": true,
-      "path": "outputs/step93_vtr_output_enablement_plan/vtr_output_enablement_plan_summary.csv",
-      "size_bytes": 3389
+      "path": "outputs/step93_taichi_ggui_visualization_enablement_plan/taichi_ggui_visualization_enablement_plan_summary.csv",
+      "size_bytes": 3723
     }
   ],
   "summary": {
@@ -233,13 +233,14 @@
     "step93_displaced_particle_output_count": 0,
     "step93_driver_run_dir_count": 0,
     "step93_forbidden_file_count": 0,
+    "step93_ggui_screenshot_count": 0,
     "step93_large_file_count": 0,
     "step93_particle_npy_count": 0,
     "step93_raw_geometry_output_count": 0,
     "step93_real_geometry_candidate_output_count": 0,
     "step93_sparse_wall_velocity_output_count": 0,
-    "step93_total_size_bytes": 592599,
-    "step93_total_size_mb": 0.5651464462280273,
-    "step93_vtr_count": 0
+    "step93_total_size_bytes": 601660,
+    "step93_total_size_mb": 0.5737876892089844,
+    "vtr_file_count": 0
   }
 }
