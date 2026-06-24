@@ -485,6 +485,14 @@ The only intended expansion from Step90 to Step92 is duration:
 n_lbm_steps = 5 -> 10
 ```
 
+After Step93 acceptance, Step94 executes one minimal Taichi GGUI visualization
+smoke over the first-user envelope. The intended Step94 scope is one 32^3 /
+1024-particle / 1-LBM-step canonical driver row plus one Taichi GGUI PNG
+screenshot. Step94 remains closed to VTR, particle NPY, video, real geometry
+candidates, link-area transfer, 48^3, 64^3, solver formula changes, and
+physical-production claims. A later Step95/Step96 sequence may plan and then
+run a 10-step GGUI visualization path if Step94 remains green.
+
 Step91 does not authorize real geometry candidate data, link-area transfer,
 larger grids, VTR output, particle NPY output, solver formula changes, tau
 migration, squid swimming, squid actuation, physical-validation claims,

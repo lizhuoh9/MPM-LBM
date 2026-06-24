@@ -313,3 +313,14 @@ at 32^3/1024 particles with procedural `squid_proxy` geometry, runtime geometry
 diagnostic-only reporting, wall velocity `solid_vel_experimental` reporting,
 and `target_u_lbm = [0.0, 0.0, 0.0]`, but reduces duration to one LBM step for
 GGUI visualization-path isolation only.
+
+Step94 executes exactly that planned Taichi GGUI visualization smoke row. The
+canonical driver completes one LBM step at 32^3 with 1024 procedural
+`squid_proxy` particles, runtime geometry diagnostic-only reporting, boundary
+motion reporting, and wall velocity `solid_vel_experimental` reporting. The
+independent GGUI evidence renderer creates a Taichi window, scene, and camera,
+renders deterministic procedural squid-proxy visualization proxy points plus
+domain and wall-velocity proxies, and writes exactly one PNG screenshot. Step94
+keeps VTR, particle NPY, video, real geometry candidates, link-area transfer,
+48^3, 64^3, solver formula changes, physical validation, real squid validation,
+squid swimming, squid actuation, and production-readiness claims closed.

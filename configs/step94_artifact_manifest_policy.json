@@ -1,0 +1,20 @@
+{
+  "large_file_threshold_bytes": 1048576,
+  "max_step94_file_count": 100,
+  "max_step94_total_size_mb": 10.0,
+  "raw_geometry_extensions": [
+    ".stl",
+    ".obj",
+    ".ply",
+    ".vtk",
+    ".vtu"
+  ],
+  "required_driver_run_dir": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_ggui_visual_smoke",
+  "screenshot_extensions": [
+    ".png"
+  ],
+  "video_extensions": [
+    ".gif",
+    ".mp4"
+  ]
+}

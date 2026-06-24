@@ -516,3 +516,37 @@ smoke. Real geometry candidates, link-area transfer, 48^3, 64^3, file-based
 visualization output, and particle NPY output remain disabled. Step93 does not
 claim physical validation, real squid validation, squid swimming, squid
 actuation, grid convergence, or production readiness.
+
+## Step94 Executed GGUI Smoke Row
+
+Step94 executes the only planned Taichi GGUI visualization smoke row:
+
+```text
+campaign_id = step94_taichi_ggui_visualization_smoke
+row_id = first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_ggui_visual_smoke
+n_grid = 32
+n_particles = 1024
+n_lbm_steps = 1
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+target_u_lbm = [0.0, 0.0, 0.0]
+geometry_type = squid_proxy
+geometry_config_path = configs/step85_squid_proxy_geometry_1024.json
+quality_check_enabled = true
+quality_check_strict = false
+geometry_motion_application_mode = diagnostic_only
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+ggui_visualization_enabled = true
+write_vtk = false
+write_particles = false
+executed_in_step94 = true
+```
+
+The independent Step94 GGUI renderer writes exactly one PNG screenshot and no
+video. Step94 keeps file-based visualization output, particle NPY output, real
+geometry candidates, link-area transfer, 48^3, 64^3, solver formula changes,
+physical validation, real squid validation, squid swimming, squid actuation,
+grid convergence, production visualization readiness, and production simulation
+readiness closed.

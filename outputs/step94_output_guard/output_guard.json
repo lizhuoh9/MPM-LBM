@@ -1,0 +1,360 @@
+{
+  "rows": [
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step94_activation_guard.log",
+      "size_bytes": 53
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step94_artifact_manifest.log",
+      "size_bytes": 62
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step94_focused_pytest.log",
+      "size_bytes": 103
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step94_full_pytest_anaconda.log",
+      "size_bytes": 1332
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step94_full_pytest_taichi.log",
+      "size_bytes": 1333
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step94_output_guard.log",
+      "size_bytes": 49
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step94_step90_regression_guard.log",
+      "size_bytes": 59
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step94_step92_regression_guard.log",
+      "size_bytes": 59
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step94_step93_regression_guard.log",
+      "size_bytes": 59
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step94_taichi_ggui_visualization_quality.log",
+      "size_bytes": 76
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step94_taichi_ggui_visualization_smoke_matrix.log",
+      "size_bytes": 74
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_activation_guard/activation_guard.csv",
+      "size_bytes": 2094
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_activation_guard/activation_guard.json",
+      "size_bytes": 6490
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_activation_guard/activation_guard_summary.csv",
+      "size_bytes": 649
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_artifact_manifest/artifact_manifest.csv",
+      "size_bytes": 520485
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_artifact_manifest/artifact_summary.csv",
+      "size_bytes": 479
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_artifact_manifest/artifact_summary.json",
+      "size_bytes": 560
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_driver_runs/first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_ggui_visual_smoke/boundary_motion_interface_report.json",
+      "size_bytes": 8410
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_driver_runs/first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_ggui_visual_smoke/diagnostics_timeseries.csv",
+      "size_bytes": 792
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_driver_runs/first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_ggui_visual_smoke/diagnostics_timeseries.npz",
+      "size_bytes": 8744
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_driver_runs/first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_ggui_visual_smoke/driver_config.json",
+      "size_bytes": 1836
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_driver_runs/first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_ggui_visual_smoke/driver_timing.json",
+      "size_bytes": 466
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_driver_runs/first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_ggui_visual_smoke/geo_all_fluid_32.dat",
+      "size_bytes": 98304
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_driver_runs/first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_ggui_visual_smoke/geometry_motion_interface_report.json",
+      "size_bytes": 8192
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_driver_runs/first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_ggui_visual_smoke/geometry_quality_report.json",
+      "size_bytes": 1219
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_driver_runs/first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_ggui_visual_smoke/wall_velocity_application_report.json",
+      "size_bytes": 2837
+    },
+    {
+      "extension": ".png",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_ggui_visualization/step94_ggui_visual_smoke.png",
+      "size_bytes": 132386
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_ggui_visualization/step94_ggui_visualization_metadata.json",
+      "size_bytes": 630
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_ggui_visualization/step94_ggui_visualization_report.json",
+      "size_bytes": 1128
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_output_guard/output_guard.csv",
+      "size_bytes": 4841
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_output_guard/output_guard.json",
+      "size_bytes": 11182
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_output_guard/output_guard_summary.csv",
+      "size_bytes": 842
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_step90_regression_guard/step90_regression_guard.csv",
+      "size_bytes": 827
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_step90_regression_guard/step90_regression_guard.json",
+      "size_bytes": 2369
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_step90_regression_guard/step90_regression_guard_summary.csv",
+      "size_bytes": 716
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_step92_regression_guard/step92_regression_guard.csv",
+      "size_bytes": 883
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_step92_regression_guard/step92_regression_guard.json",
+      "size_bytes": 2438
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_step92_regression_guard/step92_regression_guard_summary.csv",
+      "size_bytes": 729
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_step93_regression_guard/step93_regression_guard.csv",
+      "size_bytes": 1207
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_step93_regression_guard/step93_regression_guard.json",
+      "size_bytes": 2923
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_step93_regression_guard/step93_regression_guard_summary.csv",
+      "size_bytes": 630
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_taichi_ggui_visualization_quality/taichi_ggui_visualization_quality.csv",
+      "size_bytes": 14147
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_taichi_ggui_visualization_quality/taichi_ggui_visualization_quality.json",
+      "size_bytes": 26912
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_taichi_ggui_visualization_quality/taichi_ggui_visualization_quality_summary.csv",
+      "size_bytes": 543
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_taichi_ggui_visualization_smoke_matrix/taichi_ggui_visualization_smoke_matrix.csv",
+      "size_bytes": 5150
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_taichi_ggui_visualization_smoke_matrix/taichi_ggui_visualization_smoke_matrix.json",
+      "size_bytes": 9761
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step94_taichi_ggui_visualization_smoke_matrix/taichi_ggui_visualization_smoke_matrix_summary.csv",
+      "size_bytes": 2282
+    }
+  ],
+  "summary": {
+    "artifact_budget_pass": true,
+    "output_guard_pass": true,
+    "pass_count": 47,
+    "private_absolute_path_count": 0,
+    "protected_diagnostics_edit_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "protected_sim_edit_count": 0,
+    "row_count": 47,
+    "step94_dense_displacement_output_count": 0,
+    "step94_dense_wall_velocity_output_count": 0,
+    "step94_displaced_particle_output_count": 0,
+    "step94_forbidden_file_count": 0,
+    "step94_ggui_screenshot_count": 1,
+    "step94_ggui_video_count": 0,
+    "step94_large_file_count": 0,
+    "step94_optional_driver_run_dir_count": 0,
+    "step94_particle_npy_count": 0,
+    "step94_raw_geometry_output_count": 0,
+    "step94_real_geometry_candidate_output_count": 0,
+    "step94_required_driver_run_dir_count": 1,
+    "step94_sparse_wall_velocity_output_count": 0,
+    "step94_total_size_bytes": 887342,
+    "step94_total_size_mb": 0.8462352752685547,
+    "step94_vtr_count": 0
+  }
+}

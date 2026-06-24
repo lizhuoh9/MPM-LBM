@@ -1,0 +1,33 @@
+{
+  "camera_lookat": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "camera_position": [
+    1.6,
+    1.2,
+    1.6
+  ],
+  "camera_up": [
+    0.0,
+    1.0,
+    0.0
+  ],
+  "ggui_visualization_enabled": true,
+  "max_visual_points": 4096,
+  "render_frames": 1,
+  "screenshot_enabled": true,
+  "screenshot_path": "outputs/step94_ggui_visualization/step94_ggui_visual_smoke.png",
+  "show_window": false,
+  "video_enabled": false,
+  "visualize_boundary_motion_proxy": true,
+  "visualize_domain_box": true,
+  "visualize_squid_proxy_points": true,
+  "visualize_wall_velocity_proxy": true,
+  "window_resolution": [
+    1280,
+    720
+  ],
+  "window_title": "Step94 GGUI First User Envelope Smoke"
+}

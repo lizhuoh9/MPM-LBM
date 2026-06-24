@@ -1,0 +1,245 @@
+{
+  "config": {
+    "application_mode": "diagnostic_only",
+    "apply_to_driver": false,
+    "apply_to_lbm_solid_phi": false,
+    "apply_to_lbm_solid_vel": false,
+    "apply_to_mpm_particles": false,
+    "apply_to_projection": false,
+    "deterministic": true,
+    "diagnostic_only": true,
+    "displacement_artifact_path": "outputs/step42_geometry_displacement/geometry_displacement.json",
+    "displacement_config_path": "configs/step42_squid_proxy_geometry_displacement.json",
+    "geometry_config_path": "configs/step30_squid_proxy_geometry.json",
+    "geometry_motion_id": "step43_geometry_motion_prescribed_diagnostic_only",
+    "geometry_motion_mode": "prescribed_kinematic",
+    "motion_mapping_config_path": "configs/step33_squid_proxy_motion_mapping.json",
+    "mutate_geometry_state": false,
+    "recompute_boundary_links": false,
+    "region_config_path": "configs/step30_squid_proxy_region_config.json",
+    "schedule_config_path": "configs/step32_squid_proxy_kinematics_schedule.json",
+    "scope_note": "Step 43 geometry motion driver interface only; no geometry mutation",
+    "update_dynamic_solid": false
+  },
+  "summary": {
+    "application_mode": "diagnostic_only",
+    "apply_to_driver": false,
+    "apply_to_lbm_solid_phi": false,
+    "apply_to_lbm_solid_vel": false,
+    "apply_to_mpm_particles": false,
+    "apply_to_projection": false,
+    "config_validation_pass": true,
+    "config_validation_pass_count": 25,
+    "config_validation_row_count": 25,
+    "cycle_closure_pass": true,
+    "diagnostic_only": true,
+    "displacement_artifact_path": "outputs/step42_geometry_displacement/geometry_displacement.json",
+    "displacement_bounds_pass": true,
+    "displacement_config_path": "configs/step42_squid_proxy_geometry_displacement.json",
+    "displacement_finite_pass": true,
+    "displacement_row_count": 243,
+    "geometry_motion_id": "step43_geometry_motion_prescribed_diagnostic_only",
+    "geometry_motion_mode": "prescribed_kinematic",
+    "max_displacement_norm": 0.025987588251121133,
+    "mutate_geometry_state": false,
+    "mutation_flag_enabled_count": 0,
+    "no_op_pass": true,
+    "phase_sample_count": 81,
+    "quality_pass": true,
+    "recompute_boundary_links": false,
+    "repeatability_pass": true,
+    "scope_note": "Step 43 diagnostic-only geometry motion driver interface; no geometry mutation",
+    "tracked_region_count": 3,
+    "tracked_regions": [
+      "mantle_outer",
+      "mantle_cavity_proxy",
+      "funnel_outlet_proxy"
+    ],
+    "update_dynamic_solid": false
+  },
+  "validation_rows": [
+    {
+      "check": "geometry_motion_id_expected",
+      "notes": "Step 43 geometry motion id must be stable",
+      "pass": true,
+      "value": "step43_geometry_motion_prescribed_diagnostic_only"
+    },
+    {
+      "check": "geometry_motion_mode_expected",
+      "notes": "Step 43 interface config must be prescribed_kinematic",
+      "pass": true,
+      "value": "prescribed_kinematic"
+    },
+    {
+      "check": "application_mode_expected",
+      "notes": "Step 43 application mode must be diagnostic_only",
+      "pass": true,
+      "value": "diagnostic_only"
+    },
+    {
+      "check": "diagnostic_only_true",
+      "notes": "Step 43 interface must remain diagnostic-only",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "deterministic_true",
+      "notes": "Step 43 interface must be deterministic",
+      "pass": true,
+      "value": true
+    },
+    {
+      "check": "displacement_config_path_exists",
+      "notes": "Step 42 displacement config must exist",
+      "pass": true,
+      "value": "configs/step42_squid_proxy_geometry_displacement.json"
+    },
+    {
+      "check": "displacement_artifact_path_exists",
+      "notes": "Step 42 displacement artifact must exist",
+      "pass": true,
+      "value": "outputs/step42_geometry_displacement/geometry_displacement.json"
+    },
+    {
+      "check": "schedule_config_path_exists",
+      "notes": "Step 32 schedule config must exist",
+      "pass": true,
+      "value": "configs/step32_squid_proxy_kinematics_schedule.json"
+    },
+    {
+      "check": "motion_mapping_config_path_exists",
+      "notes": "Step 33 motion mapping config must exist",
+      "pass": true,
+      "value": "configs/step33_squid_proxy_motion_mapping.json"
+    },
+    {
+      "check": "region_config_path_exists",
+      "notes": "Step 30 region config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_region_config.json"
+    },
+    {
+      "check": "geometry_config_path_exists",
+      "notes": "Step 30 geometry config must exist",
+      "pass": true,
+      "value": "configs/step30_squid_proxy_geometry.json"
+    },
+    {
+      "check": "displacement_row_count_expected",
+      "notes": "Step 42 displacement artifact must have 243 rows",
+      "pass": true,
+      "value": 243
+    },
+    {
+      "check": "phase_sample_count_expected",
+      "notes": "Step 42 displacement artifact must have 81 phases",
+      "pass": true,
+      "value": 81
+    },
+    {
+      "check": "tracked_regions_expected",
+      "notes": "tracked regions must match Step 42",
+      "pass": true,
+      "value": [
+        "mantle_outer",
+        "mantle_cavity_proxy",
+        "funnel_outlet_proxy"
+      ]
+    },
+    {
+      "check": "tracked_region_count_expected",
+      "notes": "tracked region count must be three",
+      "pass": true,
+      "value": 3
+    },
+    {
+      "check": "scope_note_valid",
+      "notes": "scope_note must state interface-only and no geometry mutation",
+      "pass": true,
+      "value": "Step 43 geometry motion driver interface only; no geometry mutation"
+    },
+    {
+      "check": "apply_to_driver_false",
+      "notes": "apply_to_driver must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_mpm_particles_false",
+      "notes": "apply_to_mpm_particles must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_lbm_solid_phi_false",
+      "notes": "apply_to_lbm_solid_phi must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_lbm_solid_vel_false",
+      "notes": "apply_to_lbm_solid_vel must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "apply_to_projection_false",
+      "notes": "apply_to_projection must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "update_dynamic_solid_false",
+      "notes": "update_dynamic_solid must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "recompute_boundary_links_false",
+      "notes": "recompute_boundary_links must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "mutate_geometry_state_false",
+      "notes": "mutate_geometry_state must remain false",
+      "pass": true,
+      "value": false
+    },
+    {
+      "check": "all_mutation_flags_false",
+      "notes": "all mutation flags must be false",
+      "pass": true,
+      "value": 0
+    }
+  ],
+  "validation_summary": {
+    "all_mutation_flags_false": true,
+    "application_mode": "diagnostic_only",
+    "apply_to_driver": false,
+    "apply_to_lbm_solid_phi": false,
+    "apply_to_lbm_solid_vel": false,
+    "apply_to_mpm_particles": false,
+    "apply_to_projection": false,
+    "diagnostic_only": true,
+    "displacement_bounds_pass": true,
+    "displacement_diagnostic_only_pass": true,
+    "displacement_finite_pass": true,
+    "displacement_row_count": 243,
+    "geometry_motion_mode": "prescribed_kinematic",
+    "max_displacement_norm": 0.025987588251121133,
+    "mutate_geometry_state": false,
+    "pass_count": 25,
+    "phase_sample_count": 81,
+    "recompute_boundary_links": false,
+    "row_count": 25,
+    "tracked_region_count": 3,
+    "tracked_regions": [
+      "mantle_outer",
+      "mantle_cavity_proxy",
+      "funnel_outlet_proxy"
+    ],
+    "update_dynamic_solid": false,
+    "validation_pass": true
+  }
+}

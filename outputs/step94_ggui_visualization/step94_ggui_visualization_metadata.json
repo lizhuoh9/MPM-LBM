@@ -1,0 +1,14 @@
+{
+  "component_point_counts": {
+    "arms": 52,
+    "head": 189,
+    "left_fin": 23,
+    "mantle": 867,
+    "right_fin": 22
+  },
+  "driver_run_dir": "outputs/step94_driver_runs/first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_ggui_visual_smoke",
+  "ggui_config_path": "configs/step94_taichi_ggui_visualization_config.json",
+  "render_report_path": "outputs/step94_ggui_visualization/step94_ggui_visualization_report.json",
+  "screenshot_path": "outputs/step94_ggui_visualization/step94_ggui_visual_smoke.png",
+  "visualization_source": "procedural_squid_proxy_proxy_points"
+}
