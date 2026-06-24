@@ -98,6 +98,7 @@ def duct_flap_proxy_sampling_stats(config) -> dict[str, Any]:
         "material_density": float(material["density"]),
         "material_youngs_modulus": float(material["youngs_modulus"]),
         "material_poisson_ratio": float(material["poisson_ratio"]),
+        "used_for_mpm_config": bool(material.get("used_for_mpm_config", False)),
         "used_for_exact_structural_model": bool(material["used_for_exact_structural_model"]),
         "scope_note": (
             "procedural Fluent-inspired duct-flap proxy; not Fluent mesh import, not Fluent validation, "
@@ -150,6 +151,48 @@ def flap_bounds(config) -> tuple[np.ndarray, np.ndarray]:
         dtype=np.float64,
     )
     return flap_min, flap_max
+
+
+def duct_flap_proxy_static_geometry(n_grid: int, config, include_flap: bool = False) -> tuple[np.ndarray, dict[str, Any]]:
+    if n_grid <= 0:
+        raise ValueError("n_grid must be positive")
+    coords_1d = (np.arange(n_grid, dtype=np.float64) + 0.5) / float(n_grid)
+    grid = np.stack(np.meshgrid(coords_1d, coords_1d, coords_1d, indexing="ij"), axis=-1)
+    points = grid.reshape(-1, 3)
+    duct = _duct_dict(config)
+    duct_mask = _inside_bounds(
+        points,
+        [duct["x"][0], duct["y"][0], duct["z"][0]],
+        [duct["x"][1], duct["y"][1], duct["z"][1]],
+    ).reshape(n_grid, n_grid, n_grid)
+    solid = np.ones((n_grid, n_grid, n_grid), dtype=np.int8)
+    solid[duct_mask] = 0
+
+    flap_static_cell_count = 0
+    if include_flap:
+        flap_min, flap_max = flap_bounds(config)
+        flap_mask = _inside_bounds(points, flap_min, flap_max).reshape(n_grid, n_grid, n_grid)
+        solid[flap_mask] = 1
+        flap_static_cell_count = int(np.count_nonzero(flap_mask))
+
+    fluid = solid == 0
+    inlet_fluid = fluid[0, :, :]
+    outlet_fluid = fluid[n_grid - 1, :, :]
+    solid_count = int(np.count_nonzero(solid))
+    fluid_count = int(np.count_nonzero(fluid))
+    report = {
+        "all_fluid_geometry_used": bool(solid_count == 0),
+        "duct_wall_cell_count": int(solid_count - flap_static_cell_count),
+        "flap_static_cell_count": flap_static_cell_count,
+        "fluid_cell_count": fluid_count,
+        "geometry_name": f"geo_duct_flap_proxy_{n_grid}.dat",
+        "inlet_fluid_cell_count": int(np.count_nonzero(inlet_fluid)),
+        "pressure_outlet_fluid_cell_count": int(np.count_nonzero(outlet_fluid)),
+        "solid_cell_count": solid_count,
+        "static_geometry_scope": "duct walls only; flap is represented by MPM particles unless include_flap is true",
+        "top_bottom_wall_cells_present": bool(solid_count > 0),
+    }
+    return solid, report
 
 
 def _inside_bounds(points: np.ndarray, lo, hi) -> np.ndarray:

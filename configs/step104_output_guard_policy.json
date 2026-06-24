@@ -1,0 +1,33 @@
+{
+  "case_data_suffixes": [
+    ".cas",
+    ".cas.h5",
+    ".dat.h5"
+  ],
+  "forbidden_filename_tokens": [
+    "fsi_2way.zip",
+    "flap.msh",
+    "steady_fluid_flow.jou",
+    "flap_fsi_2way.cas.h5",
+    "flap_fsi_2way.dat.h5"
+  ],
+  "large_file_threshold_bytes": 5242880,
+  "max_step104_total_size_mb": 5.0,
+  "official_file_names": [
+    "fsi_2way.zip",
+    "flap.msh",
+    "steady_fluid_flow.jou",
+    "flap_fsi_2way.cas.h5",
+    "flap_fsi_2way.dat.h5"
+  ],
+  "protected_prefixes": [
+    "external/taichi_LBM3D/",
+    "data/real_geometry_candidates/",
+    "benchmarks/private/"
+  ],
+  "video_extensions": [
+    ".mp4",
+    ".avi",
+    ".mov"
+  ]
+}

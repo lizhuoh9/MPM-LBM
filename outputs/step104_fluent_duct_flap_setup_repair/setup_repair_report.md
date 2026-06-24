@@ -1,0 +1,5 @@
+# Step104 Setup Repair Report
+
+| row_name | driver_run_called | canonical_driver_module | geometry_type | n_grid | n_particles | n_lbm_steps | completed_lbm_steps | diagnostics_row_count | target_u_lbm_applied_to_solid_initial_velocity | target_u_lbm_applied_to_inlet | lbm_boundary_condition_mode | all_fluid_geometry_used | fixed_base_particle_count | fixed_base_constraint_applied | material_reference_used_for_mpm_config | step36_squid_wall_velocity_config_used | proxy_flap_tip_displacement_available | direct_quantitative_equivalence_allowed | validation_claim_allowed | stable |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| fluent_duct_flap_setup_repair_48_5step_smoke | True | src.mpm_lbm.sim.drivers.fsi_driver | duct_flap_proxy | 48 | 1024 | 5 | 5 | 6 | False | True | duct_velocity_inlet_pressure_outlet | False | 319 | True | True | False | True | False | False | True |

@@ -54,6 +54,8 @@ class GeometryConfig:
     duct: Optional[dict] = None
     flap: Optional[dict] = None
     material_reference: Optional[dict] = None
+    dimensional_reference: Optional[dict] = None
+    monitor_reference: Optional[dict] = None
 
     geometry_file: Optional[str] = None
     metadata_file: Optional[str] = None

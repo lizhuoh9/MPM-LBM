@@ -101,6 +101,8 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 100 48^3 5-step Taichi GGUI visualization run, with exactly one 48^3/1024-particle/5-step `squid_proxy` first-user envelope row run through the canonical driver and rendered to one Taichi GGUI PNG screenshot, Step99/Step98/Step96 regression guards, output guard, and artifact guard while video, VTR, particle NPY, real geometry candidates, link-area transfer, 64^3, solver formula changes, 48^3 10-step readiness, and physical-production claims remain closed
 - Step 101 48^3 10-step Taichi GGUI visualization plan and guard, with exactly one future Step102 48^3/1024-particle/10-step GGUI visual run planned, Step100/Step99/Step98 regression guards, output guard, and artifact guard while no simulation, GGUI window, screenshot, video, VTR, particle NPY, real geometry candidates, link-area transfer, 64^3, solver formula changes, or physical-production claims are introduced
 - Step 102 Fluent official two-way FSI benchmark intake and guard, with the Step101-planned 48^3/10-step GGUI run left unexecuted, Fluent official duct/flap source metadata recorded, private Ansys data boundaries guarded, mapping limits documented, Step101/Step100 regression guards preserved, and no Fluent run, mesh import, solver runtime change, benchmark comparison, official file commit, or validation claim introduced
+- Step 103 Fluent-inspired duct-flap proxy solver comparison smoke, with one 48^3/1024-particle/5-step procedural duct-flap proxy row, GGUI screenshot output, committed solver gap reporting, private Fluent CSV boundaries, Step102/Step100 regression guards, output guards, and artifact guards while Fluent validation, solver equivalence, physical validation, real FSI validation, and production-readiness claims remain closed
+- Step 104 Fluent duct-flap official problem setup repair, with explicit x-min velocity inlet and x-max pressure outlet setup, non-all-fluid duct static geometry, fixed-base MPM mask and constraint, silicone material mapping into MPM config, Step36 squid wall-velocity disconnect, proxy flap-tip displacement time series, output/artifact guards, and gap-only evidence while Fluent validation, solver equivalence, full public tutorial transient completion, exact Fluent structural model reproduction, and production-readiness claims remain closed
 
 ## Not Implemented
 
@@ -1182,6 +1184,39 @@ production readiness.
 Official benchmark inputs belong under the ignored local-private path
 `benchmarks/private/fluent_fsi_2way/` if the user supplies them locally.
 See docs/102_fluent_official_2way_fsi_benchmark_intake_and_guard.md.
+
+## Step 103 Fluent-Inspired Duct-Flap Proxy Solver Comparison Smoke Boundary
+
+Step103 adds a real solver smoke row for a procedural duct-flap proxy inspired
+by the public Fluent two-way FSI duct/flap tutorial metadata captured in
+Step102. The canonical row is
+`fluent_inspired_duct_flap_proxy_48_5step_ggui_comparison_smoke`.
+It uses the canonical driver for one 48^3, 1024-particle, five-step
+moving-boundary smoke and writes a GGUI screenshot plus a committed solver gap
+report.
+Step103 does not import a Fluent mesh, does not commit official Fluent files,
+does not require private Fluent CSV data, and does not claim Fluent
+validation, solver equivalence, physical validation, real FSI validation, or
+production readiness.
+See docs/103_fluent_inspired_duct_flap_proxy_solver_comparison_smoke.md.
+
+## Step 104 Fluent Duct-Flap Official Problem Setup Repair Boundary
+
+Step104 repairs the problem setup gap found after Step103. The canonical row is
+`fluent_duct_flap_setup_repair_48_5step_smoke`.
+It separates inlet flow from solid initial velocity, applies
+`target_u_lbm` only as the x-min inlet target, uses a pressure outlet at x-max,
+writes a deterministic non-all-fluid duct static geometry artifact, maps the
+public silicone material reference into MPM config, applies a fixed-base MPM
+mask/constraint, disables the Step36 squid wall-velocity path, and writes a
+proxy flap-tip displacement time series.
+Step104 does not change LBM collision, tau, MPM update, moving-boundary, or
+reaction-transfer formulas.
+Step104 does not claim Fluent validation, solver equivalence, exact Fluent
+intrinsic structural-model reproduction, dynamic-mesh equivalence, completion
+of the full 50-step public tutorial transient, physical validation, real FSI
+validation, or production readiness.
+See docs/104_fluent_duct_flap_official_problem_setup_repair.md.
 
 ## Upstream LBM Note
 

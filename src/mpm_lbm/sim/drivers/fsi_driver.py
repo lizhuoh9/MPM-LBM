@@ -12,6 +12,7 @@ from ..coupling.moving_boundary import MovingBoundaryFSICoupler3D
 from ..coupling.penalty import PenaltyFSICoupler3D
 from ..coupling.projection import MPMToLBMProjector3D
 from ..geometry.config import GeometryConfig
+from ..geometry.duct_flap_proxy import duct_flap_proxy_static_geometry
 from ..geometry.quality import GeometryQualityGate, analyze_geometry_config
 from ..geometry.sampler import GeometrySampler3D
 from ..io.run_utils import assert_no_nan_inf_array, ensure_output_dir, make_all_fluid_geo, save_csv_rows, save_json_config
@@ -80,39 +81,67 @@ class FSIDriver3D:
         self.link_area_coupler = None
         self.geometry_quality_report = None
         self.boundary_motion_interface_report = None
+        self.duct_boundary_condition_report = None
+        self.duct_static_geometry_report = None
         self.wall_velocity_application_report = None
         self.wall_velocity_application_reports = []
         self.geometry_motion_interface_report = None
+        self.sampling_stats = None
+        self.initial_particle_positions = None
+        self.free_tip_proxy_mask = None
+        self.flap_tip_monitor_rows = []
+        self.material_reference_used_for_mpm_config = False
 
     def initialize(self):
         t0 = time.perf_counter()
         ensure_output_dir(self.out_dir)
-        make_all_fluid_geo(self.geo_path, self.config.n_grid)
+        geometry_config = None
+        if not (self.config.geometry_type == "box" and self.config.geometry_config_path is None):
+            geometry_config = self._make_geometry_config()
+        self._write_static_lbm_geometry(geometry_config)
         save_json_config(self.config, os.path.join(self.out_dir, "driver_config.json"))
         self._run_boundary_motion_interface_report()
         self._run_geometry_motion_interface_report()
 
-        self.lbm = LBMFluid3D(self.sim.make_lbm_config())
+        lbm_config = self._make_lbm_config()
+        self._write_lbm_boundary_condition_report(lbm_config)
+        self.lbm = LBMFluid3D(lbm_config)
         self.lbm.init_geo(self.geo_path)
         self.lbm.init_simulation()
 
+        mpm_overrides = {
+            "gravity": self.config.gravity,
+            "box_min": self.config.box_min,
+            "box_max": self.config.box_max,
+        }
+        mpm_overrides.update(self._mpm_material_overrides(geometry_config))
         self.solid = MPMSolid3D(
-            self.sim.make_mpm_config(
-                gravity=self.config.gravity,
-                box_min=self.config.box_min,
-                box_max=self.config.box_max,
-            ),
+            self.sim.make_mpm_config(**mpm_overrides),
             n_particles=self.config.n_particles,
         )
         if self.config.geometry_type == "box" and self.config.geometry_config_path is None:
             self.solid.init_box()
         else:
-            geometry_config = self._make_geometry_config()
             self._run_geometry_quality_check(geometry_config)
             cloud = GeometrySampler3D(geometry_config).sample_particles()
-            self.solid.init_from_numpy(cloud["x"], cloud["vol0"], cloud["mass"])
-        target_u_norm = self.mapper.velocity_lbm_to_norm(self.config.target_u_lbm)
-        self.solid.set_uniform_velocity(float(target_u_norm[0]), float(target_u_norm[1]), float(target_u_norm[2]))
+            self.sampling_stats = dict(cloud["sampling_stats"])
+            self.initial_particle_positions = np.asarray(cloud["x"], dtype=np.float32).copy()
+            self.free_tip_proxy_mask = np.asarray(
+                cloud.get("free_tip_proxy_mask", np.zeros((self.config.n_particles,), dtype=np.int8)),
+                dtype=bool,
+            )
+            self.solid.init_from_numpy(
+                cloud["x"],
+                cloud["vol0"],
+                cloud["mass"],
+                fixed_mask_np=cloud.get("fixed_base_mask"),
+            )
+        initial_solid_velocity = self.config.initial_solid_velocity_norm
+        self.solid.set_uniform_velocity(
+            float(initial_solid_velocity[0]),
+            float(initial_solid_velocity[1]),
+            float(initial_solid_velocity[2]),
+        )
 
         self.projector = MPMToLBMProjector3D(self.sim)
         if self.config.coupling_mode == "penalty":
@@ -142,6 +171,94 @@ class FSIDriver3D:
         self.initialized = True
         self.start_time = time.perf_counter()
         self.timing["init_time"] += self.start_time - t0
+
+    def _write_static_lbm_geometry(self, geometry_config):
+        if self.config.lbm_boundary_condition_mode == "duct_velocity_inlet_pressure_outlet":
+            if geometry_config is None or geometry_config.geometry_type != "duct_flap_proxy":
+                raise ValueError("duct_velocity_inlet_pressure_outlet requires duct_flap_proxy geometry_config")
+            self.geo_path = os.path.join(self.out_dir, f"geo_duct_flap_proxy_{self.config.n_grid}.dat")
+            solid_geo, report = duct_flap_proxy_static_geometry(self.config.n_grid, geometry_config)
+            np.savetxt(self.geo_path, solid_geo.reshape(-1, order="F"), fmt="%d")
+            report = dict(report)
+            report["geo_path"] = os.path.basename(self.geo_path)
+            report["lbm_boundary_condition_mode"] = self.config.lbm_boundary_condition_mode
+            self.duct_static_geometry_report = report
+            with open(os.path.join(self.out_dir, "duct_static_geometry_report.json"), "w", encoding="utf-8") as f:
+                json.dump(report, f, indent=2, sort_keys=True)
+                f.write("\n")
+            return report
+
+        make_all_fluid_geo(self.geo_path, self.config.n_grid)
+        return None
+
+    def _make_lbm_config(self):
+        if self.config.lbm_boundary_condition_mode == "default_periodic":
+            return self.sim.make_lbm_config()
+        if self.config.lbm_boundary_condition_mode != "duct_velocity_inlet_pressure_outlet":
+            raise ValueError(f"unsupported lbm_boundary_condition_mode: {self.config.lbm_boundary_condition_mode}")
+
+        target = tuple(float(value) for value in self.config.target_u_lbm)
+        if self.config.velocity_inlet_side == "min":
+            return self.sim.make_lbm_config(
+                bc_x_left=2,
+                bc_x_right=1,
+                vel_bc_x_left=target,
+                rho_bc_x_right=1.0,
+            )
+        return self.sim.make_lbm_config(
+            bc_x_left=1,
+            bc_x_right=2,
+            rho_bc_x_left=1.0,
+            vel_bc_x_right=target,
+        )
+
+    def _write_lbm_boundary_condition_report(self, lbm_config):
+        if self.config.lbm_boundary_condition_mode == "default_periodic":
+            return None
+        static_report = self.duct_static_geometry_report or {}
+        if self.config.velocity_inlet_side == "min":
+            velocity_inlet_cell_count = int(static_report.get("inlet_fluid_cell_count", 0))
+            pressure_outlet_cell_count = int(static_report.get("pressure_outlet_fluid_cell_count", 0))
+        else:
+            velocity_inlet_cell_count = int(static_report.get("pressure_outlet_fluid_cell_count", 0))
+            pressure_outlet_cell_count = int(static_report.get("inlet_fluid_cell_count", 0))
+        report = {
+            "bc_x_left": int(lbm_config.bc_x_left),
+            "bc_x_right": int(lbm_config.bc_x_right),
+            "duct_wall_cell_count": int(static_report.get("duct_wall_cell_count", 0)),
+            "lbm_boundary_condition_mode": self.config.lbm_boundary_condition_mode,
+            "periodic_boundary_used": False,
+            "pressure_outlet_cell_count": pressure_outlet_cell_count,
+            "pressure_outlet_side": self.config.pressure_outlet_side,
+            "target_u_lbm": list(self.config.target_u_lbm),
+            "target_u_lbm_applied_to_inlet": True,
+            "target_u_lbm_applied_to_solid_initial_velocity": False,
+            "velocity_inlet_axis": self.config.velocity_inlet_axis,
+            "velocity_inlet_cell_count": velocity_inlet_cell_count,
+            "velocity_inlet_side": self.config.velocity_inlet_side,
+            "vel_bc_x_left": list(lbm_config.vel_bc_x_left),
+            "vel_bc_x_right": list(lbm_config.vel_bc_x_right),
+        }
+        self.duct_boundary_condition_report = report
+        with open(os.path.join(self.out_dir, "duct_boundary_condition_report.json"), "w", encoding="utf-8") as f:
+            json.dump(report, f, indent=2, sort_keys=True)
+            f.write("\n")
+        return report
+
+    def _mpm_material_overrides(self, geometry_config):
+        if geometry_config is None or geometry_config.geometry_type != "duct_flap_proxy":
+            self.material_reference_used_for_mpm_config = False
+            return {}
+        material = geometry_config.material_reference or {}
+        if not bool(material.get("used_for_mpm_config", False)):
+            self.material_reference_used_for_mpm_config = False
+            return {}
+        self.material_reference_used_for_mpm_config = True
+        return {
+            "p_rho": float(material["density"]),
+            "young_modulus": float(material["youngs_modulus"]),
+            "poisson_ratio": float(material["poisson_ratio"]),
+        }
 
     def _make_geometry_config(self):
         if self.config.geometry_config_path is None:
@@ -441,8 +558,46 @@ class FSIDriver3D:
         }
         self._assert_row_finite(row)
         self.diagnostics_rows.append(row)
+        self.collect_flap_tip_monitor(step)
         self.timing["diagnostics_time"] += time.perf_counter() - t0
         return row
+
+    def collect_flap_tip_monitor(self, step: int):
+        if self.initial_particle_positions is None or self.free_tip_proxy_mask is None:
+            return None
+        if not np.any(self.free_tip_proxy_mask):
+            return None
+        x_np = self.solid.x.to_numpy()
+        displacement_norm = x_np[self.free_tip_proxy_mask] - self.initial_particle_positions[self.free_tip_proxy_mask]
+        displacement_mean = np.mean(displacement_norm, axis=0)
+        scale_m = self._duct_length_scale_m()
+        displacement_m = displacement_mean * scale_m
+        row = {
+            "step": int(step),
+            "time_s": float(step) * self._monitor_time_step_s(),
+            "flap_tip_total_displacement_m": float(np.linalg.norm(displacement_m)),
+            "flap_tip_x_displacement_m": float(displacement_m[0]),
+            "flap_tip_y_displacement_m": float(displacement_m[1]),
+        }
+        self.flap_tip_monitor_rows.append(row)
+        return row
+
+    def _monitor_time_step_s(self) -> float:
+        geometry_config = self._make_geometry_config() if self.config.geometry_config_path else None
+        metadata = getattr(geometry_config, "dimensional_reference", None) if geometry_config is not None else None
+        if metadata and "transient_dt_s" in metadata:
+            return float(metadata["transient_dt_s"])
+        return float(self.sim.lbm_dt_phys)
+
+    def _duct_length_scale_m(self) -> float:
+        geometry_config = self._make_geometry_config() if self.config.geometry_config_path else None
+        if geometry_config is None:
+            return 1.0
+        duct = geometry_config.duct or {}
+        metadata = getattr(geometry_config, "dimensional_reference", None) or {}
+        duct_x = duct.get("x", [0.0, 1.0])
+        duct_span = max(float(duct_x[1]) - float(duct_x[0]), 1.0e-12)
+        return float(metadata.get("duct_length_m", 1.0)) / duct_span
 
     def _assert_row_finite(self, row):
         numeric_values = [value for value in row.values() if isinstance(value, (int, float))]
@@ -470,6 +625,19 @@ class FSIDriver3D:
             npz_payload[field] = np.asarray([row[field] for row in self.diagnostics_rows], dtype=np.float64)
 
         np.savez(os.path.join(self.out_dir, "diagnostics_timeseries.npz"), **npz_payload)
+
+        if self.flap_tip_monitor_rows:
+            save_csv_rows(
+                self.flap_tip_monitor_rows,
+                os.path.join(self.out_dir, "flap_tip_displacement_timeseries.csv"),
+                fieldnames=[
+                    "step",
+                    "time_s",
+                    "flap_tip_total_displacement_m",
+                    "flap_tip_x_displacement_m",
+                    "flap_tip_y_displacement_m",
+                ],
+            )
 
     def final_diagnostics(self):
         if not self.diagnostics_rows:

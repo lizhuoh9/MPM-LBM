@@ -1,0 +1,193 @@
+{
+  "rows": [
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step104_acceptance_policy.json",
+      "size_bytes": 1043
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step104_artifact_manifest_policy.json",
+      "size_bytes": 264
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step104_fluent_duct_flap_geometry_1024.json",
+      "size_bytes": 1333
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step104_fluent_duct_flap_setup_repair_48_5step_smoke.json",
+      "size_bytes": 891
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step104_output_guard_policy.json",
+      "size_bytes": 651
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step104_artifact_manifest.log",
+      "size_bytes": 64
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step104_fluent_duct_flap_setup_repair.log",
+      "size_bytes": 66
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step104_output_guard.log",
+      "size_bytes": 50
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step104_driver_runs/fluent_duct_flap_setup_repair_48_5step_smoke/diagnostics_timeseries.csv",
+      "size_bytes": 2073
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step104_driver_runs/fluent_duct_flap_setup_repair_48_5step_smoke/diagnostics_timeseries.npz",
+      "size_bytes": 9624
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step104_driver_runs/fluent_duct_flap_setup_repair_48_5step_smoke/driver_config.json",
+      "size_bytes": 1774
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step104_driver_runs/fluent_duct_flap_setup_repair_48_5step_smoke/driver_timing.json",
+      "size_bytes": 435
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step104_driver_runs/fluent_duct_flap_setup_repair_48_5step_smoke/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step104_driver_runs/fluent_duct_flap_setup_repair_48_5step_smoke/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step104_driver_runs/fluent_duct_flap_setup_repair_48_5step_smoke/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 505
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step104_driver_runs/fluent_duct_flap_setup_repair_48_5step_smoke/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step104_driver_runs/fluent_duct_flap_setup_repair_48_5step_smoke/geometry_quality_report.json",
+      "size_bytes": 2290
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step104_fluent_duct_flap_setup_repair/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step104_fluent_duct_flap_setup_repair/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step104_fluent_duct_flap_setup_repair/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 505
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step104_fluent_duct_flap_setup_repair/setup_repair_report.csv",
+      "size_bytes": 723
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step104_fluent_duct_flap_setup_repair/setup_repair_report.json",
+      "size_bytes": 3826
+    },
+    {
+      "extension": ".md",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step104_fluent_duct_flap_setup_repair/setup_repair_report.md",
+      "size_bytes": 973
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step104_fluent_duct_flap_setup_repair/setup_repair_summary.csv",
+      "size_bytes": 512
+    }
+  ],
+  "summary": {
+    "artifact_budget_pass": true,
+    "forbidden_validation_claim_count": 0,
+    "output_guard_pass": true,
+    "pass_count": 24,
+    "private_absolute_path_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "row_count": 24,
+    "step104_ansys_proprietary_file_count": 0,
+    "step104_fluent_run_output_count": 0,
+    "step104_forbidden_file_count": 0,
+    "step104_large_file_count": 0,
+    "step104_particle_npy_count": 0,
+    "step104_private_fluent_csv_count": 0,
+    "step104_step36_wall_velocity_reference_count": 0,
+    "step104_total_size_bytes": 361782,
+    "step104_total_size_mb": 0.34502220153808594,
+    "step104_video_count": 0,
+    "step104_vtr_count": 0
+  }
+}

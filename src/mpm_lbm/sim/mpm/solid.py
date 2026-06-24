@@ -52,6 +52,8 @@ class MPMSolid3D:
         self.Jp = ti.field(ti.f32, shape=n_particles)
         self.mass = ti.field(ti.f32, shape=n_particles)
         self.vol0 = ti.field(ti.f32, shape=n_particles)
+        self.fixed_mask = ti.field(ti.i8, shape=n_particles)
+        self.fixed_x = ti.Vector.field(3, ti.f32, shape=n_particles)
 
         self.grid_v = ti.Vector.field(3, ti.f32, shape=(self.n_grid, self.n_grid, self.n_grid))
         self.grid_m = ti.field(ti.f32, shape=(self.n_grid, self.n_grid, self.n_grid))
@@ -137,6 +139,8 @@ class MPMSolid3D:
             self.Jp[p] = 1.0
             self.mass[p] = self.p_mass0
             self.vol0[p] = self.p_vol0
+            self.fixed_mask[p] = ti.cast(0, ti.i8)
+            self.fixed_x[p] = self.x[p]
 
     @ti.kernel
     def reset_deformation_state(self):
@@ -145,7 +149,7 @@ class MPMSolid3D:
             self.F[p] = ti.Matrix.identity(ti.f32, 3)
             self.Jp[p] = 1.0
 
-    def init_from_numpy(self, x_np, vol0_np, mass_np, v_np=None):
+    def init_from_numpy(self, x_np, vol0_np, mass_np, v_np=None, fixed_mask_np=None):
         x_arr = np.asarray(x_np, dtype=np.float32)
         vol_arr = np.asarray(vol0_np, dtype=np.float32)
         mass_arr = np.asarray(mass_np, dtype=np.float32)
@@ -162,11 +166,19 @@ class MPMSolid3D:
             v_arr = np.asarray(v_np, dtype=np.float32)
             if v_arr.shape != (self.n_particles, 3):
                 raise ValueError(f"v_np must have shape ({self.n_particles}, 3)")
+        if fixed_mask_np is None:
+            fixed_arr = np.zeros((self.n_particles,), dtype=np.int8)
+        else:
+            fixed_arr = np.asarray(fixed_mask_np, dtype=np.int8)
+            if fixed_arr.shape != (self.n_particles,):
+                raise ValueError(f"fixed_mask_np must have shape ({self.n_particles},)")
 
         if not np.all(np.isfinite(x_arr)):
             raise ValueError("x_np must be finite")
         if not np.all(np.isfinite(v_arr)):
             raise ValueError("v_np must be finite")
+        if not np.all((fixed_arr == 0) | (fixed_arr == 1)):
+            raise ValueError("fixed_mask_np must contain only 0/1 values")
         if not np.all(np.isfinite(vol_arr)) or np.any(vol_arr <= 0.0):
             raise ValueError("vol0_np must be finite and positive")
         if not np.all(np.isfinite(mass_arr)) or np.any(mass_arr <= 0.0):
@@ -176,7 +188,10 @@ class MPMSolid3D:
         self.v.from_numpy(v_arr)
         self.vol0.from_numpy(vol_arr)
         self.mass.from_numpy(mass_arr)
+        self.fixed_x.from_numpy(x_arr)
+        self.fixed_mask.from_numpy(fixed_arr)
         self.reset_deformation_state()
+        self.apply_fixed_particle_constraints()
 
     @ti.kernel
     def clear_grid(self):
@@ -259,6 +274,12 @@ class MPMSolid3D:
             self.C[p] = new_C
             self.F[p] = (ti.Matrix.identity(ti.f32, 3) + self.dt * new_C) @ self.F[p]
             self.Jp[p] = self.F[p].determinant()
+            if self.fixed_mask[p] != 0:
+                self.x[p] = self.fixed_x[p]
+                self.v[p] = ti.Vector([0.0, 0.0, 0.0])
+                self.C[p] = ti.Matrix.zero(ti.f32, 3, 3)
+                self.F[p] = ti.Matrix.identity(ti.f32, 3)
+                self.Jp[p] = 1.0
 
     def substep(self):
         self.clear_grid()
@@ -269,7 +290,20 @@ class MPMSolid3D:
     @ti.kernel
     def set_uniform_velocity(self, vx: ti.f32, vy: ti.f32, vz: ti.f32):
         for p in range(self.n_particles):
-            self.v[p] = ti.Vector([vx, vy, vz])
+            if self.fixed_mask[p] != 0:
+                self.v[p] = ti.Vector([0.0, 0.0, 0.0])
+            else:
+                self.v[p] = ti.Vector([vx, vy, vz])
+
+    @ti.kernel
+    def apply_fixed_particle_constraints(self):
+        for p in range(self.n_particles):
+            if self.fixed_mask[p] != 0:
+                self.x[p] = self.fixed_x[p]
+                self.v[p] = ti.Vector([0.0, 0.0, 0.0])
+                self.C[p] = ti.Matrix.zero(ti.f32, 3, 3)
+                self.F[p] = ti.Matrix.identity(ti.f32, 3)
+                self.Jp[p] = 1.0
 
     @ti.kernel
     def reduce_stats(self):
@@ -305,6 +339,32 @@ class MPMSolid3D:
             "min_J": float(self.min_J[None]),
             "max_J": float(self.max_J[None]),
             "total_mass": float(self.total_mass[None]),
+        }
+
+    def get_fixed_particle_stats(self):
+        """
+        Diagnostic-only. Reads fixed-particle displacement/velocity bounds for contract tests.
+        """
+        mask_np = self.fixed_mask.to_numpy().astype(bool)
+        count = int(np.count_nonzero(mask_np))
+        if count == 0:
+            return {
+                "fixed_base_constraint_applied": False,
+                "fixed_base_particle_count": 0,
+                "fixed_base_max_displacement_norm": 0.0,
+                "fixed_base_max_velocity_norm": 0.0,
+            }
+
+        x_np = self.x.to_numpy()
+        fixed_x_np = self.fixed_x.to_numpy()
+        v_np = self.v.to_numpy()
+        displacement = np.linalg.norm(x_np[mask_np] - fixed_x_np[mask_np], axis=1)
+        velocity = np.linalg.norm(v_np[mask_np], axis=1)
+        return {
+            "fixed_base_constraint_applied": True,
+            "fixed_base_particle_count": count,
+            "fixed_base_max_displacement_norm": float(np.max(displacement)),
+            "fixed_base_max_velocity_norm": float(np.max(velocity)),
         }
 
     def export_particles(self, out_dir: str, prefix: str = "particles"):

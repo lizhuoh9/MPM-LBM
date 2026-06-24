@@ -95,18 +95,26 @@ class GeometrySampler3D:
             masks = self.component_masks(selected)
             stats.update({f"{name}_particle_count": int(np.count_nonzero(mask)) for name, mask in masks.items()})
             stats["scope_note"] = "procedural squid proxy geometry, not anatomical or validated squid geometry"
+        fixed_base_mask = None
+        free_tip_proxy_mask = None
         if self.config.geometry_type == "duct_flap_proxy":
             masks = self.component_masks(selected)
             stats.update({f"{name}_particle_count": int(np.count_nonzero(mask)) for name, mask in masks.items()})
             stats.update(duct_flap_proxy_sampling_stats(self.config))
+            fixed_base_mask = masks["fixed_base"].astype(np.int8)
+            free_tip_proxy_mask = masks["free_tip_proxy"].astype(np.int8)
 
-        return {
+        cloud = {
             "x": selected.astype(np.float32),
             "vol0": vol0,
             "mass": mass.astype(np.float32),
             "geometry_volume": float(geometry_volume),
             "sampling_stats": stats,
         }
+        if fixed_base_mask is not None:
+            cloud["fixed_base_mask"] = fixed_base_mask
+            cloud["free_tip_proxy_mask"] = free_tip_proxy_mask
+        return cloud
 
     def voxelize(self, n_grid: int) -> dict:
         if self.imported is not None:

@@ -1,0 +1,17 @@
+metric,value
+all_fluid_geometry_used_count,0
+driver_run_called_count,1
+fixed_base_constraint_applied_count,1
+has_inf_count,0
+has_nan_count,0
+material_reference_used_for_mpm_config_count,1
+missing_required_rows,[]
+proxy_flap_tip_displacement_available_count,1
+required_row_count,1
+required_stable_count,1
+row_count,1
+stable_count,1
+step104_setup_repair_pass,True
+target_u_lbm_applied_to_inlet_count,1
+target_u_lbm_applied_to_solid_initial_velocity_count,0
+total_elapsed_seconds,66.74156330000551

@@ -14,6 +14,9 @@ VALID_BOUNDARY_MOTION_MODES = ("static", "prescribed_kinematic")
 VALID_WALL_VELOCITY_APPLICATION_MODES = ("disabled", "solid_vel_experimental")
 VALID_GEOMETRY_MOTION_MODES = ("static", "prescribed_kinematic")
 VALID_GEOMETRY_MOTION_APPLICATION_MODES = ("disabled", "diagnostic_only")
+VALID_LBM_BOUNDARY_CONDITION_MODES = ("default_periodic", "duct_velocity_inlet_pressure_outlet")
+VALID_BOUNDARY_AXES = ("x",)
+VALID_BOUNDARY_SIDES = ("min", "max")
 
 
 def _as_float_tuple(values, name):
@@ -35,7 +38,13 @@ class FSIDriverConfig:
     mpm_dt: float = 4.0e-4
 
     target_u_lbm: Tuple[float, float, float] = (0.02, 0.0, 0.0)
+    initial_solid_velocity_norm: Tuple[float, float, float] = (0.0, 0.0, 0.0)
     gravity: Tuple[float, float, float] = (0.0, 0.0, 0.0)
+
+    lbm_boundary_condition_mode: str = "default_periodic"
+    velocity_inlet_axis: str = "x"
+    velocity_inlet_side: str = "min"
+    pressure_outlet_side: str = "max"
 
     box_min: Tuple[float, float, float] = (0.25, 0.35, 0.25)
     box_max: Tuple[float, float, float] = (0.55, 0.65, 0.55)
@@ -122,6 +131,19 @@ class FSIDriverConfig:
                 raise ValueError("geometry_motion_application_config_path must exist when geometry_motion_application_mode='diagnostic_only'")
         if self.geometry_type not in VALID_GEOMETRY_TYPES:
             raise ValueError(f"geometry_type must be one of {VALID_GEOMETRY_TYPES}")
+        if self.lbm_boundary_condition_mode not in VALID_LBM_BOUNDARY_CONDITION_MODES:
+            raise ValueError(f"lbm_boundary_condition_mode must be one of {VALID_LBM_BOUNDARY_CONDITION_MODES}")
+        if self.velocity_inlet_axis not in VALID_BOUNDARY_AXES:
+            raise ValueError(f"velocity_inlet_axis must be one of {VALID_BOUNDARY_AXES}")
+        if self.velocity_inlet_side not in VALID_BOUNDARY_SIDES:
+            raise ValueError(f"velocity_inlet_side must be one of {VALID_BOUNDARY_SIDES}")
+        if self.pressure_outlet_side not in VALID_BOUNDARY_SIDES:
+            raise ValueError(f"pressure_outlet_side must be one of {VALID_BOUNDARY_SIDES}")
+        if self.lbm_boundary_condition_mode == "duct_velocity_inlet_pressure_outlet":
+            if self.velocity_inlet_axis != "x":
+                raise ValueError("duct_velocity_inlet_pressure_outlet currently supports only x-axis inlet/outlet")
+            if self.velocity_inlet_side == self.pressure_outlet_side:
+                raise ValueError("velocity_inlet_side and pressure_outlet_side must differ")
         if self.n_grid <= 0:
             raise ValueError("n_grid must be positive")
         if self.n_particles <= 0:
@@ -152,6 +174,11 @@ class FSIDriverConfig:
             raise ValueError("output_interval must be positive")
 
         object.__setattr__(self, "target_u_lbm", _as_float_tuple(self.target_u_lbm, "target_u_lbm"))
+        object.__setattr__(
+            self,
+            "initial_solid_velocity_norm",
+            _as_float_tuple(self.initial_solid_velocity_norm, "initial_solid_velocity_norm"),
+        )
         object.__setattr__(self, "gravity", _as_float_tuple(self.gravity, "gravity"))
         object.__setattr__(self, "box_min", _as_float_tuple(self.box_min, "box_min"))
         object.__setattr__(self, "box_max", _as_float_tuple(self.box_max, "box_max"))
@@ -164,7 +191,7 @@ class FSIDriverConfig:
 
     def to_dict(self):
         data = asdict(self)
-        for key in ("target_u_lbm", "gravity", "box_min", "box_max"):
+        for key in ("target_u_lbm", "initial_solid_velocity_norm", "gravity", "box_min", "box_max"):
             data[key] = list(data[key])
         return data
 

@@ -1,0 +1,13 @@
+{
+  "coupling_time": 0.6837820000073407,
+  "diagnostics_time": 2.233690800014301,
+  "export_time": 9.00006853044033e-07,
+  "geometry_motion_interface_time": 0.0,
+  "init_time": 51.398394000003464,
+  "lbm_step_time": 6.88667679997161,
+  "mode": "moving_boundary",
+  "mpm_substep_time": 4.621881899991422,
+  "projection_time": 0.9126545000035549,
+  "total_time": 66.74155949999113,
+  "wall_velocity_application_time": 0.0
+}

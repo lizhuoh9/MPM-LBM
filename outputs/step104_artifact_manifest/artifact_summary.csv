@@ -1,0 +1,10 @@
+metric,value
+artifact_budget_pass,True
+file_count,7109
+large_file_count,0
+private_absolute_path_count,0
+step104_ansys_proprietary_file_count,0
+step104_driver_run_dir_count,1
+step104_file_count,40
+step104_total_size_bytes,436995
+step104_total_size_mb,0.4167509078979492
