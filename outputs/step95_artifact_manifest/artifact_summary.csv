@@ -1,0 +1,17 @@
+metric,value
+artifact_budget_pass,True
+file_count,6511
+large_file_count,0
+private_absolute_path_count,0
+protected_external_taichi_lbm3d_step95_file_count,0
+protected_real_geometry_candidates_step95_file_count,0
+protected_sim_or_diagnostics_step95_file_count,0
+raw_geometry_file_count,0
+step95_driver_run_dir_count,0
+step95_file_count,58
+step95_ggui_screenshot_count,0
+step95_ggui_video_count,0
+step95_particle_npy_count,0
+step95_total_size_bytes,190907
+step95_total_size_mb,0.18206310272216797
+step95_vtr_count,0

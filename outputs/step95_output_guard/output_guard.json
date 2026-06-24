@@ -1,0 +1,247 @@
+{
+  "rows": [
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step95_artifact_manifest.log",
+      "size_bytes": 62
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step95_focused_pytest.log",
+      "size_bytes": 202
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step95_full_pytest_anaconda.log",
+      "size_bytes": 2660
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step95_full_pytest_taichi.log",
+      "size_bytes": 2662
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step95_output_guard.log",
+      "size_bytes": 49
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step95_step92_regression_guard.log",
+      "size_bytes": 59
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step95_step93_regression_guard.log",
+      "size_bytes": 59
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step95_step94_regression_guard.log",
+      "size_bytes": 59
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step95_taichi_ggui_10step_visualization_guard.log",
+      "size_bytes": 76
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step95_taichi_ggui_10step_visualization_plan.log",
+      "size_bytes": 75
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_artifact_manifest/artifact_manifest.csv",
+      "size_bytes": 525090
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_artifact_manifest/artifact_summary.csv",
+      "size_bytes": 530
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_artifact_manifest/artifact_summary.json",
+      "size_bytes": 617
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_output_guard/output_guard.csv",
+      "size_bytes": 2641
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_output_guard/output_guard.json",
+      "size_bytes": 7118
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_output_guard/output_guard_summary.csv",
+      "size_bytes": 794
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_step92_regression_guard/step92_regression_guard.csv",
+      "size_bytes": 883
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_step92_regression_guard/step92_regression_guard.json",
+      "size_bytes": 2438
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_step92_regression_guard/step92_regression_guard_summary.csv",
+      "size_bytes": 729
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_step93_regression_guard/step93_regression_guard.csv",
+      "size_bytes": 1207
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_step93_regression_guard/step93_regression_guard.json",
+      "size_bytes": 2923
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_step93_regression_guard/step93_regression_guard_summary.csv",
+      "size_bytes": 630
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_step94_regression_guard/step94_regression_guard.csv",
+      "size_bytes": 1287
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_step94_regression_guard/step94_regression_guard.json",
+      "size_bytes": 3208
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_step94_regression_guard/step94_regression_guard_summary.csv",
+      "size_bytes": 681
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_taichi_ggui_10step_visualization_guard/taichi_ggui_10step_visualization_guard.csv",
+      "size_bytes": 5078
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_taichi_ggui_10step_visualization_guard/taichi_ggui_10step_visualization_guard.json",
+      "size_bytes": 13042
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_taichi_ggui_10step_visualization_guard/taichi_ggui_10step_visualization_guard_summary.csv",
+      "size_bytes": 1417
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_taichi_ggui_10step_visualization_plan/taichi_ggui_10step_visualization_plan.csv",
+      "size_bytes": 13301
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_taichi_ggui_10step_visualization_plan/taichi_ggui_10step_visualization_plan.json",
+      "size_bytes": 26312
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step95_taichi_ggui_10step_visualization_plan/taichi_ggui_10step_visualization_plan_summary.csv",
+      "size_bytes": 3787
+    }
+  ],
+  "summary": {
+    "artifact_budget_pass": true,
+    "output_guard_pass": true,
+    "pass_count": 31,
+    "private_absolute_path_count": 0,
+    "protected_diagnostics_edit_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "protected_sim_edit_count": 0,
+    "row_count": 31,
+    "step95_dense_displacement_output_count": 0,
+    "step95_dense_wall_velocity_output_count": 0,
+    "step95_displaced_particle_output_count": 0,
+    "step95_driver_run_dir_count": 0,
+    "step95_forbidden_file_count": 0,
+    "step95_ggui_screenshot_count": 0,
+    "step95_ggui_video_count": 0,
+    "step95_large_file_count": 0,
+    "step95_particle_npy_count": 0,
+    "step95_raw_geometry_output_count": 0,
+    "step95_real_geometry_candidate_output_count": 0,
+    "step95_sparse_wall_velocity_output_count": 0,
+    "step95_total_size_bytes": 619676,
+    "step95_total_size_mb": 0.5909690856933594,
+    "step95_vtr_count": 0
+  }
+}

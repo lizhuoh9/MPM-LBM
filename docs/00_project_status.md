@@ -47,6 +47,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 89: first user simulation dry run plan and guard
 - Step 90: first user simulation dry run
 - Step 91: first user simulation 10-step dry run plan and guard
+- Step 95: Taichi GGUI 10-step first-user visualization plan and guard
 
 ## Current Validated Modes
 
@@ -324,3 +325,13 @@ domain and wall-velocity proxies, and writes exactly one PNG screenshot. Step94
 keeps VTR, particle NPY, video, real geometry candidates, link-area transfer,
 48^3, 64^3, solver formula changes, physical validation, real squid validation,
 squid swimming, squid actuation, and production-readiness claims closed.
+
+Step95 adds plan-and-guard evidence for exactly one future Step96 Taichi GGUI
+10-step first-user visualization row. Step95 does not run `FSIDriver3D`, call
+`driver.run()`, execute simulation, open a GGUI window, write screenshots, write
+video, write VTR, or write particle NPY output. The planned Step96 row combines
+the Step92 10-step first-user dry-run envelope with the Step94 Taichi GGUI
+screenshot path. Step95 keeps real geometry candidates, link-area transfer,
+48^3, 64^3, dense output, solver formula changes, physical validation, real
+squid validation, squid swimming, squid actuation, and production-readiness
+claims closed.

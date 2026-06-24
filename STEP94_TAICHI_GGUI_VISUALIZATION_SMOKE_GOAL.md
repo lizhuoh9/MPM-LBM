@@ -582,10 +582,10 @@ git diff --check
 git diff --cached --check
 git status --short external/taichi_LBM3D
 git status --short data/real_geometry_candidates
-git grep -n "STEP93_VTR\|step93_vtr\|vtr_output_enablement\|1step_vtr_smoke\|write_vtk_allowed_for_step94\|vtr_output_planned_for_step94"
 ```
 
-The final grep should produce no output.
+Run the legacy Step93 file-visualization route-token grep from the source
+instructions. The final grep should produce no output.
 
 ## Report Requirements
 

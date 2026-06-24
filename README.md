@@ -93,6 +93,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 92 first user simulation 10-step dry run, with exactly one 32^3/1024-particle/10-step `squid_proxy` row using runtime geometry diagnostic-only reporting and `solid_vel_experimental` wall-velocity reporting, Step91/Step90/Step89 regression guards, output guard, and artifact guard while real geometry candidates, link-area transfer, larger grids, file-based visualization output, particle NPY, solver formula changes, and physical-production claims remain closed
 - Step 93 Taichi GGUI visualization enablement plan and guard, with exactly one future Step94 32^3/1024-particle/1-step GGUI visual smoke row planned, Step92/Step91/Step90 regression guards, output guard, and artifact guard while no simulation, GGUI window, screenshot, file-based visualization output, particle NPY, solver formula changes, or physical-production claims are introduced
 - Step 94 Taichi GGUI visualization smoke, with exactly one 32^3/1024-particle/1-step `squid_proxy` first-user envelope row run through the canonical driver and rendered to one Taichi GGUI PNG screenshot, Step93/Step92/Step90 regression guards, output guard, and artifact guard while VTR, particle NPY, video, real geometry candidates, link-area transfer, larger grids, solver formula changes, and physical-production claims remain closed
+- Step 95 Taichi GGUI 10-step first-user visualization plan and guard, with exactly one future Step96 32^3/1024-particle/10-step GGUI visual row planned, Step94/Step93/Step92 regression guards, output guard, and artifact guard while no simulation, GGUI window, screenshot, video, VTR, particle NPY, solver formula changes, or physical-production claims are introduced
 
 ## Not Implemented
 
@@ -1038,6 +1039,20 @@ transfer, enable 48^3/64^3, or claim physical validation, real squid
 validation, squid swimming, squid actuation, grid convergence, production
 visualization readiness, or production simulation readiness.
 See docs/94_taichi_ggui_visualization_smoke.md.
+
+## Step 95 Taichi GGUI 10-Step First User Visualization Plan And Guard Boundary
+
+Step95 is plan-and-guard only. It does not run `FSIDriver3D`, does not call
+`driver.run()`, does not execute simulation, does not open a GGUI window, and
+does not write screenshots, video, VTR, or particle NPY output.
+Step95 plans exactly one future Step96 row:
+`first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_10step_ggui_visual_run`.
+The planned row combines the Step92 10-step first-user dry-run envelope with
+the Step94 Taichi GGUI screenshot path. Step95 keeps real geometry candidates,
+link-area transfer, 48^3, 64^3, dense output, solver formula changes, tau
+migration, physical validation, real squid validation, squid swimming, squid
+actuation, and production-readiness claims closed.
+See docs/95_taichi_ggui_10step_first_user_visualization_plan_and_guard.md.
 
 ## Upstream LBM Note
 

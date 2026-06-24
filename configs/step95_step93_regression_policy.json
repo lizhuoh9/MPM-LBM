@@ -1,0 +1,52 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step93_taichi_ggui_visualization_enablement_plan/taichi_ggui_visualization_enablement_plan.json",
+      "check": "step93_taichi_ggui_visualization_enablement_plan_pass",
+      "expected": true,
+      "summary_key": "step93_taichi_ggui_visualization_enablement_plan_pass"
+    },
+    {
+      "artifact_path": "outputs/step93_taichi_ggui_visualization_enablement_guard/taichi_ggui_visualization_enablement_guard.json",
+      "check": "step93_taichi_ggui_visualization_enablement_guard_pass",
+      "expected": true,
+      "summary_key": "step93_taichi_ggui_visualization_enablement_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step93_step92_regression_guard/step92_regression_guard.json",
+      "check": "step93_step92_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step93_step92_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step93_step91_regression_guard/step91_regression_guard.json",
+      "check": "step93_step91_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step93_step91_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step93_step90_regression_guard/step90_regression_guard.json",
+      "check": "step93_step90_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step93_step90_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step93_output_guard/output_guard.json",
+      "check": "step93_output_guard_pass",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step93_artifact_manifest/artifact_summary.json",
+      "check": "step93_artifact_budget_pass",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "expected_planned_step94_activation_feature_count": 4,
+  "expected_step93_activation_feature_count": 0,
+  "expected_step93_driver_run_dir_count": 0,
+  "expected_step93_ggui_screenshot_count": 0,
+  "expected_step93_particle_npy_count": 0,
+  "expected_vtr_file_count": 0
+}
