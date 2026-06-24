@@ -1,0 +1,67 @@
+{
+  "rows": [
+    {
+      "current_proxy_state": "current proxy solver is 3D on a 48^3 grid",
+      "gap_name": "dimensionality_2D_vs_3D",
+      "gap_present": true,
+      "official_reference": "public tutorial is a 2D duct/flap case",
+      "why_blocks_fluent_equivalence": "3D proxy dynamics and section averaging are not the official 2D formulation"
+    },
+    {
+      "current_proxy_state": "procedural duct/flap particles and static LBM duct geometry are used",
+      "gap_name": "conformal_mesh_equivalence",
+      "gap_present": true,
+      "official_reference": "Fluent tutorial uses its mesh and intrinsic FSI setup",
+      "why_blocks_fluent_equivalence": "the committed proxy does not import or reproduce the official mesh"
+    },
+    {
+      "current_proxy_state": "current MPM stress path remains the existing corotated/hyperelastic implementation",
+      "gap_name": "linear_elasticity_equivalence",
+      "gap_present": true,
+      "official_reference": "official structural model is linear elasticity",
+      "why_blocks_fluent_equivalence": "material parameters are mapped, but the constitutive update is not the Fluent structural model"
+    },
+    {
+      "current_proxy_state": "current LBM geometry is static duct walls plus MPM moving-boundary coupling",
+      "gap_name": "dynamic_mesh_equivalence",
+      "gap_present": true,
+      "official_reference": "official transient uses Fluent dynamic mesh with two-way FSI",
+      "why_blocks_fluent_equivalence": "dynamic mesh deformation is not reproduced"
+    },
+    {
+      "current_proxy_state": "current output is the mean displacement of the free-tip proxy particle mask",
+      "gap_name": "exact_fluent_monitor_equivalence",
+      "gap_present": true,
+      "official_reference": "official monitor is structural-point total displacement near the flap tip",
+      "why_blocks_fluent_equivalence": "the committed monitor is not the same point, interpolation, or averaging definition"
+    },
+    {
+      "current_proxy_state": "target_u_lbm=[0.02,0,0] maps to about 0.0833333333 m/s for this proxy scale",
+      "gap_name": "dimensional_velocity_mapping",
+      "gap_present": true,
+      "official_reference": "official inlet velocity is 10 m/s",
+      "why_blocks_fluent_equivalence": "the current proxy inlet speed is not dimensionally equal to the official inlet speed"
+    },
+    {
+      "current_proxy_state": "current solver uses the existing single-phase LBM setup and parameters",
+      "gap_name": "turbulence_or_fluid_model_equivalence",
+      "gap_present": true,
+      "official_reference": "official run uses Fluent fluid-model settings",
+      "why_blocks_fluent_equivalence": "fluid-model and solver numerics are not matched"
+    },
+    {
+      "current_proxy_state": "current Step105 transient starts from the initialized quiescent LBM field",
+      "gap_name": "steady_preflow_initial_condition",
+      "gap_present": true,
+      "official_reference": "official transient starts from a steady fluid-flow pre-solve",
+      "why_blocks_fluent_equivalence": "the transient initial flow field is not the official steady preflow state"
+    }
+  ],
+  "summary": {
+    "direct_quantitative_equivalence_allowed": false,
+    "gap_count": 8,
+    "gap_taxonomy_report_pass": true,
+    "required_gap_count": 8,
+    "validation_claim_allowed": false
+  }
+}

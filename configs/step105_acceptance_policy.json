@@ -1,0 +1,26 @@
+{
+  "flow_present_epsilon": 1e-12,
+  "min_diagnostics_row_count": 51,
+  "mpm_substeps_per_lbm_step": 1,
+  "required_geometry_config_path": "configs/step104_fluent_duct_flap_geometry_1024.json",
+  "required_geometry_type": "duct_flap_proxy",
+  "required_initial_solid_velocity_norm": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "required_lbm_boundary_condition_mode": "duct_velocity_inlet_pressure_outlet",
+  "required_n_grid": 48,
+  "required_n_lbm_steps": 50,
+  "required_n_particles": 1024,
+  "required_row_names": [
+    "fluent_duct_flap_proxy_48_50step_transient_gap_smoke"
+  ],
+  "required_target_u_lbm": [
+    0.02,
+    0.0,
+    0.0
+  ],
+  "runtime_hard_fail_seconds": 900.0,
+  "runtime_warning_seconds": 600.0
+}

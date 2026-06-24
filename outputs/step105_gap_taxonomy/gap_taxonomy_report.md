@@ -1,0 +1,12 @@
+# Step105 Gap Taxonomy Report
+
+| gap_name | gap_present | official_reference | current_proxy_state | why_blocks_fluent_equivalence |
+| --- | --- | --- | --- | --- |
+| dimensionality_2D_vs_3D | True | public tutorial is a 2D duct/flap case | current proxy solver is 3D on a 48^3 grid | 3D proxy dynamics and section averaging are not the official 2D formulation |
+| conformal_mesh_equivalence | True | Fluent tutorial uses its mesh and intrinsic FSI setup | procedural duct/flap particles and static LBM duct geometry are used | the committed proxy does not import or reproduce the official mesh |
+| linear_elasticity_equivalence | True | official structural model is linear elasticity | current MPM stress path remains the existing corotated/hyperelastic implementation | material parameters are mapped, but the constitutive update is not the Fluent structural model |
+| dynamic_mesh_equivalence | True | official transient uses Fluent dynamic mesh with two-way FSI | current LBM geometry is static duct walls plus MPM moving-boundary coupling | dynamic mesh deformation is not reproduced |
+| exact_fluent_monitor_equivalence | True | official monitor is structural-point total displacement near the flap tip | current output is the mean displacement of the free-tip proxy particle mask | the committed monitor is not the same point, interpolation, or averaging definition |
+| dimensional_velocity_mapping | True | official inlet velocity is 10 m/s | target_u_lbm=[0.02,0,0] maps to about 0.0833333333 m/s for this proxy scale | the current proxy inlet speed is not dimensionally equal to the official inlet speed |
+| turbulence_or_fluid_model_equivalence | True | official run uses Fluent fluid-model settings | current solver uses the existing single-phase LBM setup and parameters | fluid-model and solver numerics are not matched |
+| steady_preflow_initial_condition | True | official transient starts from a steady fluid-flow pre-solve | current Step105 transient starts from the initialized quiescent LBM field | the transient initial flow field is not the official steady preflow state |

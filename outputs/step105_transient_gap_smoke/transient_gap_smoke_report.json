@@ -1,0 +1,70 @@
+{
+  "rows": [
+    {
+      "all_fluid_geometry_used": false,
+      "allowed_claim": "Fluent duct-flap proxy 50-step transient smoke ran with repaired Step104 setup, and dimensional/modeling gaps blocking Fluent-equivalence claims are explicitly audited.",
+      "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+      "completed_lbm_steps": 50,
+      "diagnostics_csv_exists": true,
+      "diagnostics_npz_exists": true,
+      "diagnostics_row_count": 51,
+      "direct_quantitative_equivalence_allowed": false,
+      "driver_run_called": true,
+      "elapsed_seconds": 114.038758900002,
+      "fixed_base_constraint_applied": true,
+      "fixed_base_max_displacement_norm": 0.0,
+      "fixed_base_max_velocity_norm": 0.0,
+      "fixed_base_particle_count": 319,
+      "flap_tip_timeseries_exists": true,
+      "flap_tip_timeseries_row_count": 51,
+      "fluid_cell_count": 3840,
+      "gap_count": 8,
+      "geo_path_name": "geo_duct_flap_proxy_48.dat",
+      "geometry_config_path": "configs/step104_fluent_duct_flap_geometry_1024.json",
+      "geometry_type": "duct_flap_proxy",
+      "has_inf": false,
+      "has_nan": false,
+      "initial_solid_velocity_norm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lbm_boundary_condition_mode": "duct_velocity_inlet_pressure_outlet",
+      "n_grid": 48,
+      "n_lbm_steps": 50,
+      "n_particles": 1024,
+      "pressure_outlet_cell_count": 80,
+      "row_name": "fluent_duct_flap_proxy_48_50step_transient_gap_smoke",
+      "stable": true,
+      "step36_squid_wall_velocity_config_used": false,
+      "target_u_lbm": [
+        0.02,
+        0.0,
+        0.0
+      ],
+      "target_u_lbm_applied_to_inlet": true,
+      "target_u_lbm_applied_to_solid_initial_velocity": false,
+      "validation_claim_allowed": false,
+      "velocity_inlet_cell_count": 80,
+      "vtr_output_count": 0,
+      "write_particles": false,
+      "write_vtk": false
+    }
+  ],
+  "summary": {
+    "all_fluid_geometry_used_count": 0,
+    "driver_run_called_count": 1,
+    "fixed_base_constraint_applied_count": 1,
+    "has_inf_count": 0,
+    "has_nan_count": 0,
+    "missing_required_rows": [],
+    "required_row_count": 1,
+    "required_stable_count": 1,
+    "row_count": 1,
+    "stable_count": 1,
+    "step105_transient_gap_smoke_pass": true,
+    "target_u_lbm_applied_to_inlet_count": 1,
+    "target_u_lbm_applied_to_solid_initial_velocity_count": 0,
+    "total_elapsed_seconds": 114.038758900002
+  }
+}

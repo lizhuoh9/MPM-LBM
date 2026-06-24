@@ -103,6 +103,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 102 Fluent official two-way FSI benchmark intake and guard, with the Step101-planned 48^3/10-step GGUI run left unexecuted, Fluent official duct/flap source metadata recorded, private Ansys data boundaries guarded, mapping limits documented, Step101/Step100 regression guards preserved, and no Fluent run, mesh import, solver runtime change, benchmark comparison, official file commit, or validation claim introduced
 - Step 103 Fluent-inspired duct-flap proxy solver comparison smoke, with one 48^3/1024-particle/5-step procedural duct-flap proxy row, GGUI screenshot output, committed solver gap reporting, private Fluent CSV boundaries, Step102/Step100 regression guards, output guards, and artifact guards while Fluent validation, solver equivalence, physical validation, real FSI validation, and production-readiness claims remain closed
 - Step 104 Fluent duct-flap official problem setup repair, with explicit x-min velocity inlet and x-max pressure outlet setup, non-all-fluid duct static geometry, fixed-base MPM mask and constraint, silicone material mapping into MPM config, Step36 squid wall-velocity disconnect, proxy flap-tip displacement time series, output/artifact guards, and gap-only evidence while Fluent validation, solver equivalence, full public tutorial transient completion, exact Fluent structural model reproduction, and production-readiness claims remain closed
+- Step 105 Fluent duct-flap proxy 50-step transient dimensional-gap audit, with one 48^3/1024-particle/50-step repaired-setup proxy smoke, dimensional inlet-velocity mapping report, inlet/mid/outlet flow-development diagnostics, expanded eight-gap taxonomy, output/artifact guards, and gap-only evidence while Fluent validation, solver equivalence, official steady preflow, exact monitor equivalence, solver-formula changes, and production-readiness claims remain closed
 
 ## Not Implemented
 
@@ -1217,6 +1218,25 @@ intrinsic structural-model reproduction, dynamic-mesh equivalence, completion
 of the full 50-step public tutorial transient, physical validation, real FSI
 validation, or production readiness.
 See docs/104_fluent_duct_flap_official_problem_setup_repair.md.
+
+## Step 105 Fluent Duct-Flap Proxy 50-Step Transient Dimensional-Gap Audit Boundary
+
+Step105 extends the Step104 repaired duct-flap setup to exactly one 48^3,
+1024-particle, 50-step proxy transient row:
+`fluent_duct_flap_proxy_48_50step_transient_gap_smoke`.
+It records that `target_u_lbm = [0.02, 0.0, 0.0]` maps to about
+`0.0833333333 m/s` under the current proxy scale, not the official `10 m/s`
+inlet. It also records inlet/mid/outlet plane flow-development diagnostics and
+restores the required gap taxonomy for dimensionality, conformal mesh, linear
+elasticity, dynamic mesh, exact monitor, dimensional velocity mapping,
+fluid-model equivalence, and missing steady preflow.
+Step105 does not change LBM collision, tau, MPM update, moving-boundary,
+bounce-back, coupling, or reaction-transfer formulas.
+Step105 does not claim Fluent validation, solver equivalence, exact Fluent
+structural-model reproduction, official steady-preflow initialization, exact
+structural-point monitor equivalence, physical validation, real FSI validation,
+or production readiness.
+See docs/105_fluent_duct_flap_proxy_50step_transient_dimensional_gap_audit.md.
 
 ## Upstream LBM Note
 

@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "dimensional_velocity_mapping_gap_present": true,
+      "direct_quantitative_equivalence_allowed": false,
+      "duct_length_m": 0.1,
+      "dx_norm": 0.020833333333333332,
+      "lbm_dt_phys": 0.0005,
+      "mapping_formula": "target_u_lbm_x * dx_norm / lbm_dt_phys * duct_length_m",
+      "mpm_dt": 0.0005,
+      "n_grid": 48,
+      "official_inlet_velocity_mps": 10.0,
+      "proxy_inlet_velocity_mps": 0.08333333333333333,
+      "row_name": "fluent_duct_flap_proxy_48_50step_transient_gap_smoke",
+      "target_u_lbm": [
+        0.02,
+        0.0,
+        0.0
+      ],
+      "validation_claim_allowed": false,
+      "velocity_ratio": 0.008333333333333333
+    }
+  ],
+  "summary": {
+    "dimensional_mapping_report_pass": true,
+    "row_count": 1
+  }
+}

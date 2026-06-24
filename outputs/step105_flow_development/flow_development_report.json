@@ -1,0 +1,31 @@
+{
+  "rows": [
+    {
+      "direct_quantitative_equivalence_allowed": false,
+      "final_far_field_fluid_mean_ux": 0.005688079632818699,
+      "final_fluid_mean_ux": 0.005699269473552704,
+      "flow_development_not_fluent_equivalent": true,
+      "inlet_plane_flow_present": true,
+      "inlet_plane_fluid_cell_count": 80,
+      "inlet_plane_max_ux": 0.020000005140900612,
+      "inlet_plane_mean_ux": 0.02000000700354576,
+      "mid_duct_plane_flow_present": true,
+      "mid_duct_plane_fluid_cell_count": 64,
+      "mid_duct_plane_max_ux": 0.01636887900531292,
+      "mid_duct_plane_mean_ux": 0.010271445848047733,
+      "outlet_plane_flow_present": false,
+      "outlet_plane_fluid_cell_count": 80,
+      "outlet_plane_max_ux": 0.0,
+      "outlet_plane_mean_ux": 0.0,
+      "row_name": "fluent_duct_flap_proxy_48_50step_transient_gap_smoke",
+      "validation_claim_allowed": false
+    }
+  ],
+  "summary": {
+    "direct_quantitative_equivalence_allowed": false,
+    "flow_development_report_pass": true,
+    "inlet_plane_flow_present_count": 1,
+    "row_count": 1,
+    "validation_claim_allowed": false
+  }
+}

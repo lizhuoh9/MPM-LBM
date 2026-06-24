@@ -1,0 +1,33 @@
+{
+  "coupling_mode": "moving_boundary",
+  "geometry_config_path": "configs/step104_fluent_duct_flap_geometry_1024.json",
+  "geometry_type": "duct_flap_proxy",
+  "initial_solid_velocity_norm": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "lbm_boundary_condition_mode": "duct_velocity_inlet_pressure_outlet",
+  "mpm_dt": 0.0005,
+  "mpm_substeps_per_lbm_step": 1,
+  "n_grid": 48,
+  "n_lbm_steps": 50,
+  "n_particles": 1024,
+  "output_interval": 1,
+  "pressure_outlet_side": "max",
+  "quality_check_enabled": true,
+  "quality_check_strict": false,
+  "reaction_transfer_mode": "engineering",
+  "target_u_lbm": [
+    0.02,
+    0.0,
+    0.0
+  ],
+  "velocity_inlet_axis": "x",
+  "velocity_inlet_side": "min",
+  "wall_velocity_application_config_path": null,
+  "wall_velocity_application_mode": "disabled",
+  "wall_velocity_application_report_enabled": false,
+  "write_particles": false,
+  "write_vtk": false
+}

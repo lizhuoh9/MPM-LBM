@@ -1,0 +1,6 @@
+metric,value
+direct_quantitative_equivalence_allowed,False
+flow_development_report_pass,True
+inlet_plane_flow_present_count,1
+row_count,1
+validation_claim_allowed,False
