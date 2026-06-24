@@ -1,0 +1,476 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "step97_48cube_taichi_ggui_visualization_expansion_plan_pass",
+      "expected": true,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_48_1step_ggui_visual_smoke",
+      "check": "step98_allowed_row_name",
+      "expected": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_48_1step_ggui_visual_smoke",
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": 0,
+      "check": "step97_activation_feature_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": 5,
+      "check": "planned_step98_activation_feature_count",
+      "expected": 5,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": 48,
+      "check": "step98_allowed_n_grid",
+      "expected": 48,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": 48,
+      "check": "planned_step98_n_grid",
+      "expected": 48,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": 1,
+      "check": "step98_allowed_n_lbm_steps",
+      "expected": 1,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": 1,
+      "check": "planned_step98_n_lbm_steps",
+      "expected": 1,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": 32,
+      "check": "previous_step96_n_grid",
+      "expected": 32,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": 10,
+      "check": "previous_step96_n_lbm_steps",
+      "expected": 10,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "from_step96_grid_expansion",
+      "expected": true,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "from_step96_duration_reduction",
+      "expected": true,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": "squid_proxy",
+      "check": "geometry_type_allowed_for_step98",
+      "expected": "squid_proxy",
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": "configs/step85_squid_proxy_geometry_1024.json",
+      "check": "geometry_config_path_allowed_for_step98",
+      "expected": "configs/step85_squid_proxy_geometry_1024.json",
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": "diagnostic_only",
+      "check": "geometry_motion_application_mode_allowed_for_step98",
+      "expected": "diagnostic_only",
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": "solid_vel_experimental",
+      "check": "wall_velocity_application_mode_allowed_for_step98",
+      "expected": "solid_vel_experimental",
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": "solid_vel",
+      "check": "target_lbm_field_planned_for_step98",
+      "expected": "solid_vel",
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "check": "target_u_lbm_allowed_for_step98",
+      "expected": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "ggui_visualization_planned_for_step98",
+      "expected": true,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "ggui_interactive_window_allowed_for_step98",
+      "expected": true,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "ggui_screenshot_allowed_for_step98",
+      "expected": true,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "ggui_video_allowed_for_step98",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "write_vtk_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "write_particles_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "vtr_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "particle_npy_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "video_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "squid_proxy_planned_for_step98",
+      "expected": true,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "runtime_geometry_planned_for_step98",
+      "expected": true,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "wall_velocity_planned_for_step98",
+      "expected": true,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "combined_runtime_geometry_wall_velocity_planned_for_step98",
+      "expected": true,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "grid_48_planned_for_step98",
+      "expected": true,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "driver_run_required",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "fsidriver_run_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "simulation_run_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "ggui_run_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "screenshot_output_allowed_in_step97",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "ggui_video_allowed_for_step98",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "write_vtk_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "write_particles_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "vtr_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "particle_npy_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "video_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_candidate_data_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "link_area_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "grid_48_enabled_in_step97",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "grid_64_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "dense_wall_velocity_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "dense_displacement_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "runtime_code_changed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "solver_behavior_changed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "solver_formula_change_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "tau_migration_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "physical_validation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "production_readiness_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "real_squid_validation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "squid_swimming_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "squid_actuation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "geometry_mutation_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step98_48cube_ggui_visual_smoke_plan"
+    }
+  ],
+  "summary": {
+    "combined_runtime_geometry_wall_velocity_planned_for_step98": true,
+    "duration_reduction_for_grid_expansion_isolation": true,
+    "from_step96_duration_reduction": true,
+    "from_step96_grid_expansion": true,
+    "geometry_motion_application_mode_planned_for_step98": "diagnostic_only",
+    "geometry_mutation_allowed": false,
+    "geometry_type_planned_for_step98": "squid_proxy",
+    "ggui_interactive_window_allowed_for_step98": true,
+    "ggui_screenshot_allowed_for_step98": true,
+    "ggui_video_allowed_for_step98": false,
+    "ggui_visualization_planned_for_step98": true,
+    "grid_48_planned_for_step98": true,
+    "grid_64_planned_for_step98": false,
+    "guard_pass_count": 60,
+    "guard_row_count": 60,
+    "link_area_planned_for_step98": false,
+    "particle_npy_output_planned_for_step98": false,
+    "planned_step98_activation_feature_count": 5,
+    "planned_step98_duration_lbm_steps": 1,
+    "planned_step98_n_grid": 48,
+    "previous_step96_n_grid": 32,
+    "previous_step96_n_lbm_steps": 10,
+    "real_geometry_candidate_data_planned_for_step98": false,
+    "real_geometry_planned_for_step98": false,
+    "row_count": 60,
+    "runtime_geometry_planned_for_step98": true,
+    "squid_proxy_planned_for_step98": true,
+    "step97_48cube_taichi_ggui_visualization_expansion_guard_pass": true,
+    "step97_activation_feature_count": 0,
+    "step98_allowed_row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_48_1step_ggui_visual_smoke",
+    "target_lbm_field_planned_for_step98": "solid_vel",
+    "target_u_lbm_planned_for_step98": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "video_output_planned_for_step98": false,
+    "vtr_output_planned_for_step98": false,
+    "wall_velocity_application_mode_planned_for_step98": "solid_vel_experimental",
+    "wall_velocity_planned_for_step98": true,
+    "write_particles_allowed_for_step98": false,
+    "write_vtk_planned_for_step98": false
+  }
+}

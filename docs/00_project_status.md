@@ -336,3 +336,24 @@ screenshot path. Step95 keeps real geometry candidates, link-area transfer,
 48^3, 64^3, dense output, solver formula changes, physical validation, real
 squid validation, squid swimming, squid actuation, and production-readiness
 claims closed.
+
+Step96 executes exactly that planned 10-step Taichi GGUI first-user
+visualization row at 32^3 with 1024 procedural `squid_proxy` particles. The
+canonical driver completes 10 LBM steps with runtime geometry diagnostic-only
+reporting, boundary-motion reporting, and wall velocity
+`solid_vel_experimental` reporting, then the GGUI evidence path writes exactly
+one PNG screenshot. Step96 keeps video, VTR, particle NPY output, real geometry
+candidates, link-area transfer, 48^3, 64^3, solver formula changes, physical
+validation, real squid validation, squid swimming, squid actuation, and
+production-readiness claims closed.
+
+Step97 adds plan-and-guard evidence for exactly one future Step98 48^3 Taichi
+GGUI visualization smoke row. Step97 does not run `FSIDriver3D`, call
+`driver.run()`, execute simulation, open a GGUI window, write screenshots,
+write video, write VTR, or write particle NPY output. The planned Step98 row
+keeps the accepted first-user `squid_proxy` runtime-geometry and
+wall-velocity envelope, changes Step96 from 32^3 to 48^3, and reduces duration
+from 10 LBM steps to one LBM step for grid-expansion smoke isolation. Step97
+keeps 64^3, real geometry candidates, link-area transfer, dense output, solver
+formula changes, physical validation, real squid validation, squid swimming,
+squid actuation, and production-readiness claims closed.

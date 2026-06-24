@@ -9,7 +9,8 @@ those planned canonical driver smoke rows. Step87 planned the first
 three-feature combined row, Step88 executed that bounded combined smoke, and
 Step89 planned the first user simulation dry run for Step90 without executing
 simulation. Step95 planned the 10-step first-user Taichi GGUI visualization
-run, and Step96 executed that single bounded visualization row.
+run, Step96 executed that single bounded visualization row, and Step97 plans
+the next 48^3 / one-step Taichi GGUI smoke isolation row for Step98.
 
 ## Step76 Executed Row
 
@@ -551,3 +552,43 @@ geometry candidates, link-area transfer, 48^3, 64^3, solver formula changes,
 physical validation, real squid validation, squid swimming, squid actuation,
 grid convergence, production visualization readiness, and production simulation
 readiness closed.
+
+## Step97 Planned 48-Cube GGUI Smoke Row
+
+Step97 does not execute a driver row. It records and guards the only planned
+Step98 48^3 Taichi GGUI visualization smoke row:
+
+```text
+campaign_id = step97_48cube_taichi_ggui_visualization_expansion_plan_and_guard
+row_id = first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_48_1step_ggui_visual_smoke
+n_grid = 48
+n_particles = 1024
+n_lbm_steps = 1
+mpm_substeps_per_lbm_step = 1
+coupling_mode = moving_boundary
+reaction_transfer_mode = engineering
+target_u_lbm = [0.0, 0.0, 0.0]
+geometry_type = squid_proxy
+geometry_config_path = configs/step85_squid_proxy_geometry_1024.json
+quality_check_enabled = true
+quality_check_strict = false
+geometry_motion_application_mode = diagnostic_only
+wall_velocity_application_mode = solid_vel_experimental
+target_lbm_field = solid_vel
+ggui_visualization_enabled = true
+ggui_screenshot_enabled = true
+ggui_video_enabled = false
+write_vtk = false
+write_particles = false
+executed_in_step97 = false
+planned_for_step98 = true
+```
+
+The only planned changes from Step96 to Step98 are `n_grid = 32 -> 48` and
+`n_lbm_steps = 10 -> 1`. The one-step duration is intentional smoke isolation
+for the 48^3 grid-expansion path. Step97 does not run `FSIDriver3D`, does not
+open a GGUI window, does not write screenshots, does not execute simulation,
+and does not activate the visual smoke. Real geometry candidates, link-area
+transfer, 64^3, video, VTR, and particle NPY output remain disabled. Step97
+does not claim physical validation, real squid validation, squid swimming,
+squid actuation, 48^3 readiness, grid convergence, or production readiness.
