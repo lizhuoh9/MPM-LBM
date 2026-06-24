@@ -1,0 +1,81 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "artifact_path": "outputs/step99_48cube_5step_taichi_ggui_visualization_plan/48cube_5step_taichi_ggui_visualization_plan.json",
+      "check": "step99_plan_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step99_48cube_5step_taichi_ggui_visualization_plan_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step99_48cube_5step_taichi_ggui_visualization_guard/48cube_5step_taichi_ggui_visualization_guard.json",
+      "check": "step99_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step99_48cube_5step_taichi_ggui_visualization_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step99_step98_regression_guard/step98_regression_guard.json",
+      "check": "step99_step98_regression_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step99_step98_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step99_step97_regression_guard/step97_regression_guard.json",
+      "check": "step99_step97_regression_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step99_step97_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step99_step96_regression_guard/step96_regression_guard.json",
+      "check": "step99_step96_regression_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step99_step96_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step99_output_guard/output_guard.json",
+      "check": "step99_output_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step99_artifact_manifest/artifact_summary.json",
+      "check": "step99_artifact_budget_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "summary": {
+    "artifact_check_count": 7,
+    "artifact_pass_count": 7,
+    "pass_count": 7,
+    "planned_step100_activation_feature_count": 5,
+    "row_count": 7,
+    "step101_step99_regression_guard_pass": true,
+    "step99_48cube_5step_taichi_ggui_visualization_guard_pass": true,
+    "step99_48cube_5step_taichi_ggui_visualization_plan_pass": true,
+    "step99_activation_feature_count": 0,
+    "step99_artifact_budget_pass": true,
+    "step99_driver_run_dir_count": 0,
+    "step99_ggui_screenshot_count": 0,
+    "step99_ggui_video_count": 0,
+    "step99_output_guard_pass": true,
+    "step99_particle_npy_count": 0,
+    "step99_step96_regression_guard_pass": true,
+    "step99_step97_regression_guard_pass": true,
+    "step99_step98_regression_guard_pass": true,
+    "step99_vtr_count": 0
+  }
+}

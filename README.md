@@ -99,6 +99,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 98 48^3 Taichi GGUI visualization smoke, with exactly one 48^3/1024-particle/1-step `squid_proxy` first-user envelope row run through the canonical driver and rendered to one Taichi GGUI PNG screenshot, Step97/Step96/Step94 regression guards, output guard, and artifact guard while video, VTR, particle NPY, real geometry candidates, link-area transfer, 64^3, solver formula changes, and physical-production claims remain closed
 - Step 99 48^3 5-step Taichi GGUI visualization plan and guard, with exactly one future Step100 48^3/1024-particle/5-step GGUI visual run planned, Step98/Step97/Step96 regression guards, output guard, and artifact guard while no simulation, GGUI window, screenshot, video, VTR, particle NPY, real geometry candidates, link-area transfer, 64^3, solver formula changes, or physical-production claims are introduced
 - Step 100 48^3 5-step Taichi GGUI visualization run, with exactly one 48^3/1024-particle/5-step `squid_proxy` first-user envelope row run through the canonical driver and rendered to one Taichi GGUI PNG screenshot, Step99/Step98/Step96 regression guards, output guard, and artifact guard while video, VTR, particle NPY, real geometry candidates, link-area transfer, 64^3, solver formula changes, 48^3 10-step readiness, and physical-production claims remain closed
+- Step 101 48^3 10-step Taichi GGUI visualization plan and guard, with exactly one future Step102 48^3/1024-particle/10-step GGUI visual run planned, Step100/Step99/Step98 regression guards, output guard, and artifact guard while no simulation, GGUI window, screenshot, video, VTR, particle NPY, real geometry candidates, link-area transfer, 64^3, solver formula changes, or physical-production claims are introduced
 
 ## Not Implemented
 
@@ -1142,6 +1143,25 @@ claim 48^3 10-step readiness, physical validation, real squid validation,
 squid swimming, squid actuation, grid convergence, production visualization
 readiness, or production simulation readiness.
 See docs/100_48cube_5step_taichi_ggui_visualization_run.md.
+
+## Step 101 48-Cube 10-Step Taichi GGUI Visualization Plan And Guard Boundary
+
+Step101 is plan-and-guard only. It does not run `FSIDriver3D`, does not call
+`driver.run()`, does not execute simulation, does not open a GGUI window, and
+does not write screenshots, video, VTR, or particle NPY output.
+Step101 plans exactly one future Step102 row:
+`first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_48_10step_ggui_visual_run`.
+The row is planned as 48^3, 1024 particles, ten LBM steps, one MPM substep per
+LBM step, moving_boundary, engineering transfer, procedural `squid_proxy`
+geometry, runtime geometry diagnostic-only reporting, wall velocity
+`solid_vel_experimental` reporting, and Taichi GGUI screenshot output in
+Step102 only.
+The only expansion from Step100 is `n_lbm_steps = 5 -> 10`.
+Step101 keeps 64^3, real geometry candidates, link-area transfer, dense output,
+solver formula changes, tau migration, physical validation, real squid
+validation, squid swimming, squid actuation, 48^3 10-step run-passed claims,
+and production-readiness claims closed.
+See docs/101_48cube_10step_taichi_ggui_visualization_plan_and_guard.md.
 
 ## Upstream LBM Note
 
