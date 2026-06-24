@@ -27,6 +27,11 @@ data/real_geometry_candidates/*
 !data/real_geometry_candidates/.gitkeep
 !data/real_geometry_candidates/*_descriptor.json
 
+# Local private Fluent official benchmark payloads
+benchmarks/private/fluent_fsi_2way/**
+data/fluent_official_private/**
+external/fluent_official_private/**
+
 # Local environments
 .venv/
 .env/

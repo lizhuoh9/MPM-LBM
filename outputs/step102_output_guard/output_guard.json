@@ -1,0 +1,222 @@
+{
+  "rows": [
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step102_artifact_manifest.log",
+      "size_bytes": 64
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step102_fluent_official_2way_fsi_benchmark_intake.log",
+      "size_bytes": 82
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step102_fluent_official_2way_fsi_data_guard.log",
+      "size_bytes": 76
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step102_fluent_official_2way_fsi_mapping_guard.log",
+      "size_bytes": 79
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step102_output_guard.log",
+      "size_bytes": 50
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step102_step100_regression_guard.log",
+      "size_bytes": 61
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step102_step101_regression_guard.log",
+      "size_bytes": 61
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_artifact_manifest/artifact_manifest.csv",
+      "size_bytes": 565392
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_artifact_manifest/artifact_summary.csv",
+      "size_bytes": 616
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_artifact_manifest/artifact_summary.json",
+      "size_bytes": 715
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_fluent_official_2way_fsi_benchmark_intake/fluent_official_2way_fsi_benchmark_intake.csv",
+      "size_bytes": 1526
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_fluent_official_2way_fsi_benchmark_intake/fluent_official_2way_fsi_benchmark_intake.json",
+      "size_bytes": 5324
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_fluent_official_2way_fsi_benchmark_intake/fluent_official_2way_fsi_benchmark_intake_summary.csv",
+      "size_bytes": 1084
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_fluent_official_2way_fsi_data_guard/fluent_official_2way_fsi_data_guard.csv",
+      "size_bytes": 453
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_fluent_official_2way_fsi_data_guard/fluent_official_2way_fsi_data_guard.json",
+      "size_bytes": 1900
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_fluent_official_2way_fsi_data_guard/fluent_official_2way_fsi_data_guard_summary.csv",
+      "size_bytes": 473
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_fluent_official_2way_fsi_mapping_guard/fluent_official_2way_fsi_mapping_guard.csv",
+      "size_bytes": 973
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_fluent_official_2way_fsi_mapping_guard/fluent_official_2way_fsi_mapping_guard.json",
+      "size_bytes": 2985
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_fluent_official_2way_fsi_mapping_guard/fluent_official_2way_fsi_mapping_guard_summary.csv",
+      "size_bytes": 788
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_output_guard/output_guard.csv",
+      "size_bytes": 2620
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_output_guard/output_guard.json",
+      "size_bytes": 6556
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_output_guard/output_guard_summary.csv",
+      "size_bytes": 624
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_step100_regression_guard/step100_regression_guard.csv",
+      "size_bytes": 910
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_step100_regression_guard/step100_regression_guard.json",
+      "size_bytes": 2200
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_step100_regression_guard/step100_regression_guard_summary.csv",
+      "size_bytes": 504
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_step101_regression_guard/step101_regression_guard.csv",
+      "size_bytes": 735
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_step101_regression_guard/step101_regression_guard.json",
+      "size_bytes": 1811
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step102_step101_regression_guard/step101_regression_guard_summary.csv",
+      "size_bytes": 444
+    }
+  ],
+  "summary": {
+    "artifact_budget_pass": true,
+    "output_guard_pass": true,
+    "pass_count": 28,
+    "private_absolute_path_count": 0,
+    "protected_diagnostics_edit_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "protected_sim_edit_count": 0,
+    "row_count": 28,
+    "step102_ansys_proprietary_file_count": 0,
+    "step102_driver_run_dir_count": 0,
+    "step102_fluent_run_output_count": 0,
+    "step102_forbidden_file_count": 0,
+    "step102_ggui_screenshot_count": 0,
+    "step102_ggui_video_count": 0,
+    "step102_large_file_count": 0,
+    "step102_particle_npy_count": 0,
+    "step102_total_size_bytes": 599106,
+    "step102_total_size_mb": 0.5713520050048828,
+    "step102_vtr_count": 0
+  }
+}

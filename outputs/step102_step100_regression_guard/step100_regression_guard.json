@@ -1,0 +1,61 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "artifact_path": "outputs/step100_48cube_5step_taichi_ggui_visualization_run_matrix/48cube_5step_taichi_ggui_visualization_run_matrix.json",
+      "check": "step100 run matrix pass remains true",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step100_48cube_5step_taichi_ggui_visualization_run_matrix_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step100_48cube_5step_taichi_ggui_visualization_quality/48cube_5step_taichi_ggui_visualization_quality.json",
+      "check": "step100 quality pass remains true",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step100_48cube_5step_taichi_ggui_visualization_quality_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step100_activation_guard/activation_guard.json",
+      "check": "step100 activation guard pass remains true",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step100_activation_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step100_output_guard/output_guard.json",
+      "check": "step100 output guard pass remains true",
+      "expected": true,
+      "pass": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step100_artifact_manifest/artifact_summary.json",
+      "check": "step100 artifact budget remains true",
+      "expected": true,
+      "pass": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "summary": {
+    "artifact_check_count": 5,
+    "artifact_pass_count": 5,
+    "pass_count": 5,
+    "row_count": 5,
+    "step100_48cube_5step_taichi_ggui_visualization_quality_pass": true,
+    "step100_48cube_5step_taichi_ggui_visualization_run_matrix_pass": true,
+    "step100_activation_guard_pass": true,
+    "step100_artifact_budget_pass": true,
+    "step100_completed_lbm_steps": 5,
+    "step100_ggui_screenshot_count": 1,
+    "step100_n_grid": 48,
+    "step100_output_guard_pass": true,
+    "step100_particle_npy_count": 0,
+    "step100_vtr_count": 0,
+    "step102_step100_regression_guard_pass": true
+  }
+}

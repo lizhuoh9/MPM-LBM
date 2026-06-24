@@ -1,0 +1,95 @@
+{
+  "rows": [
+    {
+      "actual": "intake_only",
+      "check": "mapping_status",
+      "expected": "intake_only",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "direct_equivalence_claim_allowed",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "validation_claim_allowed",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": "2D",
+      "check": "official_case_dimensionality",
+      "expected": "2D",
+      "pass": true
+    },
+    {
+      "actual": "3D",
+      "check": "current_solver_dimensionality",
+      "expected": "3D",
+      "pass": true
+    },
+    {
+      "actual": "2D conformal fluid-solid mesh",
+      "check": "official_mesh_type",
+      "expected": "2D conformal fluid-solid mesh",
+      "pass": true
+    },
+    {
+      "actual": "procedural_squid_proxy_or_future_procedural_proxy",
+      "check": "current_solver_geometry_type",
+      "expected": "procedural_squid_proxy_or_future_procedural_proxy",
+      "pass": true
+    },
+    {
+      "actual": "linear_elasticity_intrinsic_fsi",
+      "check": "official_structure_model",
+      "expected": "linear_elasticity_intrinsic_fsi",
+      "pass": true
+    },
+    {
+      "actual": "mpm_particles_or_future_duct_flap_proxy",
+      "check": "current_structure_proxy",
+      "expected": "mpm_particles_or_future_duct_flap_proxy",
+      "pass": true
+    },
+    {
+      "actual": "qualitative_and_diagnostic_only",
+      "check": "comparison_level_allowed_initially",
+      "expected": "qualitative_and_diagnostic_only",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "quantitative_match_claim_allowed",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": "procedural_duct_flap_proxy_not_official_mesh_import",
+      "check": "recommended_future_solver_proxy",
+      "expected": "procedural_duct_flap_proxy_not_official_mesh_import",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "allowed_initial_observable_count": 8,
+    "comparison_level_allowed_initially": "qualitative_and_diagnostic_only",
+    "current_solver_dimensionality": "3D",
+    "current_solver_geometry_type": "procedural_squid_proxy_or_future_procedural_proxy",
+    "current_structure_proxy": "mpm_particles_or_future_duct_flap_proxy",
+    "direct_equivalence_claim_allowed": false,
+    "forbidden_initial_observable_count": 5,
+    "mapping_status": "intake_only",
+    "official_case_dimensionality": "2D",
+    "official_mesh_type": "2D conformal fluid-solid mesh",
+    "official_structure_model": "linear_elasticity_intrinsic_fsi",
+    "pass_count": 12,
+    "quantitative_match_claim_allowed": false,
+    "recommended_future_solver_proxy": "procedural_duct_flap_proxy_not_official_mesh_import",
+    "row_count": 12,
+    "step102_fluent_official_2way_fsi_mapping_guard_pass": true,
+    "validation_claim_allowed": false
+  }
+}

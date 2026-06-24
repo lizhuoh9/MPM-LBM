@@ -1,0 +1,205 @@
+{
+  "rows": [
+    {
+      "actual": "Step102",
+      "check": "step",
+      "expected": "Step102",
+      "pass": true
+    },
+    {
+      "actual": "fluent_official_2way_intrinsic_fsi_duct_flap",
+      "check": "benchmark_id",
+      "expected": "fluent_official_2way_intrinsic_fsi_duct_flap",
+      "pass": true
+    },
+    {
+      "actual": "2024 R2",
+      "check": "source_release",
+      "expected": "2024 R2",
+      "pass": true
+    },
+    {
+      "actual": "fsi_2way.zip",
+      "check": "official_case_archive_name",
+      "expected": "fsi_2way.zip",
+      "pass": true
+    },
+    {
+      "actual": "two_way_intrinsic_fsi",
+      "check": "problem_family",
+      "expected": "two_way_intrinsic_fsi",
+      "pass": true
+    },
+    {
+      "actual": "intrinsic_fsi",
+      "check": "fluent_model_type",
+      "expected": "intrinsic_fsi",
+      "pass": true
+    },
+    {
+      "actual": "2D",
+      "check": "official_case_dimensionality",
+      "expected": "2D",
+      "pass": true
+    },
+    {
+      "actual": 0.1,
+      "check": "duct_length_m",
+      "expected": 0.1,
+      "pass": true
+    },
+    {
+      "actual": 0.04,
+      "check": "duct_height_m",
+      "expected": 0.04,
+      "pass": true
+    },
+    {
+      "actual": 0.01,
+      "check": "flap_height_m",
+      "expected": 0.01,
+      "pass": true
+    },
+    {
+      "actual": 0.003,
+      "check": "flap_thickness_m",
+      "expected": 0.003,
+      "pass": true
+    },
+    {
+      "actual": 10.0,
+      "check": "inlet_velocity_m_per_s",
+      "expected": 10.0,
+      "pass": true
+    },
+    {
+      "actual": "pressure_outlet",
+      "check": "outlet_type",
+      "expected": "pressure_outlet",
+      "pass": true
+    },
+    {
+      "actual": "user_local_access_required",
+      "check": "source_access_policy",
+      "expected": "user_local_access_required",
+      "pass": true
+    },
+    {
+      "actual": "do_not_commit_ansys_proprietary_files_or_large_verbatim_excerpts",
+      "check": "source_content_policy",
+      "expected": "do_not_commit_ansys_proprietary_files_or_large_verbatim_excerpts",
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "step102_driver_run_required",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "step102_simulation_run_allowed",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "step102_fluent_run_allowed",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "step102_benchmark_comparison_allowed",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "step102_validation_claim_allowed",
+      "expected": false,
+      "pass": true
+    },
+    {
+      "actual": 1600.0,
+      "check": "solid_material.density",
+      "expected": 1600.0,
+      "pass": true
+    },
+    {
+      "actual": 1000000.0,
+      "check": "solid_material.youngs_modulus",
+      "expected": 1000000.0,
+      "pass": true
+    },
+    {
+      "actual": 0.47,
+      "check": "solid_material.poisson_ratio",
+      "expected": 0.47,
+      "pass": true
+    },
+    {
+      "actual": 50,
+      "check": "fluent_transient_settings.number_of_time_steps",
+      "expected": 50,
+      "pass": true
+    },
+    {
+      "actual": 0.0005,
+      "check": "fluent_transient_settings.time_step_size_s",
+      "expected": 0.0005,
+      "pass": true
+    },
+    {
+      "actual": 40,
+      "check": "fluent_transient_settings.max_iterations_per_time_step",
+      "expected": 40,
+      "pass": true
+    },
+    {
+      "actual": 0.0505,
+      "check": "official_monitor.x",
+      "expected": 0.0505,
+      "pass": true
+    },
+    {
+      "actual": 0.0095,
+      "check": "official_monitor.y",
+      "expected": 0.0095,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "benchmark_id": "fluent_official_2way_intrinsic_fsi_duct_flap",
+    "duct_height_m": 0.04,
+    "duct_length_m": 0.1,
+    "flap_height_m": 0.01,
+    "flap_thickness_m": 0.003,
+    "fluent_model_type": "intrinsic_fsi",
+    "inlet_velocity_m_per_s": 10.0,
+    "max_iterations_per_time_step": 40,
+    "number_of_time_steps": 50,
+    "official_archive_name": "fsi_2way.zip",
+    "official_case_dimensionality": "2D",
+    "official_files_expected": "flap.msh, steady_fluid_flow.jou",
+    "official_journal_name": "steady_fluid_flow.jou",
+    "official_mesh_name": "flap.msh",
+    "official_monitor_x": 0.0505,
+    "official_monitor_y": 0.0095,
+    "pass_count": 28,
+    "problem_family": "two_way_intrinsic_fsi",
+    "row_count": 28,
+    "solid_density": 1600.0,
+    "solid_poisson_ratio": 0.47,
+    "solid_youngs_modulus": 1000000.0,
+    "source_url": "https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/flu_tg/flu_tg_fsi_2way.html",
+    "source_url_recorded": true,
+    "step102_benchmark_comparison_allowed": false,
+    "step102_driver_run_required": false,
+    "step102_fluent_official_2way_fsi_benchmark_intake_pass": true,
+    "step102_fluent_run_allowed": false,
+    "step102_simulation_run_allowed": false,
+    "step102_validation_claim_allowed": false,
+    "time_step_size_s": 0.0005
+  }
+}

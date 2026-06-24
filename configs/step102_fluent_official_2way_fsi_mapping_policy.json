@@ -1,0 +1,31 @@
+{
+  "allowed_initial_observables": [
+    "stability",
+    "has_nan",
+    "has_inf",
+    "density_bounds",
+    "velocity_bounds",
+    "reaction_norm_bounds",
+    "structural_proxy_displacement_trend_if_available",
+    "ggui_visual_inspection"
+  ],
+  "comparison_level_allowed_initially": "qualitative_and_diagnostic_only",
+  "current_solver_dimensionality": "3D",
+  "current_solver_geometry_type": "procedural_squid_proxy_or_future_procedural_proxy",
+  "current_structure_proxy": "mpm_particles_or_future_duct_flap_proxy",
+  "direct_equivalence_claim_allowed": false,
+  "forbidden_initial_observables": [
+    "grid_convergence",
+    "exact_flap_tip_displacement_match",
+    "exact_pressure_load_match",
+    "exact_turbulent_flow_match",
+    "exact_dynamic_mesh_match"
+  ],
+  "mapping_status": "intake_only",
+  "official_case_dimensionality": "2D",
+  "official_mesh_type": "2D conformal fluid-solid mesh",
+  "official_structure_model": "linear_elasticity_intrinsic_fsi",
+  "quantitative_match_claim_allowed": false,
+  "recommended_future_solver_proxy": "procedural_duct_flap_proxy_not_official_mesh_import",
+  "validation_claim_allowed": false
+}

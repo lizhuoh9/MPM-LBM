@@ -1,0 +1,32 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step101_48cube_10step_taichi_ggui_visualization_plan/48cube_10step_taichi_ggui_visualization_plan.json",
+      "check": "step101 plan pass remains true",
+      "expected": true,
+      "summary_key": "step101_48cube_10step_taichi_ggui_visualization_plan_pass"
+    },
+    {
+      "artifact_path": "outputs/step101_48cube_10step_taichi_ggui_visualization_guard/48cube_10step_taichi_ggui_visualization_guard.json",
+      "check": "step101 guard pass remains true",
+      "expected": true,
+      "summary_key": "step101_48cube_10step_taichi_ggui_visualization_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step101_output_guard/output_guard.json",
+      "check": "step101 output guard remains true",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step101_artifact_manifest/artifact_summary.json",
+      "check": "step101 artifact budget remains true",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "expected_step101_driver_run_dir_count": 0,
+  "expected_step101_ggui_screenshot_count": 0,
+  "expected_step101_particle_npy_count": 0,
+  "expected_step101_vtr_count": 0
+}

@@ -1,0 +1,15 @@
+metric,value
+ansys_large_verbatim_excerpt_count,0
+ansys_proprietary_file_committed_count,0
+artifact_budget_pass,True
+fluent_case_data_committed_count,0
+local_data_committed,False
+local_data_required,True
+official_archive_committed_count,0
+official_journal_committed_count,0
+official_mesh_committed_count,0
+pass_count,10
+private_absolute_path_count,0
+private_benchmark_path_committed_count,0
+row_count,10
+step102_fluent_official_2way_fsi_data_guard_pass,True

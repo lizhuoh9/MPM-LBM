@@ -1,0 +1,39 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step100_48cube_5step_taichi_ggui_visualization_run_matrix/48cube_5step_taichi_ggui_visualization_run_matrix.json",
+      "check": "step100 run matrix pass remains true",
+      "expected": true,
+      "summary_key": "step100_48cube_5step_taichi_ggui_visualization_run_matrix_pass"
+    },
+    {
+      "artifact_path": "outputs/step100_48cube_5step_taichi_ggui_visualization_quality/48cube_5step_taichi_ggui_visualization_quality.json",
+      "check": "step100 quality pass remains true",
+      "expected": true,
+      "summary_key": "step100_48cube_5step_taichi_ggui_visualization_quality_pass"
+    },
+    {
+      "artifact_path": "outputs/step100_activation_guard/activation_guard.json",
+      "check": "step100 activation guard pass remains true",
+      "expected": true,
+      "summary_key": "step100_activation_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step100_output_guard/output_guard.json",
+      "check": "step100 output guard pass remains true",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step100_artifact_manifest/artifact_summary.json",
+      "check": "step100 artifact budget remains true",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "expected_step100_completed_lbm_steps": 5,
+  "expected_step100_ggui_screenshot_count": 1,
+  "expected_step100_n_grid": 48,
+  "expected_step100_particle_npy_count": 0,
+  "expected_step100_vtr_count": 0
+}

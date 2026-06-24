@@ -1,0 +1,26 @@
+{
+  "ansys_large_verbatim_excerpt_patterns": [
+    "ANSYS proprietary/confidential information",
+    "Contains proprietary and confidential information of ANSYS"
+  ],
+  "case_data_suffixes": [
+    ".cas.h5",
+    ".dat.h5"
+  ],
+  "journal_names": [
+    "steady_fluid_flow.jou"
+  ],
+  "large_file_threshold_bytes": 1048576,
+  "mesh_names": [
+    "flap.msh"
+  ],
+  "official_archive_names": [
+    "fsi_2way.zip"
+  ],
+  "private_prefixes": [
+    "benchmarks/private/fluent_fsi_2way/",
+    "data/fluent_official_private/",
+    "external/fluent_official_private/"
+  ],
+  "required_local_data_policy": "local_data_required_but_never_committed"
+}

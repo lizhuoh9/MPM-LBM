@@ -100,6 +100,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 99 48^3 5-step Taichi GGUI visualization plan and guard, with exactly one future Step100 48^3/1024-particle/5-step GGUI visual run planned, Step98/Step97/Step96 regression guards, output guard, and artifact guard while no simulation, GGUI window, screenshot, video, VTR, particle NPY, real geometry candidates, link-area transfer, 64^3, solver formula changes, or physical-production claims are introduced
 - Step 100 48^3 5-step Taichi GGUI visualization run, with exactly one 48^3/1024-particle/5-step `squid_proxy` first-user envelope row run through the canonical driver and rendered to one Taichi GGUI PNG screenshot, Step99/Step98/Step96 regression guards, output guard, and artifact guard while video, VTR, particle NPY, real geometry candidates, link-area transfer, 64^3, solver formula changes, 48^3 10-step readiness, and physical-production claims remain closed
 - Step 101 48^3 10-step Taichi GGUI visualization plan and guard, with exactly one future Step102 48^3/1024-particle/10-step GGUI visual run planned, Step100/Step99/Step98 regression guards, output guard, and artifact guard while no simulation, GGUI window, screenshot, video, VTR, particle NPY, real geometry candidates, link-area transfer, 64^3, solver formula changes, or physical-production claims are introduced
+- Step 102 Fluent official two-way FSI benchmark intake and guard, with the Step101-planned 48^3/10-step GGUI run left unexecuted, Fluent official duct/flap source metadata recorded, private Ansys data boundaries guarded, mapping limits documented, Step101/Step100 regression guards preserved, and no Fluent run, mesh import, solver runtime change, benchmark comparison, official file commit, or validation claim introduced
 
 ## Not Implemented
 
@@ -1162,6 +1163,25 @@ solver formula changes, tau migration, physical validation, real squid
 validation, squid swimming, squid actuation, 48^3 10-step run-passed claims,
 and production-readiness claims closed.
 See docs/101_48cube_10step_taichi_ggui_visualization_plan_and_guard.md.
+
+## Step 102 Fluent Official Two-Way FSI Benchmark Intake And Guard Boundary
+
+Step102 intentionally redirects away from the Step101-planned 48^3 / 10-step
+GGUI visual run before that row is executed. Step102 is benchmark intake and
+guard only. It records the Fluent official two-way intrinsic FSI duct/flap
+source as metadata, defines private-data and mapping policies, and preserves
+Step101/Step100 regression evidence.
+Step102 does not run `FSIDriver3D`, does not call `driver.run()`, does not run
+Fluent, does not import Fluent mesh, does not run benchmark comparison, does
+not open GGUI, and does not commit Ansys official files such as the archive,
+mesh, journal, case/data files, screenshots, or copied tutorial content.
+Step102 permits only qualitative and diagnostic future comparison planning.
+It does not claim Fluent benchmark pass, solver equivalence, exact Fluent
+matching, physical validation, real FSI validation, grid convergence, or
+production readiness.
+Official benchmark inputs belong under the ignored local-private path
+`benchmarks/private/fluent_fsi_2way/` if the user supplies them locally.
+See docs/102_fluent_official_2way_fsi_benchmark_intake_and_guard.md.
 
 ## Upstream LBM Note
 

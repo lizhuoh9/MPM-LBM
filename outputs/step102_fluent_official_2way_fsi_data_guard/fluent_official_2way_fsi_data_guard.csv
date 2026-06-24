@@ -1,0 +1,11 @@
+actual,check,expected,pass
+0,official_archive_committed_count,0,True
+0,official_mesh_committed_count,0,True
+0,official_journal_committed_count,0,True
+0,fluent_case_data_committed_count,0,True
+0,private_benchmark_path_committed_count,0,True
+0,ansys_proprietary_file_committed_count,0,True
+0,ansys_large_verbatim_excerpt_count,0,True
+0,private_absolute_path_count,0,True
+True,local_data_required,True,True
+False,local_data_committed,False,True

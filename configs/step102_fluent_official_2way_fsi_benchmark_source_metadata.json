@@ -1,0 +1,46 @@
+{
+  "benchmark_id": "fluent_official_2way_intrinsic_fsi_duct_flap",
+  "duct_height_m": 0.04,
+  "duct_length_m": 0.1,
+  "flap_height_m": 0.01,
+  "flap_thickness_m": 0.003,
+  "fluent_model_type": "intrinsic_fsi",
+  "fluent_transient_settings": {
+    "max_iterations_per_time_step": 40,
+    "number_of_time_steps": 50,
+    "time_step_size_s": 0.0005
+  },
+  "geometry_description": "2D duct with vertical flaps, symmetry half-domain",
+  "inlet_velocity_m_per_s": 10.0,
+  "official_case_archive_name": "fsi_2way.zip",
+  "official_case_dimensionality": "2D",
+  "official_files_expected_locally": [
+    "flap.msh",
+    "steady_fluid_flow.jou"
+  ],
+  "official_monitor": {
+    "name": "structural-point-flap",
+    "reported_quantity": "total_displacement_vertex_average",
+    "x": 0.0505,
+    "y": 0.0095
+  },
+  "outlet_type": "pressure_outlet",
+  "problem_family": "two_way_intrinsic_fsi",
+  "solid_material": {
+    "density": 1600.0,
+    "name": "silicone-rubber",
+    "poisson_ratio": 0.47,
+    "youngs_modulus": 1000000.0
+  },
+  "source_access_policy": "user_local_access_required",
+  "source_content_policy": "do_not_commit_ansys_proprietary_files_or_large_verbatim_excerpts",
+  "source_name": "Ansys Fluent Tutorial Chapter 29: Modeling Two-Way Fluid-Structure Interaction (FSI) Within Fluent",
+  "source_release": "2024 R2",
+  "source_url": "https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/flu_tg/flu_tg_fsi_2way.html",
+  "step": "Step102",
+  "step102_benchmark_comparison_allowed": false,
+  "step102_driver_run_required": false,
+  "step102_fluent_run_allowed": false,
+  "step102_simulation_run_allowed": false,
+  "step102_validation_claim_allowed": false
+}

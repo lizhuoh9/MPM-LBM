@@ -1,0 +1,80 @@
+{
+  "rows": [
+    {
+      "actual": 0,
+      "check": "official_archive_committed_count",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "official_mesh_committed_count",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "official_journal_committed_count",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "fluent_case_data_committed_count",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "private_benchmark_path_committed_count",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "ansys_proprietary_file_committed_count",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "ansys_large_verbatim_excerpt_count",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "private_absolute_path_count",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "local_data_required",
+      "expected": true,
+      "pass": true
+    },
+    {
+      "actual": false,
+      "check": "local_data_committed",
+      "expected": false,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "ansys_large_verbatim_excerpt_count": 0,
+    "ansys_proprietary_file_committed_count": 0,
+    "artifact_budget_pass": true,
+    "fluent_case_data_committed_count": 0,
+    "local_data_committed": false,
+    "local_data_required": true,
+    "official_archive_committed_count": 0,
+    "official_journal_committed_count": 0,
+    "official_mesh_committed_count": 0,
+    "pass_count": 10,
+    "private_absolute_path_count": 0,
+    "private_benchmark_path_committed_count": 0,
+    "row_count": 10,
+    "step102_fluent_official_2way_fsi_data_guard_pass": true
+  }
+}
