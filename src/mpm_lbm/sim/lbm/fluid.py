@@ -410,7 +410,7 @@ class LBMFluid3D:
                         if (self.solid[self.nx-2,j,k]>0):
                             self.F[self.nx-1,j,k][s]=self.feq(s, self.rho_bcxr, self.v[self.nx-2,j,k])
                         else:
-                            self.F[self.nx-1,j,k][s]=self.feq(s, self.rho_bcxr, self.v[self.nx-1,j,k])
+                            self.F[self.nx-1,j,k][s]=self.feq(s, self.rho_bcxr, self.v[self.nx-2,j,k])
 
         if ti.static(self.bc_x_right==2):
             for j,k in ti.ndrange((0,self.ny),(0,self.nz)):

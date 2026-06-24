@@ -1,0 +1,9 @@
+metric,value
+direct_quantitative_equivalence_allowed,False
+duct_only_outlet_boundary_flow_pass,True
+has_inf_count,0
+has_nan_count,0
+outlet_flow_present_count,1
+row_count,1
+stable_count,1
+validation_claim_allowed,False

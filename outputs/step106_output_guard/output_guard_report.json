@@ -1,0 +1,235 @@
+{
+  "rows": [
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step106_artifact_manifest_policy.json",
+      "size_bytes": 265
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step106_duct_only_lbm_outlet_boundary_flow_48.json",
+      "size_bytes": 565
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step106_fluent_duct_flap_proxy_48_20step_outlet_repair_regression_smoke.json",
+      "size_bytes": 892
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step106_outlet_boundary_flow_policy.json",
+      "size_bytes": 1140
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step106_output_guard_policy.json",
+      "size_bytes": 652
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step106_fsi_outlet_repair_regression_smoke.log",
+      "size_bytes": 146
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step106_outlet_boundary_flow_propagation.log",
+      "size_bytes": 149
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_driver_runs/fluent_duct_flap_proxy_48_20step_outlet_repair_regression_smoke/diagnostics_timeseries.csv",
+      "size_bytes": 7018
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_driver_runs/fluent_duct_flap_proxy_48_20step_outlet_repair_regression_smoke/diagnostics_timeseries.npz",
+      "size_bytes": 12924
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_driver_runs/fluent_duct_flap_proxy_48_20step_outlet_repair_regression_smoke/driver_config.json",
+      "size_bytes": 1775
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_driver_runs/fluent_duct_flap_proxy_48_20step_outlet_repair_regression_smoke/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_driver_runs/fluent_duct_flap_proxy_48_20step_outlet_repair_regression_smoke/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_driver_runs/fluent_duct_flap_proxy_48_20step_outlet_repair_regression_smoke/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 1721
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_driver_runs/fluent_duct_flap_proxy_48_20step_outlet_repair_regression_smoke/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_driver_runs/fluent_duct_flap_proxy_48_20step_outlet_repair_regression_smoke/geometry_quality_report.json",
+      "size_bytes": 2290
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_fsi_outlet_repair_regression/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_fsi_outlet_repair_regression/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_fsi_outlet_repair_regression/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 1721
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_fsi_outlet_repair_regression/fsi_outlet_repair_regression_report.csv",
+      "size_bytes": 900
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_fsi_outlet_repair_regression/fsi_outlet_repair_regression_report.json",
+      "size_bytes": 1733
+    },
+    {
+      "extension": ".md",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_fsi_outlet_repair_regression/fsi_outlet_repair_regression_report.md",
+      "size_bytes": 1226
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_fsi_outlet_repair_regression/fsi_outlet_repair_regression_summary.csv",
+      "size_bytes": 204
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_outlet_boundary_flow_propagation/boundary_condition_semantics_report.json",
+      "size_bytes": 573
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_outlet_boundary_flow_propagation/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_outlet_boundary_flow_propagation/flow_plane_report.csv",
+      "size_bytes": 829
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_outlet_boundary_flow_propagation/flow_plane_report.json",
+      "size_bytes": 1735
+    },
+    {
+      "extension": ".md",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_outlet_boundary_flow_propagation/flow_plane_report.md",
+      "size_bytes": 1115
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_outlet_boundary_flow_propagation/flow_plane_summary.csv",
+      "size_bytes": 227
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_outlet_boundary_flow_propagation/flow_plane_timeseries.csv",
+      "size_bytes": 36679
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step106_outlet_boundary_flow_propagation/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    }
+  ],
+  "summary": {
+    "artifact_budget_pass": true,
+    "forbidden_validation_claim_count": 0,
+    "output_guard_pass": true,
+    "pass_count": 30,
+    "private_absolute_path_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "row_count": 30,
+    "step106_ansys_proprietary_file_count": 0,
+    "step106_fluent_run_output_count": 0,
+    "step106_forbidden_file_count": 0,
+    "step106_large_file_count": 0,
+    "step106_particle_npy_count": 0,
+    "step106_private_fluent_csv_count": 0,
+    "step106_step36_wall_velocity_reference_count": 0,
+    "step106_total_size_bytes": 743003,
+    "step106_total_size_mb": 0.708582878112793,
+    "step106_video_count": 0,
+    "step106_vtr_count": 0
+  }
+}

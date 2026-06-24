@@ -1,0 +1,43 @@
+{
+  "rows": [
+    {
+      "allowed_claim": "Fluent duct-flap proxy x-right pressure outlet flow propagation was repaired and demonstrated with gap-only proxy diagnostics; Fluent validation and direct quantitative equivalence remain forbidden.",
+      "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+      "completed_lbm_steps": 20,
+      "diagnostics_row_count": 21,
+      "direct_quantitative_equivalence_allowed": false,
+      "driver_run_called": true,
+      "fixed_base_constraint_applied": true,
+      "fixed_base_max_displacement_norm": 0.0,
+      "fixed_base_max_velocity_norm": 0.0,
+      "fixed_base_particle_count": 319,
+      "flap_tip_timeseries_row_count": 21,
+      "gap_count": 8,
+      "geometry_type": "duct_flap_proxy",
+      "has_inf": false,
+      "has_nan": false,
+      "lbm_boundary_condition_mode": "duct_velocity_inlet_pressure_outlet",
+      "n_grid": 48,
+      "n_lbm_steps": 20,
+      "n_particles": 1024,
+      "outlet_plane_flow_present": true,
+      "outlet_plane_max_ux_final": 1.844018271413006e-07,
+      "outlet_plane_mean_ux_final": 1.1406370958866319e-07,
+      "row_name": "fluent_duct_flap_proxy_48_20step_outlet_repair_regression_smoke",
+      "stable": true,
+      "step36_squid_wall_velocity_config_used": false,
+      "target_u_lbm_applied_to_inlet": true,
+      "target_u_lbm_applied_to_solid_initial_velocity": false,
+      "validation_claim_allowed": false
+    }
+  ],
+  "summary": {
+    "direct_quantitative_equivalence_allowed": false,
+    "has_inf_count": 0,
+    "has_nan_count": 0,
+    "row_count": 1,
+    "stable_count": 1,
+    "step106_fsi_outlet_repair_regression_pass": true,
+    "validation_claim_allowed": false
+  }
+}

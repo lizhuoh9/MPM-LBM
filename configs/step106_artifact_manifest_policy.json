@@ -1,0 +1,12 @@
+{
+  "large_file_threshold_bytes": 5242880,
+  "max_step106_file_count": 90,
+  "max_step106_total_size_mb": 12.0,
+  "official_file_names": [
+    "fsi_2way.zip",
+    "flap.msh",
+    "steady_fluid_flow.jou",
+    "flap_fsi_2way.cas.h5",
+    "flap_fsi_2way.dat.h5"
+  ]
+}

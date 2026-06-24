@@ -1,0 +1,4 @@
+[OK] Step106 FSI outlet repair regression smoke finished
+row_count=1
+completed_lbm_steps=20
+outlet_plane_mean_ux_final=1.1406370958866319e-07

@@ -1,0 +1,46 @@
+{
+  "rows": [
+    {
+      "allowed_claim": "Fluent duct-flap proxy x-right pressure outlet flow propagation was repaired and demonstrated with gap-only proxy diagnostics; Fluent validation and direct quantitative equivalence remain forbidden.",
+      "bc_x_left": 2,
+      "bc_x_right": 1,
+      "completed_lbm_steps": 160,
+      "direct_quantitative_equivalence_allowed": false,
+      "elapsed_seconds": 41.80884920000972,
+      "has_inf": false,
+      "has_nan": false,
+      "inlet_plane_max_ux_final": 0.020000005140900612,
+      "inlet_plane_mean_ux_final": 0.02000000700354576,
+      "mass_total_final": 3893.8583984375,
+      "mid_duct_plane_max_ux_final": 0.019427120685577393,
+      "mid_duct_plane_mean_ux_final": 0.013426314108073711,
+      "n_grid": 48,
+      "n_lbm_steps": 160,
+      "outlet_plane_max_ux_final": 0.019373983144760132,
+      "outlet_plane_mean_ux_final": 0.014053558930754662,
+      "outlet_to_inlet_mean_ux_ratio_final": 0.7026777004759616,
+      "outlet_to_mid_mean_ux_ratio_final": 1.0467175739843422,
+      "pressure_outlet_policy": "interior_neighbor_velocity_extrapolation",
+      "rho_max_final": 1.029547929763794,
+      "rho_min_final": 0.9999998211860657,
+      "row_name": "duct_only_lbm_outlet_boundary_flow_48",
+      "stable": true,
+      "target_u_lbm": [
+        0.02,
+        0.0,
+        0.0
+      ],
+      "validation_claim_allowed": false
+    }
+  ],
+  "summary": {
+    "direct_quantitative_equivalence_allowed": false,
+    "duct_only_outlet_boundary_flow_pass": true,
+    "has_inf_count": 0,
+    "has_nan_count": 0,
+    "outlet_flow_present_count": 1,
+    "row_count": 1,
+    "stable_count": 1,
+    "validation_claim_allowed": false
+  }
+}

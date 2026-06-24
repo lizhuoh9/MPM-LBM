@@ -1,0 +1,36 @@
+{
+  "direct_quantitative_equivalence_allowed": false,
+  "inlet_plane_mean_ux_range": [
+    0.015,
+    0.025
+  ],
+  "min_mid_duct_plane_mean_ux": 0.0001,
+  "min_outlet_plane_max_ux": 0.00001,
+  "min_outlet_plane_mean_ux": 0.00001,
+  "pressure_outlet_policy": "interior_neighbor_velocity_extrapolation",
+  "required_bc_x_left": 2,
+  "required_bc_x_right": 1,
+  "required_duct_n_grid": 48,
+  "required_duct_row_name": "duct_only_lbm_outlet_boundary_flow_48",
+  "required_fsi_n_grid": 48,
+  "required_fsi_n_lbm_steps": 20,
+  "required_fsi_n_particles": 1024,
+  "required_fsi_row_name": "fluent_duct_flap_proxy_48_20step_outlet_repair_regression_smoke",
+  "required_geometry_config_path": "configs/step104_fluent_duct_flap_geometry_1024.json",
+  "required_geometry_type": "duct_flap_proxy",
+  "required_initial_solid_velocity_norm": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "required_lbm_boundary_condition_mode": "duct_velocity_inlet_pressure_outlet",
+  "required_target_u_lbm": [
+    0.02,
+    0.0,
+    0.0
+  ],
+  "rho_max_upper_bound": 1.1,
+  "rho_min_lower_bound": 0.95,
+  "runtime_hard_fail_seconds": 900.0,
+  "validation_claim_allowed": false
+}
