@@ -96,6 +96,9 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 95 Taichi GGUI 10-step first-user visualization plan and guard, with exactly one future Step96 32^3/1024-particle/10-step GGUI visual row planned, Step94/Step93/Step92 regression guards, output guard, and artifact guard while no simulation, GGUI window, screenshot, video, VTR, particle NPY, solver formula changes, or physical-production claims are introduced
 - Step 96 Taichi GGUI 10-step first-user visualization run, with exactly one 32^3/1024-particle/10-step `squid_proxy` first-user envelope row run through the canonical driver and rendered to one Taichi GGUI PNG screenshot, Step95/Step94/Step92 regression guards, output guard, and artifact guard while video, VTR, particle NPY, real geometry candidates, link-area transfer, larger grids, solver formula changes, and physical-production claims remain closed
 - Step 97 48^3 Taichi GGUI visualization expansion plan and guard, with exactly one future Step98 48^3/1024-particle/1-step GGUI visual smoke row planned, Step96/Step94/Step92 regression guards, output guard, and artifact guard while no simulation, GGUI window, screenshot, video, VTR, particle NPY, real geometry candidates, link-area transfer, 64^3, solver formula changes, or physical-production claims are introduced
+- Step 98 48^3 Taichi GGUI visualization smoke, with exactly one 48^3/1024-particle/1-step `squid_proxy` first-user envelope row run through the canonical driver and rendered to one Taichi GGUI PNG screenshot, Step97/Step96/Step94 regression guards, output guard, and artifact guard while video, VTR, particle NPY, real geometry candidates, link-area transfer, 64^3, solver formula changes, and physical-production claims remain closed
+- Step 99 48^3 5-step Taichi GGUI visualization plan and guard, with exactly one future Step100 48^3/1024-particle/5-step GGUI visual run planned, Step98/Step97/Step96 regression guards, output guard, and artifact guard while no simulation, GGUI window, screenshot, video, VTR, particle NPY, real geometry candidates, link-area transfer, 64^3, solver formula changes, or physical-production claims are introduced
+- Step 100 48^3 5-step Taichi GGUI visualization run, with exactly one 48^3/1024-particle/5-step `squid_proxy` first-user envelope row run through the canonical driver and rendered to one Taichi GGUI PNG screenshot, Step99/Step98/Step96 regression guards, output guard, and artifact guard while video, VTR, particle NPY, real geometry candidates, link-area transfer, 64^3, solver formula changes, 48^3 10-step readiness, and physical-production claims remain closed
 
 ## Not Implemented
 
@@ -1088,6 +1091,57 @@ solver formula changes, tau migration, physical validation, real squid
 validation, squid swimming, squid actuation, and production-readiness claims
 closed.
 See docs/97_48cube_taichi_ggui_visualization_expansion_plan_and_guard.md.
+
+## Step 98 48-Cube Taichi GGUI Visualization Smoke Boundary
+
+Step98 runs exactly one required canonical driver row:
+`first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_48_1step_ggui_visual_smoke`.
+The row is 48^3, 1024 particles, one LBM step, one MPM substep per LBM step,
+moving_boundary, engineering transfer, procedural `squid_proxy` geometry,
+runtime geometry diagnostic-only reporting, and wall velocity
+`solid_vel_experimental` reporting. Step98 then renders one Taichi GGUI frame
+and writes one PNG screenshot.
+Step98 does not write VTR, particle NPY, video, raw geometry, real geometry
+candidate output, dense wall velocity output, sparse wall velocity output,
+dense displacement output, or displaced-particle output. Step98 does not mutate
+geometry, change solver formulas, enable link-area transfer, enable 64^3, or
+claim 48^3 10-step readiness, physical validation, real squid validation,
+squid swimming, squid actuation, grid convergence, production visualization
+readiness, or production simulation readiness.
+See docs/98_48cube_taichi_ggui_visualization_smoke.md.
+
+## Step 99 48-Cube 5-Step Taichi GGUI Visualization Plan And Guard Boundary
+
+Step99 is plan-and-guard only. It does not run `FSIDriver3D`, does not call
+`driver.run()`, does not execute simulation, does not open a GGUI window, and
+does not write screenshots, video, VTR, or particle NPY output.
+Step99 plans exactly one future Step100 row:
+`first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_48_5step_ggui_visual_run`.
+The only planned expansion from Step98 is `n_lbm_steps = 1 -> 5`.
+Step99 keeps 64^3, real geometry candidates, link-area transfer, dense output,
+solver formula changes, tau migration, physical validation, real squid
+validation, squid swimming, squid actuation, and production-readiness claims
+closed.
+See docs/99_48cube_5step_taichi_ggui_visualization_plan_and_guard.md.
+
+## Step 100 48-Cube 5-Step Taichi GGUI Visualization Run Boundary
+
+Step100 runs exactly one required canonical driver row:
+`first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_48_5step_ggui_visual_run`.
+The row is 48^3, 1024 particles, five LBM steps, one MPM substep per LBM step,
+moving_boundary, engineering transfer, procedural `squid_proxy` geometry,
+runtime geometry diagnostic-only reporting, and wall velocity
+`solid_vel_experimental` reporting. Step100 then renders one Taichi GGUI frame
+and writes one PNG screenshot.
+The only expansion from Step98 is `n_lbm_steps = 1 -> 5`.
+Step100 does not write VTR, particle NPY, video, raw geometry, real geometry
+candidate output, dense wall velocity output, sparse wall velocity output,
+dense displacement output, or displaced-particle output. Step100 does not mutate
+geometry, change solver formulas, enable link-area transfer, enable 64^3, or
+claim 48^3 10-step readiness, physical validation, real squid validation,
+squid swimming, squid actuation, grid convergence, production visualization
+readiness, or production simulation readiness.
+See docs/100_48cube_5step_taichi_ggui_visualization_run.md.
 
 ## Upstream LBM Note
 

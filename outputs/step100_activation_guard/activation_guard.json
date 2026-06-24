@@ -1,0 +1,260 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "matrix_pass",
+      "expected": true,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 5,
+      "check": "activation_feature_count",
+      "expected": 5,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "squid_proxy_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "runtime_geometry_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "wall_velocity_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "combined_runtime_geometry_wall_velocity_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "ggui_visualization_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "grid_48_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "grid_64_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "ggui_renderer_called_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "ggui_screenshot_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_48_5step_ggui_visual_run",
+      "check": "row_name",
+      "expected": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_48_5step_ggui_visual_run",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": "squid_proxy",
+      "check": "geometry_type",
+      "expected": "squid_proxy",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": "configs/step85_squid_proxy_geometry_1024.json",
+      "check": "geometry_config_path",
+      "expected": "configs/step85_squid_proxy_geometry_1024.json",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": "diagnostic_only",
+      "check": "geometry_motion_application_mode",
+      "expected": "diagnostic_only",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": "solid_vel_experimental",
+      "check": "wall_velocity_application_mode",
+      "expected": "solid_vel_experimental",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": "solid_vel",
+      "check": "target_lbm_field",
+      "expected": "solid_vel",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": true,
+      "check": "apply_to_lbm_solid_vel_wall_velocity",
+      "expected": true,
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": false,
+      "check": "apply_to_lbm_populations",
+      "expected": false,
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": false,
+      "check": "modify_bounceback_formula",
+      "expected": false,
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": true,
+      "check": "ggui_window_created",
+      "expected": true,
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": true,
+      "check": "ggui_scene_created",
+      "expected": true,
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": true,
+      "check": "ggui_camera_configured",
+      "expected": true,
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": true,
+      "check": "ggui_render_report_pass",
+      "expected": true,
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": 0,
+      "check": "real_geometry_candidate_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "real_geometry_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "link_area_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "grid_64_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "write_vtk_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "write_particles_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "vtr_output_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "particle_npy_output_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "ggui_video_file_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    }
+  ],
+  "summary": {
+    "activation_feature_count": 5,
+    "combined_runtime_geometry_wall_velocity_enabled_count": 1,
+    "geometry_motion_application_mode": "diagnostic_only",
+    "geometry_type": "squid_proxy",
+    "ggui_renderer_called_count": 1,
+    "ggui_screenshot_count": 1,
+    "ggui_visualization_enabled_count": 1,
+    "grid_48_enabled_count": 1,
+    "grid_64_enabled_count": 0,
+    "guard_pass_count": 33,
+    "guard_row_count": 33,
+    "link_area_enabled_count": 0,
+    "real_geometry_candidate_enabled_count": 0,
+    "real_geometry_enabled_count": 0,
+    "required_row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_48_5step_ggui_visual_run",
+    "row_count": 33,
+    "runtime_geometry_enabled_count": 1,
+    "squid_proxy_enabled_count": 1,
+    "step100_activation_guard_pass": true,
+    "wall_velocity_application_mode": "solid_vel_experimental",
+    "wall_velocity_enabled_count": 1,
+    "write_particles_count": 0,
+    "write_vtk_count": 0
+  }
+}

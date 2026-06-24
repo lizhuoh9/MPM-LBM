@@ -1,0 +1,7 @@
+{
+  "driver_run_dir": "outputs/step100_driver_runs/first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_48_5step_ggui_visual_run",
+  "ggui_config_path": "configs/step100_taichi_ggui_visualization_config.json",
+  "render_report_path": "outputs/step100_ggui_visualization/step100_ggui_visualization_report.json",
+  "screenshot_path": "outputs/step100_ggui_visualization/step100_48cube_5step_ggui_visualization.png",
+  "visualization_source": "procedural_squid_proxy_proxy_points"
+}
