@@ -1,0 +1,572 @@
+{
+  "rows": [
+    {
+      "actual": "Step93",
+      "check": "step",
+      "expected": "Step93",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "Step92",
+      "check": "previous_step",
+      "expected": "Step92",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "40a67ece3b6e8d77fb6356fe5e97dc25a3037372",
+      "check": "previous_required_commit",
+      "expected": "40a67ece3b6e8d77fb6356fe5e97dc25a3037372",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "vtr_output_enablement_plan_only",
+      "check": "activation_kind",
+      "expected": "vtr_output_enablement_plan_only",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": [
+        "vtr_output_smoke_for_step94"
+      ],
+      "check": "features_under_plan",
+      "expected": [
+        "vtr_output_smoke_for_step94"
+      ],
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "driver_run_required",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "fsidriver_run_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "simulation_run_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": true,
+      "check": "step94_allowed",
+      "expected": true,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke",
+      "check": "step94_allowed_row_name",
+      "expected": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": 32,
+      "check": "step94_allowed_n_grid",
+      "expected": 32,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": 1024,
+      "check": "step94_allowed_n_particles",
+      "expected": 1024,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": 1,
+      "check": "step94_allowed_n_lbm_steps",
+      "expected": 1,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": 1,
+      "check": "step94_allowed_mpm_substeps_per_lbm_step",
+      "expected": 1,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "moving_boundary",
+      "check": "step94_allowed_coupling_mode",
+      "expected": "moving_boundary",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "engineering",
+      "check": "step94_allowed_reaction_transfer_mode",
+      "expected": "engineering",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": 1,
+      "check": "step94_allowed_output_interval",
+      "expected": 1,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": true,
+      "check": "vtr_output_planned_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": true,
+      "check": "write_vtk_allowed_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "write_particles_allowed_for_step94",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "particle_npy_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": true,
+      "check": "vtr_output_smoke_isolation",
+      "expected": true,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": 10,
+      "check": "previous_step92_n_lbm_steps",
+      "expected": 10,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": 1,
+      "check": "planned_step94_n_lbm_steps",
+      "expected": 1,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": true,
+      "check": "duration_reduction_for_output_isolation",
+      "expected": true,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "write_vtk",
+      "check": "only_new_feature_from_step92",
+      "expected": "write_vtk",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": true,
+      "check": "squid_proxy_planned_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "squid_proxy",
+      "check": "geometry_type_allowed_for_step94",
+      "expected": "squid_proxy",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "configs/step85_squid_proxy_geometry_1024.json",
+      "check": "geometry_config_path_allowed_for_step94",
+      "expected": "configs/step85_squid_proxy_geometry_1024.json",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": true,
+      "check": "quality_check_enabled_allowed_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "quality_check_strict_allowed_for_step94",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": true,
+      "check": "geometry_quality_report_required_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": true,
+      "check": "runtime_geometry_planned_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "prescribed_kinematic",
+      "check": "geometry_motion_mode_allowed_for_step94",
+      "expected": "prescribed_kinematic",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "diagnostic_only",
+      "check": "geometry_motion_application_mode_allowed_for_step94",
+      "expected": "diagnostic_only",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "configs/step80_geometry_motion_interface_prescribed_diagnostic_only.json",
+      "check": "geometry_motion_config_path_allowed_for_step94",
+      "expected": "configs/step80_geometry_motion_interface_prescribed_diagnostic_only.json",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "configs/step80_geometry_motion_interface_prescribed_diagnostic_only.json",
+      "check": "geometry_motion_application_config_path_allowed_for_step94",
+      "expected": "configs/step80_geometry_motion_interface_prescribed_diagnostic_only.json",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": true,
+      "check": "geometry_motion_interface_report_required_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": true,
+      "check": "geometry_motion_application_report_required_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "geometry_mutation_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": true,
+      "check": "wall_velocity_planned_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "prescribed_kinematic",
+      "check": "boundary_motion_mode_allowed_for_step94",
+      "expected": "prescribed_kinematic",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "configs/step34_boundary_motion_interface_prescribed_kinematic.json",
+      "check": "boundary_motion_config_path_allowed_for_step94",
+      "expected": "configs/step34_boundary_motion_interface_prescribed_kinematic.json",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": true,
+      "check": "boundary_motion_report_required_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "solid_vel_experimental",
+      "check": "wall_velocity_application_mode_allowed_for_step94",
+      "expected": "solid_vel_experimental",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "configs/step36_wall_velocity_application_solid_vel_experimental.json",
+      "check": "wall_velocity_application_config_path_allowed_for_step94",
+      "expected": "configs/step36_wall_velocity_application_solid_vel_experimental.json",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": true,
+      "check": "wall_velocity_application_report_required_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": "solid_vel",
+      "check": "target_lbm_field_planned_for_step94",
+      "expected": "solid_vel",
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "check": "target_u_lbm_allowed_for_step94",
+      "expected": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": true,
+      "check": "combined_runtime_geometry_wall_velocity_planned_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": 4,
+      "check": "planned_step94_activation_feature_count",
+      "expected": 4,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": 0,
+      "check": "step93_activation_feature_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_candidate_data_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "link_area_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "grid_48_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "grid_64_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "dense_wall_velocity_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "dense_displacement_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "runtime_code_changed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "solver_behavior_changed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "solver_formula_change_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "tau_migration_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "physical_validation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "production_readiness_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "real_squid_validation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "squid_swimming_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    },
+    {
+      "actual": false,
+      "check": "squid_actuation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke"
+    }
+  ],
+  "summary": {
+    "activation_kind": "vtr_output_enablement_plan_only",
+    "boundary_motion_config_path_allowed_for_step94": "configs/step34_boundary_motion_interface_prescribed_kinematic.json",
+    "boundary_motion_mode_allowed_for_step94": "prescribed_kinematic",
+    "boundary_motion_report_required_for_step94": true,
+    "combined_runtime_geometry_wall_velocity_planned_for_step94": true,
+    "dense_displacement_output_allowed": false,
+    "dense_wall_velocity_output_allowed": false,
+    "driver_run_required": false,
+    "duration_reduction_for_output_isolation": true,
+    "features_under_plan": [
+      "vtr_output_smoke_for_step94"
+    ],
+    "fsidriver_run_allowed": false,
+    "geometry_config_path_allowed_for_step94": "configs/step85_squid_proxy_geometry_1024.json",
+    "geometry_motion_application_config_path_allowed_for_step94": "configs/step80_geometry_motion_interface_prescribed_diagnostic_only.json",
+    "geometry_motion_application_mode_allowed_for_step94": "diagnostic_only",
+    "geometry_motion_application_report_required_for_step94": true,
+    "geometry_motion_config_path_allowed_for_step94": "configs/step80_geometry_motion_interface_prescribed_diagnostic_only.json",
+    "geometry_motion_interface_report_required_for_step94": true,
+    "geometry_motion_mode_allowed_for_step94": "prescribed_kinematic",
+    "geometry_mutation_allowed": false,
+    "geometry_quality_report_required_for_step94": true,
+    "geometry_type_allowed_for_step94": "squid_proxy",
+    "grid_48_allowed": false,
+    "grid_64_allowed": false,
+    "link_area_allowed": false,
+    "only_new_feature_from_step92": "write_vtk",
+    "particle_npy_output_allowed": false,
+    "pass_count": 68,
+    "physical_validation_claim_allowed": false,
+    "planned_step94_activation_feature_count": 4,
+    "planned_step94_n_lbm_steps": 1,
+    "previous_commit": "40a67ece3b6e8d77fb6356fe5e97dc25a3037372",
+    "previous_required_commit": "40a67ece3b6e8d77fb6356fe5e97dc25a3037372",
+    "previous_step": "Step92",
+    "previous_step92_n_lbm_steps": 10,
+    "production_readiness_claim_allowed": false,
+    "quality_check_enabled_allowed_for_step94": true,
+    "quality_check_strict_allowed_for_step94": false,
+    "real_geometry_allowed": false,
+    "real_geometry_candidate_data_allowed": false,
+    "real_squid_validation_claim_allowed": false,
+    "row_count": 68,
+    "runtime_code_changed": false,
+    "runtime_geometry_planned_for_step94": true,
+    "simulation_run_allowed": false,
+    "solver_behavior_changed": false,
+    "solver_formula_change_allowed": false,
+    "squid_actuation_claim_allowed": false,
+    "squid_proxy_planned_for_step94": true,
+    "squid_swimming_claim_allowed": false,
+    "step": "Step93",
+    "step93_activation_feature_count": 0,
+    "step93_vtr_output_enablement_plan_pass": true,
+    "step94_allowed": true,
+    "step94_allowed_coupling_mode": "moving_boundary",
+    "step94_allowed_mpm_substeps_per_lbm_step": 1,
+    "step94_allowed_n_grid": 32,
+    "step94_allowed_n_lbm_steps": 1,
+    "step94_allowed_n_particles": 1024,
+    "step94_allowed_output_interval": 1,
+    "step94_allowed_reaction_transfer_mode": "engineering",
+    "step94_allowed_row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke",
+    "target_lbm_field_planned_for_step94": "solid_vel",
+    "target_u_lbm_allowed_for_step94": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "tau_migration_allowed": false,
+    "vtr_output_planned_for_step94": true,
+    "vtr_output_smoke_isolation": true,
+    "wall_velocity_application_config_path_allowed_for_step94": "configs/step36_wall_velocity_application_solid_vel_experimental.json",
+    "wall_velocity_application_mode_allowed_for_step94": "solid_vel_experimental",
+    "wall_velocity_application_report_required_for_step94": true,
+    "wall_velocity_planned_for_step94": true,
+    "write_particles_allowed_for_step94": false,
+    "write_vtk_allowed_for_step94": true
+  }
+}

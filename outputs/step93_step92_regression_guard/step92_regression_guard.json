@@ -1,0 +1,93 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "artifact_path": "outputs/step92_first_user_simulation_10step_dry_run_matrix/first_user_simulation_10step_dry_run_matrix.json",
+      "check": "step92_first_user_simulation_10step_dry_run_matrix_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step92_first_user_simulation_10step_dry_run_matrix_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step92_first_user_simulation_10step_dry_run_quality/first_user_simulation_10step_dry_run_quality.json",
+      "check": "step92_first_user_simulation_10step_dry_run_quality_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step92_first_user_simulation_10step_dry_run_quality_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step92_activation_guard/activation_guard.json",
+      "check": "step92_activation_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step92_activation_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step92_output_guard/output_guard.json",
+      "check": "step92_output_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step92_step91_regression_guard/step91_regression_guard.json",
+      "check": "step92_step91_regression_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step92_step91_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step92_step90_regression_guard/step90_regression_guard.json",
+      "check": "step92_step90_regression_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step92_step90_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step92_step89_regression_guard/step89_regression_guard.json",
+      "check": "step92_step89_regression_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step92_step89_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step92_artifact_manifest/artifact_summary.json",
+      "check": "step92_artifact_budget_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "summary": {
+    "artifact_check_count": 8,
+    "artifact_pass_count": 8,
+    "pass_count": 8,
+    "row_count": 8,
+    "step92_activation_feature_count": 3,
+    "step92_activation_guard_pass": true,
+    "step92_artifact_budget_pass": true,
+    "step92_combined_runtime_geometry_wall_velocity_enabled_count": 1,
+    "step92_completed_lbm_steps": 10,
+    "step92_first_user_simulation_10step_dry_run_matrix_pass": true,
+    "step92_first_user_simulation_10step_dry_run_quality_pass": true,
+    "step92_link_area_enabled_count": 0,
+    "step92_output_guard_pass": true,
+    "step92_particle_npy_count": 0,
+    "step92_real_geometry_candidate_enabled_count": 0,
+    "step92_runtime_geometry_enabled_count": 1,
+    "step92_squid_proxy_enabled_count": 1,
+    "step92_step89_regression_guard_pass": true,
+    "step92_step90_regression_guard_pass": true,
+    "step92_step91_regression_guard_pass": true,
+    "step92_vtr_count": 0,
+    "step92_wall_velocity_enabled_count": 1,
+    "step93_step92_regression_guard_pass": true
+  }
+}

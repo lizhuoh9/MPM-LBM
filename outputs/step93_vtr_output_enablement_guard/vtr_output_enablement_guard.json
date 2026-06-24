@@ -1,0 +1,363 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "step93_vtr_output_enablement_plan_pass",
+      "expected": true,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke",
+      "check": "step94_allowed_row_name",
+      "expected": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_1step_vtr_smoke",
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": 0,
+      "check": "step93_activation_feature_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": 4,
+      "check": "planned_step94_activation_feature_count",
+      "expected": 4,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": 1,
+      "check": "step94_allowed_n_lbm_steps",
+      "expected": 1,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": 10,
+      "check": "previous_step92_n_lbm_steps",
+      "expected": 10,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": 1,
+      "check": "planned_step94_n_lbm_steps",
+      "expected": 1,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "duration_reduction_for_output_isolation",
+      "expected": true,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "vtr_output_smoke_isolation",
+      "expected": true,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": "write_vtk",
+      "check": "only_new_feature_from_step92",
+      "expected": "write_vtk",
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": "squid_proxy",
+      "check": "geometry_type_allowed_for_step94",
+      "expected": "squid_proxy",
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": "configs/step85_squid_proxy_geometry_1024.json",
+      "check": "geometry_config_path_allowed_for_step94",
+      "expected": "configs/step85_squid_proxy_geometry_1024.json",
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": "diagnostic_only",
+      "check": "geometry_motion_application_mode_allowed_for_step94",
+      "expected": "diagnostic_only",
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": "solid_vel_experimental",
+      "check": "wall_velocity_application_mode_allowed_for_step94",
+      "expected": "solid_vel_experimental",
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": "solid_vel",
+      "check": "target_lbm_field_planned_for_step94",
+      "expected": "solid_vel",
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "check": "target_u_lbm_allowed_for_step94",
+      "expected": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "vtr_output_planned_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "write_vtk_allowed_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "write_particles_allowed_for_step94",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "squid_proxy_planned_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "runtime_geometry_planned_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "wall_velocity_planned_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": true,
+      "check": "combined_runtime_geometry_wall_velocity_planned_for_step94",
+      "expected": true,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "driver_run_required",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "fsidriver_run_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "simulation_run_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "write_particles_allowed_for_step94",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "particle_npy_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "real_geometry_candidate_data_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "link_area_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "grid_48_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "grid_64_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "dense_wall_velocity_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "dense_displacement_output_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "runtime_code_changed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "solver_behavior_changed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "solver_formula_change_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "tau_migration_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "physical_validation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "production_readiness_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "real_squid_validation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "squid_swimming_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "squid_actuation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    },
+    {
+      "actual": false,
+      "check": "geometry_mutation_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "step94_vtr_smoke_plan"
+    }
+  ],
+  "summary": {
+    "combined_runtime_geometry_wall_velocity_planned_for_step94": true,
+    "duration_reduction_for_output_isolation": true,
+    "geometry_motion_application_mode_planned_for_step94": "diagnostic_only",
+    "geometry_mutation_allowed": false,
+    "geometry_type_planned_for_step94": "squid_proxy",
+    "grid_48_planned_for_step94": false,
+    "grid_64_planned_for_step94": false,
+    "guard_pass_count": 45,
+    "guard_row_count": 45,
+    "link_area_planned_for_step94": false,
+    "only_new_feature_from_step92": "write_vtk",
+    "particle_npy_output_allowed": false,
+    "planned_step94_activation_feature_count": 4,
+    "planned_step94_duration_lbm_steps": 1,
+    "previous_step92_n_lbm_steps": 10,
+    "real_geometry_candidate_data_planned_for_step94": false,
+    "real_geometry_planned_for_step94": false,
+    "row_count": 45,
+    "runtime_geometry_planned_for_step94": true,
+    "squid_proxy_planned_for_step94": true,
+    "step93_activation_feature_count": 0,
+    "step93_vtr_output_enablement_guard_pass": true,
+    "target_lbm_field_planned_for_step94": "solid_vel",
+    "target_u_lbm_planned_for_step94": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "vtr_output_planned_for_step94": true,
+    "vtr_output_smoke_isolation": true,
+    "wall_velocity_application_mode_planned_for_step94": "solid_vel_experimental",
+    "wall_velocity_planned_for_step94": true,
+    "write_particles_allowed_for_step94": false,
+    "write_vtk_allowed_for_step94": true
+  }
+}
