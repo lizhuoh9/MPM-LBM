@@ -1,0 +1,15 @@
+metric,value
+artifact_check_count,4
+artifact_pass_count,4
+pass_count,4
+row_count,4
+step100_48cube_5step_taichi_ggui_visualization_run_matrix_pass,True
+step100_activation_guard_pass,True
+step100_artifact_budget_pass,True
+step100_completed_lbm_steps,5
+step100_ggui_screenshot_count,1
+step100_grid_48_enabled_count,1
+step100_output_guard_pass,True
+step100_particle_npy_count,0
+step100_vtr_count,0
+step103_step100_regression_guard_pass,True

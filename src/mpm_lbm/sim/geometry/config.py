@@ -4,7 +4,7 @@ import math
 from typing import Optional, Tuple
 
 
-VALID_GEOMETRY_TYPES = ("box", "ellipsoid", "squid_proxy", "voxel", "mesh")
+VALID_GEOMETRY_TYPES = ("box", "ellipsoid", "squid_proxy", "duct_flap_proxy", "voxel", "mesh")
 VALID_MESH_INSIDE_METHODS = ("ray_cast", "voxelized")
 
 
@@ -51,6 +51,10 @@ class GeometryConfig:
     arm_radius: float = 0.018
     fin_radius: float = 0.07
 
+    duct: Optional[dict] = None
+    flap: Optional[dict] = None
+    material_reference: Optional[dict] = None
+
     geometry_file: Optional[str] = None
     metadata_file: Optional[str] = None
     normalize_to_domain: bool = True
@@ -93,6 +97,10 @@ class GeometryConfig:
             raise ValueError("arm_radius must be positive")
         if self.fin_radius <= 0.0:
             raise ValueError("fin_radius must be positive")
+        if self.geometry_type == "duct_flap_proxy":
+            from .duct_flap_proxy import validate_duct_flap_proxy_config
+
+            validate_duct_flap_proxy_config(self)
 
         for name in (
             "domain_min",

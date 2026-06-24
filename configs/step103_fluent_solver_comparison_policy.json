@@ -1,0 +1,24 @@
+{
+  "allowed_claim": "Fluent-inspired duct-flap proxy comparison smoke ran and produced a solver gap report.",
+  "benchmark_metadata_path": "configs/step102_fluent_official_2way_fsi_benchmark_source_metadata.json",
+  "comparison_status_when_no_equivalent_monitor": "capability_gap_detected",
+  "direct_quantitative_equivalence_allowed": false,
+  "fluent_reference_csv_schema_path": "configs/step103_fluent_reference_csv_schema.json",
+  "official_case_dimensionality": "2D",
+  "official_dynamic_mesh": true,
+  "official_monitor_quantity": "total_displacement",
+  "official_structural_model": "linear_elasticity_intrinsic_fsi",
+  "our_geometry_mutation_enabled": false,
+  "our_solver_dimensionality": "3D",
+  "our_structural_model_equivalent": false,
+  "required_capability_gaps": [
+    "dimensionality_equivalence",
+    "conformal_mesh_equivalence",
+    "linear_elasticity_equivalence",
+    "dynamic_mesh_equivalence",
+    "exact_flap_tip_displacement",
+    "dimensional_velocity_mapping"
+  ],
+  "smoke_matrix_artifact_path": "outputs/step103_smoke_matrix/fluent_inspired_duct_flap_proxy_smoke_matrix.json",
+  "validation_claim_allowed": false
+}

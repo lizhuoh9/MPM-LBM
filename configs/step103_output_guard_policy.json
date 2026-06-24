@@ -1,0 +1,55 @@
+{
+  "allowed_driver_run_files": [
+    "boundary_motion_interface_report.json",
+    "diagnostics_timeseries.csv",
+    "diagnostics_timeseries.npz",
+    "driver_config.json",
+    "driver_timing.json",
+    "geo_all_fluid_48.dat",
+    "geometry_motion_interface_report.json",
+    "geometry_quality_report.json",
+    "wall_velocity_application_report.json"
+  ],
+  "allowed_ggui_files": [
+    "step103_duct_flap_proxy_ggui_visualization.png",
+    "step103_ggui_visualization_metadata.json",
+    "step103_ggui_visualization_report.json"
+  ],
+  "case_data_suffixes": [
+    ".cas.h5",
+    ".dat.h5"
+  ],
+  "driver_run_root": "outputs/step103_driver_runs",
+  "forbidden_filename_tokens": [
+    ".vtr",
+    "dense_displacement",
+    "dense_wall_velocity",
+    "displaced_particle",
+    "flap.msh",
+    "fluent_screenshot",
+    "fsi_2way.zip",
+    "particle_output",
+    "particles_",
+    "raw_geometry",
+    "real_geometry_candidate",
+    "sparse_wall_velocity",
+    "steady_fluid_flow.jou"
+  ],
+  "ggui_output_dir": "outputs/step103_ggui_visualization",
+  "large_file_threshold_bytes": 1048576,
+  "max_step103_total_size_mb": 15.0,
+  "protected_prefixes": [
+    "external/taichi_LBM3D/",
+    "data/real_geometry_candidates/"
+  ],
+  "required_driver_run_dirs": [
+    "outputs/step103_driver_runs/fluent_inspired_duct_flap_proxy_48_5step_ggui_comparison_smoke"
+  ],
+  "screenshot_extensions": [
+    ".png"
+  ],
+  "video_extensions": [
+    ".gif",
+    ".mp4"
+  ]
+}

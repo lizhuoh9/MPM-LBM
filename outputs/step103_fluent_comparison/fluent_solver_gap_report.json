@@ -1,0 +1,75 @@
+{
+  "rows": [
+    {
+      "capability_gap": "dimensionality_equivalence",
+      "description": "official case is 2D while current solver is 3D",
+      "gap_present": true,
+      "validation_claim_allowed": false
+    },
+    {
+      "capability_gap": "conformal_mesh_equivalence",
+      "description": "official case uses conformal FSI mesh while current geometry is procedural proxy",
+      "gap_present": true,
+      "validation_claim_allowed": false
+    },
+    {
+      "capability_gap": "linear_elasticity_equivalence",
+      "description": "official case uses intrinsic linear elasticity while current solver does not match it",
+      "gap_present": true,
+      "validation_claim_allowed": false
+    },
+    {
+      "capability_gap": "dynamic_mesh_equivalence",
+      "description": "official case deforms mesh while current geometry mutation is diagnostic-only/no-op",
+      "gap_present": true,
+      "validation_claim_allowed": false
+    },
+    {
+      "capability_gap": "exact_flap_tip_displacement",
+      "description": "official monitor is displacement while current equivalent flap-tip monitor is unavailable",
+      "gap_present": true,
+      "validation_claim_allowed": false
+    },
+    {
+      "capability_gap": "dimensional_velocity_mapping",
+      "description": "official inlet is 10 m/s while current LBM velocity is nondimensional/mapped",
+      "gap_present": true,
+      "validation_claim_allowed": false
+    }
+  ],
+  "summary": {
+    "allowed_claim": "Fluent-inspired duct-flap proxy comparison smoke ran and produced a solver gap report.",
+    "capability_gap_count": 6,
+    "comparison_status": "capability_gap_detected",
+    "direct_quantitative_equivalence_allowed": false,
+    "fluent_reference_available": false,
+    "fluent_reference_columns": [],
+    "fluent_reference_committed": false,
+    "fluent_reference_path": "benchmarks/private/fluent_fsi_2way/reference/fluent_structural_point_flap_displacement.csv",
+    "fluent_reference_private_optional": true,
+    "fluent_reference_row_count": 0,
+    "fluent_reference_schema_checked": true,
+    "fluent_reference_schema_pass": false,
+    "gap_conformal_mesh_equivalence": true,
+    "gap_dimensional_velocity_mapping": true,
+    "gap_dimensionality_equivalence": true,
+    "gap_dynamic_mesh_equivalence": true,
+    "gap_exact_flap_tip_displacement": true,
+    "gap_linear_elasticity_equivalence": true,
+    "official_case_dimensionality": "2D",
+    "official_dynamic_mesh": true,
+    "official_fluent_files_used_as_runtime_input": false,
+    "official_monitor_quantity": "total_displacement",
+    "official_structural_model": "linear_elasticity_intrinsic_fsi",
+    "our_equivalent_flap_tip_displacement_available": false,
+    "our_geometry_mutation_enabled": false,
+    "our_solver_dimensionality": "3D",
+    "our_solver_has_inf": false,
+    "our_solver_has_nan": false,
+    "our_solver_run_stable": true,
+    "our_structural_model_equivalent": false,
+    "smoke_matrix_pass": true,
+    "step103_fluent_solver_gap_comparison_pass": true,
+    "validation_claim_allowed": false
+  }
+}

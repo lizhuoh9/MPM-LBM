@@ -53,15 +53,19 @@
     },
     {
       "canonical_module": "src.mpm_lbm.sim.geometry.config",
-      "changed_default_fields": [],
+      "changed_default_fields": [
+        "duct",
+        "flap",
+        "material_reference"
+      ],
       "class_name": "GeometryConfig",
-      "current_schema_hash": "e7cfc782d3ec8aa8fe1153a2bf0bded0d23736c3e58f76ce7eed9329e0b19640",
-      "expected_changed": false,
-      "expected_unchanged": true,
+      "current_schema_hash": "3a7913c54677283bc04c23f7e738973c0cf9b74d5d9a795c6d0851f18e130c8b",
+      "expected_changed": true,
+      "expected_unchanged": false,
       "field_delta_pass": true,
       "pass": true,
       "previous_schema_hash": "e7cfc782d3ec8aa8fe1153a2bf0bded0d23736c3e58f76ce7eed9329e0b19640",
-      "schema_hash_changed": false
+      "schema_hash_changed": true
     },
     {
       "canonical_module": "src.mpm_lbm.sim.motion.boundary_motion_config",
@@ -174,11 +178,13 @@
   ],
   "summary": {
     "changed_schema_classes": [
-      "FSIDriverConfig"
+      "FSIDriverConfig",
+      "GeometryConfig"
     ],
     "config_schema_delta_audit_pass": true,
     "expected_changed_schema_classes": [
-      "FSIDriverConfig"
+      "FSIDriverConfig",
+      "GeometryConfig"
     ],
     "fsidriver_write_particles_default_current": "False",
     "fsidriver_write_particles_default_previous": "True",
@@ -189,7 +195,6 @@
     "row_count": 14,
     "unchanged_schema_classes_checked": [
       "BoundaryMotionInterfaceConfig",
-      "GeometryConfig",
       "GeometryDisplacementConfig",
       "GeometryMotionInterfaceConfig",
       "LBMConfig",

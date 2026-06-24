@@ -6,6 +6,6 @@ geometry_sampler_determinism,"{""deterministic"": true, ""particle_count"": 8, "
 geometry_quality_gate_strict_non_strict,"{""non_strict_pass"": true, ""non_strict_warning_count"": 2, ""strict_pass"": false, ""strict_reason_count"": 2}","{""non_strict_pass"": true, ""non_strict_warning_count"": 2, ""strict_pass"": false, ""strict_reason_count"": 2}",True,lightweight semantic preservation check
 link_area_policy_constants,"[""uniform"", ""inverse_length"", ""length""]","[""uniform"", ""inverse_length"", ""length""]",True,lightweight semantic preservation check
 fsi_mode_constants,"{""valid_coupling_modes"": [""none"", ""penalty"", ""moving_boundary""], ""valid_reaction_transfer_modes"": [""engineering"", ""link_area_experimental""]}","{""valid_coupling_modes"": [""none"", ""penalty"", ""moving_boundary""], ""valid_reaction_transfer_modes"": [""engineering"", ""link_area_experimental""]}",True,lightweight semantic preservation check
-valid_geometry_types,"[""box"", ""ellipsoid"", ""squid_proxy"", ""voxel"", ""mesh""]","[""box"", ""ellipsoid"", ""squid_proxy"", ""voxel"", ""mesh""]",True,lightweight semantic preservation check
+valid_geometry_types,"[""box"", ""ellipsoid"", ""squid_proxy"", ""duct_flap_proxy"", ""voxel"", ""mesh""]","[""box"", ""ellipsoid"", ""squid_proxy"", ""duct_flap_proxy"", ""voxel"", ""mesh""]",True,lightweight semantic preservation check
 solver_behavior_changed,False,False,True,Step 57 only migrates driver support ownership.
 physics_feature_expansion,False,False,True,Step 57 does not add or validate new physics.

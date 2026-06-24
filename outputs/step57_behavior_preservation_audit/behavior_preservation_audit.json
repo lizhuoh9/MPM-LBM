@@ -194,6 +194,7 @@
         "box",
         "ellipsoid",
         "squid_proxy",
+        "duct_flap_proxy",
         "voxel",
         "mesh"
       ],
@@ -202,6 +203,7 @@
         "box",
         "ellipsoid",
         "squid_proxy",
+        "duct_flap_proxy",
         "voxel",
         "mesh"
       ],

@@ -1,0 +1,12 @@
+metric,value
+artifact_check_count,3
+artifact_pass_count,3
+pass_count,3
+row_count,3
+step102_artifact_budget_pass,True
+step102_benchmark_comparison_allowed,False
+step102_driver_run_dir_count,0
+step102_fluent_official_2way_fsi_benchmark_intake_pass,True
+step102_output_guard_pass,True
+step102_validation_claim_allowed,False
+step103_step102_regression_guard_pass,True

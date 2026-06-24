@@ -3,6 +3,11 @@ import math
 import numpy as np
 
 from .config import GeometryConfig
+from .duct_flap_proxy import (
+    duct_flap_proxy_component_masks,
+    duct_flap_proxy_sampling_stats,
+    inside_duct_flap_proxy,
+)
 from .importers import ImportedGeometrySampler3D
 from .utils import as_vec3, inside_box, inside_capsule, inside_ellipsoid
 
@@ -29,9 +34,13 @@ class GeometrySampler3D:
             for mask in masks.values():
                 union |= mask
             return union
+        if self.config.geometry_type == "duct_flap_proxy":
+            return inside_duct_flap_proxy(points, self.config)
         raise ValueError(f"unsupported geometry_type: {self.config.geometry_type}")
 
     def component_masks(self, points: np.ndarray) -> dict:
+        if self.config.geometry_type == "duct_flap_proxy":
+            return duct_flap_proxy_component_masks(points, self.config)
         if self.config.geometry_type != "squid_proxy":
             return {self.config.geometry_type: self.inside(points)}
 
@@ -86,6 +95,10 @@ class GeometrySampler3D:
             masks = self.component_masks(selected)
             stats.update({f"{name}_particle_count": int(np.count_nonzero(mask)) for name, mask in masks.items()})
             stats["scope_note"] = "procedural squid proxy geometry, not anatomical or validated squid geometry"
+        if self.config.geometry_type == "duct_flap_proxy":
+            masks = self.component_masks(selected)
+            stats.update({f"{name}_particle_count": int(np.count_nonzero(mask)) for name, mask in masks.items()})
+            stats.update(duct_flap_proxy_sampling_stats(self.config))
 
         return {
             "x": selected.astype(np.float32),

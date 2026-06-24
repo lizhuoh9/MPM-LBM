@@ -1,0 +1,326 @@
+{
+  "rows": [
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step103_activation_guard.log",
+      "size_bytes": 54
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step103_artifact_manifest.log",
+      "size_bytes": 64
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step103_fluent_inspired_duct_flap_proxy_smoke_matrix.log",
+      "size_bytes": 81
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step103_fluent_solver_gap_comparison.log",
+      "size_bytes": 65
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step103_output_guard.log",
+      "size_bytes": 50
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step103_step100_regression_guard.log",
+      "size_bytes": 61
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step103_step102_regression_guard.log",
+      "size_bytes": 61
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_activation_guard/activation_guard.csv",
+      "size_bytes": 1614
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_activation_guard/activation_guard.json",
+      "size_bytes": 5101
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_activation_guard/activation_guard_summary.csv",
+      "size_bytes": 706
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_artifact_manifest/artifact_manifest.csv",
+      "size_bytes": 571895
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_artifact_manifest/artifact_summary.csv",
+      "size_bytes": 564
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_artifact_manifest/artifact_summary.json",
+      "size_bytes": 657
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_driver_runs/fluent_inspired_duct_flap_proxy_48_5step_ggui_comparison_smoke/boundary_motion_interface_report.json",
+      "size_bytes": 8410
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_driver_runs/fluent_inspired_duct_flap_proxy_48_5step_ggui_comparison_smoke/diagnostics_timeseries.csv",
+      "size_bytes": 2078
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_driver_runs/fluent_inspired_duct_flap_proxy_48_5step_ggui_comparison_smoke/diagnostics_timeseries.npz",
+      "size_bytes": 9624
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_driver_runs/fluent_inspired_duct_flap_proxy_48_5step_ggui_comparison_smoke/driver_config.json",
+      "size_bytes": 1862
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_driver_runs/fluent_inspired_duct_flap_proxy_48_5step_ggui_comparison_smoke/driver_timing.json",
+      "size_bytes": 468
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_driver_runs/fluent_inspired_duct_flap_proxy_48_5step_ggui_comparison_smoke/geo_all_fluid_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_driver_runs/fluent_inspired_duct_flap_proxy_48_5step_ggui_comparison_smoke/geometry_motion_interface_report.json",
+      "size_bytes": 8192
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_driver_runs/fluent_inspired_duct_flap_proxy_48_5step_ggui_comparison_smoke/geometry_quality_report.json",
+      "size_bytes": 2256
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_driver_runs/fluent_inspired_duct_flap_proxy_48_5step_ggui_comparison_smoke/wall_velocity_application_report.json",
+      "size_bytes": 2854
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_fluent_comparison/fluent_solver_gap_comparison.csv",
+      "size_bytes": 768
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_fluent_comparison/fluent_solver_gap_comparison.json",
+      "size_bytes": 3133
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_fluent_comparison/fluent_solver_gap_comparison_summary.csv",
+      "size_bytes": 1372
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_fluent_comparison/fluent_solver_gap_report.csv",
+      "size_bytes": 1372
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_fluent_comparison/fluent_solver_gap_report.json",
+      "size_bytes": 3133
+    },
+    {
+      "extension": ".md",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_fluent_comparison/fluent_solver_gap_report.md",
+      "size_bytes": 903
+    },
+    {
+      "extension": ".png",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_ggui_visualization/step103_duct_flap_proxy_ggui_visualization.png",
+      "size_bytes": 53747
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_ggui_visualization/step103_ggui_visualization_metadata.json",
+      "size_bytes": 473
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_ggui_visualization/step103_ggui_visualization_report.json",
+      "size_bytes": 1109
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_output_guard/output_guard.csv",
+      "size_bytes": 4145
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_output_guard/output_guard.json",
+      "size_bytes": 9755
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_output_guard/output_guard_summary.csv",
+      "size_bytes": 611
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_smoke_matrix/fluent_inspired_duct_flap_proxy_smoke_matrix.csv",
+      "size_bytes": 5407
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_smoke_matrix/fluent_inspired_duct_flap_proxy_smoke_matrix.json",
+      "size_bytes": 8908
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_smoke_matrix/fluent_inspired_duct_flap_proxy_smoke_matrix_summary.csv",
+      "size_bytes": 1310
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_step100_regression_guard/step100_regression_guard.csv",
+      "size_bytes": 670
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_step100_regression_guard/step100_regression_guard.json",
+      "size_bytes": 1762
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_step100_regression_guard/step100_regression_guard_summary.csv",
+      "size_bytes": 452
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_step102_regression_guard/step102_regression_guard.csv",
+      "size_bytes": 503
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_step102_regression_guard/step102_regression_guard.json",
+      "size_bytes": 1357
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step103_step102_regression_guard/step102_regression_guard_summary.csv",
+      "size_bytes": 376
+    }
+  ],
+  "summary": {
+    "artifact_budget_pass": true,
+    "output_guard_pass": true,
+    "pass_count": 43,
+    "private_absolute_path_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "row_count": 43,
+    "step103_ansys_proprietary_file_count": 0,
+    "step103_fluent_run_output_count": 0,
+    "step103_forbidden_file_count": 0,
+    "step103_ggui_screenshot_count": 1,
+    "step103_ggui_video_count": 0,
+    "step103_large_file_count": 0,
+    "step103_optional_driver_run_dir_count": 0,
+    "step103_particle_npy_count": 0,
+    "step103_required_driver_run_dir_count": 1,
+    "step103_total_size_bytes": 1049759,
+    "step103_total_size_mb": 1.0011281967163086,
+    "step103_vtr_count": 0
+  }
+}

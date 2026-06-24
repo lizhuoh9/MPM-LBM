@@ -42,7 +42,7 @@
     "n_grid": 32
   },
   "valid_coupling_modes": ["none", "penalty", "moving_boundary"],
-  "valid_geometry_types": ["box", "ellipsoid", "squid_proxy", "voxel", "mesh"],
+  "valid_geometry_types": ["box", "ellipsoid", "squid_proxy", "duct_flap_proxy", "voxel", "mesh"],
   "valid_reaction_transfer_modes": ["engineering", "link_area_experimental"],
   "solver_behavior_changed": false,
   "physics_feature_expansion": false

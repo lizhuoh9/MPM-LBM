@@ -1,0 +1,7 @@
+capability_gap,description,gap_present,validation_claim_allowed
+dimensionality_equivalence,official case is 2D while current solver is 3D,True,False
+conformal_mesh_equivalence,official case uses conformal FSI mesh while current geometry is procedural proxy,True,False
+linear_elasticity_equivalence,official case uses intrinsic linear elasticity while current solver does not match it,True,False
+dynamic_mesh_equivalence,official case deforms mesh while current geometry mutation is diagnostic-only/no-op,True,False
+exact_flap_tip_displacement,official monitor is displacement while current equivalent flap-tip monitor is unavailable,True,False
+dimensional_velocity_mapping,official inlet is 10 m/s while current LBM velocity is nondimensional/mapped,True,False

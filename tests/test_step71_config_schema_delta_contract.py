@@ -11,12 +11,12 @@ def test_build_passes():
     rows, summary = build_step71_config_schema_delta_audit(ROOT)
     assert rows
     assert summary["config_schema_delta_audit_pass"] is True
-    assert summary["changed_schema_classes"] == ["FSIDriverConfig"]
+    assert summary["changed_schema_classes"] == ["FSIDriverConfig", "GeometryConfig"]
     assert summary["fsidriver_write_vtk_default_previous"] == "True"
     assert summary["fsidriver_write_vtk_default_current"] == "False"
     assert summary["fsidriver_write_particles_default_previous"] == "True"
     assert summary["fsidriver_write_particles_default_current"] == "False"
-    unchanged_rows = [row for row in rows if row["class_name"] != "FSIDriverConfig"]
+    unchanged_rows = [row for row in rows if row["class_name"] not in {"FSIDriverConfig", "GeometryConfig"}]
     assert unchanged_rows
     assert all(row["schema_hash_changed"] is False for row in unchanged_rows)
 

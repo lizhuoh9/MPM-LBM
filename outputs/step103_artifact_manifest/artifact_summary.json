@@ -1,0 +1,19 @@
+{
+  "artifact_budget_pass": true,
+  "file_count": 7067,
+  "large_file_count": 0,
+  "private_absolute_path_count": 0,
+  "protected_external_taichi_lbm3d_step103_file_count": 0,
+  "protected_real_geometry_candidates_step103_file_count": 0,
+  "raw_geometry_file_count": 0,
+  "step103_ansys_proprietary_file_count": 0,
+  "step103_driver_run_dir_count": 1,
+  "step103_file_count": 76,
+  "step103_fluent_run_output_count": 0,
+  "step103_ggui_screenshot_count": 1,
+  "step103_ggui_video_count": 0,
+  "step103_particle_npy_count": 0,
+  "step103_total_size_bytes": 601580,
+  "step103_total_size_mb": 0.5737113952636719,
+  "step103_vtr_count": 0
+}

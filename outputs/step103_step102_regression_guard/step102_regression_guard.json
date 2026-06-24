@@ -1,0 +1,41 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "artifact_path": "outputs/step102_fluent_official_2way_fsi_benchmark_intake/fluent_official_2way_fsi_benchmark_intake.json",
+      "check": "step102_intake_still_passes",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step102_fluent_official_2way_fsi_benchmark_intake_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step102_output_guard/output_guard.json",
+      "check": "step102_output_guard_still_passes",
+      "expected": true,
+      "pass": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step102_artifact_manifest/artifact_summary.json",
+      "check": "step102_artifact_budget_still_passes",
+      "expected": true,
+      "pass": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "summary": {
+    "artifact_check_count": 3,
+    "artifact_pass_count": 3,
+    "pass_count": 3,
+    "row_count": 3,
+    "step102_artifact_budget_pass": true,
+    "step102_benchmark_comparison_allowed": false,
+    "step102_driver_run_dir_count": 0,
+    "step102_fluent_official_2way_fsi_benchmark_intake_pass": true,
+    "step102_output_guard_pass": true,
+    "step102_validation_claim_allowed": false,
+    "step103_step102_regression_guard_pass": true
+  }
+}

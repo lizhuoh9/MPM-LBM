@@ -74,6 +74,10 @@ def analyze_geometry_config(config) -> dict:
             "scope_note": "procedural diagnostic voxelization only",
         }
     )
+    if config.geometry_type == "duct_flap_proxy":
+        from .duct_flap_proxy import duct_flap_proxy_quality_metadata
+
+        report.update(duct_flap_proxy_quality_metadata(config))
     return report
 
 
@@ -171,4 +175,6 @@ def _resolve_path(path):
 def _procedural_component_semantics(geometry_type: str) -> str:
     if geometry_type == "squid_proxy":
         return "static squid proxy appendage and fin components may be disconnected in coarse diagnostic voxelization"
+    if geometry_type == "duct_flap_proxy":
+        return "single procedural duct-flap proxy solid flap; duct is context, not an imported Fluent mesh"
     return ""

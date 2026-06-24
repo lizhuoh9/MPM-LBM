@@ -1,0 +1,28 @@
+{
+  "direct_quantitative_equivalence_allowed": false,
+  "expected_combined_runtime_geometry_wall_velocity_enabled_count": 1,
+  "expected_duct_flap_proxy_enabled_count": 1,
+  "expected_geometry_config_path": "configs/step103_fluent_inspired_duct_flap_proxy_geometry_1024.json",
+  "expected_geometry_motion_application_mode": "diagnostic_only",
+  "expected_geometry_type": "duct_flap_proxy",
+  "expected_ggui_renderer_called_count": 1,
+  "expected_ggui_screenshot_count": 1,
+  "expected_ggui_visualization_enabled_count": 1,
+  "expected_grid_48_enabled_count": 1,
+  "expected_grid_64_enabled_count": 0,
+  "expected_required_row_name": "fluent_inspired_duct_flap_proxy_48_5step_ggui_comparison_smoke",
+  "expected_runtime_geometry_enabled_count": 1,
+  "expected_target_lbm_field": "solid_vel",
+  "expected_wall_velocity_application_mode": "solid_vel_experimental",
+  "expected_wall_velocity_enabled_count": 1,
+  "matrix_artifact_path": "outputs/step103_smoke_matrix/fluent_inspired_duct_flap_proxy_smoke_matrix.json",
+  "summary_flags_must_be_zero": [
+    "real_geometry_candidate_enabled_count",
+    "real_geometry_enabled_count",
+    "link_area_enabled_count",
+    "write_vtk_count",
+    "write_particles_count",
+    "grid_64_enabled_count"
+  ],
+  "validation_claim_allowed": false
+}

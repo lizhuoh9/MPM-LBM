@@ -1,0 +1,19 @@
+{
+  "optional_reference_csv_path": "benchmarks/private/fluent_fsi_2way/reference/fluent_structural_point_flap_displacement.csv",
+  "required_columns_any": [
+    [
+      "time",
+      "total_displacement"
+    ],
+    [
+      "time_s",
+      "total_displacement_m"
+    ],
+    [
+      "flow_time",
+      "structural_point_flap_total_displacement"
+    ]
+  ],
+  "schema_id": "step103_fluent_structural_point_flap_displacement_csv_schema",
+  "source_policy": "local_optional_private_reference_only_do_not_commit"
+}

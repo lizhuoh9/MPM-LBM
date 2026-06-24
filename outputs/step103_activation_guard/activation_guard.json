@@ -1,0 +1,195 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "check": "matrix_pass",
+      "expected": true,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "duct_flap_proxy_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "runtime_geometry_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "wall_velocity_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "combined_runtime_geometry_wall_velocity_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "ggui_visualization_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "grid_48_enabled_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "grid_64_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "ggui_renderer_called_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 1,
+      "check": "ggui_screenshot_count",
+      "expected": 1,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": "fluent_inspired_duct_flap_proxy_48_5step_ggui_comparison_smoke",
+      "check": "row_name",
+      "expected": "fluent_inspired_duct_flap_proxy_48_5step_ggui_comparison_smoke",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": "duct_flap_proxy",
+      "check": "geometry_type",
+      "expected": "duct_flap_proxy",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": "configs/step103_fluent_inspired_duct_flap_proxy_geometry_1024.json",
+      "check": "geometry_config_path",
+      "expected": "configs/step103_fluent_inspired_duct_flap_proxy_geometry_1024.json",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": "diagnostic_only",
+      "check": "geometry_motion_application_mode",
+      "expected": "diagnostic_only",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": "solid_vel_experimental",
+      "check": "wall_velocity_application_mode",
+      "expected": "solid_vel_experimental",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": "solid_vel",
+      "check": "target_lbm_field",
+      "expected": "solid_vel",
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": false,
+      "check": "direct_quantitative_equivalence_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": false,
+      "check": "validation_claim_allowed",
+      "expected": false,
+      "pass": true,
+      "row_name": "matrix_row"
+    },
+    {
+      "actual": 0,
+      "check": "real_geometry_candidate_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "real_geometry_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "link_area_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "write_vtk_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "write_particles_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    },
+    {
+      "actual": 0,
+      "check": "grid_64_enabled_count",
+      "expected": 0,
+      "pass": true,
+      "row_name": "matrix_summary"
+    }
+  ],
+  "summary": {
+    "combined_runtime_geometry_wall_velocity_enabled_count": 1,
+    "direct_quantitative_equivalence_allowed": false,
+    "duct_flap_proxy_enabled_count": 1,
+    "geometry_type": "duct_flap_proxy",
+    "ggui_screenshot_count": 1,
+    "ggui_visualization_enabled_count": 1,
+    "grid_48_enabled_count": 1,
+    "grid_64_enabled_count": 0,
+    "guard_pass_count": 24,
+    "guard_row_count": 24,
+    "link_area_enabled_count": 0,
+    "real_geometry_candidate_enabled_count": 0,
+    "real_geometry_enabled_count": 0,
+    "required_row_name": "fluent_inspired_duct_flap_proxy_48_5step_ggui_comparison_smoke",
+    "row_count": 24,
+    "runtime_geometry_enabled_count": 1,
+    "step103_activation_guard_pass": true,
+    "validation_claim_allowed": false,
+    "wall_velocity_enabled_count": 1,
+    "write_particles_count": 0,
+    "write_vtk_count": 0
+  }
+}
