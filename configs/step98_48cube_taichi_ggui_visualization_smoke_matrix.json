@@ -1,0 +1,25 @@
+{
+  "allowed_next_step": "Step98",
+  "allowed_next_step_scope": "48^3 / 1-step Taichi GGUI visualization smoke passed for the first-user envelope",
+  "campaign_id": "step98_48cube_taichi_ggui_visualization_smoke",
+  "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+  "driver_run_required": true,
+  "driver_run_root": "outputs/step98_driver_runs",
+  "from_step96_duration_reduction": true,
+  "from_step96_grid_expansion": true,
+  "gate_source_step": "Step97",
+  "ggui_config_path": "configs/step98_taichi_ggui_visualization_config.json",
+  "ggui_output_dir": "outputs/step98_ggui_visualization",
+  "grid_expansion_smoke_isolation": true,
+  "physics_feature_expansion": "48cube_taichi_ggui_visualization_smoke_only",
+  "post_gate_simulation_allowed": true,
+  "previous_step": "Step97",
+  "previous_step96_n_grid": 32,
+  "previous_step96_n_lbm_steps": 10,
+  "required_run_configs": [
+    "configs/step98_first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_48_1step_ggui_visual_smoke.json"
+  ],
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false,
+  "step": 98
+}

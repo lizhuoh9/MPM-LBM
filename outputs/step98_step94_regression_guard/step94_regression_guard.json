@@ -1,0 +1,62 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "artifact_path": "outputs/step94_taichi_ggui_visualization_smoke_matrix/taichi_ggui_visualization_smoke_matrix.json",
+      "check": "step94_taichi_ggui_visualization_smoke_matrix_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step94_taichi_ggui_visualization_smoke_matrix_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step94_taichi_ggui_visualization_quality/taichi_ggui_visualization_quality.json",
+      "check": "step94_taichi_ggui_visualization_quality_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step94_taichi_ggui_visualization_quality_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step94_activation_guard/activation_guard.json",
+      "check": "step94_activation_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step94_activation_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step94_output_guard/output_guard.json",
+      "check": "step94_output_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step94_artifact_manifest/artifact_summary.json",
+      "check": "step94_artifact_budget_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "summary": {
+    "artifact_check_count": 5,
+    "artifact_pass_count": 5,
+    "pass_count": 5,
+    "row_count": 5,
+    "step94_activation_feature_count": 4,
+    "step94_activation_guard_pass": true,
+    "step94_artifact_budget_pass": true,
+    "step94_completed_lbm_steps": 1,
+    "step94_ggui_screenshot_count": 1,
+    "step94_ggui_video_count": 0,
+    "step94_output_guard_pass": true,
+    "step94_particle_npy_count": 0,
+    "step94_taichi_ggui_visualization_quality_pass": true,
+    "step94_taichi_ggui_visualization_smoke_matrix_pass": true,
+    "step94_vtr_count": 0,
+    "step98_step94_regression_guard_pass": true
+  }
+}

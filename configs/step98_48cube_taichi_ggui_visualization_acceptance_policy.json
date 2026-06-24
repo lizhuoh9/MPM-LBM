@@ -1,0 +1,40 @@
+{
+  "expected_ggui_render_frames": 1,
+  "expected_ggui_screenshot_file_count": 1,
+  "expected_ggui_video_file_count": 0,
+  "expected_required_driver_run_dir_count": 1,
+  "max_lbm_max_v": 0.5,
+  "max_mpm_max_speed": 10.0,
+  "max_rho_max": 1.1,
+  "max_step98_total_size_mb": 15.0,
+  "min_active_cell_count_final": 1,
+  "min_applied_cell_count": 1,
+  "min_boundary_motion_report_pass_count": 1,
+  "min_diagnostics_row_count": 2,
+  "min_geometry_motion_report_pass_count": 1,
+  "min_mpm_min_J": 0.0,
+  "min_projected_mass_final": 0.0,
+  "min_rho_min": 0.9,
+  "min_screenshot_size_bytes": 1,
+  "min_total_mpm_substeps": 1,
+  "min_wall_velocity_report_pass_count": 1,
+  "mpm_substeps_per_lbm_step": 1,
+  "optional_row_names": [],
+  "policy_id": "step98_48cube_taichi_ggui_visualization_acceptance_policy",
+  "required_geometry_config_path": "configs/step85_squid_proxy_geometry_1024.json",
+  "required_geometry_type": "squid_proxy",
+  "required_n_grid": 48,
+  "required_n_lbm_steps": 1,
+  "required_n_particles": 1024,
+  "required_target_u_lbm": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "required_row_names": [
+    "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_48_1step_ggui_visual_smoke"
+  ],
+  "runtime_hard_fail_seconds": 1800.0,
+  "runtime_warning_seconds": 900.0,
+  "step": 98
+}

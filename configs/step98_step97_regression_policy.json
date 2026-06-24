@@ -1,0 +1,55 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step97_48cube_taichi_ggui_visualization_expansion_plan/48cube_taichi_ggui_visualization_expansion_plan.json",
+      "check": "step97_48cube_taichi_ggui_visualization_expansion_plan_pass",
+      "expected": true,
+      "summary_key": "step97_48cube_taichi_ggui_visualization_expansion_plan_pass"
+    },
+    {
+      "artifact_path": "outputs/step97_48cube_taichi_ggui_visualization_expansion_guard/48cube_taichi_ggui_visualization_expansion_guard.json",
+      "check": "step97_48cube_taichi_ggui_visualization_expansion_guard_pass",
+      "expected": true,
+      "summary_key": "step97_48cube_taichi_ggui_visualization_expansion_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step97_step96_regression_guard/step96_regression_guard.json",
+      "check": "step97_step96_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step97_step96_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step97_step94_regression_guard/step94_regression_guard.json",
+      "check": "step97_step94_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step97_step94_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step97_step92_regression_guard/step92_regression_guard.json",
+      "check": "step97_step92_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step97_step92_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step97_output_guard/output_guard.json",
+      "check": "step97_output_guard_pass",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step97_artifact_manifest/artifact_summary.json",
+      "check": "step97_artifact_budget_pass",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "expected_planned_step98_activation_feature_count": 5,
+  "expected_step97_activation_feature_count": 0,
+  "expected_step97_driver_run_dir_count": 0,
+  "expected_step97_ggui_screenshot_count": 0,
+  "expected_step97_ggui_video_count": 0,
+  "expected_step97_particle_npy_count": 0,
+  "expected_step97_vtr_count": 0,
+  "plan_artifact_path": "outputs/step97_48cube_taichi_ggui_visualization_expansion_plan/48cube_taichi_ggui_visualization_expansion_plan.json",
+  "plan_guard_artifact_path": "outputs/step97_48cube_taichi_ggui_visualization_expansion_guard/48cube_taichi_ggui_visualization_expansion_guard.json"
+}

@@ -1,0 +1,45 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step96_taichi_ggui_10step_visualization_run_matrix/taichi_ggui_10step_visualization_run_matrix.json",
+      "check": "step96_taichi_ggui_10step_visualization_run_matrix_pass",
+      "expected": true,
+      "summary_key": "step96_taichi_ggui_10step_visualization_run_matrix_pass"
+    },
+    {
+      "artifact_path": "outputs/step96_taichi_ggui_10step_visualization_quality/taichi_ggui_10step_visualization_quality.json",
+      "check": "step96_taichi_ggui_10step_visualization_quality_pass",
+      "expected": true,
+      "summary_key": "step96_taichi_ggui_10step_visualization_quality_pass"
+    },
+    {
+      "artifact_path": "outputs/step96_activation_guard/activation_guard.json",
+      "check": "step96_activation_guard_pass",
+      "expected": true,
+      "summary_key": "step96_activation_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step96_output_guard/output_guard.json",
+      "check": "step96_output_guard_pass",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step96_artifact_manifest/artifact_summary.json",
+      "check": "step96_artifact_budget_pass",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "expected_step96_activation_feature_count": 4,
+  "expected_step96_completed_lbm_steps": 10,
+  "expected_step96_ggui_screenshot_count": 1,
+  "expected_step96_ggui_video_count": 0,
+  "expected_step96_grid_48_enabled_count": 0,
+  "expected_step96_grid_64_enabled_count": 0,
+  "expected_step96_particle_npy_count": 0,
+  "expected_step96_runtime_geometry_enabled_count": 1,
+  "expected_step96_squid_proxy_enabled_count": 1,
+  "expected_step96_vtr_count": 0,
+  "expected_step96_wall_velocity_enabled_count": 1
+}
