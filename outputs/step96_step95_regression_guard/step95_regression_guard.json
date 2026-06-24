@@ -1,0 +1,73 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "artifact_path": "outputs/step95_taichi_ggui_10step_visualization_plan/taichi_ggui_10step_visualization_plan.json",
+      "check": "step95_taichi_ggui_10step_visualization_plan_guard_matrix_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step95_taichi_ggui_10step_visualization_plan_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step95_taichi_ggui_10step_visualization_guard/taichi_ggui_10step_visualization_guard.json",
+      "check": "step95_taichi_ggui_10step_visualization_plan_guard_quality_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step95_taichi_ggui_10step_visualization_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step95_output_guard/output_guard.json",
+      "check": "step95_output_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step95_step94_regression_guard/step94_regression_guard.json",
+      "check": "step95_step94_regression_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step95_step94_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step95_step92_regression_guard/step92_regression_guard.json",
+      "check": "step95_step92_regression_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step95_step92_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step95_artifact_manifest/artifact_summary.json",
+      "check": "step95_artifact_budget_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "summary": {
+    "artifact_check_count": 6,
+    "artifact_pass_count": 6,
+    "pass_count": 6,
+    "planned_step96_activation_feature_count": 4,
+    "row_count": 6,
+    "step95_activation_feature_count": 0,
+    "step95_activation_guard_pass": true,
+    "step95_artifact_budget_pass": true,
+    "step95_driver_run_dir_count": 0,
+    "step95_ggui_screenshot_count": 0,
+    "step95_ggui_video_count": 0,
+    "step95_output_guard_pass": true,
+    "step95_particle_npy_count": 0,
+    "step95_step92_regression_guard_pass": true,
+    "step95_step94_regression_guard_pass": true,
+    "step95_taichi_ggui_10step_visualization_plan_guard_matrix_pass": true,
+    "step95_taichi_ggui_10step_visualization_plan_guard_quality_pass": true,
+    "step95_vtr_count": 0,
+    "step96_step95_regression_guard_pass": true
+  }
+}

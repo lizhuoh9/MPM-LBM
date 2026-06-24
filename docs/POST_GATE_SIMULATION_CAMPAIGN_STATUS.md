@@ -8,7 +8,8 @@ and 85 planned bounded single-feature rows; Steps 80, 82, 84, and 86 executed
 those planned canonical driver smoke rows. Step87 planned the first
 three-feature combined row, Step88 executed that bounded combined smoke, and
 Step89 planned the first user simulation dry run for Step90 without executing
-simulation.
+simulation. Step95 planned the 10-step first-user Taichi GGUI visualization
+run, and Step96 executed that single bounded visualization row.
 
 ## Step76 Executed Row
 

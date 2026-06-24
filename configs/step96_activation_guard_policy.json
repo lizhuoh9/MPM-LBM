@@ -1,0 +1,30 @@
+{
+  "expected_activation_feature_count": 4,
+  "expected_combined_runtime_geometry_wall_velocity_enabled_count": 1,
+  "expected_geometry_config_path": "configs/step85_squid_proxy_geometry_1024.json",
+  "expected_geometry_motion_application_mode": "diagnostic_only",
+  "expected_geometry_type": "squid_proxy",
+  "expected_ggui_renderer_called_count": 1,
+  "expected_ggui_screenshot_count": 1,
+  "expected_ggui_visualization_enabled_count": 1,
+  "expected_procedural_geometry_enabled_count": 1,
+  "expected_required_row_name": "first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_10step_ggui_visual_run",
+  "expected_runtime_geometry_enabled_count": 1,
+  "expected_squid_proxy_enabled_count": 1,
+  "expected_target_lbm_field": "solid_vel",
+  "expected_wall_velocity_application_mode": "solid_vel_experimental",
+  "expected_wall_velocity_enabled_count": 1,
+  "matrix_artifact_path": "outputs/step96_taichi_ggui_10step_visualization_run_matrix/taichi_ggui_10step_visualization_run_matrix.json",
+  "summary_flags_must_be_zero": [
+    "real_geometry_candidate_enabled_count",
+    "real_geometry_enabled_count",
+    "link_area_enabled_count",
+    "grid_48_enabled_count",
+    "grid_64_enabled_count",
+    "write_vtk_count",
+    "write_particles_count",
+    "vtr_output_count",
+    "particle_npy_output_count",
+    "ggui_video_file_count"
+  ]
+}

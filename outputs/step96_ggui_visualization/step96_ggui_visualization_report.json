@@ -1,0 +1,31 @@
+{
+  "domain_box_line_vertex_count": 24,
+  "error": "",
+  "ggui_camera_configured": true,
+  "ggui_render_report_exists": true,
+  "ggui_render_report_pass": true,
+  "ggui_rendered_frame_count": 1,
+  "ggui_renderer_called": true,
+  "ggui_scene_created": true,
+  "ggui_screenshot_enabled": true,
+  "ggui_screenshot_exists": true,
+  "ggui_screenshot_file_count": 1,
+  "ggui_screenshot_path": "outputs/step96_ggui_visualization/step96_ggui_10step_visualization.png",
+  "ggui_screenshot_size_bytes": 132386,
+  "ggui_video_enabled": false,
+  "ggui_video_file_count": 0,
+  "ggui_visualization_enabled": true,
+  "ggui_window_created": true,
+  "render_frames_requested": 1,
+  "show_window": false,
+  "taichi_version": "1.7.4",
+  "visual_point_count": 1024,
+  "visualization_note": "GGUI visualizes Step96 procedural squid_proxy proxy points after the accepted 10-step dry-run envelope; it is not a physical validation or swimming claim.",
+  "visualization_source": "procedural_squid_proxy_proxy_points",
+  "wall_velocity_proxy_line_vertex_count": 48,
+  "window_resolution": [
+    1280,
+    720
+  ],
+  "window_title": "Step96 GGUI 10-Step First User Visualization"
+}

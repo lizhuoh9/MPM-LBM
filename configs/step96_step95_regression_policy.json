@@ -1,0 +1,49 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step95_taichi_ggui_10step_visualization_plan/taichi_ggui_10step_visualization_plan.json",
+      "check": "step95_taichi_ggui_10step_visualization_plan_guard_matrix_pass",
+      "expected": true,
+      "summary_key": "step95_taichi_ggui_10step_visualization_plan_pass"
+    },
+    {
+      "artifact_path": "outputs/step95_taichi_ggui_10step_visualization_guard/taichi_ggui_10step_visualization_guard.json",
+      "check": "step95_taichi_ggui_10step_visualization_plan_guard_quality_pass",
+      "expected": true,
+      "summary_key": "step95_taichi_ggui_10step_visualization_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step95_output_guard/output_guard.json",
+      "check": "step95_output_guard_pass",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step95_step94_regression_guard/step94_regression_guard.json",
+      "check": "step95_step94_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step95_step94_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step95_step92_regression_guard/step92_regression_guard.json",
+      "check": "step95_step92_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step95_step92_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step95_artifact_manifest/artifact_summary.json",
+      "check": "step95_artifact_budget_pass",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "expected_planned_step96_activation_feature_count": 4,
+  "expected_step95_activation_feature_count": 0,
+  "expected_step95_driver_run_dir_count": 0,
+  "expected_step95_ggui_screenshot_count": 0,
+  "expected_step95_ggui_video_count": 0,
+  "expected_step95_particle_npy_count": 0,
+  "expected_step95_vtr_count": 0,
+  "plan_artifact_path": "outputs/step95_taichi_ggui_10step_visualization_plan/taichi_ggui_10step_visualization_plan.json",
+  "plan_guard_artifact_path": "outputs/step95_taichi_ggui_10step_visualization_guard/taichi_ggui_10step_visualization_guard.json"
+}

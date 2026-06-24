@@ -48,6 +48,7 @@ Step 11 is documentation and reproducibility work. It converts the Step 1-10 pro
 - Step 90: first user simulation dry run
 - Step 91: first user simulation 10-step dry run plan and guard
 - Step 95: Taichi GGUI 10-step first-user visualization plan and guard
+- Step 96: Taichi GGUI 10-step first-user visualization run
 
 ## Current Validated Modes
 

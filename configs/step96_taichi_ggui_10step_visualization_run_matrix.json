@@ -1,0 +1,25 @@
+{
+  "allowed_next_step": "Step96",
+  "allowed_next_step_scope": "Taichi GGUI visualization can render the accepted 32^3 / 10-step first-user dry-run envelope",
+  "campaign_id": "step96_taichi_ggui_10step_first_user_visualization_run",
+  "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+  "driver_run_required": true,
+  "driver_run_root": "outputs/step96_driver_runs",
+  "from_step92_adds_ggui_visualization": true,
+  "from_step94_duration_expansion": true,
+  "gate_source_step": "Step95",
+  "ggui_config_path": "configs/step96_taichi_ggui_visualization_config.json",
+  "ggui_output_dir": "outputs/step96_ggui_visualization",
+  "only_new_feature_from_step92": "taichi_ggui_visualization",
+  "physics_feature_expansion": "taichi_ggui_10step_first_user_visualization_run",
+  "post_gate_simulation_allowed": true,
+  "previous_step": "Step95",
+  "previous_step92_n_lbm_steps": 10,
+  "previous_step94_n_lbm_steps": 1,
+  "required_run_configs": [
+    "configs/step96_first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_10step_ggui_visual_run.json"
+  ],
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false,
+  "step": 96
+}
