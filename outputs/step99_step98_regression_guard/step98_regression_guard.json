@@ -1,0 +1,95 @@
+{
+  "rows": [
+    {
+      "actual": true,
+      "artifact_path": "outputs/step98_48cube_taichi_ggui_visualization_smoke_matrix/48cube_taichi_ggui_visualization_smoke_matrix.json",
+      "check": "step98_48cube_taichi_ggui_visualization_smoke_matrix_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step98_48cube_taichi_ggui_visualization_smoke_matrix_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step98_48cube_taichi_ggui_visualization_quality/48cube_taichi_ggui_visualization_quality.json",
+      "check": "step98_48cube_taichi_ggui_visualization_quality_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step98_48cube_taichi_ggui_visualization_quality_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step98_activation_guard/activation_guard.json",
+      "check": "step98_activation_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step98_activation_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step98_output_guard/output_guard.json",
+      "check": "step98_output_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step98_step97_regression_guard/step97_regression_guard.json",
+      "check": "step98_step97_regression_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step98_step97_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step98_step96_regression_guard/step96_regression_guard.json",
+      "check": "step98_step96_regression_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step98_step96_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step98_step94_regression_guard/step94_regression_guard.json",
+      "check": "step98_step94_regression_guard_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "step98_step94_regression_guard_pass"
+    },
+    {
+      "actual": true,
+      "artifact_path": "outputs/step98_artifact_manifest/artifact_summary.json",
+      "check": "step98_artifact_budget_pass",
+      "expected": true,
+      "pass": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "summary": {
+    "artifact_check_count": 8,
+    "artifact_pass_count": 8,
+    "pass_count": 8,
+    "row_count": 8,
+    "step98_48cube_taichi_ggui_visualization_quality_pass": true,
+    "step98_48cube_taichi_ggui_visualization_smoke_matrix_pass": true,
+    "step98_activation_feature_count": 5,
+    "step98_activation_guard_pass": true,
+    "step98_artifact_budget_pass": true,
+    "step98_completed_lbm_steps": 1,
+    "step98_ggui_screenshot_count": 1,
+    "step98_ggui_video_count": 0,
+    "step98_grid_48_enabled_count": 1,
+    "step98_grid_64_enabled_count": 0,
+    "step98_n_grid": 48,
+    "step98_output_guard_pass": true,
+    "step98_particle_npy_count": 0,
+    "step98_runtime_geometry_enabled_count": 1,
+    "step98_squid_proxy_enabled_count": 1,
+    "step98_step94_regression_guard_pass": true,
+    "step98_step96_regression_guard_pass": true,
+    "step98_step97_regression_guard_pass": true,
+    "step98_vtr_count": 0,
+    "step98_wall_velocity_enabled_count": 1,
+    "step99_step98_regression_guard_pass": true
+  }
+}
