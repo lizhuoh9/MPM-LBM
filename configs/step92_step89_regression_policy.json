@@ -1,0 +1,51 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step89_first_user_simulation_dry_run_plan/first_user_simulation_dry_run_plan.json",
+      "check": "step89_first_user_simulation_dry_run_plan_pass",
+      "expected": true,
+      "summary_key": "step89_first_user_simulation_dry_run_plan_pass"
+    },
+    {
+      "artifact_path": "outputs/step89_first_user_simulation_dry_run_guard/first_user_simulation_dry_run_guard.json",
+      "check": "step89_first_user_simulation_dry_run_guard_pass",
+      "expected": true,
+      "summary_key": "step89_first_user_simulation_dry_run_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step89_step88_regression_guard/step88_regression_guard.json",
+      "check": "step89_step88_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step89_step88_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step89_step87_regression_guard/step87_regression_guard.json",
+      "check": "step89_step87_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step89_step87_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step89_step86_regression_guard/step86_regression_guard.json",
+      "check": "step89_step86_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step89_step86_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step89_output_guard/output_guard.json",
+      "check": "step89_output_guard_pass",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step89_artifact_manifest/artifact_summary.json",
+      "check": "step89_artifact_budget_pass",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "expected_planned_step90_activation_feature_count": 3,
+  "expected_step89_activation_feature_count": 0,
+  "expected_step89_driver_run_dir_count": 0,
+  "expected_step89_particle_npy_count": 0,
+  "expected_step89_vtr_count": 0
+}

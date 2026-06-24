@@ -1,0 +1,58 @@
+{
+  "artifact_checks": [
+    {
+      "artifact_path": "outputs/step90_first_user_simulation_dry_run_matrix/first_user_simulation_dry_run_matrix.json",
+      "check": "step90_first_user_simulation_dry_run_matrix_pass",
+      "expected": true,
+      "summary_key": "step90_first_user_simulation_dry_run_matrix_pass"
+    },
+    {
+      "artifact_path": "outputs/step90_first_user_simulation_dry_run_quality/first_user_simulation_dry_run_quality.json",
+      "check": "step90_first_user_simulation_dry_run_quality_pass",
+      "expected": true,
+      "summary_key": "step90_first_user_simulation_dry_run_quality_pass"
+    },
+    {
+      "artifact_path": "outputs/step90_activation_guard/activation_guard.json",
+      "check": "step90_activation_guard_pass",
+      "expected": true,
+      "summary_key": "step90_activation_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step90_output_guard/output_guard.json",
+      "check": "step90_output_guard_pass",
+      "expected": true,
+      "summary_key": "output_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step90_step89_regression_guard/step89_regression_guard.json",
+      "check": "step90_step89_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step90_step89_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step90_step88_regression_guard/step88_regression_guard.json",
+      "check": "step90_step88_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step90_step88_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step90_step87_regression_guard/step87_regression_guard.json",
+      "check": "step90_step87_regression_guard_pass",
+      "expected": true,
+      "summary_key": "step90_step87_regression_guard_pass"
+    },
+    {
+      "artifact_path": "outputs/step90_artifact_manifest/artifact_summary.json",
+      "check": "step90_artifact_budget_pass",
+      "expected": true,
+      "summary_key": "artifact_budget_pass"
+    }
+  ],
+  "expected_step90_activation_feature_count": 3,
+  "expected_step90_completed_lbm_steps": 5,
+  "expected_step90_link_area_enabled_count": 0,
+  "expected_step90_particle_npy_count": 0,
+  "expected_step90_real_geometry_candidate_enabled_count": 0,
+  "expected_step90_vtr_count": 0
+}

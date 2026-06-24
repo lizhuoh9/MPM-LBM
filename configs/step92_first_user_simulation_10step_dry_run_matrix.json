@@ -1,0 +1,18 @@
+{
+  "allowed_next_step": "Step92",
+  "allowed_next_step_scope": "first user simulation 10-step dry run 32^3 10-step squid_proxy runtime geometry diagnostic-only wall velocity solid_vel only",
+  "campaign_id": "step92_first_user_simulation_10step_dry_run",
+  "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+  "driver_run_required": true,
+  "driver_run_root": "outputs/step92_driver_runs",
+  "gate_source_step": "Step91",
+  "physics_feature_expansion": "first_user_10step_dry_run_duration_only",
+  "post_gate_simulation_allowed": true,
+  "previous_step": "Step91",
+  "required_smoke_configs": [
+    "configs/step92_first_user_squid_proxy_runtime_geometry_diagnostic_only_wall_velocity_solid_vel_32_10step_dry_run.json"
+  ],
+  "runtime_code_changed": false,
+  "solver_behavior_changed": false,
+  "step": 92
+}
