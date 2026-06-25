@@ -1,0 +1,17 @@
+metric,value
+allowed_claim,"An approximate public Fluent Figure 29.4 displacement curve was digitized with uncertainty, and solver displacement outputs can be compared against that public-plot reference without validation claims."
+columns_present,"[""digitization_method"", ""digitization_uncertainty_m"", ""fluent_public_digitized_total_displacement_m"", ""source_figure"", ""time_s""]"
+digitization_method,manual_visual_anchor_linear_interpolation
+digitization_quality_pass,True
+digitized_from_public_plot,True
+direct_quantitative_equivalence_allowed,False
+interpolated_to_official_time_grid,True
+max_displacement_m,0.000395
+min_displacement_m,0.0
+official_png_committed,False
+sample_count,51
+time_end_s,0.025
+time_start_s,0.0
+uncertainty_max_m,2.5e-05
+uncertainty_min_m,2.5e-05
+validation_claim_allowed,False

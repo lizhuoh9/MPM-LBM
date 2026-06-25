@@ -1,0 +1,159 @@
+{
+  "rows": [
+    {
+      "extension": ".md",
+      "forbidden": false,
+      "pass": true,
+      "path": "benchmarks/public/fluent_fsi_2way_digitized/figure_29_4_digitization_notes.md",
+      "size_bytes": 595
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "benchmarks/public/fluent_fsi_2way_digitized/figure_29_4_structural_point_flap_digitized.csv",
+      "size_bytes": 4096
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step107_artifact_manifest_policy.json",
+      "size_bytes": 264
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step107_digitization_policy.json",
+      "size_bytes": 817
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step107_error_metric_policy.json",
+      "size_bytes": 587
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step107_output_guard_policy.json",
+      "size_bytes": 1258
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step107_public_fluent_reference_metadata.json",
+      "size_bytes": 1088
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step107_artifact_manifest.log",
+      "size_bytes": 64
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step107_error_comparison_harness.log",
+      "size_bytes": 129
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step107_output_guard.log",
+      "size_bytes": 50
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step107_public_reference_digitization.log",
+      "size_bytes": 208
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step107_error_comparison/error_report.csv",
+      "size_bytes": 728
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step107_error_comparison/error_report.json",
+      "size_bytes": 1264
+    },
+    {
+      "extension": ".md",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step107_error_comparison/error_report.md",
+      "size_bytes": 1179
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step107_error_comparison/error_summary.csv",
+      "size_bytes": 191
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step107_public_reference_digitization/digitization_quality_report.json",
+      "size_bytes": 936
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step107_public_reference_digitization/digitization_quality_summary.csv",
+      "size_bytes": 829
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step107_public_reference_digitization/figure_29_4_digitized_reference.csv",
+      "size_bytes": 4096
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step107_public_reference_digitization/public_reference_metadata.json",
+      "size_bytes": 1115
+    }
+  ],
+  "summary": {
+    "artifact_budget_pass": true,
+    "direct_equivalence_claim_count": 0,
+    "official_case_data_h5_count": 0,
+    "official_case_file_count": 0,
+    "official_journal_file_count": 0,
+    "official_mesh_file_count": 0,
+    "official_png_committed_count": 0,
+    "output_guard_pass": true,
+    "pass_count": 19,
+    "private_absolute_path_count": 0,
+    "private_fluent_csv_committed_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "row_count": 19,
+    "step107_forbidden_file_count": 0,
+    "step107_large_file_count": 0,
+    "step107_total_size_bytes": 19494,
+    "step107_total_size_mb": 0.018590927124023438,
+    "step107_video_count": 0,
+    "validation_claim_count": 0
+  }
+}

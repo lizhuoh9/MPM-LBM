@@ -1,0 +1,37 @@
+{
+  "rows": [
+    {
+      "all_metrics_finite": true,
+      "direct_quantitative_equivalence_allowed": false,
+      "final_abs_error_m": 5.9623376623958394e-05,
+      "final_reference_m": 6e-05,
+      "final_relative_error": 0.9937229437326399,
+      "final_solver_m": 3.766233760416071e-07,
+      "monitor_equivalence": false,
+      "monitor_used": "free_tip_proxy_mean",
+      "normalized_rms_error": 0.6166683693114237,
+      "peak_abs_error_m": 0.0003946233766239584,
+      "peak_reference_m": 0.000395,
+      "peak_relative_error": 0.9990465230986288,
+      "peak_solver_m": 3.766233760416071e-07,
+      "peak_time_error_s": 0.006,
+      "reference_loaded": true,
+      "rms_abs_error_m": 0.00024358400587801233,
+      "sample_count": 51,
+      "shape_correlation": 0.07747139097796335,
+      "sign_consistency": true,
+      "solver_curve_loaded": true,
+      "time_of_peak_reference_s": 0.004,
+      "time_of_peak_solver_s": 0.01,
+      "validation_claim_allowed": false
+    }
+  ],
+  "summary": {
+    "all_metrics_finite_count": 1,
+    "direct_quantitative_equivalence_allowed": false,
+    "min_sample_count": 10,
+    "row_count": 1,
+    "step107_error_comparison_pass": true,
+    "validation_claim_allowed": false
+  }
+}

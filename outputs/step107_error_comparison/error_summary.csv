@@ -1,0 +1,7 @@
+metric,value
+all_metrics_finite_count,1
+direct_quantitative_equivalence_allowed,False
+min_sample_count,10
+row_count,1
+step107_error_comparison_pass,True
+validation_claim_allowed,False

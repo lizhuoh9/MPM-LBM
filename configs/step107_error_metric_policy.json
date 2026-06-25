@@ -1,0 +1,13 @@
+{
+  "direct_quantitative_equivalence_allowed": false,
+  "expected_sample_count": 51,
+  "min_sample_count": 10,
+  "monitor_equivalence": false,
+  "monitor_used": "free_tip_proxy_mean",
+  "reference_curve_path": "benchmarks/public/fluent_fsi_2way_digitized/figure_29_4_structural_point_flap_digitized.csv",
+  "relative_error_epsilon_m": 1e-12,
+  "solver_curve_path": "outputs/step106_fsi_outlet_repair_regression/flap_tip_displacement_timeseries.csv",
+  "solver_displacement_column": "flap_tip_total_displacement_m",
+  "solver_time_column": "time_s",
+  "validation_claim_allowed": false
+}

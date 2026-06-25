@@ -1,0 +1,21 @@
+{
+  "digitization_method": "manual_visual_anchor_linear_interpolation",
+  "digitized_reference_csv": "benchmarks/public/fluent_fsi_2way_digitized/figure_29_4_structural_point_flap_digitized.csv",
+  "direct_quantitative_equivalence_allowed": false,
+  "expected_sample_count": 51,
+  "interpolated_to_official_time_grid": true,
+  "metadata_path": "configs/step107_public_fluent_reference_metadata.json",
+  "official_dt_s": 0.0005,
+  "official_final_time_s": 0.025,
+  "official_png_committed": false,
+  "output_dir": "outputs/step107_public_reference_digitization",
+  "public_result_figure": "Figure 29.4",
+  "required_columns": [
+    "time_s",
+    "fluent_public_digitized_total_displacement_m",
+    "digitization_uncertainty_m",
+    "source_figure",
+    "digitization_method"
+  ],
+  "validation_claim_allowed": false
+}
