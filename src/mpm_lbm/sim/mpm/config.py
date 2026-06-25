@@ -22,4 +22,9 @@ class MPMConfig:
     box_min: Tuple[float, float, float] = (0.25, 0.35, 0.25)
     box_max: Tuple[float, float, float] = (0.55, 0.65, 0.55)
 
+    mpm_planar_constraint_mode: str = "disabled"
+    mpm_planar_constraint_axis: str = "z"
+    mpm_velocity_damping: float = 0.0
+    mpm_damping_application: str = "disabled"
+
     output_interval: int = 10

@@ -1,0 +1,31 @@
+{
+  "rows": [
+    {
+      "all_metrics_finite": true,
+      "diagnostics_source": "real_solver_particles",
+      "direct_quantitative_equivalence_allowed": false,
+      "final_total_m": 0.0007980134847734523,
+      "final_x_m": 0.00019093751907348633,
+      "final_y_m": -0.0006879746913909913,
+      "final_z_m": 0.00035645365715026857,
+      "monotonic_increasing_fraction": 1.0,
+      "nearest_monitor_peak_total_m": 0.0007980134847734523,
+      "nearest_monitor_peak_x_m": 0.00019093751907348633,
+      "nearest_monitor_peak_y_m": 0.0006879746913909913,
+      "nearest_monitor_peak_z_m": 0.00035645365715026857,
+      "time_of_peak_total_s": 0.025,
+      "time_of_peak_x_s": 0.025,
+      "time_of_peak_y_s": 0.025,
+      "time_of_peak_z_s": 0.025,
+      "validation_claim_allowed": false,
+      "y_to_total_peak_ratio": 0.8621091053195675,
+      "z_to_total_peak_ratio": 0.446676232860228
+    }
+  ],
+  "summary": {
+    "direct_quantitative_equivalence_allowed": false,
+    "real_dynamics_diagnostics_pass": true,
+    "row_count": 1,
+    "validation_claim_allowed": false
+  }
+}

@@ -6,6 +6,7 @@
   "expected_changed_schema_classes": [
     "FSIDriverConfig",
     "GeometryConfig",
+    "MPMConfig",
     "UnifiedSimConfig"
   ],
   "expected_field_default_deltas": {

@@ -118,6 +118,7 @@ class FSIDriver3D:
             "box_min": self.config.box_min,
             "box_max": self.config.box_max,
         }
+        mpm_overrides.update(self.config.make_mpm_control_overrides())
         mpm_overrides.update(self._mpm_material_overrides(geometry_config))
         self.solid = MPMSolid3D(
             self.sim.make_mpm_config(**mpm_overrides),

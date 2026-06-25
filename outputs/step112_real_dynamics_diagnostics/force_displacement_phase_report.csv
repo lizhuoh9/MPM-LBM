@@ -1,0 +1,2 @@
+diagnostics_source,force_to_displacement_lag_s,hydro_force_max_norm_max,max_grid_reaction_norm_max,time_of_hydro_force_peak_s,time_of_peak_total_s,all_metrics_finite,validation_claim_allowed,direct_quantitative_equivalence_allowed
+real_solver_particles,0.0005000000000000004,0.4193277359008789,0.008432583883404732,0.0245,0.025,True,False,False

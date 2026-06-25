@@ -1,0 +1,5 @@
+metric,value
+direct_quantitative_equivalence_allowed,False
+real_dynamics_diagnostics_pass,True
+row_count,1
+validation_claim_allowed,False

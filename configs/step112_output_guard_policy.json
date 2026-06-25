@@ -1,0 +1,20 @@
+{
+  "direct_equivalence_claim_patterns": [
+    "Fluent equivalence achieved",
+    "official structural-point monitor exactly reproduced",
+    "production ready"
+  ],
+  "forbidden_filename_tokens": [
+    ".cas",
+    ".dat.h5",
+    ".msh",
+    ".jou"
+  ],
+  "large_file_threshold_bytes": 5000000,
+  "max_step112_total_size_mb": 30.0,
+  "validation_claim_patterns": [
+    "Fluent validation passed",
+    "official Fluent mesh/case/data reproduced",
+    "official dynamic mesh reproduced"
+  ]
+}

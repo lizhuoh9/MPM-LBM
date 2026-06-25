@@ -18,6 +18,9 @@ VALID_GEOMETRY_MOTION_APPLICATION_MODES = ("disabled", "diagnostic_only")
 VALID_LBM_BOUNDARY_CONDITION_MODES = ("default_periodic", "duct_velocity_inlet_pressure_outlet")
 VALID_FSI_EXCHANGE_MODES = ("one_lbm_step_per_fsi_step", "lbm_subcycled_per_fsi_step")
 VALID_LBM_RESTART_SCOPES = ("rho_velocity_populations",)
+VALID_MPM_PLANAR_CONSTRAINT_MODES = ("disabled", "lock_z")
+VALID_MPM_PLANAR_CONSTRAINT_AXES = ("z",)
+VALID_MPM_DAMPING_APPLICATIONS = ("disabled", "particle_velocity_post_g2p")
 VALID_BOUNDARY_AXES = ("x",)
 VALID_BOUNDARY_SIDES = ("min", "max")
 
@@ -86,6 +89,11 @@ class FSIDriverConfig:
     geometry_motion_application_config_path: Optional[str] = None
     geometry_motion_application_report_enabled: bool = False
 
+    mpm_planar_constraint_mode: str = "disabled"
+    mpm_planar_constraint_axis: str = "z"
+    mpm_velocity_damping: float = 0.0
+    mpm_damping_application: str = "disabled"
+
     output_interval: int = 10
     write_vtk: bool = False
     write_particles: bool = False
@@ -152,6 +160,18 @@ class FSIDriverConfig:
                 raise ValueError("geometry_motion_application_config_path is required when geometry_motion_application_mode='diagnostic_only'")
             if not _path_exists(self.geometry_motion_application_config_path):
                 raise ValueError("geometry_motion_application_config_path must exist when geometry_motion_application_mode='diagnostic_only'")
+        if self.mpm_planar_constraint_mode not in VALID_MPM_PLANAR_CONSTRAINT_MODES:
+            raise ValueError(f"mpm_planar_constraint_mode must be one of {VALID_MPM_PLANAR_CONSTRAINT_MODES}")
+        if self.mpm_planar_constraint_axis not in VALID_MPM_PLANAR_CONSTRAINT_AXES:
+            raise ValueError(f"mpm_planar_constraint_axis must be one of {VALID_MPM_PLANAR_CONSTRAINT_AXES}")
+        if float(self.mpm_velocity_damping) < 0.0:
+            raise ValueError("mpm_velocity_damping must be non-negative")
+        if self.mpm_damping_application not in VALID_MPM_DAMPING_APPLICATIONS:
+            raise ValueError(f"mpm_damping_application must be one of {VALID_MPM_DAMPING_APPLICATIONS}")
+        if self.mpm_damping_application == "disabled" and float(self.mpm_velocity_damping) != 0.0:
+            raise ValueError("mpm_velocity_damping must be 0 when mpm_damping_application is disabled")
+        if self.mpm_damping_application == "particle_velocity_post_g2p" and float(self.mpm_velocity_damping) <= 0.0:
+            raise ValueError("mpm_velocity_damping must be positive when damping is enabled")
         if self.geometry_type not in VALID_GEOMETRY_TYPES:
             raise ValueError(f"geometry_type must be one of {VALID_GEOMETRY_TYPES}")
         if self.lbm_boundary_condition_mode not in VALID_LBM_BOUNDARY_CONDITION_MODES:
@@ -263,6 +283,14 @@ class FSIDriverConfig:
             mpm_substeps_per_lbm_step=self.mpm_substeps_per_lbm_step,
             lbm_dt_phys_override_s=self.lbm_dt_phys_override_s,
         )
+
+    def make_mpm_control_overrides(self):
+        return {
+            "mpm_damping_application": self.mpm_damping_application,
+            "mpm_planar_constraint_axis": self.mpm_planar_constraint_axis,
+            "mpm_planar_constraint_mode": self.mpm_planar_constraint_mode,
+            "mpm_velocity_damping": float(self.mpm_velocity_damping),
+        }
 
 
 def _validate_optional_positive(value, name: str) -> None:

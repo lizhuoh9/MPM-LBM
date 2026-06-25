@@ -1,0 +1,19 @@
+{
+  "rows": [
+    {
+      "all_metrics_finite": true,
+      "diagnostics_source": "real_solver_particles",
+      "direct_quantitative_equivalence_allowed": false,
+      "mpm_max_speed_max": 0.886701762676239,
+      "mpm_min_J_min": 0.954449474811554,
+      "solid_mean_velocity_norm_max": 0.05951504036784172,
+      "validation_claim_allowed": false
+    }
+  ],
+  "summary": {
+    "direct_quantitative_equivalence_allowed": false,
+    "row_count": 1,
+    "structural_state_pass": true,
+    "validation_claim_allowed": false
+  }
+}

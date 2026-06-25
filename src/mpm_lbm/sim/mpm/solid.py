@@ -26,6 +26,22 @@ class MPMSolid3D:
         self.gravity_x, self.gravity_y, self.gravity_z = config.gravity
         self.box_min_x, self.box_min_y, self.box_min_z = config.box_min
         self.box_max_x, self.box_max_y, self.box_max_z = config.box_max
+        valid_planar_modes = ("disabled", "lock_z")
+        valid_damping_modes = ("disabled", "particle_velocity_post_g2p")
+        if config.mpm_planar_constraint_mode not in valid_planar_modes:
+            raise ValueError(f"mpm_planar_constraint_mode must be one of {valid_planar_modes}")
+        if config.mpm_planar_constraint_axis != "z":
+            raise ValueError("mpm_planar_constraint_axis currently supports only z")
+        if config.mpm_velocity_damping < 0.0:
+            raise ValueError("mpm_velocity_damping must be non-negative")
+        if config.mpm_damping_application not in valid_damping_modes:
+            raise ValueError(f"mpm_damping_application must be one of {valid_damping_modes}")
+        if config.mpm_damping_application == "disabled" and config.mpm_velocity_damping != 0.0:
+            raise ValueError("mpm_velocity_damping must be 0 when damping is disabled")
+
+        self.mpm_planar_lock_z_enabled = 1 if config.mpm_planar_constraint_mode == "lock_z" else 0
+        self.mpm_velocity_damping = float(config.mpm_velocity_damping)
+        self.mpm_damping_enabled = 1 if config.mpm_damping_application == "particle_velocity_post_g2p" else 0
 
         self.young_modulus = config.young_modulus
         self.poisson_ratio = config.poisson_ratio
@@ -274,12 +290,29 @@ class MPMSolid3D:
             self.C[p] = new_C
             self.F[p] = (ti.Matrix.identity(ti.f32, 3) + self.dt * new_C) @ self.F[p]
             self.Jp[p] = self.F[p].determinant()
+            self.apply_step112_dynamics_controls(p)
             if self.fixed_mask[p] != 0:
                 self.x[p] = self.fixed_x[p]
                 self.v[p] = ti.Vector([0.0, 0.0, 0.0])
                 self.C[p] = ti.Matrix.zero(ti.f32, 3, 3)
                 self.F[p] = ti.Matrix.identity(ti.f32, 3)
                 self.Jp[p] = 1.0
+
+    @ti.func
+    def apply_step112_dynamics_controls(self, p):
+        if ti.static(self.mpm_damping_enabled == 1):
+            damping_factor = ti.max(0.0, 1.0 - self.mpm_velocity_damping * self.dt)
+            self.v[p] *= damping_factor
+        if ti.static(self.mpm_planar_lock_z_enabled == 1):
+            self.x[p].z = self.fixed_x[p].z
+            self.v[p].z = 0.0
+            for d in ti.static(range(3)):
+                self.C[p][2, d] = 0.0
+                self.C[p][d, 2] = 0.0
+                self.F[p][2, d] = 0.0
+                self.F[p][d, 2] = 0.0
+            self.F[p][2, 2] = 1.0
+            self.Jp[p] = self.F[p].determinant()
 
     def substep(self):
         self.clear_grid()

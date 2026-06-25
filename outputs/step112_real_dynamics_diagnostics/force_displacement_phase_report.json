@@ -1,0 +1,21 @@
+{
+  "rows": [
+    {
+      "all_metrics_finite": true,
+      "diagnostics_source": "real_solver_particles",
+      "direct_quantitative_equivalence_allowed": false,
+      "force_to_displacement_lag_s": 0.0005000000000000004,
+      "hydro_force_max_norm_max": 0.4193277359008789,
+      "max_grid_reaction_norm_max": 0.008432583883404732,
+      "time_of_hydro_force_peak_s": 0.0245,
+      "time_of_peak_total_s": 0.025,
+      "validation_claim_allowed": false
+    }
+  ],
+  "summary": {
+    "direct_quantitative_equivalence_allowed": false,
+    "force_displacement_phase_pass": true,
+    "row_count": 1,
+    "validation_claim_allowed": false
+  }
+}

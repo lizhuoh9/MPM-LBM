@@ -1,0 +1,63 @@
+{
+  "deterministic": true,
+  "dimensional_reference": {
+    "duct_height_m": 0.04,
+    "duct_length_m": 0.1,
+    "flap_height_m": 0.01,
+    "flap_thickness_m": 0.003,
+    "inlet_velocity_mps": 10.0,
+    "official_transient_steps": 50,
+    "transient_dt_s": 0.0005
+  },
+  "duct": {
+    "x": [
+      0.0,
+      1.0
+    ],
+    "y": [
+      0.3,
+      0.7
+    ],
+    "z": [
+      0.45,
+      0.55
+    ]
+  },
+  "flap": {
+    "anchor_x": 0.505,
+    "anchor_y": 0.3,
+    "fixed_base": true,
+    "height_over_duct_height": 0.25,
+    "normalized_height": 0.1,
+    "normalized_thickness": 0.03,
+    "thickness_over_duct_height": 0.075,
+    "z": [
+      0.45,
+      0.55
+    ]
+  },
+  "geometry_type": "duct_flap_proxy",
+  "material_reference": {
+    "density": 1600.0,
+    "poisson_ratio": 0.47,
+    "used_for_exact_structural_model": false,
+    "used_for_mpm_config": true,
+    "youngs_modulus": 50000.0
+  },
+  "monitor_reference": {
+    "flap_tip_monitor_enabled": true,
+    "monitor_is_direct_fluent_equivalent": false,
+    "time_series_fields": [
+      "step",
+      "time_s",
+      "flap_tip_total_displacement_m",
+      "flap_tip_x_displacement_m",
+      "flap_tip_y_displacement_m"
+    ]
+  },
+  "n_particles": 1024,
+  "p_rho": 1600.0,
+  "particles_per_axis_hint": 48,
+  "quality_check_enabled": true,
+  "quality_check_strict": false
+}

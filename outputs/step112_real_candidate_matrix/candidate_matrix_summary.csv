@@ -1,0 +1,18 @@
+metric,value
+all_candidate_curves_real_solver,True
+allowed_claim,"A real-solver dynamics repair matrix was run, and the best real FSIDriver3D candidate improved public-plot comparison metrics without synthetic/replay curves."
+best_candidate_row_name,cap_1e-2_E_2e4
+best_normalized_rms_error,0.4655145431890102
+best_peak_relative_error,0.02677667571140307
+best_peak_time_error_s,0.021
+best_shape_correlation,0.07024139776242506
+candidate_matrix_pass,True
+candidate_matrix_row_count,10
+direct_quantitative_equivalence_allowed,False
+hard_gate_pass,False
+proxy_curve_replay_evidence_mode_count,0
+solver_curve_generated_from_reference_count,0
+stretch_gate_pass,False
+successful_real_rows,10
+synthetic_candidate_curve_count,0
+validation_claim_allowed,False

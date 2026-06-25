@@ -1,0 +1,1281 @@
+{
+  "rows": [
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step112_artifact_manifest_policy.json",
+      "size_bytes": 258
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step112_candidates/cap_1e-2_E_2e4.json",
+      "size_bytes": 1532
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step112_candidates/cap_1e-2_E_2e4_lock_z.json",
+      "size_bytes": 1581
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step112_candidates/cap_1e-2_E_2e4_lock_z_damp_20.json",
+      "size_bytes": 1676
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step112_candidates/cap_1e-2_E_5e4.json",
+      "size_bytes": 1532
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step112_candidates/cap_5e-3_E_2e4.json",
+      "size_bytes": 1533
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step112_candidates/cap_5e-3_E_2e4_lock_z.json",
+      "size_bytes": 1582
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step112_candidates/cap_7e-3_E_2e4.json",
+      "size_bytes": 1533
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step112_candidates/cap_7e-3_E_2e4_lock_z.json",
+      "size_bytes": 1582
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step112_candidates/cap_7e-3_E_2e4_lock_z_damp_20.json",
+      "size_bytes": 1677
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step112_candidates/step111_cap_2e-2_E_2e4_real_replay.json",
+      "size_bytes": 1608
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step112_output_guard_policy.json",
+      "size_bytes": 491
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step112_real_dynamics_matrix_policy.json",
+      "size_bytes": 1670
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step112_artifact_manifest.log",
+      "size_bytes": 65
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step112_output_guard.log",
+      "size_bytes": 51
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step112_real_candidate_matrix.log",
+      "size_bytes": 188
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step112_real_dynamics_diagnostics.log",
+      "size_bytes": 49
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/candidate_matrix_progress.json",
+      "size_bytes": 13200
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/candidate_matrix_report.csv",
+      "size_bytes": 3379
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/candidate_matrix_report.json",
+      "size_bytes": 15061
+    },
+    {
+      "extension": ".md",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/candidate_matrix_report.md",
+      "size_bytes": 4305
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/candidate_matrix_summary.csv",
+      "size_bytes": 769
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/curves/cap_1e-2_E_2e4_lock_z_damp_20_nearest_public_monitor_point.csv",
+      "size_bytes": 4323
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/curves/cap_1e-2_E_2e4_lock_z_nearest_public_monitor_point.csv",
+      "size_bytes": 4308
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/curves/cap_1e-2_E_2e4_nearest_public_monitor_point.csv",
+      "size_bytes": 5235
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/curves/cap_1e-2_E_5e4_nearest_public_monitor_point.csv",
+      "size_bytes": 5237
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/curves/cap_5e-3_E_2e4_lock_z_nearest_public_monitor_point.csv",
+      "size_bytes": 4302
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/curves/cap_5e-3_E_2e4_nearest_public_monitor_point.csv",
+      "size_bytes": 5241
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/curves/cap_7e-3_E_2e4_lock_z_damp_20_nearest_public_monitor_point.csv",
+      "size_bytes": 4326
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/curves/cap_7e-3_E_2e4_lock_z_nearest_public_monitor_point.csv",
+      "size_bytes": 4319
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/curves/cap_7e-3_E_2e4_nearest_public_monitor_point.csv",
+      "size_bytes": 5227
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/curves/step111_cap_2e-2_E_2e4_real_replay_nearest_public_monitor_point.csv",
+      "size_bytes": 5223
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4/diagnostics_timeseries.csv",
+      "size_bytes": 16682
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4/driver_config.json",
+      "size_bytes": 2428
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4126
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4/geometry_quality_report.json",
+      "size_bytes": 2288
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4/lbm_restart_load_report.json",
+      "size_bytes": 922
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4/monitor_timeseries_nearest_public_monitor_point.csv",
+      "size_bytes": 5235
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4/monitor_timeseries_radius_public_monitor_mean.csv",
+      "size_bytes": 5226
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4/monitor_timeseries_top_5_nearest_public_monitor_mean.csv",
+      "size_bytes": 5247
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z/diagnostics_timeseries.csv",
+      "size_bytes": 16675
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z/driver_config.json",
+      "size_bytes": 2433
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4123
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z/geometry_quality_report.json",
+      "size_bytes": 2288
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z/lbm_restart_load_report.json",
+      "size_bytes": 922
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z/monitor_timeseries_nearest_public_monitor_point.csv",
+      "size_bytes": 4308
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z/monitor_timeseries_radius_public_monitor_mean.csv",
+      "size_bytes": 4316
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z/monitor_timeseries_top_5_nearest_public_monitor_mean.csv",
+      "size_bytes": 4325
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z_damp_20/diagnostics_timeseries.csv",
+      "size_bytes": 16693
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z_damp_20/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z_damp_20/driver_config.json",
+      "size_bytes": 2460
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z_damp_20/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z_damp_20/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z_damp_20/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4132
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z_damp_20/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z_damp_20/geometry_quality_report.json",
+      "size_bytes": 2288
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z_damp_20/lbm_restart_load_report.json",
+      "size_bytes": 922
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z_damp_20/monitor_timeseries_nearest_public_monitor_point.csv",
+      "size_bytes": 4323
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z_damp_20/monitor_timeseries_radius_public_monitor_mean.csv",
+      "size_bytes": 4305
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_2e4_lock_z_damp_20/monitor_timeseries_top_5_nearest_public_monitor_mean.csv",
+      "size_bytes": 4323
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_5e4/diagnostics_timeseries.csv",
+      "size_bytes": 16664
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_5e4/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_5e4/driver_config.json",
+      "size_bytes": 2428
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_5e4/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_5e4/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_5e4/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4120
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_5e4/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_5e4/geometry_quality_report.json",
+      "size_bytes": 2288
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_5e4/lbm_restart_load_report.json",
+      "size_bytes": 922
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_5e4/monitor_timeseries_nearest_public_monitor_point.csv",
+      "size_bytes": 5237
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_5e4/monitor_timeseries_radius_public_monitor_mean.csv",
+      "size_bytes": 5233
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_1e-2_E_5e4/monitor_timeseries_top_5_nearest_public_monitor_mean.csv",
+      "size_bytes": 5238
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4/diagnostics_timeseries.csv",
+      "size_bytes": 16693
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4/driver_config.json",
+      "size_bytes": 2429
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4122
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4/geometry_quality_report.json",
+      "size_bytes": 2288
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4/lbm_restart_load_report.json",
+      "size_bytes": 922
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4/monitor_timeseries_nearest_public_monitor_point.csv",
+      "size_bytes": 5241
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4/monitor_timeseries_radius_public_monitor_mean.csv",
+      "size_bytes": 5244
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4/monitor_timeseries_top_5_nearest_public_monitor_mean.csv",
+      "size_bytes": 5218
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4_lock_z/diagnostics_timeseries.csv",
+      "size_bytes": 16719
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4_lock_z/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4_lock_z/driver_config.json",
+      "size_bytes": 2434
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4_lock_z/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4_lock_z/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4_lock_z/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4107
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4_lock_z/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4_lock_z/geometry_quality_report.json",
+      "size_bytes": 2288
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4_lock_z/lbm_restart_load_report.json",
+      "size_bytes": 922
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4_lock_z/monitor_timeseries_nearest_public_monitor_point.csv",
+      "size_bytes": 4302
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4_lock_z/monitor_timeseries_radius_public_monitor_mean.csv",
+      "size_bytes": 4312
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_5e-3_E_2e4_lock_z/monitor_timeseries_top_5_nearest_public_monitor_mean.csv",
+      "size_bytes": 4309
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4/diagnostics_timeseries.csv",
+      "size_bytes": 16715
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4/driver_config.json",
+      "size_bytes": 2429
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4125
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4/geometry_quality_report.json",
+      "size_bytes": 2288
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4/lbm_restart_load_report.json",
+      "size_bytes": 922
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4/monitor_timeseries_nearest_public_monitor_point.csv",
+      "size_bytes": 5227
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4/monitor_timeseries_radius_public_monitor_mean.csv",
+      "size_bytes": 5237
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4/monitor_timeseries_top_5_nearest_public_monitor_mean.csv",
+      "size_bytes": 5228
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z/diagnostics_timeseries.csv",
+      "size_bytes": 16725
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z/driver_config.json",
+      "size_bytes": 2434
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4116
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z/geometry_quality_report.json",
+      "size_bytes": 2288
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z/lbm_restart_load_report.json",
+      "size_bytes": 922
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z/monitor_timeseries_nearest_public_monitor_point.csv",
+      "size_bytes": 4319
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z/monitor_timeseries_radius_public_monitor_mean.csv",
+      "size_bytes": 4315
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z/monitor_timeseries_top_5_nearest_public_monitor_mean.csv",
+      "size_bytes": 4325
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z_damp_20/diagnostics_timeseries.csv",
+      "size_bytes": 16729
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z_damp_20/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z_damp_20/driver_config.json",
+      "size_bytes": 2461
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z_damp_20/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z_damp_20/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z_damp_20/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4127
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z_damp_20/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z_damp_20/geometry_quality_report.json",
+      "size_bytes": 2288
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z_damp_20/lbm_restart_load_report.json",
+      "size_bytes": 922
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z_damp_20/monitor_timeseries_nearest_public_monitor_point.csv",
+      "size_bytes": 4326
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z_damp_20/monitor_timeseries_radius_public_monitor_mean.csv",
+      "size_bytes": 4313
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/cap_7e-3_E_2e4_lock_z_damp_20/monitor_timeseries_top_5_nearest_public_monitor_mean.csv",
+      "size_bytes": 4315
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/step111_cap_2e-2_E_2e4_real_replay/diagnostics_timeseries.csv",
+      "size_bytes": 16592
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/step111_cap_2e-2_E_2e4_real_replay/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/step111_cap_2e-2_E_2e4_real_replay/driver_config.json",
+      "size_bytes": 2448
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/step111_cap_2e-2_E_2e4_real_replay/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/step111_cap_2e-2_E_2e4_real_replay/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/step111_cap_2e-2_E_2e4_real_replay/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4142
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/step111_cap_2e-2_E_2e4_real_replay/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/step111_cap_2e-2_E_2e4_real_replay/geometry_quality_report.json",
+      "size_bytes": 2288
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/step111_cap_2e-2_E_2e4_real_replay/lbm_restart_load_report.json",
+      "size_bytes": 922
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/step111_cap_2e-2_E_2e4_real_replay/monitor_timeseries_nearest_public_monitor_point.csv",
+      "size_bytes": 5223
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/step111_cap_2e-2_E_2e4_real_replay/monitor_timeseries_radius_public_monitor_mean.csv",
+      "size_bytes": 5243
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/driver_runs/step111_cap_2e-2_E_2e4_real_replay/monitor_timeseries_top_5_nearest_public_monitor_mean.csv",
+      "size_bytes": 5221
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/generated_geometry_configs/cap_1e-2_E_2e4.json",
+      "size_bytes": 1394
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/generated_geometry_configs/cap_1e-2_E_2e4_lock_z.json",
+      "size_bytes": 1394
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/generated_geometry_configs/cap_1e-2_E_2e4_lock_z_damp_20.json",
+      "size_bytes": 1394
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/generated_geometry_configs/cap_1e-2_E_5e4.json",
+      "size_bytes": 1394
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/generated_geometry_configs/cap_5e-3_E_2e4.json",
+      "size_bytes": 1394
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/generated_geometry_configs/cap_5e-3_E_2e4_lock_z.json",
+      "size_bytes": 1394
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/generated_geometry_configs/cap_7e-3_E_2e4.json",
+      "size_bytes": 1394
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/generated_geometry_configs/cap_7e-3_E_2e4_lock_z.json",
+      "size_bytes": 1394
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/generated_geometry_configs/cap_7e-3_E_2e4_lock_z_damp_20.json",
+      "size_bytes": 1394
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/generated_geometry_configs/step111_cap_2e-2_E_2e4_real_replay.json",
+      "size_bytes": 1394
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/materialized_driver_configs/cap_1e-2_E_2e4.json",
+      "size_bytes": 1482
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/materialized_driver_configs/cap_1e-2_E_2e4_lock_z.json",
+      "size_bytes": 1532
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/materialized_driver_configs/cap_1e-2_E_2e4_lock_z_damp_20.json",
+      "size_bytes": 1633
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/materialized_driver_configs/cap_1e-2_E_5e4.json",
+      "size_bytes": 1482
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/materialized_driver_configs/cap_5e-3_E_2e4.json",
+      "size_bytes": 1483
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/materialized_driver_configs/cap_5e-3_E_2e4_lock_z.json",
+      "size_bytes": 1533
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/materialized_driver_configs/cap_7e-3_E_2e4.json",
+      "size_bytes": 1483
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/materialized_driver_configs/cap_7e-3_E_2e4_lock_z.json",
+      "size_bytes": 1533
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/materialized_driver_configs/cap_7e-3_E_2e4_lock_z_damp_20.json",
+      "size_bytes": 1634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_candidate_matrix/materialized_driver_configs/step111_cap_2e-2_E_2e4_real_replay.json",
+      "size_bytes": 1502
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_dynamics_diagnostics/component_monitor_report.csv",
+      "size_bytes": 684
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_dynamics_diagnostics/component_monitor_report.json",
+      "size_bytes": 1112
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_dynamics_diagnostics/component_monitor_summary.csv",
+      "size_bytes": 143
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_dynamics_diagnostics/force_displacement_phase_report.csv",
+      "size_bytes": 347
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_dynamics_diagnostics/force_displacement_phase_report.json",
+      "size_bytes": 664
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_dynamics_diagnostics/structural_state_report.csv",
+      "size_bytes": 261
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step112_real_dynamics_diagnostics/structural_state_report.json",
+      "size_bytes": 548
+    }
+  ],
+  "summary": {
+    "all_candidate_curves_real_solver": true,
+    "artifact_budget_pass": true,
+    "direct_equivalence_claim_count": 0,
+    "official_case_data_h5_count": 0,
+    "official_case_file_count": 0,
+    "official_journal_file_count": 0,
+    "official_mesh_file_count": 0,
+    "output_guard_pass": true,
+    "pass_count": 179,
+    "private_absolute_path_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "proxy_curve_replay_evidence_mode_count": 0,
+    "real_driver_run_called_count": 10,
+    "real_monitor_source_count": 10,
+    "reference_curve_used_only_for_error_metrics": true,
+    "row_count": 179,
+    "solver_curve_generated_from_reference_count": 0,
+    "step112_forbidden_file_count": 0,
+    "successful_real_rows": 10,
+    "synthetic_candidate_curve_count": 0,
+    "validation_claim_count": 0
+  }
+}

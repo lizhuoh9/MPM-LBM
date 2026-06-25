@@ -1,0 +1,13 @@
+{
+  "large_file_threshold_bytes": 5000000,
+  "max_step112_file_count": 240,
+  "max_step112_total_size_mb": 30.0,
+  "official_file_names": [
+    "fluent.cas",
+    "fluent.dat",
+    "fluent.cas.h5",
+    "fluent.dat.h5",
+    "mesh.msh",
+    "journal.jou"
+  ]
+}
