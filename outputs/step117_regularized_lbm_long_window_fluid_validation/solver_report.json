@@ -1,0 +1,31 @@
+{
+  "answers": {
+    "duct_only_48_legacy_completed_500": true,
+    "duct_only_48_regularized_completed_500": true,
+    "duct_only_96_regularized_completed_1000": true,
+    "physical_nu_official_like_blocked_by_tau": true,
+    "regularized_better_than_legacy": "regularized_not_acceptable_for_long_window",
+    "static_two_flap_96_regularized_completed_1000": true,
+    "step118_quasi2d_allowed": false
+  },
+  "figure_29_3_parity_claim_allowed": false,
+  "fluent_validation_claim_allowed": false,
+  "full_fsi_rerun_done": false,
+  "incomplete_required_rows": [
+    "duct_only_96_regularized_boundary_physical_nu_report_only_100step_guarded"
+  ],
+  "long_window_schema_version": 1,
+  "official_mesh_or_case_used": false,
+  "remaining_gaps": [
+    "one or more required Step117 long-window rows are incomplete",
+    "regularized boundary is not proven better than legacy",
+    "no quasi-2D or periodic-z semantics implemented",
+    "no conservative interface traction transfer",
+    "no small-strain solid model",
+    "no full FSI rerun"
+  ],
+  "simulation_backed_artifacts": true,
+  "step": 117,
+  "step118_quasi2d_allowed": false,
+  "step_name": "regularized LBM long-window fluid validation"
+}

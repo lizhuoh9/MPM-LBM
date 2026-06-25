@@ -174,6 +174,45 @@ def summarize_lbm_boundary_diagnostics(
     }
 
 
+def summarize_timeseries_trends(records: Any, tail_fraction: float = 0.2) -> Dict[str, Any]:
+    rows = list(records)
+    if not rows:
+        raise ValueError("records must not be empty")
+    if tail_fraction <= 0.0 or tail_fraction > 1.0:
+        raise ValueError("tail_fraction must be in (0, 1]")
+
+    tail_count = max(1, int(math.ceil(len(rows) * float(tail_fraction))))
+    tail = rows[-tail_count:]
+    final = rows[-1]
+
+    return {
+        "record_count": int(len(rows)),
+        "tail_fraction": float(tail_fraction),
+        "tail_record_count": int(tail_count),
+        "step_initial": int(_record_float(rows[0], "step")),
+        "step_final": int(_record_float(final, "step")),
+        "rho_min_global": _finite_float(min(_record_float(row, "rho_min") for row in rows)),
+        "rho_max_global": _finite_float(max(_record_float(row, "rho_max") for row in rows)),
+        "mass_drift_final": _record_float(final, "mass_total_delta_rel"),
+        "mass_drift_abs_max": _finite_float(max(abs(_record_float(row, "mass_total_delta_rel")) for row in rows)),
+        "mass_drift_tail_mean": _finite_float(np.mean([_record_float(row, "mass_total_delta_rel") for row in tail])),
+        "flux_imbalance_rel_final": _record_float(final, "flux_imbalance_rel"),
+        "flux_imbalance_rel_min": _finite_float(min(_record_float(row, "flux_imbalance_rel") for row in rows)),
+        "flux_imbalance_rel_max": _finite_float(max(_record_float(row, "flux_imbalance_rel") for row in rows)),
+        "flux_imbalance_rel_tail_mean": _finite_float(np.mean([_record_float(row, "flux_imbalance_rel") for row in tail])),
+        "outlet_flux_final": _record_float(final, "outlet_flux"),
+        "outlet_flux_tail_mean": _finite_float(np.mean([_record_float(row, "outlet_flux") for row in tail])),
+        "midplane_mean_ux_tail_mean": _finite_float(np.mean([_record_float(row, "midplane_mean_ux") for row in tail])),
+        "max_v_global": _finite_float(max(_record_float(row, "max_v") for row in rows)),
+        "mach_proxy_observed_max": _finite_float(max(_record_float(row, "mach_proxy_observed") for row in rows)),
+        "negative_ux_fraction_tail_mean": _finite_float(
+            np.mean([_outlet_proxy_float(row, "negative_ux_fraction") for row in tail])
+        ),
+        "rho_std_outlet_tail_mean": _finite_float(np.mean([_outlet_proxy_float(row, "rho_std") for row in tail])),
+        "ux_std_outlet_tail_mean": _finite_float(np.mean([_outlet_proxy_float(row, "ux_std") for row in tail])),
+    }
+
+
 def _max_velocity(snap: Dict[str, np.ndarray]) -> float:
     mask = fluid_mask(snap)
     if not np.any(mask):
@@ -184,6 +223,17 @@ def _max_velocity(snap: Dict[str, np.ndarray]) -> float:
 
 def _all_numeric_finite(snap: Dict[str, np.ndarray]) -> bool:
     return bool(np.all(np.isfinite(snap["rho"])) and np.all(np.isfinite(snap["v"])))
+
+
+def _record_float(record: Dict[str, Any], key: str) -> float:
+    return _finite_float(record.get(key, 0.0))
+
+
+def _outlet_proxy_float(record: Dict[str, Any], key: str) -> float:
+    proxy = record.get("outlet_reflection_proxy", {})
+    if not isinstance(proxy, dict):
+        return 0.0
+    return _finite_float(proxy.get(key, 0.0))
 
 
 def _clamp_index(index: int, size: int) -> int:

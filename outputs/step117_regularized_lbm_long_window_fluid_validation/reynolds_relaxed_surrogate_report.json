@@ -1,0 +1,15 @@
+{
+  "lbm_min_tau_margin": 0.0001,
+  "minimum_safe_nu_lbm_from_tau_margin": 3.3333333333333335e-05,
+  "official_like_physical_nu_not_used_for_validation": true,
+  "options": [
+    "increase grid resolution and revisit dt mapping",
+    "change physical time-step mapping",
+    "introduce a turbulence or model-form strategy",
+    "accept an explicitly labeled surrogate Reynolds comparison"
+  ],
+  "physical_reynolds_direct_simulation_feasible_with_current_lbm": false,
+  "reason": "official-like physical viscosity mapping remains too close to tau=0.5 under the current LBM policy",
+  "step": 117,
+  "target_reynolds_number": 26666.67
+}
