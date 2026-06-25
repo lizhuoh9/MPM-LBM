@@ -1,0 +1,39 @@
+{
+  "centerline_profile_x": {
+    "axis": "x",
+    "source": [
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline"
+    ],
+    "ux": [
+      0.0270589180290699,
+      0.02169896848499775,
+      0.00985126756131649,
+      0.0017936569638550282,
+      0.00010116121120518073,
+      -1.862645371275562e-09,
+      -1.1175872671742582e-08,
+      -3.3527612686157227e-08
+    ],
+    "y_index": 3,
+    "z_index": 3
+  },
+  "final_flux_imbalance_rel": 1.0000010558826802,
+  "final_outlet_reflection_proxy": {
+    "fluid_cell_count": 16,
+    "negative_ux_fraction": 1.0,
+    "proxy_name": "outlet_near_plane_ux_density_variation",
+    "rho_peak_to_peak": 0.0,
+    "rho_std": 0.0,
+    "ux_std": 3.2261964475754803e-09,
+    "x_index": 6
+  },
+  "geometry_mode": "duct_only",
+  "name": "duct_only_96_regularized_boundary_physical_nu_report_only_100step"
+}

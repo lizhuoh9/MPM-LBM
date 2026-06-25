@@ -1,0 +1,28 @@
+{
+  "answers": {
+    "duct_only_48_96_long_window_finite": "bounded committed rows are finite where completed; requested full windows remain open unless requested_window_completed is true",
+    "physical_re_direct_simulation_blocked_by_tau": true,
+    "ready_for_fluent_equivalent_fsi": false,
+    "regularized_more_stable_than_legacy": "not proven better; inspect committed flux and density diagnostics",
+    "static_two_flap_finite_development": "reported by static_two_flap row artifacts, fluid-only and not FSI"
+  },
+  "figure_29_3_parity_claim_allowed": false,
+  "fluent_validation_claim_allowed": false,
+  "full_fsi_rerun_done": false,
+  "legacy_boundary_compared": true,
+  "official_mesh_or_case_used": false,
+  "regularized_velocity_pressure_used": true,
+  "remaining_gaps": [
+    "committed rows are bounded fluid-only baselines, not full Fluent-length validation",
+    "no quasi-2D or periodic-z semantics",
+    "no conservative interface traction transfer",
+    "no small-strain solid model",
+    "no full FSI rerun"
+  ],
+  "simulation_backed_artifacts": true,
+  "static_flap_fluid_only_rows": [
+    "static_two_flap_96_regularized_1000step"
+  ],
+  "step": 116,
+  "step_name": "regularized LBM duct flow baseline"
+}

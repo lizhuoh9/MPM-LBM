@@ -114,6 +114,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 113 Fluent Figure 29.3 mirrored duct-flap simulation consolidation, with Step112 velocity-cloud rerender data, 480 x 240 x 12 thin-extruded static two-flap velocity visualization, a failed unstabilized 96^3 mirrored full-FSI attempt, a completed stabilized 96^3/8192-particle mirrored full-FSI run, committed output inventory, and explicit mismatch/error reporting while Fluent validation, official mesh/case reproduction, and exact jet/monitor equivalence claims remain closed
 - Step 114 Fluent solver-physics repair layer, with subcycled moving-boundary force accumulation, explicit physical viscosity/Re mapping surface, separate Fluent-like monitor output path, and fail-fast guards/reporting for current LBM boundary, solid model, reaction transfer, and 3D flow-dimensionality limitations while full Fluent parity remains open
 - Step 115 LBM open-boundary and force-accumulation validation, with a runtime Taichi accumulator mean-force test, opt-in D3Q19 x-axis `regularized_velocity_pressure` unknown-population reconstruction, tau/Re feasibility reporting with strict/report-only policy, and deterministic solver-boundary artifacts while Fluent validation and full FSI parity remain open
+- Step 116 regularized LBM duct-flow baseline, with NumPy mass/flux/density diagnostics, a bounded LBM-only duct/static-flap runner, tau-gated simulation-backed CSV/JSON artifacts, and explicit proof that committed 48/96-named rows are bounded probes rather than completed long-window Fluent validation
 
 ## Not Implemented
 
@@ -1321,6 +1322,25 @@ small-strain linear elasticity, conservative interface traction transfer,
 D2Q9 planar flow, quasi-2D symmetry flow, official mesh/case import, or
 Fluent validation. It does not rerun full FSI.
 See docs/115_lbm_open_boundary_repair.md.
+
+## Step 116 Regularized LBM Duct Flow Baseline Boundary
+
+Step116 adds LBM-only post-processing diagnostics and a bounded baseline runner
+for duct-only and static two-flap rows. The runner writes mass, density, flux,
+velocity, outlet-reflection proxy, and tau feasibility artifacts under
+`outputs/step116_regularized_lbm_duct_flow_baseline/`.
+
+The committed rows preserve the requested 48^3/96^3 Step116 matrix names, but
+they are intentionally small bounded probes with `executed_nx=8`,
+`steps_completed=5`, and `requested_window_completed=false`. They prove the
+diagnostic and artifact path runs through real LBM, but they do not prove
+48^3/96^3 long-window stability.
+
+Step116 does not run full FSI, does not claim Fluent validation, and does not
+claim Figure 29.3 parity. Remaining blockers are long-window fluid validation,
+quasi-2D or periodic-z flow semantics, conservative traction transfer, and a
+Fluent-like small-strain solid path.
+See docs/116_regularized_lbm_duct_flow_baseline.md.
 
 ## Upstream LBM Note
 

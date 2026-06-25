@@ -1,0 +1,6 @@
+name,geometry_mode,lbm_open_boundary_semantics,requested_nx,executed_nx,requested_n_steps,steps_completed,requested_window_completed,finite_pass,density_gate_pass,mass_drift_gate_pass,flux_balance_reported,flux_imbalance_rel_final,mass_total_delta_rel_final,skipped_due_to_tau_margin,tau_margin_pass
+duct_only_48_legacy_boundary_500step,duct_only,equilibrium_all_population_reset,48,8,500,5,False,True,True,True,True,1.0,0.0054959487169981,False,True
+duct_only_48_regularized_boundary_500step,duct_only,regularized_velocity_pressure,48,8,500,5,False,True,True,True,True,1.0000009071522453,0.012363456189632416,False,True
+duct_only_96_regularized_boundary_1000step,duct_only,regularized_velocity_pressure,96,8,1000,5,False,True,True,True,True,1.0000009071522453,0.012363456189632416,False,True
+duct_only_96_regularized_boundary_physical_nu_report_only_100step,duct_only,regularized_velocity_pressure,96,8,100,5,False,True,True,True,True,1.0000010558826802,0.012495233211666346,False,False
+static_two_flap_96_regularized_1000step,static_two_flap,regularized_velocity_pressure,96,8,1000,5,False,True,True,True,True,1.0000009071522094,0.0131876806418101,False,True

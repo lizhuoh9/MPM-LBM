@@ -1,0 +1,8 @@
+{
+  "downstream_flow_reported": true,
+  "fluid_cell_count_near_flaps": 40,
+  "full_fsi_rerun_done": false,
+  "max_speed_near_flaps": 0.0021525563206523657,
+  "mean_speed_near_flaps": 0.0004019138286821544,
+  "static_flap_fluid_only": true
+}

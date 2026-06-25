@@ -1,0 +1,39 @@
+{
+  "centerline_profile_x": {
+    "axis": "x",
+    "source": [
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline"
+    ],
+    "ux": [
+      0.026616491377353668,
+      0.021432610228657722,
+      0.009820446372032166,
+      0.0021486706100404263,
+      0.00013955225585959852,
+      0.0,
+      0.0,
+      -2.2351743567128324e-08
+    ],
+    "y_index": 3,
+    "z_index": 3
+  },
+  "final_flux_imbalance_rel": 1.0000009071522094,
+  "final_outlet_reflection_proxy": {
+    "fluid_cell_count": 16,
+    "negative_ux_fraction": 0.0,
+    "proxy_name": "outlet_near_plane_ux_density_variation",
+    "rho_peak_to_peak": 0.0,
+    "rho_std": 0.0,
+    "ux_std": 0.0,
+    "x_index": 6
+  },
+  "geometry_mode": "static_two_flap",
+  "name": "static_two_flap_96_regularized_1000step"
+}

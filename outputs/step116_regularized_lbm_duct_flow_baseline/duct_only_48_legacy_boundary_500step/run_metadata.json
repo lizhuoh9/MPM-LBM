@@ -1,0 +1,35 @@
+{
+  "artifact_scope_note": "bounded committed proxy for requested 48^3 legacy 500-step window",
+  "executed_shape": [
+    8,
+    6,
+    6
+  ],
+  "figure_29_3_parity_claim_allowed": false,
+  "fluent_validation_claim_allowed": false,
+  "fluid_only": true,
+  "full_fsi_rerun_done": false,
+  "geometry_mode": "duct_only",
+  "lbm_open_boundary_semantics": "equilibrium_all_population_reset",
+  "name": "duct_only_48_legacy_boundary_500step",
+  "requested_n_steps": 500,
+  "requested_nx": 48,
+  "simulation_backed_artifact": true,
+  "step": 116,
+  "steps_configured": 5,
+  "tau_feasibility_report": {
+    "lbm_min_tau_margin": 0.0001,
+    "lbm_niu": 0.1,
+    "lbm_relaxation_semantics": "legacy_external_solver_relaxation_parameter",
+    "lbm_tau_stability_policy": "report_only",
+    "lbm_viscosity_semantics": "legacy_external",
+    "mach_proxy": 0.034641016151377546,
+    "physical_reynolds_direct_simulation_feasible_with_current_lbm": null,
+    "reynolds_from_config": null,
+    "target_reynolds_match": null,
+    "target_reynolds_number": null,
+    "tau": 0.5333333333333333,
+    "tau_margin_pass": true,
+    "tau_minus_half": 0.033333333333333326
+  }
+}
