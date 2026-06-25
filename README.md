@@ -107,6 +107,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 106 Fluent duct-flap proxy outlet boundary flow propagation repair, with a red-to-green x-right pressure outlet interior-neighbor velocity extrapolation fix, one 48^3 duct-only LBM outlet propagation runner, one 48^3/1024-particle/20-step FSI regression smoke, boundary semantics reporting, output/artifact guards, and gap-only evidence while Fluent validation, solver equivalence, official steady preflow, exact monitor equivalence, broader solver-formula changes, and production-readiness claims remain closed
 - Step 107 Fluent public result digitization error harness, with a derived approximate Figure 29.4 displacement reference CSV, public-source metadata, pure-Python displacement error metrics against the Step106 free-tip proxy output, output/artifact guards, and comparison-only evidence while official case/image payloads, Fluent validation, direct solver equivalence, exact monitor equivalence, solver changes, and production-readiness claims remain closed
 - Step 108 Fluent official-speed low-Mach subcycling smoke, with opt-in driver fields mapping the public 10 m/s inlet to `u_lbm = 0.02`, 120 LBM substeps per 0.0005 s official FSI step, 50-step duct-only and FSI proxy artifacts covering 0.025 s, Step107-style error comparison, output/artifact guards, and no Fluent validation, solver equivalence, official mesh/case, official steady preflow, exact monitor equivalence, or production-readiness claims
+- Step 109 Fluent duct-flap FSI response-amplitude sensitivity matrix, with nine Step108-compatible cap/scale/material rows, four monitor variants for the final selected row, force-cap and structural diagnostics, output/artifact guards, and comparison-only evidence while Fluent validation, official monitor equivalence, official mesh/case, official dynamic-mesh reproduction, and production-readiness claims remain closed
 
 ## Not Implemented
 
@@ -1240,6 +1241,26 @@ structural-model reproduction, official steady-preflow initialization, exact
 structural-point monitor equivalence, physical validation, real FSI validation,
 or production readiness.
 See docs/105_fluent_duct_flap_proxy_50step_transient_dimensional_gap_audit.md.
+
+## Step 109 Fluent Duct-Flap FSI Response-Amplitude Sensitivity Matrix Boundary
+
+Step109 runs a bounded 9-row response-amplitude sensitivity matrix for the
+Step108 low-Mach duct-flap proxy. It preserves the Step108 official-speed
+mapping (`u_lbm = 0.02`, 120 LBM substeps per `0.0005 s` official FSI step,
+50 samples through `0.025 s`) and varies only evidence-level row configs for
+moving-boundary force cap, reaction scale, and generated material-reference
+geometry configs.
+The selected row is `cap_1e-1_scale_10`; its peak proxy displacement is
+`0.0012614636216312647 m` versus the Step108 peak `1.2332112646618043e-6 m`.
+Step109 also records four monitor variants for the selected row and separate
+force-cap and structural sensitivity reports.
+Step109 does not change LBM collision, tau, moving bounce-back, reaction
+transfer formula, MPM stress/update, external dependencies, or real geometry
+data.
+Step109 does not claim Fluent validation, direct solver equivalence, exact
+official monitor equivalence, official dynamic mesh reproduction, official
+case/data reproduction, or production readiness.
+See docs/109_fluent_duct_flap_fsi_response_amplitude_sensitivity_matrix.md.
 
 ## Upstream LBM Note
 

@@ -1,0 +1,33 @@
+{
+  "rows": [
+    {
+      "density": 1600.0,
+      "mb_force_cap_norm": 0.01,
+      "mb_reaction_scale": 10.0,
+      "peak_ratio": 0.647285030683196,
+      "peak_solver_m": 0.00025567758711986244,
+      "relative_to_base_peak": 207.3079236777478,
+      "row_name": "E_1e5",
+      "stable": true,
+      "youngs_modulus": 100000.0
+    },
+    {
+      "density": 1600.0,
+      "mb_force_cap_norm": 0.01,
+      "mb_reaction_scale": 10.0,
+      "peak_ratio": 0.8615464726580849,
+      "peak_solver_m": 0.00034031085669994354,
+      "relative_to_base_peak": 275.9300801535928,
+      "row_name": "E_1e4",
+      "stable": true,
+      "youngs_modulus": 10000.0
+    }
+  ],
+  "summary": {
+    "all_structural_metrics_finite": true,
+    "stable_structural_row_count": 2,
+    "stiffness_reduction_order_of_magnitude_response": true,
+    "structural_row_count": 2,
+    "structural_sensitivity_report_pass": true
+  }
+}

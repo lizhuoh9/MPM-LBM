@@ -1,0 +1,68 @@
+{
+  "rows": [
+    {
+      "direct_quantitative_equivalence_allowed": false,
+      "final_displacement_m": 0.0012614641845287954,
+      "monitor_equivalence": false,
+      "monitor_name": "free_tip_proxy_mean",
+      "peak_displacement_m": 0.0012614641845287954,
+      "peak_x_displacement_m": 0.0006119071971625093,
+      "peak_y_displacement_m": -0.0002541119116358459,
+      "sample_count": 51,
+      "source_row_name": "cap_1e-1_scale_10",
+      "time_end_s": 0.025,
+      "time_start_s": 0.0,
+      "validation_claim_allowed": false
+    },
+    {
+      "direct_quantitative_equivalence_allowed": false,
+      "final_displacement_m": 0.0014932498700470317,
+      "monitor_equivalence": false,
+      "monitor_name": "free_tip_proxy_max_total_displacement",
+      "peak_displacement_m": 0.0014932498700470317,
+      "peak_x_displacement_m": 0.0005825996398925781,
+      "peak_y_displacement_m": -0.0006436914205551148,
+      "sample_count": 51,
+      "source_row_name": "cap_1e-1_scale_10",
+      "time_end_s": 0.025,
+      "time_start_s": 0.0,
+      "validation_claim_allowed": false
+    },
+    {
+      "direct_quantitative_equivalence_allowed": false,
+      "final_displacement_m": 0.0013679608251050482,
+      "monitor_equivalence": false,
+      "monitor_name": "nearest_public_monitor_point",
+      "peak_displacement_m": 0.0013679608251050482,
+      "peak_x_displacement_m": 0.0006959080696105958,
+      "peak_y_displacement_m": -0.000310090184211731,
+      "sample_count": 51,
+      "source_row_name": "cap_1e-1_scale_10",
+      "time_end_s": 0.025,
+      "time_start_s": 0.0,
+      "validation_claim_allowed": false
+    },
+    {
+      "direct_quantitative_equivalence_allowed": false,
+      "final_displacement_m": 0.0013471473475727383,
+      "monitor_equivalence": false,
+      "monitor_name": "top_5_nearest_public_monitor_mean",
+      "peak_displacement_m": 0.0013471473475727383,
+      "peak_x_displacement_m": 0.0006867074966430663,
+      "peak_y_displacement_m": -0.00028488993644714355,
+      "sample_count": 51,
+      "source_row_name": "cap_1e-1_scale_10",
+      "time_end_s": 0.025,
+      "time_start_s": 0.0,
+      "validation_claim_allowed": false
+    }
+  ],
+  "summary": {
+    "all_monitor_metrics_finite": true,
+    "direct_quantitative_equivalence_allowed": false,
+    "max_to_mean_peak_ratio": 1.1837433740576766,
+    "monitor_count": 4,
+    "monitor_sensitivity_pass": true,
+    "validation_claim_allowed": false
+  }
+}

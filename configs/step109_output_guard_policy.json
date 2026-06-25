@@ -1,0 +1,52 @@
+{
+  "direct_equivalence_claim_patterns": [
+    "fluent equivalence achieved",
+    "direct quantitative equivalence achieved",
+    "direct_quantitative_equivalence_allowed: true",
+    "\"direct_quantitative_equivalence_allowed\": true",
+    "official structural-point monitor exactly matched"
+  ],
+  "forbidden_filename_tokens": [
+    "fsi_2way.zip",
+    "flap.msh",
+    "steady_fluid_flow.jou",
+    "flap_fsi_2way.cas.h5",
+    "flap_fsi_2way.dat.h5"
+  ],
+  "image_extensions": [
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".svg"
+  ],
+  "journal_suffixes": [
+    ".jou"
+  ],
+  "large_file_threshold_bytes": 5242880,
+  "max_step109_total_size_mb": 40.0,
+  "official_file_names": [
+    "fsi_2way.zip",
+    "flap.msh",
+    "steady_fluid_flow.jou",
+    "flap_fsi_2way.cas.h5",
+    "flap_fsi_2way.dat.h5"
+  ],
+  "protected_prefixes": [
+    "external/taichi_LBM3D/",
+    "data/real_geometry_candidates/",
+    "benchmarks/private/"
+  ],
+  "validation_claim_patterns": [
+    "fluent validation passed",
+    "validated against fluent",
+    "physical validation complete",
+    "production ready",
+    "official fluent mesh reproduced",
+    "official dynamic mesh reproduced"
+  ],
+  "video_extensions": [
+    ".mp4",
+    ".avi",
+    ".mov"
+  ]
+}

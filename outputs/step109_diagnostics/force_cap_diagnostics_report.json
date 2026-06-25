@@ -1,0 +1,128 @@
+{
+  "rows": [
+    {
+      "active_reaction_particle_count_final": 1024,
+      "hydro_force_max_norm_max": 0.4163241386413574,
+      "matrix_family": "baseline",
+      "max_grid_reaction_norm_max": 4.210994302411564e-05,
+      "max_grid_reaction_to_cap_ratio": 0.42109943024115637,
+      "mb_force_cap_norm": 0.0001,
+      "mb_reaction_scale": 1.0,
+      "peak_ratio": 0.0031223361808850867,
+      "peak_solver_m": 1.2333227914496092e-06,
+      "row_name": "base",
+      "stable": true
+    },
+    {
+      "active_reaction_particle_count_final": 1024,
+      "hydro_force_max_norm_max": 0.4163241386413574,
+      "matrix_family": "reaction_cap_scale",
+      "max_grid_reaction_norm_max": 4.210994302411564e-05,
+      "max_grid_reaction_to_cap_ratio": 0.42109943024115637,
+      "mb_force_cap_norm": 0.0001,
+      "mb_reaction_scale": 1.0,
+      "peak_ratio": 0.003122048941735603,
+      "peak_solver_m": 1.233209331985563e-06,
+      "row_name": "cap_1e-4_scale_1",
+      "stable": true
+    },
+    {
+      "active_reaction_particle_count_final": 1024,
+      "hydro_force_max_norm_max": 0.4163241386413574,
+      "matrix_family": "reaction_cap_scale",
+      "max_grid_reaction_norm_max": 0.0004211474151816219,
+      "max_grid_reaction_to_cap_ratio": 0.4211474151816219,
+      "mb_force_cap_norm": 0.001,
+      "mb_reaction_scale": 1.0,
+      "peak_ratio": 0.03128931168732056,
+      "peak_solver_m": 1.2359278116491623e-05,
+      "row_name": "cap_1e-3_scale_1",
+      "stable": true
+    },
+    {
+      "active_reaction_particle_count_final": 1024,
+      "hydro_force_max_norm_max": 0.4163241386413574,
+      "matrix_family": "reaction_cap_scale",
+      "max_grid_reaction_norm_max": 0.004214046057313681,
+      "max_grid_reaction_to_cap_ratio": 0.42140460573136806,
+      "mb_force_cap_norm": 0.01,
+      "mb_reaction_scale": 1.0,
+      "peak_ratio": 0.31252422582216655,
+      "peak_solver_m": 0.0001234470691997558,
+      "row_name": "cap_1e-2_scale_1",
+      "stable": true
+    },
+    {
+      "active_reaction_particle_count_final": 1024,
+      "hydro_force_max_norm_max": 0.4193359315395355,
+      "matrix_family": "reaction_cap_scale",
+      "max_grid_reaction_norm_max": 0.04216364771127701,
+      "max_grid_reaction_to_cap_ratio": 0.4216364771127701,
+      "mb_force_cap_norm": 0.1,
+      "mb_reaction_scale": 1.0,
+      "peak_ratio": 3.193578199495243,
+      "peak_solver_m": 0.001261463388800621,
+      "row_name": "cap_1e-1_scale_1",
+      "stable": true
+    },
+    {
+      "active_reaction_particle_count_final": 1024,
+      "hydro_force_max_norm_max": 0.4163241386413574,
+      "matrix_family": "reaction_cap_scale",
+      "max_grid_reaction_norm_max": 0.004214046057313681,
+      "max_grid_reaction_to_cap_ratio": 0.42140460573136806,
+      "mb_force_cap_norm": 0.01,
+      "mb_reaction_scale": 10.0,
+      "peak_ratio": 0.31252404162070796,
+      "peak_solver_m": 0.00012344699644017965,
+      "row_name": "cap_1e-2_scale_10",
+      "stable": true
+    },
+    {
+      "active_reaction_particle_count_final": 1024,
+      "hydro_force_max_norm_max": 0.4193360209465027,
+      "matrix_family": "reaction_cap_scale",
+      "max_grid_reaction_norm_max": 0.042163651436567307,
+      "max_grid_reaction_to_cap_ratio": 0.42163651436567307,
+      "mb_force_cap_norm": 0.1,
+      "mb_reaction_scale": 10.0,
+      "peak_ratio": 3.1935787889399108,
+      "peak_solver_m": 0.0012614636216312647,
+      "row_name": "cap_1e-1_scale_10",
+      "stable": true
+    },
+    {
+      "active_reaction_particle_count_final": 1024,
+      "hydro_force_max_norm_max": 0.4163241386413574,
+      "matrix_family": "structural_stiffness",
+      "max_grid_reaction_norm_max": 0.004215728025883436,
+      "max_grid_reaction_to_cap_ratio": 0.4215728025883436,
+      "mb_force_cap_norm": 0.01,
+      "mb_reaction_scale": 10.0,
+      "peak_ratio": 0.647285030683196,
+      "peak_solver_m": 0.00025567758711986244,
+      "row_name": "E_1e5",
+      "stable": true
+    },
+    {
+      "active_reaction_particle_count_final": 1024,
+      "hydro_force_max_norm_max": 0.4163241386413574,
+      "matrix_family": "structural_stiffness",
+      "max_grid_reaction_norm_max": 0.004216257017105818,
+      "max_grid_reaction_to_cap_ratio": 0.4216257017105818,
+      "mb_force_cap_norm": 0.01,
+      "mb_reaction_scale": 10.0,
+      "peak_ratio": 0.8615464726580849,
+      "peak_solver_m": 0.00034031085669994354,
+      "row_name": "E_1e4",
+      "stable": true
+    }
+  ],
+  "summary": {
+    "all_force_metrics_finite": true,
+    "best_peak_solver_m": 0.0012614636216312647,
+    "force_cap_diagnostics_pass": true,
+    "row_count": 9,
+    "stable_row_count": 9
+  }
+}

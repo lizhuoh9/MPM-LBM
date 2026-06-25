@@ -1,0 +1,48 @@
+{
+  "allowed_claim": "A response-amplitude sensitivity matrix was run against the Step107 public Fluent plot reference, and the dominant proxy parameters controlling displacement amplitude were identified.",
+  "direct_quantitative_equivalence_allowed": false,
+  "expected_solver_curve_rows": 51,
+  "lbm_dt_phys_s": 4.166666666666667e-6,
+  "lbm_substeps_per_fsi_step": 120,
+  "min_peak_solver_m": 1e-5,
+  "min_successful_rows": 5,
+  "official_fsi_dt_s": 0.0005,
+  "official_steps": 50,
+  "reference_curve_path": "benchmarks/public/fluent_fsi_2way_digitized/figure_29_4_structural_point_flap_digitized.csv",
+  "relative_error_epsilon_m": 1e-12,
+  "required_cap_scale_rows": [
+    "base",
+    "cap_1e-4_scale_1",
+    "cap_1e-3_scale_1",
+    "cap_1e-2_scale_1",
+    "cap_1e-1_scale_1",
+    "cap_1e-2_scale_10",
+    "cap_1e-1_scale_10"
+  ],
+  "required_step_name": "Step109 Fluent Duct-Flap FSI Response Amplitude Sensitivity Matrix",
+  "response_matrix_configs": [
+    "configs/step109_response_matrix_base.json",
+    "configs/step109_response_matrix_cap_1e-4_scale_1.json",
+    "configs/step109_response_matrix_cap_1e-3_scale_1.json",
+    "configs/step109_response_matrix_cap_1e-2_scale_1.json",
+    "configs/step109_response_matrix_cap_1e-1_scale_1.json",
+    "configs/step109_response_matrix_cap_1e-2_scale_10.json",
+    "configs/step109_response_matrix_cap_1e-1_scale_10.json",
+    "configs/step109_response_matrix_E_1e5.json",
+    "configs/step109_response_matrix_E_1e4.json"
+  ],
+  "solver_displacement_column": "flap_tip_total_displacement_m",
+  "solver_time_column": "time_s",
+  "step108_peak_reference_m": 0.000395,
+  "step108_peak_solver_m": 1.2332112646618043e-6,
+  "step108_shape_correlation": 0.07866350821657236,
+  "step108_normalized_rms_error": 0.616126763475836,
+  "target_u_lbm": [
+    0.02,
+    0.0,
+    0.0
+  ],
+  "time_end_s": 0.025,
+  "total_lbm_substeps": 6000,
+  "validation_claim_allowed": false
+}

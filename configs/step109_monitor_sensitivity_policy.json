@@ -1,0 +1,15 @@
+{
+  "direct_quantitative_equivalence_allowed": false,
+  "duct_height_m": 0.04,
+  "duct_length_m": 0.1,
+  "public_monitor_x_m": 0.0505,
+  "public_monitor_y_m": 0.0095,
+  "required_monitor_names": [
+    "free_tip_proxy_mean",
+    "free_tip_proxy_max_total_displacement",
+    "nearest_public_monitor_point",
+    "top_5_nearest_public_monitor_mean"
+  ],
+  "time_end_s": 0.025,
+  "validation_claim_allowed": false
+}

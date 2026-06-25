@@ -1,0 +1,908 @@
+{
+  "rows": [
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step109_artifact_manifest_policy.json",
+      "size_bytes": 266
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step109_monitor_sensitivity_policy.json",
+      "size_bytes": 411
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step109_output_guard_policy.json",
+      "size_bytes": 1232
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step109_response_matrix_base.json",
+      "size_bytes": 1260
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step109_response_matrix_cap_1e-1_scale_1.json",
+      "size_bytes": 1279
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step109_response_matrix_cap_1e-1_scale_10.json",
+      "size_bytes": 1281
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step109_response_matrix_cap_1e-2_scale_1.json",
+      "size_bytes": 1280
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step109_response_matrix_cap_1e-2_scale_10.json",
+      "size_bytes": 1282
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step109_response_matrix_cap_1e-3_scale_1.json",
+      "size_bytes": 1281
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step109_response_matrix_cap_1e-4_scale_1.json",
+      "size_bytes": 1282
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step109_response_matrix_E_1e4.json",
+      "size_bytes": 1471
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step109_response_matrix_E_1e5.json",
+      "size_bytes": 1472
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step109_response_matrix_policy.json",
+      "size_bytes": 1919
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step109_force_diagnostics.log",
+      "size_bytes": 131
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step109_monitor_sensitivity.log",
+      "size_bytes": 103
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step109_response_sensitivity_matrix.log",
+      "size_bytes": 159
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_diagnostics/force_cap_diagnostics_report.csv",
+      "size_bytes": 1602
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_diagnostics/force_cap_diagnostics_report.json",
+      "size_bytes": 4754
+    },
+    {
+      "extension": ".md",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_diagnostics/force_cap_diagnostics_report.md",
+      "size_bytes": 2036
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_diagnostics/force_cap_diagnostics_summary.csv",
+      "size_bytes": 153
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_diagnostics/structural_sensitivity_report.csv",
+      "size_bytes": 317
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_diagnostics/structural_sensitivity_report.json",
+      "size_bytes": 936
+    },
+    {
+      "extension": ".md",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_diagnostics/structural_sensitivity_report.md",
+      "size_bytes": 581
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_diagnostics/structural_sensitivity_summary.csv",
+      "size_bytes": 200
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/base/diagnostics_timeseries.csv",
+      "size_bytes": 16799
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/base/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/base/driver_config.json",
+      "size_bytes": 2071
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/base/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/base/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/base/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4110
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/base/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/base/geometry_quality_report.json",
+      "size_bytes": 2290
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-1_scale_1/diagnostics_timeseries.csv",
+      "size_bytes": 16459
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-1_scale_1/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-1_scale_1/driver_config.json",
+      "size_bytes": 2068
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-1_scale_1/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-1_scale_1/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-1_scale_1/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4101
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-1_scale_1/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-1_scale_1/geometry_quality_report.json",
+      "size_bytes": 2290
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-1_scale_10/diagnostics_timeseries.csv",
+      "size_bytes": 16425
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-1_scale_10/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-1_scale_10/driver_config.json",
+      "size_bytes": 2069
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-1_scale_10/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-1_scale_10/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-1_scale_10/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4116
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-1_scale_10/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-1_scale_10/geometry_quality_report.json",
+      "size_bytes": 2290
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-2_scale_1/diagnostics_timeseries.csv",
+      "size_bytes": 16589
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-2_scale_1/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-2_scale_1/driver_config.json",
+      "size_bytes": 2069
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-2_scale_1/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-2_scale_1/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-2_scale_1/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4118
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-2_scale_1/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-2_scale_1/geometry_quality_report.json",
+      "size_bytes": 2290
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-2_scale_10/diagnostics_timeseries.csv",
+      "size_bytes": 16610
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-2_scale_10/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-2_scale_10/driver_config.json",
+      "size_bytes": 2070
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-2_scale_10/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-2_scale_10/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-2_scale_10/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4118
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-2_scale_10/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-2_scale_10/geometry_quality_report.json",
+      "size_bytes": 2290
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-3_scale_1/diagnostics_timeseries.csv",
+      "size_bytes": 16773
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-3_scale_1/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-3_scale_1/driver_config.json",
+      "size_bytes": 2070
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-3_scale_1/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-3_scale_1/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-3_scale_1/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4116
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-3_scale_1/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-3_scale_1/geometry_quality_report.json",
+      "size_bytes": 2290
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-4_scale_1/diagnostics_timeseries.csv",
+      "size_bytes": 16817
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-4_scale_1/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-4_scale_1/driver_config.json",
+      "size_bytes": 2071
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-4_scale_1/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-4_scale_1/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-4_scale_1/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4115
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-4_scale_1/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/cap_1e-4_scale_1/geometry_quality_report.json",
+      "size_bytes": 2290
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/E_1e4/diagnostics_timeseries.csv",
+      "size_bytes": 16568
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/E_1e4/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/E_1e4/driver_config.json",
+      "size_bytes": 2117
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/E_1e4/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/E_1e4/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/E_1e4/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4115
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/E_1e4/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/E_1e4/geometry_quality_report.json",
+      "size_bytes": 2288
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/E_1e5/diagnostics_timeseries.csv",
+      "size_bytes": 16586
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/E_1e5/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/E_1e5/driver_config.json",
+      "size_bytes": 2117
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/E_1e5/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/E_1e5/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/E_1e5/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4128
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/E_1e5/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_driver_runs/E_1e5/geometry_quality_report.json",
+      "size_bytes": 2289
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_monitor_sensitivity/monitor_sensitivity_report.csv",
+      "size_bytes": 914
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_monitor_sensitivity/monitor_sensitivity_report.json",
+      "size_bytes": 2512
+    },
+    {
+      "extension": ".md",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_monitor_sensitivity/monitor_sensitivity_report.md",
+      "size_bytes": 1252
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_monitor_sensitivity/monitor_sensitivity_summary.csv",
+      "size_bytes": 217
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_monitor_sensitivity/monitor_timeseries_free_tip_proxy_max_total_displacement.csv",
+      "size_bytes": 5199
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_monitor_sensitivity/monitor_timeseries_free_tip_proxy_mean.csv",
+      "size_bytes": 5212
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_monitor_sensitivity/monitor_timeseries_nearest_public_monitor_point.csv",
+      "size_bytes": 5207
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_monitor_sensitivity/monitor_timeseries_top_5_nearest_public_monitor_mean.csv",
+      "size_bytes": 5213
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/best_candidate_error_report.json",
+      "size_bytes": 2432
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/best_candidate_flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4116
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/curves/flap_tip_displacement_timeseries_base.csv",
+      "size_bytes": 4110
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/curves/flap_tip_displacement_timeseries_cap_1e-1_scale_1.csv",
+      "size_bytes": 4101
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/curves/flap_tip_displacement_timeseries_cap_1e-1_scale_10.csv",
+      "size_bytes": 4116
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/curves/flap_tip_displacement_timeseries_cap_1e-2_scale_1.csv",
+      "size_bytes": 4118
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/curves/flap_tip_displacement_timeseries_cap_1e-2_scale_10.csv",
+      "size_bytes": 4118
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/curves/flap_tip_displacement_timeseries_cap_1e-3_scale_1.csv",
+      "size_bytes": 4116
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/curves/flap_tip_displacement_timeseries_cap_1e-4_scale_1.csv",
+      "size_bytes": 4115
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/curves/flap_tip_displacement_timeseries_E_1e4.csv",
+      "size_bytes": 4115
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/curves/flap_tip_displacement_timeseries_E_1e5.csv",
+      "size_bytes": 4128
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/generated_geometry_configs/step109_geometry_E_1e4.json",
+      "size_bytes": 1394
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/generated_geometry_configs/step109_geometry_E_1e5.json",
+      "size_bytes": 1395
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/monitor_timeseries/cap_1e-1_scale_10__free_tip_proxy_max_total_displacement.csv",
+      "size_bytes": 5199
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/monitor_timeseries/cap_1e-1_scale_10__free_tip_proxy_mean.csv",
+      "size_bytes": 5212
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/monitor_timeseries/cap_1e-1_scale_10__nearest_public_monitor_point.csv",
+      "size_bytes": 5207
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/monitor_timeseries/cap_1e-1_scale_10__top_5_nearest_public_monitor_mean.csv",
+      "size_bytes": 5213
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/response_matrix_progress.json",
+      "size_bytes": 15020
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/response_matrix_report.csv",
+      "size_bytes": 4907
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/response_matrix_report.json",
+      "size_bytes": 15859
+    },
+    {
+      "extension": ".md",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/response_matrix_report.md",
+      "size_bytes": 6157
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step109_response_sensitivity_matrix/response_matrix_summary.csv",
+      "size_bytes": 717
+    }
+  ],
+  "summary": {
+    "artifact_budget_pass": true,
+    "direct_equivalence_claim_count": 0,
+    "official_case_data_h5_count": 0,
+    "official_case_file_count": 0,
+    "official_journal_file_count": 0,
+    "official_mesh_file_count": 0,
+    "official_png_committed_count": 0,
+    "output_guard_pass": true,
+    "pass_count": 126,
+    "private_absolute_path_count": 0,
+    "private_fluent_csv_committed_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "row_count": 126,
+    "step109_forbidden_file_count": 0,
+    "step109_large_file_count": 0,
+    "step109_total_size_bytes": 3560789,
+    "step109_total_size_mb": 3.3958330154418945,
+    "step109_video_count": 0,
+    "validation_claim_count": 0
+  }
+}

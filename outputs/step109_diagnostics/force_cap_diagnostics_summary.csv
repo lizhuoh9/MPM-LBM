@@ -1,0 +1,6 @@
+metric,value
+all_force_metrics_finite,True
+best_peak_solver_m,0.0012614636216312647
+force_cap_diagnostics_pass,True
+row_count,9
+stable_row_count,9

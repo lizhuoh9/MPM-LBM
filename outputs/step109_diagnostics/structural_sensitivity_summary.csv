@@ -1,0 +1,6 @@
+metric,value
+all_structural_metrics_finite,True
+stable_structural_row_count,2
+stiffness_reduction_order_of_magnitude_response,True
+structural_row_count,2
+structural_sensitivity_report_pass,True

@@ -1,0 +1,15 @@
+metric,value
+allowed_claim,"A response-amplitude sensitivity matrix was run against the Step107 public Fluent plot reference, and the dominant proxy parameters controlling displacement amplitude were identified."
+best_candidate_direct_quantitative_equivalence_allowed,False
+best_candidate_row_name,cap_1e-1_scale_10
+best_candidate_selected,True
+best_candidate_validation_claim_allowed,False
+best_peak_solver_m,0.0012614636216312647
+direct_quantitative_equivalence_allowed,False
+response_matrix_pass,True
+response_matrix_row_count,9
+rows_above_min_peak_count,7
+rows_above_step108_peak_count,8
+step108_peak_solver_m,1.2332112646618043e-06
+successful_response_matrix_rows,9
+validation_claim_allowed,False

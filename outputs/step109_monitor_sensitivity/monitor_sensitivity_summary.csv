@@ -1,0 +1,7 @@
+metric,value
+all_monitor_metrics_finite,True
+direct_quantitative_equivalence_allowed,False
+max_to_mean_peak_ratio,1.1837433740576766
+monitor_count,4
+monitor_sensitivity_pass,True
+validation_claim_allowed,False
