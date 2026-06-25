@@ -17,6 +17,7 @@ from ..geometry.quality import GeometryQualityGate, analyze_geometry_config
 from ..geometry.sampler import GeometrySampler3D
 from ..io.run_utils import assert_no_nan_inf_array, ensure_output_dir, make_all_fluid_geo, save_csv_rows, save_json_config
 from ..lbm.fluid import LBMFluid3D
+from ..lbm.restart import expected_restart_metadata_from_config, load_lbm_restart_to_lbm
 from ..mpm.solid import MPMSolid3D
 from ..units.mapper import GridUnitMapper
 from src.mpm_lbm.sim.drivers.fsi_config import FSIDriverConfig
@@ -92,6 +93,7 @@ class FSIDriver3D:
         self.free_tip_proxy_mask = None
         self.flap_tip_monitor_rows = []
         self.material_reference_used_for_mpm_config = False
+        self.lbm_restart_load_report = None
 
     def initialize(self):
         t0 = time.perf_counter()
@@ -109,6 +111,7 @@ class FSIDriver3D:
         self.lbm = LBMFluid3D(lbm_config)
         self.lbm.init_geo(self.geo_path)
         self.lbm.init_simulation()
+        self._load_lbm_restart_if_configured()
 
         mpm_overrides = {
             "gravity": self.config.gravity,
@@ -172,6 +175,33 @@ class FSIDriver3D:
         self.initialized = True
         self.start_time = time.perf_counter()
         self.timing["init_time"] += self.start_time - t0
+
+    def _load_lbm_restart_if_configured(self):
+        if not self.config.lbm_restart_path:
+            self.lbm_restart_load_report = {
+                "restart_loaded": False,
+                "restart_path": "",
+                "restart_required": bool(self.config.lbm_restart_required),
+            }
+            return self.lbm_restart_load_report
+
+        restart_path = Path(self.config.lbm_restart_path)
+        if not restart_path.is_absolute():
+            restart_path = _repo_root() / restart_path
+        expected = expected_restart_metadata_from_config(self.config)
+        report = load_lbm_restart_to_lbm(
+            self.lbm,
+            restart_path,
+            expected,
+            required=bool(self.config.lbm_restart_required),
+        )
+        report["restart_required"] = bool(self.config.lbm_restart_required)
+        report["restart_scope"] = self.config.lbm_restart_scope
+        self.lbm_restart_load_report = report
+        with open(os.path.join(self.out_dir, "lbm_restart_load_report.json"), "w", encoding="utf-8") as f:
+            json.dump(report, f, indent=2, sort_keys=True)
+            f.write("\n")
+        return report
 
     def _write_static_lbm_geometry(self, geometry_config):
         if self.config.lbm_boundary_condition_mode == "duct_velocity_inlet_pressure_outlet":

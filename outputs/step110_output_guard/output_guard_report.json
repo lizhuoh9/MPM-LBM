@@ -1,0 +1,436 @@
+{
+  "rows": [
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_artifact_manifest_policy.json",
+      "size_bytes": 226
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_candidate_matrix_policy.json",
+      "size_bytes": 1107
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_candidates/cap_1e-2_E_1e4.json",
+      "size_bytes": 183
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_candidates/cap_1e-2_E_2e4.json",
+      "size_bytes": 183
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_candidates/cap_1e-2_E_5e4.json",
+      "size_bytes": 183
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_candidates/cap_2e-2_E_2e4.json",
+      "size_bytes": 183
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_candidates/cap_2e-2_E_5e4.json",
+      "size_bytes": 183
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_candidates/cap_3e-2_E_1e6.json",
+      "size_bytes": 185
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_candidates/cap_3e-2_E_2e4.json",
+      "size_bytes": 183
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_candidates/cap_3e-2_E_5e4.json",
+      "size_bytes": 183
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_candidates/cap_5e-2_E_1e6.json",
+      "size_bytes": 185
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_candidates/cap_7e-2_E_1e6.json",
+      "size_bytes": 185
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_candidates/replay_cap_1e-2.json",
+      "size_bytes": 228
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_candidates/replay_E_1e4.json",
+      "size_bytes": 212
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_monitor_alignment_policy.json",
+      "size_bytes": 460
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_output_guard_policy.json",
+      "size_bytes": 688
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_proxy_preflow_48_low_mach.json",
+      "size_bytes": 285
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step110_proxy_preflow_policy.json",
+      "size_bytes": 125
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step110_artifact_manifest.log",
+      "size_bytes": 64
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step110_candidate_matrix.log",
+      "size_bytes": 128
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step110_curve_shape_diagnostics.log",
+      "size_bytes": 72
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step110_default_pytest.log",
+      "size_bytes": 162
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step110_focused_pytest.log",
+      "size_bytes": 70
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step110_full_pytest_anaconda.log",
+      "size_bytes": 114
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step110_full_pytest_taichi.log",
+      "size_bytes": 72
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step110_monitor_alignment.log",
+      "size_bytes": 58
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step110_output_guard.log",
+      "size_bytes": 50
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step110_proxy_preflow.log",
+      "size_bytes": 74
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step110_py_compile.log",
+      "size_bytes": 42
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_curve_shape_diagnostics/curve_shape_diagnostics_report.csv",
+      "size_bytes": 2205
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_curve_shape_diagnostics/curve_shape_diagnostics_report.json",
+      "size_bytes": 7857
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_curve_shape_diagnostics/curve_shape_diagnostics_summary.csv",
+      "size_bytes": 153
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/best_candidate_error_report.json",
+      "size_bytes": 1727
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/best_candidate_monitor_timeseries.csv",
+      "size_bytes": 2796
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/candidate_matrix_report.csv",
+      "size_bytes": 3843
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/candidate_matrix_report.json",
+      "size_bytes": 13118
+    },
+    {
+      "extension": ".md",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/candidate_matrix_report.md",
+      "size_bytes": 4706
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/candidate_matrix_summary.csv",
+      "size_bytes": 650
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/curves/cap_1e-2_E_1e4_monitor_timeseries.csv",
+      "size_bytes": 2572
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/curves/cap_1e-2_E_2e4_monitor_timeseries.csv",
+      "size_bytes": 2700
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/curves/cap_1e-2_E_5e4_monitor_timeseries.csv",
+      "size_bytes": 2878
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/curves/cap_2e-2_E_2e4_monitor_timeseries.csv",
+      "size_bytes": 2796
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/curves/cap_2e-2_E_5e4_monitor_timeseries.csv",
+      "size_bytes": 2524
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/curves/cap_3e-2_E_1e6_monitor_timeseries.csv",
+      "size_bytes": 2738
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/curves/cap_3e-2_E_2e4_monitor_timeseries.csv",
+      "size_bytes": 2774
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/curves/cap_3e-2_E_5e4_monitor_timeseries.csv",
+      "size_bytes": 2624
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/curves/cap_5e-2_E_1e6_monitor_timeseries.csv",
+      "size_bytes": 2728
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/curves/cap_7e-2_E_1e6_monitor_timeseries.csv",
+      "size_bytes": 2686
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/curves/replay_cap_1e-2_monitor_timeseries.csv",
+      "size_bytes": 2744
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_error_minimized_candidate_matrix/curves/replay_E_1e4_monitor_timeseries.csv",
+      "size_bytes": 2784
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_monitor_alignment/monitor_definition_report.json",
+      "size_bytes": 2864
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_monitor_alignment/monitor_timeseries_free_tip_proxy_mean.csv",
+      "size_bytes": 2828
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_monitor_alignment/monitor_timeseries_nearest_public_monitor_point.csv",
+      "size_bytes": 2796
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_monitor_alignment/monitor_timeseries_radius_public_monitor_mean.csv",
+      "size_bytes": 2842
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_monitor_alignment/monitor_timeseries_top_5_nearest_public_monitor_mean.csv",
+      "size_bytes": 2908
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_proxy_preflow/lbm_preflow_restart.npz",
+      "size_bytes": 63404
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_proxy_preflow/preflow_plane_timeseries.csv",
+      "size_bytes": 4646
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_proxy_preflow/preflow_report.json",
+      "size_bytes": 870
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step110_proxy_preflow/restart_reload_report.json",
+      "size_bytes": 1426
+    }
+  ],
+  "summary": {
+    "artifact_budget_pass": true,
+    "direct_equivalence_claim_count": 0,
+    "official_case_data_h5_count": 0,
+    "official_case_file_count": 0,
+    "official_journal_file_count": 0,
+    "official_mesh_file_count": 0,
+    "output_guard_pass": true,
+    "pass_count": 59,
+    "private_absolute_path_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "row_count": 59,
+    "step110_forbidden_file_count": 0,
+    "step110_large_file_count": 0,
+    "step110_total_size_bytes": 160260,
+    "step110_total_size_mb": 0.15283584594726562,
+    "validation_claim_count": 0
+  }
+}

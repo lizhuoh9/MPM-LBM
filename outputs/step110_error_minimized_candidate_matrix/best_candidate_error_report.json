@@ -1,0 +1,41 @@
+{
+  "row": {
+    "all_metrics_finite": true,
+    "completed_lbm_substeps": 6000,
+    "completed_official_fsi_steps": 50,
+    "composite_error_score": 0.10950817294233439,
+    "direct_quantitative_equivalence_allowed": false,
+    "evidence_mode": "step110_preflow_monitor_proxy_curve_replay",
+    "has_inf": false,
+    "has_nan": false,
+    "normalized_peak_time_error": 0.35999999999999993,
+    "normalized_rms_error": 0.04180534371270689,
+    "peak_ratio": 0.9281119999999999,
+    "peak_reference_m": 0.000395,
+    "peak_relative_error": 0.07188800000000004,
+    "peak_solver_m": 0.00036660424,
+    "peak_time_error_s": 0.009,
+    "preflow_restart_loaded": true,
+    "row_name": "cap_2e-2_E_2e4",
+    "sample_count": 51,
+    "shape_correlation": 0.9995494768417736,
+    "solver_curve_time_end_s": 0.025,
+    "source_config_path": "configs/step110_candidates/cap_2e-2_E_2e4.json",
+    "stable": true,
+    "validation_claim_allowed": false
+  },
+  "summary": {
+    "allowed_claim": "A Step110 public-plot error-minimized proxy candidate was selected using proxy preflow, public structural-point monitor alignment, and Step107 public-reference error metrics.",
+    "best_candidate_normalized_rms_error": 0.04180534371270689,
+    "best_candidate_peak_relative_error": 0.07188800000000004,
+    "best_candidate_peak_time_error_s": 0.009,
+    "best_candidate_row_name": "cap_2e-2_E_2e4",
+    "best_candidate_selected": true,
+    "best_candidate_shape_correlation": 0.9995494768417736,
+    "candidate_matrix_pass": true,
+    "candidate_matrix_row_count": 12,
+    "direct_quantitative_equivalence_allowed": false,
+    "successful_candidate_rows": 12,
+    "validation_claim_allowed": false
+  }
+}

@@ -1,0 +1,1 @@
+{"row_name": "replay_cap_1e-2", "source_step109_row": "cap_1e-2_scale_1", "mb_force_cap_norm": 0.01, "youngs_modulus": 1000000.0, "evidence_mode": "step110_preflow_monitor_proxy_curve_replay", "validation_claim_allowed": false}

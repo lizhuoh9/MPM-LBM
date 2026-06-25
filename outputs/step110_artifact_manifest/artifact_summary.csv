@@ -1,0 +1,11 @@
+metric,value
+artifact_budget_pass,True
+artifact_manifest_pass,True
+file_count,7572
+large_file_count,0
+private_absolute_path_count,0
+step110_ansys_proprietary_file_count,0
+step110_file_count,84
+step110_official_image_count,0
+step110_total_size_bytes,252354
+step110_total_size_mb,0.2406635284423828

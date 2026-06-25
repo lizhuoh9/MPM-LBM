@@ -1,0 +1,18 @@
+{
+  "allowed_claim": "A Step110 public-plot error-minimized proxy candidate was selected using proxy preflow, public structural-point monitor alignment, and Step107 public-reference error metrics.",
+  "summary": {
+    "allowed_claim": "A Step110 public-plot error-minimized proxy candidate was selected using proxy preflow, public structural-point monitor alignment, and Step107 public-reference error metrics.",
+    "has_inf": false,
+    "has_nan": false,
+    "inlet_plane_mean_ux_final": 0.019999999552965164,
+    "mid_duct_plane_mean_ux_final": 0.014399999678134918,
+    "outlet_plane_mean_ux_final": 0.014399999678134918,
+    "preflow_completed_lbm_substeps": 6000,
+    "preflow_pass": true,
+    "restart_npz_exists": true,
+    "restart_reload_stats_match": true,
+    "rho_max": 1.0,
+    "rho_min": 1.0,
+    "validation_claim_allowed": false
+  }
+}

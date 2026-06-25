@@ -1,0 +1,88 @@
+{
+  "policy": {
+    "direct_quantitative_equivalence_allowed": false,
+    "duct_height_m": 0.04,
+    "duct_length_m": 0.1,
+    "monitor_equivalence": false,
+    "normalized_monitor_point": [
+      0.505,
+      0.395,
+      0.5
+    ],
+    "public_monitor_x_m": 0.0505,
+    "public_monitor_y_m": 0.0095,
+    "required_monitor_names": [
+      "free_tip_proxy_mean",
+      "nearest_public_monitor_point",
+      "top_5_nearest_public_monitor_mean",
+      "radius_public_monitor_mean"
+    ],
+    "validation_claim_allowed": false
+  },
+  "rows": [
+    {
+      "direct_quantitative_equivalence_allowed": false,
+      "final_displacement_m": 6.5709e-05,
+      "monitor_equivalence": false,
+      "monitor_name": "free_tip_proxy_mean",
+      "peak_displacement_m": 0.0003592721552,
+      "peak_x_displacement_m": 0.0003592721552,
+      "peak_y_displacement_m": 0.0,
+      "sample_count": 51,
+      "source_row_name": "cap_2e-2_E_2e4",
+      "time_end_s": 0.025,
+      "time_start_s": 0.0,
+      "validation_claim_allowed": false
+    },
+    {
+      "direct_quantitative_equivalence_allowed": false,
+      "final_displacement_m": 6.705e-05,
+      "monitor_equivalence": false,
+      "monitor_name": "nearest_public_monitor_point",
+      "peak_displacement_m": 0.00036660424,
+      "peak_x_displacement_m": 0.00036660424,
+      "peak_y_displacement_m": 0.0,
+      "sample_count": 51,
+      "source_row_name": "cap_2e-2_E_2e4",
+      "time_end_s": 0.025,
+      "time_start_s": 0.0,
+      "validation_claim_allowed": false
+    },
+    {
+      "direct_quantitative_equivalence_allowed": false,
+      "final_displacement_m": 6.671475e-05,
+      "monitor_equivalence": false,
+      "monitor_name": "top_5_nearest_public_monitor_mean",
+      "peak_displacement_m": 0.0003647712188,
+      "peak_x_displacement_m": 0.0003647712188,
+      "peak_y_displacement_m": 0.0,
+      "sample_count": 51,
+      "source_row_name": "cap_2e-2_E_2e4",
+      "time_end_s": 0.025,
+      "time_start_s": 0.0,
+      "validation_claim_allowed": false
+    },
+    {
+      "direct_quantitative_equivalence_allowed": false,
+      "final_displacement_m": 6.63795e-05,
+      "monitor_equivalence": false,
+      "monitor_name": "radius_public_monitor_mean",
+      "peak_displacement_m": 0.0003629381976,
+      "peak_x_displacement_m": 0.0003629381976,
+      "peak_y_displacement_m": 0.0,
+      "sample_count": 51,
+      "source_row_name": "cap_2e-2_E_2e4",
+      "time_end_s": 0.025,
+      "time_start_s": 0.0,
+      "validation_claim_allowed": false
+    }
+  ],
+  "summary": {
+    "all_monitor_metrics_finite": true,
+    "direct_quantitative_equivalence_allowed": false,
+    "max_to_mean_peak_ratio": 1.0204081632653061,
+    "monitor_alignment_pass": true,
+    "monitor_count": 4,
+    "validation_claim_allowed": false
+  }
+}

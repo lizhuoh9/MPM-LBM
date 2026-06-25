@@ -1,0 +1,13 @@
+metric,value
+allowed_claim,"A Step110 public-plot error-minimized proxy candidate was selected using proxy preflow, public structural-point monitor alignment, and Step107 public-reference error metrics."
+best_candidate_normalized_rms_error,0.04180534371270689
+best_candidate_peak_relative_error,0.07188800000000004
+best_candidate_peak_time_error_s,0.009
+best_candidate_row_name,cap_2e-2_E_2e4
+best_candidate_selected,True
+best_candidate_shape_correlation,0.9995494768417736
+candidate_matrix_pass,True
+candidate_matrix_row_count,12
+direct_quantitative_equivalence_allowed,False
+successful_candidate_rows,12
+validation_claim_allowed,False

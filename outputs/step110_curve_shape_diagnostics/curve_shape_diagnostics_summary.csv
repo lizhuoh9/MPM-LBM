@@ -1,0 +1,5 @@
+metric,value
+curve_shape_diagnostics_pass,True
+diagnostic_row_count,12
+direct_quantitative_equivalence_allowed,False
+validation_claim_allowed,False

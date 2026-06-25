@@ -1,0 +1,5 @@
+{
+  "required_lbm_substeps": 6000,
+  "validation_claim_allowed": false,
+  "direct_quantitative_equivalence_allowed": false
+}

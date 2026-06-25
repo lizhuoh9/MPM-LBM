@@ -17,6 +17,7 @@ VALID_GEOMETRY_MOTION_MODES = ("static", "prescribed_kinematic")
 VALID_GEOMETRY_MOTION_APPLICATION_MODES = ("disabled", "diagnostic_only")
 VALID_LBM_BOUNDARY_CONDITION_MODES = ("default_periodic", "duct_velocity_inlet_pressure_outlet")
 VALID_FSI_EXCHANGE_MODES = ("one_lbm_step_per_fsi_step", "lbm_subcycled_per_fsi_step")
+VALID_LBM_RESTART_SCOPES = ("rho_velocity_populations",)
 VALID_BOUNDARY_AXES = ("x",)
 VALID_BOUNDARY_SIDES = ("min", "max")
 
@@ -54,6 +55,9 @@ class FSIDriverConfig:
     lbm_substeps_per_fsi_step: int = 1
     lbm_dt_phys_override_s: Optional[float] = None
     fsi_exchange_mode: str = "one_lbm_step_per_fsi_step"
+    lbm_restart_path: Optional[str] = None
+    lbm_restart_required: bool = False
+    lbm_restart_scope: str = "rho_velocity_populations"
 
     box_min: Tuple[float, float, float] = (0.25, 0.35, 0.25)
     box_max: Tuple[float, float, float] = (0.55, 0.65, 0.55)
@@ -160,6 +164,10 @@ class FSIDriverConfig:
             raise ValueError(f"pressure_outlet_side must be one of {VALID_BOUNDARY_SIDES}")
         if self.fsi_exchange_mode not in VALID_FSI_EXCHANGE_MODES:
             raise ValueError(f"fsi_exchange_mode must be one of {VALID_FSI_EXCHANGE_MODES}")
+        if self.lbm_restart_scope not in VALID_LBM_RESTART_SCOPES:
+            raise ValueError(f"lbm_restart_scope must be one of {VALID_LBM_RESTART_SCOPES}")
+        if self.lbm_restart_required and not self.lbm_restart_path:
+            raise ValueError("lbm_restart_path is required when lbm_restart_required is true")
         if self.lbm_boundary_condition_mode == "duct_velocity_inlet_pressure_outlet":
             if self.velocity_inlet_axis != "x":
                 raise ValueError("duct_velocity_inlet_pressure_outlet currently supports only x-axis inlet/outlet")

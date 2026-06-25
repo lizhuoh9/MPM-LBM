@@ -1,0 +1,16 @@
+{
+  "public_monitor_x_m": 0.0505,
+  "public_monitor_y_m": 0.0095,
+  "duct_length_m": 0.1,
+  "duct_height_m": 0.04,
+  "normalized_monitor_point": [0.505, 0.395, 0.5],
+  "monitor_equivalence": false,
+  "required_monitor_names": [
+    "free_tip_proxy_mean",
+    "nearest_public_monitor_point",
+    "top_5_nearest_public_monitor_mean",
+    "radius_public_monitor_mean"
+  ],
+  "validation_claim_allowed": false,
+  "direct_quantitative_equivalence_allowed": false
+}

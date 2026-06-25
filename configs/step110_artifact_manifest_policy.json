@@ -1,0 +1,11 @@
+{
+  "max_step110_file_count": 220,
+  "max_step110_total_size_mb": 80.0,
+  "large_file_threshold_bytes": 52428800,
+  "official_file_names": [
+    "fsi2way.cas.h5",
+    "fsi2way.dat.h5",
+    "fluent.cas",
+    "fluent.dat"
+  ]
+}

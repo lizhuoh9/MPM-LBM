@@ -1,0 +1,11 @@
+{
+  "n_grid": 48,
+  "official_steps": 50,
+  "lbm_substeps_per_fsi_step": 120,
+  "total_lbm_substeps": 6000,
+  "target_u_lbm": [0.02, 0.0, 0.0],
+  "target_inlet_velocity_mps": 10.0,
+  "lbm_dt_phys_s": 4.166666666666667e-6,
+  "duct_static_geometry": "step104",
+  "write_restart": true
+}

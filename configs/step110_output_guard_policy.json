@@ -1,0 +1,30 @@
+{
+  "max_step110_total_size_mb": 80.0,
+  "large_file_threshold_bytes": 52428800,
+  "forbidden_filename_tokens": [
+    ".cas",
+    ".dat.h5",
+    ".cas.h5",
+    ".msh",
+    "official_fluent"
+  ],
+  "official_file_names": [
+    "fsi2way.cas.h5",
+    "fsi2way.dat.h5",
+    "fluent.cas",
+    "fluent.dat"
+  ],
+  "validation_claim_patterns": [
+    "Fluent validation passed",
+    "production ready"
+  ],
+  "direct_equivalence_claim_patterns": [
+    "Fluent equivalence achieved",
+    "official steady-preflow exactly reproduced",
+    "official structural-point monitor exactly reproduced"
+  ],
+  "protected_prefixes": [
+    "external/taichi_LBM3D/",
+    "data/real_geometry_candidates/"
+  ]
+}
