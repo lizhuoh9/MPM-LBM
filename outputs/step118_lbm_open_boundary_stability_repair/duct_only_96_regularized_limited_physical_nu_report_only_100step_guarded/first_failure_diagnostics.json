@@ -1,0 +1,23 @@
+{
+  "first_failure_detector": {
+    "all_records_finite": true,
+    "first_failure_reason": null,
+    "first_failure_step": null,
+    "first_high_density_step": null,
+    "first_mass_drift_step": null,
+    "first_max_v_step": null,
+    "first_negative_density_step": null,
+    "first_nonfinite_step": null,
+    "record_count": 0
+  },
+  "lbm_open_boundary_semantics": "regularized_velocity_pressure_limited",
+  "mass_source_sink_by_step": {
+    "mass_drift_abs_max": null,
+    "mass_drift_delta_final": null,
+    "mass_drift_final": null,
+    "mass_drift_initial": null,
+    "record_count": 0
+  },
+  "row_name": "duct_only_96_regularized_limited_physical_nu_report_only_100step_guarded",
+  "step": 118
+}

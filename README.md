@@ -116,6 +116,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 115 LBM open-boundary and force-accumulation validation, with a runtime Taichi accumulator mean-force test, opt-in D3Q19 x-axis `regularized_velocity_pressure` unknown-population reconstruction, tau/Re feasibility reporting with strict/report-only policy, and deterministic solver-boundary artifacts while Fluent validation and full FSI parity remain open
 - Step 116 regularized LBM duct-flow baseline, with NumPy mass/flux/density diagnostics, a bounded LBM-only duct/static-flap runner, tau-gated simulation-backed CSV/JSON artifacts, and explicit proof that committed 48/96-named rows are bounded probes rather than completed long-window Fluent validation
 - Step 117 regularized LBM long-window fluid validation, with real 48^3/500 and 96^3/1000 LBM-only duct/static-flap rows, long-window trend gates, strict physical-nu tau policy artifacts, and an explicit Step118 block because 96^3 regularized rows destabilize
+- Step 118 LBM open-boundary stability repair, with population/density/velocity first-failure diagnostics, opt-in limited regularized and convective outlet boundary variants, synthetic diagnostic artifact contracts, and an explicit Step119 quasi-2D block until real 48^3/96^3 repair rows pass
 
 ## Not Implemented
 

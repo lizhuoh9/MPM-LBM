@@ -1,0 +1,3 @@
+step,f_min,f_max,F_min,F_max,negative_population_count,negative_population_fraction,boundary_x_min_negative_population_count,boundary_x_max_negative_population_count,rho_below_low_count,rho_above_high_count,velocity_outlier_count,first_failure_location,stability_all_finite
+0,0.05263157894736842,0.05263157894736842,0.05263157894736842,0.05263157894736842,0,0.0,0,0,0,0,0,,True
+5,0.05263157894736842,0.05263157894736842,0.05263157894736842,0.05263157894736842,0,0.0,0,0,0,0,0,,True

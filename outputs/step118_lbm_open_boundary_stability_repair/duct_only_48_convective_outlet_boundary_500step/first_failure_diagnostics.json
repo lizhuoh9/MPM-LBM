@@ -1,0 +1,23 @@
+{
+  "first_failure_detector": {
+    "all_records_finite": true,
+    "first_failure_reason": null,
+    "first_failure_step": null,
+    "first_high_density_step": null,
+    "first_mass_drift_step": null,
+    "first_max_v_step": null,
+    "first_negative_density_step": null,
+    "first_nonfinite_step": null,
+    "record_count": 2
+  },
+  "lbm_open_boundary_semantics": "convective_pressure_outlet_experimental",
+  "mass_source_sink_by_step": {
+    "mass_drift_abs_max": 0.0013999999999998458,
+    "mass_drift_delta_final": 0.0013999999999998458,
+    "mass_drift_final": 0.0013999999999998458,
+    "mass_drift_initial": 0.0,
+    "record_count": 2
+  },
+  "row_name": "duct_only_48_convective_outlet_boundary_500step",
+  "step": 118
+}

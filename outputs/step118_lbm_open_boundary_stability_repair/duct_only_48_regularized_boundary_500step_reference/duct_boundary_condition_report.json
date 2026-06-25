@@ -1,0 +1,38 @@
+{
+  "all_population_equilibrium_reset_used": false,
+  "boundary_condition_equivalence_claim_allowed": false,
+  "convective_outlet_used": false,
+  "implemented_axis": "x",
+  "lbm_boundary_condition_mode": "duct_velocity_inlet_pressure_outlet",
+  "lbm_open_boundary_semantics": "regularized_velocity_pressure",
+  "open_boundary_limiter_enabled": false,
+  "open_boundary_noneq_cap": 0.05,
+  "open_boundary_population_floor": null,
+  "open_boundary_rho_max": 1.2,
+  "open_boundary_rho_min": 0.8,
+  "open_boundary_u_max": 0.1,
+  "pressure_outlet_density": 1.0,
+  "regularized_limited_boundary_used": false,
+  "step": 118,
+  "unknown_population_reconstruction_used": true,
+  "unknown_x_max_populations": [
+    2,
+    8,
+    10,
+    12,
+    14
+  ],
+  "unknown_x_min_populations": [
+    1,
+    7,
+    9,
+    11,
+    13
+  ],
+  "validation_claim_allowed": false,
+  "velocity_inlet_target": [
+    0.02,
+    0.0,
+    0.0
+  ]
+}

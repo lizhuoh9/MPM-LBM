@@ -26,10 +26,14 @@ VALID_LBM_OPEN_BOUNDARY_SEMANTICS = (
     "equilibrium_all_population_reset",
     "zou_he_reconstruct_unknowns",
     "regularized_velocity_pressure",
+    "regularized_velocity_pressure_limited",
+    "convective_pressure_outlet_experimental",
 )
 IMPLEMENTED_LBM_OPEN_BOUNDARY_SEMANTICS = (
     "equilibrium_all_population_reset",
     "regularized_velocity_pressure",
+    "regularized_velocity_pressure_limited",
+    "convective_pressure_outlet_experimental",
 )
 VALID_LBM_VISCOSITY_SEMANTICS = ("legacy_external", "physical_nu_mapping")
 VALID_LBM_TAU_STABILITY_POLICIES = ("report_only", "strict")
@@ -78,6 +82,12 @@ class FSIDriverConfig:
 
     lbm_boundary_condition_mode: str = "default_periodic"
     lbm_open_boundary_semantics: str = "equilibrium_all_population_reset"
+    open_boundary_limiter_enabled: bool = False
+    open_boundary_rho_min: float = 0.8
+    open_boundary_rho_max: float = 1.2
+    open_boundary_u_max: float = 0.1
+    open_boundary_noneq_cap: float = 0.05
+    open_boundary_population_floor: Optional[float] = None
     velocity_inlet_axis: str = "x"
     velocity_inlet_side: str = "min"
     pressure_outlet_side: str = "max"
@@ -231,6 +241,14 @@ class FSIDriverConfig:
             raise ValueError(f"lbm_open_boundary_semantics must be one of {VALID_LBM_OPEN_BOUNDARY_SEMANTICS}")
         if self.lbm_open_boundary_semantics not in IMPLEMENTED_LBM_OPEN_BOUNDARY_SEMANTICS:
             raise ValueError(f"lbm_open_boundary_semantics={self.lbm_open_boundary_semantics!r} is not implemented")
+        if self.open_boundary_rho_min <= 0.0:
+            raise ValueError("open_boundary_rho_min must be positive")
+        if self.open_boundary_rho_max <= self.open_boundary_rho_min:
+            raise ValueError("open_boundary_rho_min must be less than open_boundary_rho_max")
+        if self.open_boundary_u_max <= 0.0:
+            raise ValueError("open_boundary_u_max must be positive")
+        if self.open_boundary_noneq_cap <= 0.0:
+            raise ValueError("open_boundary_noneq_cap must be positive")
         if self.lbm_viscosity_semantics not in VALID_LBM_VISCOSITY_SEMANTICS:
             raise ValueError(f"lbm_viscosity_semantics must be one of {VALID_LBM_VISCOSITY_SEMANTICS}")
         if self.lbm_tau_stability_policy not in VALID_LBM_TAU_STABILITY_POLICIES:
@@ -489,6 +507,12 @@ class FSIDriverConfig:
             lbm_rho0=1.0,
             lbm_relaxation_semantics=str(viscosity_mapping["lbm_relaxation_semantics"]),
             lbm_open_boundary_semantics=self.lbm_open_boundary_semantics,
+            open_boundary_limiter_enabled=bool(self.open_boundary_limiter_enabled),
+            open_boundary_rho_min=float(self.open_boundary_rho_min),
+            open_boundary_rho_max=float(self.open_boundary_rho_max),
+            open_boundary_u_max=float(self.open_boundary_u_max),
+            open_boundary_noneq_cap=float(self.open_boundary_noneq_cap),
+            open_boundary_population_floor=self.open_boundary_population_floor,
         )
 
     def make_mpm_control_overrides(self):

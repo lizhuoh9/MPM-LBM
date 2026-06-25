@@ -1,0 +1,3 @@
+step,rho_min,rho_max,rho_mean,mass_total,mass_total_delta_from_initial,mass_total_delta_rel
+0,1.0,1.0,1.0,120.0,0.0,0.0
+5,1.0005,1.0025,1.0015095238095237,120.18114285714286,0.18114285714285927,0.0015095238095238273

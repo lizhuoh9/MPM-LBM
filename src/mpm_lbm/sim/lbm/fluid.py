@@ -15,6 +15,8 @@ from .relaxation_semantics import (
 
 EQUILIBRIUM_ALL_POPULATION_RESET = "equilibrium_all_population_reset"
 REGULARIZED_VELOCITY_PRESSURE = "regularized_velocity_pressure"
+REGULARIZED_VELOCITY_PRESSURE_LIMITED = "regularized_velocity_pressure_limited"
+CONVECTIVE_PRESSURE_OUTLET_EXPERIMENTAL = "convective_pressure_outlet_experimental"
 UNKNOWN_X_MIN_POPULATIONS = (1, 7, 9, 11, 13)
 UNKNOWN_X_MAX_POPULATIONS = (2, 8, 10, 12, 14)
 
@@ -39,6 +41,17 @@ class LBMFluid3D:
         self.rho0 = config.rho0
         self.relaxation_semantics = config.relaxation_semantics
         self.open_boundary_semantics = config.open_boundary_semantics
+        self.open_boundary_limiter_enabled = bool(config.open_boundary_limiter_enabled)
+        self.open_boundary_rho_min = float(config.open_boundary_rho_min)
+        self.open_boundary_rho_max = float(config.open_boundary_rho_max)
+        self.open_boundary_u_max = float(config.open_boundary_u_max)
+        self.open_boundary_noneq_cap = float(config.open_boundary_noneq_cap)
+        self.open_boundary_population_floor_enabled = config.open_boundary_population_floor is not None
+        self.open_boundary_population_floor = float(
+            config.open_boundary_population_floor
+            if config.open_boundary_population_floor is not None
+            else -1.0e30
+        )
 
         self.max_v=ti.field(ti.f32,shape=())
         self.rho_min = ti.field(ti.f32, shape=())
@@ -438,6 +451,12 @@ class LBMFluid3D:
         if self.open_boundary_semantics == REGULARIZED_VELOCITY_PRESSURE:
             self.apply_regularized_x_open_boundaries()
             return
+        if self.open_boundary_semantics == REGULARIZED_VELOCITY_PRESSURE_LIMITED:
+            self.apply_regularized_limited_x_open_boundaries()
+            return
+        if self.open_boundary_semantics == CONVECTIVE_PRESSURE_OUTLET_EXPERIMENTAL:
+            self.apply_convective_pressure_outlet_x_open_boundaries()
+            return
         self.Boundary_condition_legacy()
 
     @ti.kernel
@@ -545,6 +564,53 @@ class LBMFluid3D:
         neighbor_noneq = self.F[ni, nj, nk][s] - self.feq(s, self.rho[ni, nj, nk], self.v[ni, nj, nk])
         return self.feq(s, target_rho, target_u) + neighbor_noneq
 
+    @ti.func
+    def _limit_open_boundary_rho(self, target_rho):
+        out = target_rho
+        if ti.static(self.open_boundary_limiter_enabled):
+            if out < self.open_boundary_rho_min:
+                out = self.open_boundary_rho_min
+            if out > self.open_boundary_rho_max:
+                out = self.open_boundary_rho_max
+        return out
+
+    @ti.func
+    def _limit_open_boundary_velocity(self, target_u):
+        out = target_u
+        if ti.static(self.open_boundary_limiter_enabled):
+            norm = out.norm()
+            if norm > self.open_boundary_u_max:
+                out = out * (self.open_boundary_u_max / norm)
+        return out
+
+    @ti.func
+    def _limit_open_boundary_population(self, value):
+        out = value
+        if ti.static(self.open_boundary_limiter_enabled):
+            if ti.static(self.open_boundary_population_floor_enabled):
+                if out < self.open_boundary_population_floor:
+                    out = self.open_boundary_population_floor
+        return out
+
+    @ti.func
+    def _limited_regularized_population(self, s, target_rho, target_u, ni, nj, nk):
+        rho_limited = self._limit_open_boundary_rho(target_rho)
+        u_limited = self._limit_open_boundary_velocity(target_u)
+        neighbor_noneq = self.F[ni, nj, nk][s] - self.feq(s, self.rho[ni, nj, nk], self.v[ni, nj, nk])
+        if ti.static(self.open_boundary_limiter_enabled):
+            if neighbor_noneq > self.open_boundary_noneq_cap:
+                neighbor_noneq = self.open_boundary_noneq_cap
+            if neighbor_noneq < -self.open_boundary_noneq_cap:
+                neighbor_noneq = -self.open_boundary_noneq_cap
+        return self._limit_open_boundary_population(self.feq(s, rho_limited, u_limited) + neighbor_noneq)
+
+    @ti.func
+    def _convective_outlet_population(self, s, bi, bj, bk, ni, nj, nk, n2i, n2j, n2k):
+        extrapolated = self.F[ni, nj, nk][s]
+        if self.solid[n2i, n2j, n2k] == 0:
+            extrapolated = 2.0 * self.F[ni, nj, nk][s] - self.F[n2i, n2j, n2k][s]
+        return self._limit_open_boundary_population(extrapolated)
+
     @ti.kernel
     def apply_regularized_x_open_boundaries(self):
         if ti.static(self.bc_x_left==1):
@@ -579,6 +645,105 @@ class LBMFluid3D:
                     target_u = self.v[ni,j,k]
                     for s in ti.static(UNKNOWN_X_MAX_POPULATIONS):
                         self.F[self.nx-1,j,k][s] = self._regularized_population(s, self.rho_bcxr, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_right==2):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[self.nx-1,j,k] == 0:
+                    ni = self.nx - 2
+                    if self.solid[self.nx-2,j,k] > 0:
+                        ni = self.nx - 1
+                    target_rho = self.rho[ni,j,k]
+                    if target_rho <= 1.0e-6:
+                        target_rho = self.rho0
+                    target_u = ti.Vector(self.bc_vel_x_right)
+                    for s in ti.static(UNKNOWN_X_MAX_POPULATIONS):
+                        self.F[self.nx-1,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
+
+    @ti.kernel
+    def apply_regularized_limited_x_open_boundaries(self):
+        if ti.static(self.bc_x_left==1):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[0,j,k] == 0:
+                    ni = 1
+                    if self.solid[1,j,k] > 0:
+                        ni = 0
+                    target_u = self.v[ni,j,k]
+                    for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
+                        self.F[0,j,k][s] = self._limited_regularized_population(s, self.rho_bcxl, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_left==2):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[0,j,k] == 0:
+                    ni = 1
+                    if self.solid[1,j,k] > 0:
+                        ni = 0
+                    target_rho = self.rho[ni,j,k]
+                    if target_rho <= 1.0e-6:
+                        target_rho = self.rho0
+                    target_u = ti.Vector(self.bc_vel_x_left)
+                    for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
+                        self.F[0,j,k][s] = self._limited_regularized_population(s, target_rho, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_right==1):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[self.nx-1,j,k] == 0:
+                    ni = self.nx - 2
+                    if self.solid[self.nx-2,j,k] > 0:
+                        ni = self.nx - 1
+                    target_u = self.v[ni,j,k]
+                    for s in ti.static(UNKNOWN_X_MAX_POPULATIONS):
+                        self.F[self.nx-1,j,k][s] = self._limited_regularized_population(s, self.rho_bcxr, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_right==2):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[self.nx-1,j,k] == 0:
+                    ni = self.nx - 2
+                    if self.solid[self.nx-2,j,k] > 0:
+                        ni = self.nx - 1
+                    target_rho = self.rho[ni,j,k]
+                    if target_rho <= 1.0e-6:
+                        target_rho = self.rho0
+                    target_u = ti.Vector(self.bc_vel_x_right)
+                    for s in ti.static(UNKNOWN_X_MAX_POPULATIONS):
+                        self.F[self.nx-1,j,k][s] = self._limited_regularized_population(s, target_rho, target_u, ni, j, k)
+
+    @ti.kernel
+    def apply_convective_pressure_outlet_x_open_boundaries(self):
+        if ti.static(self.bc_x_left==1):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[0,j,k] == 0:
+                    ni = 1
+                    if self.solid[1,j,k] > 0:
+                        ni = 0
+                    target_u = self.v[ni,j,k]
+                    for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
+                        self.F[0,j,k][s] = self._regularized_population(s, self.rho_bcxl, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_left==2):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[0,j,k] == 0:
+                    ni = 1
+                    if self.solid[1,j,k] > 0:
+                        ni = 0
+                    target_rho = self.rho[ni,j,k]
+                    if target_rho <= 1.0e-6:
+                        target_rho = self.rho0
+                    target_u = ti.Vector(self.bc_vel_x_left)
+                    for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
+                        self.F[0,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_right==1):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[self.nx-1,j,k] == 0:
+                    ni = self.nx - 2
+                    n2i = self.nx - 3
+                    if self.solid[self.nx-2,j,k] > 0:
+                        ni = self.nx - 1
+                        n2i = self.nx - 1
+                    for s in ti.static(UNKNOWN_X_MAX_POPULATIONS):
+                        self.F[self.nx-1,j,k][s] = self._convective_outlet_population(
+                            s, self.nx - 1, j, k, ni, j, k, n2i, j, k
+                        )
 
         if ti.static(self.bc_x_right==2):
             for j,k in ti.ndrange((0,self.ny),(0,self.nz)):

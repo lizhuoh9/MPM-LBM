@@ -16,6 +16,12 @@ class UnifiedSimConfig:
     lbm_rho0: float = 1.0
     lbm_relaxation_semantics: str = LEGACY_EXTERNAL_SOLVER_RELAXATION_PARAMETER
     lbm_open_boundary_semantics: str = "equilibrium_all_population_reset"
+    open_boundary_limiter_enabled: bool = False
+    open_boundary_rho_min: float = 0.8
+    open_boundary_rho_max: float = 1.2
+    open_boundary_u_max: float = 0.1
+    open_boundary_noneq_cap: float = 0.05
+    open_boundary_population_floor: Optional[float] = None
     lbm_dt_phys_override_s: Optional[float] = None
 
     def __post_init__(self):
@@ -31,6 +37,14 @@ class UnifiedSimConfig:
             raise ValueError("lbm_niu must be positive")
         if self.lbm_rho0 <= 0.0:
             raise ValueError("lbm_rho0 must be positive")
+        if self.open_boundary_rho_min <= 0.0:
+            raise ValueError("open_boundary_rho_min must be positive")
+        if self.open_boundary_rho_max <= self.open_boundary_rho_min:
+            raise ValueError("open_boundary_rho_min must be less than open_boundary_rho_max")
+        if self.open_boundary_u_max <= 0.0:
+            raise ValueError("open_boundary_u_max must be positive")
+        if self.open_boundary_noneq_cap <= 0.0:
+            raise ValueError("open_boundary_noneq_cap must be positive")
         if self.lbm_dt_phys_override_s is not None and self.lbm_dt_phys_override_s <= 0.0:
             raise ValueError("lbm_dt_phys_override_s must be positive when provided")
 
@@ -65,6 +79,12 @@ class UnifiedSimConfig:
             "rho0": self.lbm_rho0,
             "relaxation_semantics": self.lbm_relaxation_semantics,
             "open_boundary_semantics": self.lbm_open_boundary_semantics,
+            "open_boundary_limiter_enabled": self.open_boundary_limiter_enabled,
+            "open_boundary_rho_min": self.open_boundary_rho_min,
+            "open_boundary_rho_max": self.open_boundary_rho_max,
+            "open_boundary_u_max": self.open_boundary_u_max,
+            "open_boundary_noneq_cap": self.open_boundary_noneq_cap,
+            "open_boundary_population_floor": self.open_boundary_population_floor,
         }
         values.update(overrides)
         return LBMConfig(**values)

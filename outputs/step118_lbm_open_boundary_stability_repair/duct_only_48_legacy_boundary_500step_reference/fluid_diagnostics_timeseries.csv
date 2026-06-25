@@ -1,0 +1,3 @@
+step,rho_min,rho_max,rho_mean,mass_total,mass_total_delta_from_initial,mass_total_delta_rel,inlet_mean_ux,outlet_mean_ux,midplane_mean_ux,inlet_flux,outlet_flux,flux_imbalance_abs,flux_imbalance_rel,max_v,mach_proxy_observed
+0,1.0,1.0,1.0,128.0,0.0,0.0,0.0,0.02,0.011428571428571429,0.0,0.32,0.32,1.0,0.02,0.034641016151377546
+5,1.0,1.002,1.0010000000000001,128.12800000000001,0.12800000000001432,0.001000000000000112,0.0,0.02,0.011428571428571429,0.0,0.32064,0.32064,1.0,0.02,0.034641016151377546
