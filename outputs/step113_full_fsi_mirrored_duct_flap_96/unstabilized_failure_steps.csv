@@ -1,0 +1,7 @@
+official_fsi_step,total_mpm_substeps,mpm_max_speed,mpm_min_J,status
+1,1,0.0440,0.9961,finite
+2,2,0.1292,0.9955,finite
+3,3,1.0174,0.8577,finite
+4,4,6.3278,0.9231,finite_but_growing
+5,5,116.4663,-867.2108,negative_J
+6,6,1530.0343,-846498325594112.0,NaN_or_Inf_abort_after_diagnostics

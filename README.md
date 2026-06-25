@@ -111,6 +111,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 110 Fluent public-plot error-minimized proxy candidate, with proxy preflow restart artifacts, guarded LBM restart loading, public structural-point proxy monitor alignment, composite error-scored candidate rows, curve-shape diagnostics, output/artifact guards, and comparison-only evidence while official Fluent validation and exact monitor/preflow reproduction claims remain closed
 - Step 111 Fluent public-plot real solver candidate materialization, with a real 6000-substep LBM preflow restart, a real FSIDriver3D run for the Step110-selected `cap_2e-2_E_2e4` candidate over the public tutorial time window, real particle-monitor extraction, Step107 public-plot error comparison, output/artifact guards, and comparison-only evidence while official Fluent validation, exact monitor/preflow reproduction, official mesh/case/data, and production-readiness claims remain closed
 - Step 112 Fluent public-plot real solver dynamics repair matrix, with real Step111-failure diagnostics, opt-in planar lock-z and velocity-damping controls, ten real FSIDriver3D candidate rows, real particle-monitor scoring, output/artifact guards, and an honest result where RMS and peak error improve but the shape-correlation hard gate remains open
+- Step 113 Fluent Figure 29.3 mirrored duct-flap simulation consolidation, with Step112 velocity-cloud rerender data, 480 x 240 x 12 thin-extruded static two-flap velocity visualization, a failed unstabilized 96^3 mirrored full-FSI attempt, a completed stabilized 96^3/8192-particle mirrored full-FSI run, committed output inventory, and explicit mismatch/error reporting while Fluent validation, official mesh/case reproduction, and exact jet/monitor equivalence claims remain closed
 
 ## Not Implemented
 
@@ -1264,6 +1265,22 @@ Step109 does not claim Fluent validation, direct solver equivalence, exact
 official monitor equivalence, official dynamic mesh reproduction, official
 case/data reproduction, or production readiness.
 See docs/109_fluent_duct_flap_fsi_response_amplitude_sensitivity_matrix.md.
+
+## Step 113 Fluent Figure 29.3 Mirrored FSI Simulation Boundary
+
+Step113 consolidates the velocity-cloud renders and mirrored duct-flap FSI
+attempts made after Step112. It adds opt-in procedural mirrored-pair support
+for `duct_flap_proxy` while preserving the default single-flap behavior.
+Step113 records four evidence groups: the Step112 best-candidate velocity
+rerender, a 480 x 240 x 12 static thin-extruded two-flap LBM visualization, an
+unstabilized 96^3 mirrored full-FSI attempt that aborts after negative `J` and
+NaN/Inf diagnostics, and a stabilized 96^3/8192-particle mirrored full-FSI run
+that completes the 50-step public tutorial time window.
+Step113 does not import the official Fluent mesh, does not run Fluent, does not
+reproduce the official dynamic mesh or exact structural model, and does not
+claim Fluent validation, exact Figure 29.3 jet equivalence, exact monitor
+equivalence, grid convergence, or production readiness.
+See docs/113_fluent_figure29_3_mirrored_fsi_simulation.md.
 
 ## Upstream LBM Note
 

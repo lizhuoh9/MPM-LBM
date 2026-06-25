@@ -20,6 +20,7 @@ DEFAULT_FLAP = {
     "normalized_thickness": 0.03,
     "z": [0.45, 0.55],
     "fixed_base": True,
+    "mirrored_pair": False,
 }
 DEFAULT_MATERIAL_REFERENCE = {
     "density": 1600.0,
@@ -57,14 +58,26 @@ def duct_flap_proxy_component_masks(points: np.ndarray, config) -> dict[str, np.
     pts = _as_points(points)
     duct = _duct_dict(config)
     flap = _flap_dict(config)
-    flap_min, flap_max = flap_bounds(config)
     duct_mask = _inside_bounds(pts, [duct["x"][0], duct["y"][0], duct["z"][0]], [duct["x"][1], duct["y"][1], duct["z"][1]])
-    flap_mask = _inside_bounds(pts, flap_min, flap_max)
-
-    base_top = min(flap_max[1], flap_min[1] + max(float(flap["normalized_thickness"]), 0.2 * float(flap["normalized_height"])))
-    base_mask = _inside_bounds(pts, flap_min, [flap_max[0], base_top, flap_max[2]]) & flap_mask
-    tip_start = max(flap_min[1], flap_max[1] - max(float(flap["normalized_thickness"]), 0.2 * float(flap["normalized_height"])))
-    tip_mask = _inside_bounds(pts, [flap_min[0], tip_start, flap_min[2]], flap_max) & flap_mask
+    flap_mask = np.zeros(len(pts), dtype=bool)
+    base_mask = np.zeros(len(pts), dtype=bool)
+    tip_mask = np.zeros(len(pts), dtype=bool)
+    for flap_min, flap_max, anchor_side in flap_bounds(config):
+        current_flap_mask = _inside_bounds(pts, flap_min, flap_max)
+        flap_mask |= current_flap_mask
+        base_thickness = max(float(flap["normalized_thickness"]), 0.2 * float(flap["normalized_height"]))
+        if anchor_side == "y_max":
+            base_min_y = max(flap_min[1], flap_max[1] - base_thickness)
+            current_base_mask = _inside_bounds(pts, [flap_min[0], base_min_y, flap_min[2]], flap_max) & current_flap_mask
+            tip_max_y = min(flap_max[1], flap_min[1] + base_thickness)
+            current_tip_mask = _inside_bounds(pts, flap_min, [flap_max[0], tip_max_y, flap_max[2]]) & current_flap_mask
+        else:
+            base_top = min(flap_max[1], flap_min[1] + base_thickness)
+            current_base_mask = _inside_bounds(pts, flap_min, [flap_max[0], base_top, flap_max[2]]) & current_flap_mask
+            tip_start = max(flap_min[1], flap_max[1] - base_thickness)
+            current_tip_mask = _inside_bounds(pts, [flap_min[0], tip_start, flap_min[2]], flap_max) & current_flap_mask
+        base_mask |= current_base_mask
+        tip_mask |= current_tip_mask
     return {
         "duct_context": duct_mask,
         "flap": flap_mask,
@@ -93,6 +106,7 @@ def duct_flap_proxy_sampling_stats(config) -> dict[str, Any]:
         "flap_anchor_y": float(flap["anchor_y"]),
         "flap_normalized_height": float(flap["normalized_height"]),
         "flap_normalized_thickness": float(flap["normalized_thickness"]),
+        "flap_count": len(flap_bounds(config)),
         "flap_height_over_duct_height": float(ratios["height_over_duct_height"]),
         "flap_thickness_over_duct_height": float(ratios["thickness_over_duct_height"]),
         "material_density": float(material["density"]),
@@ -131,10 +145,10 @@ def geometry_ratios(config) -> dict[str, float]:
     }
 
 
-def flap_bounds(config) -> tuple[np.ndarray, np.ndarray]:
+def flap_bounds(config) -> list[tuple[np.ndarray, np.ndarray, str]]:
     flap = _flap_dict(config)
     half_thickness = 0.5 * float(flap["normalized_thickness"])
-    flap_min = np.array(
+    lower_min = np.array(
         [
             float(flap["anchor_x"]) - half_thickness,
             float(flap["anchor_y"]),
@@ -142,7 +156,7 @@ def flap_bounds(config) -> tuple[np.ndarray, np.ndarray]:
         ],
         dtype=np.float64,
     )
-    flap_max = np.array(
+    lower_max = np.array(
         [
             float(flap["anchor_x"]) + half_thickness,
             float(flap["anchor_y"]) + float(flap["normalized_height"]),
@@ -150,7 +164,27 @@ def flap_bounds(config) -> tuple[np.ndarray, np.ndarray]:
         ],
         dtype=np.float64,
     )
-    return flap_min, flap_max
+    bounds = [(lower_min, lower_max, "y_min")]
+    if bool(flap.get("mirrored_pair", False)):
+        duct = _duct_dict(config)
+        upper_min = np.array(
+            [
+                float(flap["anchor_x"]) - half_thickness,
+                float(duct["y"][1]) - float(flap["normalized_height"]),
+                float(flap["z"][0]),
+            ],
+            dtype=np.float64,
+        )
+        upper_max = np.array(
+            [
+                float(flap["anchor_x"]) + half_thickness,
+                float(duct["y"][1]),
+                float(flap["z"][1]),
+            ],
+            dtype=np.float64,
+        )
+        bounds.append((upper_min, upper_max, "y_max"))
+    return bounds
 
 
 def duct_flap_proxy_static_geometry(n_grid: int, config, include_flap: bool = False) -> tuple[np.ndarray, dict[str, Any]]:
@@ -170,8 +204,10 @@ def duct_flap_proxy_static_geometry(n_grid: int, config, include_flap: bool = Fa
 
     flap_static_cell_count = 0
     if include_flap:
-        flap_min, flap_max = flap_bounds(config)
-        flap_mask = _inside_bounds(points, flap_min, flap_max).reshape(n_grid, n_grid, n_grid)
+        combined_flap_mask = np.zeros(len(points), dtype=bool)
+        for flap_min, flap_max, _anchor_side in flap_bounds(config):
+            combined_flap_mask |= _inside_bounds(points, flap_min, flap_max)
+        flap_mask = combined_flap_mask.reshape(n_grid, n_grid, n_grid)
         solid[flap_mask] = 1
         flap_static_cell_count = int(np.count_nonzero(flap_mask))
 
@@ -184,6 +220,7 @@ def duct_flap_proxy_static_geometry(n_grid: int, config, include_flap: bool = Fa
         "all_fluid_geometry_used": bool(solid_count == 0),
         "duct_wall_cell_count": int(solid_count - flap_static_cell_count),
         "flap_static_cell_count": flap_static_cell_count,
+        "flap_count": len(flap_bounds(config)),
         "fluid_cell_count": fluid_count,
         "geometry_name": f"geo_duct_flap_proxy_{n_grid}.dat",
         "inlet_fluid_cell_count": int(np.count_nonzero(inlet_fluid)),

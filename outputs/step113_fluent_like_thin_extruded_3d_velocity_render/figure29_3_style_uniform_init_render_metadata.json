@@ -1,0 +1,13 @@
+{
+  "source_npz": "outputs\\step113_fluent_like_thin_extruded_3d_velocity_render\\fluent_like_two_flap_thin_extruded_uniform_init_snapshots.npz",
+  "png_paths": [
+    "outputs\\step113_fluent_like_thin_extruded_3d_velocity_render\\figure29_3_style_uniform_init_step1200_scale0_28p1.png",
+    "outputs\\step113_fluent_like_thin_extruded_3d_velocity_render\\figure29_3_style_uniform_init_step1200_field_only.png"
+  ],
+  "color_scale_mps": [
+    0.0,
+    28.1
+  ],
+  "step": 1200,
+  "zmid": 6
+}

@@ -1,0 +1,39 @@
+{
+  "source": "procedural copy from Ansys public tutorial description, not official flap.msh import",
+  "ansys_public_url": "https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/flu_tg/flu_tg_fsi_2way.html",
+  "dimensions_m": {
+    "duct_length": 0.1,
+    "duct_height": 0.04,
+    "flap_height": 0.01,
+    "flap_thickness": 0.003
+  },
+  "flap_count_in_rendered_full_domain": 2,
+  "symmetry_note": "The Fluent tutorial says symmetry allows only half of the duct to be modeled; this visualization mirrors the half-domain to show the full two-flap duct.",
+  "grid": {
+    "nx": 480,
+    "ny": 240,
+    "nz": 12,
+    "dx_m": 0.00020833333333333335,
+    "dy_m": 0.00016666666666666666,
+    "thin_layer_periodic_z": true,
+    "cell_count": 1382400
+  },
+  "refinement_vs_step112_x": 10.0,
+  "lbm": {
+    "target_u_lbm": 0.02,
+    "inlet_velocity_mps": 10.0,
+    "velocity_scale_mps_per_lbm": 500.0,
+    "steps": 2000,
+    "niu": 0.08
+  },
+  "scope": "thin extruded 3D LBM flow visualization with static solid flaps; not FSI deformation, not Fluent mesh equivalence",
+  "npz_path": "outputs\\step113_fluent_like_thin_extruded_3d_velocity_render\\fluent_like_two_flap_thin_extruded_velocity_snapshots_2000step.npz",
+  "elapsed_seconds": 100.20623880001949,
+  "final_stats": {
+    "max_v": 0.07802935689687729,
+    "rho_min": 0.987831711769104,
+    "rho_max": 1.007782220840454,
+    "mass_total": 1350025.125,
+    "force_norm_max": 0.0
+  }
+}

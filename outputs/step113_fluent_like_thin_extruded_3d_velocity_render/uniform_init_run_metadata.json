@@ -1,0 +1,27 @@
+{
+  "source": "procedural Figure 29.3-style run, uniform 10m/s initial condition, not Fluent mesh import",
+  "grid": [
+    480,
+    240,
+    12
+  ],
+  "steps": 1200,
+  "target_u_lbm": 0.02,
+  "velocity_scale_mps_per_lbm": 500.0,
+  "dimensions_m": {
+    "duct_length": 0.1,
+    "duct_height": 0.04,
+    "flap_height": 0.01,
+    "flap_thickness": 0.003
+  },
+  "scope": "static two-flap thin extruded LBM flow visualization, no FSI deformation",
+  "npz_path": "outputs\\step113_fluent_like_thin_extruded_3d_velocity_render\\fluent_like_two_flap_thin_extruded_uniform_init_snapshots.npz",
+  "elapsed_seconds": 64.72201739999582,
+  "final_stats": {
+    "max_v": 0.061686672270298004,
+    "rho_min": 0.9912902116775513,
+    "rho_max": 1.0205639600753784,
+    "mass_total": 1354572.375,
+    "force_norm_max": 0.0
+  }
+}

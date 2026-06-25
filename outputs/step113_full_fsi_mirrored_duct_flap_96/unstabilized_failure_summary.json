@@ -1,0 +1,29 @@
+{
+  "run_type": "unstabilized_full_two_way_fsi_mirrored_duct_flap_proxy",
+  "source_note": "Manual consolidation of the console diagnostics observed during the aborted Step113 full-FSI run. The driver aborted before a persistent diagnostics time series was written.",
+  "grid": {
+    "n_grid": 96,
+    "cell_count": 884736
+  },
+  "particles": 8192,
+  "coupling_mode": "moving_boundary",
+  "geometry": "mirrored duct-flap proxy with two flaps",
+  "requested_official_fsi_steps": 50,
+  "lbm_substeps_per_fsi_step": 240,
+  "target_inlet_velocity_mps": 10.0,
+  "target_u_lbm": 0.02,
+  "official_fsi_dt_s": 0.0005,
+  "material_reference": {
+    "density": 1600.0,
+    "youngs_modulus": 1000000.0,
+    "poisson_ratio": 0.47
+  },
+  "failure": {
+    "status": "aborted",
+    "first_negative_J_step": 5,
+    "abort_step": 6,
+    "error": "RuntimeError: driver diagnostics contains NaN or Inf",
+    "interpretation": "The official-material two-flap proxy is structurally unstable under the uncapped/unstabilized full-FSI settings; deformation blows up before the 50-step transient can complete."
+  },
+  "step_data_csv": "outputs/step113_full_fsi_mirrored_duct_flap_96/unstabilized_failure_steps.csv"
+}

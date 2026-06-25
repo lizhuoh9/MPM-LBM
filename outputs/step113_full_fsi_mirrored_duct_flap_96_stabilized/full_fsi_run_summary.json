@@ -1,0 +1,48 @@
+{
+  "run_type": "stabilized_full_two_way_fsi_mirrored_duct_flap_proxy",
+  "scope_note": "Procedural Ansys-public-description geometry; not official Fluent mesh import and not Fluent validation. Uses lock_z, damping, smaller MPM substeps, and capped reaction for stability.",
+  "grid": {
+    "n_grid": 96,
+    "cell_count": 884736
+  },
+  "particles": 8192,
+  "official_fsi_steps": 50,
+  "lbm_substeps": 12000,
+  "mpm_substeps": 250,
+  "snapshot_path": "outputs\\step113_full_fsi_mirrored_duct_flap_96_stabilized\\mirrored_two_flap_full_fsi_velocity_snapshots.npz",
+  "final_diagnostics": {
+    "step": 50,
+    "total_mpm_substeps": 250,
+    "coupling_mode": "moving_boundary",
+    "rho_min": 0.9999998807907104,
+    "rho_max": 1.012130856513977,
+    "lbm_max_v": 0.049227576702833176,
+    "fluid_mean_ux": 0.016015877947211266,
+    "projection_zone_fluid_mean_ux": 0.0007326366030611098,
+    "far_field_fluid_mean_ux": 0.016325032338500023,
+    "solid_mean_vx_norm": 0.0033389825839549303,
+    "mpm_min_J": 0.9995114803314209,
+    "mpm_max_speed": 0.009615207090973854,
+    "projected_mass": 0.883334755897522,
+    "active_cell_count": 1868,
+    "cell_force_max_norm": 0.0,
+    "hydro_force_max_norm": 0.4094982445240021,
+    "bb_link_count": 47266,
+    "bb_max_correction": 5.764670731878141e-07,
+    "active_reaction_particle_count": 8192,
+    "max_grid_reaction_norm": 0.00041913753375411034,
+    "elapsed_seconds": 307.9443755999964
+  },
+  "timing": {
+    "init_time": 35.38220560000627,
+    "projection_time": 0.618726699904073,
+    "coupling_time": 13.48999909957638,
+    "lbm_step_time": 218.86952140028006,
+    "mpm_substep_time": 68.73602340000798,
+    "diagnostics_time": 6.074685200030217,
+    "export_time": 5.5000127758830786e-06,
+    "wall_velocity_application_time": 0.0,
+    "geometry_motion_interface_time": 0.0,
+    "total_time": 343.3647441000212
+  }
+}

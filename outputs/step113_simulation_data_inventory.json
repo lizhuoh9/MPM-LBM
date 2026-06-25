@@ -1,0 +1,83 @@
+{
+  "step": 113,
+  "scope": "Velocity-cloud renders, static thin-extruded two-flap visualization, and mirrored full-FSI attempts for the Fluent Figure 29.3 duct/flap context.",
+  "validation_claim": "diagnostic_only_not_fluent_validation",
+  "official_source_context": "https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/flu_tg/flu_tg_fsi_2way.html",
+  "total_files": 52,
+  "total_bytes": 17283908,
+  "groups": [
+    {
+      "name": "step112_velocity_cloud_rerender",
+      "directory": "outputs/step112_velocity_cloud_render",
+      "file_count": 13,
+      "bytes": 477368,
+      "role": "Rerun of the Step112 best real-solver candidate to capture dense velocity fields for cloud rendering.",
+      "key_files": [
+        "outputs/step112_velocity_cloud_render/render_metadata.json",
+        "outputs/step112_velocity_cloud_render/step112_cap_1e-2_E_2e4_velocity_cloud_snapshots.npz",
+        "outputs/step112_velocity_cloud_render/step112_cap_1e-2_E_2e4_velocity_magnitude_zmid_montage.png"
+      ],
+      "limits": [
+        "48^3 grid",
+        "single-flap procedural proxy",
+        "visualization rerun only"
+      ]
+    },
+    {
+      "name": "thin_extruded_static_two_flap_flow",
+      "directory": "outputs/step113_fluent_like_thin_extruded_3d_velocity_render",
+      "file_count": 19,
+      "bytes": 10404798,
+      "role": "480 x 240 x 12 thin-layer LBM visualization of a static two-flap full duct.",
+      "key_files": [
+        "outputs/step113_fluent_like_thin_extruded_3d_velocity_render/run_metadata_2000step.json",
+        "outputs/step113_fluent_like_thin_extruded_3d_velocity_render/uniform_init_run_metadata.json",
+        "outputs/step113_fluent_like_thin_extruded_3d_velocity_render/fluent_like_two_flap_thin_extruded_velocity_snapshots_2000step.npz",
+        "outputs/step113_fluent_like_thin_extruded_3d_velocity_render/fluent_like_two_flap_thin_extruded_uniform_init_snapshots.npz",
+        "outputs/step113_fluent_like_thin_extruded_3d_velocity_render/figure29_3_style_uniform_init_step1200_scale0_28p1.png"
+      ],
+      "limits": [
+        "static flaps",
+        "not MPM",
+        "not two-way FSI"
+      ]
+    },
+    {
+      "name": "unstabilized_full_fsi_failure",
+      "directory": "outputs/step113_full_fsi_mirrored_duct_flap_96",
+      "file_count": 7,
+      "bytes": 2660532,
+      "role": "96^3 two-flap moving-boundary FSI attempt that aborted after structural instability.",
+      "key_files": [
+        "outputs/step113_full_fsi_mirrored_duct_flap_96/driver_config.json",
+        "outputs/step113_full_fsi_mirrored_duct_flap_96/mirrored_duct_flap_geometry_96_8192.json",
+        "outputs/step113_full_fsi_mirrored_duct_flap_96/unstabilized_failure_summary.json",
+        "outputs/step113_full_fsi_mirrored_duct_flap_96/unstabilized_failure_steps.csv"
+      ],
+      "limits": [
+        "aborted before 50 steps",
+        "negative MPM Jacobian at official step 5",
+        "NaN/Inf diagnostics after official step 6"
+      ]
+    },
+    {
+      "name": "stabilized_full_fsi_completed",
+      "directory": "outputs/step113_full_fsi_mirrored_duct_flap_96_stabilized",
+      "file_count": 13,
+      "bytes": 3741210,
+      "role": "Completed 50-step mirrored two-flap full-FSI run with stabilization and Figure-style velocity rendering.",
+      "key_files": [
+        "outputs/step113_full_fsi_mirrored_duct_flap_96_stabilized/full_fsi_run_summary.json",
+        "outputs/step113_full_fsi_mirrored_duct_flap_96_stabilized/diagnostics_timeseries.csv",
+        "outputs/step113_full_fsi_mirrored_duct_flap_96_stabilized/flap_tip_displacement_timeseries.csv",
+        "outputs/step113_full_fsi_mirrored_duct_flap_96_stabilized/mirrored_two_flap_full_fsi_velocity_snapshots.npz",
+        "outputs/step113_full_fsi_mirrored_duct_flap_96_stabilized/figure29_3_style_full_fsi_step050_scale0_28p1.png"
+      ],
+      "limits": [
+        "procedural voxel proxy",
+        "stabilization suppresses deformation",
+        "not Fluent mesh or Fluent validation"
+      ]
+    }
+  ]
+}

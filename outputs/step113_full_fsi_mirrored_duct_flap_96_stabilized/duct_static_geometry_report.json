@@ -1,0 +1,15 @@
+{
+  "all_fluid_geometry_used": false,
+  "duct_wall_cell_count": 848256,
+  "flap_count": 2,
+  "flap_static_cell_count": 0,
+  "fluid_cell_count": 36480,
+  "geo_path": "geo_duct_flap_proxy_96.dat",
+  "geometry_name": "geo_duct_flap_proxy_96.dat",
+  "inlet_fluid_cell_count": 380,
+  "lbm_boundary_condition_mode": "duct_velocity_inlet_pressure_outlet",
+  "pressure_outlet_fluid_cell_count": 380,
+  "solid_cell_count": 848256,
+  "static_geometry_scope": "duct walls only; flap is represented by MPM particles unless include_flap is true",
+  "top_bottom_wall_cells_present": true
+}

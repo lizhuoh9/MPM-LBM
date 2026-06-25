@@ -1,0 +1,35 @@
+{
+  "array_keys": [
+    "rho",
+    "v",
+    "f",
+    "F",
+    "solid",
+    "static_solid"
+  ],
+  "has_inf": false,
+  "has_nan": false,
+  "metadata": {
+    "lbm_boundary_condition_mode": "duct_velocity_inlet_pressure_outlet",
+    "lbm_restart_scope": "rho_velocity_populations",
+    "n_grid": 48,
+    "preflow_source": "real_lbm_simulation",
+    "target_u_lbm": [
+      0.02,
+      0.0,
+      0.0
+    ],
+    "total_lbm_substeps": 6000
+  },
+  "restart_lbm_boundary_condition_mode_matches": true,
+  "restart_loaded": true,
+  "restart_missing": false,
+  "restart_n_grid_matches": true,
+  "restart_path": "D:\\working\\squid robot\\LBM\\MPM-LBM\\outputs\\step111_real_lbm_preflow\\lbm_preflow_restart.npz",
+  "restart_required": true,
+  "restart_scope": "rho_velocity_populations",
+  "restart_target_u_lbm_matches": true,
+  "rho_max": 1.0198925733566284,
+  "rho_min": 0.9999998807907104,
+  "velocity_max_norm": 0.020000005140900612
+}

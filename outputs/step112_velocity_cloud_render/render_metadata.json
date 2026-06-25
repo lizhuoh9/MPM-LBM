@@ -1,0 +1,24 @@
+{
+  "candidate": "cap_1e-2_E_2e4",
+  "source": "rerun_from_step112_materialized_driver_config",
+  "config_path": "outputs\\step112_real_candidate_matrix\\materialized_driver_configs\\cap_1e-2_E_2e4.json",
+  "velocity_units": "m/s",
+  "velocity_scale_mps_per_lbm": 500.0,
+  "slice": "z_midplane",
+  "steps": [
+    0,
+    25,
+    50
+  ],
+  "npz_path": "outputs\\step112_velocity_cloud_render\\step112_cap_1e-2_E_2e4_velocity_cloud_snapshots.npz",
+  "color_vmin_mps": 0.0,
+  "color_vmax_mps_99p5": 9.536107063293457,
+  "png_paths": [
+    "outputs\\step112_velocity_cloud_render\\step112_cap_1e-2_E_2e4_velocity_magnitude_zmid_step000.png",
+    "outputs\\step112_velocity_cloud_render\\step112_cap_1e-2_E_2e4_velocity_magnitude_zmid_step025.png",
+    "outputs\\step112_velocity_cloud_render\\step112_cap_1e-2_E_2e4_velocity_magnitude_zmid_step050.png",
+    "outputs\\step112_velocity_cloud_render\\step112_cap_1e-2_E_2e4_velocity_magnitude_zmid_montage.png",
+    "outputs\\step112_velocity_cloud_render\\step112_cap_1e-2_E_2e4_velocity_magnitude_step050_max_over_z.png"
+  ],
+  "render_note": "solid/flap cells are overlaid in gray; velocity magnitude is from real rerun snapshots"
+}

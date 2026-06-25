@@ -1,0 +1,29 @@
+{
+  "bc_x_left": 2,
+  "bc_x_right": 1,
+  "duct_wall_cell_count": 848256,
+  "lbm_boundary_condition_mode": "duct_velocity_inlet_pressure_outlet",
+  "periodic_boundary_used": false,
+  "pressure_outlet_cell_count": 380,
+  "pressure_outlet_side": "max",
+  "target_u_lbm": [
+    0.02,
+    0.0,
+    0.0
+  ],
+  "target_u_lbm_applied_to_inlet": true,
+  "target_u_lbm_applied_to_solid_initial_velocity": false,
+  "vel_bc_x_left": [
+    0.02,
+    0.0,
+    0.0
+  ],
+  "vel_bc_x_right": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "velocity_inlet_axis": "x",
+  "velocity_inlet_cell_count": 380,
+  "velocity_inlet_side": "min"
+}

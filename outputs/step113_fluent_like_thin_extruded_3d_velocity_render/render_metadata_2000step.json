@@ -1,0 +1,19 @@
+{
+  "npz_path": "outputs\\step113_fluent_like_thin_extruded_3d_velocity_render\\fluent_like_two_flap_thin_extruded_velocity_snapshots_2000step.npz",
+  "png_paths": [
+    "outputs\\step113_fluent_like_thin_extruded_3d_velocity_render\\fluent_like_two_flap_480x240x12_speed_zmid_step0500.png",
+    "outputs\\step113_fluent_like_thin_extruded_3d_velocity_render\\fluent_like_two_flap_480x240x12_speed_zmid_step1000.png",
+    "outputs\\step113_fluent_like_thin_extruded_3d_velocity_render\\fluent_like_two_flap_480x240x12_speed_zmid_step1500.png",
+    "outputs\\step113_fluent_like_thin_extruded_3d_velocity_render\\fluent_like_two_flap_480x240x12_speed_zmid_step2000.png",
+    "outputs\\step113_fluent_like_thin_extruded_3d_velocity_render\\fluent_like_two_flap_480x240x12_speed_zmid_step2000_flap_zoom.png",
+    "outputs\\step113_fluent_like_thin_extruded_3d_velocity_render\\fluent_like_two_flap_480x240x12_speed_zmid_montage.png"
+  ],
+  "grid": [
+    480,
+    240,
+    12
+  ],
+  "z_slice_index": 6,
+  "color_vmin_mps": 0.0,
+  "color_vmax_mps_99p5": 26.243440628051758
+}

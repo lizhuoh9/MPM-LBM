@@ -1,0 +1,17 @@
+{
+  "png_paths": [
+    "outputs\\step113_full_fsi_mirrored_duct_flap_96_stabilized\\figure29_3_style_full_fsi_step050_scale0_28p1.png",
+    "outputs\\step113_full_fsi_mirrored_duct_flap_96_stabilized\\figure29_3_style_full_fsi_step050_field_only.png"
+  ],
+  "max_speed_mps": 24.613786697387695,
+  "mean_fluid_speed_mps": 11.674132347106934,
+  "color_scale_mps": [
+    0.0,
+    28.1
+  ],
+  "zmid": 48,
+  "crop_y_cells": [
+    27,
+    69
+  ]
+}
