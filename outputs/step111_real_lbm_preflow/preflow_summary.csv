@@ -1,0 +1,7 @@
+metric,value
+preflow_pass,True
+preflow_source,real_lbm_simulation
+real_lbm_step_called_count,1
+restart_payload_has_inf,False
+restart_payload_has_nan,False
+row_count,1

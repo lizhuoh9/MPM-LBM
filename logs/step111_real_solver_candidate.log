@@ -1,0 +1,4 @@
+[OK] Step111 real solver candidate finished
+completed_official_fsi_steps=50
+completed_lbm_substeps=6000
+peak_nearest_monitor_m=0.0007980134847734523

@@ -1,0 +1,43 @@
+{
+  "rows": [
+    {
+      "all_metrics_finite": true,
+      "direct_quantitative_equivalence_allowed": false,
+      "error_source": "real_solver_monitor_timeseries",
+      "final_abs_error_m": 0.0007380134847734522,
+      "final_reference_m": 6e-05,
+      "final_relative_error": 12.300224746224202,
+      "final_solver_m": 0.0007980134847734523,
+      "monitor_equivalence": false,
+      "monitor_used": "nearest_public_monitor_point",
+      "normalized_rms_error": 0.7131889376595728,
+      "peak_abs_error_m": 0.00040301348477345225,
+      "peak_reference_m": 0.000395,
+      "peak_relative_error": 1.0202873032239297,
+      "peak_solver_m": 0.0007980134847734523,
+      "peak_time_error_s": 0.021,
+      "reference_loaded": true,
+      "rms_abs_error_m": 0.0002817096303755313,
+      "sample_count": 51,
+      "shape_correlation": 0.07043275817678035,
+      "sign_consistency": true,
+      "solver_curve_loaded": true,
+      "solver_curve_time_end_s": 0.025,
+      "solver_curve_time_start_s": 0.0,
+      "stable": false,
+      "time_of_peak_reference_s": 0.004,
+      "time_of_peak_solver_s": 0.025,
+      "validation_claim_allowed": false
+    }
+  ],
+  "summary": {
+    "direct_quantitative_equivalence_allowed": false,
+    "error_source": "real_solver_monitor_timeseries",
+    "normalized_rms_beats_step108": false,
+    "peak_solver_above_minimum": true,
+    "row_count": 1,
+    "shape_correlation_beats_step108": false,
+    "step111_error_comparison_pass": false,
+    "validation_claim_allowed": false
+  }
+}

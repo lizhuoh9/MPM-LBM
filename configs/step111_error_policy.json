@@ -1,0 +1,20 @@
+{
+  "direct_quantitative_equivalence_allowed": false,
+  "error_source": "real_solver_monitor_timeseries",
+  "expected_solver_curve_rows": 51,
+  "max_normalized_rms_error": 0.616126763475836,
+  "min_peak_solver_m": 1e-5,
+  "min_shape_correlation": 0.07866350821657236,
+  "monitor_equivalence": false,
+  "monitor_used": "nearest_public_monitor_point",
+  "reference_curve_path": "benchmarks/public/fluent_fsi_2way_digitized/figure_29_4_structural_point_flap_digitized.csv",
+  "relative_error_epsilon_m": 1e-12,
+  "solver_curve_path": "outputs/step111_real_solver_candidate/monitor_timeseries_nearest_public_monitor_point.csv",
+  "solver_displacement_column": "total_displacement_m",
+  "solver_time_column": "time_s",
+  "step108_normalized_rms_error": 0.616126763475836,
+  "step108_peak_solver_m": 1.2332112646618043e-6,
+  "step108_shape_correlation": 0.07866350821657236,
+  "time_end_s": 0.025,
+  "validation_claim_allowed": false
+}

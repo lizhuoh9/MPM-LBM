@@ -1,0 +1,22 @@
+{
+  "direct_equivalence_claim_patterns": [
+    "validated against Fluent",
+    "matches Fluent",
+    "quantitative equivalence",
+    "production ready"
+  ],
+  "forbidden_filename_tokens": [
+    ".cas",
+    ".dat.h5",
+    ".msh",
+    ".jou"
+  ],
+  "large_file_threshold_bytes": 5000000,
+  "max_step111_total_size_mb": 20.0,
+  "validation_claim_patterns": [
+    "Fluent validation passed",
+    "official mesh-case-data",
+    "official preflow",
+    "monitor exact"
+  ]
+}

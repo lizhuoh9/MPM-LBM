@@ -1,0 +1,45 @@
+{
+  "rows": [
+    {
+      "direct_quantitative_equivalence_allowed": false,
+      "monitor_name": "nearest_public_monitor_point",
+      "monitor_source": "real_solver_particles",
+      "peak_displacement_m": 0.0007980134847734523,
+      "row_count": 51,
+      "stable": true,
+      "time_end_s": 0.025,
+      "time_start_s": 0.0,
+      "validation_claim_allowed": false
+    },
+    {
+      "direct_quantitative_equivalence_allowed": false,
+      "monitor_name": "top_5_nearest_public_monitor_mean",
+      "monitor_source": "real_solver_particles",
+      "peak_displacement_m": 0.0007841417344438686,
+      "row_count": 51,
+      "stable": true,
+      "time_end_s": 0.025,
+      "time_start_s": 0.0,
+      "validation_claim_allowed": false
+    },
+    {
+      "direct_quantitative_equivalence_allowed": false,
+      "monitor_name": "radius_public_monitor_mean",
+      "monitor_source": "real_solver_particles",
+      "peak_displacement_m": 0.0006086692522193093,
+      "row_count": 51,
+      "stable": true,
+      "time_end_s": 0.025,
+      "time_start_s": 0.0,
+      "validation_claim_allowed": false
+    }
+  ],
+  "summary": {
+    "direct_quantitative_equivalence_allowed": false,
+    "monitor_alignment_pass": true,
+    "monitor_source": "real_solver_particles",
+    "required_monitor_count": 3,
+    "row_count": 3,
+    "validation_claim_allowed": false
+  }
+}

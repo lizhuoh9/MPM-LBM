@@ -1,0 +1,4 @@
+direct_quantitative_equivalence_allowed,monitor_name,monitor_source,peak_displacement_m,row_count,stable,time_end_s,time_start_s,validation_claim_allowed
+False,nearest_public_monitor_point,real_solver_particles,0.0007980134847734523,51,True,0.025,0.0,False
+False,top_5_nearest_public_monitor_mean,real_solver_particles,0.0007841417344438686,51,True,0.025,0.0,False
+False,radius_public_monitor_mean,real_solver_particles,0.0006086692522193093,51,True,0.025,0.0,False

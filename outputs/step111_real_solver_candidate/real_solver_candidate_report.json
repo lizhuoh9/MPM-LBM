@@ -1,0 +1,37 @@
+{
+  "rows": [
+    {
+      "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+      "completed_lbm_substeps": 6000,
+      "completed_official_fsi_steps": 50,
+      "diagnostics_row_count": 51,
+      "direct_quantitative_equivalence_allowed": false,
+      "driver_run_called": true,
+      "fixed_base_constraint_applied": true,
+      "fixed_base_max_displacement_norm": 0.0,
+      "fixed_base_max_velocity_norm": 0.0,
+      "fixed_base_particle_count": 319,
+      "flap_tip_timeseries_row_count": 51,
+      "has_inf": false,
+      "has_nan": false,
+      "hydro_force_max_norm_max": 0.4193277359008789,
+      "max_grid_reaction_norm_max": 0.008432583883404732,
+      "nearest_monitor_timeseries_row_count": 51,
+      "peak_nearest_monitor_m": 0.0007980134847734523,
+      "preflow_source": "real_lbm_simulation",
+      "restart_loaded": true,
+      "row_name": "cap_2e-2_E_2e4",
+      "solver_curve_time_end_s": 0.025,
+      "stable": true,
+      "step36_squid_wall_velocity_config_used": false,
+      "validation_claim_allowed": false
+    }
+  ],
+  "summary": {
+    "allowed_claim": "A real FSIDriver3D candidate using the Step110-selected parameters was run over the public tutorial time window and compared against the Step107 public-plot digitization.",
+    "direct_quantitative_equivalence_allowed": false,
+    "real_solver_candidate_pass": true,
+    "row_count": 1,
+    "validation_claim_allowed": false
+  }
+}

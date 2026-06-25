@@ -1,0 +1,6 @@
+metric,value
+allowed_claim,A real FSIDriver3D candidate using the Step110-selected parameters was run over the public tutorial time window and compared against the Step107 public-plot digitization.
+direct_quantitative_equivalence_allowed,False
+real_solver_candidate_pass,True
+row_count,1
+validation_claim_allowed,False

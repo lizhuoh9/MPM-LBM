@@ -1,0 +1,33 @@
+{
+  "rows": [
+    {
+      "completed_lbm_substeps": 6000,
+      "elapsed_seconds": 14.699149100022623,
+      "has_inf": false,
+      "has_nan": false,
+      "inlet_plane_mean_ux_final": 0.02000000700354576,
+      "mid_duct_plane_mean_ux_final": 0.012313909828662872,
+      "n_grid": 48,
+      "outlet_plane_mean_ux_final": 0.012407145462930202,
+      "preflow_source": "real_lbm_simulation",
+      "real_lbm_step_called": true,
+      "restart_metadata_matches_config": true,
+      "restart_path": "outputs/step111_real_lbm_preflow/lbm_preflow_restart.npz",
+      "restart_reload_arrays_match": true,
+      "restart_written": true,
+      "rho_max_final": 1.0198925733566284,
+      "rho_min_final": 0.9999998807907104,
+      "row_name": "real_lbm_preflow_48_6000substeps",
+      "stable": true,
+      "target_u_lbm_x": 0.02
+    }
+  ],
+  "summary": {
+    "preflow_pass": true,
+    "preflow_source": "real_lbm_simulation",
+    "real_lbm_step_called_count": 1,
+    "restart_payload_has_inf": false,
+    "restart_payload_has_nan": false,
+    "row_count": 1
+  }
+}

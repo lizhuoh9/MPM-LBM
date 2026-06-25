@@ -1,0 +1,11 @@
+metric,value
+artifact_budget_pass,True
+artifact_manifest_pass,True
+file_count,7649
+large_file_count,0
+private_absolute_path_count,0
+step111_file_count,74
+step111_official_image_count,0
+step111_proprietary_file_count,0
+step111_total_size_bytes,1414164
+step111_total_size_mb,1.3486518859863281

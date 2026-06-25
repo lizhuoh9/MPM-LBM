@@ -1,0 +1,9 @@
+metric,value
+direct_quantitative_equivalence_allowed,False
+error_source,real_solver_monitor_timeseries
+normalized_rms_beats_step108,False
+peak_solver_above_minimum,True
+row_count,1
+shape_correlation_beats_step108,False
+step111_error_comparison_pass,False
+validation_claim_allowed,False

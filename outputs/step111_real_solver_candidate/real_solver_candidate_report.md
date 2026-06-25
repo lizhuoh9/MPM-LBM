@@ -1,0 +1,7 @@
+# Step111 Real Solver Candidate
+
+This is a real solver run over the public tutorial time window and is not a vendor-case parity statement.
+
+| row_name | driver_run_called | canonical_driver_module | preflow_source | restart_loaded | completed_official_fsi_steps | completed_lbm_substeps | diagnostics_row_count | flap_tip_timeseries_row_count | nearest_monitor_timeseries_row_count | solver_curve_time_end_s | peak_nearest_monitor_m | hydro_force_max_norm_max | max_grid_reaction_norm_max | fixed_base_particle_count | fixed_base_constraint_applied | fixed_base_max_displacement_norm | fixed_base_max_velocity_norm | step36_squid_wall_velocity_config_used | has_nan | has_inf | validation_claim_allowed | direct_quantitative_equivalence_allowed | stable |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| cap_2e-2_E_2e4 | True | src.mpm_lbm.sim.drivers.fsi_driver | real_lbm_simulation | True | 50 | 6000 | 51 | 51 | 51 | 0.025 | 0.0007980134847734523 | 0.4193277359008789 | 0.008432583883404732 | 319 | True | 0.0 | 0.0 | False | False | False | False | False | True |

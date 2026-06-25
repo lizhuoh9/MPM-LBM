@@ -1,0 +1,4 @@
+[OK] Step111 error comparison finished
+step111_error_comparison_pass=False
+normalized_rms_error=0.7131889376595728
+shape_correlation=0.07043275817678035
