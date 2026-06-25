@@ -36,6 +36,7 @@
   "sim_config_selected_defaults": {
     "domain_length": 1.0,
     "lbm_niu": 0.1,
+    "lbm_relaxation_semantics": "legacy_external_solver_relaxation_parameter",
     "lbm_rho0": 1.0,
     "mpm_dt": 0.0004,
     "mpm_substeps_per_lbm_step": 10,
@@ -43,7 +44,7 @@
   },
   "valid_coupling_modes": ["none", "penalty", "moving_boundary"],
   "valid_geometry_types": ["box", "ellipsoid", "squid_proxy", "duct_flap_proxy", "voxel", "mesh"],
-  "valid_reaction_transfer_modes": ["engineering", "link_area_experimental"],
+  "valid_reaction_transfer_modes": ["engineering", "link_area_experimental", "interface_traction_conservative"],
   "solver_behavior_changed": false,
   "physics_feature_expansion": false
 }

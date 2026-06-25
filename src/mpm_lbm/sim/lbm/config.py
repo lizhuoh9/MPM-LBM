@@ -1,6 +1,17 @@
 from dataclasses import dataclass
 from typing import Tuple
 
+from .relaxation_semantics import (
+    LEGACY_EXTERNAL_SOLVER_RELAXATION_PARAMETER,
+    STANDARD_LATTICE_KINEMATIC_VISCOSITY,
+)
+
+
+VALID_LBM_RELAXATION_SEMANTICS = (
+    LEGACY_EXTERNAL_SOLVER_RELAXATION_PARAMETER,
+    STANDARD_LATTICE_KINEMATIC_VISCOSITY,
+)
+
 
 @dataclass
 class LBMConfig:
@@ -10,6 +21,7 @@ class LBMConfig:
 
     niu: float = 0.1
     rho0: float = 1.0
+    relaxation_semantics: str = LEGACY_EXTERNAL_SOLVER_RELAXATION_PARAMETER
     sparse_storage: bool = False
 
     force: Tuple[float, float, float] = (0.0, 0.0, 0.0)
@@ -34,3 +46,7 @@ class LBMConfig:
     vel_bc_y_right: Tuple[float, float, float] = (0.0, 0.0, 0.0)
     vel_bc_z_left: Tuple[float, float, float] = (0.0, 0.0, 0.0)
     vel_bc_z_right: Tuple[float, float, float] = (0.0, 0.0, 0.0)
+
+    def __post_init__(self):
+        if self.relaxation_semantics not in VALID_LBM_RELAXATION_SEMANTICS:
+            raise ValueError(f"relaxation_semantics must be one of {VALID_LBM_RELAXATION_SEMANTICS}")

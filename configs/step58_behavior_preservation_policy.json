@@ -20,6 +20,10 @@
     "hydro_force_max_norm",
     "bb_link_count",
     "bb_max_correction",
+    "mb_subcycle_force_accumulation_mode",
+    "mb_subcycle_force_sample_count",
+    "mb_subcycle_force_accum_norm_max",
+    "mb_subcycle_force_mean_norm_max",
     "active_reaction_particle_count",
     "max_grid_reaction_norm",
     "elapsed_seconds"

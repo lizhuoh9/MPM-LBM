@@ -9,6 +9,7 @@
     "bc_z_right": 0,
     "force": [0.0, 0.0, 0.0],
     "niu": 0.1,
+    "relaxation_semantics": "legacy_external_solver_relaxation_parameter",
     "rho0": 1.0,
     "rho_bc_x_left": 1.0,
     "rho_bc_x_right": 1.0,

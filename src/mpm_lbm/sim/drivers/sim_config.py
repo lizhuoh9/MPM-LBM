@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from typing import Optional
 
 from ..lbm.config import LBMConfig
+from ..lbm.relaxation_semantics import LEGACY_EXTERNAL_SOLVER_RELAXATION_PARAMETER
 from ..mpm.config import MPMConfig
 
 
@@ -13,6 +14,7 @@ class UnifiedSimConfig:
     mpm_substeps_per_lbm_step: int = 10
     lbm_niu: float = 0.1
     lbm_rho0: float = 1.0
+    lbm_relaxation_semantics: str = LEGACY_EXTERNAL_SOLVER_RELAXATION_PARAMETER
     lbm_dt_phys_override_s: Optional[float] = None
 
     def __post_init__(self):
@@ -60,6 +62,7 @@ class UnifiedSimConfig:
             "nz": self.nz,
             "niu": self.lbm_niu,
             "rho0": self.lbm_rho0,
+            "relaxation_semantics": self.lbm_relaxation_semantics,
         }
         values.update(overrides)
         return LBMConfig(**values)

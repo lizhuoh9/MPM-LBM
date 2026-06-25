@@ -7,6 +7,11 @@ except ModuleNotFoundError:
 
 from .config import LBMConfig
 from .relaxation_semantics import tau_from_legacy_external_solver_parameter
+from .relaxation_semantics import (
+    LEGACY_EXTERNAL_SOLVER_RELAXATION_PARAMETER,
+    STANDARD_LATTICE_KINEMATIC_VISCOSITY,
+    tau_from_lattice_kinematic_viscosity,
+)
 
 #ti.init(arch=ti.gpu, dynamic_index=False, kernel_profiler=True, print_ir=False)
 
@@ -27,6 +32,7 @@ class LBMFluid3D:
         self.fx,self.fy,self.fz = config.force
         self.niu = config.niu
         self.rho0 = config.rho0
+        self.relaxation_semantics = config.relaxation_semantics
 
         self.max_v=ti.field(ti.f32,shape=())
         self.rho_min = ti.field(ti.f32, shape=())
@@ -97,6 +103,10 @@ class LBMFluid3D:
         self.solid_vel = ti.Vector.field(3, ti.f32, shape=(nx,ny,nz))
         self.cell_force = ti.Vector.field(3, ti.f32, shape=(nx,ny,nz))
         self.hydro_force = ti.Vector.field(3, ti.f32, shape=(nx,ny,nz))
+        self.hydro_force_accum = ti.Vector.field(3, ti.f32, shape=(nx,ny,nz))
+        self.mb_subcycle_force_sample_count = ti.field(ti.i32, shape=())
+        self.mb_subcycle_force_accum_norm_max = ti.field(ti.f32, shape=())
+        self.mb_subcycle_force_mean_norm_max = ti.field(ti.f32, shape=())
         self.bb_link_count = ti.field(ti.i32, shape=())
         self.bb_max_correction = ti.field(ti.f32, shape=())
         self.bb_net_fluid_impulse = ti.Vector.field(3, ti.f32, shape=())
@@ -175,7 +185,12 @@ class LBMFluid3D:
         self.bc_vel_z_left = [self.vx_bczl, self.vy_bczl, self.vz_bczl]
         self.bc_vel_z_right = [self.vx_bczr, self.vy_bczr, self.vz_bczr]
 
-        self.tau_f = tau_from_legacy_external_solver_parameter(self.niu)
+        if self.relaxation_semantics == STANDARD_LATTICE_KINEMATIC_VISCOSITY:
+            self.tau_f = tau_from_lattice_kinematic_viscosity(self.niu)
+        elif self.relaxation_semantics == LEGACY_EXTERNAL_SOLVER_RELAXATION_PARAMETER:
+            self.tau_f = tau_from_legacy_external_solver_parameter(self.niu)
+        else:
+            raise ValueError(f"unsupported LBM relaxation semantics: {self.relaxation_semantics}")
         self.s_v=1.0/self.tau_f
         self.s_other=8.0*(2.0-self.s_v)/(8.0-self.s_v)
 
@@ -334,6 +349,32 @@ class LBMFluid3D:
 
         for I in ti.grouped(self.rho):
             self.hydro_force[I] = ti.Vector([0.0, 0.0, 0.0])
+
+    @ti.kernel
+    def clear_moving_boundary_force_accumulator(self):
+        self.mb_subcycle_force_sample_count[None] = 0
+        self.mb_subcycle_force_accum_norm_max[None] = 0.0
+        self.mb_subcycle_force_mean_norm_max[None] = 0.0
+        for I in ti.grouped(self.rho):
+            self.hydro_force_accum[I] = ti.Vector([0.0, 0.0, 0.0])
+
+    @ti.kernel
+    def accumulate_moving_boundary_force_sample(self):
+        self.mb_subcycle_force_sample_count[None] += 1
+        for I in ti.grouped(self.rho):
+            self.hydro_force_accum[I] += self.hydro_force[I]
+            ti.atomic_max(self.mb_subcycle_force_accum_norm_max[None], self.hydro_force_accum[I].norm())
+
+    @ti.kernel
+    def finalize_moving_boundary_force_accumulator(self):
+        self.mb_subcycle_force_mean_norm_max[None] = 0.0
+        sample_count = self.mb_subcycle_force_sample_count[None]
+        if sample_count > 0:
+            inv_count = 1.0 / ti.cast(sample_count, ti.f32)
+            for I in ti.grouped(self.rho):
+                mean_force = self.hydro_force_accum[I] * inv_count
+                self.hydro_force[I] = mean_force
+                ti.atomic_max(self.mb_subcycle_force_mean_norm_max[None], mean_force.norm())
 
     @ti.kernel
     def streaming_moving_bounceback(self):
@@ -526,7 +567,11 @@ class LBMFluid3D:
             self.solid_vel[I] = ti.Vector([0.0, 0.0, 0.0])
             self.cell_force[I] = ti.Vector([0.0, 0.0, 0.0])
             self.hydro_force[I] = ti.Vector([0.0, 0.0, 0.0])
+            self.hydro_force_accum[I] = ti.Vector([0.0, 0.0, 0.0])
             self.reinit_flag[I] = ti.cast(0, ti.i8)
+        self.mb_subcycle_force_sample_count[None] = 0
+        self.mb_subcycle_force_accum_norm_max[None] = 0.0
+        self.mb_subcycle_force_mean_norm_max[None] = 0.0
 
     @ti.kernel
     def copy_solid_to_static(self):
@@ -775,6 +820,13 @@ class LBMFluid3D:
             "solid_force_by_dir": self.bb_solid_force_by_dir.to_numpy(),
             "correction_abs_sum_by_dir": self.bb_correction_abs_sum_by_dir.to_numpy(),
             "correction_abs_max_by_dir": self.bb_correction_abs_max_by_dir.to_numpy(),
+        }
+
+    def get_moving_boundary_accumulation_stats(self):
+        return {
+            "mb_subcycle_force_sample_count": int(self.mb_subcycle_force_sample_count[None]),
+            "mb_subcycle_force_accum_norm_max": float(self.mb_subcycle_force_accum_norm_max[None]),
+            "mb_subcycle_force_mean_norm_max": float(self.mb_subcycle_force_mean_norm_max[None]),
         }
 
     def step(self):

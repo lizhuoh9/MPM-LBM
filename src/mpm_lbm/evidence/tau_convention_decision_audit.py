@@ -34,7 +34,11 @@ def build_step71_tau_convention_decision_audit(
         value_row("standard_tau_convention_constant", standard_constant, "standard_lattice_kinematic_viscosity"),
         bool_row("fluid_source_uses_legacy_helper", "tau_from_legacy_external_solver_parameter" in fluid_source, True),
         bool_row("fluid_source_avoids_hardcoded_legacy_formula", "self.niu / 3.0 + 0.5" in fluid_source, False),
-        bool_row("fluid_source_avoids_standard_tau_default", "tau_from_lattice_kinematic_viscosity" in fluid_source, False),
+        bool_row(
+            "fluid_source_standard_tau_helper_available",
+            "tau_from_lattice_kinematic_viscosity" in fluid_source,
+            bool(policy["standard_lattice_viscosity_formula_available"]),
+        ),
     ]
     summary = {
         "row_count": len(rows),

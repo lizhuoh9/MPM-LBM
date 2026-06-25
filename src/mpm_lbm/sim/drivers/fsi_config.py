@@ -5,22 +5,41 @@ from pathlib import Path
 from typing import Optional, Tuple
 
 from ..geometry.config import VALID_GEOMETRY_TYPES
+from ..lbm.relaxation_semantics import (
+    LEGACY_EXTERNAL_SOLVER_RELAXATION_PARAMETER,
+    STANDARD_LATTICE_KINEMATIC_VISCOSITY,
+    tau_from_lattice_kinematic_viscosity,
+    tau_from_legacy_external_solver_parameter,
+)
 from .sim_config import UnifiedSimConfig
 
 
 VALID_COUPLING_MODES = ("none", "penalty", "moving_boundary")
-VALID_REACTION_TRANSFER_MODES = ("engineering", "link_area_experimental")
+VALID_REACTION_TRANSFER_MODES = ("engineering", "link_area_experimental", "interface_traction_conservative")
 VALID_LINK_AREA_POLICIES = ("uniform", "inverse_length", "length")
 VALID_BOUNDARY_MOTION_MODES = ("static", "prescribed_kinematic")
 VALID_WALL_VELOCITY_APPLICATION_MODES = ("disabled", "solid_vel_experimental")
 VALID_GEOMETRY_MOTION_MODES = ("static", "prescribed_kinematic")
 VALID_GEOMETRY_MOTION_APPLICATION_MODES = ("disabled", "diagnostic_only")
 VALID_LBM_BOUNDARY_CONDITION_MODES = ("default_periodic", "duct_velocity_inlet_pressure_outlet")
+VALID_LBM_OPEN_BOUNDARY_SEMANTICS = (
+    "equilibrium_all_population_reset",
+    "zou_he_reconstruct_unknowns",
+    "regularized_velocity_pressure",
+)
+IMPLEMENTED_LBM_OPEN_BOUNDARY_SEMANTICS = ("equilibrium_all_population_reset",)
+VALID_LBM_VISCOSITY_SEMANTICS = ("legacy_external", "physical_nu_mapping")
 VALID_FSI_EXCHANGE_MODES = ("one_lbm_step_per_fsi_step", "lbm_subcycled_per_fsi_step")
 VALID_LBM_RESTART_SCOPES = ("rho_velocity_populations",)
 VALID_MPM_PLANAR_CONSTRAINT_MODES = ("disabled", "lock_z")
 VALID_MPM_PLANAR_CONSTRAINT_AXES = ("z",)
 VALID_MPM_DAMPING_APPLICATIONS = ("disabled", "particle_velocity_post_g2p")
+VALID_SOLID_MODELS = ("finite_deformation_mpm", "small_strain_linear_elastic")
+IMPLEMENTED_SOLID_MODELS = ("finite_deformation_mpm",)
+VALID_SOLID_DIMENSIONALITIES = ("three_dimensional", "plane_strain_2d", "plane_stress_2d")
+IMPLEMENTED_SOLID_DIMENSIONALITIES = ("three_dimensional",)
+VALID_FLOW_DIMENSIONALITY_MODES = ("three_dimensional", "thin_3d_no_slip_z_walls", "d2q9_planar", "d3q19_quasi_2d_periodic_z")
+IMPLEMENTED_FLOW_DIMENSIONALITY_MODES = ("three_dimensional", "thin_3d_no_slip_z_walls")
 VALID_BOUNDARY_AXES = ("x",)
 VALID_BOUNDARY_SIDES = ("min", "max")
 
@@ -28,6 +47,12 @@ VALID_BOUNDARY_SIDES = ("min", "max")
 def _as_float_tuple(values, name):
     if len(values) != 3:
         raise ValueError(f"{name} must contain exactly three values")
+    return tuple(float(v) for v in values)
+
+
+def _as_float_pair(values, name):
+    if len(values) != 2:
+        raise ValueError(f"{name} must contain exactly two values")
     return tuple(float(v) for v in values)
 
 
@@ -48,6 +73,7 @@ class FSIDriverConfig:
     gravity: Tuple[float, float, float] = (0.0, 0.0, 0.0)
 
     lbm_boundary_condition_mode: str = "default_periodic"
+    lbm_open_boundary_semantics: str = "equilibrium_all_population_reset"
     velocity_inlet_axis: str = "x"
     velocity_inlet_side: str = "min"
     pressure_outlet_side: str = "max"
@@ -57,6 +83,10 @@ class FSIDriverConfig:
     target_u_lbm_for_dimensional_mapping: Optional[float] = None
     lbm_substeps_per_fsi_step: int = 1
     lbm_dt_phys_override_s: Optional[float] = None
+    fluid_density_kg_m3: float = 1.225
+    fluid_kinematic_viscosity_m2_s: float = 1.5e-5
+    target_reynolds_number: Optional[float] = None
+    lbm_viscosity_semantics: str = "legacy_external"
     fsi_exchange_mode: str = "one_lbm_step_per_fsi_step"
     lbm_restart_path: Optional[str] = None
     lbm_restart_required: bool = False
@@ -73,6 +103,9 @@ class FSIDriverConfig:
     mb_reaction_scale: float = 1.0
     mb_force_cap_norm: float = 1.0e-4
     reaction_transfer_mode: str = "engineering"
+    solid_model: str = "finite_deformation_mpm"
+    solid_dimensionality: str = "three_dimensional"
+    flow_dimensionality_mode: str = "three_dimensional"
     link_area_policy: str = "inverse_length"
     link_area_scale_min: float = 0.25
     link_area_scale_max: float = 2.0
@@ -94,6 +127,11 @@ class FSIDriverConfig:
     mpm_velocity_damping: float = 0.0
     mpm_damping_application: str = "disabled"
 
+    fluent_like_monitor_enabled: bool = False
+    fluent_like_monitor_physical_point_m: Tuple[float, float] = (0.0505, 0.0095)
+    fluent_like_monitor_nearest_count: int = 8
+    fluent_like_monitor_radius_m: Optional[float] = None
+
     output_interval: int = 10
     write_vtk: bool = False
     write_particles: bool = False
@@ -111,11 +149,18 @@ class FSIDriverConfig:
         object.__setattr__(self, "gravity", _as_float_tuple(self.gravity, "gravity"))
         object.__setattr__(self, "box_min", _as_float_tuple(self.box_min, "box_min"))
         object.__setattr__(self, "box_max", _as_float_tuple(self.box_max, "box_max"))
+        object.__setattr__(
+            self,
+            "fluent_like_monitor_physical_point_m",
+            _as_float_pair(self.fluent_like_monitor_physical_point_m, "fluent_like_monitor_physical_point_m"),
+        )
 
         if self.coupling_mode not in VALID_COUPLING_MODES:
             raise ValueError(f"coupling_mode must be one of {VALID_COUPLING_MODES}")
         if self.reaction_transfer_mode not in VALID_REACTION_TRANSFER_MODES:
             raise ValueError(f"reaction_transfer_mode must be one of {VALID_REACTION_TRANSFER_MODES}")
+        if self.reaction_transfer_mode == "interface_traction_conservative":
+            raise ValueError("reaction_transfer_mode='interface_traction_conservative' is planned but not implemented")
         if self.reaction_transfer_mode == "link_area_experimental" and self.coupling_mode != "moving_boundary":
             raise ValueError("reaction_transfer_mode='link_area_experimental' requires coupling_mode='moving_boundary'")
         if self.link_area_policy not in VALID_LINK_AREA_POLICIES:
@@ -176,6 +221,24 @@ class FSIDriverConfig:
             raise ValueError(f"geometry_type must be one of {VALID_GEOMETRY_TYPES}")
         if self.lbm_boundary_condition_mode not in VALID_LBM_BOUNDARY_CONDITION_MODES:
             raise ValueError(f"lbm_boundary_condition_mode must be one of {VALID_LBM_BOUNDARY_CONDITION_MODES}")
+        if self.lbm_open_boundary_semantics not in VALID_LBM_OPEN_BOUNDARY_SEMANTICS:
+            raise ValueError(f"lbm_open_boundary_semantics must be one of {VALID_LBM_OPEN_BOUNDARY_SEMANTICS}")
+        if self.lbm_open_boundary_semantics not in IMPLEMENTED_LBM_OPEN_BOUNDARY_SEMANTICS:
+            raise ValueError(f"lbm_open_boundary_semantics={self.lbm_open_boundary_semantics!r} is not implemented")
+        if self.lbm_viscosity_semantics not in VALID_LBM_VISCOSITY_SEMANTICS:
+            raise ValueError(f"lbm_viscosity_semantics must be one of {VALID_LBM_VISCOSITY_SEMANTICS}")
+        if self.solid_model not in VALID_SOLID_MODELS:
+            raise ValueError(f"solid_model must be one of {VALID_SOLID_MODELS}")
+        if self.solid_model not in IMPLEMENTED_SOLID_MODELS:
+            raise ValueError(f"solid_model={self.solid_model!r} is not implemented")
+        if self.solid_dimensionality not in VALID_SOLID_DIMENSIONALITIES:
+            raise ValueError(f"solid_dimensionality must be one of {VALID_SOLID_DIMENSIONALITIES}")
+        if self.solid_dimensionality not in IMPLEMENTED_SOLID_DIMENSIONALITIES:
+            raise ValueError(f"solid_dimensionality={self.solid_dimensionality!r} is not implemented")
+        if self.flow_dimensionality_mode not in VALID_FLOW_DIMENSIONALITY_MODES:
+            raise ValueError(f"flow_dimensionality_mode must be one of {VALID_FLOW_DIMENSIONALITY_MODES}")
+        if self.flow_dimensionality_mode not in IMPLEMENTED_FLOW_DIMENSIONALITY_MODES:
+            raise ValueError(f"flow_dimensionality_mode={self.flow_dimensionality_mode!r} is not implemented")
         if self.velocity_inlet_axis not in VALID_BOUNDARY_AXES:
             raise ValueError(f"velocity_inlet_axis must be one of {VALID_BOUNDARY_AXES}")
         if self.velocity_inlet_side not in VALID_BOUNDARY_SIDES:
@@ -211,7 +274,16 @@ class FSIDriverConfig:
         _validate_optional_positive(self.official_fsi_dt_s, "official_fsi_dt_s")
         _validate_optional_positive(self.target_u_lbm_for_dimensional_mapping, "target_u_lbm_for_dimensional_mapping")
         _validate_optional_positive(self.lbm_dt_phys_override_s, "lbm_dt_phys_override_s")
+        if self.fluid_density_kg_m3 <= 0.0:
+            raise ValueError("fluid_density_kg_m3 must be positive")
+        if self.fluid_kinematic_viscosity_m2_s <= 0.0:
+            raise ValueError("fluid_kinematic_viscosity_m2_s must be positive")
+        _validate_optional_positive(self.target_reynolds_number, "target_reynolds_number")
+        _validate_optional_positive(self.fluent_like_monitor_radius_m, "fluent_like_monitor_radius_m")
+        if self.fluent_like_monitor_nearest_count <= 0:
+            raise ValueError("fluent_like_monitor_nearest_count must be positive")
         self._validate_fsi_exchange_mapping()
+        self._validate_lbm_viscosity_mapping()
         if self.dynamic_solid_threshold < 0.0:
             raise ValueError("dynamic_solid_threshold must be non-negative")
         if self.beta_lbm <= 0.0:
@@ -264,6 +336,58 @@ class FSIDriverConfig:
         if not math.isclose(mapped_velocity, float(self.target_inlet_velocity_mps), rel_tol=1.0e-12, abs_tol=1.0e-9):
             raise ValueError("dimensional mapping does not recover target_inlet_velocity_mps")
 
+    def _validate_lbm_viscosity_mapping(self) -> None:
+        mapping = self.lbm_viscosity_mapping_report()
+        if not math.isfinite(float(mapping["tau"])) or float(mapping["tau"]) <= 0.5:
+            raise ValueError("LBM viscosity mapping must produce finite tau > 0.5")
+        if not math.isfinite(float(mapping["lbm_niu"])) or float(mapping["lbm_niu"]) <= 0.0:
+            raise ValueError("LBM viscosity mapping must produce finite positive lbm_niu")
+
+    def lbm_viscosity_mapping_report(self) -> dict:
+        if self.lbm_viscosity_semantics == "legacy_external":
+            legacy_niu = 0.1
+            return {
+                "lbm_viscosity_semantics": self.lbm_viscosity_semantics,
+                "physical_mapping_used": False,
+                "fluid_density_kg_m3": float(self.fluid_density_kg_m3),
+                "fluid_density_used_for_lbm_rho0": False,
+                "fluid_kinematic_viscosity_m2_s": float(self.fluid_kinematic_viscosity_m2_s),
+                "target_reynolds_number": None if self.target_reynolds_number is None else float(self.target_reynolds_number),
+                "legacy_lbm_niu": legacy_niu,
+                "nu_lbm": None,
+                "lbm_niu": legacy_niu,
+                "tau": tau_from_legacy_external_solver_parameter(legacy_niu),
+                "lbm_relaxation_semantics": LEGACY_EXTERNAL_SOLVER_RELAXATION_PARAMETER,
+                "physical_viscosity_validation_claim": False,
+            }
+
+        if self.lbm_viscosity_semantics != "physical_nu_mapping":
+            raise ValueError(f"unsupported lbm_viscosity_semantics: {self.lbm_viscosity_semantics}")
+
+        dx_phys_m = float(self.physical_duct_length_m) / float(self.n_grid)
+        dt_phys_s = float(
+            self.lbm_dt_phys_override_s
+            if self.lbm_dt_phys_override_s is not None
+            else self.mpm_substeps_per_lbm_step * self.mpm_dt
+        )
+        nu_lbm = float(self.fluid_kinematic_viscosity_m2_s) * dt_phys_s / (dx_phys_m * dx_phys_m)
+        tau = tau_from_lattice_kinematic_viscosity(nu_lbm)
+        return {
+            "lbm_viscosity_semantics": self.lbm_viscosity_semantics,
+            "physical_mapping_used": True,
+            "fluid_density_kg_m3": float(self.fluid_density_kg_m3),
+            "fluid_density_used_for_lbm_rho0": False,
+            "fluid_kinematic_viscosity_m2_s": float(self.fluid_kinematic_viscosity_m2_s),
+            "target_reynolds_number": None if self.target_reynolds_number is None else float(self.target_reynolds_number),
+            "dx_phys_m": dx_phys_m,
+            "dt_phys_s": dt_phys_s,
+            "nu_lbm": nu_lbm,
+            "lbm_niu": nu_lbm,
+            "tau": tau,
+            "lbm_relaxation_semantics": STANDARD_LATTICE_KINEMATIC_VISCOSITY,
+            "physical_viscosity_validation_claim": False,
+        }
+
     @classmethod
     def from_json(cls, path):
         with open(path, "r", encoding="utf-8") as f:
@@ -272,16 +396,27 @@ class FSIDriverConfig:
 
     def to_dict(self):
         data = asdict(self)
-        for key in ("target_u_lbm", "initial_solid_velocity_norm", "gravity", "box_min", "box_max"):
+        for key in (
+            "target_u_lbm",
+            "initial_solid_velocity_norm",
+            "gravity",
+            "box_min",
+            "box_max",
+            "fluent_like_monitor_physical_point_m",
+        ):
             data[key] = list(data[key])
         return data
 
     def make_unified_sim_config(self):
+        viscosity_mapping = self.lbm_viscosity_mapping_report()
         return UnifiedSimConfig(
             n_grid=self.n_grid,
             mpm_dt=self.mpm_dt,
             mpm_substeps_per_lbm_step=self.mpm_substeps_per_lbm_step,
             lbm_dt_phys_override_s=self.lbm_dt_phys_override_s,
+            lbm_niu=float(viscosity_mapping["lbm_niu"]),
+            lbm_rho0=1.0,
+            lbm_relaxation_semantics=str(viscosity_mapping["lbm_relaxation_semantics"]),
         )
 
     def make_mpm_control_overrides(self):

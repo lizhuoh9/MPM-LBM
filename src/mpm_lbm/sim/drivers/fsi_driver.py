@@ -18,6 +18,7 @@ from ..geometry.sampler import GeometrySampler3D
 from ..io.run_utils import assert_no_nan_inf_array, ensure_output_dir, make_all_fluid_geo, save_csv_rows, save_json_config
 from ..lbm.fluid import LBMFluid3D
 from ..lbm.restart import expected_restart_metadata_from_config, load_lbm_restart_to_lbm
+from ..monitoring.fluent_like import official_point_like_displacement
 from ..mpm.solid import MPMSolid3D
 from ..units.mapper import GridUnitMapper
 from src.mpm_lbm.sim.drivers.fsi_config import FSIDriverConfig
@@ -42,10 +43,16 @@ DIAGNOSTIC_FIELDS = [
     "hydro_force_max_norm",
     "bb_link_count",
     "bb_max_correction",
+    "mb_subcycle_force_accumulation_mode",
+    "mb_subcycle_force_sample_count",
+    "mb_subcycle_force_accum_norm_max",
+    "mb_subcycle_force_mean_norm_max",
     "active_reaction_particle_count",
     "max_grid_reaction_norm",
     "elapsed_seconds",
 ]
+
+DIAGNOSTIC_TEXT_FIELDS = {"coupling_mode", "mb_subcycle_force_accumulation_mode"}
 
 
 class FSIDriver3D:
@@ -92,6 +99,7 @@ class FSIDriver3D:
         self.initial_particle_positions = None
         self.free_tip_proxy_mask = None
         self.flap_tip_monitor_rows = []
+        self.fluent_like_monitor_rows = []
         self.material_reference_used_for_mpm_config = False
         self.lbm_restart_load_report = None
 
@@ -257,11 +265,22 @@ class FSIDriver3D:
         report = {
             "bc_x_left": int(lbm_config.bc_x_left),
             "bc_x_right": int(lbm_config.bc_x_right),
+            "boundary_condition_equivalence_claim_allowed": False,
             "duct_wall_cell_count": int(static_report.get("duct_wall_cell_count", 0)),
+            "flow_dimensionality_mode": self.config.flow_dimensionality_mode,
             "lbm_boundary_condition_mode": self.config.lbm_boundary_condition_mode,
+            "lbm_open_boundary_semantics": self.config.lbm_open_boundary_semantics,
+            "lbm_open_boundary_scope_note": (
+                "current duct inlet/outlet uses all-population equilibrium reset; not a Fluent-like Zou-He or "
+                "regularized open boundary"
+            ),
             "periodic_boundary_used": False,
             "pressure_outlet_cell_count": pressure_outlet_cell_count,
             "pressure_outlet_side": self.config.pressure_outlet_side,
+            "reaction_transfer_mode": self.config.reaction_transfer_mode,
+            "reaction_transfer_scope_note": self._reaction_transfer_scope_note(),
+            "solid_dimensionality": self.config.solid_dimensionality,
+            "solid_model": self.config.solid_model,
             "target_u_lbm": list(self.config.target_u_lbm),
             "target_u_lbm_applied_to_inlet": True,
             "target_u_lbm_applied_to_solid_initial_velocity": False,
@@ -270,6 +289,7 @@ class FSIDriver3D:
             "velocity_inlet_side": self.config.velocity_inlet_side,
             "vel_bc_x_left": list(lbm_config.vel_bc_x_left),
             "vel_bc_x_right": list(lbm_config.vel_bc_x_right),
+            "viscosity_mapping": self.config.lbm_viscosity_mapping_report(),
         }
         self.duct_boundary_condition_report = report
         with open(os.path.join(self.out_dir, "duct_boundary_condition_report.json"), "w", encoding="utf-8") as f:
@@ -503,6 +523,7 @@ class FSIDriver3D:
 
     def _step_moving_boundary_subcycled(self):
         self._project()
+        self.lbm.clear_moving_boundary_force_accumulator()
 
         for _ in range(self.config.lbm_substeps_per_fsi_step):
             t0 = time.perf_counter()
@@ -513,8 +534,10 @@ class FSIDriver3D:
             t0 = time.perf_counter()
             self.lbm.step_moving_bounceback()
             self.timing["lbm_step_time"] += time.perf_counter() - t0
+            self.lbm.accumulate_moving_boundary_force_sample()
             self.total_lbm_substeps += 1
 
+        self.lbm.finalize_moving_boundary_force_accumulator()
         self._advance_mpm_with_moving_boundary_reaction()
 
     def _advance_mpm_with_moving_boundary_reaction(self):
@@ -579,6 +602,13 @@ class FSIDriver3D:
             moving_stats = self.lbm.get_moving_boundary_stats()
             bb_link_count = moving_stats["bb_link_count"]
             bb_max_correction = moving_stats["bb_max_correction"]
+        accumulation_stats = self.lbm.get_moving_boundary_accumulation_stats()
+        mb_subcycle_force_sample_count = accumulation_stats["mb_subcycle_force_sample_count"]
+        mb_subcycle_force_accumulation_mode = (
+            "mean_force_accumulator"
+            if self.config.fsi_exchange_mode == "lbm_subcycled_per_fsi_step" and mb_subcycle_force_sample_count > 0
+            else "not_active"
+        )
 
         active_reaction_particle_count = 0
         max_grid_reaction_norm = 0.0
@@ -614,6 +644,10 @@ class FSIDriver3D:
             "hydro_force_max_norm": force_stats["max_hydro_force_norm"],
             "bb_link_count": int(bb_link_count),
             "bb_max_correction": float(bb_max_correction),
+            "mb_subcycle_force_accumulation_mode": mb_subcycle_force_accumulation_mode,
+            "mb_subcycle_force_sample_count": int(mb_subcycle_force_sample_count),
+            "mb_subcycle_force_accum_norm_max": float(accumulation_stats["mb_subcycle_force_accum_norm_max"]),
+            "mb_subcycle_force_mean_norm_max": float(accumulation_stats["mb_subcycle_force_mean_norm_max"]),
             "active_reaction_particle_count": int(active_reaction_particle_count),
             "max_grid_reaction_norm": float(max_grid_reaction_norm),
             "elapsed_seconds": elapsed_seconds,
@@ -621,6 +655,7 @@ class FSIDriver3D:
         self._assert_row_finite(row)
         self.diagnostics_rows.append(row)
         self.collect_flap_tip_monitor(step)
+        self.collect_fluent_like_monitor(step)
         self.timing["diagnostics_time"] += time.perf_counter() - t0
         return row
 
@@ -643,6 +678,83 @@ class FSIDriver3D:
         }
         self.flap_tip_monitor_rows.append(row)
         return row
+
+    def collect_fluent_like_monitor(self, step: int):
+        if not self.config.fluent_like_monitor_enabled:
+            return None
+        if self.initial_particle_positions is None:
+            return None
+        x_np = self.solid.x.to_numpy()
+        geometry_config = self._make_geometry_config() if self.config.geometry_config_path else None
+        target_norm = self._fluent_like_monitor_target_norm(geometry_config)
+        radius_norm = self._fluent_like_monitor_radius_norm(geometry_config)
+        scale_m = self._duct_length_scale_m()
+        official = official_point_like_displacement(
+            self.initial_particle_positions,
+            x_np,
+            target_norm,
+            nearest_count=self.config.fluent_like_monitor_nearest_count,
+            radius_norm=radius_norm,
+            scale_m=scale_m,
+        )
+
+        if self.free_tip_proxy_mask is not None and np.any(self.free_tip_proxy_mask):
+            displacement_norm = x_np[self.free_tip_proxy_mask] - self.initial_particle_positions[self.free_tip_proxy_mask]
+            displacement_m = displacement_norm * scale_m
+            tip_mean = np.mean(displacement_m, axis=0)
+            tip_max = float(np.max(np.linalg.norm(displacement_m, axis=1)))
+            free_tip_count = int(np.count_nonzero(self.free_tip_proxy_mask))
+        else:
+            tip_mean = np.zeros(3, dtype=np.float64)
+            tip_max = 0.0
+            free_tip_count = 0
+
+        row = {
+            "step": int(step),
+            "time_s": float(step) * self._monitor_time_step_s(),
+            "free_tip_particle_count": free_tip_count,
+            "free_tip_mean_total_displacement_m": float(np.linalg.norm(tip_mean)),
+            "free_tip_mean_x_displacement_m": float(tip_mean[0]),
+            "free_tip_mean_y_displacement_m": float(tip_mean[1]),
+            "free_tip_mean_z_displacement_m": float(tip_mean[2]),
+            "free_tip_max_total_displacement_m": tip_max,
+            "official_point_like_particle_count": int(official["selected_particle_count"]),
+            "official_point_like_total_displacement_m": official["official_point_like_total_displacement_m"],
+            "official_point_like_x_displacement_m": official["official_point_like_x_displacement_m"],
+            "official_point_like_y_displacement_m": official["official_point_like_y_displacement_m"],
+            "official_point_like_z_displacement_m": official["official_point_like_z_displacement_m"],
+            "official_point_like_target_x_norm": float(target_norm[0]),
+            "official_point_like_target_y_norm": float(target_norm[1]),
+            "official_point_like_target_z_norm": float(target_norm[2]),
+            "monitor_is_direct_fluent_equivalent": False,
+        }
+        self.fluent_like_monitor_rows.append(row)
+        return row
+
+    def _fluent_like_monitor_target_norm(self, geometry_config) -> np.ndarray:
+        physical_x, physical_y = self.config.fluent_like_monitor_physical_point_m
+        if geometry_config is None:
+            return np.asarray([physical_x, physical_y, 0.5], dtype=np.float64)
+        duct = geometry_config.duct or {}
+        metadata = getattr(geometry_config, "dimensional_reference", None) or {}
+        duct_x = duct.get("x", [0.0, 1.0])
+        duct_y = duct.get("y", [0.0, 1.0])
+        duct_z = duct.get("z", [0.0, 1.0])
+        duct_length = float(metadata.get("duct_length_m", 1.0))
+        duct_height = float(metadata.get("duct_height_m", 1.0))
+        x_norm = float(duct_x[0]) + (float(physical_x) / duct_length) * (float(duct_x[1]) - float(duct_x[0]))
+        y_norm = float(duct_y[0]) + (float(physical_y) / duct_height) * (float(duct_y[1]) - float(duct_y[0]))
+        z_norm = 0.5 * (float(duct_z[0]) + float(duct_z[1]))
+        return np.asarray([x_norm, y_norm, z_norm], dtype=np.float64)
+
+    def _fluent_like_monitor_radius_norm(self, geometry_config) -> float | None:
+        if self.config.fluent_like_monitor_radius_m is None:
+            return None
+        if geometry_config is None:
+            return float(self.config.fluent_like_monitor_radius_m)
+        metadata = getattr(geometry_config, "dimensional_reference", None) or {}
+        duct_length = float(metadata.get("duct_length_m", 1.0))
+        return float(self.config.fluent_like_monitor_radius_m) / duct_length
 
     def _monitor_time_step_s(self) -> float:
         geometry_config = self._make_geometry_config() if self.config.geometry_config_path else None
@@ -682,7 +794,8 @@ class FSIDriver3D:
             "modes": np.asarray([row["coupling_mode"] for row in self.diagnostics_rows]),
         }
         for field in DIAGNOSTIC_FIELDS:
-            if field == "coupling_mode":
+            if field in DIAGNOSTIC_TEXT_FIELDS:
+                npz_payload[field] = np.asarray([row[field] for row in self.diagnostics_rows])
                 continue
             npz_payload[field] = np.asarray([row[field] for row in self.diagnostics_rows], dtype=np.float64)
 
@@ -700,6 +813,30 @@ class FSIDriver3D:
                     "flap_tip_y_displacement_m",
                 ],
             )
+        if self.fluent_like_monitor_rows:
+            save_csv_rows(
+                self.fluent_like_monitor_rows,
+                os.path.join(self.out_dir, "fluent_like_monitor_timeseries.csv"),
+                fieldnames=[
+                    "step",
+                    "time_s",
+                    "free_tip_particle_count",
+                    "free_tip_mean_total_displacement_m",
+                    "free_tip_mean_x_displacement_m",
+                    "free_tip_mean_y_displacement_m",
+                    "free_tip_mean_z_displacement_m",
+                    "free_tip_max_total_displacement_m",
+                    "official_point_like_particle_count",
+                    "official_point_like_total_displacement_m",
+                    "official_point_like_x_displacement_m",
+                    "official_point_like_y_displacement_m",
+                    "official_point_like_z_displacement_m",
+                    "official_point_like_target_x_norm",
+                    "official_point_like_target_y_norm",
+                    "official_point_like_target_z_norm",
+                    "monitor_is_direct_fluent_equivalent",
+                ],
+            )
 
     def final_diagnostics(self):
         if not self.diagnostics_rows:
@@ -710,6 +847,13 @@ class FSIDriver3D:
         row = {"mode": self.config.coupling_mode}
         row.update(self.timing)
         return row
+
+    def _reaction_transfer_scope_note(self) -> str:
+        if self.config.reaction_transfer_mode == "engineering":
+            return "volume-sampled engineering reaction bridge; not conservative wall-traction transfer"
+        if self.config.reaction_transfer_mode == "link_area_experimental":
+            return "experimental area-scaled reaction bridge; not final conservative wall-traction transfer"
+        return "unimplemented conservative interface-traction mode"
 
 
 def _repo_root() -> Path:

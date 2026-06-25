@@ -6,6 +6,7 @@
   "expected_changed_schema_classes": [
     "FSIDriverConfig",
     "GeometryConfig",
+    "LBMConfig",
     "MPMConfig",
     "UnifiedSimConfig"
   ],
@@ -34,6 +35,12 @@
         "current": "None"
       }
     },
+    "LBMConfig": {
+      "relaxation_semantics": {
+        "previous": null,
+        "current": "'legacy_external_solver_relaxation_parameter'"
+      }
+    },
     "UnifiedSimConfig": {
       "lbm_dt_phys_override_s": {
         "previous": null,
@@ -42,7 +49,6 @@
     }
   },
   "expected_unchanged_schema_classes": [
-    "LBMConfig",
     "MPMConfig",
     "BoundaryMotionInterfaceConfig",
     "GeometryMotionInterfaceConfig",

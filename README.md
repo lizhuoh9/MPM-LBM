@@ -112,6 +112,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 111 Fluent public-plot real solver candidate materialization, with a real 6000-substep LBM preflow restart, a real FSIDriver3D run for the Step110-selected `cap_2e-2_E_2e4` candidate over the public tutorial time window, real particle-monitor extraction, Step107 public-plot error comparison, output/artifact guards, and comparison-only evidence while official Fluent validation, exact monitor/preflow reproduction, official mesh/case/data, and production-readiness claims remain closed
 - Step 112 Fluent public-plot real solver dynamics repair matrix, with real Step111-failure diagnostics, opt-in planar lock-z and velocity-damping controls, ten real FSIDriver3D candidate rows, real particle-monitor scoring, output/artifact guards, and an honest result where RMS and peak error improve but the shape-correlation hard gate remains open
 - Step 113 Fluent Figure 29.3 mirrored duct-flap simulation consolidation, with Step112 velocity-cloud rerender data, 480 x 240 x 12 thin-extruded static two-flap velocity visualization, a failed unstabilized 96^3 mirrored full-FSI attempt, a completed stabilized 96^3/8192-particle mirrored full-FSI run, committed output inventory, and explicit mismatch/error reporting while Fluent validation, official mesh/case reproduction, and exact jet/monitor equivalence claims remain closed
+- Step 114 Fluent solver-physics repair layer, with subcycled moving-boundary force accumulation, explicit physical viscosity/Re mapping surface, separate Fluent-like monitor output path, and fail-fast guards/reporting for current LBM boundary, solid model, reaction transfer, and 3D flow-dimensionality limitations while full Fluent parity remains open
 
 ## Not Implemented
 
@@ -1281,6 +1282,23 @@ reproduce the official dynamic mesh or exact structural model, and does not
 claim Fluent validation, exact Figure 29.3 jet equivalence, exact monitor
 equivalence, grid convergence, or production readiness.
 See docs/113_fluent_figure29_3_mirrored_fsi_simulation.md.
+
+## Step 114 Fluent Solver Physics Repair Boundary
+
+Step114 implements the first bounded solver-physics repair layer identified by
+the post-Step113 review. Subcycled moving-boundary FSI now accumulates
+`hydro_force` across every LBM substep in an official exchange window and
+advances MPM from the mean accumulated force rather than only the final substep.
+Step114 also adds an explicit physical viscosity mapping surface,
+`lbm_viscosity_semantics = "physical_nu_mapping"`, while preserving the legacy
+default path. The current LBM open boundary, solid model, reaction transfer,
+and flow dimensionality are now reported explicitly, and unimplemented
+Fluent-like modes fail fast instead of silently falling back to the engineering
+solver.
+Step114 does not implement D3Q19 Zou-He/regularized open boundaries, Fluent
+small-strain linear elasticity, conservative wall traction transfer, D2Q9
+planar flow, official mesh/case import, or Fluent validation.
+See docs/114_fluent_solver_physics_repair.md.
 
 ## Upstream LBM Note
 

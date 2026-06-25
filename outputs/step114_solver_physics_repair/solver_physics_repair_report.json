@@ -1,0 +1,70 @@
+{
+  "step": 114,
+  "scope": "bounded solver-physics repair after Step113 Fluent Figure 29.3 mirrored FSI diagnostics",
+  "validation_claim": "diagnostic_solver_repair_only_not_fluent_validation",
+  "implemented": {
+    "subcycled_moving_boundary_force_accumulation": true,
+    "physical_viscosity_mapping_surface": true,
+    "fluent_like_monitor_separate_surface": true,
+    "boundary_condition_semantics_guard": true,
+    "solid_model_guard": true,
+    "reaction_transfer_guard": true,
+    "flow_dimensionality_guard": true
+  },
+  "subcycled_force_accumulation": {
+    "field": "hydro_force_accum",
+    "clear_method": "LBMFluid3D.clear_moving_boundary_force_accumulator",
+    "sample_method": "LBMFluid3D.accumulate_moving_boundary_force_sample",
+    "finalize_method": "LBMFluid3D.finalize_moving_boundary_force_accumulator",
+    "driver_path": "FSIDriver3D._step_moving_boundary_subcycled",
+    "force_passed_to_mpm": "mean hydro_force over lbm_substeps_per_fsi_step"
+  },
+  "physical_viscosity_mapping": {
+    "legacy_default_preserved": true,
+    "physical_mode": "physical_nu_mapping",
+    "formula": "nu_lbm = nu_phys * dt_phys / dx_phys**2; tau = 3 * nu_lbm + 0.5",
+    "relaxation_semantics": "standard_lattice_kinematic_viscosity"
+  },
+  "guards": {
+    "current_lbm_open_boundary": "equilibrium_all_population_reset",
+    "unimplemented_open_boundary_modes_fail_fast": [
+      "zou_he_reconstruct_unknowns",
+      "regularized_velocity_pressure"
+    ],
+    "current_solid_model": "finite_deformation_mpm",
+    "unimplemented_solid_modes_fail_fast": [
+      "small_strain_linear_elastic",
+      "plane_strain_2d",
+      "plane_stress_2d"
+    ],
+    "current_reaction_transfer_modes": [
+      "engineering",
+      "link_area_experimental"
+    ],
+    "unimplemented_reaction_transfer_modes_fail_fast": [
+      "interface_traction_conservative"
+    ],
+    "current_flow_dimensionality_modes": [
+      "three_dimensional",
+      "thin_3d_no_slip_z_walls"
+    ],
+    "unimplemented_flow_dimensionality_modes_fail_fast": [
+      "d2q9_planar",
+      "d3q19_quasi_2d_periodic_z"
+    ]
+  },
+  "known_remaining_gaps": [
+    "D3Q19 Zou-He or regularized open boundary not implemented in Step114",
+    "Fluent-like small-strain linear elasticity not implemented in Step114",
+    "Conservative wall-traction transfer not implemented in Step114",
+    "D2Q9 planar or quasi-2D periodic/symmetry-z solver path not implemented in Step114"
+  ],
+  "verification": {
+    "targeted_step114_red_test_before_implementation": "6 failed",
+    "targeted_step114_green_test_after_implementation": "6 passed",
+    "adjacent_regression_tests": "19 passed",
+    "previous_failed_guard_set_after_policy_update": "32 passed",
+    "full_pytest": "1221 passed in 180.50s",
+    "git_diff_check": "passed with LF/CRLF warnings only"
+  }
+}
