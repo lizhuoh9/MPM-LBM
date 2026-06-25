@@ -1,0 +1,7 @@
+{
+  "full_fsi_rerun_done": false,
+  "skipped": true,
+  "skipped_reason": "large_real_row_requires_explicit_allowance",
+  "static_flap_fluid_only": true,
+  "validation_claim_allowed": false
+}

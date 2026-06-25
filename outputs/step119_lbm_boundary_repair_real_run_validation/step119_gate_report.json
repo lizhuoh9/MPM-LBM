@@ -1,0 +1,33 @@
+{
+  "all_required_real_rows_pass": false,
+  "figure_29_3_parity_claim_allowed": false,
+  "final_classification": "boundary_repair_partial_continue_lbm",
+  "fluent_validation_claim_allowed": false,
+  "full_fsi_validation_claim_allowed": false,
+  "incomplete_required_rows": [
+    "duct_only_48_legacy_boundary_500step_reference_real",
+    "duct_only_48_regularized_boundary_500step_reference_real",
+    "duct_only_48_regularized_limited_boundary_500step_real",
+    "duct_only_48_convective_outlet_boundary_500step_real",
+    "duct_only_96_regularized_limited_boundary_1000step_real",
+    "duct_only_96_convective_outlet_boundary_1000step_real",
+    "static_two_flap_96_best_boundary_1000step_real"
+  ],
+  "limiter_activation_gate_pass": true,
+  "no_fluent_claim": true,
+  "no_fsi_claim": true,
+  "quasi2d_allowed": false,
+  "required_validation_rows": [
+    "duct_only_48_legacy_boundary_500step_reference_real",
+    "duct_only_48_regularized_boundary_500step_reference_real",
+    "duct_only_48_regularized_limited_boundary_500step_real",
+    "duct_only_48_convective_outlet_boundary_500step_real",
+    "duct_only_96_regularized_limited_boundary_1000step_real",
+    "duct_only_96_convective_outlet_boundary_1000step_real",
+    "static_two_flap_96_best_boundary_1000step_real"
+  ],
+  "step": 119,
+  "step119_schema_version": 1,
+  "step120_quasi2d_allowed": false,
+  "validation_claim_allowed": false
+}

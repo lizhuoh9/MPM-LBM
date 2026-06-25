@@ -1,0 +1,39 @@
+{
+  "centerline_profile_x": {
+    "axis": "x",
+    "source": [
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline"
+    ],
+    "ux": [
+      0.026616500690579414,
+      0.021474432200193405,
+      0.01019669696688652,
+      0.0021223770454525948,
+      0.00015961624740157276,
+      0.0,
+      0.0,
+      -2.2351743567128324e-08
+    ],
+    "y_index": 3,
+    "z_index": 3
+  },
+  "final_flux_imbalance_rel": 1.000000907151552,
+  "final_outlet_reflection_proxy": {
+    "fluid_cell_count": 16,
+    "negative_ux_fraction": 0.0,
+    "proxy_name": "outlet_near_plane_ux_density_variation",
+    "rho_peak_to_peak": 0.0,
+    "rho_std": 0.0,
+    "ux_std": 0.0,
+    "x_index": 6
+  },
+  "geometry_mode": "duct_only",
+  "name": "tiny_step119_real_runner_smoke"
+}

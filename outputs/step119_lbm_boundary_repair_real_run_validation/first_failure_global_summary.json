@@ -1,0 +1,65 @@
+{
+  "first_failure_detector": {
+    "first_failure_reason": null,
+    "first_failure_step": null,
+    "record_count": 9
+  },
+  "row_first_failures": [
+    {
+      "first_failure_reason": null,
+      "first_failure_step": null,
+      "lbm_open_boundary_semantics": "regularized_velocity_pressure_limited",
+      "name": "tiny_step119_real_runner_smoke"
+    },
+    {
+      "first_failure_reason": "large_real_row_requires_explicit_allowance",
+      "first_failure_step": null,
+      "lbm_open_boundary_semantics": "equilibrium_all_population_reset",
+      "name": "duct_only_48_legacy_boundary_500step_reference_real"
+    },
+    {
+      "first_failure_reason": "large_real_row_requires_explicit_allowance",
+      "first_failure_step": null,
+      "lbm_open_boundary_semantics": "regularized_velocity_pressure",
+      "name": "duct_only_48_regularized_boundary_500step_reference_real"
+    },
+    {
+      "first_failure_reason": "large_real_row_requires_explicit_allowance",
+      "first_failure_step": null,
+      "lbm_open_boundary_semantics": "regularized_velocity_pressure_limited",
+      "name": "duct_only_48_regularized_limited_boundary_500step_real"
+    },
+    {
+      "first_failure_reason": "large_real_row_requires_explicit_allowance",
+      "first_failure_step": null,
+      "lbm_open_boundary_semantics": "convective_pressure_outlet_experimental",
+      "name": "duct_only_48_convective_outlet_boundary_500step_real"
+    },
+    {
+      "first_failure_reason": "large_real_row_requires_explicit_allowance",
+      "first_failure_step": null,
+      "lbm_open_boundary_semantics": "regularized_velocity_pressure_limited",
+      "name": "duct_only_96_regularized_limited_boundary_1000step_real"
+    },
+    {
+      "first_failure_reason": "large_real_row_requires_explicit_allowance",
+      "first_failure_step": null,
+      "lbm_open_boundary_semantics": "convective_pressure_outlet_experimental",
+      "name": "duct_only_96_convective_outlet_boundary_1000step_real"
+    },
+    {
+      "first_failure_reason": "large_real_row_requires_explicit_allowance",
+      "first_failure_step": null,
+      "lbm_open_boundary_semantics": "regularized_velocity_pressure_limited",
+      "name": "static_two_flap_96_best_boundary_1000step_real"
+    },
+    {
+      "first_failure_reason": "tau_margin",
+      "first_failure_step": null,
+      "lbm_open_boundary_semantics": "regularized_velocity_pressure_limited",
+      "name": "duct_only_96_regularized_limited_physical_nu_report_only_100step_guarded_real"
+    }
+  ],
+  "step": 119,
+  "validation_claim_allowed": false
+}
