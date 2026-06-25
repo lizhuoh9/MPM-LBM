@@ -13,6 +13,11 @@ from .relaxation_semantics import (
     tau_from_lattice_kinematic_viscosity,
 )
 
+EQUILIBRIUM_ALL_POPULATION_RESET = "equilibrium_all_population_reset"
+REGULARIZED_VELOCITY_PRESSURE = "regularized_velocity_pressure"
+UNKNOWN_X_MIN_POPULATIONS = (1, 7, 9, 11, 13)
+UNKNOWN_X_MAX_POPULATIONS = (2, 8, 10, 12, 14)
+
 #ti.init(arch=ti.gpu, dynamic_index=False, kernel_profiler=True, print_ir=False)
 
 @ti.data_oriented
@@ -33,6 +38,7 @@ class LBMFluid3D:
         self.niu = config.niu
         self.rho0 = config.rho0
         self.relaxation_semantics = config.relaxation_semantics
+        self.open_boundary_semantics = config.open_boundary_semantics
 
         self.max_v=ti.field(ti.f32,shape=())
         self.rho_min = ti.field(ti.f32, shape=())
@@ -369,9 +375,11 @@ class LBMFluid3D:
     def finalize_moving_boundary_force_accumulator(self):
         self.mb_subcycle_force_mean_norm_max[None] = 0.0
         sample_count = self.mb_subcycle_force_sample_count[None]
+        inv_count = 0.0
         if sample_count > 0:
             inv_count = 1.0 / ti.cast(sample_count, ti.f32)
-            for I in ti.grouped(self.rho):
+        for I in ti.grouped(self.rho):
+            if sample_count > 0:
                 mean_force = self.hydro_force_accum[I] * inv_count
                 self.hydro_force[I] = mean_force
                 ti.atomic_max(self.mb_subcycle_force_mean_norm_max[None], mean_force.norm())
@@ -426,8 +434,14 @@ class LBMFluid3D:
         self.bb_net_fluid_impulse[None] = fluid_impulse
         self.bb_net_solid_force[None] = solid_force
 
-    @ti.kernel
     def Boundary_condition(self):
+        if self.open_boundary_semantics == REGULARIZED_VELOCITY_PRESSURE:
+            self.apply_regularized_x_open_boundaries()
+            return
+        self.Boundary_condition_legacy()
+
+    @ti.kernel
+    def Boundary_condition_legacy(self):
         if ti.static(self.bc_x_left==1):
             for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
                 if (self.solid[0,j,k]==0):
@@ -525,6 +539,59 @@ class LBMFluid3D:
                     for s in ti.static(range(19)):
                         #self.F[i,j,self.nz-1][s]=self.feq(self.LR[s], 1.0, self.bc_vel_z_right[None])-self.F[i,j,self.nz-1][self.LR[s]]+self.feq(s,1.0,self.bc_vel_z_right[None])
                         self.F[i,j,self.nz-1][s]=self.feq(s,1.0,ti.Vector(self.bc_vel_z_right))
+
+    @ti.func
+    def _regularized_population(self, s, target_rho, target_u, ni, nj, nk):
+        neighbor_noneq = self.F[ni, nj, nk][s] - self.feq(s, self.rho[ni, nj, nk], self.v[ni, nj, nk])
+        return self.feq(s, target_rho, target_u) + neighbor_noneq
+
+    @ti.kernel
+    def apply_regularized_x_open_boundaries(self):
+        if ti.static(self.bc_x_left==1):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[0,j,k] == 0:
+                    ni = 1
+                    if self.solid[1,j,k] > 0:
+                        ni = 0
+                    target_u = self.v[ni,j,k]
+                    for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
+                        self.F[0,j,k][s] = self._regularized_population(s, self.rho_bcxl, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_left==2):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[0,j,k] == 0:
+                    ni = 1
+                    if self.solid[1,j,k] > 0:
+                        ni = 0
+                    target_rho = self.rho[ni,j,k]
+                    if target_rho <= 1.0e-6:
+                        target_rho = self.rho0
+                    target_u = ti.Vector(self.bc_vel_x_left)
+                    for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
+                        self.F[0,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_right==1):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[self.nx-1,j,k] == 0:
+                    ni = self.nx - 2
+                    if self.solid[self.nx-2,j,k] > 0:
+                        ni = self.nx - 1
+                    target_u = self.v[ni,j,k]
+                    for s in ti.static(UNKNOWN_X_MAX_POPULATIONS):
+                        self.F[self.nx-1,j,k][s] = self._regularized_population(s, self.rho_bcxr, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_right==2):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[self.nx-1,j,k] == 0:
+                    ni = self.nx - 2
+                    if self.solid[self.nx-2,j,k] > 0:
+                        ni = self.nx - 1
+                    target_rho = self.rho[ni,j,k]
+                    if target_rho <= 1.0e-6:
+                        target_rho = self.rho0
+                    target_u = ti.Vector(self.bc_vel_x_right)
+                    for s in ti.static(UNKNOWN_X_MAX_POPULATIONS):
+                        self.F[self.nx-1,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
 
     @ti.kernel
     def streaming3(self):

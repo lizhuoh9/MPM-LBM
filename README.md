@@ -113,6 +113,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 112 Fluent public-plot real solver dynamics repair matrix, with real Step111-failure diagnostics, opt-in planar lock-z and velocity-damping controls, ten real FSIDriver3D candidate rows, real particle-monitor scoring, output/artifact guards, and an honest result where RMS and peak error improve but the shape-correlation hard gate remains open
 - Step 113 Fluent Figure 29.3 mirrored duct-flap simulation consolidation, with Step112 velocity-cloud rerender data, 480 x 240 x 12 thin-extruded static two-flap velocity visualization, a failed unstabilized 96^3 mirrored full-FSI attempt, a completed stabilized 96^3/8192-particle mirrored full-FSI run, committed output inventory, and explicit mismatch/error reporting while Fluent validation, official mesh/case reproduction, and exact jet/monitor equivalence claims remain closed
 - Step 114 Fluent solver-physics repair layer, with subcycled moving-boundary force accumulation, explicit physical viscosity/Re mapping surface, separate Fluent-like monitor output path, and fail-fast guards/reporting for current LBM boundary, solid model, reaction transfer, and 3D flow-dimensionality limitations while full Fluent parity remains open
+- Step 115 LBM open-boundary and force-accumulation validation, with a runtime Taichi accumulator mean-force test, opt-in D3Q19 x-axis `regularized_velocity_pressure` unknown-population reconstruction, tau/Re feasibility reporting with strict/report-only policy, and deterministic solver-boundary artifacts while Fluent validation and full FSI parity remain open
 
 ## Not Implemented
 
@@ -1299,6 +1300,27 @@ Step114 does not implement D3Q19 Zou-He/regularized open boundaries, Fluent
 small-strain linear elasticity, conservative wall traction transfer, D2Q9
 planar flow, official mesh/case import, or Fluent validation.
 See docs/114_fluent_solver_physics_repair.md.
+
+## Step 115 LBM Open Boundary Repair Boundary
+
+Step115 adds runtime proof for the Step114 moving-boundary force accumulator
+and implements an opt-in D3Q19 x-axis open-boundary repair,
+`lbm_open_boundary_semantics = "regularized_velocity_pressure"`. The new mode
+reconstructs only unknown x-min/x-max incoming populations and preserves known
+streamed populations. The legacy
+`equilibrium_all_population_reset` mode remains the default.
+
+Step115 also reports tau/Re feasibility fields, including `tau_minus_half`,
+`lbm_min_tau_margin`, `tau_margin_pass`, `mach_proxy`, and
+`reynolds_from_config`. Strict tau policy can reject near-half-tau physical
+mapping, while report-only mode records the risk without changing legacy
+construction behavior.
+
+Step115 does not implement Fluent's pressure-based solver, Fluent
+small-strain linear elasticity, conservative interface traction transfer,
+D2Q9 planar flow, quasi-2D symmetry flow, official mesh/case import, or
+Fluent validation. It does not rerun full FSI.
+See docs/115_lbm_open_boundary_repair.md.
 
 ## Upstream LBM Note
 

@@ -9,6 +9,7 @@
     "bc_z_right": 0,
     "force": [0.0, 0.0, 0.0],
     "niu": 0.1,
+    "open_boundary_semantics": "equilibrium_all_population_reset",
     "relaxation_semantics": "legacy_external_solver_relaxation_parameter",
     "rho0": 1.0,
     "rho_bc_x_left": 1.0,

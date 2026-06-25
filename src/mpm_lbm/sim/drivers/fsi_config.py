@@ -27,8 +27,12 @@ VALID_LBM_OPEN_BOUNDARY_SEMANTICS = (
     "zou_he_reconstruct_unknowns",
     "regularized_velocity_pressure",
 )
-IMPLEMENTED_LBM_OPEN_BOUNDARY_SEMANTICS = ("equilibrium_all_population_reset",)
+IMPLEMENTED_LBM_OPEN_BOUNDARY_SEMANTICS = (
+    "equilibrium_all_population_reset",
+    "regularized_velocity_pressure",
+)
 VALID_LBM_VISCOSITY_SEMANTICS = ("legacy_external", "physical_nu_mapping")
+VALID_LBM_TAU_STABILITY_POLICIES = ("report_only", "strict")
 VALID_FSI_EXCHANGE_MODES = ("one_lbm_step_per_fsi_step", "lbm_subcycled_per_fsi_step")
 VALID_LBM_RESTART_SCOPES = ("rho_velocity_populations",)
 VALID_MPM_PLANAR_CONSTRAINT_MODES = ("disabled", "lock_z")
@@ -87,6 +91,8 @@ class FSIDriverConfig:
     fluid_kinematic_viscosity_m2_s: float = 1.5e-5
     target_reynolds_number: Optional[float] = None
     lbm_viscosity_semantics: str = "legacy_external"
+    lbm_min_tau_margin: float = 1.0e-4
+    lbm_tau_stability_policy: str = "report_only"
     fsi_exchange_mode: str = "one_lbm_step_per_fsi_step"
     lbm_restart_path: Optional[str] = None
     lbm_restart_required: bool = False
@@ -227,6 +233,10 @@ class FSIDriverConfig:
             raise ValueError(f"lbm_open_boundary_semantics={self.lbm_open_boundary_semantics!r} is not implemented")
         if self.lbm_viscosity_semantics not in VALID_LBM_VISCOSITY_SEMANTICS:
             raise ValueError(f"lbm_viscosity_semantics must be one of {VALID_LBM_VISCOSITY_SEMANTICS}")
+        if self.lbm_tau_stability_policy not in VALID_LBM_TAU_STABILITY_POLICIES:
+            raise ValueError(f"lbm_tau_stability_policy must be one of {VALID_LBM_TAU_STABILITY_POLICIES}")
+        if float(self.lbm_min_tau_margin) <= 0.0:
+            raise ValueError("lbm_min_tau_margin must be positive")
         if self.solid_model not in VALID_SOLID_MODELS:
             raise ValueError(f"solid_model must be one of {VALID_SOLID_MODELS}")
         if self.solid_model not in IMPLEMENTED_SOLID_MODELS:
@@ -342,10 +352,16 @@ class FSIDriverConfig:
             raise ValueError("LBM viscosity mapping must produce finite tau > 0.5")
         if not math.isfinite(float(mapping["lbm_niu"])) or float(mapping["lbm_niu"]) <= 0.0:
             raise ValueError("LBM viscosity mapping must produce finite positive lbm_niu")
+        if self.lbm_tau_stability_policy == "strict" and not bool(mapping["tau_margin_pass"]):
+            raise ValueError("LBM tau stability margin failed strict policy")
 
     def lbm_viscosity_mapping_report(self) -> dict:
         if self.lbm_viscosity_semantics == "legacy_external":
             legacy_niu = 0.1
+            tau = tau_from_legacy_external_solver_parameter(legacy_niu)
+            tau_minus_half = float(tau) - 0.5
+            tau_margin_pass = tau_minus_half >= float(self.lbm_min_tau_margin)
+            reynolds_from_config = self._reynolds_from_config()
             return {
                 "lbm_viscosity_semantics": self.lbm_viscosity_semantics,
                 "physical_mapping_used": False,
@@ -356,8 +372,16 @@ class FSIDriverConfig:
                 "legacy_lbm_niu": legacy_niu,
                 "nu_lbm": None,
                 "lbm_niu": legacy_niu,
-                "tau": tau_from_legacy_external_solver_parameter(legacy_niu),
+                "tau": tau,
+                "tau_minus_half": tau_minus_half,
+                "lbm_min_tau_margin": float(self.lbm_min_tau_margin),
+                "lbm_tau_stability_policy": self.lbm_tau_stability_policy,
+                "tau_margin_pass": tau_margin_pass,
                 "lbm_relaxation_semantics": LEGACY_EXTERNAL_SOLVER_RELAXATION_PARAMETER,
+                "mach_proxy": self._mach_proxy(),
+                "reynolds_from_config": reynolds_from_config,
+                "target_reynolds_match": self._target_reynolds_match(reynolds_from_config),
+                "physical_reynolds_direct_simulation_feasible_with_current_lbm": None,
                 "physical_viscosity_validation_claim": False,
             }
 
@@ -372,6 +396,10 @@ class FSIDriverConfig:
         )
         nu_lbm = float(self.fluid_kinematic_viscosity_m2_s) * dt_phys_s / (dx_phys_m * dx_phys_m)
         tau = tau_from_lattice_kinematic_viscosity(nu_lbm)
+        tau_minus_half = float(tau) - 0.5
+        tau_margin_pass = tau_minus_half >= float(self.lbm_min_tau_margin)
+        mach_proxy = self._mach_proxy()
+        reynolds_from_config = self._reynolds_from_config()
         return {
             "lbm_viscosity_semantics": self.lbm_viscosity_semantics,
             "physical_mapping_used": True,
@@ -384,9 +412,52 @@ class FSIDriverConfig:
             "nu_lbm": nu_lbm,
             "lbm_niu": nu_lbm,
             "tau": tau,
+            "tau_minus_half": tau_minus_half,
+            "lbm_min_tau_margin": float(self.lbm_min_tau_margin),
+            "lbm_tau_stability_policy": self.lbm_tau_stability_policy,
+            "tau_margin_pass": tau_margin_pass,
             "lbm_relaxation_semantics": STANDARD_LATTICE_KINEMATIC_VISCOSITY,
+            "mach_proxy": mach_proxy,
+            "reynolds_from_config": reynolds_from_config,
+            "target_reynolds_match": self._target_reynolds_match(reynolds_from_config),
+            "physical_reynolds_direct_simulation_feasible_with_current_lbm": bool(
+                tau_margin_pass and mach_proxy <= 0.2
+            ),
             "physical_viscosity_validation_claim": False,
         }
+
+    def _mach_proxy(self) -> float:
+        cs_lbm = math.sqrt(1.0 / 3.0)
+        return float(math.sqrt(sum(float(v) * float(v) for v in self.target_u_lbm)) / cs_lbm)
+
+    def _reynolds_from_config(self) -> Optional[float]:
+        duct_height = self._duct_height_for_reynolds()
+        if self.target_inlet_velocity_mps is None or duct_height is None:
+            return None
+        return float(self.target_inlet_velocity_mps) * duct_height / float(self.fluid_kinematic_viscosity_m2_s)
+
+    def _target_reynolds_match(self, reynolds_from_config: Optional[float]) -> Optional[bool]:
+        if self.target_reynolds_number is None or reynolds_from_config is None:
+            return None
+        return math.isclose(
+            reynolds_from_config,
+            float(self.target_reynolds_number),
+            rel_tol=1.0e-9,
+            abs_tol=1.0e-9,
+        )
+
+    def _duct_height_for_reynolds(self) -> Optional[float]:
+        if self.geometry_config_path:
+            path = Path(self.geometry_config_path)
+            if not path.is_absolute():
+                path = _repo_root() / path
+            if path.is_file():
+                with path.open("r", encoding="utf-8") as f:
+                    data = json.load(f)
+                dimensional = data.get("dimensional_reference") or {}
+                if "duct_height_m" in dimensional:
+                    return float(dimensional["duct_height_m"])
+        return None
 
     @classmethod
     def from_json(cls, path):
@@ -417,6 +488,7 @@ class FSIDriverConfig:
             lbm_niu=float(viscosity_mapping["lbm_niu"]),
             lbm_rho0=1.0,
             lbm_relaxation_semantics=str(viscosity_mapping["lbm_relaxation_semantics"]),
+            lbm_open_boundary_semantics=self.lbm_open_boundary_semantics,
         )
 
     def make_mpm_control_overrides(self):

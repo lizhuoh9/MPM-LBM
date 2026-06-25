@@ -15,6 +15,7 @@ class UnifiedSimConfig:
     lbm_niu: float = 0.1
     lbm_rho0: float = 1.0
     lbm_relaxation_semantics: str = LEGACY_EXTERNAL_SOLVER_RELAXATION_PARAMETER
+    lbm_open_boundary_semantics: str = "equilibrium_all_population_reset"
     lbm_dt_phys_override_s: Optional[float] = None
 
     def __post_init__(self):
@@ -63,6 +64,7 @@ class UnifiedSimConfig:
             "niu": self.lbm_niu,
             "rho0": self.lbm_rho0,
             "relaxation_semantics": self.lbm_relaxation_semantics,
+            "open_boundary_semantics": self.lbm_open_boundary_semantics,
         }
         values.update(overrides)
         return LBMConfig(**values)

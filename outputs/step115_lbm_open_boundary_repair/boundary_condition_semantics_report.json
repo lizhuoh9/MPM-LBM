@@ -1,0 +1,30 @@
+{
+  "all_population_equilibrium_reset_used": false,
+  "boundary_condition_equivalence_claim_allowed": false,
+  "implemented_axis": "x",
+  "known_population_preservation_scope": "streamed D3Q19 populations not listed as x-boundary unknowns are left intact",
+  "lbm_boundary_condition_mode": "duct_velocity_inlet_pressure_outlet",
+  "lbm_open_boundary_semantics": "regularized_velocity_pressure",
+  "pressure_outlet_density": 1.0,
+  "unknown_population_reconstruction_used": true,
+  "unknown_x_max_populations": [
+    2,
+    8,
+    10,
+    12,
+    14
+  ],
+  "unknown_x_min_populations": [
+    1,
+    7,
+    9,
+    11,
+    13
+  ],
+  "validation_claim_allowed": false,
+  "velocity_inlet_target": [
+    0.02,
+    0.0,
+    0.0
+  ]
+}

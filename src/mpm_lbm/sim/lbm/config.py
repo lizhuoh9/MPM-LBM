@@ -12,6 +12,11 @@ VALID_LBM_RELAXATION_SEMANTICS = (
     STANDARD_LATTICE_KINEMATIC_VISCOSITY,
 )
 
+VALID_LBM_OPEN_BOUNDARY_SEMANTICS = (
+    "equilibrium_all_population_reset",
+    "regularized_velocity_pressure",
+)
+
 
 @dataclass
 class LBMConfig:
@@ -22,6 +27,7 @@ class LBMConfig:
     niu: float = 0.1
     rho0: float = 1.0
     relaxation_semantics: str = LEGACY_EXTERNAL_SOLVER_RELAXATION_PARAMETER
+    open_boundary_semantics: str = "equilibrium_all_population_reset"
     sparse_storage: bool = False
 
     force: Tuple[float, float, float] = (0.0, 0.0, 0.0)
@@ -50,3 +56,5 @@ class LBMConfig:
     def __post_init__(self):
         if self.relaxation_semantics not in VALID_LBM_RELAXATION_SEMANTICS:
             raise ValueError(f"relaxation_semantics must be one of {VALID_LBM_RELAXATION_SEMANTICS}")
+        if self.open_boundary_semantics not in VALID_LBM_OPEN_BOUNDARY_SEMANTICS:
+            raise ValueError(f"open_boundary_semantics must be one of {VALID_LBM_OPEN_BOUNDARY_SEMANTICS}")

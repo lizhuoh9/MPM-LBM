@@ -1,0 +1,20 @@
+{
+  "boundary_condition_equivalence_claim_allowed": false,
+  "default_legacy_boundary_preserved": true,
+  "fluent_validation_claim_allowed": false,
+  "full_fsi_rerun_done": false,
+  "known_remaining_gaps": [
+    "not Fluent pressure-based open boundary",
+    "not small-strain linear elasticity",
+    "not conservative wall traction transfer",
+    "not D2Q9 planar or quasi-2D symmetry flow",
+    "not official mesh or case reproduction"
+  ],
+  "regularized_velocity_pressure_implemented": true,
+  "regularized_velocity_pressure_runtime_smoke_added": true,
+  "runtime_accumulator_test_added": true,
+  "step": 115,
+  "step_name": "LBM open boundary and force accumulation validation",
+  "tau_feasibility_guard_added": true,
+  "validation_claim_allowed": false
+}

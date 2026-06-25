@@ -1,0 +1,20 @@
+{
+  "dt_phys_s": 2.0833333333333334e-06,
+  "dx_phys_m": 0.0010416666666666667,
+  "fluid_density_kg_m3": 1.225,
+  "fluid_kinematic_viscosity_m2_s": 1.5e-05,
+  "lbm_min_tau_margin": 0.0001,
+  "lbm_relaxation_semantics": "standard_lattice_kinematic_viscosity",
+  "lbm_tau_stability_policy": "report_only",
+  "lbm_viscosity_semantics": "physical_nu_mapping",
+  "mach_proxy": 0.03464101615137755,
+  "nu_lbm": 2.88e-05,
+  "physical_mapping_used": true,
+  "physical_reynolds_direct_simulation_feasible_with_current_lbm": false,
+  "reynolds_from_config": 26666.666666666668,
+  "target_reynolds_match": true,
+  "target_reynolds_number": 26666.666666666668,
+  "tau": 0.5000864,
+  "tau_margin_pass": false,
+  "tau_minus_half": 8.639999999998649e-05
+}

@@ -263,18 +263,18 @@ class FSIDriver3D:
             velocity_inlet_cell_count = int(static_report.get("pressure_outlet_fluid_cell_count", 0))
             pressure_outlet_cell_count = int(static_report.get("inlet_fluid_cell_count", 0))
         report = {
+            "all_population_equilibrium_reset_used": self.config.lbm_open_boundary_semantics == "equilibrium_all_population_reset",
             "bc_x_left": int(lbm_config.bc_x_left),
             "bc_x_right": int(lbm_config.bc_x_right),
             "boundary_condition_equivalence_claim_allowed": False,
             "duct_wall_cell_count": int(static_report.get("duct_wall_cell_count", 0)),
             "flow_dimensionality_mode": self.config.flow_dimensionality_mode,
+            "implemented_axis": "x",
             "lbm_boundary_condition_mode": self.config.lbm_boundary_condition_mode,
             "lbm_open_boundary_semantics": self.config.lbm_open_boundary_semantics,
-            "lbm_open_boundary_scope_note": (
-                "current duct inlet/outlet uses all-population equilibrium reset; not a Fluent-like Zou-He or "
-                "regularized open boundary"
-            ),
+            "lbm_open_boundary_scope_note": self._lbm_open_boundary_scope_note(),
             "periodic_boundary_used": False,
+            "pressure_outlet_density": 1.0,
             "pressure_outlet_cell_count": pressure_outlet_cell_count,
             "pressure_outlet_side": self.config.pressure_outlet_side,
             "reaction_transfer_mode": self.config.reaction_transfer_mode,
@@ -284,9 +284,12 @@ class FSIDriver3D:
             "target_u_lbm": list(self.config.target_u_lbm),
             "target_u_lbm_applied_to_inlet": True,
             "target_u_lbm_applied_to_solid_initial_velocity": False,
+            "unknown_population_reconstruction_used": self.config.lbm_open_boundary_semantics == "regularized_velocity_pressure",
+            "validation_claim_allowed": False,
             "velocity_inlet_axis": self.config.velocity_inlet_axis,
             "velocity_inlet_cell_count": velocity_inlet_cell_count,
             "velocity_inlet_side": self.config.velocity_inlet_side,
+            "velocity_inlet_target": list(self.config.target_u_lbm),
             "vel_bc_x_left": list(lbm_config.vel_bc_x_left),
             "vel_bc_x_right": list(lbm_config.vel_bc_x_right),
             "viscosity_mapping": self.config.lbm_viscosity_mapping_report(),
@@ -854,6 +857,17 @@ class FSIDriver3D:
         if self.config.reaction_transfer_mode == "link_area_experimental":
             return "experimental area-scaled reaction bridge; not final conservative wall-traction transfer"
         return "unimplemented conservative interface-traction mode"
+
+    def _lbm_open_boundary_scope_note(self) -> str:
+        if self.config.lbm_open_boundary_semantics == "regularized_velocity_pressure":
+            return (
+                "opt-in D3Q19 x-axis unknown-population reconstruction; not a Fluent pressure-based "
+                "open-boundary equivalence claim"
+            )
+        return (
+            "legacy duct inlet/outlet uses all-population equilibrium reset; not a Fluent-like Zou-He or "
+            "regularized open boundary"
+        )
 
 
 def _repo_root() -> Path:
