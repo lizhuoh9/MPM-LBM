@@ -1,0 +1,47 @@
+{
+  "rows": [
+    {
+      "all_metrics_finite": true,
+      "direct_quantitative_equivalence_allowed": false,
+      "final_abs_error_m": 5.87667887353382e-05,
+      "final_reference_m": 6e-05,
+      "final_relative_error": 0.9794464789223033,
+      "final_solver_m": 1.2332112646618043e-06,
+      "monitor_equivalence": false,
+      "monitor_used": "free_tip_proxy_mean",
+      "normalized_rms_error": 0.616126763475836,
+      "peak_abs_error_m": 0.0003937667887353382,
+      "peak_reference_m": 0.000395,
+      "peak_relative_error": 0.9968779461654131,
+      "peak_solver_m": 1.2332112646618043e-06,
+      "peak_time_error_s": 0.021,
+      "reference_loaded": true,
+      "rms_abs_error_m": 0.00024337007157295519,
+      "sample_count": 51,
+      "shape_correlation": 0.07866350821657236,
+      "sign_consistency": true,
+      "solver_curve_loaded": true,
+      "solver_curve_time_end_s": 0.025,
+      "solver_curve_time_start_s": 0.0,
+      "time_of_peak_reference_s": 0.004,
+      "time_of_peak_solver_s": 0.025,
+      "validation_claim_allowed": false
+    }
+  ],
+  "summary": {
+    "all_metrics_finite_count": 1,
+    "direct_quantitative_equivalence_allowed": false,
+    "min_sample_count": 10,
+    "row_count": 1,
+    "soft_goals_are_hard_gates": false,
+    "solver_curve_time_end_s": 0.025,
+    "step107_normalized_rms_error": 0.6166683693114237,
+    "step107_peak_solver_m": 3.766233760416071e-07,
+    "step107_shape_correlation": 0.07747139097796335,
+    "step108_error_comparison_pass": true,
+    "step108_normalized_rms_improved": true,
+    "step108_peak_solver_improved": true,
+    "step108_shape_correlation_improved": true,
+    "validation_claim_allowed": false
+  }
+}

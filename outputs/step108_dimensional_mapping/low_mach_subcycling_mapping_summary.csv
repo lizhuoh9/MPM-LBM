@@ -1,0 +1,13 @@
+metric,value
+duct_length_m,0.1
+dx_phys_m,0.0020833333333333333
+lbm_dt_phys_s,4.166666666666667e-06
+lbm_substeps_per_fsi_step,120
+low_mach_mapping_enabled,True
+mapped_inlet_velocity_mps,10.0
+mapped_velocity_error_mps,0.0
+mapping_pass,True
+n_grid,48
+official_fsi_dt_s,0.0005
+target_inlet_velocity_mps,10.0
+target_u_lbm,0.02

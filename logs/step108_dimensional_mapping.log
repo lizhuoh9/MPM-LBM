@@ -1,0 +1,3 @@
+[OK] Step108 dimensional mapping finished
+mapped_inlet_velocity_mps=10.0
+lbm_substeps_per_fsi_step=120

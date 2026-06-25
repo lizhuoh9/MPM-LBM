@@ -1,0 +1,6 @@
+metric,value
+duct_only_low_mach_subcycling_pass,True
+has_inf_count,0
+has_nan_count,0
+row_count,1
+stable_count,1

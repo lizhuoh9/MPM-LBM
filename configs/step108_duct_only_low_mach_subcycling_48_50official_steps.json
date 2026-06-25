@@ -1,0 +1,27 @@
+{
+  "bc_x_left": 2,
+  "bc_x_right": 1,
+  "geometry_config_path": "configs/step104_fluent_duct_flap_geometry_1024.json",
+  "geometry_type": "duct_flap_proxy",
+  "include_flap_in_lbm_static_geometry": false,
+  "lbm_dt_phys_s": 4.166666666666667e-6,
+  "lbm_niu": 0.1,
+  "lbm_substeps_per_fsi_step": 120,
+  "low_mach_mapping_enabled": true,
+  "n_grid": 48,
+  "official_fsi_dt_s": 0.0005,
+  "official_steps": 50,
+  "pressure_outlet_velocity_policy": "interior_neighbor_velocity_extrapolation",
+  "rho0": 1.0,
+  "rho_bc_x_right": 1.0,
+  "row_name": "duct_only_low_mach_subcycling_48_50official_steps",
+  "target_inlet_velocity_mps": 10.0,
+  "target_u_lbm": [
+    0.02,
+    0.0,
+    0.0
+  ],
+  "total_lbm_substeps": 6000,
+  "write_particles": false,
+  "write_vtk": false
+}

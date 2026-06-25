@@ -1,0 +1,5 @@
+# Step108 Duct-Only Low-Mach Subcycling Report
+
+| row_name | n_grid | official_steps | lbm_substeps_per_fsi_step | completed_official_steps | completed_lbm_substeps | low_mach_mapping_enabled | target_inlet_velocity_mps | target_u_lbm | lbm_dt_phys_s | official_fsi_dt_s | inlet_plane_mean_ux_final | inlet_plane_max_ux_final | mid_duct_plane_mean_ux_final | mid_duct_plane_max_ux_final | outlet_plane_mean_ux_final | outlet_plane_max_ux_final | outlet_to_mid_mean_ux_ratio_final | outlet_to_inlet_mean_ux_ratio_final | rho_min_final | rho_max_final | mass_total_final | has_nan | has_inf | stable |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| duct_only_low_mach_subcycling_48_50official_steps | 48 | 50 | 120 | 50 | 6000 | True | 10.0 | [0.02, 0.0, 0.0] | 4.166666666666667e-06 | 0.0005 | 0.02000000700354576 | 0.020000005140900612 | 0.012313909828662872 | 0.019168796017766 | 0.012407145462930202 | 0.01777767762541771 | 1.007571570326941 | 0.6203570559115587 | 0.9999998807907104 | 1.0198925733566284 | 3880.327392578125 | False | False | True |

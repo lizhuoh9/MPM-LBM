@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import Optional
 
 from ..lbm.config import LBMConfig
 from ..mpm.config import MPMConfig
@@ -12,6 +13,7 @@ class UnifiedSimConfig:
     mpm_substeps_per_lbm_step: int = 10
     lbm_niu: float = 0.1
     lbm_rho0: float = 1.0
+    lbm_dt_phys_override_s: Optional[float] = None
 
     def __post_init__(self):
         if self.n_grid <= 0:
@@ -26,6 +28,8 @@ class UnifiedSimConfig:
             raise ValueError("lbm_niu must be positive")
         if self.lbm_rho0 <= 0.0:
             raise ValueError("lbm_rho0 must be positive")
+        if self.lbm_dt_phys_override_s is not None and self.lbm_dt_phys_override_s <= 0.0:
+            raise ValueError("lbm_dt_phys_override_s must be positive when provided")
 
     @property
     def nx(self) -> int:
@@ -45,6 +49,8 @@ class UnifiedSimConfig:
 
     @property
     def lbm_dt_phys(self) -> float:
+        if self.lbm_dt_phys_override_s is not None:
+            return float(self.lbm_dt_phys_override_s)
         return self.mpm_substeps_per_lbm_step * self.mpm_dt
 
     def make_lbm_config(self, **overrides) -> LBMConfig:

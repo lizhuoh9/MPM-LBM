@@ -1,0 +1,15 @@
+metric,value
+all_metrics_finite_count,1
+direct_quantitative_equivalence_allowed,False
+min_sample_count,10
+row_count,1
+soft_goals_are_hard_gates,False
+solver_curve_time_end_s,0.025
+step107_normalized_rms_error,0.6166683693114237
+step107_peak_solver_m,3.766233760416071e-07
+step107_shape_correlation,0.07747139097796335
+step108_error_comparison_pass,True
+step108_normalized_rms_improved,True
+step108_peak_solver_improved,True
+step108_shape_correlation_improved,True
+validation_claim_allowed,False

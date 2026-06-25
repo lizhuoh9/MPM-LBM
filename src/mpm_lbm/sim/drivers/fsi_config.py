@@ -1,5 +1,6 @@
 from dataclasses import asdict, dataclass
 import json
+import math
 from pathlib import Path
 from typing import Optional, Tuple
 
@@ -15,6 +16,7 @@ VALID_WALL_VELOCITY_APPLICATION_MODES = ("disabled", "solid_vel_experimental")
 VALID_GEOMETRY_MOTION_MODES = ("static", "prescribed_kinematic")
 VALID_GEOMETRY_MOTION_APPLICATION_MODES = ("disabled", "diagnostic_only")
 VALID_LBM_BOUNDARY_CONDITION_MODES = ("default_periodic", "duct_velocity_inlet_pressure_outlet")
+VALID_FSI_EXCHANGE_MODES = ("one_lbm_step_per_fsi_step", "lbm_subcycled_per_fsi_step")
 VALID_BOUNDARY_AXES = ("x",)
 VALID_BOUNDARY_SIDES = ("min", "max")
 
@@ -45,6 +47,13 @@ class FSIDriverConfig:
     velocity_inlet_axis: str = "x"
     velocity_inlet_side: str = "min"
     pressure_outlet_side: str = "max"
+    physical_duct_length_m: float = 1.0
+    target_inlet_velocity_mps: Optional[float] = None
+    official_fsi_dt_s: Optional[float] = None
+    target_u_lbm_for_dimensional_mapping: Optional[float] = None
+    lbm_substeps_per_fsi_step: int = 1
+    lbm_dt_phys_override_s: Optional[float] = None
+    fsi_exchange_mode: str = "one_lbm_step_per_fsi_step"
 
     box_min: Tuple[float, float, float] = (0.25, 0.35, 0.25)
     box_max: Tuple[float, float, float] = (0.55, 0.65, 0.55)
@@ -81,6 +90,16 @@ class FSIDriverConfig:
     quality_report_path: Optional[str] = None
 
     def __post_init__(self):
+        object.__setattr__(self, "target_u_lbm", _as_float_tuple(self.target_u_lbm, "target_u_lbm"))
+        object.__setattr__(
+            self,
+            "initial_solid_velocity_norm",
+            _as_float_tuple(self.initial_solid_velocity_norm, "initial_solid_velocity_norm"),
+        )
+        object.__setattr__(self, "gravity", _as_float_tuple(self.gravity, "gravity"))
+        object.__setattr__(self, "box_min", _as_float_tuple(self.box_min, "box_min"))
+        object.__setattr__(self, "box_max", _as_float_tuple(self.box_max, "box_max"))
+
         if self.coupling_mode not in VALID_COUPLING_MODES:
             raise ValueError(f"coupling_mode must be one of {VALID_COUPLING_MODES}")
         if self.reaction_transfer_mode not in VALID_REACTION_TRANSFER_MODES:
@@ -139,6 +158,8 @@ class FSIDriverConfig:
             raise ValueError(f"velocity_inlet_side must be one of {VALID_BOUNDARY_SIDES}")
         if self.pressure_outlet_side not in VALID_BOUNDARY_SIDES:
             raise ValueError(f"pressure_outlet_side must be one of {VALID_BOUNDARY_SIDES}")
+        if self.fsi_exchange_mode not in VALID_FSI_EXCHANGE_MODES:
+            raise ValueError(f"fsi_exchange_mode must be one of {VALID_FSI_EXCHANGE_MODES}")
         if self.lbm_boundary_condition_mode == "duct_velocity_inlet_pressure_outlet":
             if self.velocity_inlet_axis != "x":
                 raise ValueError("duct_velocity_inlet_pressure_outlet currently supports only x-axis inlet/outlet")
@@ -154,6 +175,15 @@ class FSIDriverConfig:
             raise ValueError("mpm_substeps_per_lbm_step must be positive")
         if self.mpm_dt <= 0.0:
             raise ValueError("mpm_dt must be positive")
+        if self.physical_duct_length_m <= 0.0:
+            raise ValueError("physical_duct_length_m must be positive")
+        if self.lbm_substeps_per_fsi_step <= 0:
+            raise ValueError("lbm_substeps_per_fsi_step must be positive")
+        _validate_optional_positive(self.target_inlet_velocity_mps, "target_inlet_velocity_mps")
+        _validate_optional_positive(self.official_fsi_dt_s, "official_fsi_dt_s")
+        _validate_optional_positive(self.target_u_lbm_for_dimensional_mapping, "target_u_lbm_for_dimensional_mapping")
+        _validate_optional_positive(self.lbm_dt_phys_override_s, "lbm_dt_phys_override_s")
+        self._validate_fsi_exchange_mapping()
         if self.dynamic_solid_threshold < 0.0:
             raise ValueError("dynamic_solid_threshold must be non-negative")
         if self.beta_lbm <= 0.0:
@@ -173,15 +203,38 @@ class FSIDriverConfig:
         if self.output_interval <= 0:
             raise ValueError("output_interval must be positive")
 
-        object.__setattr__(self, "target_u_lbm", _as_float_tuple(self.target_u_lbm, "target_u_lbm"))
-        object.__setattr__(
-            self,
-            "initial_solid_velocity_norm",
-            _as_float_tuple(self.initial_solid_velocity_norm, "initial_solid_velocity_norm"),
-        )
-        object.__setattr__(self, "gravity", _as_float_tuple(self.gravity, "gravity"))
-        object.__setattr__(self, "box_min", _as_float_tuple(self.box_min, "box_min"))
-        object.__setattr__(self, "box_max", _as_float_tuple(self.box_max, "box_max"))
+    def _validate_fsi_exchange_mapping(self) -> None:
+        if self.fsi_exchange_mode == "one_lbm_step_per_fsi_step":
+            if self.lbm_substeps_per_fsi_step != 1:
+                raise ValueError("lbm_substeps_per_fsi_step must be 1 when fsi_exchange_mode='one_lbm_step_per_fsi_step'")
+            if self.lbm_dt_phys_override_s is not None:
+                raise ValueError("lbm_dt_phys_override_s requires fsi_exchange_mode='lbm_subcycled_per_fsi_step'")
+            return
+
+        if self.coupling_mode != "moving_boundary":
+            raise ValueError("lbm_subcycled_per_fsi_step currently requires coupling_mode='moving_boundary'")
+        missing = [
+            name
+            for name, value in (
+                ("target_inlet_velocity_mps", self.target_inlet_velocity_mps),
+                ("official_fsi_dt_s", self.official_fsi_dt_s),
+                ("target_u_lbm_for_dimensional_mapping", self.target_u_lbm_for_dimensional_mapping),
+                ("lbm_dt_phys_override_s", self.lbm_dt_phys_override_s),
+            )
+            if value is None
+        ]
+        if missing:
+            raise ValueError("subcycled FSI exchange requires: " + ", ".join(missing))
+
+        expected_official_dt = float(self.lbm_substeps_per_fsi_step) * float(self.lbm_dt_phys_override_s)
+        if not math.isclose(float(self.official_fsi_dt_s), expected_official_dt, rel_tol=1.0e-12, abs_tol=1.0e-15):
+            raise ValueError("official_fsi_dt_s must equal lbm_substeps_per_fsi_step * lbm_dt_phys_override_s")
+        if not math.isclose(float(self.target_u_lbm[0]), float(self.target_u_lbm_for_dimensional_mapping), rel_tol=1.0e-12, abs_tol=1.0e-15):
+            raise ValueError("target_u_lbm[0] must equal target_u_lbm_for_dimensional_mapping")
+        dx_phys_m = float(self.physical_duct_length_m) / float(self.n_grid)
+        mapped_velocity = float(self.target_u_lbm_for_dimensional_mapping) * dx_phys_m / float(self.lbm_dt_phys_override_s)
+        if not math.isclose(mapped_velocity, float(self.target_inlet_velocity_mps), rel_tol=1.0e-12, abs_tol=1.0e-9):
+            raise ValueError("dimensional mapping does not recover target_inlet_velocity_mps")
 
     @classmethod
     def from_json(cls, path):
@@ -200,7 +253,13 @@ class FSIDriverConfig:
             n_grid=self.n_grid,
             mpm_dt=self.mpm_dt,
             mpm_substeps_per_lbm_step=self.mpm_substeps_per_lbm_step,
+            lbm_dt_phys_override_s=self.lbm_dt_phys_override_s,
         )
+
+
+def _validate_optional_positive(value, name: str) -> None:
+    if value is not None and float(value) <= 0.0:
+        raise ValueError(f"{name} must be positive when provided")
 
 
 def _path_exists(path) -> bool:

@@ -1,0 +1,4 @@
+[OK] Step108 low-Mach FSI candidate finished
+completed_official_fsi_steps=50
+completed_lbm_substeps=6000
+solver_curve_time_end_s=0.025

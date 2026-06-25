@@ -1,0 +1,4 @@
+[OK] Step108 duct-only low-Mach subcycling finished
+completed_official_steps=50
+completed_lbm_substeps=6000
+outlet_plane_mean_ux_final=0.012407145462930202

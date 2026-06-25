@@ -54,6 +54,7 @@ class FSIDriver3D:
         self.sim = config.make_unified_sim_config()
         self.mapper = GridUnitMapper.from_sim_config(self.sim)
         self.current_lbm_step = 0
+        self.total_lbm_substeps = 0
         self.total_mpm_substeps = 0
         self.diagnostics_rows = []
         self.timing = {
@@ -365,6 +366,11 @@ class FSIDriver3D:
         if not self.initialized:
             self.initialize()
 
+        if self.config.fsi_exchange_mode == "lbm_subcycled_per_fsi_step":
+            self._step_once_subcycled()
+            self.current_lbm_step += 1
+            return
+
         coupling_mode = self.config.coupling_mode
         if coupling_mode == "none":
             self._step_none()
@@ -376,6 +382,12 @@ class FSIDriver3D:
             raise ValueError(f"unsupported coupling_mode: {coupling_mode}")
 
         self.current_lbm_step += 1
+        self.total_lbm_substeps += 1
+
+    def _step_once_subcycled(self):
+        if self.config.coupling_mode != "moving_boundary":
+            raise ValueError("subcycled FSI exchange currently supports only moving_boundary coupling")
+        self._step_moving_boundary_subcycled()
 
     def _project(self):
         t0 = time.perf_counter()
@@ -456,6 +468,25 @@ class FSIDriver3D:
         self.lbm.step_moving_bounceback()
         self.timing["lbm_step_time"] += time.perf_counter() - t0
 
+        self._advance_mpm_with_moving_boundary_reaction()
+
+    def _step_moving_boundary_subcycled(self):
+        self._project()
+
+        for _ in range(self.config.lbm_substeps_per_fsi_step):
+            t0 = time.perf_counter()
+            self.lbm.update_dynamic_solid(self.config.dynamic_solid_threshold)
+            self.lbm.reinitialize_new_fluid_cells()
+            self.timing["coupling_time"] += time.perf_counter() - t0
+
+            t0 = time.perf_counter()
+            self.lbm.step_moving_bounceback()
+            self.timing["lbm_step_time"] += time.perf_counter() - t0
+            self.total_lbm_substeps += 1
+
+        self._advance_mpm_with_moving_boundary_reaction()
+
+    def _advance_mpm_with_moving_boundary_reaction(self):
         t0 = time.perf_counter()
         if self.config.reaction_transfer_mode == "engineering":
             for _ in range(self.config.mpm_substeps_per_lbm_step):

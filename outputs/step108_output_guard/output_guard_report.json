@@ -1,0 +1,320 @@
+{
+  "rows": [
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step108_artifact_manifest_policy.json",
+      "size_bytes": 266
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step108_duct_only_low_mach_subcycling_48_50official_steps.json",
+      "size_bytes": 766
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step108_fluent_duct_flap_low_mach_subcycling_48_50step_candidate.json",
+      "size_bytes": 1180
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step108_low_mach_subcycling_policy.json",
+      "size_bytes": 2141
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "configs/step108_output_guard_policy.json",
+      "size_bytes": 1402
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step108_artifact_manifest.log",
+      "size_bytes": 64
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step108_dimensional_mapping.log",
+      "size_bytes": 106
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step108_duct_only_low_mach_subcycling.log",
+      "size_bytes": 160
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step108_error_comparison.log",
+      "size_bytes": 174
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step108_low_mach_fsi_candidate.log",
+      "size_bytes": 139
+    },
+    {
+      "extension": ".log",
+      "forbidden": false,
+      "pass": true,
+      "path": "logs/step108_output_guard.log",
+      "size_bytes": 50
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_dimensional_mapping/low_mach_subcycling_mapping_report.csv",
+      "size_bytes": 311
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_dimensional_mapping/low_mach_subcycling_mapping_report.json",
+      "size_bytes": 398
+    },
+    {
+      "extension": ".md",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_dimensional_mapping/low_mach_subcycling_mapping_report.md",
+      "size_bytes": 596
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_dimensional_mapping/low_mach_subcycling_mapping_summary.csv",
+      "size_bytes": 335
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_driver_runs/fluent_duct_flap_low_mach_subcycling_48_50step_candidate/diagnostics_timeseries.csv",
+      "size_bytes": 16785
+    },
+    {
+      "extension": ".npz",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_driver_runs/fluent_duct_flap_low_mach_subcycling_48_50step_candidate/diagnostics_timeseries.npz",
+      "size_bytes": 19524
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_driver_runs/fluent_duct_flap_low_mach_subcycling_48_50step_candidate/driver_config.json",
+      "size_bytes": 2071
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_driver_runs/fluent_duct_flap_low_mach_subcycling_48_50step_candidate/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_driver_runs/fluent_duct_flap_low_mach_subcycling_48_50step_candidate/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_driver_runs/fluent_duct_flap_low_mach_subcycling_48_50step_candidate/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4131
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_driver_runs/fluent_duct_flap_low_mach_subcycling_48_50step_candidate/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_driver_runs/fluent_duct_flap_low_mach_subcycling_48_50step_candidate/geometry_quality_report.json",
+      "size_bytes": 2290
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_duct_only_low_mach_subcycling/duct_static_geometry_report.json",
+      "size_bytes": 605
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_duct_only_low_mach_subcycling/flow_plane_report.csv",
+      "size_bytes": 859
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_duct_only_low_mach_subcycling/flow_plane_report.json",
+      "size_bytes": 1414
+    },
+    {
+      "extension": ".md",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_duct_only_low_mach_subcycling/flow_plane_report.md",
+      "size_bytes": 1164
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_duct_only_low_mach_subcycling/flow_plane_summary.csv",
+      "size_bytes": 118
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_duct_only_low_mach_subcycling/flow_plane_timeseries.csv",
+      "size_bytes": 12576
+    },
+    {
+      "extension": ".dat",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_duct_only_low_mach_subcycling/geo_duct_flap_proxy_48.dat",
+      "size_bytes": 331776
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_error_comparison/error_report.csv",
+      "size_bytes": 788
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_error_comparison/error_report.json",
+      "size_bytes": 1729
+    },
+    {
+      "extension": ".md",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_error_comparison/error_report.md",
+      "size_bytes": 1239
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_error_comparison/error_summary.csv",
+      "size_bytes": 510
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_low_mach_fsi_candidate/diagnostics_timeseries.csv",
+      "size_bytes": 16785
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_low_mach_fsi_candidate/duct_boundary_condition_report.json",
+      "size_bytes": 634
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_low_mach_fsi_candidate/duct_static_geometry_report.json",
+      "size_bytes": 568
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_low_mach_fsi_candidate/flap_tip_displacement_timeseries.csv",
+      "size_bytes": 4131
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_low_mach_fsi_candidate/low_mach_fsi_report.csv",
+      "size_bytes": 924
+    },
+    {
+      "extension": ".json",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_low_mach_fsi_candidate/low_mach_fsi_report.json",
+      "size_bytes": 1579
+    },
+    {
+      "extension": ".md",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_low_mach_fsi_candidate/low_mach_fsi_report.md",
+      "size_bytes": 1336
+    },
+    {
+      "extension": ".csv",
+      "forbidden": false,
+      "pass": true,
+      "path": "outputs/step108_low_mach_fsi_candidate/low_mach_fsi_summary.csv",
+      "size_bytes": 198
+    }
+  ],
+  "summary": {
+    "artifact_budget_pass": true,
+    "direct_equivalence_claim_count": 0,
+    "official_case_data_h5_count": 0,
+    "official_case_file_count": 0,
+    "official_journal_file_count": 0,
+    "official_mesh_file_count": 0,
+    "official_png_committed_count": 0,
+    "output_guard_pass": true,
+    "pass_count": 42,
+    "private_absolute_path_count": 0,
+    "private_fluent_csv_committed_count": 0,
+    "protected_external_edit_count": 0,
+    "protected_real_geometry_candidate_edit_count": 0,
+    "row_count": 42,
+    "step108_forbidden_file_count": 0,
+    "step108_large_file_count": 0,
+    "step108_total_size_bytes": 764800,
+    "step108_total_size_mb": 0.7293701171875,
+    "step108_video_count": 0,
+    "validation_claim_count": 0
+  }
+}

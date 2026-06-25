@@ -1,0 +1,8 @@
+metric,value
+direct_quantitative_equivalence_allowed,False
+has_inf_count,0
+has_nan_count,0
+row_count,1
+stable_count,1
+step108_low_mach_fsi_candidate_pass,True
+validation_claim_allowed,False

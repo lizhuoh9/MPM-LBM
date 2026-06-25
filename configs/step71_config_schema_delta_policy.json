@@ -5,7 +5,8 @@
   "step70_config_schema_policy_path": "configs/step70_config_schema_freeze_policy.json",
   "expected_changed_schema_classes": [
     "FSIDriverConfig",
-    "GeometryConfig"
+    "GeometryConfig",
+    "UnifiedSimConfig"
   ],
   "expected_field_default_deltas": {
     "FSIDriverConfig": {
@@ -31,10 +32,15 @@
         "previous": null,
         "current": "None"
       }
+    },
+    "UnifiedSimConfig": {
+      "lbm_dt_phys_override_s": {
+        "previous": null,
+        "current": "None"
+      }
     }
   },
   "expected_unchanged_schema_classes": [
-    "UnifiedSimConfig",
     "LBMConfig",
     "MPMConfig",
     "BoundaryMotionInterfaceConfig",

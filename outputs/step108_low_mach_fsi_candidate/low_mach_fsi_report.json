@@ -1,0 +1,48 @@
+{
+  "rows": [
+    {
+      "canonical_driver_module": "src.mpm_lbm.sim.drivers.fsi_driver",
+      "completed_lbm_substeps": 6000,
+      "completed_official_fsi_steps": 50,
+      "diagnostics_row_count": 51,
+      "direct_quantitative_equivalence_allowed": false,
+      "driver_run_called": true,
+      "fixed_base_constraint_applied": true,
+      "fixed_base_max_displacement_norm": 0.0,
+      "fixed_base_max_velocity_norm": 0.0,
+      "fixed_base_particle_count": 319,
+      "flap_tip_timeseries_row_count": 51,
+      "geometry_type": "duct_flap_proxy",
+      "has_inf": false,
+      "has_nan": false,
+      "lbm_dt_phys_s": 4.166666666666667e-06,
+      "lbm_substeps_per_fsi_step": 120,
+      "n_grid": 48,
+      "n_particles": 1024,
+      "official_fsi_dt_s": 0.0005,
+      "row_name": "fluent_duct_flap_low_mach_subcycling_48_50step_candidate",
+      "solver_curve_time_end_s": 0.025,
+      "solver_curve_time_start_s": 0.0,
+      "stable": true,
+      "step36_squid_wall_velocity_config_used": false,
+      "target_inlet_velocity_mps": 10.0,
+      "target_u_lbm": [
+        0.02,
+        0.0,
+        0.0
+      ],
+      "target_u_lbm_applied_to_inlet": true,
+      "target_u_lbm_applied_to_solid_initial_velocity": false,
+      "validation_claim_allowed": false
+    }
+  ],
+  "summary": {
+    "direct_quantitative_equivalence_allowed": false,
+    "has_inf_count": 0,
+    "has_nan_count": 0,
+    "row_count": 1,
+    "stable_count": 1,
+    "step108_low_mach_fsi_candidate_pass": true,
+    "validation_claim_allowed": false
+  }
+}
