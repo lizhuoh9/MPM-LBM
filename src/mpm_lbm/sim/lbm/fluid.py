@@ -554,6 +554,20 @@ class LBMFluid3D:
         self.ob_unknown_population_delta_abs_sum_run[None] = 0.0
 
     @ti.kernel
+    def set_open_boundary_repair_run_counters(
+        self,
+        mass_balance_correction_count: ti.i32,
+        mass_balance_correction_abs_sum: ti.f32,
+        unknown_population_delta_abs_sum: ti.f32,
+    ):
+        self.ob_mass_balance_correction_count_step[None] = 0
+        self.ob_mass_balance_correction_count_run[None] = mass_balance_correction_count
+        self.ob_mass_balance_correction_abs_sum_step[None] = 0.0
+        self.ob_mass_balance_correction_abs_sum_run[None] = mass_balance_correction_abs_sum
+        self.ob_unknown_population_delta_abs_sum_step[None] = 0.0
+        self.ob_unknown_population_delta_abs_sum_run[None] = unknown_population_delta_abs_sum
+
+    @ti.kernel
     def reduce_lbm_stability_diagnostics(self):
         self.rho_min_reduced[None] = 1.0e30
         self.rho_max_reduced[None] = -1.0e30

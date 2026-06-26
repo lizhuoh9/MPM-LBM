@@ -922,7 +922,7 @@ def build_step120_gate_report(
     }
 
 
-def _checkpoint_limiter_counters(lbm: LBMFluid3D) -> Dict[str, int]:
+def _checkpoint_limiter_counters(lbm: LBMFluid3D) -> Dict[str, Any]:
     stats = lbm.get_open_boundary_limiter_stats()
     return {
         "rho_clip_count": int(stats.get("rho_clip_count_run", 0) or 0),
@@ -930,6 +930,13 @@ def _checkpoint_limiter_counters(lbm: LBMFluid3D) -> Dict[str, int]:
         "noneq_clip_count": int(stats.get("noneq_clip_count_run", 0) or 0),
         "population_floor_count": int(stats.get("population_floor_count_run", 0) or 0),
         "reconstructed_population_count": int(stats.get("reconstructed_population_count_run", 0) or 0),
+        "mass_balance_correction_count": int(stats.get("mass_balance_correction_count_run", 0) or 0),
+        "mass_balance_correction_abs_sum": _finite_float(
+            stats.get("mass_balance_correction_abs_sum_run", 0.0) or 0.0
+        ),
+        "unknown_population_delta_abs_sum": _finite_float(
+            stats.get("unknown_population_delta_abs_sum_run", 0.0) or 0.0
+        ),
     }
 
 
@@ -1028,6 +1035,12 @@ def restore_latest_step120_checkpoint_with_history(
                 int(counters.get("noneq_clip_count", 0) or 0),
                 int(counters.get("population_floor_count", 0) or 0),
                 int(counters.get("reconstructed_population_count", 0) or 0),
+            )
+        if hasattr(lbm, "set_open_boundary_repair_run_counters"):
+            lbm.set_open_boundary_repair_run_counters(
+                int(counters.get("mass_balance_correction_count", 0) or 0),
+                _finite_float(counters.get("mass_balance_correction_abs_sum", 0.0) or 0.0),
+                _finite_float(counters.get("unknown_population_delta_abs_sum", 0.0) or 0.0),
             )
         return (
             int(metadata["step"]),
