@@ -1,0 +1,9 @@
+{
+  "best_boundary_selected": false,
+  "campaign_should_stop_at_48": true,
+  "candidate_summaries": [],
+  "failure_classification": "boundary_repair_failed_revisit_lbm_solver",
+  "selection_reason": "no_48_candidate_passed_comparison_gate",
+  "step": 120,
+  "validation_claim_allowed": false
+}

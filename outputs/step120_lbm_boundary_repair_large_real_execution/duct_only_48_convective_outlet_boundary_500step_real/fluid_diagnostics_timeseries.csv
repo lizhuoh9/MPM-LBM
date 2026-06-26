@@ -1,0 +1,1 @@
+step,rho_min,rho_max,rho_mean,mass_total,mass_total_delta_from_initial,mass_total_delta_rel,inlet_mean_ux,outlet_mean_ux,midplane_mean_ux,inlet_flux,outlet_flux,flux_imbalance_abs,flux_imbalance_rel,max_v,mach_proxy_observed

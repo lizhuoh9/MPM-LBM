@@ -58,6 +58,27 @@ class LBMFluid3D:
         self.rho_max = ti.field(ti.f32, shape=())
         self.mass_total = ti.field(ti.f32, shape=())
         self.force_norm_max = ti.field(ti.f32, shape=())
+        self.rho_min_reduced = ti.field(ti.f32, shape=())
+        self.rho_max_reduced = ti.field(ti.f32, shape=())
+        self.max_v_reduced = ti.field(ti.f32, shape=())
+        self.f_min_reduced = ti.field(ti.f32, shape=())
+        self.f_max_reduced = ti.field(ti.f32, shape=())
+        self.F_min_reduced = ti.field(ti.f32, shape=())
+        self.F_max_reduced = ti.field(ti.f32, shape=())
+        self.negative_population_count_reduced = ti.field(ti.i32, shape=())
+        self.boundary_x_min_negative_count = ti.field(ti.i32, shape=())
+        self.boundary_x_max_negative_count = ti.field(ti.i32, shape=())
+        self.population_entry_count_reduced = ti.field(ti.i32, shape=())
+        self.ob_rho_clip_count_step = ti.field(ti.i32, shape=())
+        self.ob_rho_clip_count_run = ti.field(ti.i32, shape=())
+        self.ob_velocity_clip_count_step = ti.field(ti.i32, shape=())
+        self.ob_velocity_clip_count_run = ti.field(ti.i32, shape=())
+        self.ob_noneq_clip_count_step = ti.field(ti.i32, shape=())
+        self.ob_noneq_clip_count_run = ti.field(ti.i32, shape=())
+        self.ob_population_floor_count_step = ti.field(ti.i32, shape=())
+        self.ob_population_floor_count_run = ti.field(ti.i32, shape=())
+        self.ob_reconstructed_population_count_step = ti.field(ti.i32, shape=())
+        self.ob_reconstructed_population_count_run = ti.field(ti.i32, shape=())
 
         #Boundary condition mode: 0=periodic, 1= fix pressure, 2=fix velocity; boundary pressure value (rho); boundary velocity value for vx,vy,vz
         self.bc_x_left, self.rho_bcxl, self.vx_bcxl, self.vy_bcxl, self.vz_bcxl = (
@@ -448,6 +469,7 @@ class LBMFluid3D:
         self.bb_net_solid_force[None] = solid_force
 
     def Boundary_condition(self):
+        self.clear_open_boundary_limiter_step_counters()
         if self.open_boundary_semantics == REGULARIZED_VELOCITY_PRESSURE:
             self.apply_regularized_x_open_boundaries()
             return
@@ -458,6 +480,138 @@ class LBMFluid3D:
             self.apply_convective_pressure_outlet_x_open_boundaries()
             return
         self.Boundary_condition_legacy()
+
+    @ti.kernel
+    def clear_open_boundary_limiter_step_counters(self):
+        self.ob_rho_clip_count_step[None] = 0
+        self.ob_velocity_clip_count_step[None] = 0
+        self.ob_noneq_clip_count_step[None] = 0
+        self.ob_population_floor_count_step[None] = 0
+        self.ob_reconstructed_population_count_step[None] = 0
+
+    @ti.kernel
+    def clear_open_boundary_limiter_run_counters(self):
+        self.ob_rho_clip_count_step[None] = 0
+        self.ob_rho_clip_count_run[None] = 0
+        self.ob_velocity_clip_count_step[None] = 0
+        self.ob_velocity_clip_count_run[None] = 0
+        self.ob_noneq_clip_count_step[None] = 0
+        self.ob_noneq_clip_count_run[None] = 0
+        self.ob_population_floor_count_step[None] = 0
+        self.ob_population_floor_count_run[None] = 0
+        self.ob_reconstructed_population_count_step[None] = 0
+        self.ob_reconstructed_population_count_run[None] = 0
+
+    @ti.kernel
+    def set_open_boundary_limiter_run_counters(
+        self,
+        rho_clip_count: ti.i32,
+        velocity_clip_count: ti.i32,
+        noneq_clip_count: ti.i32,
+        population_floor_count: ti.i32,
+        reconstructed_population_count: ti.i32,
+    ):
+        self.ob_rho_clip_count_step[None] = 0
+        self.ob_rho_clip_count_run[None] = rho_clip_count
+        self.ob_velocity_clip_count_step[None] = 0
+        self.ob_velocity_clip_count_run[None] = velocity_clip_count
+        self.ob_noneq_clip_count_step[None] = 0
+        self.ob_noneq_clip_count_run[None] = noneq_clip_count
+        self.ob_population_floor_count_step[None] = 0
+        self.ob_population_floor_count_run[None] = population_floor_count
+        self.ob_reconstructed_population_count_step[None] = 0
+        self.ob_reconstructed_population_count_run[None] = reconstructed_population_count
+
+    @ti.kernel
+    def reduce_lbm_stability_diagnostics(self):
+        self.rho_min_reduced[None] = 1.0e30
+        self.rho_max_reduced[None] = -1.0e30
+        self.max_v_reduced[None] = 0.0
+        self.f_min_reduced[None] = 1.0e30
+        self.f_max_reduced[None] = -1.0e30
+        self.F_min_reduced[None] = 1.0e30
+        self.F_max_reduced[None] = -1.0e30
+        self.negative_population_count_reduced[None] = 0
+        self.boundary_x_min_negative_count[None] = 0
+        self.boundary_x_max_negative_count[None] = 0
+        self.population_entry_count_reduced[None] = 0
+        for I in ti.grouped(self.rho):
+            if self.solid[I] == 0:
+                rho_value = self.rho[I]
+                ti.atomic_min(self.rho_min_reduced[None], rho_value)
+                ti.atomic_max(self.rho_max_reduced[None], rho_value)
+                ti.atomic_max(self.max_v_reduced[None], self.v[I].norm())
+                for s in ti.static(range(19)):
+                    f_value = self.f[I][s]
+                    F_value = self.F[I][s]
+                    ti.atomic_min(self.f_min_reduced[None], f_value)
+                    ti.atomic_max(self.f_max_reduced[None], f_value)
+                    ti.atomic_min(self.F_min_reduced[None], F_value)
+                    ti.atomic_max(self.F_max_reduced[None], F_value)
+                    ti.atomic_add(self.population_entry_count_reduced[None], 2)
+                    if f_value < 0.0:
+                        ti.atomic_add(self.negative_population_count_reduced[None], 1)
+                        if I.x == 0:
+                            ti.atomic_add(self.boundary_x_min_negative_count[None], 1)
+                        if I.x == self.nx - 1:
+                            ti.atomic_add(self.boundary_x_max_negative_count[None], 1)
+                    if F_value < 0.0:
+                        ti.atomic_add(self.negative_population_count_reduced[None], 1)
+                        if I.x == 0:
+                            ti.atomic_add(self.boundary_x_min_negative_count[None], 1)
+                        if I.x == self.nx - 1:
+                            ti.atomic_add(self.boundary_x_max_negative_count[None], 1)
+
+    def get_lightweight_stability_stats(self):
+        self.reduce_lbm_stability_diagnostics()
+        entry_count = int(self.population_entry_count_reduced[None])
+        negative_count = int(self.negative_population_count_reduced[None])
+        return {
+            "rho_min": float(self.rho_min_reduced[None]),
+            "rho_max": float(self.rho_max_reduced[None]),
+            "max_v": float(self.max_v_reduced[None]),
+            "f_min": float(self.f_min_reduced[None]),
+            "f_max": float(self.f_max_reduced[None]),
+            "F_min": float(self.F_min_reduced[None]),
+            "F_max": float(self.F_max_reduced[None]),
+            "negative_population_count": negative_count,
+            "negative_population_fraction": float(negative_count / entry_count if entry_count else 0.0),
+            "population_entry_count": entry_count,
+            "boundary_x_min_negative_population_count": int(self.boundary_x_min_negative_count[None]),
+            "boundary_x_max_negative_population_count": int(self.boundary_x_max_negative_count[None]),
+            "stability_all_finite": True,
+        }
+
+    def get_open_boundary_limiter_stats(self):
+        step_activation_count = (
+            int(self.ob_rho_clip_count_step[None])
+            + int(self.ob_velocity_clip_count_step[None])
+            + int(self.ob_noneq_clip_count_step[None])
+            + int(self.ob_population_floor_count_step[None])
+        )
+        run_activation_count = (
+            int(self.ob_rho_clip_count_run[None])
+            + int(self.ob_velocity_clip_count_run[None])
+            + int(self.ob_noneq_clip_count_run[None])
+            + int(self.ob_population_floor_count_run[None])
+        )
+        denominator = int(self.ob_reconstructed_population_count_run[None])
+        return {
+            "rho_clip_count_step": int(self.ob_rho_clip_count_step[None]),
+            "rho_clip_count_run": int(self.ob_rho_clip_count_run[None]),
+            "velocity_clip_count_step": int(self.ob_velocity_clip_count_step[None]),
+            "velocity_clip_count_run": int(self.ob_velocity_clip_count_run[None]),
+            "noneq_clip_count_step": int(self.ob_noneq_clip_count_step[None]),
+            "noneq_clip_count_run": int(self.ob_noneq_clip_count_run[None]),
+            "population_floor_count_step": int(self.ob_population_floor_count_step[None]),
+            "population_floor_count_run": int(self.ob_population_floor_count_run[None]),
+            "reconstructed_population_count_step": int(self.ob_reconstructed_population_count_step[None]),
+            "reconstructed_population_count_run": int(self.ob_reconstructed_population_count_run[None]),
+            "limiter_activation_count_step": step_activation_count,
+            "limiter_activation_count": run_activation_count,
+            "limiter_activation_denominator": denominator,
+            "limiter_activation_fraction": float(run_activation_count / denominator if denominator else 0.0),
+        }
 
     @ti.kernel
     def Boundary_condition_legacy(self):
@@ -594,15 +748,42 @@ class LBMFluid3D:
 
     @ti.func
     def _limited_regularized_population(self, s, target_rho, target_u, ni, nj, nk):
-        rho_limited = self._limit_open_boundary_rho(target_rho)
-        u_limited = self._limit_open_boundary_velocity(target_u)
+        rho_limited = target_rho
+        u_limited = target_u
+        if ti.static(self.open_boundary_limiter_enabled):
+            ti.atomic_add(self.ob_reconstructed_population_count_step[None], 1)
+            ti.atomic_add(self.ob_reconstructed_population_count_run[None], 1)
+            if rho_limited < self.open_boundary_rho_min:
+                rho_limited = self.open_boundary_rho_min
+                ti.atomic_add(self.ob_rho_clip_count_step[None], 1)
+                ti.atomic_add(self.ob_rho_clip_count_run[None], 1)
+            if rho_limited > self.open_boundary_rho_max:
+                rho_limited = self.open_boundary_rho_max
+                ti.atomic_add(self.ob_rho_clip_count_step[None], 1)
+                ti.atomic_add(self.ob_rho_clip_count_run[None], 1)
+            norm = u_limited.norm()
+            if norm > self.open_boundary_u_max:
+                u_limited = u_limited * (self.open_boundary_u_max / norm)
+                ti.atomic_add(self.ob_velocity_clip_count_step[None], 1)
+                ti.atomic_add(self.ob_velocity_clip_count_run[None], 1)
         neighbor_noneq = self.F[ni, nj, nk][s] - self.feq(s, self.rho[ni, nj, nk], self.v[ni, nj, nk])
         if ti.static(self.open_boundary_limiter_enabled):
             if neighbor_noneq > self.open_boundary_noneq_cap:
                 neighbor_noneq = self.open_boundary_noneq_cap
+                ti.atomic_add(self.ob_noneq_clip_count_step[None], 1)
+                ti.atomic_add(self.ob_noneq_clip_count_run[None], 1)
             if neighbor_noneq < -self.open_boundary_noneq_cap:
                 neighbor_noneq = -self.open_boundary_noneq_cap
-        return self._limit_open_boundary_population(self.feq(s, rho_limited, u_limited) + neighbor_noneq)
+                ti.atomic_add(self.ob_noneq_clip_count_step[None], 1)
+                ti.atomic_add(self.ob_noneq_clip_count_run[None], 1)
+        out = self.feq(s, rho_limited, u_limited) + neighbor_noneq
+        if ti.static(self.open_boundary_limiter_enabled):
+            if ti.static(self.open_boundary_population_floor_enabled):
+                if out < self.open_boundary_population_floor:
+                    out = self.open_boundary_population_floor
+                    ti.atomic_add(self.ob_population_floor_count_step[None], 1)
+                    ti.atomic_add(self.ob_population_floor_count_run[None], 1)
+        return out
 
     @ti.func
     def _convective_outlet_population(self, s, bi, bj, bk, ni, nj, nk, n2i, n2j, n2k):

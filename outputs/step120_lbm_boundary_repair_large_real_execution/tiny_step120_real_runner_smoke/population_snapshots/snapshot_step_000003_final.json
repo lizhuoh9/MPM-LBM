@@ -1,0 +1,16 @@
+{
+  "f_shape": [
+    5,
+    4,
+    4,
+    19
+  ],
+  "reason": "final",
+  "rho_shape": [
+    5,
+    4,
+    4
+  ],
+  "snapshot_payload_omitted_from_git": true,
+  "step": 3
+}

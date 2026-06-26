@@ -1,0 +1,1475 @@
+from __future__ import annotations
+
+import argparse
+import json
+import math
+import sys
+import time
+from dataclasses import asdict, dataclass
+from hashlib import sha256
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Sequence, Tuple
+
+import numpy as np
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from experiments.steps.step116_regularized_lbm_duct_flow_baseline import (  # noqa: E402
+    CS_LBM,
+    _apply_static_geometry,
+    _ensure_taichi,
+    _finite_float,
+    _lbm_config_report,
+    _read_json,
+    _tau_feasibility_report,
+    _velocity_profile_report,
+    _write_boundary_flux_timeseries,
+    _write_csv,
+    _write_density_drift_timeseries,
+    _write_json,
+    _write_static_flap_reports,
+    _write_timeseries,
+)
+from experiments.steps.step118_lbm_open_boundary_stability_repair import (  # noqa: E402
+    _make_lbm_config,
+    population_stats_from_record,
+)
+from experiments.steps.step119_lbm_boundary_repair_real_run_validation import (  # noqa: E402
+    FINAL_CLASSIFICATIONS,
+    LIMITER_ACTIVATION_FRACTION_LIMIT,
+    Step119RunSpec,
+    _boundary_plane_from_location,
+    _empty_first_failure,
+    _first_location_record,
+    _large_real_row_requires_allowance,
+    _spec_value,
+    _tail_value,
+)
+from src.mpm_lbm.sim.diagnostics.lbm_boundary_diagnostics import (  # noqa: E402
+    summarize_lbm_boundary_diagnostics,
+    summarize_timeseries_trends,
+)
+from src.mpm_lbm.sim.diagnostics.lbm_stability_diagnostics import (  # noqa: E402
+    first_gate_failure_detector,
+    mass_source_sink_by_step,
+    summarize_lbm_stability_diagnostics,
+)
+from src.mpm_lbm.sim.lbm.fluid import LBMFluid3D  # noqa: E402
+
+
+DEFAULT_OUTPUT_DIR = REPO_ROOT / "outputs" / "step120_lbm_boundary_repair_large_real_execution"
+DEFAULT_CHECKPOINT_ROOT = REPO_ROOT / "outputs" / "tmp" / "step120_checkpoints"
+STEP120_SCHEMA_VERSION = 1
+
+ROW_STATUS_COMPLETED = "completed"
+ROW_STATUS_EXPECTED_POLICY_SKIP = "expected_policy_skip"
+ROW_STATUS_INCOMPLETE_PLACEHOLDER = "incomplete_placeholder"
+ROW_STATUS_STOPPED_ON_FAILURE = "stopped_on_failure"
+ROW_STATUS_STOPPED_ON_WALLTIME = "stopped_on_walltime"
+ROW_STATUS_CHECKPOINT_AVAILABLE = "checkpoint_available"
+ROW_STATUS_INTERRUPTED = "interrupted"
+ROW_STATUS_MISSING = "missing"
+
+CANDIDATE_SEMANTICS = {
+    "regularized_velocity_pressure_limited",
+    "convective_pressure_outlet_experimental",
+}
+REFERENCE_SEMANTICS = {
+    "equilibrium_all_population_reset",
+    "regularized_velocity_pressure",
+}
+
+
+@dataclass(frozen=True)
+class Step120RunSpec(Step119RunSpec):
+    artifact_scope_note: str = "Step120 recoverable large-real LBM boundary repair execution row"
+    step120_required_row: bool = True
+    synthetic_diagnostic_mode: bool = False
+    failure_check_interval: int = 5
+    full_population_snapshot_interval: int = 0
+    snapshot_on_failure: bool = True
+    snapshot_on_final: bool = True
+    row_role: str = "candidate_or_reference"
+
+
+def step120_real_run_specs(output_interval: int = 25) -> List[Step120RunSpec]:
+    return [
+        Step120RunSpec(
+            name="tiny_step120_real_runner_smoke",
+            nx=5,
+            ny=4,
+            nz=4,
+            n_steps=3,
+            output_interval=1,
+            failure_check_interval=1,
+            checkpoint_every=1,
+            open_boundary_semantics="regularized_velocity_pressure_limited",
+            geometry_mode="duct_only",
+            requested_nx=5,
+            requested_n_steps=3,
+            open_boundary_limiter_enabled=True,
+            open_boundary_population_floor=-1.0e-8,
+            artifact_scope_note="committed tiny real Step120 smoke for runner, checkpoint, and counter plumbing",
+            step120_required_row=False,
+            step119_required_row=False,
+            not_used_for_validation=True,
+            allow_large_real_run_without_flag=True,
+            row_role="tiny_smoke",
+        ),
+        Step120RunSpec(
+            name="duct_only_48_legacy_boundary_500step_reference_real",
+            nx=48,
+            ny=48,
+            nz=48,
+            n_steps=500,
+            output_interval=output_interval,
+            failure_check_interval=5,
+            checkpoint_every=100,
+            open_boundary_semantics="equilibrium_all_population_reset",
+            geometry_mode="duct_only",
+            requested_nx=48,
+            requested_n_steps=500,
+            row_role="reference_48",
+        ),
+        Step120RunSpec(
+            name="duct_only_48_regularized_boundary_500step_reference_real",
+            nx=48,
+            ny=48,
+            nz=48,
+            n_steps=500,
+            output_interval=output_interval,
+            failure_check_interval=5,
+            checkpoint_every=100,
+            open_boundary_semantics="regularized_velocity_pressure",
+            geometry_mode="duct_only",
+            requested_nx=48,
+            requested_n_steps=500,
+            row_role="reference_48",
+        ),
+        Step120RunSpec(
+            name="duct_only_48_regularized_limited_boundary_500step_real",
+            nx=48,
+            ny=48,
+            nz=48,
+            n_steps=500,
+            output_interval=output_interval,
+            failure_check_interval=5,
+            checkpoint_every=100,
+            open_boundary_semantics="regularized_velocity_pressure_limited",
+            geometry_mode="duct_only",
+            requested_nx=48,
+            requested_n_steps=500,
+            open_boundary_limiter_enabled=True,
+            open_boundary_population_floor=-1.0e-8,
+            row_role="candidate_48",
+        ),
+        Step120RunSpec(
+            name="duct_only_48_convective_outlet_boundary_500step_real",
+            nx=48,
+            ny=48,
+            nz=48,
+            n_steps=500,
+            output_interval=output_interval,
+            failure_check_interval=5,
+            checkpoint_every=100,
+            open_boundary_semantics="convective_pressure_outlet_experimental",
+            geometry_mode="duct_only",
+            requested_nx=48,
+            requested_n_steps=500,
+            row_role="candidate_48",
+        ),
+        Step120RunSpec(
+            name="duct_only_96_regularized_limited_physical_nu_report_only_100step_guarded_real",
+            nx=96,
+            ny=96,
+            nz=96,
+            n_steps=100,
+            output_interval=100,
+            failure_check_interval=5,
+            checkpoint_every=100,
+            open_boundary_semantics="regularized_velocity_pressure_limited",
+            geometry_mode="duct_only",
+            lbm_viscosity_semantics="physical_nu_mapping",
+            lbm_tau_stability_policy="strict",
+            lbm_min_tau_margin=1.0e-4,
+            lbm_dt_phys_override_s=2.0833333333333334e-6,
+            physical_duct_length_m=0.1,
+            target_inlet_velocity_mps=10.0,
+            target_reynolds_number=26666.666666666668,
+            requested_nx=96,
+            requested_n_steps=100,
+            open_boundary_limiter_enabled=True,
+            open_boundary_population_floor=-1.0e-8,
+            row_role="policy_guard",
+        ),
+    ]
+
+
+def run_step120_matrix(
+    output_dir: Path | str = DEFAULT_OUTPUT_DIR,
+    specs: Optional[Sequence[Step120RunSpec]] = None,
+    force: bool = False,
+    resume: bool = True,
+    row_names: Optional[Sequence[str]] = None,
+    max_rows: Optional[int] = None,
+    output_interval: Optional[int] = None,
+    stop_on_first_failure: Optional[bool] = None,
+    checkpoint_every: Optional[int] = None,
+    max_wall_seconds: Optional[float] = None,
+    allow_large_real_rows: bool = False,
+    checkpoint_root: Path | str = DEFAULT_CHECKPOINT_ROOT,
+) -> Dict[str, Any]:
+    out = Path(output_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    default_specs_used = specs is None
+    all_default_specs = step120_real_run_specs()
+    run_specs = list(specs) if specs is not None else list(all_default_specs)
+    if output_interval is not None:
+        run_specs = [_replace_spec(spec, output_interval=int(output_interval)) for spec in run_specs]
+    if stop_on_first_failure is not None:
+        run_specs = [_replace_spec(spec, stop_on_first_failure=bool(stop_on_first_failure)) for spec in run_specs]
+    if checkpoint_every is not None:
+        run_specs = [_replace_spec(spec, checkpoint_every=int(checkpoint_every)) for spec in run_specs]
+    if max_wall_seconds is not None:
+        run_specs = [_replace_spec(spec, max_wall_seconds=float(max_wall_seconds)) for spec in run_specs]
+    if row_names:
+        requested = set(row_names)
+        run_specs = [spec for spec in run_specs if spec.name in requested]
+    if max_rows is not None:
+        run_specs = run_specs[: int(max_rows)]
+
+    rows: List[Dict[str, Any]] = []
+    for spec in run_specs:
+        row_dir = out / spec.name
+        if resume and not force and step120_row_complete_for_resume(row_dir):
+            row = _read_json(row_dir / "finite_stability_report.json")["summary_row"]
+            row["row_source"] = "resumed"
+            rows.append(row)
+            continue
+        rows.append(
+            run_step120_row(
+                spec,
+                row_dir,
+                allow_large_real_rows=allow_large_real_rows,
+                checkpoint_root=checkpoint_root,
+                resume_from_checkpoint=bool(resume and not force),
+            )
+        )
+
+    if default_specs_used:
+        seen = {row["name"] for row in rows}
+        for spec in all_default_specs:
+            row_dir = out / spec.name
+            if spec.name not in seen and step120_row_complete_for_resume(row_dir):
+                row = _read_json(row_dir / "finite_stability_report.json")["summary_row"]
+                row["row_source"] = "existing"
+                rows.append(row)
+
+    limiter_summary = _write_limiter_actual_activation_summary(out, rows)
+    row_status = _write_row_status_summary(out, rows)
+    comparison_48 = _write_boundary_variant_48_comparison(out, rows)
+    best_selection = _write_best_boundary_selection(out, rows)
+    validation_96 = _write_boundary_variant_96_validation(out, rows, best_selection)
+    first_failure = _write_global_first_failure(out, rows)
+    gate = _write_step120_gate_report(out, rows, limiter_summary, best_selection)
+    summary = _write_matrix_summary(out, rows, gate, row_status)
+    _write_solver_report(out, rows, comparison_48, best_selection, validation_96, first_failure, limiter_summary, gate, summary)
+    _write_output_readme(out, rows, gate, best_selection)
+    return summary
+
+
+def run_step120_row(
+    spec: Step120RunSpec,
+    row_dir: Path | str,
+    allow_large_real_rows: bool = False,
+    checkpoint_root: Path | str = DEFAULT_CHECKPOINT_ROOT,
+    resume_from_checkpoint: bool = False,
+    stop_after_steps: Optional[int] = None,
+) -> Dict[str, Any]:
+    row_path = Path(row_dir)
+    row_path.mkdir(parents=True, exist_ok=True)
+    tau_report = _tau_feasibility_report(spec)
+    print(
+        f"[Step120] row={spec.name} role={spec.row_role} mode={spec.geometry_mode} "
+        f"grid={spec.nx}x{spec.ny}x{spec.nz} steps={spec.n_steps}",
+        flush=True,
+    )
+
+    if spec.synthetic_diagnostic_mode:
+        return _write_nonstepped_row(spec, row_path, tau_report, "synthetic_diagnostic_mode_not_allowed")
+    if spec.lbm_tau_stability_policy == "strict" and not tau_report["tau_margin_pass"]:
+        return _write_nonstepped_row(spec, row_path, tau_report, "tau_margin")
+    if _large_real_row_requires_allowance(spec) and not (allow_large_real_rows or spec.allow_large_real_run_without_flag):
+        return _write_nonstepped_row(spec, row_path, tau_report, "large_real_row_requires_explicit_allowance")
+
+    started = time.perf_counter()
+    lbm, tau_report = create_step120_lbm(spec, tau_report=tau_report)
+    checkpoint_root_path = Path(checkpoint_root)
+    start_step = 0
+    mass_initial = None
+    restored_checkpoint = None
+    lbm.clear_open_boundary_limiter_run_counters()
+    if resume_from_checkpoint:
+        restored = restore_latest_step120_checkpoint(lbm, spec, checkpoint_root_path)
+        if restored is not None:
+            start_step, mass_initial, restored_checkpoint = restored
+
+    records: List[Dict[str, Any]] = []
+    stability_records: List[Dict[str, Any]] = []
+    combined_records: List[Dict[str, Any]] = []
+    steps_completed = int(start_step)
+    stop_reason = None
+
+    for step in range(int(start_step), int(spec.n_steps) + 1):
+        if step > int(start_step):
+            lbm.step()
+            steps_completed = step
+        should_full_sample = _should_full_sample(spec, step)
+        should_failure_check = _should_failure_check(spec, step)
+        stability = None
+        if should_failure_check or should_full_sample:
+            stability = summarize_step120_lightweight_stability(lbm, step)
+            stability_records.append(stability)
+        if should_full_sample:
+            summary = summarize_lbm_boundary_diagnostics(lbm, step=step, mass_initial=mass_initial)
+            if mass_initial is None:
+                mass_initial = summary["mass_total"]
+                summary = summarize_lbm_boundary_diagnostics(lbm, step=step, mass_initial=mass_initial)
+            if stability is None:
+                stability = summarize_step120_lightweight_stability(lbm, step)
+                stability_records.append(stability)
+            combined = {**summary, **stability}
+            records.append(summary)
+            combined_records.append(combined)
+            _write_partial_timeseries(row_path, records, stability_records)
+            print(
+                f"[Step120] row={spec.name} step={step}/{spec.n_steps} "
+                f"rho=[{summary['rho_min']:.6g},{summary['rho_max']:.6g}] "
+                f"mass_drift={summary['mass_total_delta_rel']:.6g} "
+                f"neg_pop={stability['negative_population_count']}",
+                flush=True,
+            )
+            first_failure = first_gate_failure_detector(combined_records)
+            if spec.stop_on_first_failure and first_failure["first_failure_step"] is not None:
+                stop_reason = f"first_failure:{first_failure['first_failure_reason']}"
+                if spec.snapshot_on_failure:
+                    _write_full_population_snapshot(row_path, lbm, step, "first_failure")
+                break
+        if spec.checkpoint_every > 0 and step > 0 and step % int(spec.checkpoint_every) == 0:
+            write_step120_checkpoint(lbm, spec, checkpoint_root_path, step, mass_initial)
+        if stop_after_steps is not None and step >= int(stop_after_steps) and step < int(spec.n_steps):
+            stop_reason = "interrupted"
+            write_step120_checkpoint(lbm, spec, checkpoint_root_path, step, mass_initial)
+            break
+        if spec.max_wall_seconds is not None and time.perf_counter() - started >= float(spec.max_wall_seconds):
+            stop_reason = "max_wall_seconds"
+            write_step120_checkpoint(lbm, spec, checkpoint_root_path, step, mass_initial)
+            break
+
+    if spec.snapshot_on_final and int(steps_completed) == int(spec.n_steps):
+        _write_full_population_snapshot(row_path, lbm, int(steps_completed), "final")
+
+    runtime_s = _finite_float(time.perf_counter() - started)
+    limiter_summary = summarize_step120_limiter_activation(lbm, spec)
+    finite = _finite_report(
+        spec,
+        steps_completed,
+        records,
+        stability_records,
+        combined_records,
+        tau_report,
+        runtime_s,
+        stop_reason,
+        limiter_summary,
+        checkpoint_root_path,
+        restored_checkpoint,
+    )
+    metadata = _metadata(spec, tau_report, skipped=False, runtime_s=runtime_s, stop_reason=stop_reason, restored_checkpoint=restored_checkpoint)
+    config_report = _lbm_config_report(lbm.config, spec, tau_report)
+    _write_json(row_path / "run_metadata.json", metadata)
+    _write_json(row_path / "driver_config.json", config_report)
+    _write_json(row_path / "duct_boundary_condition_report.json", _boundary_report(spec))
+    _write_json(row_path / "finite_stability_report.json", finite)
+    _write_json(row_path / "first_failure_diagnostics.json", _first_failure_artifact(combined_records, spec, limiter_summary))
+    _write_json(row_path / "limiter_activation_summary.json", limiter_summary)
+    _write_json(row_path / "velocity_profile_summary.json", _velocity_profile_report(lbm, spec, records))
+    _write_partial_timeseries(row_path, records, stability_records)
+    if spec.geometry_mode == "static_two_flap" and records:
+        _write_static_flap_reports(row_path, lbm, spec, records[-1])
+    print(f"[Step120] row={spec.name} completed runtime_s={runtime_s:.3f}", flush=True)
+    return finite["summary_row"]
+
+
+def create_step120_lbm(spec: Step120RunSpec, tau_report: Optional[Dict[str, Any]] = None) -> Tuple[LBMFluid3D, Dict[str, Any]]:
+    _ensure_taichi()
+    tau = tau_report if tau_report is not None else _tau_feasibility_report(spec)
+    config = _make_lbm_config(spec, tau)
+    lbm = LBMFluid3D(config)
+    _apply_static_geometry(lbm, spec)
+    lbm.init_simulation()
+    return lbm, tau
+
+
+def summarize_step120_lightweight_stability(lbm: Any, step: int) -> Dict[str, Any]:
+    if hasattr(lbm, "get_lightweight_stability_stats"):
+        stats = lbm.get_lightweight_stability_stats()
+        all_finite = bool(
+            math.isfinite(stats["rho_min"])
+            and math.isfinite(stats["rho_max"])
+            and math.isfinite(stats["max_v"])
+            and math.isfinite(stats["f_min"])
+            and math.isfinite(stats["f_max"])
+            and math.isfinite(stats["F_min"])
+            and math.isfinite(stats["F_max"])
+        )
+        return {
+            "step": int(step),
+            "diagnostic_mode": "lightweight_reduction",
+            "f_all_finite": bool(math.isfinite(stats["f_min"]) and math.isfinite(stats["f_max"])),
+            "F_all_finite": bool(math.isfinite(stats["F_min"]) and math.isfinite(stats["F_max"])),
+            "all_finite": all_finite,
+            "rho_min": _finite_float(stats["rho_min"]),
+            "rho_max": _finite_float(stats["rho_max"]),
+            "max_v": _finite_float(stats["max_v"]),
+            "f_min": _finite_float(stats["f_min"]),
+            "f_max": _finite_float(stats["f_max"]),
+            "F_min": _finite_float(stats["F_min"]),
+            "F_max": _finite_float(stats["F_max"]),
+            "negative_population_count": int(stats["negative_population_count"]),
+            "negative_population_fraction": _finite_float(stats["negative_population_fraction"]),
+            "f_negative_population_count": None,
+            "F_negative_population_count": None,
+            "population_entry_count": int(stats["population_entry_count"]),
+            "rho_below_low_count": int(stats["rho_min"] < 0.0),
+            "rho_above_high_count": int(stats["rho_max"] > 1.2),
+            "first_negative_density_location": None,
+            "first_high_density_location": None,
+            "velocity_outlier_count": int(stats["max_v"] > 0.2),
+            "first_velocity_outlier_location": None,
+            "boundary_x_min_negative_population_count": int(stats["boundary_x_min_negative_population_count"]),
+            "boundary_x_max_negative_population_count": int(stats["boundary_x_max_negative_population_count"]),
+            "first_failure_location": None,
+            "first_failure_cell": None,
+            "stability_all_finite": all_finite,
+        }
+    result = summarize_lbm_stability_diagnostics(lbm, step)
+    result["diagnostic_mode"] = "full_numpy_fallback"
+    return result
+
+
+def summarize_step120_limiter_activation(stats_or_lbm: Any, spec: Step120RunSpec | Dict[str, Any]) -> Dict[str, Any]:
+    stats = stats_or_lbm
+    if hasattr(stats_or_lbm, "get_open_boundary_limiter_stats"):
+        stats = stats_or_lbm.get_open_boundary_limiter_stats()
+    stats = dict(stats or {})
+    limiter_enabled = bool(_spec_value(spec, "open_boundary_limiter_enabled", False))
+    activation_count = int(stats.get("limiter_activation_count", 0) or 0)
+    denominator = int(stats.get("limiter_activation_denominator", 0) or 0)
+    activation_fraction = _finite_float(activation_count / denominator if denominator else 0.0)
+    fraction_limit = float(_spec_value(spec, "limiter_activation_fraction_limit", LIMITER_ACTIVATION_FRACTION_LIMIT))
+    return {
+        "step": 120,
+        "limiter_counter_source": "actual_open_boundary_kernel_counters",
+        "open_boundary_limiter_enabled": limiter_enabled,
+        "rho_clip_used": limiter_enabled,
+        "velocity_clip_used": limiter_enabled,
+        "noneq_limiter_used": limiter_enabled,
+        "population_floor_used": bool(limiter_enabled and _spec_value(spec, "open_boundary_population_floor", None) is not None),
+        "rho_clip_count": int(stats.get("rho_clip_count_run", stats.get("rho_clip_count_step", 0)) or 0),
+        "velocity_clip_count": int(stats.get("velocity_clip_count_run", stats.get("velocity_clip_count_step", 0)) or 0),
+        "noneq_clip_count": int(stats.get("noneq_clip_count_run", stats.get("noneq_clip_count_step", 0)) or 0),
+        "population_floor_count": int(stats.get("population_floor_count_run", stats.get("population_floor_count_step", 0)) or 0),
+        "reconstructed_population_count": int(stats.get("reconstructed_population_count_run", 0) or 0),
+        "limiter_activation_count": activation_count,
+        "limiter_activation_denominator": denominator,
+        "limiter_activation_fraction": activation_fraction,
+        "limiter_activation_fraction_limit": fraction_limit,
+        "validation_blocked_by_limiter_activation": bool(activation_fraction > fraction_limit),
+        "validation_claim_allowed": False,
+    }
+
+
+def classify_step120_row_status(row_dir: Path | str) -> Dict[str, Any]:
+    row_path = Path(row_dir)
+    report_path = row_path / "finite_stability_report.json"
+    if not report_path.is_file():
+        return {"status": ROW_STATUS_MISSING, "row_dir": str(row_path), "validation_pass": False}
+    finite = _read_json(report_path)
+    row = finite.get("summary_row", finite)
+    skipped_reason = finite.get("skipped_reason") or row.get("first_failure_reason")
+    checkpoint_available = bool(row.get("checkpoint_available") or finite.get("checkpoint_available"))
+    validation_pass = bool(row.get("step120_validation_claimed") or finite.get("step120_validation_claimed"))
+    if row.get("requested_window_completed") is True:
+        status = ROW_STATUS_COMPLETED
+    elif skipped_reason == "tau_margin" or row.get("skipped_due_to_tau_margin") is True:
+        status = ROW_STATUS_EXPECTED_POLICY_SKIP
+    elif skipped_reason == "large_real_row_requires_explicit_allowance":
+        status = ROW_STATUS_INCOMPLETE_PLACEHOLDER
+    elif checkpoint_available:
+        status = ROW_STATUS_CHECKPOINT_AVAILABLE
+    elif isinstance(skipped_reason, str) and skipped_reason.startswith("first_failure"):
+        status = ROW_STATUS_STOPPED_ON_FAILURE
+    elif skipped_reason == "max_wall_seconds":
+        status = ROW_STATUS_STOPPED_ON_WALLTIME
+    else:
+        status = ROW_STATUS_INTERRUPTED
+    return {
+        "status": status,
+        "row_dir": str(row_path),
+        "row_name": row.get("name", row_path.name),
+        "skipped_reason": skipped_reason,
+        "checkpoint_available": checkpoint_available,
+        "validation_pass": validation_pass,
+        "requested_window_completed": bool(row.get("requested_window_completed", False)),
+        "steps_completed": int(row.get("steps_completed", 0) or 0),
+    }
+
+
+def step120_row_complete_for_resume(row_dir: Path | str) -> bool:
+    status = classify_step120_row_status(row_dir)["status"]
+    return status in {ROW_STATUS_COMPLETED, ROW_STATUS_EXPECTED_POLICY_SKIP, ROW_STATUS_STOPPED_ON_FAILURE}
+
+
+def select_step120_best_boundary(rows: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
+    refs = {row.get("lbm_open_boundary_semantics"): row for row in rows if row.get("requested_nx") == 48}
+    regularized = refs.get("regularized_velocity_pressure")
+    legacy = refs.get("equilibrium_all_population_reset")
+    candidates = [
+        row
+        for row in rows
+        if row.get("requested_nx") == 48
+        and row.get("lbm_open_boundary_semantics") in CANDIDATE_SEMANTICS
+        and not bool(row.get("not_used_for_validation", False))
+    ]
+    evaluated = []
+    for row in candidates:
+        reasons = []
+        flux = _metric(row, "flux_imbalance_rel_tail_mean")
+        mass = abs(_metric(row, "mass_total_delta_rel_final"))
+        limiter = _metric(row, "limiter_activation_fraction")
+        if row.get("requested_window_completed") is not True:
+            reasons.append("requested_window_not_completed")
+        for key in ("finite_pass", "density_gate_pass", "mass_drift_gate_pass", "population_gate_pass", "mach_gate_pass"):
+            if row.get(key) is not True:
+                reasons.append(key)
+        if row.get("first_failure_step") is not None:
+            reasons.append("first_failure")
+        if flux >= 0.1:
+            reasons.append("flux_imbalance_gate")
+        if mass >= 0.005:
+            reasons.append("mass_drift_gate")
+        if regularized is not None and flux >= _metric(regularized, "flux_imbalance_rel_tail_mean"):
+            reasons.append("not_improved_over_regularized")
+        if legacy is not None:
+            legacy_mass = abs(_metric(legacy, "mass_total_delta_rel_final"))
+            legacy_flux = _metric(legacy, "flux_imbalance_rel_tail_mean")
+            if mass > max(legacy_mass * 2.0, 0.005):
+                reasons.append("mass_worse_than_legacy")
+            if flux > max(legacy_flux * 2.0, 0.1):
+                reasons.append("flux_worse_than_legacy")
+        if limiter > LIMITER_ACTIVATION_FRACTION_LIMIT:
+            reasons.append("limiter_activation_gate")
+        evaluated.append(
+            {
+                "row": row,
+                "rejection_reasons": reasons,
+                "candidate_pass": not reasons,
+                "sort_key": (
+                    0 if not reasons else 1,
+                    flux,
+                    mass,
+                    limiter,
+                    _metric(row, "mach_proxy_observed_max"),
+                    _metric(row, "runtime_s"),
+                ),
+            }
+        )
+    passing = [item for item in evaluated if item["candidate_pass"]]
+    passing.sort(key=lambda item: item["sort_key"])
+    candidate_summaries = [
+        {
+            "name": item["row"].get("name"),
+            "semantics": item["row"].get("lbm_open_boundary_semantics"),
+            "candidate_pass": item["candidate_pass"],
+            "rejection_reasons": item["rejection_reasons"],
+            "flux_imbalance_rel_tail_mean": item["row"].get("flux_imbalance_rel_tail_mean"),
+            "mass_total_delta_rel_final": item["row"].get("mass_total_delta_rel_final"),
+            "limiter_activation_fraction": item["row"].get("limiter_activation_fraction"),
+        }
+        for item in evaluated
+    ]
+    if not passing:
+        return {
+            "step": 120,
+            "best_boundary_selected": False,
+            "campaign_should_stop_at_48": True,
+            "failure_classification": "boundary_repair_failed_revisit_lbm_solver",
+            "candidate_summaries": candidate_summaries,
+            "selection_reason": "no_48_candidate_passed_comparison_gate",
+            "validation_claim_allowed": False,
+        }
+    selected = passing[0]["row"]
+    return {
+        "step": 120,
+        "best_boundary_selected": True,
+        "campaign_should_stop_at_48": False,
+        "selected_row_name": selected.get("name"),
+        "selected_boundary_semantics": selected.get("lbm_open_boundary_semantics"),
+        "selected_boundary_slug": _boundary_slug(selected.get("lbm_open_boundary_semantics")),
+        "selected_limiter_parameters": _limiter_parameters(selected),
+        "selected_48_metrics": {
+            "flux_imbalance_rel_tail_mean": selected.get("flux_imbalance_rel_tail_mean"),
+            "mass_total_delta_rel_final": selected.get("mass_total_delta_rel_final"),
+            "limiter_activation_fraction": selected.get("limiter_activation_fraction"),
+            "runtime_s": selected.get("runtime_s"),
+        },
+        "candidate_summaries": candidate_summaries,
+        "selection_reason": "lowest_ranked_48_candidate_that_passed_comparison_gate",
+        "validation_claim_allowed": False,
+    }
+
+
+def build_step120_gate_report(
+    rows: Sequence[Dict[str, Any]],
+    limiter_summary: Dict[str, Any],
+    best_boundary_selection: Dict[str, Any],
+) -> Dict[str, Any]:
+    rows_by_name = {row.get("name"): row for row in rows}
+    limiter_gate_pass = not bool(limiter_summary.get("validation_blocked_by_limiter_activation", False))
+    selected = bool(best_boundary_selection.get("best_boundary_selected", False))
+    missing_selected_rows: List[str] = []
+    failed_selected_rows: List[str] = []
+    required_selected_rows: List[str] = []
+    if selected:
+        slug = best_boundary_selection.get("selected_boundary_slug") or _boundary_slug(
+            best_boundary_selection.get("selected_boundary_semantics")
+        )
+        required_selected_rows = [
+            f"duct_only_96_{slug}_1000step_real",
+            f"static_two_flap_96_{slug}_1000step_real",
+        ]
+        for name in required_selected_rows:
+            row = rows_by_name.get(name)
+            if row is None:
+                missing_selected_rows.append(name)
+            elif row.get("requested_window_completed") is not True or row.get("step120_validation_claimed") is not True:
+                failed_selected_rows.append(name)
+    if not selected and best_boundary_selection.get("campaign_should_stop_at_48"):
+        classification = "boundary_repair_failed_revisit_lbm_solver"
+    elif selected and not missing_selected_rows and not failed_selected_rows and limiter_gate_pass:
+        classification = "boundary_repair_success_go_to_quasi2d"
+    else:
+        classification = "boundary_repair_partial_continue_lbm"
+    quasi2d_allowed = bool(classification == "boundary_repair_success_go_to_quasi2d")
+    return {
+        "step": 120,
+        "step120_schema_version": STEP120_SCHEMA_VERSION,
+        "quasi2d_allowed": quasi2d_allowed,
+        "step121_quasi2d_allowed": quasi2d_allowed,
+        "validation_claim_allowed": False,
+        "fluent_validation_claim_allowed": False,
+        "full_fsi_validation_claim_allowed": False,
+        "figure_29_3_parity_claim_allowed": False,
+        "best_boundary_selected": selected,
+        "selected_boundary_semantics": best_boundary_selection.get("selected_boundary_semantics"),
+        "required_selected_rows": required_selected_rows,
+        "missing_selected_rows": missing_selected_rows,
+        "failed_selected_rows": failed_selected_rows,
+        "limiter_activation_gate_pass": limiter_gate_pass,
+        "final_classification": classification,
+        "allowed_final_classifications": sorted(FINAL_CLASSIFICATIONS),
+        "no_fluent_claim": True,
+        "no_fsi_claim": True,
+    }
+
+
+def _checkpoint_limiter_counters(lbm: LBMFluid3D) -> Dict[str, int]:
+    stats = lbm.get_open_boundary_limiter_stats()
+    return {
+        "rho_clip_count": int(stats.get("rho_clip_count_run", 0) or 0),
+        "velocity_clip_count": int(stats.get("velocity_clip_count_run", 0) or 0),
+        "noneq_clip_count": int(stats.get("noneq_clip_count_run", 0) or 0),
+        "population_floor_count": int(stats.get("population_floor_count_run", 0) or 0),
+        "reconstructed_population_count": int(stats.get("reconstructed_population_count_run", 0) or 0),
+    }
+
+
+def write_step120_checkpoint(
+    lbm: LBMFluid3D,
+    spec: Step120RunSpec,
+    checkpoint_root: Path | str,
+    step: int,
+    mass_initial: Optional[float],
+) -> Path:
+    root = Path(checkpoint_root) / spec.name
+    root.mkdir(parents=True, exist_ok=True)
+    metadata = {
+        "step": int(step),
+        "schema_version": STEP120_SCHEMA_VERSION,
+        "config_hash": _config_hash(spec),
+        "shape": [int(spec.nx), int(spec.ny), int(spec.nz)],
+        "boundary_semantics": spec.open_boundary_semantics,
+        "relaxation_semantics": _relaxation_semantics_for_spec(spec),
+        "mass_initial": mass_initial,
+        "limiter_counter_source": "actual_open_boundary_kernel_counters",
+        "limiter_counters": _checkpoint_limiter_counters(lbm),
+    }
+    path = root / f"checkpoint_step_{int(step):06d}.npz"
+    np.savez_compressed(
+        path,
+        f=lbm.f.to_numpy(),
+        F=lbm.F.to_numpy(),
+        rho=lbm.rho.to_numpy(),
+        v=lbm.v.to_numpy(),
+        solid=lbm.solid.to_numpy(),
+        static_solid=lbm.static_solid.to_numpy(),
+        metadata_json=np.array(json.dumps(metadata)),
+    )
+    _write_json(path.with_suffix(".json"), metadata)
+    return path
+
+
+def restore_latest_step120_checkpoint(
+    lbm: LBMFluid3D,
+    spec: Step120RunSpec,
+    checkpoint_root: Path | str,
+) -> Optional[Tuple[int, Optional[float], str]]:
+    latest = _latest_checkpoint_path(spec, Path(checkpoint_root))
+    if latest is None:
+        return None
+    data = np.load(latest, allow_pickle=False)
+    metadata = json.loads(str(data["metadata_json"]))
+    _validate_checkpoint_metadata(spec, metadata)
+    lbm.f.from_numpy(data["f"].astype(np.float32))
+    lbm.F.from_numpy(data["F"].astype(np.float32))
+    lbm.rho.from_numpy(data["rho"].astype(np.float32))
+    lbm.v.from_numpy(data["v"].astype(np.float32))
+    lbm.solid.from_numpy(data["solid"].astype(np.int8))
+    lbm.static_solid.from_numpy(data["static_solid"].astype(np.int8))
+    counters = metadata.get("limiter_counters") or {}
+    if hasattr(lbm, "set_open_boundary_limiter_run_counters"):
+        lbm.set_open_boundary_limiter_run_counters(
+            int(counters.get("rho_clip_count", 0) or 0),
+            int(counters.get("velocity_clip_count", 0) or 0),
+            int(counters.get("noneq_clip_count", 0) or 0),
+            int(counters.get("population_floor_count", 0) or 0),
+            int(counters.get("reconstructed_population_count", 0) or 0),
+        )
+    return int(metadata["step"]), metadata.get("mass_initial"), str(latest)
+
+
+def _finite_report(
+    spec: Step120RunSpec,
+    steps_completed: int,
+    records: Sequence[Dict[str, Any]],
+    stability_records: Sequence[Dict[str, Any]],
+    combined_records: Sequence[Dict[str, Any]],
+    tau_report: Dict[str, Any],
+    runtime_s: float,
+    stop_reason: Optional[str],
+    limiter_summary: Dict[str, Any],
+    checkpoint_root: Path,
+    restored_checkpoint: Optional[str],
+) -> Dict[str, Any]:
+    trend = summarize_timeseries_trends(records) if records else {}
+    final = records[-1] if records else {}
+    first_failure = first_gate_failure_detector(combined_records)
+    finite_pass = bool(records and all(record["all_finite"] for record in records) and all(row["stability_all_finite"] for row in stability_records))
+    density_gate_pass = bool(records and 0.85 < float(trend.get("rho_min_global", 0.0)) <= float(trend.get("rho_max_global", 1.0e9)) < 1.15)
+    mass_drift_gate_pass = bool(records and abs(float(trend.get("mass_drift_final", 1.0e9))) < 0.05)
+    population_gate_pass = bool(stability_records and (stability_records[-1].get("negative_population_fraction", 1.0) or 0.0) < 1.0e-3)
+    mach_gate_pass = bool(records and float(trend.get("mach_proxy_observed_max", 1.0e9)) < 0.35)
+    no_first_failure = first_failure["first_failure_reason"] is None and stop_reason is None
+    requested_window_completed = bool(
+        int(steps_completed) == int(spec.requested_steps()) and int(spec.nx) == int(spec.requested_grid())
+    )
+    gate_pass = bool(
+        requested_window_completed
+        and finite_pass
+        and density_gate_pass
+        and mass_drift_gate_pass
+        and population_gate_pass
+        and mach_gate_pass
+        and no_first_failure
+        and tau_report["tau_margin_pass"] is not False
+        and not limiter_summary["validation_blocked_by_limiter_activation"]
+        and not spec.not_used_for_validation
+    )
+    checkpoint_available = _latest_checkpoint_path(spec, checkpoint_root) is not None
+    summary_row = _summary_row(
+        spec,
+        steps_completed=steps_completed,
+        requested_window_completed=requested_window_completed,
+        finite_pass=finite_pass,
+        density_gate_pass=density_gate_pass,
+        mass_drift_gate_pass=mass_drift_gate_pass,
+        population_gate_pass=population_gate_pass,
+        mach_gate_pass=mach_gate_pass,
+        first_failure_step=first_failure["first_failure_step"],
+        first_failure_reason=first_failure["first_failure_reason"] or stop_reason,
+        flux_imbalance_rel_final=final.get("flux_imbalance_rel"),
+        flux_imbalance_rel_tail_mean=trend.get("flux_imbalance_rel_tail_mean"),
+        mass_total_delta_rel_final=final.get("mass_total_delta_rel"),
+        mach_proxy_observed_max=trend.get("mach_proxy_observed_max"),
+        tau_margin_pass=tau_report["tau_margin_pass"],
+        skipped_due_to_tau_margin=False,
+        row_source="computed_from_checkpoint" if restored_checkpoint else "computed",
+        step120_validation_claimed=gate_pass,
+        runtime_s=runtime_s,
+        limiter_summary=limiter_summary,
+        simulation_backed_artifact=True,
+        flux_balance_reported=bool(records),
+        checkpoint_available=checkpoint_available,
+    )
+    return {
+        **summary_row,
+        "skipped_reason": stop_reason,
+        "step120_gate_pass": gate_pass,
+        "step120_validation_claimed": gate_pass,
+        "stability_repair_gates": {
+            "requested_window_completed": requested_window_completed,
+            "finite_pass": finite_pass,
+            "density_range_gate_pass": density_gate_pass,
+            "mass_drift_gate_pass": mass_drift_gate_pass,
+            "population_gate_pass": population_gate_pass,
+            "mach_gate_pass": mach_gate_pass,
+            "no_first_failure": no_first_failure,
+            "tau_margin_pass": tau_report["tau_margin_pass"],
+            "limiter_activation_gate_pass": not limiter_summary["validation_blocked_by_limiter_activation"],
+        },
+        "timeseries_trend_summary": trend,
+        "stability_timeseries_trend_summary": {
+            "record_count": int(len(stability_records)),
+            "diagnostic_mode": "lightweight_reduction",
+            "negative_population_count_final": int(stability_records[-1].get("negative_population_count", 0)) if stability_records else 0,
+            "negative_population_fraction_final": _finite_float(stability_records[-1].get("negative_population_fraction", 0.0)) if stability_records else 0.0,
+            "boundary_x_min_negative_population_count_final": int(stability_records[-1].get("boundary_x_min_negative_population_count", 0)) if stability_records else 0,
+            "boundary_x_max_negative_population_count_final": int(stability_records[-1].get("boundary_x_max_negative_population_count", 0)) if stability_records else 0,
+        },
+        "population_stats_final": population_stats_from_record(stability_records[-1] if stability_records else {}),
+        "first_failure_detector": first_failure,
+        "limiter_activation_summary": limiter_summary,
+        "mass_source_sink_by_step": mass_source_sink_by_step(combined_records),
+        "final_diagnostics": final,
+        "tau_feasibility_report": tau_report,
+        "not_used_for_validation": bool(spec.not_used_for_validation),
+        "validation_claim_allowed": False,
+        "checkpoint_available": checkpoint_available,
+        "restored_checkpoint": restored_checkpoint,
+        "summary_row": summary_row,
+    }
+
+
+def _write_nonstepped_row(spec: Step120RunSpec, row_path: Path, tau_report: Dict[str, Any], reason: str) -> Dict[str, Any]:
+    limiter_summary = summarize_step120_limiter_activation({}, spec)
+    summary_row = _summary_row(
+        spec,
+        steps_completed=0,
+        requested_window_completed=False,
+        finite_pass=False,
+        density_gate_pass=False,
+        mass_drift_gate_pass=False,
+        population_gate_pass=False,
+        mach_gate_pass=False,
+        first_failure_step=None,
+        first_failure_reason=reason,
+        flux_imbalance_rel_final=None,
+        flux_imbalance_rel_tail_mean=None,
+        mass_total_delta_rel_final=None,
+        mach_proxy_observed_max=None,
+        tau_margin_pass=tau_report["tau_margin_pass"],
+        skipped_due_to_tau_margin=reason == "tau_margin",
+        row_source="skipped",
+        step120_validation_claimed=False,
+        runtime_s=0.0,
+        limiter_summary=limiter_summary,
+        simulation_backed_artifact=False,
+        flux_balance_reported=False,
+        checkpoint_available=False,
+    )
+    finite = {
+        **summary_row,
+        "skipped_reason": reason,
+        "step120_gate_pass": False,
+        "step120_validation_claimed": False,
+        "stability_repair_gates": {},
+        "timeseries_trend_summary": {},
+        "stability_timeseries_trend_summary": {},
+        "population_stats_final": {},
+        "first_failure_detector": _empty_first_failure(reason),
+        "limiter_activation_summary": limiter_summary,
+        "mass_source_sink_by_step": {"record_count": 0},
+        "tau_feasibility_report": tau_report,
+        "not_used_for_validation": True,
+        "validation_claim_allowed": False,
+        "checkpoint_available": False,
+        "summary_row": summary_row,
+    }
+    _write_json(row_path / "run_metadata.json", _metadata(spec, tau_report, skipped=True, runtime_s=0.0, stop_reason=reason, restored_checkpoint=None))
+    _write_json(row_path / "driver_config.json", {"spec": asdict(spec), "tau_feasibility_report": tau_report})
+    _write_json(row_path / "duct_boundary_condition_report.json", _boundary_report(spec))
+    _write_json(row_path / "finite_stability_report.json", finite)
+    _write_json(row_path / "first_failure_diagnostics.json", _first_failure_artifact([], spec, limiter_summary, reason=reason))
+    _write_json(row_path / "limiter_activation_summary.json", limiter_summary)
+    _write_json(row_path / "velocity_profile_summary.json", {"skipped": True, "reason": reason, "synthetic_diagnostic_mode": False})
+    _write_partial_timeseries(row_path, [], [])
+    return summary_row
+
+
+def _summary_row(
+    spec: Step120RunSpec,
+    steps_completed: int,
+    requested_window_completed: bool,
+    finite_pass: bool,
+    density_gate_pass: bool,
+    mass_drift_gate_pass: bool,
+    population_gate_pass: bool,
+    mach_gate_pass: bool,
+    first_failure_step: Optional[int],
+    first_failure_reason: Optional[str],
+    flux_imbalance_rel_final: Optional[float],
+    flux_imbalance_rel_tail_mean: Optional[float],
+    mass_total_delta_rel_final: Optional[float],
+    mach_proxy_observed_max: Optional[float],
+    tau_margin_pass: Optional[bool],
+    skipped_due_to_tau_margin: bool,
+    row_source: str,
+    step120_validation_claimed: bool,
+    runtime_s: float,
+    limiter_summary: Dict[str, Any],
+    simulation_backed_artifact: bool,
+    flux_balance_reported: bool,
+    checkpoint_available: bool,
+) -> Dict[str, Any]:
+    return {
+        "name": spec.name,
+        "row_role": spec.row_role,
+        "geometry_mode": spec.geometry_mode,
+        "lbm_open_boundary_semantics": spec.open_boundary_semantics,
+        "open_boundary_limiter_enabled": bool(spec.open_boundary_limiter_enabled),
+        "requested_nx": spec.requested_grid(),
+        "executed_nx": int(spec.nx),
+        "requested_n_steps": spec.requested_steps(),
+        "steps_completed": int(steps_completed),
+        "requested_window_completed": bool(requested_window_completed),
+        "finite_pass": bool(finite_pass),
+        "density_gate_pass": bool(density_gate_pass),
+        "mass_drift_gate_pass": bool(mass_drift_gate_pass),
+        "population_gate_pass": bool(population_gate_pass),
+        "mach_gate_pass": bool(mach_gate_pass),
+        "stability_diagnostics_reported": True,
+        "stability_diagnostic_mode": "lightweight_reduction",
+        "first_failure_step": first_failure_step,
+        "first_failure_reason": first_failure_reason,
+        "flux_balance_reported": bool(flux_balance_reported),
+        "flux_imbalance_rel_final": flux_imbalance_rel_final,
+        "flux_imbalance_rel_tail_mean": flux_imbalance_rel_tail_mean,
+        "mass_total_delta_rel_final": mass_total_delta_rel_final,
+        "mach_proxy_observed_max": mach_proxy_observed_max,
+        "skipped_due_to_tau_margin": bool(skipped_due_to_tau_margin),
+        "tau_margin_pass": tau_margin_pass,
+        "synthetic_diagnostic_mode": False,
+        "simulation_backed_artifact": bool(simulation_backed_artifact),
+        "row_source": row_source,
+        "step120_schema_version": STEP120_SCHEMA_VERSION,
+        "step120_validation_claimed": bool(step120_validation_claimed),
+        "validation_claim_allowed": False,
+        "not_used_for_validation": bool(spec.not_used_for_validation or skipped_due_to_tau_margin or not step120_validation_claimed),
+        "limiter_counter_source": limiter_summary.get("limiter_counter_source"),
+        "limiter_activation_count": int(limiter_summary.get("limiter_activation_count", 0)),
+        "limiter_activation_denominator": int(limiter_summary.get("limiter_activation_denominator", 0)),
+        "limiter_activation_fraction": _finite_float(limiter_summary.get("limiter_activation_fraction", 0.0)),
+        "limiter_activation_gate_pass": not bool(limiter_summary.get("validation_blocked_by_limiter_activation", False)),
+        "checkpoint_available": bool(checkpoint_available),
+        "runtime_s": _finite_float(runtime_s),
+    }
+
+
+def _metadata(
+    spec: Step120RunSpec,
+    tau_report: Dict[str, Any],
+    skipped: bool,
+    runtime_s: float,
+    stop_reason: Optional[str],
+    restored_checkpoint: Optional[str],
+) -> Dict[str, Any]:
+    return {
+        "step": 120,
+        "name": spec.name,
+        "row_role": spec.row_role,
+        "geometry_mode": spec.geometry_mode,
+        "lbm_open_boundary_semantics": spec.open_boundary_semantics,
+        "requested_nx": spec.requested_grid(),
+        "executed_shape": [int(spec.nx), int(spec.ny), int(spec.nz)],
+        "requested_n_steps": spec.requested_steps(),
+        "steps_configured": int(spec.n_steps),
+        "output_interval": int(spec.output_interval),
+        "failure_check_interval": int(spec.failure_check_interval),
+        "full_population_snapshot_interval": int(spec.full_population_snapshot_interval),
+        "artifact_scope_note": spec.artifact_scope_note,
+        "step120_schema_version": STEP120_SCHEMA_VERSION,
+        "synthetic_diagnostic_mode": False,
+        "fluid_only": True,
+        "static_lbm_only": spec.geometry_mode == "static_two_flap",
+        "full_fsi_rerun_done": False,
+        "fluent_validation_claim_allowed": False,
+        "figure_29_3_parity_claim_allowed": False,
+        "validation_claim_allowed": False,
+        "step121_quasi2d_allowed": False,
+        "simulation_backed_artifact": bool(not skipped),
+        "runtime_s": _finite_float(runtime_s),
+        "stop_reason": stop_reason,
+        "checkpoint_every": int(spec.checkpoint_every),
+        "checkpoint_runtime_artifact_committed": False,
+        "restored_checkpoint": restored_checkpoint,
+        "stop_on_first_failure": bool(spec.stop_on_first_failure),
+        "max_wall_seconds": spec.max_wall_seconds,
+        "tau_feasibility_report": tau_report,
+    }
+
+
+def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
+    return {
+        "step": 120,
+        "lbm_boundary_condition_mode": "duct_velocity_inlet_pressure_outlet",
+        "lbm_open_boundary_semantics": spec.open_boundary_semantics,
+        "regularized_limited_boundary_used": spec.open_boundary_semantics == "regularized_velocity_pressure_limited",
+        "convective_outlet_used": spec.open_boundary_semantics == "convective_pressure_outlet_experimental",
+        "all_population_equilibrium_reset_used": spec.open_boundary_semantics == "equilibrium_all_population_reset",
+        "open_boundary_limiter_enabled": bool(spec.open_boundary_limiter_enabled),
+        "open_boundary_rho_min": float(spec.open_boundary_rho_min),
+        "open_boundary_rho_max": float(spec.open_boundary_rho_max),
+        "open_boundary_u_max": float(spec.open_boundary_u_max),
+        "open_boundary_noneq_cap": float(spec.open_boundary_noneq_cap),
+        "open_boundary_population_floor": spec.open_boundary_population_floor,
+        "actual_limiter_counter_required": True,
+        "implemented_axis": "x",
+        "pressure_outlet_density": float(spec.outlet_rho),
+        "velocity_inlet_target": [float(spec.inlet_u_lbm), 0.0, 0.0],
+        "boundary_condition_equivalence_claim_allowed": False,
+        "validation_claim_allowed": False,
+    }
+
+
+def _first_failure_artifact(
+    records: Sequence[Dict[str, Any]],
+    spec: Step120RunSpec,
+    limiter_summary: Dict[str, Any],
+    reason: Optional[str] = None,
+) -> Dict[str, Any]:
+    detector = first_gate_failure_detector(records)
+    if reason is not None and detector["first_failure_reason"] is None:
+        detector["first_failure_reason"] = reason
+    location_row = _first_location_record(records, detector.get("first_failure_step"))
+    location = location_row.get("first_failure_location") if location_row else None
+    cell = location_row.get("first_failure_cell") if location_row else None
+    plane = _boundary_plane_from_location(location)
+    return {
+        "step": 120,
+        "row_name": spec.name,
+        "lbm_open_boundary_semantics": spec.open_boundary_semantics,
+        "first_failure_step": detector.get("first_failure_step"),
+        "first_failure_reason": detector.get("first_failure_reason"),
+        "first_failure_location": location,
+        "first_failure_cell": cell,
+        "boundary_plane_where_failure_started": plane,
+        "first_negative_density_step": detector.get("first_negative_density_step"),
+        "first_high_density_step": detector.get("first_high_density_step"),
+        "first_mass_drift_step": detector.get("first_mass_drift_step"),
+        "first_max_v_step": detector.get("first_max_v_step"),
+        "boundary_x_min_negative_population_count_tail": _tail_value(records, "boundary_x_min_negative_population_count", 0),
+        "boundary_x_max_negative_population_count_tail": _tail_value(records, "boundary_x_max_negative_population_count", 0),
+        "f_min": _tail_value(records, "f_min", None),
+        "F_min": _tail_value(records, "F_min", None),
+        "f_max": _tail_value(records, "f_max", None),
+        "F_max": _tail_value(records, "F_max", None),
+        "first_failure_detector": detector,
+        "mass_source_sink_by_step": mass_source_sink_by_step(records),
+        "limiter_activation_summary": limiter_summary,
+        "validation_claim_allowed": False,
+    }
+
+
+def _write_partial_timeseries(
+    row_path: Path,
+    records: Sequence[Dict[str, Any]],
+    stability_records: Sequence[Dict[str, Any]],
+) -> None:
+    _write_timeseries(row_path / "fluid_diagnostics_timeseries.csv", records)
+    _write_boundary_flux_timeseries(row_path / "boundary_flux_timeseries.csv", records)
+    _write_density_drift_timeseries(row_path / "density_drift_timeseries.csv", records)
+    _write_csv(row_path / "stability_diagnostics_timeseries.csv", list(stability_records), _STABILITY_TIMESERIES_FIELDS)
+
+
+def _write_full_population_snapshot(row_path: Path, lbm: LBMFluid3D, step: int, reason: str) -> None:
+    # Step120 keeps full snapshots sparse and explicit. These are small in tests;
+    # production checkpoint snapshots remain under outputs/tmp and are not committed.
+    snapshot_dir = row_path / "population_snapshots"
+    snapshot_dir.mkdir(parents=True, exist_ok=True)
+    _write_json(
+        snapshot_dir / f"snapshot_step_{int(step):06d}_{reason}.json",
+        {
+            "step": int(step),
+            "reason": reason,
+            "snapshot_payload_omitted_from_git": True,
+            "rho_shape": [int(lbm.nx), int(lbm.ny), int(lbm.nz)],
+            "f_shape": [int(lbm.nx), int(lbm.ny), int(lbm.nz), 19],
+        },
+    )
+
+
+def _write_matrix_summary(
+    out: Path,
+    rows: Sequence[Dict[str, Any]],
+    gate: Dict[str, Any],
+    row_status: Dict[str, Any],
+) -> Dict[str, Any]:
+    summary = {
+        "step": 120,
+        "step120_schema_version": STEP120_SCHEMA_VERSION,
+        "simulation_backed_artifacts": any(row.get("simulation_backed_artifact", False) for row in rows),
+        "fluent_validation_claim_allowed": False,
+        "figure_29_3_parity_claim_allowed": False,
+        "full_fsi_rerun_done": False,
+        "validation_claim_allowed": False,
+        "row_status_summary": row_status,
+        "step121_quasi2d_allowed": bool(gate["step121_quasi2d_allowed"]),
+        "final_classification": gate["final_classification"],
+        "runs": list(rows),
+    }
+    _write_json(out / "run_matrix_summary.json", summary)
+    _write_csv(out / "run_matrix_summary.csv", list(rows), _RUN_SUMMARY_FIELDS)
+    return summary
+
+
+def _write_row_status_summary(out: Path, rows: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
+    statuses = []
+    for row in rows:
+        row_dir = out / row["name"]
+        statuses.append(classify_step120_row_status(row_dir))
+    counts: Dict[str, int] = {}
+    for status in statuses:
+        counts[status["status"]] = counts.get(status["status"], 0) + 1
+    summary = {
+        "step": 120,
+        "row_statuses": statuses,
+        "status_counts": counts,
+        "validation_claim_allowed": False,
+    }
+    _write_json(out / "row_status_summary.json", summary)
+    return summary
+
+
+def _write_limiter_actual_activation_summary(out: Path, rows: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
+    row_summaries = [
+        {
+            "name": row["name"],
+            "lbm_open_boundary_semantics": row["lbm_open_boundary_semantics"],
+            "open_boundary_limiter_enabled": bool(row.get("open_boundary_limiter_enabled", False)),
+            "limiter_counter_source": row.get("limiter_counter_source"),
+            "limiter_activation_count": int(row.get("limiter_activation_count", 0) or 0),
+            "limiter_activation_denominator": int(row.get("limiter_activation_denominator", 0) or 0),
+            "limiter_activation_fraction": _finite_float(row.get("limiter_activation_fraction", 0.0) or 0.0),
+            "limiter_activation_gate_pass": bool(row.get("limiter_activation_gate_pass", True)),
+        }
+        for row in rows
+    ]
+    total_count = sum(item["limiter_activation_count"] for item in row_summaries)
+    total_denominator = sum(item["limiter_activation_denominator"] for item in row_summaries)
+    max_fraction = max([item["limiter_activation_fraction"] for item in row_summaries] or [0.0])
+    summary = {
+        "step": 120,
+        "counter_source": "actual_open_boundary_kernel_counters",
+        "row_summaries": row_summaries,
+        "total_limiter_activation_count": int(total_count),
+        "total_limiter_activation_denominator": int(total_denominator),
+        "total_limiter_activation_fraction": _finite_float(total_count / total_denominator if total_denominator else 0.0),
+        "max_limiter_activation_fraction": _finite_float(max_fraction),
+        "limiter_activation_fraction_limit": LIMITER_ACTIVATION_FRACTION_LIMIT,
+        "validation_blocked_by_limiter_activation": bool(max_fraction > LIMITER_ACTIVATION_FRACTION_LIMIT),
+        "validation_claim_allowed": False,
+    }
+    _write_json(out / "limiter_actual_activation_summary.json", summary)
+    return summary
+
+
+def _write_boundary_variant_48_comparison(out: Path, rows: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
+    selection = select_step120_best_boundary(rows)
+    comparison = {
+        "step": 120,
+        "comparison_scope": "48^3 real LBM boundary candidate ranking",
+        "reference_rows": [row for row in rows if row.get("requested_nx") == 48 and row.get("lbm_open_boundary_semantics") in REFERENCE_SEMANTICS],
+        "candidate_summaries": selection.get("candidate_summaries", []),
+        "best_boundary_selected": selection.get("best_boundary_selected", False),
+        "selected_boundary_semantics": selection.get("selected_boundary_semantics"),
+        "selected_row_name": selection.get("selected_row_name"),
+        "validation_claim_allowed": False,
+    }
+    _write_json(out / "boundary_variant_48_comparison.json", comparison)
+    return comparison
+
+
+def _write_best_boundary_selection(out: Path, rows: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
+    selection = select_step120_best_boundary(rows)
+    _write_json(out / "best_boundary_selection.json", selection)
+    return selection
+
+
+def _write_boundary_variant_96_validation(
+    out: Path,
+    rows: Sequence[Dict[str, Any]],
+    best_selection: Dict[str, Any],
+) -> Dict[str, Any]:
+    slug = best_selection.get("selected_boundary_slug")
+    selected_rows = []
+    if slug:
+        selected_names = {f"duct_only_96_{slug}_1000step_real", f"static_two_flap_96_{slug}_1000step_real"}
+        selected_rows = [row for row in rows if row.get("name") in selected_names]
+    validation = {
+        "step": 120,
+        "best_boundary_selected": bool(best_selection.get("best_boundary_selected", False)),
+        "selected_boundary_semantics": best_selection.get("selected_boundary_semantics"),
+        "selected_boundary_slug": slug,
+        "selected_96_rows": selected_rows,
+        "validation_claim_allowed": False,
+    }
+    _write_json(out / "boundary_variant_96_validation.json", validation)
+    return validation
+
+
+def _write_global_first_failure(out: Path, rows: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
+    failures = [
+        {
+            "name": row["name"],
+            "first_failure_step": row.get("first_failure_step"),
+            "first_failure_reason": row.get("first_failure_reason"),
+        }
+        for row in rows
+        if row.get("first_failure_reason") is not None
+    ]
+    summary = {
+        "step": 120,
+        "failure_rows": failures,
+        "first_failure_row": failures[0] if failures else None,
+        "validation_claim_allowed": False,
+    }
+    _write_json(out / "first_failure_global_summary.json", summary)
+    return summary
+
+
+def _write_step120_gate_report(
+    out: Path,
+    rows: Sequence[Dict[str, Any]],
+    limiter_summary: Dict[str, Any],
+    best_selection: Dict[str, Any],
+) -> Dict[str, Any]:
+    gate = build_step120_gate_report(rows, limiter_summary, best_selection)
+    _write_json(out / "step120_gate_report.json", gate)
+    return gate
+
+
+def _write_solver_report(
+    out: Path,
+    rows: Sequence[Dict[str, Any]],
+    comparison_48: Dict[str, Any],
+    best_selection: Dict[str, Any],
+    validation_96: Dict[str, Any],
+    first_failure: Dict[str, Any],
+    limiter_summary: Dict[str, Any],
+    gate: Dict[str, Any],
+    matrix_summary: Dict[str, Any],
+) -> None:
+    _write_json(
+        out / "solver_report.json",
+        {
+            "step": 120,
+            "step120_schema_version": STEP120_SCHEMA_VERSION,
+            "goal_file": "STEP120_LBM_BOUNDARY_REPAIR_LARGE_REAL_EXECUTION_GOAL.md",
+            "runner_file": "experiments/steps/step120_lbm_boundary_repair_large_real_execution.py",
+            "fluid_only": True,
+            "full_fsi_rerun_done": False,
+            "fluent_validation_claim_allowed": False,
+            "quasi2d_allowed": gate["quasi2d_allowed"],
+            "final_classification": gate["final_classification"],
+            "row_count": int(len(rows)),
+            "comparison_48": comparison_48,
+            "best_boundary_selection": best_selection,
+            "validation_96": validation_96,
+            "first_failure_global_summary": first_failure,
+            "limiter_actual_activation_summary": limiter_summary,
+            "matrix_summary": matrix_summary,
+        },
+    )
+
+
+def _write_output_readme(out: Path, rows: Sequence[Dict[str, Any]], gate: Dict[str, Any], best_selection: Dict[str, Any]) -> None:
+    text = [
+        "# Step120 LBM Boundary Repair Large Real Execution",
+        "",
+        "This directory contains Step120 LBM-only runner repair artifacts.",
+        "",
+        f"- Final classification: `{gate['final_classification']}`",
+        f"- Quasi-2D allowed: `{str(gate['quasi2d_allowed']).lower()}`",
+        f"- Best boundary selected: `{str(best_selection.get('best_boundary_selected', False)).lower()}`",
+        f"- Rows recorded: `{len(rows)}`",
+        "",
+        "No Fluent parity, full FSI, or dynamic flap claim is made by this step.",
+        "Runtime checkpoints are intentionally kept under `outputs/tmp/step120_checkpoints` and are not committed.",
+        "",
+    ]
+    (out / "README.md").write_text("\n".join(text), encoding="utf-8")
+
+
+def _replace_spec(spec: Step120RunSpec, **updates: Any) -> Step120RunSpec:
+    data = asdict(spec)
+    data.update(updates)
+    return Step120RunSpec(**data)
+
+
+def _metric(row: Dict[str, Any], key: str, default: float = 1.0e9) -> float:
+    value = row.get(key, default)
+    if value is None:
+        return float(default)
+    return float(value)
+
+
+def _boundary_slug(semantics: Optional[str]) -> str:
+    if semantics == "regularized_velocity_pressure_limited":
+        return "limited"
+    if semantics == "convective_pressure_outlet_experimental":
+        return "convective"
+    if semantics == "equilibrium_all_population_reset":
+        return "legacy"
+    if semantics == "regularized_velocity_pressure":
+        return "regularized"
+    return "unknown"
+
+
+def _limiter_parameters(row: Dict[str, Any]) -> Dict[str, Any]:
+    return {
+        "open_boundary_limiter_enabled": bool(row.get("open_boundary_limiter_enabled", False)),
+        "limiter_activation_fraction": row.get("limiter_activation_fraction"),
+    }
+
+
+def _should_failure_check(spec: Step120RunSpec, step: int) -> bool:
+    interval = max(1, int(spec.failure_check_interval))
+    return step == 0 or step == int(spec.n_steps) or step % interval == 0
+
+
+def _should_full_sample(spec: Step120RunSpec, step: int) -> bool:
+    interval = max(1, int(spec.output_interval))
+    if step == 0 or step == int(spec.n_steps) or step % interval == 0:
+        return True
+    snapshot_interval = int(spec.full_population_snapshot_interval)
+    return bool(snapshot_interval > 0 and step % snapshot_interval == 0)
+
+
+def _config_hash(spec: Step120RunSpec) -> str:
+    data = asdict(spec)
+    relevant = {
+        key: data[key]
+        for key in sorted(data)
+        if key
+        not in {
+            "max_wall_seconds",
+            "artifact_scope_note",
+            "stop_on_first_failure",
+        }
+    }
+    return sha256(json.dumps(relevant, sort_keys=True, default=str).encode("utf-8")).hexdigest()
+
+
+def _latest_checkpoint_path(spec: Step120RunSpec, checkpoint_root: Path) -> Optional[Path]:
+    root = checkpoint_root / spec.name
+    if not root.is_dir():
+        return None
+    paths = sorted(root.glob("checkpoint_step_*.npz"))
+    return paths[-1] if paths else None
+
+
+def _validate_checkpoint_metadata(spec: Step120RunSpec, metadata: Dict[str, Any]) -> None:
+    if int(metadata.get("schema_version", -1)) != STEP120_SCHEMA_VERSION:
+        raise ValueError("checkpoint schema version mismatch")
+    if metadata.get("config_hash") != _config_hash(spec):
+        raise ValueError("checkpoint config hash mismatch")
+    if list(metadata.get("shape", [])) != [int(spec.nx), int(spec.ny), int(spec.nz)]:
+        raise ValueError("checkpoint shape mismatch")
+    if metadata.get("boundary_semantics") != spec.open_boundary_semantics:
+        raise ValueError("checkpoint boundary semantics mismatch")
+    if metadata.get("relaxation_semantics") != _relaxation_semantics_for_spec(spec):
+        raise ValueError("checkpoint relaxation semantics mismatch")
+
+
+def _relaxation_semantics_for_spec(spec: Step120RunSpec) -> str:
+    return str(_tau_feasibility_report(spec)["lbm_relaxation_semantics"])
+
+
+_RUN_SUMMARY_FIELDS = [
+    "name",
+    "row_role",
+    "lbm_open_boundary_semantics",
+    "requested_nx",
+    "requested_n_steps",
+    "steps_completed",
+    "requested_window_completed",
+    "row_source",
+    "simulation_backed_artifact",
+    "flux_balance_reported",
+    "flux_imbalance_rel_tail_mean",
+    "mass_total_delta_rel_final",
+    "limiter_activation_count",
+    "limiter_activation_fraction",
+    "checkpoint_available",
+    "step120_validation_claimed",
+]
+
+_STABILITY_TIMESERIES_FIELDS = [
+    "step",
+    "diagnostic_mode",
+    "rho_min",
+    "rho_max",
+    "max_v",
+    "f_min",
+    "f_max",
+    "F_min",
+    "F_max",
+    "negative_population_count",
+    "negative_population_fraction",
+    "population_entry_count",
+    "boundary_x_min_negative_population_count",
+    "boundary_x_max_negative_population_count",
+    "stability_all_finite",
+]
+
+
+def main(argv: Optional[Sequence[str]] = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
+    parser.add_argument("--row", action="append", dest="rows", default=None)
+    parser.add_argument("--force", action="store_true")
+    parser.add_argument("--no-resume", action="store_true")
+    parser.add_argument("--max-rows", type=int, default=None)
+    parser.add_argument("--output-interval", type=int, default=None)
+    parser.add_argument("--checkpoint-every", type=int, default=None)
+    parser.add_argument("--max-wall-seconds", type=float, default=None)
+    parser.add_argument("--allow-large-real-rows", action="store_true")
+    args = parser.parse_args(argv)
+    run_step120_matrix(
+        output_dir=args.output_dir,
+        force=args.force,
+        resume=not args.no_resume,
+        row_names=args.rows,
+        max_rows=args.max_rows,
+        output_interval=args.output_interval,
+        checkpoint_every=args.checkpoint_every,
+        max_wall_seconds=args.max_wall_seconds,
+        allow_large_real_rows=args.allow_large_real_rows,
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

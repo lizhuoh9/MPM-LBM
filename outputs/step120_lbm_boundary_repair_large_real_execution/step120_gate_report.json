@@ -1,0 +1,24 @@
+{
+  "allowed_final_classifications": [
+    "boundary_repair_failed_revisit_lbm_solver",
+    "boundary_repair_partial_continue_lbm",
+    "boundary_repair_success_go_to_quasi2d"
+  ],
+  "best_boundary_selected": false,
+  "failed_selected_rows": [],
+  "figure_29_3_parity_claim_allowed": false,
+  "final_classification": "boundary_repair_failed_revisit_lbm_solver",
+  "fluent_validation_claim_allowed": false,
+  "full_fsi_validation_claim_allowed": false,
+  "limiter_activation_gate_pass": true,
+  "missing_selected_rows": [],
+  "no_fluent_claim": true,
+  "no_fsi_claim": true,
+  "quasi2d_allowed": false,
+  "required_selected_rows": [],
+  "selected_boundary_semantics": null,
+  "step": 120,
+  "step120_schema_version": 1,
+  "step121_quasi2d_allowed": false,
+  "validation_claim_allowed": false
+}

@@ -1,0 +1,7 @@
+name,row_role,lbm_open_boundary_semantics,requested_nx,requested_n_steps,steps_completed,requested_window_completed,row_source,simulation_backed_artifact,flux_balance_reported,flux_imbalance_rel_tail_mean,mass_total_delta_rel_final,limiter_activation_count,limiter_activation_fraction,checkpoint_available,step120_validation_claimed
+tiny_step120_real_runner_smoke,tiny_smoke,regularized_velocity_pressure_limited,5,3,3,True,computed,True,True,1.000001473653276,0.00960255265235901,0,0.0,True,False
+duct_only_48_legacy_boundary_500step_reference_real,reference_48,equilibrium_all_population_reset,48,500,0,False,skipped,False,False,,,0,0.0,False,False
+duct_only_48_regularized_boundary_500step_reference_real,reference_48,regularized_velocity_pressure,48,500,0,False,skipped,False,False,,,0,0.0,False,False
+duct_only_48_regularized_limited_boundary_500step_real,candidate_48,regularized_velocity_pressure_limited,48,500,0,False,skipped,False,False,,,0,0.0,False,False
+duct_only_48_convective_outlet_boundary_500step_real,candidate_48,convective_pressure_outlet_experimental,48,500,0,False,skipped,False,False,,,0,0.0,False,False
+duct_only_96_regularized_limited_physical_nu_report_only_100step_guarded_real,policy_guard,regularized_velocity_pressure_limited,96,100,0,False,skipped,False,False,,,0,0.0,False,False

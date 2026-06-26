@@ -1,0 +1,36 @@
+{
+  "failure_rows": [
+    {
+      "first_failure_reason": "large_real_row_requires_explicit_allowance",
+      "first_failure_step": null,
+      "name": "duct_only_48_legacy_boundary_500step_reference_real"
+    },
+    {
+      "first_failure_reason": "large_real_row_requires_explicit_allowance",
+      "first_failure_step": null,
+      "name": "duct_only_48_regularized_boundary_500step_reference_real"
+    },
+    {
+      "first_failure_reason": "large_real_row_requires_explicit_allowance",
+      "first_failure_step": null,
+      "name": "duct_only_48_regularized_limited_boundary_500step_real"
+    },
+    {
+      "first_failure_reason": "large_real_row_requires_explicit_allowance",
+      "first_failure_step": null,
+      "name": "duct_only_48_convective_outlet_boundary_500step_real"
+    },
+    {
+      "first_failure_reason": "tau_margin",
+      "first_failure_step": null,
+      "name": "duct_only_96_regularized_limited_physical_nu_report_only_100step_guarded_real"
+    }
+  ],
+  "first_failure_row": {
+    "first_failure_reason": "large_real_row_requires_explicit_allowance",
+    "first_failure_step": null,
+    "name": "duct_only_48_legacy_boundary_500step_reference_real"
+  },
+  "step": 120,
+  "validation_claim_allowed": false
+}

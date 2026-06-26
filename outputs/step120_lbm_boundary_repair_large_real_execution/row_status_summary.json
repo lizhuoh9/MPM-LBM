@@ -1,0 +1,71 @@
+{
+  "row_statuses": [
+    {
+      "checkpoint_available": true,
+      "requested_window_completed": true,
+      "row_dir": "D:\\working\\squid robot\\LBM\\MPM-LBM\\outputs\\step120_lbm_boundary_repair_large_real_execution\\tiny_step120_real_runner_smoke",
+      "row_name": "tiny_step120_real_runner_smoke",
+      "skipped_reason": null,
+      "status": "completed",
+      "steps_completed": 3,
+      "validation_pass": false
+    },
+    {
+      "checkpoint_available": false,
+      "requested_window_completed": false,
+      "row_dir": "D:\\working\\squid robot\\LBM\\MPM-LBM\\outputs\\step120_lbm_boundary_repair_large_real_execution\\duct_only_48_legacy_boundary_500step_reference_real",
+      "row_name": "duct_only_48_legacy_boundary_500step_reference_real",
+      "skipped_reason": "large_real_row_requires_explicit_allowance",
+      "status": "incomplete_placeholder",
+      "steps_completed": 0,
+      "validation_pass": false
+    },
+    {
+      "checkpoint_available": false,
+      "requested_window_completed": false,
+      "row_dir": "D:\\working\\squid robot\\LBM\\MPM-LBM\\outputs\\step120_lbm_boundary_repair_large_real_execution\\duct_only_48_regularized_boundary_500step_reference_real",
+      "row_name": "duct_only_48_regularized_boundary_500step_reference_real",
+      "skipped_reason": "large_real_row_requires_explicit_allowance",
+      "status": "incomplete_placeholder",
+      "steps_completed": 0,
+      "validation_pass": false
+    },
+    {
+      "checkpoint_available": false,
+      "requested_window_completed": false,
+      "row_dir": "D:\\working\\squid robot\\LBM\\MPM-LBM\\outputs\\step120_lbm_boundary_repair_large_real_execution\\duct_only_48_regularized_limited_boundary_500step_real",
+      "row_name": "duct_only_48_regularized_limited_boundary_500step_real",
+      "skipped_reason": "large_real_row_requires_explicit_allowance",
+      "status": "incomplete_placeholder",
+      "steps_completed": 0,
+      "validation_pass": false
+    },
+    {
+      "checkpoint_available": false,
+      "requested_window_completed": false,
+      "row_dir": "D:\\working\\squid robot\\LBM\\MPM-LBM\\outputs\\step120_lbm_boundary_repair_large_real_execution\\duct_only_48_convective_outlet_boundary_500step_real",
+      "row_name": "duct_only_48_convective_outlet_boundary_500step_real",
+      "skipped_reason": "large_real_row_requires_explicit_allowance",
+      "status": "incomplete_placeholder",
+      "steps_completed": 0,
+      "validation_pass": false
+    },
+    {
+      "checkpoint_available": false,
+      "requested_window_completed": false,
+      "row_dir": "D:\\working\\squid robot\\LBM\\MPM-LBM\\outputs\\step120_lbm_boundary_repair_large_real_execution\\duct_only_96_regularized_limited_physical_nu_report_only_100step_guarded_real",
+      "row_name": "duct_only_96_regularized_limited_physical_nu_report_only_100step_guarded_real",
+      "skipped_reason": "tau_margin",
+      "status": "expected_policy_skip",
+      "steps_completed": 0,
+      "validation_pass": false
+    }
+  ],
+  "status_counts": {
+    "completed": 1,
+    "expected_policy_skip": 1,
+    "incomplete_placeholder": 4
+  },
+  "step": 120,
+  "validation_claim_allowed": false
+}
