@@ -33,7 +33,13 @@ def _passing_row(name, semantics, *, role, nx=48, steps=500, flux=0.01, mass=0.0
         "mach_gate_pass": True,
         "first_failure_step": None,
         "first_failure_reason": None,
+        "flux_balance_reported": True,
         "flux_imbalance_rel_tail_mean": float(flux),
+        "inlet_flux_tail_mean": 0.031,
+        "outlet_flux_tail_mean": 0.030,
+        "outlet_to_inlet_flux_ratio_tail_mean": 0.030 / 0.031,
+        "midplane_to_inlet_flux_ratio_tail_mean": 1.0,
+        "flow_development_gate_pass": flux < 0.1,
         "mass_total_delta_rel_final": float(mass),
         "limiter_activation_fraction": float(limiter),
         "limiter_activation_gate_pass": limiter <= 0.05,
@@ -51,6 +57,11 @@ def _passing_row(name, semantics, *, role, nx=48, steps=500, flux=0.01, mass=0.0
         "lbm_relaxation_semantics": "legacy_external_solver_parameter",
         "tau": 0.572,
         "config_hash": "candidate-config-hash",
+        "solver_state_hash": "candidate-config-hash",
+        "selected_source_row_name": "duct_only_48_regularized_limited_boundary_500step_real" if role in {"selected_96_duct", "selected_96_static"} else None,
+        "selected_source_config_hash": "candidate-config-hash" if role in {"selected_96_duct", "selected_96_static"} else None,
+        "selected_source_tau": 0.572 if role in {"selected_96_duct", "selected_96_static"} else None,
+        "selected_source_lbm_relaxation_semantics": "legacy_external_solver_parameter" if role in {"selected_96_duct", "selected_96_static"} else None,
     }
 
 
@@ -82,12 +93,14 @@ def _selected_best_payload():
             "lbm_relaxation_semantics": "legacy_external_solver_parameter",
             "tau": 0.572,
             "config_hash": "candidate-config-hash",
+            "solver_state_hash": "candidate-config-hash",
         },
     }
 
 
 def test_step122_selected_static_requires_completed_selected_96_duct(tmp_path):
-    from experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction import resolve_step121_phase_specs
+    from experiments.steps.step120_lbm_boundary_repair_large_real_execution import solver_state_hash_for_spec
+    from experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction import make_selected_96_specs, resolve_step121_phase_specs
 
     selection_path = tmp_path / "step121_best_boundary_selection.json"
     selection_path.write_text(json.dumps(_selected_best_payload()), encoding="utf-8")
@@ -102,6 +115,10 @@ def test_step122_selected_static_requires_completed_selected_96_duct(tmp_path):
         nx=96,
         steps=1000,
     )
+    duct_spec, _static_spec = make_selected_96_specs(_selected_best_payload())
+    duct_hash = solver_state_hash_for_spec(duct_spec)
+    duct_row["config_hash"] = duct_hash
+    duct_row["solver_state_hash"] = duct_hash
     _write_finite_report(tmp_path / duct_row["name"], duct_row)
 
     specs = resolve_step121_phase_specs("selected-static", best_selection_path=selection_path, output_dir=tmp_path)

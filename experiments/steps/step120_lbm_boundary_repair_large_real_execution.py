@@ -84,6 +84,32 @@ REFERENCE_SEMANTICS = {
     "regularized_velocity_pressure",
 }
 
+SOLVER_STATE_HASH_FIELDS = {
+    "nx",
+    "ny",
+    "nz",
+    "open_boundary_semantics",
+    "geometry_mode",
+    "inlet_u_lbm",
+    "outlet_rho",
+    "niu",
+    "lbm_viscosity_semantics",
+    "lbm_tau_stability_policy",
+    "lbm_min_tau_margin",
+    "fluid_kinematic_viscosity_m2_s",
+    "physical_duct_length_m",
+    "lbm_dt_phys_override_s",
+    "target_inlet_velocity_mps",
+    "target_reynolds_number",
+    "requested_nx",
+    "open_boundary_limiter_enabled",
+    "open_boundary_rho_min",
+    "open_boundary_rho_max",
+    "open_boundary_u_max",
+    "open_boundary_noneq_cap",
+    "open_boundary_population_floor",
+}
+
 
 @dataclass(frozen=True)
 class Step120RunSpec(Step119RunSpec):
@@ -250,7 +276,7 @@ def run_step120_matrix(
     rows: List[Dict[str, Any]] = []
     for spec in run_specs:
         row_dir = out / spec.name
-        if resume and not force and step120_row_complete_for_resume(row_dir):
+        if resume and not force and step120_row_complete_for_resume(row_dir) and step120_row_reusable_for_spec(row_dir, spec):
             row = _read_json(row_dir / "finite_stability_report.json")["summary_row"]
             row["row_source"] = "resumed"
             rows.append(row)
@@ -269,7 +295,7 @@ def run_step120_matrix(
         seen = {row["name"] for row in rows}
         for spec in all_default_specs:
             row_dir = out / spec.name
-            if spec.name not in seen and step120_row_complete_for_resume(row_dir):
+            if spec.name not in seen and step120_row_complete_for_resume(row_dir) and step120_row_reusable_for_spec(row_dir, spec):
                 row = _read_json(row_dir / "finite_stability_report.json")["summary_row"]
                 row["row_source"] = "existing"
                 rows.append(row)
@@ -602,12 +628,12 @@ def classify_step120_row_status(row_dir: Path | str) -> Dict[str, Any]:
         status = ROW_STATUS_EXPECTED_POLICY_SKIP
     elif skipped_reason == "large_real_row_requires_explicit_allowance":
         status = ROW_STATUS_INCOMPLETE_PLACEHOLDER
-    elif checkpoint_available:
-        status = ROW_STATUS_CHECKPOINT_AVAILABLE
-    elif isinstance(skipped_reason, str) and skipped_reason.startswith("first_failure"):
+    elif _row_stopped_on_physical_failure(row, skipped_reason):
         status = ROW_STATUS_STOPPED_ON_FAILURE
     elif skipped_reason == "max_wall_seconds":
         status = ROW_STATUS_STOPPED_ON_WALLTIME
+    elif checkpoint_available:
+        status = ROW_STATUS_CHECKPOINT_AVAILABLE
     else:
         status = ROW_STATUS_INTERRUPTED
     return {
@@ -625,6 +651,63 @@ def classify_step120_row_status(row_dir: Path | str) -> Dict[str, Any]:
 def step120_row_complete_for_resume(row_dir: Path | str) -> bool:
     status = classify_step120_row_status(row_dir)["status"]
     return status in {ROW_STATUS_COMPLETED, ROW_STATUS_EXPECTED_POLICY_SKIP, ROW_STATUS_STOPPED_ON_FAILURE}
+
+
+def step120_row_reusable_for_spec(row_dir: Path | str, spec: Step120RunSpec) -> bool:
+    row_path = Path(row_dir)
+    report_path = row_path / "finite_stability_report.json"
+    if not report_path.is_file():
+        return False
+    try:
+        finite = _read_json(report_path)
+    except (OSError, json.JSONDecodeError, ValueError):
+        return False
+    row = finite.get("summary_row", finite)
+    if not isinstance(row, dict):
+        return False
+    if str(row.get("name", row_path.name)) != str(spec.name):
+        return False
+    if str(row.get("lbm_open_boundary_semantics", "")) != str(spec.open_boundary_semantics):
+        return False
+    if str(row.get("geometry_mode", "")) != str(spec.geometry_mode):
+        return False
+    if int(row.get("requested_nx", -1) or -1) != int(spec.requested_grid()):
+        return False
+    if int(row.get("requested_n_steps", -1) or -1) != int(spec.requested_steps()):
+        return False
+    actual_solver_hash = row.get("solver_state_hash") or row.get("config_hash")
+    if actual_solver_hash != solver_state_hash_for_spec(spec):
+        return False
+    if not _selected_source_fields_match(row, spec):
+        return False
+    return True
+
+
+def _selected_source_fields_match(row: Dict[str, Any], spec: Step120RunSpec) -> bool:
+    checks = {
+        "selected_source_row_name": spec.selected_source_row_name,
+        "selected_source_config_hash": spec.selected_source_config_hash,
+        "selected_source_lbm_relaxation_semantics": spec.selected_source_lbm_relaxation_semantics,
+    }
+    for key, expected in checks.items():
+        if expected is not None and row.get(key) != expected:
+            return False
+    if spec.selected_source_tau is not None:
+        actual = row.get("selected_source_tau")
+        if actual is None or not math.isclose(float(actual), float(spec.selected_source_tau), rel_tol=1.0e-9, abs_tol=1.0e-12):
+            return False
+    return True
+
+
+def _row_stopped_on_physical_failure(row: Dict[str, Any], skipped_reason: Any) -> bool:
+    reason = str(skipped_reason or "")
+    if not bool(row.get("simulation_backed_artifact", False)):
+        return False
+    if reason in {"max_wall_seconds", "interrupted", "large_real_row_requires_explicit_allowance", "tau_margin"}:
+        return False
+    if reason.startswith("first_failure") or reason.startswith("lightweight_failure"):
+        return True
+    return bool(row.get("first_failure_step") is not None or row.get("first_failure_reason") is not None)
 
 
 def select_step120_best_boundary(rows: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
@@ -810,6 +893,8 @@ def write_step120_checkpoint(
         "step": int(step),
         "schema_version": STEP120_SCHEMA_VERSION,
         "config_hash": _config_hash(spec),
+        "solver_state_hash": solver_state_hash_for_spec(spec),
+        "run_manifest_hash": run_manifest_hash_for_spec(spec),
         "shape": [int(spec.nx), int(spec.ny), int(spec.nz)],
         "boundary_semantics": spec.open_boundary_semantics,
         "relaxation_semantics": _relaxation_semantics_for_spec(spec),
@@ -958,6 +1043,15 @@ def _finite_report(
         and not spec.not_used_for_validation
     )
     checkpoint_available = _latest_checkpoint_path(spec, checkpoint_root) is not None
+    outlet_flux_tail_mean = trend.get("outlet_flux_tail_mean")
+    inlet_flux_tail_mean = trend.get("inlet_flux_tail_mean")
+    outlet_to_inlet_flux_ratio_tail_mean = trend.get("outlet_to_inlet_flux_ratio_tail_mean")
+    midplane_to_inlet_flux_ratio_tail_mean = trend.get("midplane_to_inlet_flux_ratio_tail_mean")
+    flow_development_gate_pass = _flow_development_gate_pass(
+        flux_balance_reported=bool(records),
+        outlet_flux_tail_mean=outlet_flux_tail_mean,
+        flux_imbalance_rel_tail_mean=trend.get("flux_imbalance_rel_tail_mean"),
+    )
     summary_row = _summary_row(
         spec,
         steps_completed=steps_completed,
@@ -971,10 +1065,16 @@ def _finite_report(
         first_failure_reason=first_failure_reason,
         flux_imbalance_rel_final=final.get("flux_imbalance_rel"),
         flux_imbalance_rel_tail_mean=trend.get("flux_imbalance_rel_tail_mean"),
+        inlet_flux_tail_mean=inlet_flux_tail_mean,
+        outlet_flux_tail_mean=outlet_flux_tail_mean,
+        outlet_to_inlet_flux_ratio_tail_mean=outlet_to_inlet_flux_ratio_tail_mean,
+        midplane_to_inlet_flux_ratio_tail_mean=midplane_to_inlet_flux_ratio_tail_mean,
+        flow_development_gate_pass=flow_development_gate_pass,
         mass_total_delta_rel_final=final.get("mass_total_delta_rel"),
         mach_proxy_observed_max=trend.get("mach_proxy_observed_max"),
         tau_margin_pass=tau_report["tau_margin_pass"],
         skipped_due_to_tau_margin=False,
+        stop_reason=stop_reason,
         row_source="computed_from_checkpoint" if restored_checkpoint else "computed",
         step120_validation_claimed=gate_pass,
         runtime_s=runtime_s,
@@ -1037,10 +1137,16 @@ def _write_nonstepped_row(spec: Step120RunSpec, row_path: Path, tau_report: Dict
         first_failure_reason=reason,
         flux_imbalance_rel_final=None,
         flux_imbalance_rel_tail_mean=None,
+        inlet_flux_tail_mean=None,
+        outlet_flux_tail_mean=None,
+        outlet_to_inlet_flux_ratio_tail_mean=None,
+        midplane_to_inlet_flux_ratio_tail_mean=None,
+        flow_development_gate_pass=False,
         mass_total_delta_rel_final=None,
         mach_proxy_observed_max=None,
         tau_margin_pass=tau_report["tau_margin_pass"],
         skipped_due_to_tau_margin=reason == "tau_margin",
+        stop_reason=reason,
         row_source="skipped",
         step120_validation_claimed=False,
         runtime_s=0.0,
@@ -1091,10 +1197,16 @@ def _summary_row(
     first_failure_reason: Optional[str],
     flux_imbalance_rel_final: Optional[float],
     flux_imbalance_rel_tail_mean: Optional[float],
+    inlet_flux_tail_mean: Optional[float],
+    outlet_flux_tail_mean: Optional[float],
+    outlet_to_inlet_flux_ratio_tail_mean: Optional[float],
+    midplane_to_inlet_flux_ratio_tail_mean: Optional[float],
+    flow_development_gate_pass: bool,
     mass_total_delta_rel_final: Optional[float],
     mach_proxy_observed_max: Optional[float],
     tau_margin_pass: Optional[bool],
     skipped_due_to_tau_margin: bool,
+    stop_reason: Optional[str],
     row_source: str,
     step120_validation_claimed: bool,
     runtime_s: float,
@@ -1122,6 +1234,8 @@ def _summary_row(
         "lbm_relaxation_semantics": str(tau_report["lbm_relaxation_semantics"]),
         "tau": _finite_float(tau_report["tau"]),
         "config_hash": _config_hash(spec),
+        "solver_state_hash": solver_state_hash_for_spec(spec),
+        "run_manifest_hash": run_manifest_hash_for_spec(spec),
         "selected_source_row_name": spec.selected_source_row_name,
         "selected_source_config_hash": spec.selected_source_config_hash,
         "selected_source_tau": spec.selected_source_tau,
@@ -1140,9 +1254,15 @@ def _summary_row(
         "stability_diagnostic_mode": "lightweight_reduction",
         "first_failure_step": first_failure_step,
         "first_failure_reason": first_failure_reason,
+        "stop_reason": stop_reason,
         "flux_balance_reported": bool(flux_balance_reported),
         "flux_imbalance_rel_final": flux_imbalance_rel_final,
         "flux_imbalance_rel_tail_mean": flux_imbalance_rel_tail_mean,
+        "inlet_flux_tail_mean": inlet_flux_tail_mean,
+        "outlet_flux_tail_mean": outlet_flux_tail_mean,
+        "outlet_to_inlet_flux_ratio_tail_mean": outlet_to_inlet_flux_ratio_tail_mean,
+        "midplane_to_inlet_flux_ratio_tail_mean": midplane_to_inlet_flux_ratio_tail_mean,
+        "flow_development_gate_pass": bool(flow_development_gate_pass),
         "mass_total_delta_rel_final": mass_total_delta_rel_final,
         "mach_proxy_observed_max": mach_proxy_observed_max,
         "skipped_due_to_tau_margin": bool(skipped_due_to_tau_margin),
@@ -1199,6 +1319,9 @@ def _metadata(
         "runtime_s": _finite_float(runtime_s),
         "stop_reason": stop_reason,
         "checkpoint_every": int(spec.checkpoint_every),
+        "config_hash": _config_hash(spec),
+        "solver_state_hash": solver_state_hash_for_spec(spec),
+        "run_manifest_hash": run_manifest_hash_for_spec(spec),
         "checkpoint_runtime_artifact_committed": False,
         "restored_checkpoint": restored_checkpoint,
         "stop_on_first_failure": bool(spec.stop_on_first_failure),
@@ -1672,7 +1795,29 @@ def _should_full_sample(spec: Step120RunSpec, step: int) -> bool:
     return bool(snapshot_interval > 0 and step % snapshot_interval == 0)
 
 
+def solver_state_hash_for_spec(spec: Step120RunSpec) -> str:
+    data = asdict(spec)
+    relevant = {
+        key: data.get(key)
+        for key in sorted(SOLVER_STATE_HASH_FIELDS)
+        if key in data
+    }
+    tau = _tau_feasibility_report(spec)
+    relevant["requested_nx"] = spec.requested_grid()
+    relevant["relaxation_semantics"] = tau["lbm_relaxation_semantics"]
+    relevant["tau"] = _finite_float(tau["tau"])
+    return _hash_spec_mapping(relevant)
+
+
+def run_manifest_hash_for_spec(spec: Step120RunSpec) -> str:
+    return _hash_spec_mapping(asdict(spec))
+
+
 def _config_hash(spec: Step120RunSpec) -> str:
+    return solver_state_hash_for_spec(spec)
+
+
+def _legacy_config_hash(spec: Step120RunSpec) -> str:
     data = asdict(spec)
     relevant = {
         key: data[key]
@@ -1684,7 +1829,22 @@ def _config_hash(spec: Step120RunSpec) -> str:
             "stop_on_first_failure",
         }
     }
-    return sha256(json.dumps(relevant, sort_keys=True, default=str).encode("utf-8")).hexdigest()
+    return _hash_spec_mapping(relevant)
+
+
+def _hash_spec_mapping(mapping: Dict[str, Any]) -> str:
+    return sha256(json.dumps(mapping, sort_keys=True, default=str).encode("utf-8")).hexdigest()
+
+
+def _flow_development_gate_pass(
+    *,
+    flux_balance_reported: bool,
+    outlet_flux_tail_mean: Optional[float],
+    flux_imbalance_rel_tail_mean: Optional[float],
+) -> bool:
+    if not flux_balance_reported or outlet_flux_tail_mean is None or flux_imbalance_rel_tail_mean is None:
+        return False
+    return bool(abs(float(outlet_flux_tail_mean)) > 1.0e-12 and float(flux_imbalance_rel_tail_mean) < 0.1)
 
 
 def _latest_checkpoint_path(spec: Step120RunSpec, checkpoint_root: Path) -> Optional[Path]:
@@ -1717,8 +1877,11 @@ def _prune_step120_checkpoints(root: Path, *, keep_last: int) -> None:
 def _validate_checkpoint_metadata(spec: Step120RunSpec, metadata: Dict[str, Any]) -> None:
     if int(metadata.get("schema_version", -1)) != STEP120_SCHEMA_VERSION:
         raise ValueError("checkpoint schema version mismatch")
-    if metadata.get("config_hash") != _config_hash(spec):
-        raise ValueError("checkpoint config hash mismatch")
+    checkpoint_solver_hash = metadata.get("solver_state_hash")
+    if checkpoint_solver_hash is None and metadata.get("config_hash") == _legacy_config_hash(spec):
+        checkpoint_solver_hash = solver_state_hash_for_spec(spec)
+    if checkpoint_solver_hash != solver_state_hash_for_spec(spec):
+        raise ValueError("checkpoint solver state hash mismatch")
     if list(metadata.get("shape", [])) != [int(spec.nx), int(spec.ny), int(spec.nz)]:
         raise ValueError("checkpoint shape mismatch")
     if metadata.get("boundary_semantics") != spec.open_boundary_semantics:
@@ -1741,8 +1904,15 @@ _RUN_SUMMARY_FIELDS = [
     "requested_window_completed",
     "row_source",
     "simulation_backed_artifact",
+    "solver_state_hash",
+    "run_manifest_hash",
+    "stop_reason",
     "flux_balance_reported",
     "flux_imbalance_rel_tail_mean",
+    "outlet_flux_tail_mean",
+    "outlet_to_inlet_flux_ratio_tail_mean",
+    "midplane_to_inlet_flux_ratio_tail_mean",
+    "flow_development_gate_pass",
     "mass_total_delta_rel_final",
     "limiter_activation_count",
     "limiter_activation_fraction",

@@ -18,6 +18,20 @@
   "no_fsi_claim": true,
   "quasi2d_allowed": false,
   "required_selected_rows": [],
+  "selected_96_flow_development_gate": {
+    "duct_pass": false,
+    "duct_reasons": [
+      "not_selected"
+    ],
+    "midplane_to_inlet_flux_ratio_tail_mean": null,
+    "outlet_flux_min": 1e-12,
+    "outlet_flux_tail_mean": null,
+    "outlet_to_inlet_flux_ratio_tail_mean": null,
+    "static_pass": false,
+    "static_reasons": [
+      "not_selected"
+    ]
+  },
   "selected_boundary_semantics": null,
   "selected_boundary_slug": null,
   "selected_chain_limiter_gate_pass": true,

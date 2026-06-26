@@ -33,6 +33,7 @@ from experiments.steps.step120_lbm_boundary_repair_large_real_execution import (
     _replace_spec,
     run_step120_matrix,
     step120_real_run_specs,
+    step120_row_reusable_for_spec,
 )
 
 
@@ -76,7 +77,9 @@ SELECTED_BOUNDARY_PROVENANCE_KEYS = [
     "lbm_relaxation_semantics",
     "tau",
     "config_hash",
+    "solver_state_hash",
 ]
+SELECTED_96_OUTLET_FLUX_MIN = 1.0e-12
 
 
 def step121_smoke_specs() -> List[Step120RunSpec]:
@@ -132,12 +135,17 @@ def _require_selected_96_duct_pass(output_dir: Path, duct_spec: Step120RunSpec) 
     row = dict(payload.get("summary_row") or payload)
     row.setdefault("name", duct_spec.name)
     failures = []
+    if not step120_row_reusable_for_spec(report_path.parent, duct_spec):
+        failures.append("spec_provenance_mismatch")
     if row.get("requested_window_completed") is not True:
         failures.append("requested_window_completed")
     if row.get("step120_validation_claimed") is not True:
         failures.append("step120_validation_claimed")
     if row.get("first_failure_step") is not None or row.get("first_failure_reason") is not None:
         failures.append("first_failure")
+    flow_gate = _selected_96_flow_development_gate(row)
+    if not flow_gate["pass"]:
+        failures.extend(flow_gate["reasons"])
     if not _row_validation_pass(row):
         failures.append("row_validation_pass")
     if failures:
@@ -146,7 +154,12 @@ def _require_selected_96_duct_pass(output_dir: Path, duct_spec: Step120RunSpec) 
     return row
 
 
-def make_selected_96_specs(best_selection: Dict[str, Any], output_interval: int = 100) -> List[Step120RunSpec]:
+def make_selected_96_specs(
+    best_selection: Dict[str, Any],
+    output_interval: int = 100,
+    *,
+    allow_legacy_provenance_defaults: Optional[bool] = None,
+) -> List[Step120RunSpec]:
     if not bool(best_selection.get("best_boundary_selected", False)):
         raise ValueError("selected 96^3 specs require best_boundary_selected=true")
     semantics = str(best_selection.get("selected_boundary_semantics") or "")
@@ -155,6 +168,17 @@ def make_selected_96_specs(best_selection: Dict[str, Any], output_interval: int 
     slug = str(best_selection.get("selected_boundary_slug") or _boundary_slug(semantics))
     limited = semantics == "regularized_velocity_pressure_limited"
     provenance = dict(best_selection.get("selected_boundary_provenance") or {})
+    allow_legacy = bool(
+        best_selection.get("allow_legacy_provenance_defaults", False)
+        if allow_legacy_provenance_defaults is None
+        else allow_legacy_provenance_defaults
+    )
+    missing_provenance = [key for key in SELECTED_BOUNDARY_PROVENANCE_KEYS if key not in provenance]
+    if missing_provenance and not allow_legacy:
+        raise ValueError(
+            "selected_boundary_provenance missing required formal keys: "
+            + ",".join(sorted(missing_provenance))
+        )
     limiter_parameters = dict(best_selection.get("selected_limiter_parameters") or {})
     limiter_enabled = bool(
         provenance.get(
@@ -187,7 +211,7 @@ def make_selected_96_specs(best_selection: Dict[str, Any], output_interval: int 
         "niu": _provenance_float(provenance, "lbm_niu", 0.1),
         "lbm_viscosity_semantics": str(provenance.get("lbm_viscosity_semantics") or "legacy_external"),
         "selected_source_row_name": best_selection.get("selected_row_name"),
-        "selected_source_config_hash": provenance.get("config_hash"),
+        "selected_source_config_hash": provenance.get("solver_state_hash") or provenance.get("config_hash"),
         "selected_source_tau": provenance.get("tau"),
         "selected_source_lbm_relaxation_semantics": provenance.get("lbm_relaxation_semantics"),
         "step120_required_row": False,
@@ -275,7 +299,7 @@ def select_step121_best_boundary(rows: Sequence[Dict[str, Any]]) -> Dict[str, An
     completed_semantics = {
         row.get("lbm_open_boundary_semantics")
         for row in candidates
-        if _real_completed(row) and row.get("lbm_open_boundary_semantics") in REQUIRED_CANDIDATE_SEMANTICS
+        if _real_terminal_evidence(row) and row.get("lbm_open_boundary_semantics") in REQUIRED_CANDIDATE_SEMANTICS
     }
     if completed_semantics != REQUIRED_CANDIDATE_SEMANTICS:
         return _selection_payload(
@@ -339,6 +363,7 @@ def build_step121_gate_report(rows: Sequence[Dict[str, Any]], best_selection: Di
     required_selected_rows: List[str] = []
     missing_selected_rows: List[str] = []
     failed_selected_rows: List[str] = []
+    selected_96_flow_gate = _empty_selected_96_flow_gate()
     campaign_state = str(best_selection.get("campaign_state") or CAMPAIGN_AWAITING_48_REFERENCES)
     classification = str(best_selection.get("final_classification") or CLASSIFICATION_PARTIAL)
 
@@ -351,16 +376,17 @@ def build_step121_gate_report(rows: Sequence[Dict[str, Any]], best_selection: Di
         ]
         duct = rows_by_name.get(required_selected_rows[0])
         static = rows_by_name.get(required_selected_rows[1])
+        selected_96_flow_gate = _selected_96_chain_flow_development_gate(duct, static)
         if duct is None:
             missing_selected_rows.append(required_selected_rows[0])
             campaign_state = CAMPAIGN_AWAITING_SELECTED_96_DUCT
-        elif not _row_validation_pass(duct):
+        elif not _row_validation_pass(duct) or not _selected_row_provenance_matches(duct, best_selection):
             failed_selected_rows.append(required_selected_rows[0])
             campaign_state = CAMPAIGN_AWAITING_SELECTED_96_DUCT
         elif static is None:
             missing_selected_rows.append(required_selected_rows[1])
             campaign_state = CAMPAIGN_AWAITING_SELECTED_96_STATIC
-        elif not _row_validation_pass(static):
+        elif not _row_validation_pass(static) or not _selected_row_provenance_matches(static, best_selection):
             failed_selected_rows.append(required_selected_rows[1])
             campaign_state = CAMPAIGN_AWAITING_SELECTED_96_STATIC
         elif selected_48_name and selected_limiter["selected_chain_limiter_gate_pass"]:
@@ -394,6 +420,7 @@ def build_step121_gate_report(rows: Sequence[Dict[str, Any]], best_selection: Di
         "selected_chain_row_names": [row.get("name") for row in selected_chain],
         "selected_chain_limiter_gate_pass": selected_limiter["selected_chain_limiter_gate_pass"],
         "selected_chain_limiter_summary": selected_limiter,
+        "selected_96_flow_development_gate": selected_96_flow_gate,
         "global_limiter_gate_not_used_for_final_classification": True,
         "global_limiter_gate_would_block_if_used": bool(global_limiter_blocked),
         "no_fluent_claim": True,
@@ -740,6 +767,7 @@ def _candidate_summary(item: Dict[str, Any]) -> Dict[str, Any]:
         "name": row.get("name"),
         "semantics": row.get("lbm_open_boundary_semantics"),
         "completed_real_row": _real_completed(row),
+        "terminal_real_evidence": _real_terminal_evidence(row),
         "simulation_backed_artifact": bool(row.get("simulation_backed_artifact", False)),
         "candidate_pass": item["candidate_pass"],
         "rejection_reasons": item["rejection_reasons"],
@@ -804,11 +832,106 @@ def _selected_chain_limiter_summary(rows: Sequence[Dict[str, Any]]) -> Dict[str,
 
 
 def _row_validation_pass(row: Dict[str, Any]) -> bool:
-    return bool(_real_completed(row) and row.get("step120_validation_claimed") is True and row.get("first_failure_step") is None)
+    base_pass = bool(_real_completed(row) and row.get("step120_validation_claimed") is True and row.get("first_failure_step") is None)
+    if row.get("row_role") in {"selected_96_duct", "selected_96_static"}:
+        return bool(base_pass and _selected_96_flow_development_gate(row)["pass"])
+    return base_pass
 
 
 def _real_completed(row: Dict[str, Any]) -> bool:
     return bool(row.get("requested_window_completed") is True and row.get("simulation_backed_artifact") is True)
+
+
+def _real_terminal_evidence(row: Dict[str, Any]) -> bool:
+    if _real_completed(row):
+        return True
+    if row.get("simulation_backed_artifact") is not True:
+        return False
+    reason = str(row.get("stop_reason") or row.get("skipped_reason") or row.get("first_failure_reason") or "")
+    if reason in {"max_wall_seconds", "interrupted", "large_real_row_requires_explicit_allowance", "tau_margin"}:
+        return False
+    if reason.startswith("max_wall_seconds") or reason.startswith("interrupted"):
+        return False
+    return bool(row.get("first_failure_step") is not None or row.get("first_failure_reason") is not None)
+
+
+def _selected_96_flow_development_gate(row: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+    if row is None:
+        return {
+            "pass": False,
+            "reasons": ["missing_row"],
+            "outlet_flux_tail_mean": None,
+            "outlet_to_inlet_flux_ratio_tail_mean": None,
+            "midplane_to_inlet_flux_ratio_tail_mean": None,
+        }
+    reasons: List[str] = []
+    outlet_flux = row.get("outlet_flux_tail_mean")
+    flux_imbalance = row.get("flux_imbalance_rel_tail_mean")
+    if row.get("flux_balance_reported") is not True:
+        reasons.append("flux_balance_not_reported")
+    if outlet_flux is None or abs(float(outlet_flux)) <= SELECTED_96_OUTLET_FLUX_MIN:
+        reasons.append("outlet_flux_tail_mean")
+    if flux_imbalance is None or float(flux_imbalance) >= 0.1:
+        reasons.append("flux_imbalance_rel_tail_mean")
+    return {
+        "pass": not reasons,
+        "reasons": sorted(set(reasons)),
+        "outlet_flux_tail_mean": outlet_flux,
+        "outlet_to_inlet_flux_ratio_tail_mean": row.get("outlet_to_inlet_flux_ratio_tail_mean"),
+        "midplane_to_inlet_flux_ratio_tail_mean": row.get("midplane_to_inlet_flux_ratio_tail_mean"),
+        "flux_imbalance_rel_tail_mean": flux_imbalance,
+        "outlet_flux_min": SELECTED_96_OUTLET_FLUX_MIN,
+    }
+
+
+def _selected_96_chain_flow_development_gate(
+    duct: Optional[Dict[str, Any]],
+    static: Optional[Dict[str, Any]],
+) -> Dict[str, Any]:
+    duct_gate = _selected_96_flow_development_gate(duct)
+    static_gate = _selected_96_flow_development_gate(static)
+    return {
+        "duct_pass": duct_gate["pass"],
+        "static_pass": static_gate["pass"],
+        "duct_reasons": duct_gate["reasons"],
+        "static_reasons": static_gate["reasons"],
+        "outlet_flux_tail_mean": duct_gate["outlet_flux_tail_mean"],
+        "outlet_to_inlet_flux_ratio_tail_mean": duct_gate["outlet_to_inlet_flux_ratio_tail_mean"],
+        "midplane_to_inlet_flux_ratio_tail_mean": duct_gate["midplane_to_inlet_flux_ratio_tail_mean"],
+        "outlet_flux_min": SELECTED_96_OUTLET_FLUX_MIN,
+    }
+
+
+def _empty_selected_96_flow_gate() -> Dict[str, Any]:
+    return {
+        "duct_pass": False,
+        "static_pass": False,
+        "duct_reasons": ["not_selected"],
+        "static_reasons": ["not_selected"],
+        "outlet_flux_tail_mean": None,
+        "outlet_to_inlet_flux_ratio_tail_mean": None,
+        "midplane_to_inlet_flux_ratio_tail_mean": None,
+        "outlet_flux_min": SELECTED_96_OUTLET_FLUX_MIN,
+    }
+
+
+def _selected_row_provenance_matches(row: Dict[str, Any], selection: Dict[str, Any]) -> bool:
+    provenance = dict(selection.get("selected_boundary_provenance") or {})
+    expected_hash = provenance.get("solver_state_hash") or provenance.get("config_hash")
+    checks = {
+        "selected_source_row_name": selection.get("selected_row_name"),
+        "selected_source_config_hash": expected_hash,
+        "selected_source_lbm_relaxation_semantics": provenance.get("lbm_relaxation_semantics"),
+    }
+    for key, expected in checks.items():
+        if expected is not None and row.get(key) != expected:
+            return False
+    expected_tau = provenance.get("tau")
+    if expected_tau is not None:
+        actual_tau = row.get("selected_source_tau")
+        if actual_tau is None or not math.isclose(float(actual_tau), float(expected_tau), rel_tol=1.0e-9, abs_tol=1.0e-12):
+            return False
+    return True
 
 
 def _row_by_semantics(rows: Sequence[Dict[str, Any]], semantics: str) -> Optional[Dict[str, Any]]:

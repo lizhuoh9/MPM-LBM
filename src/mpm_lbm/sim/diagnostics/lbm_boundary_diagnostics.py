@@ -184,6 +184,10 @@ def summarize_timeseries_trends(records: Any, tail_fraction: float = 0.2) -> Dic
     tail_count = max(1, int(math.ceil(len(rows) * float(tail_fraction))))
     tail = rows[-tail_count:]
     final = rows[-1]
+    inlet_flux_tail_mean = _finite_float(np.mean([_record_float(row, "inlet_flux") for row in tail]))
+    outlet_flux_tail_mean = _finite_float(np.mean([_record_float(row, "outlet_flux") for row in tail]))
+    inlet_mean_ux_tail_mean = _finite_float(np.mean([_record_float(row, "inlet_mean_ux") for row in tail]))
+    midplane_mean_ux_tail_mean = _finite_float(np.mean([_record_float(row, "midplane_mean_ux") for row in tail]))
 
     return {
         "record_count": int(len(rows)),
@@ -201,8 +205,12 @@ def summarize_timeseries_trends(records: Any, tail_fraction: float = 0.2) -> Dic
         "flux_imbalance_rel_max": _finite_float(max(_record_float(row, "flux_imbalance_rel") for row in rows)),
         "flux_imbalance_rel_tail_mean": _finite_float(np.mean([_record_float(row, "flux_imbalance_rel") for row in tail])),
         "outlet_flux_final": _record_float(final, "outlet_flux"),
-        "outlet_flux_tail_mean": _finite_float(np.mean([_record_float(row, "outlet_flux") for row in tail])),
-        "midplane_mean_ux_tail_mean": _finite_float(np.mean([_record_float(row, "midplane_mean_ux") for row in tail])),
+        "inlet_flux_tail_mean": inlet_flux_tail_mean,
+        "outlet_flux_tail_mean": outlet_flux_tail_mean,
+        "outlet_to_inlet_flux_ratio_tail_mean": _safe_ratio(outlet_flux_tail_mean, inlet_flux_tail_mean),
+        "inlet_mean_ux_tail_mean": inlet_mean_ux_tail_mean,
+        "midplane_mean_ux_tail_mean": midplane_mean_ux_tail_mean,
+        "midplane_to_inlet_flux_ratio_tail_mean": _safe_ratio(midplane_mean_ux_tail_mean, inlet_mean_ux_tail_mean),
         "max_v_global": _finite_float(max(_record_float(row, "max_v") for row in rows)),
         "mach_proxy_observed_max": _finite_float(max(_record_float(row, "mach_proxy_observed") for row in rows)),
         "negative_ux_fraction_tail_mean": _finite_float(
@@ -234,6 +242,12 @@ def _outlet_proxy_float(record: Dict[str, Any], key: str) -> float:
     if not isinstance(proxy, dict):
         return 0.0
     return _finite_float(proxy.get(key, 0.0))
+
+
+def _safe_ratio(numerator: float, denominator: float) -> float:
+    if abs(float(denominator)) < 1.0e-12:
+        return 0.0
+    return _finite_float(float(numerator) / float(denominator))
 
 
 def _clamp_index(index: int, size: int) -> int:
