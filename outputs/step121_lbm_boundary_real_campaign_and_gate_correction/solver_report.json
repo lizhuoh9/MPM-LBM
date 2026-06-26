@@ -7,7 +7,9 @@
     "final_classification": "boundary_repair_partial_continue_lbm",
     "reference_comparison_ready": false,
     "reference_status": {
+      "failed_reference_semantics": [],
       "incomplete_reference_semantics": [],
+      "legacy_reference_failed": false,
       "missing_reference_semantics": [
         "equilibrium_all_population_reset",
         "regularized_velocity_pressure"
@@ -20,6 +22,49 @@
     "step121_schema_version": 1,
     "validation_claim_allowed": false
   },
+  "campaign_manifest": {
+    "artifact_root": "D:\\working\\squid robot\\LBM\\MPM-LBM\\outputs\\step121_lbm_boundary_real_campaign_and_gate_correction",
+    "campaign_id": "step124_lbm_boundary_516b1aaa",
+    "expected_rows": {
+      "tiny_step121_real_runner_smoke": {
+        "geometry_mode": "duct_only",
+        "lbm_open_boundary_semantics": "regularized_velocity_pressure_limited",
+        "row_role": "tiny_smoke",
+        "run_manifest_hash": "e502db69a3264e154ec5f9ea721a77423f96aa70aecd2ac14d10bb18e787923a",
+        "selected_source_config_hash": null,
+        "selected_source_lbm_relaxation_semantics": null,
+        "selected_source_row_name": null,
+        "selected_source_tau": null,
+        "solver_state_hash": "c7cc25fc7b31103d5683164ed848bafa8e2262838e849ef03b7fc6aad7922c94"
+      }
+    },
+    "gate_thresholds": {
+      "candidate_mass_acceptance_max": 0.005,
+      "flux_imbalance_rel_tail_max_max": 0.2,
+      "flux_imbalance_rel_tail_mean_max": 0.1,
+      "hard_stop_mach_max": 0.35,
+      "hard_stop_mass_drift_max": 0.05,
+      "hard_stop_negative_population_fraction_max": 0.001,
+      "hard_stop_rho_max": 1.15,
+      "hard_stop_rho_min": 0.85,
+      "inlet_flux_min": 1e-06,
+      "outlet_flux_tail_cv_max": 0.1,
+      "ratio_max": 1.2,
+      "ratio_min": 0.8,
+      "selected96_mass_acceptance_max": 0.01
+    },
+    "git_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
+    "phase_history": [
+      "smoke"
+    ],
+    "run_commands": [
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase references48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase candidates48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary"
+    ],
+    "step121_campaign_manifest_schema_version": 1
+  },
+  "campaign_manifest_id": "step124_lbm_boundary_516b1aaa",
   "campaign_state": "awaiting_48_references",
   "figure_29_3_parity_claim_allowed": false,
   "final_classification": "boundary_repair_partial_continue_lbm",
@@ -51,8 +96,10 @@
       "duct_reasons": [
         "not_selected"
       ],
+      "flux_imbalance_rel_tail_max": null,
       "midplane_to_inlet_flux_ratio_tail_mean": null,
       "outlet_flux_min": 1e-12,
+      "outlet_flux_tail_cv": null,
       "outlet_flux_tail_mean": null,
       "outlet_to_inlet_flux_ratio_tail_mean": null,
       "static_pass": false,
@@ -79,6 +126,8 @@
     "validation_claim_allowed": false
   },
   "goal_file": "STEP121_LBM_BOUNDARY_REAL_CAMPAIGN_AND_GATE_CORRECTION_GOAL.md",
+  "ignored_row_count": 0,
+  "ignored_rows": [],
   "phase": "smoke",
   "quasi2d_allowed": false,
   "row_count": 1,

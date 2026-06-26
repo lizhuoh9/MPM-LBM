@@ -154,12 +154,15 @@ def run_step116_matrix(
     out.mkdir(parents=True, exist_ok=True)
     run_specs = list(specs) if specs is not None else default_committed_specs()
     rows = []
-    for spec in run_specs:
+    for index, spec in enumerate(run_specs):
         row_dir = out / spec.name
         if resume and not force and _row_complete(row_dir):
             rows.append(_read_json(row_dir / "finite_stability_report.json")["summary_row"])
-            continue
-        rows.append(run_step116_row(spec, row_dir))
+        else:
+            rows.append(run_step116_row(spec, row_dir))
+        if index + 1 < len(run_specs):
+            ti.reset()
+            _ensure_taichi()
     summary = _write_matrix_summary(out, rows)
     _write_solver_report(out, rows)
     return summary

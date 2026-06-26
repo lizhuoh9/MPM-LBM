@@ -6,7 +6,9 @@
   "final_classification": "boundary_repair_partial_continue_lbm",
   "reference_comparison_ready": false,
   "reference_status": {
+    "failed_reference_semantics": [],
     "incomplete_reference_semantics": [],
+    "legacy_reference_failed": false,
     "missing_reference_semantics": [
       "equilibrium_all_population_reset",
       "regularized_velocity_pressure"

@@ -4,6 +4,8 @@ A Taichi-based prototype framework for 3D MPM solid and LBM fluid coupling.
 
 Current status: engineering prototype.
 
+Current campaign entry point: `docs/current/STATUS.md`.
+
 This repository is a small-scale engineering prototype for comparing MPM-LBM coupling paths. It is not production ready and should not be described as a completed sharp-interface FSI solver or a real squid simulation.
 
 ## Implemented
@@ -122,6 +124,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 121 LBM boundary real-campaign and gate correction, with pending-versus-failed campaign states, selected 96^3 phase specs, immediate lightweight failure stops, checkpoint history continuity, atomic checkpoint fallback, failure snapshots, reference readiness, failed-candidate visibility, selected-chain limiter gates, and an explicit quasi-2D block until real 48^3 and selected 96^3 rows pass
 - Step 122 LBM boundary real-campaign execution hardening, with selected-static requiring a passed selected 96^3 duct artifact, selected 96^3 provenance inheritance from the chosen 48^3 candidate, checkpoint history restore from `.npz`, lightweight mass-drift stopping, runner-path failure artifact tests, and the quasi-2D/FSI/Fluent claims still blocked until real 48^3 and selected 96^3 rows pass
 - Step 123 LBM boundary 48 real-campaign execution and decision hardening, with terminal-evidence versus validation-pass semantics, selected 96^3 flow-development gates, spec-aware artifact reuse, solver-state versus run-manifest hashes, formal selected-provenance fail-fast behavior, real Taichi lightweight mass-reduction contracts, and no quasi-2D/FSI/Fluent claim until the real 48^3 and selected 96^3 artifacts pass
+- Step 124 LBM boundary campaign-readiness hardening, with legacy-reference terminal failure stopping the 48 campaign, shared dimensionless flow-development gates for candidates and selected 96^3 rows, campaign-manifest summary filtering, current documentation entry points, refreshed tiny smoke artifacts, and no quasi-2D/FSI/Fluent claim until real 48^3 and selected 96^3 artifacts pass
 
 ## Not Implemented
 

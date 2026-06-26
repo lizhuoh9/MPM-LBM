@@ -184,8 +184,11 @@ def summarize_timeseries_trends(records: Any, tail_fraction: float = 0.2) -> Dic
     tail_count = max(1, int(math.ceil(len(rows) * float(tail_fraction))))
     tail = rows[-tail_count:]
     final = rows[-1]
-    inlet_flux_tail_mean = _finite_float(np.mean([_record_float(row, "inlet_flux") for row in tail]))
-    outlet_flux_tail_mean = _finite_float(np.mean([_record_float(row, "outlet_flux") for row in tail]))
+    inlet_flux_tail_values = [_record_float(row, "inlet_flux") for row in tail]
+    outlet_flux_tail_values = [_record_float(row, "outlet_flux") for row in tail]
+    flux_imbalance_tail_values = [_record_float(row, "flux_imbalance_rel") for row in tail]
+    inlet_flux_tail_mean = _finite_float(np.mean(inlet_flux_tail_values))
+    outlet_flux_tail_mean = _finite_float(np.mean(outlet_flux_tail_values))
     inlet_mean_ux_tail_mean = _finite_float(np.mean([_record_float(row, "inlet_mean_ux") for row in tail]))
     midplane_mean_ux_tail_mean = _finite_float(np.mean([_record_float(row, "midplane_mean_ux") for row in tail]))
 
@@ -203,10 +206,12 @@ def summarize_timeseries_trends(records: Any, tail_fraction: float = 0.2) -> Dic
         "flux_imbalance_rel_final": _record_float(final, "flux_imbalance_rel"),
         "flux_imbalance_rel_min": _finite_float(min(_record_float(row, "flux_imbalance_rel") for row in rows)),
         "flux_imbalance_rel_max": _finite_float(max(_record_float(row, "flux_imbalance_rel") for row in rows)),
-        "flux_imbalance_rel_tail_mean": _finite_float(np.mean([_record_float(row, "flux_imbalance_rel") for row in tail])),
+        "flux_imbalance_rel_tail_mean": _finite_float(np.mean(flux_imbalance_tail_values)),
+        "flux_imbalance_rel_tail_max": _finite_float(max(flux_imbalance_tail_values)),
         "outlet_flux_final": _record_float(final, "outlet_flux"),
         "inlet_flux_tail_mean": inlet_flux_tail_mean,
         "outlet_flux_tail_mean": outlet_flux_tail_mean,
+        "outlet_flux_tail_cv": _safe_cv(outlet_flux_tail_values),
         "outlet_to_inlet_flux_ratio_tail_mean": _safe_ratio(outlet_flux_tail_mean, inlet_flux_tail_mean),
         "inlet_mean_ux_tail_mean": inlet_mean_ux_tail_mean,
         "midplane_mean_ux_tail_mean": midplane_mean_ux_tail_mean,
@@ -248,6 +253,16 @@ def _safe_ratio(numerator: float, denominator: float) -> float:
     if abs(float(denominator)) < 1.0e-12:
         return 0.0
     return _finite_float(float(numerator) / float(denominator))
+
+
+def _safe_cv(values: Any) -> float:
+    array = np.asarray(list(values), dtype=float)
+    if array.size == 0:
+        return 0.0
+    mean = _finite_float(np.mean(array))
+    if abs(mean) < 1.0e-12:
+        return 0.0
+    return _finite_float(np.std(array) / abs(mean))
 
 
 def _clamp_index(index: int, size: int) -> int:

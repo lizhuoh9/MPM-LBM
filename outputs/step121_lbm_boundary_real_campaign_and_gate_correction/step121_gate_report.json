@@ -23,8 +23,10 @@
     "duct_reasons": [
       "not_selected"
     ],
+    "flux_imbalance_rel_tail_max": null,
     "midplane_to_inlet_flux_ratio_tail_mean": null,
     "outlet_flux_min": 1e-12,
+    "outlet_flux_tail_cv": null,
     "outlet_flux_tail_mean": null,
     "outlet_to_inlet_flux_ratio_tail_mean": null,
     "static_pass": false,

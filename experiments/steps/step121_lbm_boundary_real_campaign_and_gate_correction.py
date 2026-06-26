@@ -4,6 +4,7 @@ import argparse
 import json
 import math
 import os
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence
@@ -32,6 +33,8 @@ from experiments.steps.step120_lbm_boundary_repair_large_real_execution import (
     _metric,
     _replace_spec,
     run_step120_matrix,
+    run_manifest_hash_for_spec,
+    solver_state_hash_for_spec,
     step120_real_run_specs,
     step120_row_reusable_for_spec,
 )
@@ -43,6 +46,7 @@ DEFAULT_RUNTIME_SNAPSHOT_ROOT = REPO_ROOT / "outputs" / "tmp" / "step121_failure
 STEP121_SCHEMA_VERSION = 1
 
 CAMPAIGN_AWAITING_48_REFERENCES = "awaiting_48_references"
+CAMPAIGN_48_LEGACY_REFERENCE_FAILED = "48_legacy_reference_failed"
 CAMPAIGN_AWAITING_48_CANDIDATES = "awaiting_48_candidates"
 CAMPAIGN_48_CANDIDATES_FAILED = "48_candidates_failed"
 CAMPAIGN_BEST_48_SELECTED = "best_48_selected"
@@ -80,6 +84,14 @@ SELECTED_BOUNDARY_PROVENANCE_KEYS = [
     "solver_state_hash",
 ]
 SELECTED_96_OUTLET_FLUX_MIN = 1.0e-12
+STEP121_CAMPAIGN_MANIFEST = "campaign_manifest.json"
+STEP121_CAMPAIGN_MANIFEST_SCHEMA_VERSION = 1
+FLOW_INLET_FLUX_MIN = 1.0e-6
+FLOW_RATIO_MIN = 0.80
+FLOW_RATIO_MAX = 1.20
+FLOW_IMBALANCE_TAIL_MEAN_MAX = 0.10
+FLOW_IMBALANCE_TAIL_MAX_MAX = 0.20
+FLOW_OUTLET_TAIL_CV_MAX = 0.10
 
 
 def step121_smoke_specs() -> List[Step120RunSpec]:
@@ -265,11 +277,58 @@ def resolve_step121_phase_specs(
     raise ValueError(f"unknown Step121 phase: {phase}")
 
 
-def collect_step121_rows(output_dir: Path | str) -> List[Dict[str, Any]]:
+def write_step121_campaign_manifest(
+    output_dir: Path | str,
+    specs: Sequence[Step120RunSpec],
+    *,
+    phase: str,
+    campaign_id: Optional[str] = None,
+    git_commit: Optional[str] = None,
+) -> Dict[str, Any]:
+    out = Path(output_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    path = out / STEP121_CAMPAIGN_MANIFEST
+    existing: Dict[str, Any] = {}
+    if path.is_file():
+        try:
+            existing = _read_json(path)
+        except Exception:
+            existing = {}
+    expected_rows = dict(existing.get("expected_rows") or {})
+    for spec in specs:
+        expected_rows[spec.name] = _manifest_row_for_spec(spec)
+    phase_history = list(existing.get("phase_history") or [])
+    if phase not in phase_history:
+        phase_history.append(phase)
+    manifest = {
+        "step121_campaign_manifest_schema_version": STEP121_CAMPAIGN_MANIFEST_SCHEMA_VERSION,
+        "campaign_id": campaign_id or existing.get("campaign_id") or _default_campaign_id(git_commit),
+        "git_commit": git_commit or existing.get("git_commit") or _current_git_commit(),
+        "artifact_root": str(out),
+        "phase_history": phase_history,
+        "expected_rows": expected_rows,
+        "gate_thresholds": _flow_gate_thresholds(),
+        "run_commands": _manifest_run_commands(),
+    }
+    _write_json(path, manifest)
+    return manifest
+
+
+def load_step121_campaign_manifest(output_dir: Path | str) -> Optional[Dict[str, Any]]:
+    path = Path(output_dir) / STEP121_CAMPAIGN_MANIFEST
+    if not path.is_file():
+        return None
+    return _read_json(path)
+
+
+def collect_step121_rows(output_dir: Path | str, *, return_ignored: bool = False) -> Any:
     out = Path(output_dir)
     rows: List[Dict[str, Any]] = []
+    ignored: List[Dict[str, Any]] = []
+    manifest = load_step121_campaign_manifest(out)
+    expected_rows = dict((manifest or {}).get("expected_rows") or {})
     if not out.is_dir():
-        return rows
+        return {"rows": rows, "ignored_rows": ignored, "manifest": manifest} if return_ignored else rows
     for report in sorted(out.glob("*/finite_stability_report.json")):
         try:
             payload = _read_json(report)
@@ -277,8 +336,106 @@ def collect_step121_rows(output_dir: Path | str) -> List[Dict[str, Any]]:
             continue
         row = dict(payload.get("summary_row") or payload)
         row.setdefault("name", report.parent.name)
+        reasons = _manifest_rejection_reasons(row, expected_rows.get(str(row.get("name"))), manifest)
+        if reasons:
+            ignored.append(
+                {
+                    "name": row.get("name"),
+                    "path": str(report),
+                    "ignored_reasons": reasons,
+                    "ignored_by_campaign_gate": True,
+                }
+            )
+            continue
+        if manifest is not None:
+            row["campaign_id"] = manifest.get("campaign_id")
+            row["campaign_manifest_path"] = str(out / STEP121_CAMPAIGN_MANIFEST)
         rows.append(row)
+    if return_ignored:
+        return {"rows": rows, "ignored_rows": ignored, "manifest": manifest}
     return rows
+
+
+def _manifest_row_for_spec(spec: Step120RunSpec) -> Dict[str, Any]:
+    return {
+        "row_role": spec.row_role,
+        "lbm_open_boundary_semantics": spec.open_boundary_semantics,
+        "geometry_mode": spec.geometry_mode,
+        "solver_state_hash": solver_state_hash_for_spec(spec),
+        "run_manifest_hash": run_manifest_hash_for_spec(spec),
+        "selected_source_row_name": spec.selected_source_row_name,
+        "selected_source_config_hash": spec.selected_source_config_hash,
+        "selected_source_tau": spec.selected_source_tau,
+        "selected_source_lbm_relaxation_semantics": spec.selected_source_lbm_relaxation_semantics,
+    }
+
+
+def _manifest_rejection_reasons(
+    row: Dict[str, Any],
+    expected: Optional[Dict[str, Any]],
+    manifest: Optional[Dict[str, Any]],
+) -> List[str]:
+    if manifest is None:
+        return []
+    if expected is None:
+        return ["stale_artifact"]
+    checks = {
+        "solver_state_hash": row.get("solver_state_hash") or row.get("config_hash"),
+        "row_role": row.get("row_role"),
+        "lbm_open_boundary_semantics": row.get("lbm_open_boundary_semantics"),
+        "selected_source_row_name": row.get("selected_source_row_name"),
+        "selected_source_config_hash": row.get("selected_source_config_hash"),
+        "selected_source_lbm_relaxation_semantics": row.get("selected_source_lbm_relaxation_semantics"),
+    }
+    reasons: List[str] = []
+    for key, actual in checks.items():
+        expected_value = expected.get(key)
+        if expected_value is not None and actual != expected_value:
+            reasons.append(f"{key}_mismatch")
+    expected_tau = expected.get("selected_source_tau")
+    if expected_tau is not None:
+        actual_tau = row.get("selected_source_tau")
+        if actual_tau is None or not math.isclose(float(actual_tau), float(expected_tau), rel_tol=1.0e-9, abs_tol=1.0e-12):
+            reasons.append("selected_source_tau_mismatch")
+    return sorted(set(reasons))
+
+
+def _flow_gate_thresholds() -> Dict[str, Any]:
+    return {
+        "inlet_flux_min": FLOW_INLET_FLUX_MIN,
+        "ratio_min": FLOW_RATIO_MIN,
+        "ratio_max": FLOW_RATIO_MAX,
+        "flux_imbalance_rel_tail_mean_max": FLOW_IMBALANCE_TAIL_MEAN_MAX,
+        "flux_imbalance_rel_tail_max_max": FLOW_IMBALANCE_TAIL_MAX_MAX,
+        "outlet_flux_tail_cv_max": FLOW_OUTLET_TAIL_CV_MAX,
+        "candidate_mass_acceptance_max": 0.005,
+        "selected96_mass_acceptance_max": 0.01,
+        "hard_stop_mass_drift_max": 0.05,
+        "hard_stop_rho_min": 0.85,
+        "hard_stop_rho_max": 1.15,
+        "hard_stop_mach_max": 0.35,
+        "hard_stop_negative_population_fraction_max": 1.0e-3,
+    }
+
+
+def _manifest_run_commands() -> List[str]:
+    return [
+        "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase references48 --allow-large-real-rows --output-interval 25",
+        "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase candidates48 --allow-large-real-rows --output-interval 25",
+        "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary",
+    ]
+
+
+def _current_git_commit() -> str:
+    try:
+        return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPO_ROOT, text=True).strip()
+    except Exception:
+        return "unknown"
+
+
+def _default_campaign_id(git_commit: Optional[str]) -> str:
+    commit = git_commit or _current_git_commit()
+    return f"step124_lbm_boundary_{commit[:8]}"
 
 
 def select_step121_best_boundary(rows: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
@@ -288,6 +445,14 @@ def select_step121_best_boundary(rows: Sequence[Dict[str, Any]]) -> Dict[str, An
     candidate_summaries = [_candidate_summary(item) for item in evaluated]
 
     if not refs["reference_comparison_ready"]:
+        if refs.get("legacy_reference_failed"):
+            return _selection_payload(
+                refs,
+                candidate_summaries,
+                campaign_state=CAMPAIGN_48_LEGACY_REFERENCE_FAILED,
+                final_classification=CLASSIFICATION_FAILED,
+                reason="48_legacy_reference_physical_failure",
+            )
         return _selection_payload(
             refs,
             candidate_summaries,
@@ -604,6 +769,7 @@ def run_step121_matrix(
         output_dir=out,
     )
     if selected_specs:
+        write_step121_campaign_manifest(out, selected_specs, phase=phase)
         run_step120_matrix(
             out,
             specs=selected_specs,
@@ -615,13 +781,27 @@ def run_step121_matrix(
             checkpoint_root=checkpoint_root,
         )
         _remove_step120_aggregate_artifacts(out)
-    rows = collect_step121_rows(out)
-    return write_step121_artifacts(out, rows, phase=phase)
+    collected = collect_step121_rows(out, return_ignored=True)
+    return write_step121_artifacts(
+        out,
+        collected["rows"],
+        phase=phase,
+        ignored_rows=collected["ignored_rows"],
+        campaign_manifest=collected["manifest"],
+    )
 
 
-def write_step121_artifacts(output_dir: Path | str, rows: Sequence[Dict[str, Any]], *, phase: str) -> Dict[str, Any]:
+def write_step121_artifacts(
+    output_dir: Path | str,
+    rows: Sequence[Dict[str, Any]],
+    *,
+    phase: str,
+    ignored_rows: Optional[Sequence[Dict[str, Any]]] = None,
+    campaign_manifest: Optional[Dict[str, Any]] = None,
+) -> Dict[str, Any]:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
+    ignored_list = list(ignored_rows or [])
     selection = select_step121_best_boundary(rows)
     gate = build_step121_gate_report(rows, selection)
     summary = {
@@ -629,10 +809,12 @@ def write_step121_artifacts(output_dir: Path | str, rows: Sequence[Dict[str, Any
         "step121_schema_version": STEP121_SCHEMA_VERSION,
         "phase": phase,
         "row_count": int(len(rows)),
+        "ignored_row_count": int(len(ignored_list)),
         "campaign_state": gate["campaign_state"],
         "final_classification": gate["final_classification"],
         "quasi2d_allowed": gate["quasi2d_allowed"],
         "validation_claim_allowed": False,
+        "campaign_manifest_id": (campaign_manifest or {}).get("campaign_id"),
     }
     _write_json(out / "step121_best_boundary_selection.json", selection)
     _write_json(out / "step121_gate_report.json", gate)
@@ -645,6 +827,8 @@ def write_step121_artifacts(output_dir: Path | str, rows: Sequence[Dict[str, Any
             "runner_file": "experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py",
             "best_boundary_selection": selection,
             "gate_report": gate,
+            "ignored_rows": ignored_list,
+            "campaign_manifest": campaign_manifest,
             "fluid_only": True,
             "full_fsi_rerun_done": False,
             "fluent_validation_claim_allowed": False,
@@ -653,7 +837,14 @@ def write_step121_artifacts(output_dir: Path | str, rows: Sequence[Dict[str, Any
         },
     )
     _write_output_readme(out, summary)
-    return {"summary": summary, "selection": selection, "gate": gate, "runs": list(rows)}
+    return {
+        "summary": summary,
+        "selection": selection,
+        "gate": gate,
+        "runs": list(rows),
+        "ignored_rows": ignored_list,
+        "campaign_manifest": campaign_manifest,
+    }
 
 
 def _remove_step120_aggregate_artifacts(out: Path) -> None:
@@ -681,24 +872,36 @@ def _reference_status(rows: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
         if row.get("requested_nx") == 48 and semantics in REFERENCE_SEMANTICS:
             refs[str(semantics)] = row
     missing = sorted(REQUIRED_REFERENCE_SEMANTICS - set(refs))
-    incomplete = [
-        semantics
-        for semantics, row in refs.items()
-        if semantics in REQUIRED_REFERENCE_SEMANTICS and not _real_completed(row)
-    ]
+    incomplete: List[str] = []
+    failed: List[str] = []
+    for semantics, row in refs.items():
+        if semantics not in REQUIRED_REFERENCE_SEMANTICS or _real_completed(row):
+            continue
+        if _real_terminal_evidence(row):
+            failed.append(semantics)
+            if semantics == "equilibrium_all_population_reset":
+                continue
+            if semantics == "regularized_velocity_pressure":
+                continue
+        incomplete.append(semantics)
+    legacy_failed = "equilibrium_all_population_reset" in failed
     return {
-        "reference_comparison_ready": not missing and not incomplete,
+        "reference_comparison_ready": not missing and not incomplete and not legacy_failed,
+        "legacy_reference_failed": legacy_failed,
         "reference_rows": {
             semantics: {
                 "name": row.get("name"),
                 "requested_window_completed": bool(row.get("requested_window_completed", False)),
                 "simulation_backed_artifact": bool(row.get("simulation_backed_artifact", False)),
+                "terminal_real_evidence": _real_terminal_evidence(row),
+                "first_failure_reason": row.get("first_failure_reason"),
             }
             for semantics, row in refs.items()
             if semantics in REQUIRED_REFERENCE_SEMANTICS
         },
         "missing_reference_semantics": missing,
         "incomplete_reference_semantics": sorted(incomplete),
+        "failed_reference_semantics": sorted(failed),
     }
 
 
@@ -718,6 +921,7 @@ def _evaluate_candidate(row: Dict[str, Any], rows: Sequence[Dict[str, Any]]) -> 
     flux = _metric(row, "flux_imbalance_rel_tail_mean")
     mass = abs(_metric(row, "mass_total_delta_rel_final"))
     limiter = _metric(row, "limiter_activation_fraction")
+    flow_gate = _flow_development_gate(row)
     if not _real_completed(row):
         reasons.append("requested_window_not_completed")
     if not bool(row.get("step120_validation_claimed", False)):
@@ -733,6 +937,8 @@ def _evaluate_candidate(row: Dict[str, Any], rows: Sequence[Dict[str, Any]]) -> 
         reasons.append("flux_imbalance_gate")
     if mass >= 0.005:
         reasons.append("mass_drift_gate")
+    if not flow_gate["pass"]:
+        reasons.extend(flow_gate["reasons"])
     regularized = _row_by_semantics(rows, "regularized_velocity_pressure")
     legacy = _row_by_semantics(rows, "equilibrium_all_population_reset")
     if regularized is not None and flux >= _metric(regularized, "flux_imbalance_rel_tail_mean"):
@@ -746,13 +952,18 @@ def _evaluate_candidate(row: Dict[str, Any], rows: Sequence[Dict[str, Any]]) -> 
             reasons.append("flux_worse_than_legacy")
     if limiter > LIMITER_ACTIVATION_FRACTION_LIMIT:
         reasons.append("limiter_activation_gate")
+    throughput_penalty = abs(1.0 - float(flow_gate.get("outlet_to_inlet_flux_ratio_tail_mean") or 0.0))
+    throughput_penalty += abs(1.0 - float(flow_gate.get("midplane_to_inlet_flux_ratio_tail_mean") or 0.0))
+    throughput_penalty += float(flow_gate.get("outlet_flux_tail_cv") or 0.0)
+    throughput_penalty += flux
     return {
         "row": row,
         "rejection_reasons": sorted(set(reasons)),
+        "flow_development_gate": flow_gate,
         "candidate_pass": not reasons,
         "sort_key": (
             0 if not reasons else 1,
-            flux,
+            throughput_penalty,
             mass,
             limiter,
             _metric(row, "mach_proxy_observed_max"),
@@ -771,7 +982,15 @@ def _candidate_summary(item: Dict[str, Any]) -> Dict[str, Any]:
         "simulation_backed_artifact": bool(row.get("simulation_backed_artifact", False)),
         "candidate_pass": item["candidate_pass"],
         "rejection_reasons": item["rejection_reasons"],
+        "flow_development_gate_pass": item["flow_development_gate"]["pass"],
+        "flow_development_rejection_reasons": item["flow_development_gate"]["reasons"],
         "flux_imbalance_rel_tail_mean": row.get("flux_imbalance_rel_tail_mean"),
+        "flux_imbalance_rel_tail_max": row.get("flux_imbalance_rel_tail_max"),
+        "inlet_flux_tail_mean": row.get("inlet_flux_tail_mean"),
+        "outlet_flux_tail_mean": row.get("outlet_flux_tail_mean"),
+        "outlet_to_inlet_flux_ratio_tail_mean": row.get("outlet_to_inlet_flux_ratio_tail_mean"),
+        "midplane_to_inlet_flux_ratio_tail_mean": row.get("midplane_to_inlet_flux_ratio_tail_mean"),
+        "outlet_flux_tail_cv": row.get("outlet_flux_tail_cv"),
         "mass_total_delta_rel_final": row.get("mass_total_delta_rel_final"),
         "limiter_activation_fraction": row.get("limiter_activation_fraction"),
         "not_used_for_validation": bool(row.get("not_used_for_validation", False)),
@@ -790,7 +1009,8 @@ def _selection_payload(
         "step": 121,
         "step121_schema_version": STEP121_SCHEMA_VERSION,
         "best_boundary_selected": False,
-        "campaign_should_stop_at_48": campaign_state == CAMPAIGN_48_CANDIDATES_FAILED,
+        "campaign_should_stop_at_48": campaign_state
+        in {CAMPAIGN_48_LEGACY_REFERENCE_FAILED, CAMPAIGN_48_CANDIDATES_FAILED},
         "campaign_state": campaign_state,
         "final_classification": final_classification,
         "reference_comparison_ready": refs["reference_comparison_ready"],
@@ -855,33 +1075,83 @@ def _real_terminal_evidence(row: Dict[str, Any]) -> bool:
     return bool(row.get("first_failure_step") is not None or row.get("first_failure_reason") is not None)
 
 
-def _selected_96_flow_development_gate(row: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+def _flow_development_gate(row: Optional[Dict[str, Any]]) -> Dict[str, Any]:
     if row is None:
-        return {
-            "pass": False,
-            "reasons": ["missing_row"],
-            "outlet_flux_tail_mean": None,
-            "outlet_to_inlet_flux_ratio_tail_mean": None,
-            "midplane_to_inlet_flux_ratio_tail_mean": None,
-        }
+        return _empty_flow_development_gate(["missing_row"])
     reasons: List[str] = []
-    outlet_flux = row.get("outlet_flux_tail_mean")
-    flux_imbalance = row.get("flux_imbalance_rel_tail_mean")
+    inlet_flux = _optional_float(row.get("inlet_flux_tail_mean"))
+    outlet_flux = _optional_float(row.get("outlet_flux_tail_mean"))
+    outlet_ratio = _optional_float(row.get("outlet_to_inlet_flux_ratio_tail_mean"))
+    midplane_ratio = _optional_float(row.get("midplane_to_inlet_flux_ratio_tail_mean"))
+    flux_mean = _optional_float(row.get("flux_imbalance_rel_tail_mean"))
+    flux_max = _optional_float(row.get("flux_imbalance_rel_tail_max"))
+    outlet_cv = _optional_float(row.get("outlet_flux_tail_cv"))
     if row.get("flux_balance_reported") is not True:
         reasons.append("flux_balance_not_reported")
-    if outlet_flux is None or abs(float(outlet_flux)) <= SELECTED_96_OUTLET_FLUX_MIN:
+    if inlet_flux is None or abs(inlet_flux) <= FLOW_INLET_FLUX_MIN:
+        reasons.append("inlet_flux_tail_mean")
+    if outlet_flux is None:
         reasons.append("outlet_flux_tail_mean")
-    if flux_imbalance is None or float(flux_imbalance) >= 0.1:
+    elif inlet_flux is not None and abs(inlet_flux) > FLOW_INLET_FLUX_MIN and inlet_flux * outlet_flux <= 0.0:
+        reasons.append("flux_direction_consistent")
+    if outlet_ratio is None or not (FLOW_RATIO_MIN <= abs(outlet_ratio) <= FLOW_RATIO_MAX):
+        reasons.append("outlet_to_inlet_flux_ratio_tail_mean")
+    if midplane_ratio is None or not (FLOW_RATIO_MIN <= abs(midplane_ratio) <= FLOW_RATIO_MAX):
+        reasons.append("midplane_to_inlet_flux_ratio_tail_mean")
+    if flux_mean is None or flux_mean >= FLOW_IMBALANCE_TAIL_MEAN_MAX:
         reasons.append("flux_imbalance_rel_tail_mean")
+    if flux_max is None or flux_max >= FLOW_IMBALANCE_TAIL_MAX_MAX:
+        reasons.append("flux_imbalance_rel_tail_max")
+    if outlet_cv is None or outlet_cv >= FLOW_OUTLET_TAIL_CV_MAX:
+        reasons.append("outlet_flux_tail_cv")
     return {
         "pass": not reasons,
         "reasons": sorted(set(reasons)),
+        "inlet_flux_tail_mean": inlet_flux,
         "outlet_flux_tail_mean": outlet_flux,
-        "outlet_to_inlet_flux_ratio_tail_mean": row.get("outlet_to_inlet_flux_ratio_tail_mean"),
-        "midplane_to_inlet_flux_ratio_tail_mean": row.get("midplane_to_inlet_flux_ratio_tail_mean"),
-        "flux_imbalance_rel_tail_mean": flux_imbalance,
-        "outlet_flux_min": SELECTED_96_OUTLET_FLUX_MIN,
+        "outlet_to_inlet_flux_ratio_tail_mean": outlet_ratio,
+        "midplane_to_inlet_flux_ratio_tail_mean": midplane_ratio,
+        "flux_imbalance_rel_tail_mean": flux_mean,
+        "flux_imbalance_rel_tail_max": flux_max,
+        "outlet_flux_tail_cv": outlet_cv,
+        "inlet_flux_min": FLOW_INLET_FLUX_MIN,
+        "ratio_min": FLOW_RATIO_MIN,
+        "ratio_max": FLOW_RATIO_MAX,
     }
+
+
+def _empty_flow_development_gate(reasons: Sequence[str]) -> Dict[str, Any]:
+    return {
+        "pass": False,
+        "reasons": sorted(set(reasons)),
+        "inlet_flux_tail_mean": None,
+        "outlet_flux_tail_mean": None,
+        "outlet_to_inlet_flux_ratio_tail_mean": None,
+        "midplane_to_inlet_flux_ratio_tail_mean": None,
+        "flux_imbalance_rel_tail_mean": None,
+        "flux_imbalance_rel_tail_max": None,
+        "outlet_flux_tail_cv": None,
+        "inlet_flux_min": FLOW_INLET_FLUX_MIN,
+        "ratio_min": FLOW_RATIO_MIN,
+        "ratio_max": FLOW_RATIO_MAX,
+    }
+
+
+def _optional_float(value: Any) -> Optional[float]:
+    if value is None:
+        return None
+    try:
+        result = float(value)
+    except (TypeError, ValueError):
+        return None
+    if not math.isfinite(result):
+        return None
+    return result
+
+
+def _selected_96_flow_development_gate(row: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+    gate = _flow_development_gate(row)
+    return {**gate, "outlet_flux_min": SELECTED_96_OUTLET_FLUX_MIN}
 
 
 def _selected_96_chain_flow_development_gate(
@@ -898,6 +1168,8 @@ def _selected_96_chain_flow_development_gate(
         "outlet_flux_tail_mean": duct_gate["outlet_flux_tail_mean"],
         "outlet_to_inlet_flux_ratio_tail_mean": duct_gate["outlet_to_inlet_flux_ratio_tail_mean"],
         "midplane_to_inlet_flux_ratio_tail_mean": duct_gate["midplane_to_inlet_flux_ratio_tail_mean"],
+        "outlet_flux_tail_cv": duct_gate["outlet_flux_tail_cv"],
+        "flux_imbalance_rel_tail_max": duct_gate["flux_imbalance_rel_tail_max"],
         "outlet_flux_min": SELECTED_96_OUTLET_FLUX_MIN,
     }
 
@@ -911,6 +1183,8 @@ def _empty_selected_96_flow_gate() -> Dict[str, Any]:
         "outlet_flux_tail_mean": None,
         "outlet_to_inlet_flux_ratio_tail_mean": None,
         "midplane_to_inlet_flux_ratio_tail_mean": None,
+        "outlet_flux_tail_cv": None,
+        "flux_imbalance_rel_tail_max": None,
         "outlet_flux_min": SELECTED_96_OUTLET_FLUX_MIN,
     }
 
@@ -1013,8 +1287,14 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     args = parser.parse_args(argv)
 
     if args.phase == "summary":
-        rows = collect_step121_rows(args.output_dir)
-        write_step121_artifacts(args.output_dir, rows, phase=args.phase)
+        collected = collect_step121_rows(args.output_dir, return_ignored=True)
+        write_step121_artifacts(
+            args.output_dir,
+            collected["rows"],
+            phase=args.phase,
+            ignored_rows=collected["ignored_rows"],
+            campaign_manifest=collected["manifest"],
+        )
         return 0
 
     run_step121_matrix(

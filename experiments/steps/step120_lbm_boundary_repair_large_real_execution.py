@@ -1047,10 +1047,17 @@ def _finite_report(
     inlet_flux_tail_mean = trend.get("inlet_flux_tail_mean")
     outlet_to_inlet_flux_ratio_tail_mean = trend.get("outlet_to_inlet_flux_ratio_tail_mean")
     midplane_to_inlet_flux_ratio_tail_mean = trend.get("midplane_to_inlet_flux_ratio_tail_mean")
+    flux_imbalance_rel_tail_max = trend.get("flux_imbalance_rel_tail_max")
+    outlet_flux_tail_cv = trend.get("outlet_flux_tail_cv")
     flow_development_gate_pass = _flow_development_gate_pass(
         flux_balance_reported=bool(records),
+        inlet_flux_tail_mean=inlet_flux_tail_mean,
         outlet_flux_tail_mean=outlet_flux_tail_mean,
+        outlet_to_inlet_flux_ratio_tail_mean=outlet_to_inlet_flux_ratio_tail_mean,
+        midplane_to_inlet_flux_ratio_tail_mean=midplane_to_inlet_flux_ratio_tail_mean,
         flux_imbalance_rel_tail_mean=trend.get("flux_imbalance_rel_tail_mean"),
+        flux_imbalance_rel_tail_max=flux_imbalance_rel_tail_max,
+        outlet_flux_tail_cv=outlet_flux_tail_cv,
     )
     summary_row = _summary_row(
         spec,
@@ -1065,8 +1072,10 @@ def _finite_report(
         first_failure_reason=first_failure_reason,
         flux_imbalance_rel_final=final.get("flux_imbalance_rel"),
         flux_imbalance_rel_tail_mean=trend.get("flux_imbalance_rel_tail_mean"),
+        flux_imbalance_rel_tail_max=flux_imbalance_rel_tail_max,
         inlet_flux_tail_mean=inlet_flux_tail_mean,
         outlet_flux_tail_mean=outlet_flux_tail_mean,
+        outlet_flux_tail_cv=outlet_flux_tail_cv,
         outlet_to_inlet_flux_ratio_tail_mean=outlet_to_inlet_flux_ratio_tail_mean,
         midplane_to_inlet_flux_ratio_tail_mean=midplane_to_inlet_flux_ratio_tail_mean,
         flow_development_gate_pass=flow_development_gate_pass,
@@ -1137,8 +1146,10 @@ def _write_nonstepped_row(spec: Step120RunSpec, row_path: Path, tau_report: Dict
         first_failure_reason=reason,
         flux_imbalance_rel_final=None,
         flux_imbalance_rel_tail_mean=None,
+        flux_imbalance_rel_tail_max=None,
         inlet_flux_tail_mean=None,
         outlet_flux_tail_mean=None,
+        outlet_flux_tail_cv=None,
         outlet_to_inlet_flux_ratio_tail_mean=None,
         midplane_to_inlet_flux_ratio_tail_mean=None,
         flow_development_gate_pass=False,
@@ -1197,8 +1208,10 @@ def _summary_row(
     first_failure_reason: Optional[str],
     flux_imbalance_rel_final: Optional[float],
     flux_imbalance_rel_tail_mean: Optional[float],
+    flux_imbalance_rel_tail_max: Optional[float],
     inlet_flux_tail_mean: Optional[float],
     outlet_flux_tail_mean: Optional[float],
+    outlet_flux_tail_cv: Optional[float],
     outlet_to_inlet_flux_ratio_tail_mean: Optional[float],
     midplane_to_inlet_flux_ratio_tail_mean: Optional[float],
     flow_development_gate_pass: bool,
@@ -1258,8 +1271,10 @@ def _summary_row(
         "flux_balance_reported": bool(flux_balance_reported),
         "flux_imbalance_rel_final": flux_imbalance_rel_final,
         "flux_imbalance_rel_tail_mean": flux_imbalance_rel_tail_mean,
+        "flux_imbalance_rel_tail_max": flux_imbalance_rel_tail_max,
         "inlet_flux_tail_mean": inlet_flux_tail_mean,
         "outlet_flux_tail_mean": outlet_flux_tail_mean,
+        "outlet_flux_tail_cv": outlet_flux_tail_cv,
         "outlet_to_inlet_flux_ratio_tail_mean": outlet_to_inlet_flux_ratio_tail_mean,
         "midplane_to_inlet_flux_ratio_tail_mean": midplane_to_inlet_flux_ratio_tail_mean,
         "flow_development_gate_pass": bool(flow_development_gate_pass),
@@ -1839,12 +1854,37 @@ def _hash_spec_mapping(mapping: Dict[str, Any]) -> str:
 def _flow_development_gate_pass(
     *,
     flux_balance_reported: bool,
+    inlet_flux_tail_mean: Optional[float],
     outlet_flux_tail_mean: Optional[float],
+    outlet_to_inlet_flux_ratio_tail_mean: Optional[float],
+    midplane_to_inlet_flux_ratio_tail_mean: Optional[float],
     flux_imbalance_rel_tail_mean: Optional[float],
+    flux_imbalance_rel_tail_max: Optional[float],
+    outlet_flux_tail_cv: Optional[float],
 ) -> bool:
-    if not flux_balance_reported or outlet_flux_tail_mean is None or flux_imbalance_rel_tail_mean is None:
+    if (
+        not flux_balance_reported
+        or inlet_flux_tail_mean is None
+        or outlet_flux_tail_mean is None
+        or outlet_to_inlet_flux_ratio_tail_mean is None
+        or midplane_to_inlet_flux_ratio_tail_mean is None
+        or flux_imbalance_rel_tail_mean is None
+        or flux_imbalance_rel_tail_max is None
+        or outlet_flux_tail_cv is None
+    ):
         return False
-    return bool(abs(float(outlet_flux_tail_mean)) > 1.0e-12 and float(flux_imbalance_rel_tail_mean) < 0.1)
+    if abs(float(inlet_flux_tail_mean)) <= 1.0e-6:
+        return False
+    outlet_ratio = abs(float(outlet_to_inlet_flux_ratio_tail_mean))
+    midplane_ratio = abs(float(midplane_to_inlet_flux_ratio_tail_mean))
+    return bool(
+        float(inlet_flux_tail_mean) * float(outlet_flux_tail_mean) > 0.0
+        and 0.80 <= outlet_ratio <= 1.20
+        and 0.80 <= midplane_ratio <= 1.20
+        and float(flux_imbalance_rel_tail_mean) < 0.10
+        and float(flux_imbalance_rel_tail_max) < 0.20
+        and float(outlet_flux_tail_cv) < 0.10
+    )
 
 
 def _latest_checkpoint_path(spec: Step120RunSpec, checkpoint_root: Path) -> Optional[Path]:
@@ -1909,7 +1949,9 @@ _RUN_SUMMARY_FIELDS = [
     "stop_reason",
     "flux_balance_reported",
     "flux_imbalance_rel_tail_mean",
+    "flux_imbalance_rel_tail_max",
     "outlet_flux_tail_mean",
+    "outlet_flux_tail_cv",
     "outlet_to_inlet_flux_ratio_tail_mean",
     "midplane_to_inlet_flux_ratio_tail_mean",
     "flow_development_gate_pass",

@@ -24,7 +24,7 @@
   "restored_checkpoint": null,
   "row_role": "tiny_smoke",
   "run_manifest_hash": "e502db69a3264e154ec5f9ea721a77423f96aa70aecd2ac14d10bb18e787923a",
-  "runtime_s": 40.34733370001777,
+  "runtime_s": 36.69038200000068,
   "simulation_backed_artifact": true,
   "solver_state_hash": "c7cc25fc7b31103d5683164ed848bafa8e2262838e849ef03b7fc6aad7922c94",
   "static_lbm_only": false,
