@@ -1,6 +1,8 @@
 {
   "campaign": "fluent_lbm_open_boundary_repair",
+  "campaign_base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
   "base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
+  "current_code_commit": "26d4d0a9597a440272e2d479decbf1fbf95cb2ff",
   "state": "awaiting_48_references",
   "final_classification": "boundary_repair_partial_continue_lbm",
   "artifact_root": "outputs/step121_lbm_boundary_real_campaign_and_gate_correction",
@@ -8,7 +10,8 @@
     "docs/current/STATUS.md",
     "docs/current/ACTIVE_CAMPAIGN.json",
     "docs/current/VALIDATION_GATES.md",
-    "docs/campaigns/fluent_duct_flap/steps/124/goal.md",
+    "docs/campaigns/fluent_duct_flap/steps/125/goal.md",
+    "docs/campaigns/fluent_duct_flap/steps/125/report.md",
     "experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py",
     "outputs/step121_lbm_boundary_real_campaign_and_gate_correction/step121_gate_report.json"
   ]

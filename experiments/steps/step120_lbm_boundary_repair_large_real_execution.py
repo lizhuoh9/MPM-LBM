@@ -5,6 +5,7 @@ import csv
 import json
 import math
 import os
+import subprocess
 import sys
 import time
 from dataclasses import asdict, dataclass
@@ -65,6 +66,13 @@ DEFAULT_OUTPUT_DIR = REPO_ROOT / "outputs" / "step120_lbm_boundary_repair_large_
 DEFAULT_CHECKPOINT_ROOT = REPO_ROOT / "outputs" / "tmp" / "step120_checkpoints"
 DEFAULT_FAILURE_SNAPSHOT_ROOT = REPO_ROOT / "outputs" / "tmp" / "step120_failure_snapshots"
 STEP120_SCHEMA_VERSION = 1
+
+
+def _current_git_commit() -> str:
+    try:
+        return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPO_ROOT, text=True).strip()
+    except Exception:
+        return "unknown"
 
 ROW_STATUS_COMPLETED = "completed"
 ROW_STATUS_EXPECTED_POLICY_SKIP = "expected_policy_skip"
@@ -1249,6 +1257,7 @@ def _summary_row(
         "config_hash": _config_hash(spec),
         "solver_state_hash": solver_state_hash_for_spec(spec),
         "run_manifest_hash": run_manifest_hash_for_spec(spec),
+        "code_commit_at_run": _current_git_commit(),
         "selected_source_row_name": spec.selected_source_row_name,
         "selected_source_config_hash": spec.selected_source_config_hash,
         "selected_source_tau": spec.selected_source_tau,
@@ -1337,6 +1346,7 @@ def _metadata(
         "config_hash": _config_hash(spec),
         "solver_state_hash": solver_state_hash_for_spec(spec),
         "run_manifest_hash": run_manifest_hash_for_spec(spec),
+        "code_commit_at_run": _current_git_commit(),
         "checkpoint_runtime_artifact_committed": False,
         "restored_checkpoint": restored_checkpoint,
         "stop_on_first_failure": bool(spec.stop_on_first_failure),

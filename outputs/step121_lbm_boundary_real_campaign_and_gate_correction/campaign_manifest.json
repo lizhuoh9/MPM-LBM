@@ -1,6 +1,8 @@
 {
   "artifact_root": "D:\\working\\squid robot\\LBM\\MPM-LBM\\outputs\\step121_lbm_boundary_real_campaign_and_gate_correction",
   "campaign_id": "step124_lbm_boundary_516b1aaa",
+  "campaign_base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
+  "current_code_commit": "26d4d0a9597a440272e2d479decbf1fbf95cb2ff",
   "expected_rows": {
     "tiny_step121_real_runner_smoke": {
       "geometry_mode": "duct_only",
@@ -29,7 +31,13 @@
     "ratio_min": 0.8,
     "selected96_mass_acceptance_max": 0.01
   },
-  "git_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
+  "git_commit": "26d4d0a9597a440272e2d479decbf1fbf95cb2ff",
+  "phase_commit_history": [
+    {
+      "code_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
+      "phase": "smoke"
+    }
+  ],
   "phase_history": [
     "smoke"
   ],
@@ -38,5 +46,5 @@
     "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase candidates48 --allow-large-real-rows --output-interval 25",
     "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary"
   ],
-  "step121_campaign_manifest_schema_version": 1
+  "step121_campaign_manifest_schema_version": 2
 }

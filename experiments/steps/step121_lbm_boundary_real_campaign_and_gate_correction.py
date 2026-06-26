@@ -85,7 +85,8 @@ SELECTED_BOUNDARY_PROVENANCE_KEYS = [
 ]
 SELECTED_96_OUTLET_FLUX_MIN = 1.0e-12
 STEP121_CAMPAIGN_MANIFEST = "campaign_manifest.json"
-STEP121_CAMPAIGN_MANIFEST_SCHEMA_VERSION = 1
+STEP121_CAMPAIGN_MANIFEST_SCHEMA_VERSION = 2
+STEP121_CAMPAIGN_BASE_COMMIT = "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc"
 FLOW_INLET_FLUX_MIN = 1.0e-6
 FLOW_RATIO_MIN = 0.80
 FLOW_RATIO_MAX = 1.20
@@ -284,6 +285,7 @@ def write_step121_campaign_manifest(
     phase: str,
     campaign_id: Optional[str] = None,
     git_commit: Optional[str] = None,
+    campaign_base_commit: Optional[str] = None,
 ) -> Dict[str, Any]:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
@@ -300,18 +302,55 @@ def write_step121_campaign_manifest(
     phase_history = list(existing.get("phase_history") or [])
     if phase not in phase_history:
         phase_history.append(phase)
+    current_code_commit = git_commit or _current_git_commit()
+    base_commit = (
+        campaign_base_commit
+        or existing.get("campaign_base_commit")
+        or existing.get("base_commit")
+        or existing.get("git_commit")
+        or STEP121_CAMPAIGN_BASE_COMMIT
+    )
+    phase_commit_history = _updated_phase_commit_history(existing, phase, current_code_commit)
     manifest = {
         "step121_campaign_manifest_schema_version": STEP121_CAMPAIGN_MANIFEST_SCHEMA_VERSION,
-        "campaign_id": campaign_id or existing.get("campaign_id") or _default_campaign_id(git_commit),
-        "git_commit": git_commit or existing.get("git_commit") or _current_git_commit(),
+        "campaign_id": campaign_id or existing.get("campaign_id") or _default_campaign_id(str(base_commit)),
+        "campaign_base_commit": str(base_commit),
+        "current_code_commit": current_code_commit,
+        "git_commit": current_code_commit,
         "artifact_root": str(out),
         "phase_history": phase_history,
+        "phase_commit_history": phase_commit_history,
         "expected_rows": expected_rows,
         "gate_thresholds": _flow_gate_thresholds(),
         "run_commands": _manifest_run_commands(),
     }
     _write_json(path, manifest)
     return manifest
+
+
+def _updated_phase_commit_history(existing: Dict[str, Any], phase: str, current_code_commit: str) -> List[Dict[str, str]]:
+    history: List[Dict[str, str]] = []
+    for item in existing.get("phase_commit_history") or []:
+        if not isinstance(item, dict):
+            continue
+        existing_phase = item.get("phase")
+        code_commit = item.get("code_commit")
+        if existing_phase is None or code_commit is None:
+            continue
+        record = {"phase": str(existing_phase), "code_commit": str(code_commit)}
+        if record not in history:
+            history.append(record)
+    if not history:
+        legacy_commit = existing.get("current_code_commit") or existing.get("git_commit")
+        if legacy_commit is not None:
+            for legacy_phase in existing.get("phase_history") or []:
+                record = {"phase": str(legacy_phase), "code_commit": str(legacy_commit)}
+                if record not in history:
+                    history.append(record)
+    record = {"phase": str(phase), "code_commit": str(current_code_commit)}
+    if record not in history:
+        history.append(record)
+    return history
 
 
 def load_step121_campaign_manifest(output_dir: Path | str) -> Optional[Dict[str, Any]]:
