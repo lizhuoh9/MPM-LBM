@@ -1,0 +1,10 @@
+{
+  "campaign_state": "awaiting_48_references",
+  "final_classification": "boundary_repair_partial_continue_lbm",
+  "phase": "smoke",
+  "quasi2d_allowed": false,
+  "row_count": 1,
+  "step": 121,
+  "step121_schema_version": 1,
+  "validation_claim_allowed": false
+}

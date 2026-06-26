@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import math
+import os
 import sys
 import time
 from dataclasses import asdict, dataclass
@@ -61,6 +63,7 @@ from src.mpm_lbm.sim.lbm.fluid import LBMFluid3D  # noqa: E402
 
 DEFAULT_OUTPUT_DIR = REPO_ROOT / "outputs" / "step120_lbm_boundary_repair_large_real_execution"
 DEFAULT_CHECKPOINT_ROOT = REPO_ROOT / "outputs" / "tmp" / "step120_checkpoints"
+DEFAULT_FAILURE_SNAPSHOT_ROOT = REPO_ROOT / "outputs" / "tmp" / "step120_failure_snapshots"
 STEP120_SCHEMA_VERSION = 1
 
 ROW_STATUS_COMPLETED = "completed"
@@ -316,9 +319,8 @@ def run_step120_row(
         if restored is not None:
             start_step, mass_initial, restored_checkpoint = restored
 
-    records: List[Dict[str, Any]] = []
-    stability_records: List[Dict[str, Any]] = []
-    combined_records: List[Dict[str, Any]] = []
+    records, stability_records = _load_step120_timeseries_history(row_path) if restored_checkpoint else ([], [])
+    combined_records: List[Dict[str, Any]] = _combine_step120_records(records, stability_records)
     steps_completed = int(start_step)
     stop_reason = None
 
@@ -332,6 +334,15 @@ def run_step120_row(
         if should_failure_check or should_full_sample:
             stability = summarize_step120_lightweight_stability(lbm, step)
             stability_records.append(stability)
+        if should_failure_check and stability is not None and spec.stop_on_first_failure:
+            lightweight_failure = _step120_lightweight_failure_detector(stability)
+            if lightweight_failure["first_failure_step"] is not None:
+                stop_reason = f"lightweight_failure:{lightweight_failure['first_failure_reason']}"
+                combined_records.append({**stability, **lightweight_failure})
+                if spec.snapshot_on_failure:
+                    _write_full_population_snapshot(row_path, lbm, step, "lightweight_failure")
+                write_step120_checkpoint(lbm, spec, checkpoint_root_path, step, mass_initial, records, stability_records)
+                break
         if should_full_sample:
             summary = summarize_lbm_boundary_diagnostics(lbm, step=step, mass_initial=mass_initial)
             if mass_initial is None:
@@ -356,21 +367,25 @@ def run_step120_row(
                 stop_reason = f"first_failure:{first_failure['first_failure_reason']}"
                 if spec.snapshot_on_failure:
                     _write_full_population_snapshot(row_path, lbm, step, "first_failure")
+                write_step120_checkpoint(lbm, spec, checkpoint_root_path, step, mass_initial, records, stability_records)
                 break
         if spec.checkpoint_every > 0 and step > 0 and step % int(spec.checkpoint_every) == 0:
-            write_step120_checkpoint(lbm, spec, checkpoint_root_path, step, mass_initial)
+            write_step120_checkpoint(lbm, spec, checkpoint_root_path, step, mass_initial, records, stability_records)
         if stop_after_steps is not None and step >= int(stop_after_steps) and step < int(spec.n_steps):
             stop_reason = "interrupted"
-            write_step120_checkpoint(lbm, spec, checkpoint_root_path, step, mass_initial)
+            write_step120_checkpoint(lbm, spec, checkpoint_root_path, step, mass_initial, records, stability_records)
             break
         if spec.max_wall_seconds is not None and time.perf_counter() - started >= float(spec.max_wall_seconds):
             stop_reason = "max_wall_seconds"
-            write_step120_checkpoint(lbm, spec, checkpoint_root_path, step, mass_initial)
+            write_step120_checkpoint(lbm, spec, checkpoint_root_path, step, mass_initial, records, stability_records)
             break
 
     if spec.snapshot_on_final and int(steps_completed) == int(spec.n_steps):
         _write_full_population_snapshot(row_path, lbm, int(steps_completed), "final")
 
+    records = _dedupe_step120_records(records)
+    stability_records = _dedupe_step120_records(stability_records)
+    combined_records = _combine_step120_records(records, stability_records)
     runtime_s = _finite_float(time.perf_counter() - started)
     limiter_summary = summarize_step120_limiter_activation(lbm, spec)
     finite = _finite_report(
@@ -392,7 +407,7 @@ def run_step120_row(
     _write_json(row_path / "driver_config.json", config_report)
     _write_json(row_path / "duct_boundary_condition_report.json", _boundary_report(spec))
     _write_json(row_path / "finite_stability_report.json", finite)
-    _write_json(row_path / "first_failure_diagnostics.json", _first_failure_artifact(combined_records, spec, limiter_summary))
+    _write_json(row_path / "first_failure_diagnostics.json", _first_failure_artifact(combined_records, spec, limiter_summary, reason=stop_reason))
     _write_json(row_path / "limiter_activation_summary.json", limiter_summary)
     _write_json(row_path / "velocity_profile_summary.json", _velocity_profile_report(lbm, spec, records))
     _write_partial_timeseries(row_path, records, stability_records)
@@ -457,6 +472,32 @@ def summarize_step120_lightweight_stability(lbm: Any, step: int) -> Dict[str, An
     result = summarize_lbm_stability_diagnostics(lbm, step)
     result["diagnostic_mode"] = "full_numpy_fallback"
     return result
+
+
+def _step120_lightweight_failure_detector(stability: Dict[str, Any]) -> Dict[str, Any]:
+    reasons: List[str] = []
+    rho_min = _finite_float(stability.get("rho_min", math.nan))
+    rho_max = _finite_float(stability.get("rho_max", math.nan))
+    max_v = _finite_float(stability.get("max_v", math.nan))
+    negative_fraction = _finite_float(stability.get("negative_population_fraction", 0.0))
+    if not bool(stability.get("stability_all_finite", stability.get("all_finite", True))):
+        reasons.append("nonfinite_field")
+    if not math.isfinite(rho_min) or not math.isfinite(rho_max) or rho_min <= 0.85 or rho_max >= 1.15:
+        reasons.append("rho_range")
+    if not math.isfinite(max_v) or max_v >= 0.35:
+        reasons.append("max_v")
+    for key in ("f_min", "f_max", "F_min", "F_max"):
+        value = _finite_float(stability.get(key, 0.0))
+        if not math.isfinite(value):
+            reasons.append(f"nonfinite_{key}")
+    if negative_fraction > 1.0e-3:
+        reasons.append("negative_population_fraction")
+    return {
+        "first_failure_step": int(stability.get("step", 0) or 0) if reasons else None,
+        "first_failure_reason": reasons[0] if reasons else None,
+        "lightweight_failure_reasons": sorted(set(reasons)),
+        "lightweight_failure_detector": "step120_failure_check_interval",
+    }
 
 
 def summarize_step120_limiter_activation(stats_or_lbm: Any, spec: Step120RunSpec | Dict[str, Any]) -> Dict[str, Any]:
@@ -702,9 +743,15 @@ def write_step120_checkpoint(
     checkpoint_root: Path | str,
     step: int,
     mass_initial: Optional[float],
+    records: Optional[Sequence[Dict[str, Any]]] = None,
+    stability_records: Optional[Sequence[Dict[str, Any]]] = None,
 ) -> Path:
     root = Path(checkpoint_root) / spec.name
     root.mkdir(parents=True, exist_ok=True)
+    history = {
+        "records": list(records or []),
+        "stability_records": list(stability_records or []),
+    }
     metadata = {
         "step": int(step),
         "schema_version": STEP120_SCHEMA_VERSION,
@@ -715,19 +762,32 @@ def write_step120_checkpoint(
         "mass_initial": mass_initial,
         "limiter_counter_source": "actual_open_boundary_kernel_counters",
         "limiter_counters": _checkpoint_limiter_counters(lbm),
+        "history_record_count": int(len(history["records"])),
+        "history_stability_record_count": int(len(history["stability_records"])),
     }
     path = root / f"checkpoint_step_{int(step):06d}.npz"
-    np.savez_compressed(
-        path,
-        f=lbm.f.to_numpy(),
-        F=lbm.F.to_numpy(),
-        rho=lbm.rho.to_numpy(),
-        v=lbm.v.to_numpy(),
-        solid=lbm.solid.to_numpy(),
-        static_solid=lbm.static_solid.to_numpy(),
-        metadata_json=np.array(json.dumps(metadata)),
-    )
-    _write_json(path.with_suffix(".json"), metadata)
+    tmp = path.with_suffix(".npz.tmp")
+    with tmp.open("wb") as handle:
+        np.savez_compressed(
+            handle,
+            f=lbm.f.to_numpy(),
+            F=lbm.F.to_numpy(),
+            rho=lbm.rho.to_numpy(),
+            v=lbm.v.to_numpy(),
+            solid=lbm.solid.to_numpy(),
+            static_solid=lbm.static_solid.to_numpy(),
+            metadata_json=np.array(json.dumps(metadata)),
+            history_json=np.array(json.dumps(history)),
+        )
+    with np.load(tmp, allow_pickle=False) as data:
+        json.loads(str(data["metadata_json"]))
+    os.replace(tmp, path)
+    json_path = path.with_suffix(".json")
+    json_tmp = json_path.with_suffix(".json.tmp")
+    json_tmp.write_text(json.dumps(metadata, indent=2, sort_keys=True), encoding="utf-8")
+    json.loads(json_tmp.read_text(encoding="utf-8"))
+    os.replace(json_tmp, json_path)
+    _prune_step120_checkpoints(root, keep_last=3)
     return path
 
 
@@ -736,28 +796,30 @@ def restore_latest_step120_checkpoint(
     spec: Step120RunSpec,
     checkpoint_root: Path | str,
 ) -> Optional[Tuple[int, Optional[float], str]]:
-    latest = _latest_checkpoint_path(spec, Path(checkpoint_root))
-    if latest is None:
-        return None
-    data = np.load(latest, allow_pickle=False)
-    metadata = json.loads(str(data["metadata_json"]))
-    _validate_checkpoint_metadata(spec, metadata)
-    lbm.f.from_numpy(data["f"].astype(np.float32))
-    lbm.F.from_numpy(data["F"].astype(np.float32))
-    lbm.rho.from_numpy(data["rho"].astype(np.float32))
-    lbm.v.from_numpy(data["v"].astype(np.float32))
-    lbm.solid.from_numpy(data["solid"].astype(np.int8))
-    lbm.static_solid.from_numpy(data["static_solid"].astype(np.int8))
-    counters = metadata.get("limiter_counters") or {}
-    if hasattr(lbm, "set_open_boundary_limiter_run_counters"):
-        lbm.set_open_boundary_limiter_run_counters(
-            int(counters.get("rho_clip_count", 0) or 0),
-            int(counters.get("velocity_clip_count", 0) or 0),
-            int(counters.get("noneq_clip_count", 0) or 0),
-            int(counters.get("population_floor_count", 0) or 0),
-            int(counters.get("reconstructed_population_count", 0) or 0),
-        )
-    return int(metadata["step"]), metadata.get("mass_initial"), str(latest)
+    for latest in _checkpoint_paths(spec, Path(checkpoint_root), reverse=True):
+        try:
+            with np.load(latest, allow_pickle=False) as data:
+                metadata = json.loads(str(data["metadata_json"]))
+                _validate_checkpoint_metadata(spec, metadata)
+                lbm.f.from_numpy(data["f"].astype(np.float32))
+                lbm.F.from_numpy(data["F"].astype(np.float32))
+                lbm.rho.from_numpy(data["rho"].astype(np.float32))
+                lbm.v.from_numpy(data["v"].astype(np.float32))
+                lbm.solid.from_numpy(data["solid"].astype(np.int8))
+                lbm.static_solid.from_numpy(data["static_solid"].astype(np.int8))
+        except Exception:
+            continue
+        counters = metadata.get("limiter_counters") or {}
+        if hasattr(lbm, "set_open_boundary_limiter_run_counters"):
+            lbm.set_open_boundary_limiter_run_counters(
+                int(counters.get("rho_clip_count", 0) or 0),
+                int(counters.get("velocity_clip_count", 0) or 0),
+                int(counters.get("noneq_clip_count", 0) or 0),
+                int(counters.get("population_floor_count", 0) or 0),
+                int(counters.get("reconstructed_population_count", 0) or 0),
+            )
+        return int(metadata["step"]), metadata.get("mass_initial"), str(latest)
+    return None
 
 
 def _finite_report(
@@ -776,12 +838,21 @@ def _finite_report(
     trend = summarize_timeseries_trends(records) if records else {}
     final = records[-1] if records else {}
     first_failure = first_gate_failure_detector(combined_records)
-    finite_pass = bool(records and all(record["all_finite"] for record in records) and all(row["stability_all_finite"] for row in stability_records))
+    first_failure_step = first_failure["first_failure_step"]
+    first_failure_reason = first_failure["first_failure_reason"]
+    if first_failure_step is None and stop_reason is not None:
+        first_failure_step = int(steps_completed)
+        first_failure_reason = stop_reason
+    finite_pass = bool(
+        records
+        and all(record.get("all_finite", True) is not False for record in records)
+        and all(row.get("stability_all_finite", row.get("all_finite", True)) is not False for row in stability_records)
+    )
     density_gate_pass = bool(records and 0.85 < float(trend.get("rho_min_global", 0.0)) <= float(trend.get("rho_max_global", 1.0e9)) < 1.15)
     mass_drift_gate_pass = bool(records and abs(float(trend.get("mass_drift_final", 1.0e9))) < 0.05)
     population_gate_pass = bool(stability_records and (stability_records[-1].get("negative_population_fraction", 1.0) or 0.0) < 1.0e-3)
     mach_gate_pass = bool(records and float(trend.get("mach_proxy_observed_max", 1.0e9)) < 0.35)
-    no_first_failure = first_failure["first_failure_reason"] is None and stop_reason is None
+    no_first_failure = first_failure_reason is None and stop_reason is None
     requested_window_completed = bool(
         int(steps_completed) == int(spec.requested_steps()) and int(spec.nx) == int(spec.requested_grid())
     )
@@ -807,8 +878,8 @@ def _finite_report(
         mass_drift_gate_pass=mass_drift_gate_pass,
         population_gate_pass=population_gate_pass,
         mach_gate_pass=mach_gate_pass,
-        first_failure_step=first_failure["first_failure_step"],
-        first_failure_reason=first_failure["first_failure_reason"] or stop_reason,
+        first_failure_step=first_failure_step,
+        first_failure_reason=first_failure_reason,
         flux_imbalance_rel_final=final.get("flux_imbalance_rel"),
         flux_imbalance_rel_tail_mean=trend.get("flux_imbalance_rel_tail_mean"),
         mass_total_delta_rel_final=final.get("mass_total_delta_rel"),
@@ -1062,6 +1133,7 @@ def _first_failure_artifact(
     detector = first_gate_failure_detector(records)
     if reason is not None and detector["first_failure_reason"] is None:
         detector["first_failure_reason"] = reason
+        detector["first_failure_step"] = _tail_value(records, "step", None)
     location_row = _first_location_record(records, detector.get("first_failure_step"))
     location = location_row.get("first_failure_location") if location_row else None
     cell = location_row.get("first_failure_cell") if location_row else None
@@ -1092,11 +1164,104 @@ def _first_failure_artifact(
     }
 
 
+def _load_step120_timeseries_history(row_path: Path) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+    records = _read_csv_records(row_path / "fluid_diagnostics_timeseries.csv")
+    stability_records = _read_csv_records(row_path / "stability_diagnostics_timeseries.csv")
+    return _dedupe_step120_records(records), _dedupe_step120_records(stability_records)
+
+
+def _read_csv_records(path: Path) -> List[Dict[str, Any]]:
+    if not path.is_file():
+        return []
+    with path.open("r", encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        return [{key: _coerce_csv_value(value) for key, value in row.items()} for row in reader]
+
+
+def _coerce_csv_value(value: Any) -> Any:
+    if value is None or value == "":
+        return None
+    if isinstance(value, (int, float, bool)):
+        return value
+    text = str(value)
+    if text.lower() == "true":
+        return True
+    if text.lower() == "false":
+        return False
+    try:
+        if "." not in text and "e" not in text.lower():
+            return int(text)
+    except ValueError:
+        pass
+    try:
+        return float(text)
+    except ValueError:
+        return value
+
+
+def _dedupe_step120_records(records: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    by_step: Dict[int, Dict[str, Any]] = {}
+    for row in records:
+        if "step" not in row or row.get("step") is None:
+            continue
+        by_step[int(row["step"])] = dict(row)
+    return [by_step[step] for step in sorted(by_step)]
+
+
+def _combine_step120_records(
+    records: Sequence[Dict[str, Any]],
+    stability_records: Sequence[Dict[str, Any]],
+) -> List[Dict[str, Any]]:
+    stability_by_step = {int(row["step"]): row for row in stability_records if row.get("step") is not None}
+    combined: List[Dict[str, Any]] = []
+    for row in records:
+        step = row.get("step")
+        if step is None:
+            continue
+        combined.append({**row, **stability_by_step.get(int(step), {})})
+    extra_stability = [
+        row for row in stability_records if row.get("step") is not None and int(row["step"]) not in {int(item["step"]) for item in records if item.get("step") is not None}
+    ]
+    combined.extend(extra_stability)
+    return _dedupe_step120_records(combined)
+
+
+def _snapshot_anomaly_cell(rho: np.ndarray, v: np.ndarray) -> Tuple[int, int, int]:
+    rho_score = np.abs(np.asarray(rho, dtype=float) - 1.0)
+    if v.size:
+        score = rho_score + np.linalg.norm(np.asarray(v, dtype=float), axis=-1)
+    else:
+        score = rho_score
+    return tuple(int(index) for index in np.unravel_index(int(np.nanargmax(score)), score.shape))
+
+
+def _snapshot_local_window_stats(
+    rho: np.ndarray,
+    v: np.ndarray,
+    cell: Tuple[int, int, int],
+    radius: int = 1,
+) -> Dict[str, Any]:
+    slices = tuple(
+        slice(max(0, index - radius), min(shape, index + radius + 1))
+        for index, shape in zip(cell, rho.shape)
+    )
+    rho_window = rho[slices]
+    v_window = v[slices] if v.size else np.zeros((*rho_window.shape, 3), dtype=np.float32)
+    return {
+        "bounds": [[sl.start, sl.stop] for sl in slices],
+        "rho_min": round(_finite_float(np.nanmin(rho_window)), 7),
+        "rho_max": round(_finite_float(np.nanmax(rho_window)), 7),
+        "max_v": round(_finite_float(np.nanmax(np.linalg.norm(v_window, axis=-1))), 7) if v_window.size else 0.0,
+    }
+
+
 def _write_partial_timeseries(
     row_path: Path,
     records: Sequence[Dict[str, Any]],
     stability_records: Sequence[Dict[str, Any]],
 ) -> None:
+    records = _dedupe_step120_records(records)
+    stability_records = _dedupe_step120_records(stability_records)
     _write_timeseries(row_path / "fluid_diagnostics_timeseries.csv", records)
     _write_boundary_flux_timeseries(row_path / "boundary_flux_timeseries.csv", records)
     _write_density_drift_timeseries(row_path / "density_drift_timeseries.csv", records)
@@ -1104,18 +1269,37 @@ def _write_partial_timeseries(
 
 
 def _write_full_population_snapshot(row_path: Path, lbm: LBMFluid3D, step: int, reason: str) -> None:
-    # Step120 keeps full snapshots sparse and explicit. These are small in tests;
-    # production checkpoint snapshots remain under outputs/tmp and are not committed.
+    rho = lbm.rho.to_numpy()
+    v = lbm.v.to_numpy()
+    f = lbm.f.to_numpy()
+    F = lbm.F.to_numpy()
     snapshot_dir = row_path / "population_snapshots"
     snapshot_dir.mkdir(parents=True, exist_ok=True)
+    runtime_dir = DEFAULT_FAILURE_SNAPSHOT_ROOT / row_path.name
+    runtime_dir.mkdir(parents=True, exist_ok=True)
+    safe_reason = str(reason).replace(":", "_").replace("/", "_").replace("\\", "_")
+    raw_path = runtime_dir / f"snapshot_step_{int(step):06d}_{safe_reason}.npz"
+    np.savez_compressed(raw_path, rho=rho, v=v, f=f, F=F)
+    anomaly_cell = _snapshot_anomaly_cell(rho, v)
     _write_json(
         snapshot_dir / f"snapshot_step_{int(step):06d}_{reason}.json",
         {
             "step": int(step),
             "reason": reason,
             "snapshot_payload_omitted_from_git": True,
+            "runtime_npz_path": str(raw_path),
+            "raw_arrays_committed_to_git": False,
             "rho_shape": [int(lbm.nx), int(lbm.ny), int(lbm.nz)],
             "f_shape": [int(lbm.nx), int(lbm.ny), int(lbm.nz), 19],
+            "anomaly_cell": list(anomaly_cell),
+            "field_stats": {
+                "rho_min": _finite_float(np.nanmin(rho)),
+                "rho_max": _finite_float(np.nanmax(rho)),
+                "max_v": _finite_float(np.nanmax(np.linalg.norm(v, axis=-1))) if v.size else 0.0,
+                "f_min": _finite_float(np.nanmin(f)),
+                "F_min": _finite_float(np.nanmin(F)),
+            },
+            "local_window": _snapshot_local_window_stats(rho, v, anomaly_cell),
         },
     )
 
@@ -1383,11 +1567,30 @@ def _config_hash(spec: Step120RunSpec) -> str:
 
 
 def _latest_checkpoint_path(spec: Step120RunSpec, checkpoint_root: Path) -> Optional[Path]:
+    paths = _checkpoint_paths(spec, checkpoint_root)
+    return paths[-1] if paths else None
+
+
+def _checkpoint_paths(spec: Step120RunSpec, checkpoint_root: Path, reverse: bool = False) -> List[Path]:
     root = checkpoint_root / spec.name
     if not root.is_dir():
-        return None
+        return []
     paths = sorted(root.glob("checkpoint_step_*.npz"))
-    return paths[-1] if paths else None
+    return list(reversed(paths)) if reverse else paths
+
+
+def _prune_step120_checkpoints(root: Path, *, keep_last: int) -> None:
+    npz_paths = sorted(root.glob("checkpoint_step_*.npz"))
+    for old in npz_paths[: max(0, len(npz_paths) - int(keep_last))]:
+        json_sidecar = old.with_suffix(".json")
+        try:
+            old.unlink()
+        except OSError:
+            pass
+        try:
+            json_sidecar.unlink()
+        except OSError:
+            pass
 
 
 def _validate_checkpoint_metadata(spec: Step120RunSpec, metadata: Dict[str, Any]) -> None:
