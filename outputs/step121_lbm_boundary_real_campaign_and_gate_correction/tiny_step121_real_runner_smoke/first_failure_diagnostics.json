@@ -47,9 +47,9 @@
     "velocity_clip_used": true
   },
   "mass_source_sink_by_step": {
-    "mass_drift_abs_max": 0.00960255265235901,
-    "mass_drift_delta_final": 0.00960255265235901,
-    "mass_drift_final": 0.00960255265235901,
+    "mass_drift_abs_max": 0.009602546691894531,
+    "mass_drift_delta_final": 0.009602546691894531,
+    "mass_drift_final": 0.009602546691894531,
     "mass_drift_initial": 0.0,
     "record_count": 4
   },

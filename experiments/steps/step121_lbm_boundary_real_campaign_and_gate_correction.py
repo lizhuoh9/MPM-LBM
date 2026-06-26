@@ -62,6 +62,21 @@ REQUIRED_CANDIDATE_SEMANTICS = {
     "convective_pressure_outlet_experimental",
 }
 SELECTED_CHAIN_ROLES = {"candidate_48", "selected_96_duct", "selected_96_static"}
+SELECTED_BOUNDARY_PROVENANCE_KEYS = [
+    "open_boundary_limiter_enabled",
+    "open_boundary_rho_min",
+    "open_boundary_rho_max",
+    "open_boundary_u_max",
+    "open_boundary_noneq_cap",
+    "open_boundary_population_floor",
+    "inlet_u_lbm",
+    "outlet_rho",
+    "lbm_niu",
+    "lbm_viscosity_semantics",
+    "lbm_relaxation_semantics",
+    "tau",
+    "config_hash",
+]
 
 
 def step121_smoke_specs() -> List[Step120RunSpec]:
@@ -92,6 +107,45 @@ def step121_candidate_48_specs(output_interval: int = 100) -> List[Step120RunSpe
     ]
 
 
+def _provenance_float(provenance: Dict[str, Any], key: str, default: float) -> float:
+    value = provenance.get(key, default)
+    if value is None:
+        return float(default)
+    return float(value)
+
+
+def _selected_boundary_provenance(row: Dict[str, Any]) -> Dict[str, Any]:
+    provenance: Dict[str, Any] = {}
+    for key in SELECTED_BOUNDARY_PROVENANCE_KEYS:
+        if key in row:
+            provenance[key] = row.get(key)
+    if "open_boundary_limiter_enabled" not in provenance:
+        provenance["open_boundary_limiter_enabled"] = bool(row.get("open_boundary_limiter_enabled", False))
+    return provenance
+
+
+def _require_selected_96_duct_pass(output_dir: Path, duct_spec: Step120RunSpec) -> Dict[str, Any]:
+    report_path = output_dir / duct_spec.name / "finite_stability_report.json"
+    if not report_path.is_file():
+        raise ValueError(f"selected 96 duct row must complete before selected-static: missing {duct_spec.name}")
+    payload = _read_json(report_path)
+    row = dict(payload.get("summary_row") or payload)
+    row.setdefault("name", duct_spec.name)
+    failures = []
+    if row.get("requested_window_completed") is not True:
+        failures.append("requested_window_completed")
+    if row.get("step120_validation_claimed") is not True:
+        failures.append("step120_validation_claimed")
+    if row.get("first_failure_step") is not None or row.get("first_failure_reason") is not None:
+        failures.append("first_failure")
+    if not _row_validation_pass(row):
+        failures.append("row_validation_pass")
+    if failures:
+        reasons = ",".join(sorted(set(failures)))
+        raise ValueError(f"selected 96 duct row must pass before selected-static: {duct_spec.name} failed {reasons}")
+    return row
+
+
 def make_selected_96_specs(best_selection: Dict[str, Any], output_interval: int = 100) -> List[Step120RunSpec]:
     if not bool(best_selection.get("best_boundary_selected", False)):
         raise ValueError("selected 96^3 specs require best_boundary_selected=true")
@@ -100,6 +154,17 @@ def make_selected_96_specs(best_selection: Dict[str, Any], output_interval: int 
         raise ValueError(f"unsupported selected boundary semantics: {semantics!r}")
     slug = str(best_selection.get("selected_boundary_slug") or _boundary_slug(semantics))
     limited = semantics == "regularized_velocity_pressure_limited"
+    provenance = dict(best_selection.get("selected_boundary_provenance") or {})
+    limiter_parameters = dict(best_selection.get("selected_limiter_parameters") or {})
+    limiter_enabled = bool(
+        provenance.get(
+            "open_boundary_limiter_enabled",
+            limiter_parameters.get("open_boundary_limiter_enabled", limited),
+        )
+    )
+    population_floor = provenance.get("open_boundary_population_floor")
+    if population_floor is None:
+        population_floor = -1.0e-8 if limiter_enabled else None
     common = {
         "nx": 96,
         "ny": 96,
@@ -111,8 +176,20 @@ def make_selected_96_specs(best_selection: Dict[str, Any], output_interval: int 
         "open_boundary_semantics": semantics,
         "requested_nx": 96,
         "requested_n_steps": 1000,
-        "open_boundary_limiter_enabled": bool(limited),
-        "open_boundary_population_floor": -1.0e-8 if limited else None,
+        "open_boundary_limiter_enabled": limiter_enabled,
+        "open_boundary_rho_min": _provenance_float(provenance, "open_boundary_rho_min", 0.8),
+        "open_boundary_rho_max": _provenance_float(provenance, "open_boundary_rho_max", 1.2),
+        "open_boundary_u_max": _provenance_float(provenance, "open_boundary_u_max", 0.1),
+        "open_boundary_noneq_cap": _provenance_float(provenance, "open_boundary_noneq_cap", 0.05),
+        "open_boundary_population_floor": population_floor,
+        "inlet_u_lbm": _provenance_float(provenance, "inlet_u_lbm", 0.02),
+        "outlet_rho": _provenance_float(provenance, "outlet_rho", 1.0),
+        "niu": _provenance_float(provenance, "lbm_niu", 0.1),
+        "lbm_viscosity_semantics": str(provenance.get("lbm_viscosity_semantics") or "legacy_external"),
+        "selected_source_row_name": best_selection.get("selected_row_name"),
+        "selected_source_config_hash": provenance.get("config_hash"),
+        "selected_source_tau": provenance.get("tau"),
+        "selected_source_lbm_relaxation_semantics": provenance.get("lbm_relaxation_semantics"),
         "step120_required_row": False,
         "step119_required_row": False,
         "not_used_for_validation": False,
@@ -141,6 +218,7 @@ def resolve_step121_phase_specs(
     *,
     best_selection_path: Optional[Path | str] = None,
     output_interval: int = 100,
+    output_dir: Optional[Path | str] = None,
 ) -> List[Step120RunSpec]:
     if phase == "smoke":
         return step121_smoke_specs()
@@ -153,6 +231,8 @@ def resolve_step121_phase_specs(
             raise ValueError(f"{phase} phase requires --best-selection-path")
         selection = _read_json(Path(best_selection_path))
         specs = make_selected_96_specs(selection, output_interval=output_interval)
+        if phase == "selected-static":
+            _require_selected_96_duct_pass(Path(output_dir) if output_dir is not None else DEFAULT_OUTPUT_DIR, specs[0])
         return [specs[0]] if phase == "selected96" else [specs[1]]
     if phase == "all48":
         return step121_reference_48_specs(output_interval=output_interval) + step121_candidate_48_specs(
@@ -236,6 +316,7 @@ def select_step121_best_boundary(rows: Sequence[Dict[str, Any]]) -> Dict[str, An
                 "open_boundary_limiter_enabled": bool(selected.get("open_boundary_limiter_enabled", False)),
                 "limiter_activation_fraction": selected.get("limiter_activation_fraction"),
             },
+            "selected_boundary_provenance": _selected_boundary_provenance(selected),
             "selected_48_metrics": {
                 "flux_imbalance_rel_tail_mean": selected.get("flux_imbalance_rel_tail_mean"),
                 "mass_total_delta_rel_final": selected.get("mass_total_delta_rel_final"),
@@ -493,6 +574,7 @@ def run_step121_matrix(
         phase,
         best_selection_path=best_selection_path,
         output_interval=output_interval,
+        output_dir=out,
     )
     if selected_specs:
         run_step120_matrix(

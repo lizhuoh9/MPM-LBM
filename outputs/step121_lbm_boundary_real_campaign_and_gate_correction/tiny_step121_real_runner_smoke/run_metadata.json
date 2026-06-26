@@ -22,7 +22,7 @@
   "requested_nx": 5,
   "restored_checkpoint": null,
   "row_role": "tiny_smoke",
-  "runtime_s": 56.938829399994574,
+  "runtime_s": 38.83039489999646,
   "simulation_backed_artifact": true,
   "static_lbm_only": false,
   "step": 120,

@@ -66,6 +66,8 @@ class LBMFluid3D:
         self.F_min_reduced = ti.field(ti.f32, shape=())
         self.F_max_reduced = ti.field(ti.f32, shape=())
         self.negative_population_count_reduced = ti.field(ti.i32, shape=())
+        self.mass_total_reduced = ti.field(ti.f32, shape=())
+        self.fluid_cell_count_reduced = ti.field(ti.i32, shape=())
         self.boundary_x_min_negative_count = ti.field(ti.i32, shape=())
         self.boundary_x_max_negative_count = ti.field(ti.i32, shape=())
         self.population_entry_count_reduced = ti.field(ti.i32, shape=())
@@ -532,12 +534,16 @@ class LBMFluid3D:
         self.F_min_reduced[None] = 1.0e30
         self.F_max_reduced[None] = -1.0e30
         self.negative_population_count_reduced[None] = 0
+        self.mass_total_reduced[None] = 0.0
+        self.fluid_cell_count_reduced[None] = 0
         self.boundary_x_min_negative_count[None] = 0
         self.boundary_x_max_negative_count[None] = 0
         self.population_entry_count_reduced[None] = 0
         for I in ti.grouped(self.rho):
             if self.solid[I] == 0:
                 rho_value = self.rho[I]
+                ti.atomic_add(self.mass_total_reduced[None], rho_value)
+                ti.atomic_add(self.fluid_cell_count_reduced[None], 1)
                 ti.atomic_min(self.rho_min_reduced[None], rho_value)
                 ti.atomic_max(self.rho_max_reduced[None], rho_value)
                 ti.atomic_max(self.max_v_reduced[None], self.v[I].norm())
@@ -570,6 +576,8 @@ class LBMFluid3D:
             "rho_min": float(self.rho_min_reduced[None]),
             "rho_max": float(self.rho_max_reduced[None]),
             "max_v": float(self.max_v_reduced[None]),
+            "mass_total": float(self.mass_total_reduced[None]),
+            "fluid_cell_count": int(self.fluid_cell_count_reduced[None]),
             "f_min": float(self.f_min_reduced[None]),
             "f_max": float(self.f_max_reduced[None]),
             "F_min": float(self.F_min_reduced[None]),

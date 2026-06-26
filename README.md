@@ -120,6 +120,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 119 LBM boundary repair real-run validation, with a non-synthetic tiny real LBM runner smoke, explicit incomplete 48^3/96^3 real target rows, limiter activation summaries, first-failure gate reports, and an explicit Step120 quasi-2D block until real long-window gates pass
 - Step 120 LBM boundary repair large-real execution plumbing, with strict row-status resume semantics, real ignored checkpoints, Taichi-side lightweight stability reductions, actual open-boundary limiter counters, best-boundary selection gates, and an explicit Step121 quasi-2D block until selected 48^3/96^3 rows pass
 - Step 121 LBM boundary real-campaign and gate correction, with pending-versus-failed campaign states, selected 96^3 phase specs, immediate lightweight failure stops, checkpoint history continuity, atomic checkpoint fallback, failure snapshots, reference readiness, failed-candidate visibility, selected-chain limiter gates, and an explicit quasi-2D block until real 48^3 and selected 96^3 rows pass
+- Step 122 LBM boundary real-campaign execution hardening, with selected-static requiring a passed selected 96^3 duct artifact, selected 96^3 provenance inheritance from the chosen 48^3 candidate, checkpoint history restore from `.npz`, lightweight mass-drift stopping, runner-path failure artifact tests, and the quasi-2D/FSI/Fluent claims still blocked until real 48^3 and selected 96^3 rows pass
 
 ## Not Implemented
 

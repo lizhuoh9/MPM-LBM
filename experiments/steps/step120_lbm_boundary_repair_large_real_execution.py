@@ -95,6 +95,10 @@ class Step120RunSpec(Step119RunSpec):
     snapshot_on_failure: bool = True
     snapshot_on_final: bool = True
     row_role: str = "candidate_or_reference"
+    selected_source_row_name: Optional[str] = None
+    selected_source_config_hash: Optional[str] = None
+    selected_source_tau: Optional[float] = None
+    selected_source_lbm_relaxation_semantics: Optional[str] = None
 
 
 def step120_real_run_specs(output_interval: int = 25) -> List[Step120RunSpec]:
@@ -313,14 +317,26 @@ def run_step120_row(
     start_step = 0
     mass_initial = None
     restored_checkpoint = None
+    checkpoint_records: List[Dict[str, Any]] = []
+    checkpoint_stability_records: List[Dict[str, Any]] = []
     lbm.clear_open_boundary_limiter_run_counters()
     if resume_from_checkpoint:
-        restored = restore_latest_step120_checkpoint(lbm, spec, checkpoint_root_path)
+        restored = restore_latest_step120_checkpoint_with_history(lbm, spec, checkpoint_root_path)
         if restored is not None:
-            start_step, mass_initial, restored_checkpoint = restored
+            (
+                start_step,
+                mass_initial,
+                restored_checkpoint,
+                checkpoint_records,
+                checkpoint_stability_records,
+            ) = restored
 
-    records, stability_records = _load_step120_timeseries_history(row_path) if restored_checkpoint else ([], [])
+    csv_records, csv_stability_records = _load_step120_timeseries_history(row_path) if restored_checkpoint else ([], [])
+    records = _merge_step120_record_sets(checkpoint_records, csv_records)
+    stability_records = _merge_step120_record_sets(checkpoint_stability_records, csv_stability_records)
     combined_records: List[Dict[str, Any]] = _combine_step120_records(records, stability_records)
+    if mass_initial is None:
+        mass_initial = _first_mass_total(records, stability_records)
     steps_completed = int(start_step)
     stop_reason = None
 
@@ -333,9 +349,13 @@ def run_step120_row(
         stability = None
         if should_failure_check or should_full_sample:
             stability = summarize_step120_lightweight_stability(lbm, step)
+            if "mass_total" in stability:
+                if mass_initial is None:
+                    mass_initial = _finite_float(stability["mass_total"])
+                _annotate_lightweight_mass_drift(stability, mass_initial)
             stability_records.append(stability)
         if should_failure_check and stability is not None and spec.stop_on_first_failure:
-            lightweight_failure = _step120_lightweight_failure_detector(stability)
+            lightweight_failure = _step120_lightweight_failure_detector(stability, mass_initial=mass_initial)
             if lightweight_failure["first_failure_step"] is not None:
                 stop_reason = f"lightweight_failure:{lightweight_failure['first_failure_reason']}"
                 combined_records.append({**stability, **lightweight_failure})
@@ -350,6 +370,8 @@ def run_step120_row(
                 summary = summarize_lbm_boundary_diagnostics(lbm, step=step, mass_initial=mass_initial)
             if stability is None:
                 stability = summarize_step120_lightweight_stability(lbm, step)
+                if "mass_total" in stability:
+                    _annotate_lightweight_mass_drift(stability, mass_initial)
                 stability_records.append(stability)
             combined = {**summary, **stability}
             records.append(summary)
@@ -438,6 +460,7 @@ def summarize_step120_lightweight_stability(lbm: Any, step: int) -> Dict[str, An
             and math.isfinite(stats["f_max"])
             and math.isfinite(stats["F_min"])
             and math.isfinite(stats["F_max"])
+            and math.isfinite(float(stats.get("mass_total", 0.0)))
         )
         return {
             "step": int(step),
@@ -457,6 +480,9 @@ def summarize_step120_lightweight_stability(lbm: Any, step: int) -> Dict[str, An
             "f_negative_population_count": None,
             "F_negative_population_count": None,
             "population_entry_count": int(stats["population_entry_count"]),
+            "fluid_cell_count": int(stats.get("fluid_cell_count", 0) or 0),
+            "mass_total": _finite_float(stats.get("mass_total", 0.0)),
+            "mass_total_delta_rel": _finite_float(stats.get("mass_total_delta_rel", 0.0)),
             "rho_below_low_count": int(stats["rho_min"] < 0.0),
             "rho_above_high_count": int(stats["rho_max"] > 1.2),
             "first_negative_density_location": None,
@@ -474,12 +500,32 @@ def summarize_step120_lightweight_stability(lbm: Any, step: int) -> Dict[str, An
     return result
 
 
-def _step120_lightweight_failure_detector(stability: Dict[str, Any]) -> Dict[str, Any]:
+def _annotate_lightweight_mass_drift(stability: Dict[str, Any], mass_initial: Optional[float]) -> None:
+    if mass_initial is None:
+        return
+    mass_total = _finite_float(stability.get("mass_total", math.nan))
+    initial = _finite_float(mass_initial)
+    if not math.isfinite(mass_total) or not math.isfinite(initial) or initial == 0.0:
+        stability["mass_total_delta_rel"] = math.nan
+        return
+    stability["mass_total_delta_rel"] = _finite_float((mass_total - initial) / initial)
+
+
+def _step120_lightweight_failure_detector(
+    stability: Dict[str, Any],
+    *,
+    mass_initial: Optional[float] = None,
+    mass_drift_abs: float = 0.05,
+) -> Dict[str, Any]:
     reasons: List[str] = []
     rho_min = _finite_float(stability.get("rho_min", math.nan))
     rho_max = _finite_float(stability.get("rho_max", math.nan))
     max_v = _finite_float(stability.get("max_v", math.nan))
     negative_fraction = _finite_float(stability.get("negative_population_fraction", 0.0))
+    mass_total_delta_rel = stability.get("mass_total_delta_rel")
+    if mass_total_delta_rel is None and mass_initial is not None and "mass_total" in stability:
+        _annotate_lightweight_mass_drift(stability, mass_initial)
+        mass_total_delta_rel = stability.get("mass_total_delta_rel")
     if not bool(stability.get("stability_all_finite", stability.get("all_finite", True))):
         reasons.append("nonfinite_field")
     if not math.isfinite(rho_min) or not math.isfinite(rho_max) or rho_min <= 0.85 or rho_max >= 1.15:
@@ -490,6 +536,13 @@ def _step120_lightweight_failure_detector(stability: Dict[str, Any]) -> Dict[str
         value = _finite_float(stability.get(key, 0.0))
         if not math.isfinite(value):
             reasons.append(f"nonfinite_{key}")
+    if mass_total_delta_rel is not None:
+        try:
+            drift = float(mass_total_delta_rel)
+        except (TypeError, ValueError):
+            drift = math.nan
+        if not math.isfinite(drift) or abs(drift) > float(mass_drift_abs):
+            reasons.append("mass_drift")
     if negative_fraction > 1.0e-3:
         reasons.append("negative_population_fraction")
     return {
@@ -497,6 +550,7 @@ def _step120_lightweight_failure_detector(stability: Dict[str, Any]) -> Dict[str
         "first_failure_reason": reasons[0] if reasons else None,
         "lightweight_failure_reasons": sorted(set(reasons)),
         "lightweight_failure_detector": "step120_failure_check_interval",
+        "mass_total_delta_rel": _finite_float(mass_total_delta_rel if mass_total_delta_rel is not None else 0.0),
     }
 
 
@@ -796,10 +850,23 @@ def restore_latest_step120_checkpoint(
     spec: Step120RunSpec,
     checkpoint_root: Path | str,
 ) -> Optional[Tuple[int, Optional[float], str]]:
+    restored = restore_latest_step120_checkpoint_with_history(lbm, spec, checkpoint_root)
+    if restored is None:
+        return None
+    step, mass_initial, checkpoint_path, _records, _stability_records = restored
+    return step, mass_initial, checkpoint_path
+
+
+def restore_latest_step120_checkpoint_with_history(
+    lbm: LBMFluid3D,
+    spec: Step120RunSpec,
+    checkpoint_root: Path | str,
+) -> Optional[Tuple[int, Optional[float], str, List[Dict[str, Any]], List[Dict[str, Any]]]]:
     for latest in _checkpoint_paths(spec, Path(checkpoint_root), reverse=True):
         try:
             with np.load(latest, allow_pickle=False) as data:
                 metadata = json.loads(str(data["metadata_json"]))
+                history = _checkpoint_history_from_npz(data)
                 _validate_checkpoint_metadata(spec, metadata)
                 lbm.f.from_numpy(data["f"].astype(np.float32))
                 lbm.F.from_numpy(data["F"].astype(np.float32))
@@ -818,8 +885,30 @@ def restore_latest_step120_checkpoint(
                 int(counters.get("population_floor_count", 0) or 0),
                 int(counters.get("reconstructed_population_count", 0) or 0),
             )
-        return int(metadata["step"]), metadata.get("mass_initial"), str(latest)
+        return (
+            int(metadata["step"]),
+            metadata.get("mass_initial"),
+            str(latest),
+            _dedupe_step120_records(history.get("records", [])),
+            _dedupe_step120_records(history.get("stability_records", [])),
+        )
     return None
+
+
+def _checkpoint_history_from_npz(data: Any) -> Dict[str, List[Dict[str, Any]]]:
+    if "history_json" not in data.files:
+        return {"records": [], "stability_records": []}
+    raw = data["history_json"]
+    if hasattr(raw, "item"):
+        raw = raw.item()
+    try:
+        history = json.loads(str(raw))
+    except (TypeError, ValueError):
+        return {"records": [], "stability_records": []}
+    return {
+        "records": list(history.get("records") or []),
+        "stability_records": list(history.get("stability_records") or []),
+    }
 
 
 def _finite_report(
@@ -1014,12 +1103,29 @@ def _summary_row(
     flux_balance_reported: bool,
     checkpoint_available: bool,
 ) -> Dict[str, Any]:
+    tau_report = _tau_feasibility_report(spec)
     return {
         "name": spec.name,
         "row_role": spec.row_role,
         "geometry_mode": spec.geometry_mode,
         "lbm_open_boundary_semantics": spec.open_boundary_semantics,
         "open_boundary_limiter_enabled": bool(spec.open_boundary_limiter_enabled),
+        "open_boundary_rho_min": float(spec.open_boundary_rho_min),
+        "open_boundary_rho_max": float(spec.open_boundary_rho_max),
+        "open_boundary_u_max": float(spec.open_boundary_u_max),
+        "open_boundary_noneq_cap": float(spec.open_boundary_noneq_cap),
+        "open_boundary_population_floor": spec.open_boundary_population_floor,
+        "inlet_u_lbm": float(spec.inlet_u_lbm),
+        "outlet_rho": float(spec.outlet_rho),
+        "lbm_niu": float(tau_report["lbm_niu"]),
+        "lbm_viscosity_semantics": str(spec.lbm_viscosity_semantics),
+        "lbm_relaxation_semantics": str(tau_report["lbm_relaxation_semantics"]),
+        "tau": _finite_float(tau_report["tau"]),
+        "config_hash": _config_hash(spec),
+        "selected_source_row_name": spec.selected_source_row_name,
+        "selected_source_config_hash": spec.selected_source_config_hash,
+        "selected_source_tau": spec.selected_source_tau,
+        "selected_source_lbm_relaxation_semantics": spec.selected_source_lbm_relaxation_semantics,
         "requested_nx": spec.requested_grid(),
         "executed_nx": int(spec.nx),
         "requested_n_steps": spec.requested_steps(),
@@ -1168,6 +1274,21 @@ def _load_step120_timeseries_history(row_path: Path) -> Tuple[List[Dict[str, Any
     records = _read_csv_records(row_path / "fluid_diagnostics_timeseries.csv")
     stability_records = _read_csv_records(row_path / "stability_diagnostics_timeseries.csv")
     return _dedupe_step120_records(records), _dedupe_step120_records(stability_records)
+
+
+def _merge_step120_record_sets(*record_sets: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    merged: List[Dict[str, Any]] = []
+    for records in record_sets:
+        merged.extend(dict(row) for row in records)
+    return _dedupe_step120_records(merged)
+
+
+def _first_mass_total(*record_sets: Sequence[Dict[str, Any]]) -> Optional[float]:
+    for records in record_sets:
+        for row in records:
+            if row.get("mass_total") is not None:
+                return _finite_float(row["mass_total"])
+    return None
 
 
 def _read_csv_records(path: Path) -> List[Dict[str, Any]]:
@@ -1642,6 +1763,9 @@ _STABILITY_TIMESERIES_FIELDS = [
     "negative_population_count",
     "negative_population_fraction",
     "population_entry_count",
+    "fluid_cell_count",
+    "mass_total",
+    "mass_total_delta_rel",
     "boundary_x_min_negative_population_count",
     "boundary_x_max_negative_population_count",
     "stability_all_finite",
