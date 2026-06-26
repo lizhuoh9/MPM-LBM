@@ -1,11 +1,11 @@
 {
   "campaign_manifest_id": "step124_lbm_boundary_516b1aaa",
-  "campaign_state": "awaiting_48_candidates",
-  "final_classification": "boundary_repair_partial_continue_lbm",
+  "campaign_state": "48_candidates_failed",
+  "final_classification": "boundary_repair_failed_revisit_lbm_solver",
   "ignored_row_count": 0,
   "phase": "summary",
   "quasi2d_allowed": false,
-  "row_count": 3,
+  "row_count": 5,
   "step": 121,
   "step121_schema_version": 1,
   "validation_claim_allowed": false

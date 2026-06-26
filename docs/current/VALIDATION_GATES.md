@@ -1,7 +1,17 @@
 # Validation Gates
 
-The campaign cannot claim quasi-2D, FSI, Fluent validation, or Figure 29.3
-parity from the current 48^3 LBM-only reference artifacts.
+The campaign cannot claim selected 96^3, quasi-2D, FSI, Fluent validation, or
+Figure 29.3 parity from the current 48^3 LBM-only candidate artifacts.
+
+Current Step127 outcome:
+
+- Legacy 48^3 reference passed the flow-development gate.
+- Old regularized 48^3 reference completed but failed flow development.
+- Limited regularized 48^3 candidate completed but failed flow development.
+- Convective outlet 48^3 candidate stopped on terminal mass-drift evidence and
+  failed flow development.
+- No best 48^3 boundary is selected.
+- Selected 96^3 execution is blocked.
 
 Current Step124 gate requirements:
 

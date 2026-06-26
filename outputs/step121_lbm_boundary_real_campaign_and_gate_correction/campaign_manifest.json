@@ -2,8 +2,19 @@
   "artifact_root": "D:\\working\\squid robot\\LBM\\MPM-LBM\\outputs\\step121_lbm_boundary_real_campaign_and_gate_correction",
   "campaign_base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
   "campaign_id": "step124_lbm_boundary_516b1aaa",
-  "current_code_commit": "6ad3108994c55d1863fc2c2d4a830a26799fc9f4",
+  "current_code_commit": "e2be90f89f4b31d9bd8f63d405017fc701c15cc8",
   "expected_rows": {
+    "duct_only_48_convective_outlet_boundary_500step_real": {
+      "geometry_mode": "duct_only",
+      "lbm_open_boundary_semantics": "convective_pressure_outlet_experimental",
+      "row_role": "candidate_48",
+      "run_manifest_hash": "243a8a501e8ae4096acca196566eaa4e5bb142c5db60adef7966f84e0478af4d",
+      "selected_source_config_hash": null,
+      "selected_source_lbm_relaxation_semantics": null,
+      "selected_source_row_name": null,
+      "selected_source_tau": null,
+      "solver_state_hash": "5d56100e46467c9bfee29a9f3411ebc33436b6b663b664e7eb21ac79714ab075"
+    },
     "duct_only_48_legacy_boundary_500step_reference_real": {
       "geometry_mode": "duct_only",
       "lbm_open_boundary_semantics": "equilibrium_all_population_reset",
@@ -25,6 +36,17 @@
       "selected_source_row_name": null,
       "selected_source_tau": null,
       "solver_state_hash": "2eb3ff1c97e321a47262dd91b483c7cf26630cdeae7b85026ceed67e7d9af4d3"
+    },
+    "duct_only_48_regularized_limited_boundary_500step_real": {
+      "geometry_mode": "duct_only",
+      "lbm_open_boundary_semantics": "regularized_velocity_pressure_limited",
+      "row_role": "candidate_48",
+      "run_manifest_hash": "59a937533edb9bdabf87700205b9b7d3072a3844d1010718d9b19510793171e0",
+      "selected_source_config_hash": null,
+      "selected_source_lbm_relaxation_semantics": null,
+      "selected_source_row_name": null,
+      "selected_source_tau": null,
+      "solver_state_hash": "5e100a3e77c58a39f17b8eb37a8823f50c8afe0ee482c7752f4c6d3fabaf05bf"
     },
     "tiny_step121_real_runner_smoke": {
       "geometry_mode": "duct_only",
@@ -53,7 +75,7 @@
     "ratio_min": 0.8,
     "selected96_mass_acceptance_max": 0.01
   },
-  "git_commit": "6ad3108994c55d1863fc2c2d4a830a26799fc9f4",
+  "git_commit": "e2be90f89f4b31d9bd8f63d405017fc701c15cc8",
   "phase_commit_history": [
     {
       "code_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
@@ -62,11 +84,16 @@
     {
       "code_commit": "6ad3108994c55d1863fc2c2d4a830a26799fc9f4",
       "phase": "references48"
+    },
+    {
+      "code_commit": "e2be90f89f4b31d9bd8f63d405017fc701c15cc8",
+      "phase": "candidates48"
     }
   ],
   "phase_history": [
     "smoke",
-    "references48"
+    "references48",
+    "candidates48"
   ],
   "run_commands": [
     "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase references48 --allow-large-real-rows --output-interval 25",

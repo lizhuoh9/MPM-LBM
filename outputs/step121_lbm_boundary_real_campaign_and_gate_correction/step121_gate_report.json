@@ -5,10 +5,10 @@
     "boundary_repair_success_go_to_quasi2d"
   ],
   "best_boundary_selected": false,
-  "campaign_state": "awaiting_48_candidates",
+  "campaign_state": "48_candidates_failed",
   "failed_selected_rows": [],
   "figure_29_3_parity_claim_allowed": false,
-  "final_classification": "boundary_repair_partial_continue_lbm",
+  "final_classification": "boundary_repair_failed_revisit_lbm_solver",
   "fluent_validation_claim_allowed": false,
   "full_fsi_validation_claim_allowed": false,
   "global_limiter_gate_not_used_for_final_classification": true,
