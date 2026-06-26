@@ -17,6 +17,8 @@ EQUILIBRIUM_ALL_POPULATION_RESET = "equilibrium_all_population_reset"
 REGULARIZED_VELOCITY_PRESSURE = "regularized_velocity_pressure"
 REGULARIZED_VELOCITY_PRESSURE_LIMITED = "regularized_velocity_pressure_limited"
 CONVECTIVE_PRESSURE_OUTLET_EXPERIMENTAL = "convective_pressure_outlet_experimental"
+REGULARIZED_MASS_BALANCED_PRESSURE_OUTLET = "regularized_mass_balanced_pressure_outlet"
+CONVECTIVE_MASS_BALANCED_PRESSURE_OUTLET = "convective_mass_balanced_pressure_outlet"
 UNKNOWN_X_MIN_POPULATIONS = (1, 7, 9, 11, 13)
 UNKNOWN_X_MAX_POPULATIONS = (2, 8, 10, 12, 14)
 
@@ -81,6 +83,12 @@ class LBMFluid3D:
         self.ob_population_floor_count_run = ti.field(ti.i32, shape=())
         self.ob_reconstructed_population_count_step = ti.field(ti.i32, shape=())
         self.ob_reconstructed_population_count_run = ti.field(ti.i32, shape=())
+        self.ob_mass_balance_correction_count_step = ti.field(ti.i32, shape=())
+        self.ob_mass_balance_correction_count_run = ti.field(ti.i32, shape=())
+        self.ob_mass_balance_correction_abs_sum_step = ti.field(ti.f32, shape=())
+        self.ob_mass_balance_correction_abs_sum_run = ti.field(ti.f32, shape=())
+        self.ob_unknown_population_delta_abs_sum_step = ti.field(ti.f32, shape=())
+        self.ob_unknown_population_delta_abs_sum_run = ti.field(ti.f32, shape=())
 
         #Boundary condition mode: 0=periodic, 1= fix pressure, 2=fix velocity; boundary pressure value (rho); boundary velocity value for vx,vy,vz
         self.bc_x_left, self.rho_bcxl, self.vx_bcxl, self.vy_bcxl, self.vz_bcxl = (
@@ -481,6 +489,12 @@ class LBMFluid3D:
         if self.open_boundary_semantics == CONVECTIVE_PRESSURE_OUTLET_EXPERIMENTAL:
             self.apply_convective_pressure_outlet_x_open_boundaries()
             return
+        if self.open_boundary_semantics == REGULARIZED_MASS_BALANCED_PRESSURE_OUTLET:
+            self.apply_regularized_mass_balanced_pressure_outlet_x_open_boundaries()
+            return
+        if self.open_boundary_semantics == CONVECTIVE_MASS_BALANCED_PRESSURE_OUTLET:
+            self.apply_convective_mass_balanced_pressure_outlet_x_open_boundaries()
+            return
         self.Boundary_condition_legacy()
 
     @ti.kernel
@@ -490,6 +504,9 @@ class LBMFluid3D:
         self.ob_noneq_clip_count_step[None] = 0
         self.ob_population_floor_count_step[None] = 0
         self.ob_reconstructed_population_count_step[None] = 0
+        self.ob_mass_balance_correction_count_step[None] = 0
+        self.ob_mass_balance_correction_abs_sum_step[None] = 0.0
+        self.ob_unknown_population_delta_abs_sum_step[None] = 0.0
 
     @ti.kernel
     def clear_open_boundary_limiter_run_counters(self):
@@ -503,6 +520,12 @@ class LBMFluid3D:
         self.ob_population_floor_count_run[None] = 0
         self.ob_reconstructed_population_count_step[None] = 0
         self.ob_reconstructed_population_count_run[None] = 0
+        self.ob_mass_balance_correction_count_step[None] = 0
+        self.ob_mass_balance_correction_count_run[None] = 0
+        self.ob_mass_balance_correction_abs_sum_step[None] = 0.0
+        self.ob_mass_balance_correction_abs_sum_run[None] = 0.0
+        self.ob_unknown_population_delta_abs_sum_step[None] = 0.0
+        self.ob_unknown_population_delta_abs_sum_run[None] = 0.0
 
     @ti.kernel
     def set_open_boundary_limiter_run_counters(
@@ -523,6 +546,12 @@ class LBMFluid3D:
         self.ob_population_floor_count_run[None] = population_floor_count
         self.ob_reconstructed_population_count_step[None] = 0
         self.ob_reconstructed_population_count_run[None] = reconstructed_population_count
+        self.ob_mass_balance_correction_count_step[None] = 0
+        self.ob_mass_balance_correction_count_run[None] = 0
+        self.ob_mass_balance_correction_abs_sum_step[None] = 0.0
+        self.ob_mass_balance_correction_abs_sum_run[None] = 0.0
+        self.ob_unknown_population_delta_abs_sum_step[None] = 0.0
+        self.ob_unknown_population_delta_abs_sum_run[None] = 0.0
 
     @ti.kernel
     def reduce_lbm_stability_diagnostics(self):
@@ -619,6 +648,12 @@ class LBMFluid3D:
             "limiter_activation_count": run_activation_count,
             "limiter_activation_denominator": denominator,
             "limiter_activation_fraction": float(run_activation_count / denominator if denominator else 0.0),
+            "mass_balance_correction_count_step": int(self.ob_mass_balance_correction_count_step[None]),
+            "mass_balance_correction_count_run": int(self.ob_mass_balance_correction_count_run[None]),
+            "mass_balance_correction_abs_sum_step": float(self.ob_mass_balance_correction_abs_sum_step[None]),
+            "mass_balance_correction_abs_sum_run": float(self.ob_mass_balance_correction_abs_sum_run[None]),
+            "unknown_population_delta_abs_sum_step": float(self.ob_unknown_population_delta_abs_sum_step[None]),
+            "unknown_population_delta_abs_sum_run": float(self.ob_unknown_population_delta_abs_sum_run[None]),
         }
 
     @ti.kernel
@@ -800,6 +835,45 @@ class LBMFluid3D:
             extrapolated = 2.0 * self.F[ni, nj, nk][s] - self.F[n2i, n2j, n2k][s]
         return self._limit_open_boundary_population(extrapolated)
 
+    @ti.func
+    def _bounded_scalar(self, value, limit):
+        out = value
+        if out > limit:
+            out = limit
+        if out < -limit:
+            out = -limit
+        return out
+
+    @ti.func
+    def _record_open_boundary_repair_correction(self, correction_abs, population_delta_abs):
+        ti.atomic_add(self.ob_mass_balance_correction_count_step[None], 1)
+        ti.atomic_add(self.ob_mass_balance_correction_count_run[None], 1)
+        ti.atomic_add(self.ob_mass_balance_correction_abs_sum_step[None], correction_abs)
+        ti.atomic_add(self.ob_mass_balance_correction_abs_sum_run[None], correction_abs)
+        ti.atomic_add(self.ob_unknown_population_delta_abs_sum_step[None], population_delta_abs)
+        ti.atomic_add(self.ob_unknown_population_delta_abs_sum_run[None], population_delta_abs)
+
+    @ti.func
+    def _regularized_mass_balanced_population(self, s, target_rho, target_u, ni, nj, nk):
+        rho_feedback = self._bounded_scalar(0.02 * (self.rho0 - self.rho[ni, nj, nk]), 0.01)
+        velocity_feedback = self._bounded_scalar(0.05 * (self.vx_bcxl - target_u[0]), 0.02)
+        repaired_u = target_u
+        repaired_u[0] = target_u[0] + velocity_feedback
+        repaired_rho = target_rho + rho_feedback
+        before = self._regularized_population(s, target_rho, target_u, ni, nj, nk)
+        after = self._regularized_population(s, repaired_rho, repaired_u, ni, nj, nk)
+        self._record_open_boundary_repair_correction(ti.abs(rho_feedback) + ti.abs(velocity_feedback), ti.abs(after - before))
+        return self._limit_open_boundary_population(after)
+
+    @ti.func
+    def _convective_mass_balanced_population(self, s, bi, bj, bk, ni, nj, nk, n2i, n2j, n2k):
+        convective = self._convective_outlet_population(s, bi, bj, bk, ni, nj, nk, n2i, n2j, n2k)
+        target_u = self.v[ni, nj, nk]
+        regularized = self._regularized_mass_balanced_population(s, self.rho_bcxr, target_u, ni, nj, nk)
+        repaired = convective + 0.15 * (regularized - convective)
+        self._record_open_boundary_repair_correction(0.0, ti.abs(repaired - convective))
+        return self._limit_open_boundary_population(repaired)
+
     @ti.kernel
     def apply_regularized_x_open_boundaries(self):
         if ti.static(self.bc_x_left==1):
@@ -931,6 +1005,105 @@ class LBMFluid3D:
                         n2i = self.nx - 1
                     for s in ti.static(UNKNOWN_X_MAX_POPULATIONS):
                         self.F[self.nx-1,j,k][s] = self._convective_outlet_population(
+                            s, self.nx - 1, j, k, ni, j, k, n2i, j, k
+                        )
+
+        if ti.static(self.bc_x_right==2):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[self.nx-1,j,k] == 0:
+                    ni = self.nx - 2
+                    if self.solid[self.nx-2,j,k] > 0:
+                        ni = self.nx - 1
+                    target_rho = self.rho[ni,j,k]
+                    if target_rho <= 1.0e-6:
+                        target_rho = self.rho0
+                    target_u = ti.Vector(self.bc_vel_x_right)
+                    for s in ti.static(UNKNOWN_X_MAX_POPULATIONS):
+                        self.F[self.nx-1,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
+
+    @ti.kernel
+    def apply_regularized_mass_balanced_pressure_outlet_x_open_boundaries(self):
+        if ti.static(self.bc_x_left==1):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[0,j,k] == 0:
+                    ni = 1
+                    if self.solid[1,j,k] > 0:
+                        ni = 0
+                    target_u = self.v[ni,j,k]
+                    for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
+                        self.F[0,j,k][s] = self._regularized_population(s, self.rho_bcxl, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_left==2):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[0,j,k] == 0:
+                    ni = 1
+                    if self.solid[1,j,k] > 0:
+                        ni = 0
+                    target_rho = self.rho[ni,j,k]
+                    if target_rho <= 1.0e-6:
+                        target_rho = self.rho0
+                    target_u = ti.Vector(self.bc_vel_x_left)
+                    for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
+                        self.F[0,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_right==1):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[self.nx-1,j,k] == 0:
+                    ni = self.nx - 2
+                    if self.solid[self.nx-2,j,k] > 0:
+                        ni = self.nx - 1
+                    target_u = self.v[ni,j,k]
+                    for s in ti.static(UNKNOWN_X_MAX_POPULATIONS):
+                        self.F[self.nx-1,j,k][s] = self._regularized_mass_balanced_population(s, self.rho_bcxr, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_right==2):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[self.nx-1,j,k] == 0:
+                    ni = self.nx - 2
+                    if self.solid[self.nx-2,j,k] > 0:
+                        ni = self.nx - 1
+                    target_rho = self.rho[ni,j,k]
+                    if target_rho <= 1.0e-6:
+                        target_rho = self.rho0
+                    target_u = ti.Vector(self.bc_vel_x_right)
+                    for s in ti.static(UNKNOWN_X_MAX_POPULATIONS):
+                        self.F[self.nx-1,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
+
+    @ti.kernel
+    def apply_convective_mass_balanced_pressure_outlet_x_open_boundaries(self):
+        if ti.static(self.bc_x_left==1):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[0,j,k] == 0:
+                    ni = 1
+                    if self.solid[1,j,k] > 0:
+                        ni = 0
+                    target_u = self.v[ni,j,k]
+                    for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
+                        self.F[0,j,k][s] = self._regularized_population(s, self.rho_bcxl, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_left==2):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[0,j,k] == 0:
+                    ni = 1
+                    if self.solid[1,j,k] > 0:
+                        ni = 0
+                    target_rho = self.rho[ni,j,k]
+                    if target_rho <= 1.0e-6:
+                        target_rho = self.rho0
+                    target_u = ti.Vector(self.bc_vel_x_left)
+                    for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
+                        self.F[0,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_right==1):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[self.nx-1,j,k] == 0:
+                    ni = self.nx - 2
+                    n2i = self.nx - 3
+                    if self.solid[self.nx-2,j,k] > 0:
+                        ni = self.nx - 1
+                        n2i = self.nx - 1
+                    for s in ti.static(UNKNOWN_X_MAX_POPULATIONS):
+                        self.F[self.nx-1,j,k][s] = self._convective_mass_balanced_population(
                             s, self.nx - 1, j, k, ni, j, k, n2i, j, k
                         )
 

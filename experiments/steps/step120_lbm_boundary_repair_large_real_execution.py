@@ -83,14 +83,21 @@ ROW_STATUS_CHECKPOINT_AVAILABLE = "checkpoint_available"
 ROW_STATUS_INTERRUPTED = "interrupted"
 ROW_STATUS_MISSING = "missing"
 
-CANDIDATE_SEMANTICS = {
+STEP127_CANDIDATE_SEMANTICS = {
     "regularized_velocity_pressure_limited",
     "convective_pressure_outlet_experimental",
 }
+REPAIRED_CANDIDATE_SEMANTICS = {
+    "regularized_mass_balanced_pressure_outlet",
+    "convective_mass_balanced_pressure_outlet",
+}
+CANDIDATE_SEMANTICS = STEP127_CANDIDATE_SEMANTICS | REPAIRED_CANDIDATE_SEMANTICS
 REFERENCE_SEMANTICS = {
     "equilibrium_all_population_reset",
     "regularized_velocity_pressure",
 }
+CANDIDATE_MASS_ACCEPTANCE_ABS_MAX = 0.005
+HARD_STOP_MASS_DRIFT_ABS_MAX = 0.05
 
 SOLVER_STATE_HASH_FIELDS = {
     "nx",
@@ -220,6 +227,36 @@ def step120_real_run_specs(output_interval: int = 25) -> List[Step120RunSpec]:
             requested_nx=48,
             requested_n_steps=500,
             row_role="candidate_48",
+        ),
+        Step120RunSpec(
+            name="duct_only_48_regularized_mass_balanced_pressure_outlet_500step_real",
+            nx=48,
+            ny=48,
+            nz=48,
+            n_steps=500,
+            output_interval=output_interval,
+            failure_check_interval=5,
+            checkpoint_every=100,
+            open_boundary_semantics="regularized_mass_balanced_pressure_outlet",
+            geometry_mode="duct_only",
+            requested_nx=48,
+            requested_n_steps=500,
+            row_role="repair_candidate_48",
+        ),
+        Step120RunSpec(
+            name="duct_only_48_convective_mass_balanced_pressure_outlet_500step_real",
+            nx=48,
+            ny=48,
+            nz=48,
+            n_steps=500,
+            output_interval=output_interval,
+            failure_check_interval=5,
+            checkpoint_every=100,
+            open_boundary_semantics="convective_mass_balanced_pressure_outlet",
+            geometry_mode="duct_only",
+            requested_nx=48,
+            requested_n_steps=500,
+            row_role="repair_candidate_48",
         ),
         Step120RunSpec(
             name="duct_only_96_regularized_limited_physical_nu_report_only_100step_guarded_real",
@@ -549,7 +586,7 @@ def _step120_lightweight_failure_detector(
     stability: Dict[str, Any],
     *,
     mass_initial: Optional[float] = None,
-    mass_drift_abs: float = 0.05,
+    mass_drift_abs: float = HARD_STOP_MASS_DRIFT_ABS_MAX,
 ) -> Dict[str, Any]:
     reasons: List[str] = []
     rho_min = _finite_float(stability.get("rho_min", math.nan))
@@ -570,6 +607,7 @@ def _step120_lightweight_failure_detector(
         value = _finite_float(stability.get(key, 0.0))
         if not math.isfinite(value):
             reasons.append(f"nonfinite_{key}")
+    drift = math.nan
     if mass_total_delta_rel is not None:
         try:
             drift = float(mass_total_delta_rel)
@@ -579,12 +617,19 @@ def _step120_lightweight_failure_detector(
             reasons.append("mass_drift")
     if negative_fraction > 1.0e-3:
         reasons.append("negative_population_fraction")
+    hard_stop_reason = reasons[0] if reasons else None
+    hard_stop_step = int(stability.get("step", 0) or 0) if reasons else None
     return {
-        "first_failure_step": int(stability.get("step", 0) or 0) if reasons else None,
-        "first_failure_reason": reasons[0] if reasons else None,
+        "first_failure_step": hard_stop_step,
+        "first_failure_reason": hard_stop_reason,
         "lightweight_failure_reasons": sorted(set(reasons)),
         "lightweight_failure_detector": "step120_failure_check_interval",
         "mass_total_delta_rel": _finite_float(mass_total_delta_rel if mass_total_delta_rel is not None else 0.0),
+        "hard_stop_failure_reason": hard_stop_reason,
+        "hard_stop_failure_step": hard_stop_step,
+        "hard_stop_mass_drift_abs_max": _finite_float(mass_drift_abs),
+        "hard_stop_mass_drift_observed_abs": _finite_float(abs(drift) if math.isfinite(drift) else math.nan),
+        "hard_stop_mass_drift_gate_pass": "mass_drift" not in reasons,
     }
 
 
@@ -615,6 +660,12 @@ def summarize_step120_limiter_activation(stats_or_lbm: Any, spec: Step120RunSpec
         "limiter_activation_denominator": denominator,
         "limiter_activation_fraction": activation_fraction,
         "limiter_activation_fraction_limit": fraction_limit,
+        "mass_balance_correction_count": int(stats.get("mass_balance_correction_count_run", 0) or 0),
+        "mass_balance_correction_count_step": int(stats.get("mass_balance_correction_count_step", 0) or 0),
+        "mass_balance_correction_abs_sum": _finite_float(stats.get("mass_balance_correction_abs_sum_run", 0.0) or 0.0),
+        "mass_balance_correction_abs_sum_step": _finite_float(stats.get("mass_balance_correction_abs_sum_step", 0.0) or 0.0),
+        "unknown_population_delta_abs_sum": _finite_float(stats.get("unknown_population_delta_abs_sum_run", 0.0) or 0.0),
+        "unknown_population_delta_abs_sum_step": _finite_float(stats.get("unknown_population_delta_abs_sum_step", 0.0) or 0.0),
         "validation_blocked_by_limiter_activation": bool(activation_fraction > fraction_limit),
         "validation_claim_allowed": False,
     }
@@ -988,6 +1039,47 @@ def restore_latest_step120_checkpoint_with_history(
     return None
 
 
+def _hard_stop_reason_from(
+    stop_reason: Optional[str],
+    first_failure_reason: Optional[str],
+) -> Optional[str]:
+    reason = str(stop_reason or first_failure_reason or "")
+    if reason.startswith("lightweight_failure:"):
+        return reason.split(":", 1)[1] or None
+    return reason or None
+
+
+def _hard_stop_mass_fields(
+    *,
+    stop_reason: Optional[str],
+    first_failure_reason: Optional[str],
+    first_failure_step: Optional[int],
+    mass_drift_abs_max_observed: Optional[float],
+) -> Dict[str, Any]:
+    reason = _hard_stop_reason_from(stop_reason, first_failure_reason)
+    observed = _finite_float(mass_drift_abs_max_observed if mass_drift_abs_max_observed is not None else math.nan)
+    observed_finite = math.isfinite(observed)
+    mass_drift_failed = bool(reason == "mass_drift" or (observed_finite and observed > HARD_STOP_MASS_DRIFT_ABS_MAX))
+    return {
+        "hard_stop_failure_reason": reason,
+        "hard_stop_failure_step": first_failure_step if reason is not None else None,
+        "hard_stop_mass_drift_abs_max": _finite_float(HARD_STOP_MASS_DRIFT_ABS_MAX),
+        "hard_stop_mass_drift_observed_abs": observed,
+        "hard_stop_mass_drift_gate_pass": not mass_drift_failed,
+    }
+
+
+def _candidate_mass_acceptance_fields(mass_total_delta_rel_final: Optional[float]) -> Dict[str, Any]:
+    observed = _finite_float(abs(float(mass_total_delta_rel_final)) if mass_total_delta_rel_final is not None else math.nan)
+    return {
+        "candidate_mass_acceptance_abs_max": _finite_float(CANDIDATE_MASS_ACCEPTANCE_ABS_MAX),
+        "candidate_mass_acceptance_observed_abs": observed,
+        "candidate_mass_acceptance_gate_pass": bool(
+            math.isfinite(observed) and observed < CANDIDATE_MASS_ACCEPTANCE_ABS_MAX
+        ),
+    }
+
+
 def _checkpoint_history_from_npz(data: Any) -> Dict[str, List[Dict[str, Any]]]:
     if "history_json" not in data.files:
         return {"records": [], "stability_records": []}
@@ -1025,6 +1117,14 @@ def _finite_report(
     if first_failure_step is None and stop_reason is not None:
         first_failure_step = int(steps_completed)
         first_failure_reason = stop_reason
+    mass_total_delta_rel_final = final.get("mass_total_delta_rel")
+    hard_stop_fields = _hard_stop_mass_fields(
+        stop_reason=stop_reason,
+        first_failure_reason=first_failure_reason,
+        first_failure_step=first_failure_step,
+        mass_drift_abs_max_observed=trend.get("mass_drift_abs_max"),
+    )
+    candidate_mass_fields = _candidate_mass_acceptance_fields(mass_total_delta_rel_final)
     finite_pass = bool(
         records
         and all(record.get("all_finite", True) is not False for record in records)
@@ -1087,7 +1187,7 @@ def _finite_report(
         outlet_to_inlet_flux_ratio_tail_mean=outlet_to_inlet_flux_ratio_tail_mean,
         midplane_to_inlet_flux_ratio_tail_mean=midplane_to_inlet_flux_ratio_tail_mean,
         flow_development_gate_pass=flow_development_gate_pass,
-        mass_total_delta_rel_final=final.get("mass_total_delta_rel"),
+        mass_total_delta_rel_final=mass_total_delta_rel_final,
         mach_proxy_observed_max=trend.get("mach_proxy_observed_max"),
         tau_margin_pass=tau_report["tau_margin_pass"],
         skipped_due_to_tau_margin=False,
@@ -1099,6 +1199,8 @@ def _finite_report(
         simulation_backed_artifact=True,
         flux_balance_reported=bool(records),
         checkpoint_available=checkpoint_available,
+        hard_stop_fields=hard_stop_fields,
+        candidate_mass_fields=candidate_mass_fields,
     )
     return {
         **summary_row,
@@ -1173,6 +1275,13 @@ def _write_nonstepped_row(spec: Step120RunSpec, row_path: Path, tau_report: Dict
         simulation_backed_artifact=False,
         flux_balance_reported=False,
         checkpoint_available=False,
+        hard_stop_fields=_hard_stop_mass_fields(
+            stop_reason=reason,
+            first_failure_reason=reason,
+            first_failure_step=None,
+            mass_drift_abs_max_observed=None,
+        ),
+        candidate_mass_fields=_candidate_mass_acceptance_fields(None),
     )
     finite = {
         **summary_row,
@@ -1235,6 +1344,8 @@ def _summary_row(
     simulation_backed_artifact: bool,
     flux_balance_reported: bool,
     checkpoint_available: bool,
+    hard_stop_fields: Dict[str, Any],
+    candidate_mass_fields: Dict[str, Any],
 ) -> Dict[str, Any]:
     tau_report = _tau_feasibility_report(spec)
     return {
@@ -1277,6 +1388,14 @@ def _summary_row(
         "first_failure_step": first_failure_step,
         "first_failure_reason": first_failure_reason,
         "stop_reason": stop_reason,
+        "hard_stop_failure_reason": hard_stop_fields.get("hard_stop_failure_reason"),
+        "hard_stop_failure_step": hard_stop_fields.get("hard_stop_failure_step"),
+        "hard_stop_mass_drift_abs_max": hard_stop_fields.get("hard_stop_mass_drift_abs_max"),
+        "hard_stop_mass_drift_observed_abs": hard_stop_fields.get("hard_stop_mass_drift_observed_abs"),
+        "hard_stop_mass_drift_gate_pass": bool(hard_stop_fields.get("hard_stop_mass_drift_gate_pass", True)),
+        "candidate_mass_acceptance_abs_max": candidate_mass_fields.get("candidate_mass_acceptance_abs_max"),
+        "candidate_mass_acceptance_observed_abs": candidate_mass_fields.get("candidate_mass_acceptance_observed_abs"),
+        "candidate_mass_acceptance_gate_pass": bool(candidate_mass_fields.get("candidate_mass_acceptance_gate_pass", False)),
         "flux_balance_reported": bool(flux_balance_reported),
         "flux_imbalance_rel_final": flux_imbalance_rel_final,
         "flux_imbalance_rel_tail_mean": flux_imbalance_rel_tail_mean,
@@ -1303,6 +1422,9 @@ def _summary_row(
         "limiter_activation_denominator": int(limiter_summary.get("limiter_activation_denominator", 0)),
         "limiter_activation_fraction": _finite_float(limiter_summary.get("limiter_activation_fraction", 0.0)),
         "limiter_activation_gate_pass": not bool(limiter_summary.get("validation_blocked_by_limiter_activation", False)),
+        "mass_balance_correction_count": int(limiter_summary.get("mass_balance_correction_count", 0)),
+        "mass_balance_correction_abs_sum": _finite_float(limiter_summary.get("mass_balance_correction_abs_sum", 0.0)),
+        "unknown_population_delta_abs_sum": _finite_float(limiter_summary.get("unknown_population_delta_abs_sum", 0.0)),
         "checkpoint_available": bool(checkpoint_available),
         "runtime_s": _finite_float(runtime_s),
     }
@@ -1362,6 +1484,8 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         "lbm_open_boundary_semantics": spec.open_boundary_semantics,
         "regularized_limited_boundary_used": spec.open_boundary_semantics == "regularized_velocity_pressure_limited",
         "convective_outlet_used": spec.open_boundary_semantics == "convective_pressure_outlet_experimental",
+        "regularized_mass_balanced_pressure_outlet_used": spec.open_boundary_semantics == "regularized_mass_balanced_pressure_outlet",
+        "convective_mass_balanced_pressure_outlet_used": spec.open_boundary_semantics == "convective_mass_balanced_pressure_outlet",
         "all_population_equilibrium_reset_used": spec.open_boundary_semantics == "equilibrium_all_population_reset",
         "open_boundary_limiter_enabled": bool(spec.open_boundary_limiter_enabled),
         "open_boundary_rho_min": float(spec.open_boundary_rho_min),
@@ -1793,6 +1917,10 @@ def _boundary_slug(semantics: Optional[str]) -> str:
         return "limited"
     if semantics == "convective_pressure_outlet_experimental":
         return "convective"
+    if semantics == "regularized_mass_balanced_pressure_outlet":
+        return "regularized_mass_balanced"
+    if semantics == "convective_mass_balanced_pressure_outlet":
+        return "convective_mass_balanced"
     if semantics == "equilibrium_all_population_reset":
         return "legacy"
     if semantics == "regularized_velocity_pressure":

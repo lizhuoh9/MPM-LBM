@@ -10,9 +10,10 @@
     "docs/current/STATUS.md",
     "docs/current/ACTIVE_CAMPAIGN.json",
     "docs/current/VALIDATION_GATES.md",
+    "docs/campaigns/fluent_duct_flap/steps/128/goal.md",
+    "docs/campaigns/fluent_duct_flap/steps/128/report.md",
     "docs/campaigns/fluent_duct_flap/steps/127/goal.md",
     "docs/campaigns/fluent_duct_flap/steps/127/report.md",
-    "experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py",
-    "outputs/step121_lbm_boundary_real_campaign_and_gate_correction/step121_gate_report.json"
+    "experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py"
   ]
 }

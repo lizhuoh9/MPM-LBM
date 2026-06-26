@@ -17,6 +17,8 @@ VALID_LBM_OPEN_BOUNDARY_SEMANTICS = (
     "regularized_velocity_pressure",
     "regularized_velocity_pressure_limited",
     "convective_pressure_outlet_experimental",
+    "regularized_mass_balanced_pressure_outlet",
+    "convective_mass_balanced_pressure_outlet",
 )
 
 

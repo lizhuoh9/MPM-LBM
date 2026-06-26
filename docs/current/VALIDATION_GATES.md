@@ -13,6 +13,18 @@ Current Step127 outcome:
 - No best 48^3 boundary is selected.
 - Selected 96^3 execution is blocked.
 
+Current Step128 code surface:
+
+- New repaired 48^3 semantics exist for bounded open-boundary repair:
+  `regularized_mass_balanced_pressure_outlet` and
+  `convective_mass_balanced_pressure_outlet`.
+- Step121 has a separate `repair48` phase for repaired candidates.
+- Step120 now reports hard-stop mass-drift fields separately from candidate
+  mass-acceptance fields.
+- No repaired 48^3 / 500-step acceptance artifact has passed the hard gates
+  yet.
+- Selected 96^3 execution remains blocked.
+
 Current Step124 gate requirements:
 
 - 48^3 legacy reference rows must either complete the requested real window or
