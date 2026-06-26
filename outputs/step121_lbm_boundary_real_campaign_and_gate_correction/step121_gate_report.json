@@ -5,7 +5,7 @@
     "boundary_repair_success_go_to_quasi2d"
   ],
   "best_boundary_selected": false,
-  "campaign_state": "awaiting_48_references",
+  "campaign_state": "awaiting_48_candidates",
   "failed_selected_rows": [],
   "figure_29_3_parity_claim_allowed": false,
   "final_classification": "boundary_repair_partial_continue_lbm",

@@ -352,6 +352,6 @@ def test_step124_current_docs_entry_is_bounded_and_consistent():
     assert "quasi-2D" in status
     assert "FSI" in status
     assert "Fluent" in status
-    assert "awaiting_48_references" in status
+    assert active["state"] in status
     assert active["base_commit"] == "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc"
     subprocess.check_call(["git", "merge-base", "--is-ancestor", active["base_commit"], "HEAD"], cwd=ROOT)

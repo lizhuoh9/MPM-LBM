@@ -1,7 +1,7 @@
 # Validation Gates
 
 The campaign cannot claim quasi-2D, FSI, Fluent validation, or Figure 29.3
-parity from the current smoke artifact.
+parity from the current 48^3 LBM-only reference artifacts.
 
 Current Step124 gate requirements:
 

@@ -12,5 +12,5 @@ Current entry points:
 - `docs/current/ACTIVE_CAMPAIGN.json`
 - `docs/current/STATUS.md`
 - `docs/current/VALIDATION_GATES.md`
-- `docs/campaigns/fluent_duct_flap/steps/125/goal.md`
-- `docs/campaigns/fluent_duct_flap/steps/125/report.md`
+- `docs/campaigns/fluent_duct_flap/steps/126/goal.md`
+- `docs/campaigns/fluent_duct_flap/steps/126/report.md`

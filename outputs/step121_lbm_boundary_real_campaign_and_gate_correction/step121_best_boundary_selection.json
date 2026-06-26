@@ -1,22 +1,34 @@
 {
   "best_boundary_selected": false,
   "campaign_should_stop_at_48": false,
-  "campaign_state": "awaiting_48_references",
+  "campaign_state": "awaiting_48_candidates",
   "candidate_summaries": [],
   "final_classification": "boundary_repair_partial_continue_lbm",
-  "reference_comparison_ready": false,
+  "reference_comparison_ready": true,
   "reference_status": {
     "failed_reference_semantics": [],
     "incomplete_reference_semantics": [],
     "legacy_reference_failed": false,
-    "missing_reference_semantics": [
-      "equilibrium_all_population_reset",
-      "regularized_velocity_pressure"
-    ],
-    "reference_comparison_ready": false,
-    "reference_rows": {}
+    "missing_reference_semantics": [],
+    "reference_comparison_ready": true,
+    "reference_rows": {
+      "equilibrium_all_population_reset": {
+        "first_failure_reason": null,
+        "name": "duct_only_48_legacy_boundary_500step_reference_real",
+        "requested_window_completed": true,
+        "simulation_backed_artifact": true,
+        "terminal_real_evidence": true
+      },
+      "regularized_velocity_pressure": {
+        "first_failure_reason": null,
+        "name": "duct_only_48_regularized_boundary_500step_reference_real",
+        "requested_window_completed": true,
+        "simulation_backed_artifact": true,
+        "terminal_real_evidence": true
+      }
+    }
   },
-  "selection_reason": "48_reference_rows_not_complete",
+  "selection_reason": "48_candidate_rows_not_complete",
   "step": 121,
   "step121_schema_version": 1,
   "validation_claim_allowed": false

@@ -1,9 +1,31 @@
 {
   "artifact_root": "D:\\working\\squid robot\\LBM\\MPM-LBM\\outputs\\step121_lbm_boundary_real_campaign_and_gate_correction",
-  "campaign_id": "step124_lbm_boundary_516b1aaa",
   "campaign_base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
-  "current_code_commit": "26d4d0a9597a440272e2d479decbf1fbf95cb2ff",
+  "campaign_id": "step124_lbm_boundary_516b1aaa",
+  "current_code_commit": "6ad3108994c55d1863fc2c2d4a830a26799fc9f4",
   "expected_rows": {
+    "duct_only_48_legacy_boundary_500step_reference_real": {
+      "geometry_mode": "duct_only",
+      "lbm_open_boundary_semantics": "equilibrium_all_population_reset",
+      "row_role": "reference_48",
+      "run_manifest_hash": "25ed0f637e30110ee52fbe7a46e8f9e9069a7cd7ec9876839ad07566f4e47d50",
+      "selected_source_config_hash": null,
+      "selected_source_lbm_relaxation_semantics": null,
+      "selected_source_row_name": null,
+      "selected_source_tau": null,
+      "solver_state_hash": "aa4d0a0d2bd146209d3c915b06f0d0390c1ccbfa68f4ebb7a0a1f511ffdab461"
+    },
+    "duct_only_48_regularized_boundary_500step_reference_real": {
+      "geometry_mode": "duct_only",
+      "lbm_open_boundary_semantics": "regularized_velocity_pressure",
+      "row_role": "reference_48",
+      "run_manifest_hash": "6423a781435a5bbf4bfa868659bc4f81a40feaa967c2d7e8913b4d584620c29c",
+      "selected_source_config_hash": null,
+      "selected_source_lbm_relaxation_semantics": null,
+      "selected_source_row_name": null,
+      "selected_source_tau": null,
+      "solver_state_hash": "2eb3ff1c97e321a47262dd91b483c7cf26630cdeae7b85026ceed67e7d9af4d3"
+    },
     "tiny_step121_real_runner_smoke": {
       "geometry_mode": "duct_only",
       "lbm_open_boundary_semantics": "regularized_velocity_pressure_limited",
@@ -31,15 +53,20 @@
     "ratio_min": 0.8,
     "selected96_mass_acceptance_max": 0.01
   },
-  "git_commit": "26d4d0a9597a440272e2d479decbf1fbf95cb2ff",
+  "git_commit": "6ad3108994c55d1863fc2c2d4a830a26799fc9f4",
   "phase_commit_history": [
     {
       "code_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
       "phase": "smoke"
+    },
+    {
+      "code_commit": "6ad3108994c55d1863fc2c2d4a830a26799fc9f4",
+      "phase": "references48"
     }
   ],
   "phase_history": [
-    "smoke"
+    "smoke",
+    "references48"
   ],
   "run_commands": [
     "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase references48 --allow-large-real-rows --output-interval 25",

@@ -1,0 +1,49 @@
+{
+  "anomaly_cell": [
+    7,
+    41,
+    6
+  ],
+  "f_shape": [
+    48,
+    48,
+    48,
+    19
+  ],
+  "field_stats": {
+    "F_min": 0.025500409305095673,
+    "f_min": 0.025500409305095673,
+    "max_v": 0.0257375817745924,
+    "rho_max": 1.0043753385543823,
+    "rho_min": 0.9999303817749023
+  },
+  "local_window": {
+    "bounds": [
+      [
+        6,
+        9
+      ],
+      [
+        40,
+        43
+      ],
+      [
+        5,
+        8
+      ]
+    ],
+    "max_v": 0.0256742,
+    "rho_max": 1.0015295,
+    "rho_min": 1.0013285
+  },
+  "raw_arrays_committed_to_git": false,
+  "reason": "final",
+  "rho_shape": [
+    48,
+    48,
+    48
+  ],
+  "runtime_npz_path": "D:\\working\\squid robot\\LBM\\MPM-LBM\\outputs\\tmp\\step120_failure_snapshots\\duct_only_48_legacy_boundary_500step_reference_real\\snapshot_step_000500_final.npz",
+  "snapshot_payload_omitted_from_git": true,
+  "step": 500
+}
