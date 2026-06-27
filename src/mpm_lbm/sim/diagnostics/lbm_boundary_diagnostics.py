@@ -133,6 +133,38 @@ def outlet_reflection_proxy(lbm_or_snapshot: Any) -> Dict[str, float]:
     }
 
 
+def plane_velocity_x_stats(lbm_or_snapshot: Any, x_index: int) -> Dict[str, float]:
+    snap = _snapshot(lbm_or_snapshot)
+    mask = fluid_mask(snap)
+    x = _clamp_index(int(x_index), snap["rho"].shape[0])
+    plane = mask[x, :, :]
+    if not np.any(plane):
+        return {
+            "x_index": int(x),
+            "fluid_cell_count": 0,
+            "ux_min": 0.0,
+            "ux_max": 0.0,
+            "ux_mean": 0.0,
+            "negative_ux_fraction": 0.0,
+        }
+    ux = snap["v"][x, :, :, 0][plane]
+    return {
+        "x_index": int(x),
+        "fluid_cell_count": int(ux.size),
+        "ux_min": _finite_float(np.min(ux)),
+        "ux_max": _finite_float(np.max(ux)),
+        "ux_mean": _finite_float(np.mean(ux)),
+        "negative_ux_fraction": _finite_float(np.mean(ux < 0.0)),
+    }
+
+
+def sampled_x_profile_flux(lbm_or_snapshot: Any) -> str:
+    snap = _snapshot(lbm_or_snapshot)
+    nx = snap["rho"].shape[0]
+    sample_indices = sorted({0, nx // 2, nx - 1})
+    return ";".join(f"{x}:{plane_flux_x(snap, x):.12g}" for x in sample_indices)
+
+
 def summarize_lbm_boundary_diagnostics(
     lbm_or_snapshot: Any,
     step: int,
@@ -149,6 +181,8 @@ def summarize_lbm_boundary_diagnostics(
     mid_x = nx // 2
     inlet_flux = plane_flux_x(snap, 0)
     outlet_flux = plane_flux_x(snap, nx - 1)
+    midplane_flux = plane_flux_x(snap, mid_x)
+    outlet_plane = plane_velocity_x_stats(snap, nx - 1)
     scale = max(abs(inlet_flux), abs(outlet_flux), 1.0e-12)
     flux_imbalance_abs = abs(inlet_flux - outlet_flux)
     max_v = _max_velocity(snap)
@@ -163,13 +197,19 @@ def summarize_lbm_boundary_diagnostics(
         "midplane_mean_ux": plane_mean_velocity_x(snap, mid_x),
         "inlet_flux": inlet_flux,
         "outlet_flux": outlet_flux,
+        "midplane_flux": midplane_flux,
         "flux_imbalance_abs": _finite_float(flux_imbalance_abs),
         "flux_imbalance_rel": _finite_float(flux_imbalance_abs / scale),
         "flux_balance_reported": True,
         "max_v": max_v,
         "mach_proxy_observed": _finite_float(max_v / math.sqrt(1.0 / 3.0)),
         "centerline_ux_profile": centerline_profile_x(snap),
+        "sampled_x_profile_flux": sampled_x_profile_flux(snap),
         "outlet_reflection_proxy": outlet_reflection_proxy(snap),
+        "outlet_plane_ux_min": outlet_plane["ux_min"],
+        "outlet_plane_ux_max": outlet_plane["ux_max"],
+        "outlet_plane_ux_mean": outlet_plane["ux_mean"],
+        "outlet_plane_negative_ux_fraction": outlet_plane["negative_ux_fraction"],
         "all_finite": _all_numeric_finite(snap),
     }
 

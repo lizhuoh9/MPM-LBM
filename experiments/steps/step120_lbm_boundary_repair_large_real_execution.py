@@ -91,6 +91,10 @@ REPAIRED_CANDIDATE_SEMANTICS = {
     "regularized_mass_balanced_pressure_outlet",
     "convective_mass_balanced_pressure_outlet",
 }
+FLOW_REPAIR_CANDIDATE_SEMANTICS = {
+    "regularized_flux_matched_pressure_outlet",
+    "convective_flux_matched_damped_outlet",
+}
 CANDIDATE_SEMANTICS = STEP127_CANDIDATE_SEMANTICS | REPAIRED_CANDIDATE_SEMANTICS
 REFERENCE_SEMANTICS = {
     "equilibrium_all_population_reset",
@@ -123,6 +127,11 @@ SOLVER_STATE_HASH_FIELDS = {
     "open_boundary_u_max",
     "open_boundary_noneq_cap",
     "open_boundary_population_floor",
+    "open_boundary_flux_feedback_gain_u",
+    "open_boundary_flux_feedback_gain_rho",
+    "open_boundary_flux_filter_alpha",
+    "open_boundary_flux_correction_cap_u",
+    "open_boundary_convective_blend_weight",
 }
 
 
@@ -257,6 +266,48 @@ def step120_real_run_specs(output_interval: int = 25) -> List[Step120RunSpec]:
             requested_nx=48,
             requested_n_steps=500,
             row_role="repair_candidate_48",
+        ),
+        Step120RunSpec(
+            name="duct_only_48_regularized_flux_matched_pressure_outlet_250step_triage",
+            nx=48,
+            ny=48,
+            nz=48,
+            n_steps=250,
+            output_interval=output_interval,
+            failure_check_interval=5,
+            checkpoint_every=50,
+            open_boundary_semantics="regularized_flux_matched_pressure_outlet",
+            geometry_mode="duct_only",
+            requested_nx=48,
+            requested_n_steps=250,
+            row_role="flow_repair_candidate_48",
+            open_boundary_flux_feedback_gain_u=0.01,
+            open_boundary_flux_feedback_gain_rho=0.005,
+            open_boundary_flux_filter_alpha=0.05,
+            open_boundary_flux_correction_cap_u=0.005,
+            open_boundary_convective_blend_weight=0.05,
+            artifact_scope_note="Step130 bounded 48^3 flow-development triage; not a selected96 enabling row",
+        ),
+        Step120RunSpec(
+            name="duct_only_48_convective_flux_matched_damped_outlet_250step_triage",
+            nx=48,
+            ny=48,
+            nz=48,
+            n_steps=250,
+            output_interval=output_interval,
+            failure_check_interval=5,
+            checkpoint_every=50,
+            open_boundary_semantics="convective_flux_matched_damped_outlet",
+            geometry_mode="duct_only",
+            requested_nx=48,
+            requested_n_steps=250,
+            row_role="flow_repair_candidate_48",
+            open_boundary_flux_feedback_gain_u=0.01,
+            open_boundary_flux_feedback_gain_rho=0.005,
+            open_boundary_flux_filter_alpha=0.05,
+            open_boundary_flux_correction_cap_u=0.005,
+            open_boundary_convective_blend_weight=0.05,
+            artifact_scope_note="Step130 bounded 48^3 convective damped flow-development triage; not a selected96 enabling row",
         ),
         Step120RunSpec(
             name="duct_only_96_regularized_limited_physical_nu_report_only_100step_guarded_real",
@@ -439,6 +490,7 @@ def run_step120_row(
             if mass_initial is None:
                 mass_initial = summary["mass_total"]
                 summary = summarize_lbm_boundary_diagnostics(lbm, step=step, mass_initial=mass_initial)
+            summary.update(_flow_development_diagnostic_record(summary, spec, lbm.get_open_boundary_limiter_stats()))
             if stability is None:
                 stability = summarize_step120_lightweight_stability(lbm, step)
                 if "mass_total" in stability:
@@ -666,6 +718,10 @@ def summarize_step120_limiter_activation(stats_or_lbm: Any, spec: Step120RunSpec
         "mass_balance_correction_abs_sum_step": _finite_float(stats.get("mass_balance_correction_abs_sum_step", 0.0) or 0.0),
         "unknown_population_delta_abs_sum": _finite_float(stats.get("unknown_population_delta_abs_sum_run", 0.0) or 0.0),
         "unknown_population_delta_abs_sum_step": _finite_float(stats.get("unknown_population_delta_abs_sum_step", 0.0) or 0.0),
+        "flow_correction_delta_abs_sum": _finite_float(stats.get("flow_correction_delta_abs_sum_run", 0.0) or 0.0),
+        "flow_correction_delta_abs_sum_step": _finite_float(stats.get("flow_correction_delta_abs_sum_step", 0.0) or 0.0),
+        "flow_outlet_flux_error_filtered": _finite_float(stats.get("flow_outlet_flux_error_filtered_run", 0.0) or 0.0),
+        "flow_correction_gain_effective": _finite_float(stats.get("flow_correction_gain_effective_step", 0.0) or 0.0),
         "validation_blocked_by_limiter_activation": bool(activation_fraction > fraction_limit),
         "validation_claim_allowed": False,
     }
@@ -1372,6 +1428,11 @@ def _summary_row(
         "open_boundary_u_max": float(spec.open_boundary_u_max),
         "open_boundary_noneq_cap": float(spec.open_boundary_noneq_cap),
         "open_boundary_population_floor": spec.open_boundary_population_floor,
+        "open_boundary_flux_feedback_gain_u": float(spec.open_boundary_flux_feedback_gain_u),
+        "open_boundary_flux_feedback_gain_rho": float(spec.open_boundary_flux_feedback_gain_rho),
+        "open_boundary_flux_filter_alpha": float(spec.open_boundary_flux_filter_alpha),
+        "open_boundary_flux_correction_cap_u": float(spec.open_boundary_flux_correction_cap_u),
+        "open_boundary_convective_blend_weight": float(spec.open_boundary_convective_blend_weight),
         "inlet_u_lbm": float(spec.inlet_u_lbm),
         "outlet_rho": float(spec.outlet_rho),
         "lbm_niu": float(tau_report["lbm_niu"]),
@@ -1419,6 +1480,8 @@ def _summary_row(
         "outlet_to_inlet_flux_ratio_tail_mean": outlet_to_inlet_flux_ratio_tail_mean,
         "midplane_to_inlet_flux_ratio_tail_mean": midplane_to_inlet_flux_ratio_tail_mean,
         "flow_development_gate_pass": bool(flow_development_gate_pass),
+        "step130_flow_repair_triage": bool(spec.row_role == "flow_repair_candidate_48" and spec.requested_steps() < 500),
+        "selected96_claim_allowed": False,
         "mass_total_delta_rel_final": mass_total_delta_rel_final,
         "mach_proxy_observed_max": mach_proxy_observed_max,
         "skipped_due_to_tau_margin": bool(skipped_due_to_tau_margin),
@@ -1438,6 +1501,8 @@ def _summary_row(
         "mass_balance_correction_count": int(limiter_summary.get("mass_balance_correction_count", 0)),
         "mass_balance_correction_abs_sum": _finite_float(limiter_summary.get("mass_balance_correction_abs_sum", 0.0)),
         "unknown_population_delta_abs_sum": _finite_float(limiter_summary.get("unknown_population_delta_abs_sum", 0.0)),
+        "flow_correction_delta_abs_sum": _finite_float(limiter_summary.get("flow_correction_delta_abs_sum", 0.0)),
+        "flow_outlet_flux_error_filtered": _finite_float(limiter_summary.get("flow_outlet_flux_error_filtered", 0.0)),
         "checkpoint_available": bool(checkpoint_available),
         "runtime_s": _finite_float(runtime_s),
     }
@@ -1465,6 +1530,12 @@ def _metadata(
         "failure_check_interval": int(spec.failure_check_interval),
         "full_population_snapshot_interval": int(spec.full_population_snapshot_interval),
         "artifact_scope_note": spec.artifact_scope_note,
+        "open_boundary_flux_feedback_gain_u": float(spec.open_boundary_flux_feedback_gain_u),
+        "open_boundary_flux_feedback_gain_rho": float(spec.open_boundary_flux_feedback_gain_rho),
+        "open_boundary_flux_filter_alpha": float(spec.open_boundary_flux_filter_alpha),
+        "open_boundary_flux_correction_cap_u": float(spec.open_boundary_flux_correction_cap_u),
+        "open_boundary_convective_blend_weight": float(spec.open_boundary_convective_blend_weight),
+        "step130_flow_repair_triage": bool(spec.row_role == "flow_repair_candidate_48"),
         "step120_schema_version": STEP120_SCHEMA_VERSION,
         "synthetic_diagnostic_mode": False,
         "fluid_only": True,
@@ -1499,6 +1570,9 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         "convective_outlet_used": spec.open_boundary_semantics == "convective_pressure_outlet_experimental",
         "regularized_mass_balanced_pressure_outlet_used": spec.open_boundary_semantics == "regularized_mass_balanced_pressure_outlet",
         "convective_mass_balanced_pressure_outlet_used": spec.open_boundary_semantics == "convective_mass_balanced_pressure_outlet",
+        "regularized_flux_matched_pressure_outlet_used": spec.open_boundary_semantics == "regularized_flux_matched_pressure_outlet",
+        "convective_flux_matched_damped_outlet_used": spec.open_boundary_semantics == "convective_flux_matched_damped_outlet",
+        "step130_flow_repair_candidate": spec.row_role == "flow_repair_candidate_48",
         "all_population_equilibrium_reset_used": spec.open_boundary_semantics == "equilibrium_all_population_reset",
         "open_boundary_limiter_enabled": bool(spec.open_boundary_limiter_enabled),
         "open_boundary_rho_min": float(spec.open_boundary_rho_min),
@@ -1506,6 +1580,11 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         "open_boundary_u_max": float(spec.open_boundary_u_max),
         "open_boundary_noneq_cap": float(spec.open_boundary_noneq_cap),
         "open_boundary_population_floor": spec.open_boundary_population_floor,
+        "open_boundary_flux_feedback_gain_u": float(spec.open_boundary_flux_feedback_gain_u),
+        "open_boundary_flux_feedback_gain_rho": float(spec.open_boundary_flux_feedback_gain_rho),
+        "open_boundary_flux_filter_alpha": float(spec.open_boundary_flux_filter_alpha),
+        "open_boundary_flux_correction_cap_u": float(spec.open_boundary_flux_correction_cap_u),
+        "open_boundary_convective_blend_weight": float(spec.open_boundary_convective_blend_weight),
         "actual_limiter_counter_required": True,
         "implemented_axis": "x",
         "pressure_outlet_density": float(spec.outlet_rho),
@@ -1632,6 +1711,60 @@ def _combine_step120_records(
     return _dedupe_step120_records(combined)
 
 
+def _flow_development_diagnostic_record(
+    record: Dict[str, Any],
+    spec: Step120RunSpec,
+    stats: Optional[Dict[str, Any]] = None,
+) -> Dict[str, Any]:
+    stats = stats or {}
+    target_outlet_flux = _finite_float(record.get("inlet_flux", 0.0))
+    outlet_flux_after_correction = _finite_float(record.get("outlet_flux", 0.0))
+    outlet_flux_error = _finite_float(target_outlet_flux - outlet_flux_after_correction)
+    return {
+        "step": int(record.get("step", 0) or 0),
+        "lbm_open_boundary_semantics": spec.open_boundary_semantics,
+        "row_role": spec.row_role,
+        "target_outlet_flux": target_outlet_flux,
+        "outlet_flux_raw_before_correction": _finite_float(stats.get("flow_outlet_flux_raw_before_correction_step", outlet_flux_after_correction)),
+        "outlet_flux_after_correction": outlet_flux_after_correction,
+        "outlet_flux_error": outlet_flux_error,
+        "outlet_flux_error_filtered": _finite_float(stats.get("flow_outlet_flux_error_filtered_run", outlet_flux_error)),
+        "correction_gain_effective": _finite_float(stats.get("flow_correction_gain_effective_step", spec.open_boundary_flux_feedback_gain_u)),
+        "correction_delta_abs_sum": _finite_float(stats.get("flow_correction_delta_abs_sum_step", 0.0)),
+        "correction_delta_abs_sum_run": _finite_float(stats.get("flow_correction_delta_abs_sum_run", 0.0)),
+        "outlet_plane_ux_min": _finite_float(record.get("outlet_plane_ux_min", 0.0)),
+        "outlet_plane_ux_max": _finite_float(record.get("outlet_plane_ux_max", 0.0)),
+        "outlet_plane_ux_mean": _finite_float(record.get("outlet_plane_ux_mean", 0.0)),
+        "outlet_plane_negative_ux_fraction": _finite_float(record.get("outlet_plane_negative_ux_fraction", 0.0)),
+        "midplane_flux": _finite_float(record.get("midplane_flux", 0.0)),
+        "sampled_x_profile_flux": str(record.get("sampled_x_profile_flux") or ""),
+        "mass_total_delta_rel": _finite_float(record.get("mass_total_delta_rel", 0.0)),
+        "validation_claim_allowed": False,
+        "selected96_claim_allowed": False,
+    }
+
+
+def _write_flow_development_diagnostics(row_path: Path, records: Sequence[Dict[str, Any]]) -> None:
+    diagnostics = [_flow_development_diagnostic_row_from_record(row) for row in records]
+    _write_csv(row_path / "flow_development_diagnostics.csv", diagnostics, FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS)
+    _write_json(
+        row_path / "flow_development_diagnostics_summary.json",
+        {
+            "step": 130,
+            "artifact": "flow_development_diagnostics",
+            "row_count": int(len(diagnostics)),
+            "bounded_size_artifact": True,
+            "validation_claim_allowed": False,
+            "selected96_claim_allowed": False,
+            "final": diagnostics[-1] if diagnostics else None,
+        },
+    )
+
+
+def _flow_development_diagnostic_row_from_record(record: Dict[str, Any]) -> Dict[str, Any]:
+    return {field: record.get(field) for field in FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS}
+
+
 def _snapshot_anomaly_cell(rho: np.ndarray, v: np.ndarray) -> Tuple[int, int, int]:
     rho_score = np.abs(np.asarray(rho, dtype=float) - 1.0)
     if v.size:
@@ -1672,6 +1805,7 @@ def _write_partial_timeseries(
     _write_boundary_flux_timeseries(row_path / "boundary_flux_timeseries.csv", records)
     _write_density_drift_timeseries(row_path / "density_drift_timeseries.csv", records)
     _write_csv(row_path / "stability_diagnostics_timeseries.csv", list(stability_records), _STABILITY_TIMESERIES_FIELDS)
+    _write_flow_development_diagnostics(row_path, records)
 
 
 def _write_full_population_snapshot(row_path: Path, lbm: LBMFluid3D, step: int, reason: str) -> None:
@@ -1934,6 +2068,10 @@ def _boundary_slug(semantics: Optional[str]) -> str:
         return "regularized_mass_balanced"
     if semantics == "convective_mass_balanced_pressure_outlet":
         return "convective_mass_balanced"
+    if semantics == "regularized_flux_matched_pressure_outlet":
+        return "regularized_flux_matched"
+    if semantics == "convective_flux_matched_damped_outlet":
+        return "convective_flux_matched_damped"
     if semantics == "equilibrium_all_population_reset":
         return "legacy"
     if semantics == "regularized_velocity_pressure":
@@ -2111,6 +2249,29 @@ _RUN_SUMMARY_FIELDS = [
     "limiter_activation_fraction",
     "checkpoint_available",
     "step120_validation_claimed",
+]
+
+FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
+    "step",
+    "lbm_open_boundary_semantics",
+    "row_role",
+    "target_outlet_flux",
+    "outlet_flux_raw_before_correction",
+    "outlet_flux_after_correction",
+    "outlet_flux_error",
+    "outlet_flux_error_filtered",
+    "correction_gain_effective",
+    "correction_delta_abs_sum",
+    "correction_delta_abs_sum_run",
+    "outlet_plane_ux_min",
+    "outlet_plane_ux_max",
+    "outlet_plane_ux_mean",
+    "outlet_plane_negative_ux_fraction",
+    "midplane_flux",
+    "sampled_x_profile_flux",
+    "mass_total_delta_rel",
+    "validation_claim_allowed",
+    "selected96_claim_allowed",
 ]
 
 _STABILITY_TIMESERIES_FIELDS = [

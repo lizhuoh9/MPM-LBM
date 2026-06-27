@@ -19,6 +19,8 @@ VALID_LBM_OPEN_BOUNDARY_SEMANTICS = (
     "convective_pressure_outlet_experimental",
     "regularized_mass_balanced_pressure_outlet",
     "convective_mass_balanced_pressure_outlet",
+    "regularized_flux_matched_pressure_outlet",
+    "convective_flux_matched_damped_outlet",
 )
 
 
@@ -38,6 +40,11 @@ class LBMConfig:
     open_boundary_u_max: float = 0.1
     open_boundary_noneq_cap: float = 0.05
     open_boundary_population_floor: Optional[float] = None
+    open_boundary_flux_feedback_gain_u: float = 0.01
+    open_boundary_flux_feedback_gain_rho: float = 0.005
+    open_boundary_flux_filter_alpha: float = 0.05
+    open_boundary_flux_correction_cap_u: float = 0.005
+    open_boundary_convective_blend_weight: float = 0.05
     sparse_storage: bool = False
 
     force: Tuple[float, float, float] = (0.0, 0.0, 0.0)
@@ -76,3 +83,13 @@ class LBMConfig:
             raise ValueError("open_boundary_u_max must be positive")
         if self.open_boundary_noneq_cap <= 0.0:
             raise ValueError("open_boundary_noneq_cap must be positive")
+        if self.open_boundary_flux_feedback_gain_u < 0.0:
+            raise ValueError("open_boundary_flux_feedback_gain_u must be non-negative")
+        if self.open_boundary_flux_feedback_gain_rho < 0.0:
+            raise ValueError("open_boundary_flux_feedback_gain_rho must be non-negative")
+        if not (0.0 < self.open_boundary_flux_filter_alpha <= 1.0):
+            raise ValueError("open_boundary_flux_filter_alpha must be in (0, 1]")
+        if self.open_boundary_flux_correction_cap_u <= 0.0:
+            raise ValueError("open_boundary_flux_correction_cap_u must be positive")
+        if not (0.0 <= self.open_boundary_convective_blend_weight <= 1.0):
+            raise ValueError("open_boundary_convective_blend_weight must be in [0, 1]")

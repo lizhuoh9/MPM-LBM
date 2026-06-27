@@ -19,6 +19,8 @@ REGULARIZED_VELOCITY_PRESSURE_LIMITED = "regularized_velocity_pressure_limited"
 CONVECTIVE_PRESSURE_OUTLET_EXPERIMENTAL = "convective_pressure_outlet_experimental"
 REGULARIZED_MASS_BALANCED_PRESSURE_OUTLET = "regularized_mass_balanced_pressure_outlet"
 CONVECTIVE_MASS_BALANCED_PRESSURE_OUTLET = "convective_mass_balanced_pressure_outlet"
+REGULARIZED_FLUX_MATCHED_PRESSURE_OUTLET = "regularized_flux_matched_pressure_outlet"
+CONVECTIVE_FLUX_MATCHED_DAMPED_OUTLET = "convective_flux_matched_damped_outlet"
 UNKNOWN_X_MIN_POPULATIONS = (1, 7, 9, 11, 13)
 UNKNOWN_X_MAX_POPULATIONS = (2, 8, 10, 12, 14)
 
@@ -48,6 +50,11 @@ class LBMFluid3D:
         self.open_boundary_rho_max = float(config.open_boundary_rho_max)
         self.open_boundary_u_max = float(config.open_boundary_u_max)
         self.open_boundary_noneq_cap = float(config.open_boundary_noneq_cap)
+        self.open_boundary_flux_feedback_gain_u = float(config.open_boundary_flux_feedback_gain_u)
+        self.open_boundary_flux_feedback_gain_rho = float(config.open_boundary_flux_feedback_gain_rho)
+        self.open_boundary_flux_filter_alpha = float(config.open_boundary_flux_filter_alpha)
+        self.open_boundary_flux_correction_cap_u = float(config.open_boundary_flux_correction_cap_u)
+        self.open_boundary_convective_blend_weight = float(config.open_boundary_convective_blend_weight)
         self.open_boundary_population_floor_enabled = config.open_boundary_population_floor is not None
         self.open_boundary_population_floor = float(
             config.open_boundary_population_floor
@@ -89,6 +96,10 @@ class LBMFluid3D:
         self.ob_mass_balance_correction_abs_sum_run = ti.field(ti.f32, shape=())
         self.ob_unknown_population_delta_abs_sum_step = ti.field(ti.f32, shape=())
         self.ob_unknown_population_delta_abs_sum_run = ti.field(ti.f32, shape=())
+        self.ob_flow_correction_delta_abs_sum_step = ti.field(ti.f32, shape=())
+        self.ob_flow_correction_delta_abs_sum_run = ti.field(ti.f32, shape=())
+        self.ob_flow_outlet_flux_error_filtered_run = ti.field(ti.f32, shape=())
+        self.ob_flow_correction_gain_effective_step = ti.field(ti.f32, shape=())
 
         #Boundary condition mode: 0=periodic, 1= fix pressure, 2=fix velocity; boundary pressure value (rho); boundary velocity value for vx,vy,vz
         self.bc_x_left, self.rho_bcxl, self.vx_bcxl, self.vy_bcxl, self.vz_bcxl = (
@@ -495,6 +506,12 @@ class LBMFluid3D:
         if self.open_boundary_semantics == CONVECTIVE_MASS_BALANCED_PRESSURE_OUTLET:
             self.apply_convective_mass_balanced_pressure_outlet_x_open_boundaries()
             return
+        if self.open_boundary_semantics == REGULARIZED_FLUX_MATCHED_PRESSURE_OUTLET:
+            self.apply_regularized_flux_matched_pressure_outlet_x_open_boundaries()
+            return
+        if self.open_boundary_semantics == CONVECTIVE_FLUX_MATCHED_DAMPED_OUTLET:
+            self.apply_convective_flux_matched_damped_outlet_x_open_boundaries()
+            return
         self.Boundary_condition_legacy()
 
     @ti.kernel
@@ -507,6 +524,8 @@ class LBMFluid3D:
         self.ob_mass_balance_correction_count_step[None] = 0
         self.ob_mass_balance_correction_abs_sum_step[None] = 0.0
         self.ob_unknown_population_delta_abs_sum_step[None] = 0.0
+        self.ob_flow_correction_delta_abs_sum_step[None] = 0.0
+        self.ob_flow_correction_gain_effective_step[None] = 0.0
 
     @ti.kernel
     def clear_open_boundary_limiter_run_counters(self):
@@ -526,6 +545,10 @@ class LBMFluid3D:
         self.ob_mass_balance_correction_abs_sum_run[None] = 0.0
         self.ob_unknown_population_delta_abs_sum_step[None] = 0.0
         self.ob_unknown_population_delta_abs_sum_run[None] = 0.0
+        self.ob_flow_correction_delta_abs_sum_step[None] = 0.0
+        self.ob_flow_correction_delta_abs_sum_run[None] = 0.0
+        self.ob_flow_outlet_flux_error_filtered_run[None] = 0.0
+        self.ob_flow_correction_gain_effective_step[None] = 0.0
 
     @ti.kernel
     def set_open_boundary_limiter_run_counters(
@@ -552,6 +575,10 @@ class LBMFluid3D:
         self.ob_mass_balance_correction_abs_sum_run[None] = 0.0
         self.ob_unknown_population_delta_abs_sum_step[None] = 0.0
         self.ob_unknown_population_delta_abs_sum_run[None] = 0.0
+        self.ob_flow_correction_delta_abs_sum_step[None] = 0.0
+        self.ob_flow_correction_delta_abs_sum_run[None] = 0.0
+        self.ob_flow_outlet_flux_error_filtered_run[None] = 0.0
+        self.ob_flow_correction_gain_effective_step[None] = 0.0
 
     @ti.kernel
     def set_open_boundary_repair_run_counters(
@@ -566,6 +593,10 @@ class LBMFluid3D:
         self.ob_mass_balance_correction_abs_sum_run[None] = mass_balance_correction_abs_sum
         self.ob_unknown_population_delta_abs_sum_step[None] = 0.0
         self.ob_unknown_population_delta_abs_sum_run[None] = unknown_population_delta_abs_sum
+        self.ob_flow_correction_delta_abs_sum_step[None] = 0.0
+        self.ob_flow_correction_delta_abs_sum_run[None] = 0.0
+        self.ob_flow_outlet_flux_error_filtered_run[None] = 0.0
+        self.ob_flow_correction_gain_effective_step[None] = 0.0
 
     @ti.kernel
     def reduce_lbm_stability_diagnostics(self):
@@ -668,6 +699,15 @@ class LBMFluid3D:
             "mass_balance_correction_abs_sum_run": float(self.ob_mass_balance_correction_abs_sum_run[None]),
             "unknown_population_delta_abs_sum_step": float(self.ob_unknown_population_delta_abs_sum_step[None]),
             "unknown_population_delta_abs_sum_run": float(self.ob_unknown_population_delta_abs_sum_run[None]),
+            "flow_correction_delta_abs_sum_step": float(self.ob_flow_correction_delta_abs_sum_step[None]),
+            "flow_correction_delta_abs_sum_run": float(self.ob_flow_correction_delta_abs_sum_run[None]),
+            "flow_outlet_flux_error_filtered_run": float(self.ob_flow_outlet_flux_error_filtered_run[None]),
+            "flow_correction_gain_effective_step": float(self.ob_flow_correction_gain_effective_step[None]),
+            "flow_feedback_gain_u": float(self.open_boundary_flux_feedback_gain_u),
+            "flow_feedback_gain_rho": float(self.open_boundary_flux_feedback_gain_rho),
+            "flow_filter_alpha": float(self.open_boundary_flux_filter_alpha),
+            "flow_correction_cap_u": float(self.open_boundary_flux_correction_cap_u),
+            "flow_convective_blend_weight": float(self.open_boundary_convective_blend_weight),
         }
 
     @ti.kernel
@@ -868,6 +908,17 @@ class LBMFluid3D:
         ti.atomic_add(self.ob_unknown_population_delta_abs_sum_run[None], population_delta_abs)
 
     @ti.func
+    def _record_open_boundary_flow_correction(self, correction_abs, outlet_flux_error):
+        ti.atomic_add(self.ob_flow_correction_delta_abs_sum_step[None], correction_abs)
+        ti.atomic_add(self.ob_flow_correction_delta_abs_sum_run[None], correction_abs)
+        filtered = (
+            (1.0 - self.open_boundary_flux_filter_alpha) * self.ob_flow_outlet_flux_error_filtered_run[None]
+            + self.open_boundary_flux_filter_alpha * outlet_flux_error
+        )
+        self.ob_flow_outlet_flux_error_filtered_run[None] = filtered
+        self.ob_flow_correction_gain_effective_step[None] = self.open_boundary_flux_feedback_gain_u
+
+    @ti.func
     def _regularized_mass_balanced_population(self, s, target_rho, target_u, ni, nj, nk):
         rho_feedback = self._bounded_scalar(0.02 * (self.rho0 - self.rho[ni, nj, nk]), 0.01)
         velocity_feedback = self._bounded_scalar(0.05 * (self.vx_bcxl - target_u[0]), 0.02)
@@ -886,6 +937,38 @@ class LBMFluid3D:
         regularized = self._regularized_mass_balanced_population(s, self.rho_bcxr, target_u, ni, nj, nk)
         repaired = convective + 0.15 * (regularized - convective)
         self._record_open_boundary_repair_correction(0.0, ti.abs(repaired - convective))
+        return self._limit_open_boundary_population(repaired)
+
+    @ti.func
+    def _regularized_flux_matched_population(self, s, target_rho, target_u, ni, nj, nk):
+        rho_feedback = self._bounded_scalar(
+            self.open_boundary_flux_feedback_gain_rho * (self.rho0 - self.rho[ni, nj, nk]),
+            0.01,
+        )
+        velocity_error = self.vx_bcxl - target_u[0]
+        velocity_feedback = self._bounded_scalar(
+            self.open_boundary_flux_feedback_gain_u * velocity_error,
+            self.open_boundary_flux_correction_cap_u,
+        )
+        repaired_u = target_u
+        repaired_u[0] = target_u[0] + velocity_feedback
+        repaired_rho = target_rho + rho_feedback
+        before = self._regularized_population(s, target_rho, target_u, ni, nj, nk)
+        after = self._regularized_population(s, repaired_rho, repaired_u, ni, nj, nk)
+        correction_abs = ti.abs(rho_feedback) + ti.abs(velocity_feedback)
+        self._record_open_boundary_repair_correction(correction_abs, ti.abs(after - before))
+        self._record_open_boundary_flow_correction(ti.abs(velocity_feedback), velocity_error)
+        return self._limit_open_boundary_population(after)
+
+    @ti.func
+    def _convective_flux_matched_damped_population(self, s, bi, bj, bk, ni, nj, nk, n2i, n2j, n2k):
+        convective = self._convective_outlet_population(s, bi, bj, bk, ni, nj, nk, n2i, n2j, n2k)
+        target_u = self.v[ni, nj, nk]
+        regularized = self._regularized_flux_matched_population(s, self.rho_bcxr, target_u, ni, nj, nk)
+        blend = self.open_boundary_convective_blend_weight
+        repaired = convective + blend * (regularized - convective)
+        self._record_open_boundary_repair_correction(0.0, ti.abs(repaired - convective))
+        self._record_open_boundary_flow_correction(ti.abs(repaired - convective), self.vx_bcxl - target_u[0])
         return self._limit_open_boundary_population(repaired)
 
     @ti.kernel
@@ -1118,6 +1201,105 @@ class LBMFluid3D:
                         n2i = self.nx - 1
                     for s in ti.static(UNKNOWN_X_MAX_POPULATIONS):
                         self.F[self.nx-1,j,k][s] = self._convective_mass_balanced_population(
+                            s, self.nx - 1, j, k, ni, j, k, n2i, j, k
+                        )
+
+        if ti.static(self.bc_x_right==2):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[self.nx-1,j,k] == 0:
+                    ni = self.nx - 2
+                    if self.solid[self.nx-2,j,k] > 0:
+                        ni = self.nx - 1
+                    target_rho = self.rho[ni,j,k]
+                    if target_rho <= 1.0e-6:
+                        target_rho = self.rho0
+                    target_u = ti.Vector(self.bc_vel_x_right)
+                    for s in ti.static(UNKNOWN_X_MAX_POPULATIONS):
+                        self.F[self.nx-1,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
+
+    @ti.kernel
+    def apply_regularized_flux_matched_pressure_outlet_x_open_boundaries(self):
+        if ti.static(self.bc_x_left==1):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[0,j,k] == 0:
+                    ni = 1
+                    if self.solid[1,j,k] > 0:
+                        ni = 0
+                    target_u = self.v[ni,j,k]
+                    for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
+                        self.F[0,j,k][s] = self._regularized_population(s, self.rho_bcxl, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_left==2):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[0,j,k] == 0:
+                    ni = 1
+                    if self.solid[1,j,k] > 0:
+                        ni = 0
+                    target_rho = self.rho[ni,j,k]
+                    if target_rho <= 1.0e-6:
+                        target_rho = self.rho0
+                    target_u = ti.Vector(self.bc_vel_x_left)
+                    for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
+                        self.F[0,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_right==1):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[self.nx-1,j,k] == 0:
+                    ni = self.nx - 2
+                    if self.solid[self.nx-2,j,k] > 0:
+                        ni = self.nx - 1
+                    target_u = self.v[ni,j,k]
+                    for s in ti.static(UNKNOWN_X_MAX_POPULATIONS):
+                        self.F[self.nx-1,j,k][s] = self._regularized_flux_matched_population(s, self.rho_bcxr, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_right==2):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[self.nx-1,j,k] == 0:
+                    ni = self.nx - 2
+                    if self.solid[self.nx-2,j,k] > 0:
+                        ni = self.nx - 1
+                    target_rho = self.rho[ni,j,k]
+                    if target_rho <= 1.0e-6:
+                        target_rho = self.rho0
+                    target_u = ti.Vector(self.bc_vel_x_right)
+                    for s in ti.static(UNKNOWN_X_MAX_POPULATIONS):
+                        self.F[self.nx-1,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
+
+    @ti.kernel
+    def apply_convective_flux_matched_damped_outlet_x_open_boundaries(self):
+        if ti.static(self.bc_x_left==1):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[0,j,k] == 0:
+                    ni = 1
+                    if self.solid[1,j,k] > 0:
+                        ni = 0
+                    target_u = self.v[ni,j,k]
+                    for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
+                        self.F[0,j,k][s] = self._regularized_population(s, self.rho_bcxl, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_left==2):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[0,j,k] == 0:
+                    ni = 1
+                    if self.solid[1,j,k] > 0:
+                        ni = 0
+                    target_rho = self.rho[ni,j,k]
+                    if target_rho <= 1.0e-6:
+                        target_rho = self.rho0
+                    target_u = ti.Vector(self.bc_vel_x_left)
+                    for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
+                        self.F[0,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
+
+        if ti.static(self.bc_x_right==1):
+            for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
+                if self.solid[self.nx-1,j,k] == 0:
+                    ni = self.nx - 2
+                    n2i = self.nx - 3
+                    if self.solid[self.nx-2,j,k] > 0:
+                        ni = self.nx - 1
+                        n2i = self.nx - 1
+                    for s in ti.static(UNKNOWN_X_MAX_POPULATIONS):
+                        self.F[self.nx-1,j,k][s] = self._convective_flux_matched_damped_population(
                             s, self.nx - 1, j, k, ni, j, k, n2i, j, k
                         )
 

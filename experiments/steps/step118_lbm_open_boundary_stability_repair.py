@@ -72,6 +72,11 @@ class Step118RunSpec(Step116RunSpec):
     open_boundary_u_max: float = 0.1
     open_boundary_noneq_cap: float = 0.05
     open_boundary_population_floor: Optional[float] = None
+    open_boundary_flux_feedback_gain_u: float = 0.01
+    open_boundary_flux_feedback_gain_rho: float = 0.005
+    open_boundary_flux_filter_alpha: float = 0.05
+    open_boundary_flux_correction_cap_u: float = 0.005
+    open_boundary_convective_blend_weight: float = 0.05
     synthetic_diagnostic_mode: bool = False
 
 
@@ -391,6 +396,11 @@ def _make_lbm_config(spec: Step118RunSpec, tau_report: Dict[str, Any]) -> LBMCon
         open_boundary_u_max=float(spec.open_boundary_u_max),
         open_boundary_noneq_cap=float(spec.open_boundary_noneq_cap),
         open_boundary_population_floor=spec.open_boundary_population_floor,
+        open_boundary_flux_feedback_gain_u=float(spec.open_boundary_flux_feedback_gain_u),
+        open_boundary_flux_feedback_gain_rho=float(spec.open_boundary_flux_feedback_gain_rho),
+        open_boundary_flux_filter_alpha=float(spec.open_boundary_flux_filter_alpha),
+        open_boundary_flux_correction_cap_u=float(spec.open_boundary_flux_correction_cap_u),
+        open_boundary_convective_blend_weight=float(spec.open_boundary_convective_blend_weight),
         bc_x_left=2,
         bc_x_right=1,
         vel_bc_x_left=(float(spec.inlet_u_lbm), 0.0, 0.0),
