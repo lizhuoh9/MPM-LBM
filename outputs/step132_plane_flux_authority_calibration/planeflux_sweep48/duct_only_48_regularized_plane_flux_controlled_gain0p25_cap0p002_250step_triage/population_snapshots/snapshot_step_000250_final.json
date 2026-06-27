@@ -1,0 +1,49 @@
+{
+  "anomaly_cell": [
+    3,
+    43,
+    4
+  ],
+  "f_shape": [
+    48,
+    48,
+    48,
+    19
+  ],
+  "field_stats": {
+    "F_min": 0.024821611121296883,
+    "f_min": 0.024821611121296883,
+    "max_v": 0.0267335157841444,
+    "rho_max": 1.0057611465454102,
+    "rho_min": 0.9679452776908875
+  },
+  "local_window": {
+    "bounds": [
+      [
+        2,
+        5
+      ],
+      [
+        42,
+        45
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    "max_v": 0.0267335,
+    "rho_max": 0.9825108,
+    "rho_min": 0.9821834
+  },
+  "raw_arrays_committed_to_git": false,
+  "reason": "final",
+  "rho_shape": [
+    48,
+    48,
+    48
+  ],
+  "runtime_npz_path": "D:\\working\\squid robot\\LBM\\MPM-LBM\\outputs\\tmp\\step120_failure_snapshots\\duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p002_250step_triage\\snapshot_step_000250_final.npz",
+  "snapshot_payload_omitted_from_git": true,
+  "step": 250
+}

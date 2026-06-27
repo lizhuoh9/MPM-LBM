@@ -4,6 +4,18 @@ The active campaign is the Fluent duct/flap LBM open-boundary repair campaign.
 The current artifact state is `48_candidates_failed` with final classification
 `boundary_repair_failed_revisit_lbm_solver`.
 
+Step132 added a bounded `planeflux_sweep48` controller-authority calibration
+phase that reuses the Step131 plane-flux semantics. Six real 48^3 / 250-step
+LBM-only sweep rows completed 250/250 with finite state and no first-failure
+event, but all six still failed candidate mass acceptance and flow-development
+hard gates. The best mass row was
+`duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_250step_triage`
+with `candidate_mass_acceptance_observed_abs = 0.014016928659457415`; the best
+flux-imbalance row was
+`duct_only_48_convective_plane_flux_controlled_damped_gain0p10_cap0p002_250step_triage`
+with `flux_imbalance_rel_tail_mean = 0.26260675631911695`. No 500-step
+promotion was justified, and selected 96^3 remains blocked.
+
 Step131 added a true plane-integrated flux-error controller with
 `regularized_plane_flux_controlled_pressure_outlet` and
 `convective_plane_flux_controlled_damped_outlet`, plus a distinct Step121
@@ -80,5 +92,5 @@ commit from the current code commit in `ACTIVE_CAMPAIGN.json` and Step121
 campaign manifests, and it records `code_commit_at_run` for Step120 row
 artifacts.
 
-Step131 does not claim 48^3 repaired-candidate success, selected 96^3 success,
+Step132 does not claim 48^3 repaired-candidate success, selected 96^3 success,
 quasi-2D validation, FSI validation, Fluent validation, or Figure 29.3 parity.

@@ -97,6 +97,35 @@ Current Step131 plane-flux-control triage surface and evidence:
 - No 500-step promotion was run from Step131 triage.
 - Selected 96^3 execution remains blocked.
 
+Current Step132 plane-flux-controller authority sweep evidence:
+
+- Step132 reuses the Step131 plane-flux-control semantics and adds a distinct
+  `planeflux_sweep48` phase for controller-authority calibration.
+- The Step132 sweep ran six real 48^3 / 250-step LBM-only rows across bounded
+  gain/cap combinations. Every row completed 250/250, stayed finite, and had no
+  first-failure evidence.
+- Step132 sweep rows remain triage rows with
+  `row_role = plane_flux_control_candidate_48`; they are not in the
+  selected-candidate semantics set and cannot enable selected 96^3.
+- All six rows failed candidate mass acceptance and flow-development hard
+  gates. `accepted_row_count = 0`.
+- The best mass row was
+  `duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_250step_triage`
+  with `candidate_mass_acceptance_observed_abs = 0.014016928659457415`,
+  `flux_imbalance_rel_tail_mean = 0.39506523169401825`,
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.0307369515412572`,
+  `midplane_to_inlet_flux_ratio_tail_mean = 0.9160340533832297`, and
+  `outlet_flux_tail_cv = 0.46453328972807856`.
+- The best flux-imbalance row was
+  `duct_only_48_convective_plane_flux_controlled_damped_gain0p10_cap0p002_250step_triage`
+  with `flux_imbalance_rel_tail_mean = 0.26260675631911695`,
+  `candidate_mass_acceptance_observed_abs = 0.02197742027071526`,
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.4076835420515006`,
+  `midplane_to_inlet_flux_ratio_tail_mean = 1.2354670381858301`, and
+  `outlet_flux_tail_cv = 0.20215625232941636`.
+- No 500-step promotion was run from Step132 triage.
+- Selected 96^3 execution remains blocked.
+
 Current Step124 gate requirements:
 
 - 48^3 legacy reference rows must either complete the requested real window or
