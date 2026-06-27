@@ -264,6 +264,8 @@ class LBMFluid3D:
 
     def init_simulation(self):
         self.bc_vel_x_left = [self.vx_bcxl, self.vy_bcxl, self.vz_bcxl]
+        self.bc_vel_x_left_dynamic = ti.Vector.field(3, ti.f32, shape=())
+        self.bc_vel_x_left_dynamic[None] = self.bc_vel_x_left
         self.bc_vel_x_right = [self.vx_bcxr, self.vy_bcxr, self.vz_bcxr]
         self.bc_vel_y_left = [self.vx_bcyl, self.vy_bcyl, self.vz_bcyl]
         self.bc_vel_y_right = [self.vx_bcyr, self.vy_bcyr, self.vz_bcyr]
@@ -855,7 +857,7 @@ class LBMFluid3D:
                 if (self.solid[0,j,k]==0):
                     for s in ti.static(range(19)):
                         #F[0,j,k][s]=feq(LR[s], 1.0, bc_vel_x_left[None])-F[0,j,k,LR[s]]+feq(s,1.0,bc_vel_x_left[None])  #!!!!!!change velocity in feq into vector
-                        self.F[0,j,k][s]=self.feq(s,1.0,ti.Vector(self.bc_vel_x_left))
+                        self.F[0,j,k][s]=self.feq(s,1.0,self.bc_vel_x_left_dynamic[None])
 
         if ti.static(self.bc_x_right==1):
             for j,k in ti.ndrange((0,self.ny),(0,self.nz)):
@@ -1239,7 +1241,7 @@ class LBMFluid3D:
                     target_rho = self.rho[ni,j,k]
                     if target_rho <= 1.0e-6:
                         target_rho = self.rho0
-                    target_u = ti.Vector(self.bc_vel_x_left)
+                    target_u = self.bc_vel_x_left_dynamic[None]
                     for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
                         self.F[0,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
 
@@ -1287,7 +1289,7 @@ class LBMFluid3D:
                     target_rho = self.rho[ni,j,k]
                     if target_rho <= 1.0e-6:
                         target_rho = self.rho0
-                    target_u = ti.Vector(self.bc_vel_x_left)
+                    target_u = self.bc_vel_x_left_dynamic[None]
                     for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
                         self.F[0,j,k][s] = self._limited_regularized_population(s, target_rho, target_u, ni, j, k)
 
@@ -1335,7 +1337,7 @@ class LBMFluid3D:
                     target_rho = self.rho[ni,j,k]
                     if target_rho <= 1.0e-6:
                         target_rho = self.rho0
-                    target_u = ti.Vector(self.bc_vel_x_left)
+                    target_u = self.bc_vel_x_left_dynamic[None]
                     for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
                         self.F[0,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
 
@@ -1386,7 +1388,7 @@ class LBMFluid3D:
                     target_rho = self.rho[ni,j,k]
                     if target_rho <= 1.0e-6:
                         target_rho = self.rho0
-                    target_u = ti.Vector(self.bc_vel_x_left)
+                    target_u = self.bc_vel_x_left_dynamic[None]
                     for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
                         self.F[0,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
 
@@ -1434,7 +1436,7 @@ class LBMFluid3D:
                     target_rho = self.rho[ni,j,k]
                     if target_rho <= 1.0e-6:
                         target_rho = self.rho0
-                    target_u = ti.Vector(self.bc_vel_x_left)
+                    target_u = self.bc_vel_x_left_dynamic[None]
                     for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
                         self.F[0,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
 
@@ -1485,7 +1487,7 @@ class LBMFluid3D:
                     target_rho = self.rho[ni,j,k]
                     if target_rho <= 1.0e-6:
                         target_rho = self.rho0
-                    target_u = ti.Vector(self.bc_vel_x_left)
+                    target_u = self.bc_vel_x_left_dynamic[None]
                     for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
                         self.F[0,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
 
@@ -1533,7 +1535,7 @@ class LBMFluid3D:
                     target_rho = self.rho[ni,j,k]
                     if target_rho <= 1.0e-6:
                         target_rho = self.rho0
-                    target_u = ti.Vector(self.bc_vel_x_left)
+                    target_u = self.bc_vel_x_left_dynamic[None]
                     for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
                         self.F[0,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
 
@@ -1584,7 +1586,7 @@ class LBMFluid3D:
                     target_rho = self.rho[ni,j,k]
                     if target_rho <= 1.0e-6:
                         target_rho = self.rho0
-                    target_u = ti.Vector(self.bc_vel_x_left)
+                    target_u = self.bc_vel_x_left_dynamic[None]
                     for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
                         self.F[0,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
 
@@ -1634,7 +1636,7 @@ class LBMFluid3D:
                     target_rho = self.rho[ni,j,k]
                     if target_rho <= 1.0e-6:
                         target_rho = self.rho0
-                    target_u = ti.Vector(self.bc_vel_x_left)
+                    target_u = self.bc_vel_x_left_dynamic[None]
                     for s in ti.static(UNKNOWN_X_MIN_POPULATIONS):
                         self.F[0,j,k][s] = self._regularized_population(s, target_rho, target_u, ni, j, k)
 
@@ -1848,6 +1850,8 @@ class LBMFluid3D:
     def set_bc_vel_x0(self, vel):
         self.bc_x_left = 2
         self.vx_bcxl = vel[0]; self.vy_bcxl = vel[1]; self.vz_bcxl = vel[2];
+        self.bc_vel_x_left = [self.vx_bcxl, self.vy_bcxl, self.vz_bcxl]
+        self.bc_vel_x_left_dynamic[None] = self.bc_vel_x_left
 
     def set_bc_vel_y1(self, vel):
         self.bc_y_right = 2

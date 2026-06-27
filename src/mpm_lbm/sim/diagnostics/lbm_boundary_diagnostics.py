@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import math
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional
 
 import numpy as np
 
@@ -47,6 +47,16 @@ def plane_mean_velocity_x(lbm_or_snapshot: Any, x_index: int) -> float:
     if not np.any(plane):
         return 0.0
     return _finite_float(np.mean(snap["v"][x, :, :, 0][plane]))
+
+
+def plane_mean_density_x(lbm_or_snapshot: Any, x_index: int) -> float:
+    snap = _snapshot(lbm_or_snapshot)
+    mask = fluid_mask(snap)
+    x = _clamp_index(int(x_index), snap["rho"].shape[0])
+    plane = mask[x, :, :]
+    if not np.any(plane):
+        return 0.0
+    return _finite_float(np.mean(snap["rho"][x, :, :][plane]))
 
 
 def density_stats(lbm_or_snapshot: Any) -> Dict[str, float]:
@@ -179,11 +189,36 @@ def plane_density_stats(lbm_or_snapshot: Any, x_index: int) -> Dict[str, float]:
     }
 
 
-def sampled_x_profile_flux(lbm_or_snapshot: Any) -> str:
+def sampled_x_profile_indices(nx: int) -> List[int]:
+    count = max(1, int(nx))
+    if count >= 48:
+        requested = [0, 6, 12, 18, 24, 30, 36, 42, 45, 46, 47]
+    else:
+        requested = [0, count // 4, count // 2, (3 * count) // 4, count - 3, count - 2, count - 1]
+    return sorted({_clamp_index(index, count) for index in requested})
+
+
+def sampled_x_profile_flux_map(lbm_or_snapshot: Any) -> Dict[str, float]:
     snap = _snapshot(lbm_or_snapshot)
     nx = snap["rho"].shape[0]
-    sample_indices = sorted({0, nx // 2, nx - 1})
-    return ";".join(f"{x}:{plane_flux_x(snap, x):.12g}" for x in sample_indices)
+    return {str(x): plane_flux_x(snap, x) for x in sampled_x_profile_indices(nx)}
+
+
+def sampled_x_profile_ux_mean_map(lbm_or_snapshot: Any) -> Dict[str, float]:
+    snap = _snapshot(lbm_or_snapshot)
+    nx = snap["rho"].shape[0]
+    return {str(x): plane_mean_velocity_x(snap, x) for x in sampled_x_profile_indices(nx)}
+
+
+def sampled_x_profile_rho_mean_map(lbm_or_snapshot: Any) -> Dict[str, float]:
+    snap = _snapshot(lbm_or_snapshot)
+    nx = snap["rho"].shape[0]
+    return {str(x): plane_mean_density_x(snap, x) for x in sampled_x_profile_indices(nx)}
+
+
+def sampled_x_profile_flux(lbm_or_snapshot: Any) -> str:
+    flux = sampled_x_profile_flux_map(lbm_or_snapshot)
+    return ";".join(f"{x}:{value:.12g}" for x, value in flux.items())
 
 
 def summarize_lbm_boundary_diagnostics(
@@ -206,6 +241,9 @@ def summarize_lbm_boundary_diagnostics(
     near_outlet_flux_xminus1 = plane_flux_x(snap, nx - 2)
     near_outlet_flux_xminus2 = plane_flux_x(snap, nx - 3)
     near_outlet_flux_xminus3 = plane_flux_x(snap, nx - 4)
+    x_profile_flux_samples = sampled_x_profile_flux_map(snap)
+    x_profile_ux_mean_samples = sampled_x_profile_ux_mean_map(snap)
+    x_profile_rho_mean_samples = sampled_x_profile_rho_mean_map(snap)
     outlet_plane = plane_velocity_x_stats(snap, nx - 1)
     outlet_plane_density = plane_density_stats(snap, nx - 1)
     scale = max(abs(inlet_flux), abs(outlet_flux), 1.0e-12)
@@ -233,6 +271,9 @@ def summarize_lbm_boundary_diagnostics(
         "max_v": max_v,
         "mach_proxy_observed": _finite_float(max_v / math.sqrt(1.0 / 3.0)),
         "centerline_ux_profile": centerline_profile_x(snap),
+        "x_profile_flux_samples": x_profile_flux_samples,
+        "x_profile_ux_mean_samples": x_profile_ux_mean_samples,
+        "x_profile_rho_mean_samples": x_profile_rho_mean_samples,
         "sampled_x_profile_flux": sampled_x_profile_flux(snap),
         "outlet_reflection_proxy": outlet_reflection_proxy(snap),
         "outlet_plane_ux_min": outlet_plane["ux_min"],

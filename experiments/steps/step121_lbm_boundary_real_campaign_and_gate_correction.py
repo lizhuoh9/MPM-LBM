@@ -97,6 +97,7 @@ FLOW_RATIO_MAX = 1.20
 FLOW_IMBALANCE_TAIL_MEAN_MAX = 0.10
 FLOW_IMBALANCE_TAIL_MAX_MAX = 0.20
 FLOW_OUTLET_TAIL_CV_MAX = 0.10
+STEP135_INTERIOR_REFLECTION_ROLE = "interior_reflection_diagnostic_48"
 
 
 def step121_smoke_specs() -> List[Step120RunSpec]:
@@ -352,6 +353,106 @@ def step121_plane_flux_stationarity_48_specs(output_interval: int = 100) -> List
     return specs
 
 
+def step121_plane_flux_interior_diag_48_specs(output_interval: int = 5) -> List[Step120RunSpec]:
+    stationarity_specs = step121_plane_flux_stationarity_48_specs(output_interval=output_interval)
+    regularized_base = next(
+        spec
+        for spec in stationarity_specs
+        if spec.open_boundary_semantics == "regularized_plane_flux_controlled_pressure_outlet"
+        and int(spec.open_boundary_flux_control_measure_plane_offset) == 2
+        and bool(spec.open_boundary_outlet_flux_drop_guard_enabled)
+        and math.isclose(float(spec.open_boundary_outlet_flux_drop_guard_min_ratio), 0.70, rel_tol=0.0, abs_tol=1.0e-12)
+        and math.isclose(float(spec.open_boundary_flux_feedback_gain_u), 0.25, rel_tol=0.0, abs_tol=1.0e-12)
+        and math.isclose(float(spec.open_boundary_flux_correction_cap_u), 0.005, rel_tol=0.0, abs_tol=1.0e-12)
+        and math.isclose(float(spec.open_boundary_flux_feedback_gain_rho), 0.001, rel_tol=0.0, abs_tol=1.0e-12)
+        and math.isclose(float(spec.open_boundary_flux_filter_alpha), 0.02, rel_tol=0.0, abs_tol=1.0e-12)
+        and math.isclose(float(spec.open_boundary_flux_feedback_delta_cap_u), 0.0005, rel_tol=0.0, abs_tol=1.0e-12)
+        and math.isclose(float(spec.open_boundary_flux_feedback_slew_alpha), 0.50, rel_tol=0.0, abs_tol=1.0e-12)
+    )
+    convective_base = next(
+        spec
+        for spec in stationarity_specs
+        if spec.open_boundary_semantics == "convective_plane_flux_controlled_damped_outlet"
+        and int(spec.open_boundary_flux_control_measure_plane_offset) == 1
+        and bool(spec.open_boundary_outlet_flux_drop_guard_enabled)
+        and math.isclose(float(spec.open_boundary_outlet_flux_drop_guard_min_ratio), 0.70, rel_tol=0.0, abs_tol=1.0e-12)
+    )
+    diag_plan = [
+        (regularized_base, 0, 0.10),
+        (regularized_base, 50, 0.10),
+        (regularized_base, 100, 0.10),
+        (regularized_base, 0, 0.08),
+        (regularized_base, 0, 0.12),
+        (convective_base, 0, 0.10),
+    ]
+    name_slug_by_semantics = {
+        "regularized_plane_flux_controlled_pressure_outlet": "regularized_plane_flux_controlled",
+        "convective_plane_flux_controlled_damped_outlet": "convective_plane_flux_controlled_damped",
+    }
+    specs: List[Step120RunSpec] = []
+    for base, ramp_steps, niu in diag_plan:
+        semantics = base.open_boundary_semantics
+        specs.append(
+            _replace_spec(
+                base,
+                name=(
+                    f"duct_only_48_{name_slug_by_semantics[semantics]}"
+                    f"_gain{_step132_gain_slug(base.open_boundary_flux_feedback_gain_u)}"
+                    f"_cap{_step132_cap_slug(base.open_boundary_flux_correction_cap_u)}"
+                    f"_rho{_step133_param_slug(base.open_boundary_flux_feedback_gain_rho, 4)}"
+                    f"_alpha{_step133_param_slug(base.open_boundary_flux_filter_alpha, 3)}"
+                    f"_du{_step133_param_slug(base.open_boundary_flux_feedback_delta_cap_u, 5)}"
+                    f"_slew{_step133_param_slug(base.open_boundary_flux_feedback_slew_alpha, 2, strip_trailing=False)}"
+                    f"_offset{int(base.open_boundary_flux_control_measure_plane_offset)}"
+                    "_guard_on"
+                    f"_min{_step133_param_slug(base.open_boundary_outlet_flux_drop_guard_min_ratio, 2, strip_trailing=False)}"
+                    f"_ramp{int(ramp_steps)}"
+                    f"_niu{_step133_param_slug(niu, 2, strip_trailing=False)}"
+                    f"_out{int(output_interval)}"
+                    "_250step_interior_diag"
+                ),
+                output_interval=output_interval,
+                row_role=STEP135_INTERIOR_REFLECTION_ROLE,
+                niu=niu,
+                open_boundary_inlet_ramp_steps=int(ramp_steps),
+                open_boundary_inlet_ramp_profile="linear",
+                artifact_scope_note=(
+                    "Step135 bounded 48^3 interior reflection and bulk-dynamics diagnosis; "
+                    "diagnostic only and not a selected96 enabling row"
+                ),
+            )
+        )
+    return specs
+
+
+def step121_plane_flux_interior_diag_tiny_smoke_specs() -> List[Step120RunSpec]:
+    base = step121_plane_flux_interior_diag_48_specs(output_interval=5)[0]
+    return [
+        _replace_spec(
+            base,
+            name="tiny_step135_interior_reflection_smoke",
+            nx=8,
+            ny=6,
+            nz=6,
+            n_steps=20,
+            output_interval=5,
+            failure_check_interval=5,
+            checkpoint_every=0,
+            requested_nx=8,
+            requested_n_steps=20,
+            allow_large_real_run_without_flag=True,
+            step120_required_row=False,
+            step119_required_row=False,
+            not_used_for_validation=True,
+            row_role="tiny_smoke",
+            artifact_scope_note=(
+                "Step135 tiny smoke for interior reflection diagnostic wiring; "
+                "not validation or selected96 evidence"
+            ),
+        )
+    ]
+
+
 def _provenance_float(provenance: Dict[str, Any], key: str, default: float) -> float:
     value = provenance.get(key, default)
     if value is None:
@@ -504,6 +605,10 @@ def resolve_step121_phase_specs(
         return step121_plane_flux_mass_damped_48_specs(output_interval=output_interval)
     if phase == "planeflux_stationarity48":
         return step121_plane_flux_stationarity_48_specs(output_interval=output_interval)
+    if phase == "planeflux_interior_diag48":
+        return step121_plane_flux_interior_diag_48_specs(output_interval=output_interval)
+    if phase == "planeflux_interior_diag48_tiny":
+        return step121_plane_flux_interior_diag_tiny_smoke_specs()
     if phase in {"selected96", "selected-static"}:
         if best_selection_path is None:
             raise ValueError(f"{phase} phase requires --best-selection-path")
@@ -708,6 +813,7 @@ def _manifest_run_commands() -> List[str]:
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_sweep48 --allow-large-real-rows --output-interval 25",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_mass_damped48 --allow-large-real-rows --output-interval 25",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_stationarity48 --allow-large-real-rows --output-interval 25",
+        "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_interior_diag48 --allow-large-real-rows --output-interval 5",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary",
     ]
 
@@ -1570,6 +1676,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             "planeflux_sweep48",
             "planeflux_mass_damped48",
             "planeflux_stationarity48",
+            "planeflux_interior_diag48",
+            "planeflux_interior_diag48_tiny",
             "all48",
             "selected96",
             "selected-static",
@@ -1581,17 +1689,20 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--no-resume", action="store_true")
     parser.add_argument("--allow-large-real-rows", action="store_true")
+    parser.add_argument("--tiny-smoke", action="store_true")
     parser.add_argument("--output-interval", type=int, default=100)
     parser.add_argument("--max-rows", type=int, default=None)
     parser.add_argument("--max-wall-seconds", type=float, default=None)
     args = parser.parse_args(argv)
 
-    if args.phase == "summary":
+    phase = "planeflux_interior_diag48_tiny" if args.tiny_smoke and args.phase == "planeflux_interior_diag48" else args.phase
+
+    if phase == "summary":
         collected = collect_step121_rows(args.output_dir, return_ignored=True)
         write_step121_artifacts(
             args.output_dir,
             collected["rows"],
-            phase=args.phase,
+            phase=phase,
             ignored_rows=collected["ignored_rows"],
             campaign_manifest=collected["manifest"],
         )
@@ -1599,7 +1710,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     run_step121_matrix(
         args.output_dir,
-        phase=args.phase,
+        phase=phase,
         best_selection_path=args.best_selection_path,
         force=args.force,
         resume=not args.no_resume,

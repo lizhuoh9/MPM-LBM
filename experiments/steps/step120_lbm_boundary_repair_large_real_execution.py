@@ -111,6 +111,7 @@ SOLVER_STATE_HASH_FIELDS = {
     "nx",
     "ny",
     "nz",
+    "row_role",
     "open_boundary_semantics",
     "geometry_mode",
     "inlet_u_lbm",
@@ -141,6 +142,8 @@ SOLVER_STATE_HASH_FIELDS = {
     "open_boundary_flux_control_measure_plane_offset",
     "open_boundary_outlet_flux_drop_guard_enabled",
     "open_boundary_outlet_flux_drop_guard_min_ratio",
+    "open_boundary_inlet_ramp_steps",
+    "open_boundary_inlet_ramp_profile",
 }
 
 
@@ -158,6 +161,8 @@ class Step120RunSpec(Step119RunSpec):
     selected_source_config_hash: Optional[str] = None
     selected_source_tau: Optional[float] = None
     selected_source_lbm_relaxation_semantics: Optional[str] = None
+    open_boundary_inlet_ramp_steps: int = 0
+    open_boundary_inlet_ramp_profile: str = "linear"
 
 
 def step120_real_run_specs(output_interval: int = 25) -> List[Step120RunSpec]:
@@ -460,6 +465,31 @@ def run_step120_matrix(
     return summary
 
 
+def _step120_inlet_ramp_factor(spec: Step120RunSpec, step: int) -> float:
+    ramp_steps = int(spec.open_boundary_inlet_ramp_steps or 0)
+    if ramp_steps < 0:
+        raise ValueError("open_boundary_inlet_ramp_steps must be >= 0")
+    if ramp_steps == 0:
+        return 1.0
+    profile = str(spec.open_boundary_inlet_ramp_profile or "linear").lower()
+    if profile != "linear":
+        raise ValueError("open_boundary_inlet_ramp_profile must be 'linear'")
+    return _finite_float(min(1.0, max(0.0, float(step) / float(ramp_steps))))
+
+
+def _apply_step120_inlet_ramp(lbm: Any, spec: Step120RunSpec, step: int) -> float:
+    factor = _step120_inlet_ramp_factor(spec, step)
+    target = _finite_float(float(spec.inlet_u_lbm) * factor)
+    velocity = [target, 0.0, 0.0]
+    if hasattr(lbm, "set_bc_vel_x0"):
+        lbm.set_bc_vel_x0(velocity)
+    else:
+        lbm.vx_bcxl, lbm.vy_bcxl, lbm.vz_bcxl = velocity
+        if hasattr(lbm, "bc_vel_x_left"):
+            lbm.bc_vel_x_left = velocity
+    return factor
+
+
 def run_step120_row(
     spec: Step120RunSpec,
     row_dir: Path | str,
@@ -514,6 +544,7 @@ def run_step120_row(
     stop_reason = None
 
     for step in range(int(start_step), int(spec.n_steps) + 1):
+        _apply_step120_inlet_ramp(lbm, spec, step)
         if step > int(start_step):
             lbm.step()
             steps_completed = step
@@ -1512,6 +1543,8 @@ def _summary_row(
         "open_boundary_flux_control_measure_plane_offset": int(spec.open_boundary_flux_control_measure_plane_offset),
         "open_boundary_outlet_flux_drop_guard_enabled": bool(spec.open_boundary_outlet_flux_drop_guard_enabled),
         "open_boundary_outlet_flux_drop_guard_min_ratio": float(spec.open_boundary_outlet_flux_drop_guard_min_ratio),
+        "open_boundary_inlet_ramp_steps": int(spec.open_boundary_inlet_ramp_steps or 0),
+        "open_boundary_inlet_ramp_profile": str(spec.open_boundary_inlet_ramp_profile or "linear"),
         "inlet_u_lbm": float(spec.inlet_u_lbm),
         "outlet_rho": float(spec.outlet_rho),
         "lbm_niu": float(tau_report["lbm_niu"]),
@@ -1560,6 +1593,7 @@ def _summary_row(
         "midplane_to_inlet_flux_ratio_tail_mean": midplane_to_inlet_flux_ratio_tail_mean,
         "flow_development_gate_pass": bool(flow_development_gate_pass),
         "step130_flow_repair_triage": bool(spec.row_role == "flow_repair_candidate_48" and spec.requested_steps() < 500),
+        "step135_interior_reflection_candidate": bool(spec.row_role == "interior_reflection_diagnostic_48"),
         "selected96_claim_allowed": False,
         "mass_total_delta_rel_final": mass_total_delta_rel_final,
         "mach_proxy_observed_max": mach_proxy_observed_max,
@@ -1622,7 +1656,10 @@ def _metadata(
         "open_boundary_flux_control_measure_plane_offset": int(spec.open_boundary_flux_control_measure_plane_offset),
         "open_boundary_outlet_flux_drop_guard_enabled": bool(spec.open_boundary_outlet_flux_drop_guard_enabled),
         "open_boundary_outlet_flux_drop_guard_min_ratio": float(spec.open_boundary_outlet_flux_drop_guard_min_ratio),
+        "open_boundary_inlet_ramp_steps": int(spec.open_boundary_inlet_ramp_steps or 0),
+        "open_boundary_inlet_ramp_profile": str(spec.open_boundary_inlet_ramp_profile or "linear"),
         "step130_flow_repair_triage": bool(spec.row_role == "flow_repair_candidate_48"),
+        "step135_interior_reflection_candidate": bool(spec.row_role == "interior_reflection_diagnostic_48"),
         "step120_schema_version": STEP120_SCHEMA_VERSION,
         "synthetic_diagnostic_mode": False,
         "fluid_only": True,
@@ -1665,6 +1702,7 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         == "convective_plane_flux_controlled_damped_outlet",
         "step130_flow_repair_candidate": spec.row_role == "flow_repair_candidate_48",
         "step131_plane_flux_control_candidate": spec.row_role == "plane_flux_control_candidate_48",
+        "step135_interior_reflection_candidate": spec.row_role == "interior_reflection_diagnostic_48",
         "all_population_equilibrium_reset_used": spec.open_boundary_semantics == "equilibrium_all_population_reset",
         "open_boundary_limiter_enabled": bool(spec.open_boundary_limiter_enabled),
         "open_boundary_rho_min": float(spec.open_boundary_rho_min),
@@ -1682,6 +1720,8 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         "open_boundary_flux_control_measure_plane_offset": int(spec.open_boundary_flux_control_measure_plane_offset),
         "open_boundary_outlet_flux_drop_guard_enabled": bool(spec.open_boundary_outlet_flux_drop_guard_enabled),
         "open_boundary_outlet_flux_drop_guard_min_ratio": float(spec.open_boundary_outlet_flux_drop_guard_min_ratio),
+        "open_boundary_inlet_ramp_steps": int(spec.open_boundary_inlet_ramp_steps or 0),
+        "open_boundary_inlet_ramp_profile": str(spec.open_boundary_inlet_ramp_profile or "linear"),
         "actual_limiter_counter_required": True,
         "implemented_axis": "x",
         "pressure_outlet_density": float(spec.outlet_rho),
@@ -1836,13 +1876,18 @@ def _flow_development_diagnostic_record(
     step134_outlet_stationarity_candidate = bool(
         spec.row_role == "plane_flux_control_candidate_48" and "Step134" in str(spec.artifact_scope_note)
     )
+    step135_interior_reflection_candidate = bool(
+        spec.row_role == "interior_reflection_diagnostic_48" and "Step135" in str(spec.artifact_scope_note)
+    )
     step132_authority_sweep_candidate = bool(
         spec.row_role == "plane_flux_control_candidate_48" and "Step132" in str(spec.artifact_scope_note)
     )
+    sample_step = int(record.get("step", 0) or 0)
     return {
-        "step": int(record.get("step", 0) or 0),
+        "step": sample_step,
         "lbm_open_boundary_semantics": spec.open_boundary_semantics,
         "row_role": spec.row_role,
+        "step135_interior_reflection_candidate": step135_interior_reflection_candidate,
         "step134_outlet_stationarity_candidate": step134_outlet_stationarity_candidate,
         "step133_mass_damped_candidate": step133_mass_damped_candidate,
         "step132_authority_sweep_candidate": step132_authority_sweep_candidate,
@@ -1851,6 +1896,9 @@ def _flow_development_diagnostic_record(
         "open_boundary_outlet_flux_drop_guard_min_ratio": _finite_float(
             spec.open_boundary_outlet_flux_drop_guard_min_ratio
         ),
+        "open_boundary_inlet_ramp_steps": int(spec.open_boundary_inlet_ramp_steps or 0),
+        "open_boundary_inlet_ramp_profile": str(spec.open_boundary_inlet_ramp_profile or "linear"),
+        "open_boundary_inlet_ramp_factor": _step120_inlet_ramp_factor(spec, sample_step),
         "target_outlet_flux": target_outlet_flux,
         "outlet_flux_raw_before_correction": _finite_float(stats.get("flow_outlet_flux_raw_before_correction_step", outlet_flux_after_correction)),
         "outlet_flux_after_correction": outlet_flux_after_correction,
@@ -1911,6 +1959,11 @@ def _flow_development_diagnostic_record(
             record.get("near_outlet_flux_xminus3", stats.get("near_outlet_flux_xminus3", 0.0))
         ),
         "near_outlet_to_outlet_flux_ratio": _finite_float(record.get("near_outlet_to_outlet_flux_ratio", 0.0)),
+        "x_profile_flux_samples": _compact_diagnostic_mapping(
+            record.get("x_profile_flux_samples") or record.get("sampled_x_profile_flux")
+        ),
+        "x_profile_ux_mean_samples": _compact_diagnostic_mapping(record.get("x_profile_ux_mean_samples")),
+        "x_profile_rho_mean_samples": _compact_diagnostic_mapping(record.get("x_profile_rho_mean_samples")),
         "sampled_x_profile_flux": str(record.get("sampled_x_profile_flux") or ""),
         "mass_total_delta_rel": _finite_float(record.get("mass_total_delta_rel", 0.0)),
         "validation_claim_allowed": False,
@@ -1939,6 +1992,8 @@ def _write_flow_development_diagnostics(row_path: Path, records: Sequence[Dict[s
 
 
 def _flow_development_diagnostic_step_number(diagnostics: Sequence[Dict[str, Any]]) -> int:
+    if any(row.get("step135_interior_reflection_candidate") is True for row in diagnostics):
+        return 135
     if any(row.get("step134_outlet_stationarity_candidate") is True for row in diagnostics):
         return 134
     if any(row.get("step133_mass_damped_candidate") is True for row in diagnostics):
@@ -2025,6 +2080,115 @@ def _diagnostic_last_to_mean(values: Sequence[float]) -> Optional[float]:
     return _diagnostic_ratio(values[-1], _diagnostic_mean(values))
 
 
+def _diagnostic_mapping(value: Any) -> Dict[str, float]:
+    if value is None:
+        return {}
+    if isinstance(value, dict):
+        out: Dict[str, float] = {}
+        for key, item in value.items():
+            try:
+                out[str(key)] = _finite_float(item)
+            except Exception:
+                continue
+        return dict(sorted(out.items(), key=lambda item: _numeric_profile_key(item[0])))
+    if isinstance(value, str):
+        text = value.strip()
+        if not text:
+            return {}
+        try:
+            parsed = json.loads(text)
+        except Exception:
+            parsed = None
+        if isinstance(parsed, dict):
+            return _diagnostic_mapping(parsed)
+        out: Dict[str, float] = {}
+        for token in text.split(";"):
+            if ":" not in token:
+                continue
+            key, raw = token.split(":", 1)
+            try:
+                out[str(key)] = _finite_float(raw)
+            except Exception:
+                continue
+        return dict(sorted(out.items(), key=lambda item: _numeric_profile_key(item[0])))
+    return {}
+
+
+def _compact_diagnostic_mapping(value: Any) -> str:
+    mapping = _diagnostic_mapping(value)
+    return json.dumps(mapping, sort_keys=True, separators=(",", ":"))
+
+
+def _numeric_profile_key(value: str) -> Tuple[int, str]:
+    try:
+        return (int(value), str(value))
+    except Exception:
+        return (10**9, str(value))
+
+
+def _diagnostic_cv(values: Sequence[float]) -> Optional[float]:
+    mean = _diagnostic_mean(values)
+    std = _diagnostic_std(values)
+    if mean is None or std is None or abs(float(mean)) < 1.0e-12:
+        return None
+    return _finite_float(abs(float(std) / float(mean)))
+
+
+def _flow_development_x_profile_tail_summary(tail: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
+    values_by_x: Dict[str, List[float]] = {}
+    steps_by_x: Dict[str, List[int]] = {}
+    for row in tail:
+        profile = _diagnostic_mapping(row.get("x_profile_flux_samples") or row.get("sampled_x_profile_flux"))
+        step = int(row.get("step", 0) or 0)
+        for key, value in profile.items():
+            values_by_x.setdefault(str(key), []).append(_finite_float(value))
+            steps_by_x.setdefault(str(key), []).append(step)
+
+    ordered_keys = sorted(values_by_x, key=_numeric_profile_key)
+    tail_values = {key: values_by_x[key] for key in ordered_keys}
+    tail_slope = {key: _diagnostic_slope(values_by_x[key]) for key in ordered_keys}
+    tail_cv = {key: _diagnostic_cv(values_by_x[key]) for key in ordered_keys}
+    last_to_mean = {key: _diagnostic_last_to_mean(values_by_x[key]) for key in ordered_keys}
+
+    collapsed: List[Tuple[int, int, str]] = []
+    for key in ordered_keys:
+        values = values_by_x[key]
+        mean_abs = _diagnostic_mean([abs(value) for value in values])
+        if mean_abs is None or abs(float(mean_abs)) < 1.0e-12:
+            continue
+        threshold = 0.70 * abs(float(mean_abs))
+        for step, value in zip(steps_by_x.get(key, []), values):
+            if abs(float(value)) < threshold:
+                collapsed.append((int(step), _numeric_profile_key(key)[0], key))
+                break
+
+    collapsed.sort()
+    collapse_first_x: Any = None
+    collapse_first_step: Optional[int] = None
+    if collapsed:
+        collapse_first_step = collapsed[0][0]
+        first_key = collapsed[0][2]
+        try:
+            collapse_first_x = int(first_key)
+        except Exception:
+            collapse_first_x = first_key
+
+    return {
+        "x_profile_flux_tail_values_by_x": tail_values,
+        "x_profile_flux_tail_slope_by_x": tail_slope,
+        "x_profile_flux_tail_cv_by_x": tail_cv,
+        "x_profile_flux_last_to_mean_ratio_by_x": last_to_mean,
+        "x_profile_flux_phase_lag_proxy": {
+            "collapse_station_count": int(len(collapsed)),
+            "collapsed_x": [item[2] for item in collapsed],
+            "earliest_collapse_step": collapse_first_step,
+            "latest_collapse_step": max((item[0] for item in collapsed), default=None),
+        },
+        "collapse_first_x": collapse_first_x,
+        "collapse_first_step": collapse_first_step,
+    }
+
+
 def _diagnostic_sign_change_count(values: Sequence[float]) -> int:
     signs: List[int] = []
     for value in values:
@@ -2060,6 +2224,7 @@ def _flow_development_tail_summary(diagnostics: Sequence[Dict[str, Any]]) -> Dic
     near_outlet_to_outlet = _diagnostic_numeric_values(tail, "near_outlet_to_outlet_flux_ratio")
     drop_guard_active = _diagnostic_numeric_values(tail, "controller_drop_guard_active_step")
     drop_guard_fraction = _diagnostic_numeric_values(tail, "controller_drop_guard_activation_fraction_run")
+    x_profile_summary = _flow_development_x_profile_tail_summary(tail)
     return {
         "controller_tail_record_count": int(len(tail)),
         "tail_inlet_flux_values": inlet_flux,
@@ -2102,6 +2267,7 @@ def _flow_development_tail_summary(diagnostics: Sequence[Dict[str, Any]]) -> Dic
             outlet_flux[0] if outlet_flux else None,
         ),
         "outlet_flux_tail_last_to_mean_ratio": _diagnostic_last_to_mean(outlet_flux),
+        **x_profile_summary,
     }
 
 
@@ -2599,12 +2765,16 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "step",
     "lbm_open_boundary_semantics",
     "row_role",
+    "step135_interior_reflection_candidate",
     "step134_outlet_stationarity_candidate",
     "step133_mass_damped_candidate",
     "step132_authority_sweep_candidate",
     "open_boundary_flux_control_measure_plane_offset",
     "open_boundary_outlet_flux_drop_guard_enabled",
     "open_boundary_outlet_flux_drop_guard_min_ratio",
+    "open_boundary_inlet_ramp_steps",
+    "open_boundary_inlet_ramp_profile",
+    "open_boundary_inlet_ramp_factor",
     "target_outlet_flux",
     "outlet_flux_raw_before_correction",
     "outlet_flux_after_correction",
@@ -2645,6 +2815,9 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "near_outlet_flux_xminus2",
     "near_outlet_flux_xminus3",
     "near_outlet_to_outlet_flux_ratio",
+    "x_profile_flux_samples",
+    "x_profile_ux_mean_samples",
+    "x_profile_rho_mean_samples",
     "sampled_x_profile_flux",
     "mass_total_delta_rel",
     "validation_claim_allowed",
