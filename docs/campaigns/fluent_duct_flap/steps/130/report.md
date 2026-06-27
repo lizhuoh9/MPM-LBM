@@ -100,6 +100,7 @@ Commands run with `D:\working\taichi\env\python.exe`:
 python -m py_compile src\mpm_lbm\sim\lbm\config.py src\mpm_lbm\sim\lbm\fluid.py src\mpm_lbm\sim\diagnostics\lbm_boundary_diagnostics.py experiments\steps\step118_lbm_open_boundary_stability_repair.py experiments\steps\step120_lbm_boundary_repair_large_real_execution.py experiments\steps\step121_lbm_boundary_real_campaign_and_gate_correction.py
 python -m pytest -q --basetemp outputs\tmp\pytest-step130-green tests\test_step130_flow_development_repair_contract.py tests\test_step130_flow_development_diagnostics_contract.py
 python -m pytest -q --basetemp outputs\tmp\pytest-step130-adjacent tests\test_step130_flow_development_repair_contract.py tests\test_step130_flow_development_diagnostics_contract.py tests\test_step129_repair_checkpoint_counter_contract.py tests\test_step128_boundary_formulation_repair_contract.py tests\test_step125_campaign_provenance_identity_contract.py tests\test_step124_boundary_campaign_execution_contract.py tests\test_step123_boundary_campaign_execution_decision_contract.py
+python -m pytest -q tests\test_step56_behavior_preservation_contract.py tests\test_step57_step56_regression_contract.py tests\test_step58_step57_regression_contract.py
 python -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase flowrepair48 --allow-large-real-rows --output-interval 25
 python -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary
 git diff --check
@@ -109,5 +110,7 @@ Verification results:
 
 - Step130 contract tests: 8 passed.
 - Adjacent Step123-Step130 focused regression: 44 passed.
+- Step56/57/58 behavior-preservation guards after Step130 config defaults:
+  10 passed.
 - `py_compile`: passed.
 - `git diff --check`: passed with only Windows line-ending warnings.
