@@ -59,6 +59,44 @@ Current Step130 flow-repair triage surface and evidence:
 - No 500-step promotion was run from Step130 triage.
 - Selected 96^3 execution remains blocked.
 
+Current Step131 plane-flux-control triage surface and evidence:
+
+- New plane-flux-control 48^3 triage semantics exist for bounded LBM-only
+  outlet controller evidence: `regularized_plane_flux_controlled_pressure_outlet`
+  and `convective_plane_flux_controlled_damped_outlet`.
+- Step121 has a separate `planeflux48` phase for these triage rows.
+- Step131 semantics are not in the selected-candidate semantics set and cannot
+  enable selected 96^3.
+- Both Step131 rows completed 250/250 as real simulation-backed LBM-only triage
+  artifacts with finite state and no first-failure evidence, but both failed
+  candidate mass acceptance and hard flow-development gates.
+- `regularized_plane_flux_controlled_pressure_outlet` ended with
+  `candidate_mass_acceptance_observed_abs = 0.0283421114698597`,
+  `flux_imbalance_rel_tail_mean = 0.39787865621449087`,
+  `flux_imbalance_rel_tail_max = 0.5034860408405382`,
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.6088762675407298`,
+  `midplane_to_inlet_flux_ratio_tail_mean = 1.3339702270861844`, and
+  `outlet_flux_tail_cv = 0.3523076810492384`.
+- `convective_plane_flux_controlled_damped_outlet` ended with
+  `candidate_mass_acceptance_observed_abs = 0.02858492044911549`,
+  `flux_imbalance_rel_tail_mean = 0.4090919843128926`,
+  `flux_imbalance_rel_tail_max = 0.5348760352869728`,
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.7338794180572676`,
+  `midplane_to_inlet_flux_ratio_tail_mean = 1.60001489270226`, and
+  `outlet_flux_tail_cv = 0.15801241453426013`.
+- Controller telemetry was connected and sign-correct, but Step131 authority was
+  too weak for the observed errors: the regularized row ended with
+  `controller_filtered_flux_error = -33.369258880615234`,
+  `controller_u_feedback = -3.9424925489583984e-05`,
+  `controller_u_feedback_tail_mean = -4.043218238318028e-05`, and
+  `controller_saturation_fraction_tail = 0.0`; the convective row ended with
+  `controller_filtered_flux_error = -31.221101760864258`,
+  `controller_u_feedback = -3.6886933230562136e-05`,
+  `controller_u_feedback_tail_mean = -4.035353291934977e-05`, and
+  `controller_saturation_fraction_tail = 0.0`.
+- No 500-step promotion was run from Step131 triage.
+- Selected 96^3 execution remains blocked.
+
 Current Step124 gate requirements:
 
 - 48^3 legacy reference rows must either complete the requested real window or

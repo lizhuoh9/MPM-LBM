@@ -1776,16 +1776,28 @@ def _flow_development_diagnostic_record(
     controller_raw_error = _finite_float(stats.get("controller_raw_flux_error", controller_target - controller_measured))
     controller_filtered_error = _finite_float(stats.get("controller_filtered_flux_error", controller_raw_error))
     controller_u_feedback = _finite_float(stats.get("controller_u_feedback", 0.0))
+    controller_cap_u = _finite_float(stats.get("flow_correction_cap_u", spec.open_boundary_flux_correction_cap_u))
+    controller_authority_ratio = _finite_float(
+        stats.get(
+            "controller_authority_ratio",
+            abs(controller_u_feedback) / abs(controller_cap_u) if abs(controller_cap_u) > 0.0 else 0.0,
+        )
+    )
+    step132_authority_sweep_candidate = bool(
+        spec.row_role == "plane_flux_control_candidate_48" and "Step132" in str(spec.artifact_scope_note)
+    )
     return {
         "step": int(record.get("step", 0) or 0),
         "lbm_open_boundary_semantics": spec.open_boundary_semantics,
         "row_role": spec.row_role,
+        "step132_authority_sweep_candidate": step132_authority_sweep_candidate,
         "target_outlet_flux": target_outlet_flux,
         "outlet_flux_raw_before_correction": _finite_float(stats.get("flow_outlet_flux_raw_before_correction_step", outlet_flux_after_correction)),
         "outlet_flux_after_correction": outlet_flux_after_correction,
         "outlet_flux_error": outlet_flux_error,
         "outlet_flux_error_filtered": _finite_float(stats.get("flow_outlet_flux_error_filtered_run", outlet_flux_error)),
         "correction_gain_effective": _finite_float(stats.get("flow_correction_gain_effective_step", spec.open_boundary_flux_feedback_gain_u)),
+        "flow_correction_cap_u": controller_cap_u,
         "correction_delta_abs_sum": _finite_float(stats.get("flow_correction_delta_abs_sum_step", 0.0)),
         "correction_delta_abs_sum_run": _finite_float(stats.get("flow_correction_delta_abs_sum_run", 0.0)),
         "controller_target_outlet_flux": controller_target,
@@ -1794,6 +1806,7 @@ def _flow_development_diagnostic_record(
         "controller_filtered_flux_error": controller_filtered_error,
         "controller_u_feedback": controller_u_feedback,
         "controller_u_feedback_abs": _finite_float(stats.get("controller_u_feedback_abs", abs(controller_u_feedback))),
+        "controller_authority_ratio": controller_authority_ratio,
         "controller_saturation_count_step": int(stats.get("controller_saturation_count_step", 0) or 0),
         "controller_saturation_count_run": int(stats.get("controller_saturation_count_run", 0) or 0),
         "controller_saturation_fraction_run": _finite_float(stats.get("controller_saturation_fraction_run", 0.0)),
@@ -1811,8 +1824,9 @@ def _flow_development_diagnostic_record(
 
 def _write_flow_development_diagnostics(row_path: Path, records: Sequence[Dict[str, Any]]) -> None:
     diagnostics = [_flow_development_diagnostic_row_from_record(row) for row in records]
-    step_number = 131 if any(row.get("row_role") == "plane_flux_control_candidate_48" for row in diagnostics) else 130
+    step_number = _flow_development_diagnostic_step_number(diagnostics)
     _write_csv(row_path / "flow_development_diagnostics.csv", diagnostics, FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS)
+    tail_summary = _flow_development_tail_summary(diagnostics)
     _write_json(
         row_path / "flow_development_diagnostics_summary.json",
         {
@@ -1823,8 +1837,88 @@ def _write_flow_development_diagnostics(row_path: Path, records: Sequence[Dict[s
             "validation_claim_allowed": False,
             "selected96_claim_allowed": False,
             "final": diagnostics[-1] if diagnostics else None,
+            **tail_summary,
         },
     )
+
+
+def _flow_development_diagnostic_step_number(diagnostics: Sequence[Dict[str, Any]]) -> int:
+    if any(row.get("step132_authority_sweep_candidate") is True for row in diagnostics):
+        return 132
+    if any(row.get("row_role") == "plane_flux_control_candidate_48" for row in diagnostics):
+        return 131
+    return 130
+
+
+def _diagnostic_tail_records(diagnostics: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    if not diagnostics:
+        return []
+    tail_count = max(1, int(math.ceil(len(diagnostics) * 0.2)))
+    return list(diagnostics[-tail_count:])
+
+
+def _diagnostic_numeric_values(records: Sequence[Dict[str, Any]], key: str) -> List[float]:
+    values: List[float] = []
+    for row in records:
+        value = row.get(key)
+        if value is None or value == "":
+            continue
+        try:
+            numeric = float(value)
+        except (TypeError, ValueError):
+            continue
+        if math.isfinite(numeric):
+            values.append(numeric)
+    return values
+
+
+def _diagnostic_mean(values: Sequence[float]) -> Optional[float]:
+    if not values:
+        return None
+    return _finite_float(sum(values) / len(values))
+
+
+def _diagnostic_std(values: Sequence[float]) -> Optional[float]:
+    if not values:
+        return None
+    mean = sum(values) / len(values)
+    return _finite_float(math.sqrt(sum((value - mean) ** 2 for value in values) / len(values)))
+
+
+def _diagnostic_abs_max(values: Sequence[float]) -> Optional[float]:
+    if not values:
+        return None
+    return _finite_float(max(abs(value) for value in values))
+
+
+def _diagnostic_max(values: Sequence[float]) -> Optional[float]:
+    if not values:
+        return None
+    return _finite_float(max(values))
+
+
+def _flow_development_tail_summary(diagnostics: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
+    tail = _diagnostic_tail_records(diagnostics)
+    feedback = _diagnostic_numeric_values(tail, "controller_u_feedback")
+    saturation = _diagnostic_numeric_values(tail, "controller_saturation_fraction_run")
+    raw_error = _diagnostic_numeric_values(tail, "controller_raw_flux_error")
+    filtered_error = _diagnostic_numeric_values(tail, "controller_filtered_flux_error")
+    target_flux = _diagnostic_numeric_values(tail, "controller_target_outlet_flux")
+    measured_flux = _diagnostic_numeric_values(tail, "controller_measured_outlet_flux")
+    authority = _diagnostic_numeric_values(tail, "controller_authority_ratio")
+    return {
+        "controller_tail_record_count": int(len(tail)),
+        "controller_u_feedback_tail_mean": _diagnostic_mean(feedback),
+        "controller_u_feedback_tail_abs_max": _diagnostic_abs_max(feedback),
+        "controller_u_feedback_tail_std": _diagnostic_std(feedback),
+        "controller_saturation_fraction_tail": _diagnostic_mean(saturation),
+        "controller_raw_flux_error_tail_mean": _diagnostic_mean(raw_error),
+        "controller_filtered_flux_error_tail_mean": _diagnostic_mean(filtered_error),
+        "controller_target_outlet_flux_tail_mean": _diagnostic_mean(target_flux),
+        "controller_measured_outlet_flux_tail_mean": _diagnostic_mean(measured_flux),
+        "controller_authority_ratio_tail_mean": _diagnostic_mean(authority),
+        "controller_authority_ratio_tail_max": _diagnostic_max(authority),
+    }
 
 
 def _flow_development_diagnostic_row_from_record(record: Dict[str, Any]) -> Dict[str, Any]:
@@ -2321,12 +2415,14 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "step",
     "lbm_open_boundary_semantics",
     "row_role",
+    "step132_authority_sweep_candidate",
     "target_outlet_flux",
     "outlet_flux_raw_before_correction",
     "outlet_flux_after_correction",
     "outlet_flux_error",
     "outlet_flux_error_filtered",
     "correction_gain_effective",
+    "flow_correction_cap_u",
     "correction_delta_abs_sum",
     "correction_delta_abs_sum_run",
     "controller_target_outlet_flux",
@@ -2335,6 +2431,7 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "controller_filtered_flux_error",
     "controller_u_feedback",
     "controller_u_feedback_abs",
+    "controller_authority_ratio",
     "controller_saturation_count_step",
     "controller_saturation_count_run",
     "controller_saturation_fraction_run",

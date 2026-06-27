@@ -153,6 +153,55 @@ def step121_plane_flux_48_specs(output_interval: int = 100) -> List[Step120RunSp
     ]
 
 
+def _step132_gain_slug(value: float) -> str:
+    return f"{float(value):.2f}".replace(".", "p")
+
+
+def _step132_cap_slug(value: float) -> str:
+    return f"{float(value):.3f}".replace(".", "p")
+
+
+def step121_plane_flux_sweep_48_specs(output_interval: int = 100) -> List[Step120RunSpec]:
+    baseline_by_semantics = {
+        spec.open_boundary_semantics: spec for spec in step121_plane_flux_48_specs(output_interval=output_interval)
+    }
+    sweep_plan = [
+        ("regularized_plane_flux_controlled_pressure_outlet", 0.05, 0.002),
+        ("regularized_plane_flux_controlled_pressure_outlet", 0.10, 0.002),
+        ("regularized_plane_flux_controlled_pressure_outlet", 0.25, 0.002),
+        ("regularized_plane_flux_controlled_pressure_outlet", 0.25, 0.005),
+        ("convective_plane_flux_controlled_damped_outlet", 0.05, 0.002),
+        ("convective_plane_flux_controlled_damped_outlet", 0.10, 0.002),
+    ]
+    name_slug_by_semantics = {
+        "regularized_plane_flux_controlled_pressure_outlet": "regularized_plane_flux_controlled",
+        "convective_plane_flux_controlled_damped_outlet": "convective_plane_flux_controlled_damped",
+    }
+    specs: List[Step120RunSpec] = []
+    for semantics, gain_u, cap_u in sweep_plan:
+        base = baseline_by_semantics[semantics]
+        specs.append(
+            _replace_spec(
+                base,
+                name=(
+                    f"duct_only_48_{name_slug_by_semantics[semantics]}"
+                    f"_gain{_step132_gain_slug(gain_u)}_cap{_step132_cap_slug(cap_u)}_250step_triage"
+                ),
+                output_interval=output_interval,
+                open_boundary_flux_feedback_gain_u=gain_u,
+                open_boundary_flux_feedback_gain_rho=0.0,
+                open_boundary_flux_filter_alpha=0.02,
+                open_boundary_flux_correction_cap_u=cap_u,
+                open_boundary_convective_blend_weight=0.02,
+                artifact_scope_note=(
+                    "Step132 bounded 48^3 plane-flux controller authority sweep; "
+                    "reuses Step131 semantics and is not a selected96 enabling row"
+                ),
+            )
+        )
+    return specs
+
+
 def _provenance_float(provenance: Dict[str, Any], key: str, default: float) -> float:
     value = provenance.get(key, default)
     if value is None:
@@ -299,6 +348,8 @@ def resolve_step121_phase_specs(
         return step121_flow_repair_48_specs(output_interval=output_interval)
     if phase == "planeflux48":
         return step121_plane_flux_48_specs(output_interval=output_interval)
+    if phase == "planeflux_sweep48":
+        return step121_plane_flux_sweep_48_specs(output_interval=output_interval)
     if phase in {"selected96", "selected-static"}:
         if best_selection_path is None:
             raise ValueError(f"{phase} phase requires --best-selection-path")
@@ -500,6 +551,7 @@ def _manifest_run_commands() -> List[str]:
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase repair48 --allow-large-real-rows --output-interval 25",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase flowrepair48 --allow-large-real-rows --output-interval 25",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux48 --allow-large-real-rows --output-interval 25",
+        "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_sweep48 --allow-large-real-rows --output-interval 25",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary",
     ]
 
@@ -1359,6 +1411,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             "repair48",
             "flowrepair48",
             "planeflux48",
+            "planeflux_sweep48",
             "all48",
             "selected96",
             "selected-static",

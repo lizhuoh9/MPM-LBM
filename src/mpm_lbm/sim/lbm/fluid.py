@@ -728,6 +728,8 @@ class LBMFluid3D:
         denominator = int(self.ob_reconstructed_population_count_run[None])
         controller_updates = int(self.ob_flux_control_update_count_run[None])
         controller_saturations = int(self.ob_flux_control_saturation_count_run[None])
+        controller_feedback_abs = abs(float(self.ob_flux_control_u_feedback[None]))
+        controller_cap_abs = abs(float(self.open_boundary_flux_correction_cap_u))
         return {
             "rho_clip_count_step": int(self.ob_rho_clip_count_step[None]),
             "rho_clip_count_run": int(self.ob_rho_clip_count_run[None]),
@@ -764,7 +766,10 @@ class LBMFluid3D:
             "controller_filtered_flux_error": float(self.ob_flux_error_filtered[None]),
             "controller_outlet_fluid_area": float(self.ob_outlet_fluid_area[None]),
             "controller_u_feedback": float(self.ob_flux_control_u_feedback[None]),
-            "controller_u_feedback_abs": abs(float(self.ob_flux_control_u_feedback[None])),
+            "controller_u_feedback_abs": controller_feedback_abs,
+            "controller_authority_ratio": float(
+                controller_feedback_abs / controller_cap_abs if controller_cap_abs else 0.0
+            ),
             "controller_saturation_count_step": int(self.ob_flux_control_saturation_count_step[None]),
             "controller_saturation_count_run": controller_saturations,
             "controller_update_count_step": int(self.ob_flux_control_update_count_step[None]),
