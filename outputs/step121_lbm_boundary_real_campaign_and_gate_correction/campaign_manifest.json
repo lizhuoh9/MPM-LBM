@@ -2,7 +2,7 @@
   "artifact_root": "D:\\working\\squid robot\\LBM\\MPM-LBM\\outputs\\step121_lbm_boundary_real_campaign_and_gate_correction",
   "campaign_base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
   "campaign_id": "step124_lbm_boundary_516b1aaa",
-  "current_code_commit": "8b5e5ff5767073ad15d46f779c6c1f18348f4b5d",
+  "current_code_commit": "f78bea27e6df28f0e99119658e2f349b4f1607c8",
   "expected_rows": {
     "duct_only_48_convective_flux_matched_damped_outlet_250step_triage": {
       "geometry_mode": "duct_only",
@@ -141,7 +141,7 @@
     "ratio_min": 0.8,
     "selected96_mass_acceptance_max": 0.01
   },
-  "git_commit": "8b5e5ff5767073ad15d46f779c6c1f18348f4b5d",
+  "git_commit": "f78bea27e6df28f0e99119658e2f349b4f1607c8",
   "phase_commit_history": [
     {
       "code_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",

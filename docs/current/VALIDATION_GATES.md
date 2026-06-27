@@ -126,6 +126,36 @@ Current Step132 plane-flux-controller authority sweep evidence:
 - No 500-step promotion was run from Step132 triage.
 - Selected 96^3 execution remains blocked.
 
+Current Step133 mass-damped plane-flux triage evidence:
+
+- Step133 reuses the Step131/Step132 plane-flux-control semantics and adds a
+  distinct `planeflux_mass_damped48` phase for slow density feedback and
+  feedback-stationarity damping.
+- The Step133 triage ran six real 48^3 / 250-step LBM-only rows across bounded
+  `gain_rho`, `filter_alpha`, `delta_cap_u`, and `slew_alpha` combinations.
+  Every row completed 250/250, stayed finite, and had no first-failure
+  evidence.
+- Step133 rows remain triage rows with
+  `row_role = plane_flux_control_candidate_48`; they are not in the
+  selected-candidate semantics set and cannot enable selected 96^3.
+- All six rows failed the relaxed promotion gate. `accepted_row_count = 0`.
+- The best mass row was
+  `duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p0005_alpha0p02_du0p0005_slew0p50_250step_triage`
+  with `candidate_mass_acceptance_observed_abs = 0.014184975814691638`,
+  `flux_imbalance_rel_tail_mean = 0.3987696128026395`,
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.0280528796842723`,
+  `midplane_to_inlet_flux_ratio_tail_mean = 0.9111280219154153`, and
+  `outlet_flux_tail_cv = 0.47087164136218246`.
+- The best flux-imbalance row was
+  `duct_only_48_convective_plane_flux_controlled_damped_gain0p10_cap0p002_rho0p001_alpha0p02_du0p0005_slew0p50_250step_triage`
+  with `flux_imbalance_rel_tail_mean = 0.2630888340905568`,
+  `candidate_mass_acceptance_observed_abs = 0.022125313054974453`,
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.408879778823433`,
+  `midplane_to_inlet_flux_ratio_tail_mean = 1.2372221853054948`, and
+  `outlet_flux_tail_cv = 0.20262416501645636`.
+- No 500-step promotion was run from Step133 triage.
+- Selected 96^3 execution remains blocked.
+
 Current Step124 gate requirements:
 
 - 48^3 legacy reference rows must either complete the requested real window or

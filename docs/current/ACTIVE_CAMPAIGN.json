@@ -2,20 +2,18 @@
   "campaign": "fluent_lbm_open_boundary_repair",
   "campaign_base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
   "base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
-  "current_code_commit": "4e358d43ac86a5e520b82838f4f2e1a218ca3ef9",
+  "current_code_commit": "f78bea27e6df28f0e99119658e2f349b4f1607c8",
   "state": "48_candidates_failed",
   "final_classification": "boundary_repair_failed_revisit_lbm_solver",
-  "artifact_root": "outputs/step121_lbm_boundary_real_campaign_and_gate_correction",
+  "artifact_root": "outputs/step133_mass_damped_plane_flux_repair",
   "read_first": [
     "docs/current/STATUS.md",
     "docs/current/ACTIVE_CAMPAIGN.json",
     "docs/current/VALIDATION_GATES.md",
+    "docs/campaigns/fluent_duct_flap/steps/133/goal.md",
+    "docs/campaigns/fluent_duct_flap/steps/133/report.md",
     "docs/campaigns/fluent_duct_flap/steps/132/goal.md",
     "docs/campaigns/fluent_duct_flap/steps/132/report.md",
-    "docs/campaigns/fluent_duct_flap/steps/131/goal.md",
-    "docs/campaigns/fluent_duct_flap/steps/131/report.md",
-    "docs/campaigns/fluent_duct_flap/steps/130/report.md",
-    "docs/campaigns/fluent_duct_flap/steps/129/report.md",
     "experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py"
   ]
 }
