@@ -203,6 +203,9 @@ def summarize_lbm_boundary_diagnostics(
     inlet_flux = plane_flux_x(snap, 0)
     outlet_flux = plane_flux_x(snap, nx - 1)
     midplane_flux = plane_flux_x(snap, mid_x)
+    near_outlet_flux_xminus1 = plane_flux_x(snap, nx - 2)
+    near_outlet_flux_xminus2 = plane_flux_x(snap, nx - 3)
+    near_outlet_flux_xminus3 = plane_flux_x(snap, nx - 4)
     outlet_plane = plane_velocity_x_stats(snap, nx - 1)
     outlet_plane_density = plane_density_stats(snap, nx - 1)
     scale = max(abs(inlet_flux), abs(outlet_flux), 1.0e-12)
@@ -220,6 +223,10 @@ def summarize_lbm_boundary_diagnostics(
         "inlet_flux": inlet_flux,
         "outlet_flux": outlet_flux,
         "midplane_flux": midplane_flux,
+        "near_outlet_flux_xminus1": near_outlet_flux_xminus1,
+        "near_outlet_flux_xminus2": near_outlet_flux_xminus2,
+        "near_outlet_flux_xminus3": near_outlet_flux_xminus3,
+        "near_outlet_to_outlet_flux_ratio": _safe_ratio(near_outlet_flux_xminus1, outlet_flux),
         "flux_imbalance_abs": _finite_float(flux_imbalance_abs),
         "flux_imbalance_rel": _finite_float(flux_imbalance_abs / scale),
         "flux_balance_reported": True,

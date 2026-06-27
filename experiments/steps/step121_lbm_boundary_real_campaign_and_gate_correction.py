@@ -271,6 +271,87 @@ def step121_plane_flux_mass_damped_48_specs(output_interval: int = 100) -> List[
     return specs
 
 
+def step121_plane_flux_stationarity_48_specs(output_interval: int = 100) -> List[Step120RunSpec]:
+    mass_damped_specs = step121_plane_flux_mass_damped_48_specs(output_interval=output_interval)
+    regularized_base = next(
+        spec
+        for spec in mass_damped_specs
+        if spec.open_boundary_semantics == "regularized_plane_flux_controlled_pressure_outlet"
+        and math.isclose(float(spec.open_boundary_flux_feedback_gain_u), 0.25, rel_tol=0.0, abs_tol=1.0e-12)
+        and math.isclose(float(spec.open_boundary_flux_correction_cap_u), 0.005, rel_tol=0.0, abs_tol=1.0e-12)
+        and math.isclose(float(spec.open_boundary_flux_feedback_gain_rho), 0.001, rel_tol=0.0, abs_tol=1.0e-12)
+        and math.isclose(float(spec.open_boundary_flux_filter_alpha), 0.02, rel_tol=0.0, abs_tol=1.0e-12)
+        and math.isclose(float(spec.open_boundary_flux_feedback_delta_cap_u), 0.0005, rel_tol=0.0, abs_tol=1.0e-12)
+        and math.isclose(float(spec.open_boundary_flux_feedback_slew_alpha), 0.50, rel_tol=0.0, abs_tol=1.0e-12)
+    )
+    convective_base = next(
+        spec
+        for spec in mass_damped_specs
+        if spec.open_boundary_semantics == "convective_plane_flux_controlled_damped_outlet"
+    )
+    stationarity_plan = [
+        (regularized_base, 0.25, 0.005, 0.0010, 0.02, 0.0005, 0.50, 1, False, 0.60),
+        (regularized_base, 0.25, 0.005, 0.0010, 0.02, 0.0005, 0.50, 1, True, 0.50),
+        (regularized_base, 0.25, 0.005, 0.0010, 0.02, 0.0005, 0.50, 1, True, 0.70),
+        (regularized_base, 0.25, 0.005, 0.0010, 0.01, 0.0005, 0.50, 1, True, 0.70),
+        (regularized_base, 0.25, 0.005, 0.0010, 0.02, 0.0005, 0.50, 2, True, 0.70),
+        (convective_base, 0.10, 0.002, 0.0010, 0.02, 0.0005, 0.50, 1, True, 0.70),
+    ]
+    name_slug_by_semantics = {
+        "regularized_plane_flux_controlled_pressure_outlet": "regularized_plane_flux_controlled",
+        "convective_plane_flux_controlled_damped_outlet": "convective_plane_flux_controlled_damped",
+    }
+    specs: List[Step120RunSpec] = []
+    for (
+        base,
+        gain_u,
+        cap_u,
+        gain_rho,
+        alpha,
+        delta_cap_u,
+        slew_alpha,
+        measure_offset,
+        drop_guard_enabled,
+        drop_guard_min_ratio,
+    ) in stationarity_plan:
+        semantics = base.open_boundary_semantics
+        guard_slug = "on" if drop_guard_enabled else "off"
+        specs.append(
+            _replace_spec(
+                base,
+                name=(
+                    f"duct_only_48_{name_slug_by_semantics[semantics]}"
+                    f"_gain{_step132_gain_slug(gain_u)}"
+                    f"_cap{_step132_cap_slug(cap_u)}"
+                    f"_rho{_step133_param_slug(gain_rho, 4)}"
+                    f"_alpha{_step133_param_slug(alpha, 3)}"
+                    f"_du{_step133_param_slug(delta_cap_u, 5)}"
+                    f"_slew{_step133_param_slug(slew_alpha, 2, strip_trailing=False)}"
+                    f"_offset{int(measure_offset)}"
+                    f"_guard_{guard_slug}"
+                    f"_min{_step133_param_slug(drop_guard_min_ratio, 2, strip_trailing=False)}"
+                    "_250step_triage"
+                ),
+                output_interval=output_interval,
+                open_boundary_flux_feedback_gain_u=gain_u,
+                open_boundary_flux_feedback_gain_rho=gain_rho,
+                open_boundary_flux_filter_alpha=alpha,
+                open_boundary_flux_correction_cap_u=cap_u,
+                open_boundary_flux_feedback_delta_cap_u=delta_cap_u,
+                open_boundary_flux_feedback_slew_alpha=slew_alpha,
+                open_boundary_convective_blend_weight=0.02,
+                open_boundary_flux_control_measure_plane_offset=measure_offset,
+                open_boundary_outlet_flux_drop_guard_enabled=drop_guard_enabled,
+                open_boundary_outlet_flux_drop_guard_min_ratio=drop_guard_min_ratio,
+                artifact_scope_note=(
+                    "Step134 bounded 48^3 outlet tail-collapse diagnosis and near-outlet control-plane repair; "
+                    "does not enable selected96 or 500-step promotion"
+                ),
+            )
+        )
+    return specs
+
+
 def _provenance_float(provenance: Dict[str, Any], key: str, default: float) -> float:
     value = provenance.get(key, default)
     if value is None:
@@ -421,6 +502,8 @@ def resolve_step121_phase_specs(
         return step121_plane_flux_sweep_48_specs(output_interval=output_interval)
     if phase == "planeflux_mass_damped48":
         return step121_plane_flux_mass_damped_48_specs(output_interval=output_interval)
+    if phase == "planeflux_stationarity48":
+        return step121_plane_flux_stationarity_48_specs(output_interval=output_interval)
     if phase in {"selected96", "selected-static"}:
         if best_selection_path is None:
             raise ValueError(f"{phase} phase requires --best-selection-path")
@@ -624,6 +707,7 @@ def _manifest_run_commands() -> List[str]:
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux48 --allow-large-real-rows --output-interval 25",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_sweep48 --allow-large-real-rows --output-interval 25",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_mass_damped48 --allow-large-real-rows --output-interval 25",
+        "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_stationarity48 --allow-large-real-rows --output-interval 25",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary",
     ]
 
@@ -1485,6 +1569,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             "planeflux48",
             "planeflux_sweep48",
             "planeflux_mass_damped48",
+            "planeflux_stationarity48",
             "all48",
             "selected96",
             "selected-static",

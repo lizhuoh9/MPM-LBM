@@ -138,6 +138,9 @@ SOLVER_STATE_HASH_FIELDS = {
     "open_boundary_flux_feedback_delta_cap_u",
     "open_boundary_flux_feedback_slew_alpha",
     "open_boundary_convective_blend_weight",
+    "open_boundary_flux_control_measure_plane_offset",
+    "open_boundary_outlet_flux_drop_guard_enabled",
+    "open_boundary_outlet_flux_drop_guard_min_ratio",
 }
 
 
@@ -770,6 +773,29 @@ def summarize_step120_limiter_activation(stats_or_lbm: Any, spec: Step120RunSpec
         "flow_correction_delta_abs_sum_step": _finite_float(stats.get("flow_correction_delta_abs_sum_step", 0.0) or 0.0),
         "flow_outlet_flux_error_filtered": _finite_float(stats.get("flow_outlet_flux_error_filtered_run", 0.0) or 0.0),
         "flow_correction_gain_effective": _finite_float(stats.get("flow_correction_gain_effective_step", 0.0) or 0.0),
+        "open_boundary_flux_control_measure_plane_offset": int(
+            _spec_value(spec, "open_boundary_flux_control_measure_plane_offset", 0)
+        ),
+        "open_boundary_outlet_flux_drop_guard_enabled": bool(
+            _spec_value(spec, "open_boundary_outlet_flux_drop_guard_enabled", False)
+        ),
+        "open_boundary_outlet_flux_drop_guard_min_ratio": _finite_float(
+            _spec_value(spec, "open_boundary_outlet_flux_drop_guard_min_ratio", 0.60)
+        ),
+        "near_outlet_flux_xminus1": _finite_float(stats.get("near_outlet_flux_xminus1", 0.0) or 0.0),
+        "near_outlet_flux_xminus2": _finite_float(stats.get("near_outlet_flux_xminus2", 0.0) or 0.0),
+        "near_outlet_flux_xminus3": _finite_float(stats.get("near_outlet_flux_xminus3", 0.0) or 0.0),
+        "controller_true_outlet_flux_for_guard": _finite_float(stats.get("controller_true_outlet_flux_for_guard", 0.0) or 0.0),
+        "controller_measure_plane_offset": int(stats.get("controller_measure_plane_offset", 0) or 0),
+        "controller_drop_guard_active_step": int(stats.get("controller_drop_guard_active_step", 0) or 0),
+        "controller_drop_guard_activation_count_run": int(
+            stats.get("controller_drop_guard_activation_count_run", 0) or 0
+        ),
+        "controller_drop_guard_reference_flux": _finite_float(stats.get("controller_drop_guard_reference_flux", 0.0) or 0.0),
+        "controller_drop_guard_min_ratio": _finite_float(stats.get("controller_drop_guard_min_ratio", 0.60) or 0.60),
+        "controller_drop_guard_activation_fraction_run": _finite_float(
+            stats.get("controller_drop_guard_activation_fraction_run", 0.0) or 0.0
+        ),
         "validation_blocked_by_limiter_activation": bool(activation_fraction > fraction_limit),
         "validation_claim_allowed": False,
     }
@@ -1483,6 +1509,9 @@ def _summary_row(
         "open_boundary_flux_feedback_delta_cap_u": float(spec.open_boundary_flux_feedback_delta_cap_u),
         "open_boundary_flux_feedback_slew_alpha": float(spec.open_boundary_flux_feedback_slew_alpha),
         "open_boundary_convective_blend_weight": float(spec.open_boundary_convective_blend_weight),
+        "open_boundary_flux_control_measure_plane_offset": int(spec.open_boundary_flux_control_measure_plane_offset),
+        "open_boundary_outlet_flux_drop_guard_enabled": bool(spec.open_boundary_outlet_flux_drop_guard_enabled),
+        "open_boundary_outlet_flux_drop_guard_min_ratio": float(spec.open_boundary_outlet_flux_drop_guard_min_ratio),
         "inlet_u_lbm": float(spec.inlet_u_lbm),
         "outlet_rho": float(spec.outlet_rho),
         "lbm_niu": float(tau_report["lbm_niu"]),
@@ -1553,6 +1582,9 @@ def _summary_row(
         "unknown_population_delta_abs_sum": _finite_float(limiter_summary.get("unknown_population_delta_abs_sum", 0.0)),
         "flow_correction_delta_abs_sum": _finite_float(limiter_summary.get("flow_correction_delta_abs_sum", 0.0)),
         "flow_outlet_flux_error_filtered": _finite_float(limiter_summary.get("flow_outlet_flux_error_filtered", 0.0)),
+        "outlet_flux_drop_guard_activation_fraction_tail": _finite_float(
+            limiter_summary.get("controller_drop_guard_activation_fraction_run", 0.0)
+        ),
         "checkpoint_available": bool(checkpoint_available),
         "runtime_s": _finite_float(runtime_s),
     }
@@ -1587,6 +1619,9 @@ def _metadata(
         "open_boundary_flux_feedback_delta_cap_u": float(spec.open_boundary_flux_feedback_delta_cap_u),
         "open_boundary_flux_feedback_slew_alpha": float(spec.open_boundary_flux_feedback_slew_alpha),
         "open_boundary_convective_blend_weight": float(spec.open_boundary_convective_blend_weight),
+        "open_boundary_flux_control_measure_plane_offset": int(spec.open_boundary_flux_control_measure_plane_offset),
+        "open_boundary_outlet_flux_drop_guard_enabled": bool(spec.open_boundary_outlet_flux_drop_guard_enabled),
+        "open_boundary_outlet_flux_drop_guard_min_ratio": float(spec.open_boundary_outlet_flux_drop_guard_min_ratio),
         "step130_flow_repair_triage": bool(spec.row_role == "flow_repair_candidate_48"),
         "step120_schema_version": STEP120_SCHEMA_VERSION,
         "synthetic_diagnostic_mode": False,
@@ -1644,6 +1679,9 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         "open_boundary_flux_feedback_delta_cap_u": float(spec.open_boundary_flux_feedback_delta_cap_u),
         "open_boundary_flux_feedback_slew_alpha": float(spec.open_boundary_flux_feedback_slew_alpha),
         "open_boundary_convective_blend_weight": float(spec.open_boundary_convective_blend_weight),
+        "open_boundary_flux_control_measure_plane_offset": int(spec.open_boundary_flux_control_measure_plane_offset),
+        "open_boundary_outlet_flux_drop_guard_enabled": bool(spec.open_boundary_outlet_flux_drop_guard_enabled),
+        "open_boundary_outlet_flux_drop_guard_min_ratio": float(spec.open_boundary_outlet_flux_drop_guard_min_ratio),
         "actual_limiter_counter_required": True,
         "implemented_axis": "x",
         "pressure_outlet_density": float(spec.outlet_rho),
@@ -1795,6 +1833,9 @@ def _flow_development_diagnostic_record(
     step133_mass_damped_candidate = bool(
         spec.row_role == "plane_flux_control_candidate_48" and "Step133" in str(spec.artifact_scope_note)
     )
+    step134_outlet_stationarity_candidate = bool(
+        spec.row_role == "plane_flux_control_candidate_48" and "Step134" in str(spec.artifact_scope_note)
+    )
     step132_authority_sweep_candidate = bool(
         spec.row_role == "plane_flux_control_candidate_48" and "Step132" in str(spec.artifact_scope_note)
     )
@@ -1802,8 +1843,14 @@ def _flow_development_diagnostic_record(
         "step": int(record.get("step", 0) or 0),
         "lbm_open_boundary_semantics": spec.open_boundary_semantics,
         "row_role": spec.row_role,
+        "step134_outlet_stationarity_candidate": step134_outlet_stationarity_candidate,
         "step133_mass_damped_candidate": step133_mass_damped_candidate,
         "step132_authority_sweep_candidate": step132_authority_sweep_candidate,
+        "open_boundary_flux_control_measure_plane_offset": int(spec.open_boundary_flux_control_measure_plane_offset),
+        "open_boundary_outlet_flux_drop_guard_enabled": bool(spec.open_boundary_outlet_flux_drop_guard_enabled),
+        "open_boundary_outlet_flux_drop_guard_min_ratio": _finite_float(
+            spec.open_boundary_outlet_flux_drop_guard_min_ratio
+        ),
         "target_outlet_flux": target_outlet_flux,
         "outlet_flux_raw_before_correction": _finite_float(stats.get("flow_outlet_flux_raw_before_correction_step", outlet_flux_after_correction)),
         "outlet_flux_after_correction": outlet_flux_after_correction,
@@ -1833,6 +1880,20 @@ def _flow_development_diagnostic_record(
         "controller_saturation_count_step": int(stats.get("controller_saturation_count_step", 0) or 0),
         "controller_saturation_count_run": int(stats.get("controller_saturation_count_run", 0) or 0),
         "controller_saturation_fraction_run": _finite_float(stats.get("controller_saturation_fraction_run", 0.0)),
+        "controller_measure_plane_offset": int(
+            stats.get("controller_measure_plane_offset", spec.open_boundary_flux_control_measure_plane_offset) or 0
+        ),
+        "controller_drop_guard_active_step": int(stats.get("controller_drop_guard_active_step", 0) or 0),
+        "controller_drop_guard_activation_count_run": int(
+            stats.get("controller_drop_guard_activation_count_run", 0) or 0
+        ),
+        "controller_drop_guard_activation_fraction_run": _finite_float(
+            stats.get("controller_drop_guard_activation_fraction_run", 0.0)
+        ),
+        "controller_drop_guard_reference_flux": _finite_float(stats.get("controller_drop_guard_reference_flux", 0.0)),
+        "controller_true_outlet_flux_for_guard": _finite_float(
+            stats.get("controller_true_outlet_flux_for_guard", outlet_flux_after_correction)
+        ),
         "outlet_plane_ux_min": _finite_float(record.get("outlet_plane_ux_min", 0.0)),
         "outlet_plane_ux_max": _finite_float(record.get("outlet_plane_ux_max", 0.0)),
         "outlet_plane_ux_mean": _finite_float(record.get("outlet_plane_ux_mean", 0.0)),
@@ -1840,6 +1901,16 @@ def _flow_development_diagnostic_record(
         "outlet_plane_rho_mean": _finite_float(record.get("outlet_plane_rho_mean", 0.0)),
         "outlet_plane_rho_std": _finite_float(record.get("outlet_plane_rho_std", 0.0)),
         "midplane_flux": _finite_float(record.get("midplane_flux", 0.0)),
+        "near_outlet_flux_xminus1": _finite_float(
+            record.get("near_outlet_flux_xminus1", stats.get("near_outlet_flux_xminus1", 0.0))
+        ),
+        "near_outlet_flux_xminus2": _finite_float(
+            record.get("near_outlet_flux_xminus2", stats.get("near_outlet_flux_xminus2", 0.0))
+        ),
+        "near_outlet_flux_xminus3": _finite_float(
+            record.get("near_outlet_flux_xminus3", stats.get("near_outlet_flux_xminus3", 0.0))
+        ),
+        "near_outlet_to_outlet_flux_ratio": _finite_float(record.get("near_outlet_to_outlet_flux_ratio", 0.0)),
         "sampled_x_profile_flux": str(record.get("sampled_x_profile_flux") or ""),
         "mass_total_delta_rel": _finite_float(record.get("mass_total_delta_rel", 0.0)),
         "validation_claim_allowed": False,
@@ -1868,6 +1939,8 @@ def _write_flow_development_diagnostics(row_path: Path, records: Sequence[Dict[s
 
 
 def _flow_development_diagnostic_step_number(diagnostics: Sequence[Dict[str, Any]]) -> int:
+    if any(row.get("step134_outlet_stationarity_candidate") is True for row in diagnostics):
+        return 134
     if any(row.get("step133_mass_damped_candidate") is True for row in diagnostics):
         return 133
     if any(row.get("step132_authority_sweep_candidate") is True for row in diagnostics):
@@ -1883,6 +1956,8 @@ def _diagnostic_tail_records(diagnostics: Sequence[Dict[str, Any]]) -> List[Dict
     tail_count = max(1, int(math.ceil(len(diagnostics) * 0.2)))
     if len(diagnostics) > 1:
         tail_count = max(2, tail_count)
+    if len(diagnostics) > 2:
+        tail_count = max(3, tail_count)
     return list(diagnostics[-tail_count:])
 
 
@@ -1932,6 +2007,24 @@ def _diagnostic_slope(values: Sequence[float]) -> Optional[float]:
     return _finite_float(values[-1] - values[0])
 
 
+def _diagnostic_sum(values: Sequence[float]) -> Optional[float]:
+    if not values:
+        return None
+    return _finite_float(sum(values))
+
+
+def _diagnostic_ratio(numerator: Optional[float], denominator: Optional[float]) -> Optional[float]:
+    if numerator is None or denominator is None or abs(float(denominator)) < 1.0e-12:
+        return None
+    return _finite_float(float(numerator) / float(denominator))
+
+
+def _diagnostic_last_to_mean(values: Sequence[float]) -> Optional[float]:
+    if not values:
+        return None
+    return _diagnostic_ratio(values[-1], _diagnostic_mean(values))
+
+
 def _diagnostic_sign_change_count(values: Sequence[float]) -> int:
     signs: List[int] = []
     for value in values:
@@ -1956,27 +2049,59 @@ def _flow_development_tail_summary(diagnostics: Sequence[Dict[str, Any]]) -> Dic
     authority = _diagnostic_numeric_values(tail, "controller_authority_ratio")
     mass_drift = _diagnostic_numeric_values(tail, "mass_total_delta_rel")
     outlet_rho = _diagnostic_numeric_values(tail, "outlet_plane_rho_mean")
+    outlet_ux_min = _diagnostic_numeric_values(tail, "outlet_plane_ux_min")
+    outlet_ux_negative_fraction = _diagnostic_numeric_values(tail, "outlet_plane_negative_ux_fraction")
+    inlet_flux = _diagnostic_numeric_values(tail, "target_outlet_flux")
     outlet_flux = _diagnostic_numeric_values(tail, "outlet_flux_after_correction")
+    midplane_flux = _diagnostic_numeric_values(tail, "midplane_flux")
+    near_outlet_flux_xminus1 = _diagnostic_numeric_values(tail, "near_outlet_flux_xminus1")
+    near_outlet_flux_xminus2 = _diagnostic_numeric_values(tail, "near_outlet_flux_xminus2")
+    near_outlet_flux_xminus3 = _diagnostic_numeric_values(tail, "near_outlet_flux_xminus3")
+    near_outlet_to_outlet = _diagnostic_numeric_values(tail, "near_outlet_to_outlet_flux_ratio")
+    drop_guard_active = _diagnostic_numeric_values(tail, "controller_drop_guard_active_step")
+    drop_guard_fraction = _diagnostic_numeric_values(tail, "controller_drop_guard_activation_fraction_run")
     return {
         "controller_tail_record_count": int(len(tail)),
+        "tail_inlet_flux_values": inlet_flux,
+        "tail_outlet_flux_values": outlet_flux,
+        "tail_midplane_flux_values": midplane_flux,
         "mass_drift_tail_mean": _diagnostic_mean(mass_drift),
         "mass_drift_tail_slope": _diagnostic_slope(mass_drift),
         "density_feedback_tail_mean": _diagnostic_mean(density_feedback),
         "density_feedback_tail_abs_max": _diagnostic_abs_max(density_feedback),
+        "density_feedback_last_to_tail_mean": _diagnostic_last_to_mean(density_feedback),
+        "outlet_rho_last": outlet_rho[-1] if outlet_rho else None,
+        "outlet_rho_tail_mean": _diagnostic_mean(outlet_rho),
         "rho_outlet_tail_mean": _diagnostic_mean(outlet_rho),
         "rho_outlet_tail_std": _diagnostic_std(outlet_rho),
+        "outlet_ux_min_last": outlet_ux_min[-1] if outlet_ux_min else None,
+        "outlet_ux_negative_fraction_last": outlet_ux_negative_fraction[-1]
+        if outlet_ux_negative_fraction
+        else None,
         "controller_u_feedback_tail_mean": _diagnostic_mean(feedback),
         "controller_u_feedback_tail_abs_max": _diagnostic_abs_max(feedback),
         "controller_u_feedback_tail_std": _diagnostic_std(feedback),
+        "controller_feedback_last_to_tail_mean": _diagnostic_last_to_mean(feedback),
         "controller_feedback_sign_change_count_tail": _diagnostic_sign_change_count(feedback),
         "controller_saturation_fraction_tail": _diagnostic_mean(saturation),
+        "drop_guard_activation_count_tail": int(_diagnostic_sum(drop_guard_active) or 0),
+        "drop_guard_activation_fraction_tail": _diagnostic_mean(drop_guard_fraction),
         "controller_raw_flux_error_tail_mean": _diagnostic_mean(raw_error),
         "controller_filtered_flux_error_tail_mean": _diagnostic_mean(filtered_error),
         "controller_target_outlet_flux_tail_mean": _diagnostic_mean(target_flux),
         "controller_measured_outlet_flux_tail_mean": _diagnostic_mean(measured_flux),
         "controller_authority_ratio_tail_mean": _diagnostic_mean(authority),
         "controller_authority_ratio_tail_max": _diagnostic_max(authority),
+        "near_outlet_flux_xminus1_tail_mean": _diagnostic_mean(near_outlet_flux_xminus1),
+        "near_outlet_flux_xminus2_tail_mean": _diagnostic_mean(near_outlet_flux_xminus2),
+        "near_outlet_flux_xminus3_tail_mean": _diagnostic_mean(near_outlet_flux_xminus3),
+        "near_outlet_to_outlet_flux_ratio_tail_mean": _diagnostic_mean(near_outlet_to_outlet),
         "outlet_flux_tail_slope": _diagnostic_slope(outlet_flux),
+        "outlet_flux_tail_drop_ratio": _diagnostic_ratio(
+            outlet_flux[-1] if outlet_flux else None,
+            outlet_flux[0] if outlet_flux else None,
+        ),
+        "outlet_flux_tail_last_to_mean_ratio": _diagnostic_last_to_mean(outlet_flux),
     }
 
 
@@ -2474,8 +2599,12 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "step",
     "lbm_open_boundary_semantics",
     "row_role",
+    "step134_outlet_stationarity_candidate",
     "step133_mass_damped_candidate",
     "step132_authority_sweep_candidate",
+    "open_boundary_flux_control_measure_plane_offset",
+    "open_boundary_outlet_flux_drop_guard_enabled",
+    "open_boundary_outlet_flux_drop_guard_min_ratio",
     "target_outlet_flux",
     "outlet_flux_raw_before_correction",
     "outlet_flux_after_correction",
@@ -2499,6 +2628,12 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "controller_saturation_count_step",
     "controller_saturation_count_run",
     "controller_saturation_fraction_run",
+    "controller_measure_plane_offset",
+    "controller_drop_guard_active_step",
+    "controller_drop_guard_activation_count_run",
+    "controller_drop_guard_activation_fraction_run",
+    "controller_drop_guard_reference_flux",
+    "controller_true_outlet_flux_for_guard",
     "outlet_plane_ux_min",
     "outlet_plane_ux_max",
     "outlet_plane_ux_mean",
@@ -2506,6 +2641,10 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "outlet_plane_rho_mean",
     "outlet_plane_rho_std",
     "midplane_flux",
+    "near_outlet_flux_xminus1",
+    "near_outlet_flux_xminus2",
+    "near_outlet_flux_xminus3",
+    "near_outlet_to_outlet_flux_ratio",
     "sampled_x_profile_flux",
     "mass_total_delta_rel",
     "validation_claim_allowed",

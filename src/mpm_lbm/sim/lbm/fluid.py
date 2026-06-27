@@ -59,6 +59,9 @@ class LBMFluid3D:
         self.open_boundary_flux_feedback_delta_cap_u = float(config.open_boundary_flux_feedback_delta_cap_u)
         self.open_boundary_flux_feedback_slew_alpha = float(config.open_boundary_flux_feedback_slew_alpha)
         self.open_boundary_convective_blend_weight = float(config.open_boundary_convective_blend_weight)
+        self.open_boundary_flux_control_measure_plane_offset = int(config.open_boundary_flux_control_measure_plane_offset)
+        self.open_boundary_outlet_flux_drop_guard_enabled = bool(config.open_boundary_outlet_flux_drop_guard_enabled)
+        self.open_boundary_outlet_flux_drop_guard_min_ratio = float(config.open_boundary_outlet_flux_drop_guard_min_ratio)
         self.open_boundary_population_floor_enabled = config.open_boundary_population_floor is not None
         self.open_boundary_population_floor = float(
             config.open_boundary_population_floor
@@ -114,6 +117,13 @@ class LBMFluid3D:
         self.ob_flux_control_saturation_count_run = ti.field(ti.i32, shape=())
         self.ob_flux_control_update_count_step = ti.field(ti.i32, shape=())
         self.ob_flux_control_update_count_run = ti.field(ti.i32, shape=())
+        self.ob_near_outlet_flux_xminus1 = ti.field(ti.f32, shape=())
+        self.ob_near_outlet_flux_xminus2 = ti.field(ti.f32, shape=())
+        self.ob_near_outlet_flux_xminus3 = ti.field(ti.f32, shape=())
+        self.ob_true_outlet_flux_for_guard = ti.field(ti.f32, shape=())
+        self.ob_drop_guard_active_step = ti.field(ti.i32, shape=())
+        self.ob_drop_guard_activation_count_run = ti.field(ti.i32, shape=())
+        self.ob_drop_guard_reference_flux = ti.field(ti.f32, shape=())
 
         #Boundary condition mode: 0=periodic, 1= fix pressure, 2=fix velocity; boundary pressure value (rho); boundary velocity value for vx,vy,vz
         self.bc_x_left, self.rho_bcxl, self.vx_bcxl, self.vy_bcxl, self.vz_bcxl = (
@@ -550,6 +560,7 @@ class LBMFluid3D:
         self.ob_flow_correction_gain_effective_step[None] = 0.0
         self.ob_flux_control_saturation_count_step[None] = 0
         self.ob_flux_control_update_count_step[None] = 0
+        self.ob_drop_guard_active_step[None] = 0
 
     @ti.kernel
     def clear_open_boundary_limiter_run_counters(self):
@@ -583,6 +594,13 @@ class LBMFluid3D:
         self.ob_flux_control_saturation_count_run[None] = 0
         self.ob_flux_control_update_count_step[None] = 0
         self.ob_flux_control_update_count_run[None] = 0
+        self.ob_near_outlet_flux_xminus1[None] = 0.0
+        self.ob_near_outlet_flux_xminus2[None] = 0.0
+        self.ob_near_outlet_flux_xminus3[None] = 0.0
+        self.ob_true_outlet_flux_for_guard[None] = 0.0
+        self.ob_drop_guard_active_step[None] = 0
+        self.ob_drop_guard_activation_count_run[None] = 0
+        self.ob_drop_guard_reference_flux[None] = 0.0
 
     @ti.kernel
     def set_open_boundary_limiter_run_counters(
@@ -623,6 +641,13 @@ class LBMFluid3D:
         self.ob_flux_control_saturation_count_run[None] = 0
         self.ob_flux_control_update_count_step[None] = 0
         self.ob_flux_control_update_count_run[None] = 0
+        self.ob_near_outlet_flux_xminus1[None] = 0.0
+        self.ob_near_outlet_flux_xminus2[None] = 0.0
+        self.ob_near_outlet_flux_xminus3[None] = 0.0
+        self.ob_true_outlet_flux_for_guard[None] = 0.0
+        self.ob_drop_guard_active_step[None] = 0
+        self.ob_drop_guard_activation_count_run[None] = 0
+        self.ob_drop_guard_reference_flux[None] = 0.0
 
     @ti.kernel
     def set_open_boundary_repair_run_counters(
@@ -651,6 +676,13 @@ class LBMFluid3D:
         self.ob_flux_control_saturation_count_run[None] = 0
         self.ob_flux_control_update_count_step[None] = 0
         self.ob_flux_control_update_count_run[None] = 0
+        self.ob_near_outlet_flux_xminus1[None] = 0.0
+        self.ob_near_outlet_flux_xminus2[None] = 0.0
+        self.ob_near_outlet_flux_xminus3[None] = 0.0
+        self.ob_true_outlet_flux_for_guard[None] = 0.0
+        self.ob_drop_guard_active_step[None] = 0
+        self.ob_drop_guard_activation_count_run[None] = 0
+        self.ob_drop_guard_reference_flux[None] = 0.0
 
     @ti.kernel
     def reduce_lbm_stability_diagnostics(self):
@@ -769,6 +801,13 @@ class LBMFluid3D:
             "flow_feedback_delta_cap_u": float(self.open_boundary_flux_feedback_delta_cap_u),
             "flow_feedback_slew_alpha": float(self.open_boundary_flux_feedback_slew_alpha),
             "flow_convective_blend_weight": float(self.open_boundary_convective_blend_weight),
+            "flow_control_measure_plane_offset": int(self.open_boundary_flux_control_measure_plane_offset),
+            "flow_outlet_flux_drop_guard_enabled": bool(self.open_boundary_outlet_flux_drop_guard_enabled),
+            "flow_outlet_flux_drop_guard_min_ratio": float(self.open_boundary_outlet_flux_drop_guard_min_ratio),
+            "near_outlet_flux_xminus1": float(self.ob_near_outlet_flux_xminus1[None]),
+            "near_outlet_flux_xminus2": float(self.ob_near_outlet_flux_xminus2[None]),
+            "near_outlet_flux_xminus3": float(self.ob_near_outlet_flux_xminus3[None]),
+            "controller_true_outlet_flux_for_guard": float(self.ob_true_outlet_flux_for_guard[None]),
             "controller_target_outlet_flux": float(self.ob_target_outlet_flux[None]),
             "controller_measured_outlet_flux": float(self.ob_measured_outlet_flux[None]),
             "controller_raw_flux_error": float(self.ob_target_outlet_flux[None] - self.ob_measured_outlet_flux[None]),
@@ -789,6 +828,14 @@ class LBMFluid3D:
             "controller_update_count_run": controller_updates,
             "controller_saturation_fraction_run": float(
                 controller_saturations / controller_updates if controller_updates else 0.0
+            ),
+            "controller_measure_plane_offset": int(self.open_boundary_flux_control_measure_plane_offset),
+            "controller_drop_guard_active_step": int(self.ob_drop_guard_active_step[None]),
+            "controller_drop_guard_activation_count_run": int(self.ob_drop_guard_activation_count_run[None]),
+            "controller_drop_guard_reference_flux": float(self.ob_drop_guard_reference_flux[None]),
+            "controller_drop_guard_min_ratio": float(self.open_boundary_outlet_flux_drop_guard_min_ratio),
+            "controller_drop_guard_activation_fraction_run": float(
+                int(self.ob_drop_guard_activation_count_run[None]) / controller_updates if controller_updates else 0.0
             ),
         }
 
@@ -1012,15 +1059,45 @@ class LBMFluid3D:
         self.ob_target_outlet_flux[None] = 0.0
         self.ob_measured_outlet_flux[None] = 0.0
         self.ob_outlet_fluid_area[None] = 0.0
+        self.ob_near_outlet_flux_xminus1[None] = 0.0
+        self.ob_near_outlet_flux_xminus2[None] = 0.0
+        self.ob_near_outlet_flux_xminus3[None] = 0.0
+        self.ob_true_outlet_flux_for_guard[None] = 0.0
+        self.ob_drop_guard_active_step[None] = 0
+        self.ob_drop_guard_reference_flux[None] = 0.0
+        measure_i = ti.static(max(0, self.nx - 1 - self.open_boundary_flux_control_measure_plane_offset))
+        near1_i = ti.static(max(0, self.nx - 2))
+        near2_i = ti.static(max(0, self.nx - 3))
+        near3_i = ti.static(max(0, self.nx - 4))
         for j, k in ti.ndrange((0, self.ny), (0, self.nz)):
             if self.solid[0, j, k] == 0:
                 ti.atomic_add(self.ob_target_outlet_flux[None], self.rho[0, j, k] * self.v[0, j, k][0])
-            if self.solid[self.nx - 1, j, k] == 0:
+            if self.solid[measure_i, j, k] == 0:
                 ti.atomic_add(
                     self.ob_measured_outlet_flux[None],
-                    self.rho[self.nx - 1, j, k] * self.v[self.nx - 1, j, k][0],
+                    self.rho[measure_i, j, k] * self.v[measure_i, j, k][0],
                 )
                 ti.atomic_add(self.ob_outlet_fluid_area[None], 1.0)
+            if self.solid[self.nx - 1, j, k] == 0:
+                ti.atomic_add(
+                    self.ob_true_outlet_flux_for_guard[None],
+                    self.rho[self.nx - 1, j, k] * self.v[self.nx - 1, j, k][0],
+                )
+            if self.solid[near1_i, j, k] == 0:
+                ti.atomic_add(
+                    self.ob_near_outlet_flux_xminus1[None],
+                    self.rho[near1_i, j, k] * self.v[near1_i, j, k][0],
+                )
+            if self.solid[near2_i, j, k] == 0:
+                ti.atomic_add(
+                    self.ob_near_outlet_flux_xminus2[None],
+                    self.rho[near2_i, j, k] * self.v[near2_i, j, k][0],
+                )
+            if self.solid[near3_i, j, k] == 0:
+                ti.atomic_add(
+                    self.ob_near_outlet_flux_xminus3[None],
+                    self.rho[near3_i, j, k] * self.v[near3_i, j, k][0],
+                )
         area = self.ob_outlet_fluid_area[None]
         if area <= 0.0:
             area = 1.0
@@ -1042,9 +1119,20 @@ class LBMFluid3D:
                 self.open_boundary_flux_feedback_delta_cap_u,
             )
             delta_limited_feedback = previous_feedback + feedback_delta
-        self.ob_flux_control_u_feedback[None] = previous_feedback + self.open_boundary_flux_feedback_slew_alpha * (
+        next_feedback = previous_feedback + self.open_boundary_flux_feedback_slew_alpha * (
             delta_limited_feedback - previous_feedback
         )
+        if ti.static(self.open_boundary_outlet_flux_drop_guard_enabled):
+            reference_flux = ti.max(ti.abs(self.ob_target_outlet_flux[None]), ti.abs(self.ob_measured_outlet_flux[None]))
+            self.ob_drop_guard_reference_flux[None] = reference_flux
+            outlet_flux = ti.abs(self.ob_true_outlet_flux_for_guard[None])
+            if reference_flux > 1.0e-12:
+                if outlet_flux < self.open_boundary_outlet_flux_drop_guard_min_ratio * reference_flux:
+                    if next_feedback < previous_feedback:
+                        next_feedback = previous_feedback
+                        self.ob_drop_guard_active_step[None] = 1
+                        ti.atomic_add(self.ob_drop_guard_activation_count_run[None], 1)
+        self.ob_flux_control_u_feedback[None] = next_feedback
         requested_rho_feedback = self.open_boundary_flux_feedback_gain_rho * filtered / area
         self.ob_flux_control_rho_feedback[None] = self._bounded_scalar(requested_rho_feedback, 0.01)
         self.ob_flow_correction_gain_effective_step[None] = self.open_boundary_flux_feedback_gain_u

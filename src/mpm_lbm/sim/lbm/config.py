@@ -49,6 +49,9 @@ class LBMConfig:
     open_boundary_flux_feedback_delta_cap_u: float = 0.0
     open_boundary_flux_feedback_slew_alpha: float = 1.0
     open_boundary_convective_blend_weight: float = 0.05
+    open_boundary_flux_control_measure_plane_offset: int = 0
+    open_boundary_outlet_flux_drop_guard_enabled: bool = False
+    open_boundary_outlet_flux_drop_guard_min_ratio: float = 0.60
     sparse_storage: bool = False
 
     force: Tuple[float, float, float] = (0.0, 0.0, 0.0)
@@ -101,3 +104,10 @@ class LBMConfig:
             raise ValueError("open_boundary_flux_feedback_slew_alpha must be in (0, 1]")
         if not (0.0 <= self.open_boundary_convective_blend_weight <= 1.0):
             raise ValueError("open_boundary_convective_blend_weight must be in [0, 1]")
+        if int(self.open_boundary_flux_control_measure_plane_offset) != self.open_boundary_flux_control_measure_plane_offset:
+            raise ValueError("open_boundary_flux_control_measure_plane_offset must be an integer")
+        if not (0 <= int(self.open_boundary_flux_control_measure_plane_offset) <= 2):
+            raise ValueError("open_boundary_flux_control_measure_plane_offset must be 0, 1, or 2")
+        self.open_boundary_flux_control_measure_plane_offset = int(self.open_boundary_flux_control_measure_plane_offset)
+        if not (0.0 < self.open_boundary_outlet_flux_drop_guard_min_ratio <= 1.0):
+            raise ValueError("open_boundary_outlet_flux_drop_guard_min_ratio must be in (0, 1]")

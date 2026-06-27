@@ -79,6 +79,9 @@ class Step118RunSpec(Step116RunSpec):
     open_boundary_flux_feedback_delta_cap_u: float = 0.0
     open_boundary_flux_feedback_slew_alpha: float = 1.0
     open_boundary_convective_blend_weight: float = 0.05
+    open_boundary_flux_control_measure_plane_offset: int = 0
+    open_boundary_outlet_flux_drop_guard_enabled: bool = False
+    open_boundary_outlet_flux_drop_guard_min_ratio: float = 0.60
     synthetic_diagnostic_mode: bool = False
 
 
@@ -405,6 +408,9 @@ def _make_lbm_config(spec: Step118RunSpec, tau_report: Dict[str, Any]) -> LBMCon
         open_boundary_flux_feedback_delta_cap_u=float(spec.open_boundary_flux_feedback_delta_cap_u),
         open_boundary_flux_feedback_slew_alpha=float(spec.open_boundary_flux_feedback_slew_alpha),
         open_boundary_convective_blend_weight=float(spec.open_boundary_convective_blend_weight),
+        open_boundary_flux_control_measure_plane_offset=int(spec.open_boundary_flux_control_measure_plane_offset),
+        open_boundary_outlet_flux_drop_guard_enabled=bool(spec.open_boundary_outlet_flux_drop_guard_enabled),
+        open_boundary_outlet_flux_drop_guard_min_ratio=float(spec.open_boundary_outlet_flux_drop_guard_min_ratio),
         bc_x_left=2,
         bc_x_right=1,
         vel_bc_x_left=(float(spec.inlet_u_lbm), 0.0, 0.0),
