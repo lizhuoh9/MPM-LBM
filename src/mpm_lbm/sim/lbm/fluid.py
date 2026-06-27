@@ -56,6 +56,8 @@ class LBMFluid3D:
         self.open_boundary_flux_feedback_gain_rho = float(config.open_boundary_flux_feedback_gain_rho)
         self.open_boundary_flux_filter_alpha = float(config.open_boundary_flux_filter_alpha)
         self.open_boundary_flux_correction_cap_u = float(config.open_boundary_flux_correction_cap_u)
+        self.open_boundary_flux_feedback_delta_cap_u = float(config.open_boundary_flux_feedback_delta_cap_u)
+        self.open_boundary_flux_feedback_slew_alpha = float(config.open_boundary_flux_feedback_slew_alpha)
         self.open_boundary_convective_blend_weight = float(config.open_boundary_convective_blend_weight)
         self.open_boundary_population_floor_enabled = config.open_boundary_population_floor is not None
         self.open_boundary_population_floor = float(
@@ -107,6 +109,7 @@ class LBMFluid3D:
         self.ob_flux_error_filtered = ti.field(ti.f32, shape=())
         self.ob_outlet_fluid_area = ti.field(ti.f32, shape=())
         self.ob_flux_control_u_feedback = ti.field(ti.f32, shape=())
+        self.ob_flux_control_rho_feedback = ti.field(ti.f32, shape=())
         self.ob_flux_control_saturation_count_step = ti.field(ti.i32, shape=())
         self.ob_flux_control_saturation_count_run = ti.field(ti.i32, shape=())
         self.ob_flux_control_update_count_step = ti.field(ti.i32, shape=())
@@ -575,6 +578,7 @@ class LBMFluid3D:
         self.ob_flux_error_filtered[None] = 0.0
         self.ob_outlet_fluid_area[None] = 0.0
         self.ob_flux_control_u_feedback[None] = 0.0
+        self.ob_flux_control_rho_feedback[None] = 0.0
         self.ob_flux_control_saturation_count_step[None] = 0
         self.ob_flux_control_saturation_count_run[None] = 0
         self.ob_flux_control_update_count_step[None] = 0
@@ -614,6 +618,7 @@ class LBMFluid3D:
         self.ob_flux_error_filtered[None] = 0.0
         self.ob_outlet_fluid_area[None] = 0.0
         self.ob_flux_control_u_feedback[None] = 0.0
+        self.ob_flux_control_rho_feedback[None] = 0.0
         self.ob_flux_control_saturation_count_step[None] = 0
         self.ob_flux_control_saturation_count_run[None] = 0
         self.ob_flux_control_update_count_step[None] = 0
@@ -641,6 +646,7 @@ class LBMFluid3D:
         self.ob_flux_error_filtered[None] = 0.0
         self.ob_outlet_fluid_area[None] = 0.0
         self.ob_flux_control_u_feedback[None] = 0.0
+        self.ob_flux_control_rho_feedback[None] = 0.0
         self.ob_flux_control_saturation_count_step[None] = 0
         self.ob_flux_control_saturation_count_run[None] = 0
         self.ob_flux_control_update_count_step[None] = 0
@@ -729,6 +735,7 @@ class LBMFluid3D:
         controller_updates = int(self.ob_flux_control_update_count_run[None])
         controller_saturations = int(self.ob_flux_control_saturation_count_run[None])
         controller_feedback_abs = abs(float(self.ob_flux_control_u_feedback[None]))
+        controller_density_feedback_abs = abs(float(self.ob_flux_control_rho_feedback[None]))
         controller_cap_abs = abs(float(self.open_boundary_flux_correction_cap_u))
         return {
             "rho_clip_count_step": int(self.ob_rho_clip_count_step[None]),
@@ -759,6 +766,8 @@ class LBMFluid3D:
             "flow_feedback_gain_rho": float(self.open_boundary_flux_feedback_gain_rho),
             "flow_filter_alpha": float(self.open_boundary_flux_filter_alpha),
             "flow_correction_cap_u": float(self.open_boundary_flux_correction_cap_u),
+            "flow_feedback_delta_cap_u": float(self.open_boundary_flux_feedback_delta_cap_u),
+            "flow_feedback_slew_alpha": float(self.open_boundary_flux_feedback_slew_alpha),
             "flow_convective_blend_weight": float(self.open_boundary_convective_blend_weight),
             "controller_target_outlet_flux": float(self.ob_target_outlet_flux[None]),
             "controller_measured_outlet_flux": float(self.ob_measured_outlet_flux[None]),
@@ -767,6 +776,10 @@ class LBMFluid3D:
             "controller_outlet_fluid_area": float(self.ob_outlet_fluid_area[None]),
             "controller_u_feedback": float(self.ob_flux_control_u_feedback[None]),
             "controller_u_feedback_abs": controller_feedback_abs,
+            "controller_density_feedback": float(self.ob_flux_control_rho_feedback[None]),
+            "controller_density_feedback_abs": controller_density_feedback_abs,
+            "controller_delta_cap_u": float(self.open_boundary_flux_feedback_delta_cap_u),
+            "controller_slew_alpha": float(self.open_boundary_flux_feedback_slew_alpha),
             "controller_authority_ratio": float(
                 controller_feedback_abs / controller_cap_abs if controller_cap_abs else 0.0
             ),
@@ -1021,7 +1034,19 @@ class LBMFluid3D:
         self.ob_flow_outlet_flux_error_filtered_run[None] = filtered
         requested_feedback = self.open_boundary_flux_feedback_gain_u * filtered / area
         bounded_feedback = self._bounded_scalar(requested_feedback, self.open_boundary_flux_correction_cap_u)
-        self.ob_flux_control_u_feedback[None] = bounded_feedback
+        previous_feedback = self.ob_flux_control_u_feedback[None]
+        delta_limited_feedback = bounded_feedback
+        if self.open_boundary_flux_feedback_delta_cap_u > 0.0:
+            feedback_delta = self._bounded_scalar(
+                bounded_feedback - previous_feedback,
+                self.open_boundary_flux_feedback_delta_cap_u,
+            )
+            delta_limited_feedback = previous_feedback + feedback_delta
+        self.ob_flux_control_u_feedback[None] = previous_feedback + self.open_boundary_flux_feedback_slew_alpha * (
+            delta_limited_feedback - previous_feedback
+        )
+        requested_rho_feedback = self.open_boundary_flux_feedback_gain_rho * filtered / area
+        self.ob_flux_control_rho_feedback[None] = self._bounded_scalar(requested_rho_feedback, 0.01)
         self.ob_flow_correction_gain_effective_step[None] = self.open_boundary_flux_feedback_gain_u
         self.ob_flux_control_update_count_step[None] = 1
         ti.atomic_add(self.ob_flux_control_update_count_run[None], 1)
@@ -1084,10 +1109,7 @@ class LBMFluid3D:
 
     @ti.func
     def _regularized_plane_flux_controlled_population(self, s, target_rho, target_u, ni, nj, nk):
-        rho_feedback = self._bounded_scalar(
-            self.open_boundary_flux_feedback_gain_rho * (self.rho0 - self.rho[ni, nj, nk]),
-            0.01,
-        )
+        rho_feedback = self.ob_flux_control_rho_feedback[None]
         velocity_feedback = self.ob_flux_control_u_feedback[None]
         repaired_u = target_u
         repaired_u[0] = target_u[0] + velocity_feedback

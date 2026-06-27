@@ -158,6 +158,27 @@ def plane_velocity_x_stats(lbm_or_snapshot: Any, x_index: int) -> Dict[str, floa
     }
 
 
+def plane_density_stats(lbm_or_snapshot: Any, x_index: int) -> Dict[str, float]:
+    snap = _snapshot(lbm_or_snapshot)
+    mask = fluid_mask(snap)
+    x = _clamp_index(int(x_index), snap["rho"].shape[0])
+    plane = mask[x, :, :]
+    if not np.any(plane):
+        return {
+            "x_index": int(x),
+            "fluid_cell_count": 0,
+            "rho_mean": 0.0,
+            "rho_std": 0.0,
+        }
+    rho = snap["rho"][x, :, :][plane]
+    return {
+        "x_index": int(x),
+        "fluid_cell_count": int(rho.size),
+        "rho_mean": _finite_float(np.mean(rho)),
+        "rho_std": _finite_float(np.std(rho)),
+    }
+
+
 def sampled_x_profile_flux(lbm_or_snapshot: Any) -> str:
     snap = _snapshot(lbm_or_snapshot)
     nx = snap["rho"].shape[0]
@@ -183,6 +204,7 @@ def summarize_lbm_boundary_diagnostics(
     outlet_flux = plane_flux_x(snap, nx - 1)
     midplane_flux = plane_flux_x(snap, mid_x)
     outlet_plane = plane_velocity_x_stats(snap, nx - 1)
+    outlet_plane_density = plane_density_stats(snap, nx - 1)
     scale = max(abs(inlet_flux), abs(outlet_flux), 1.0e-12)
     flux_imbalance_abs = abs(inlet_flux - outlet_flux)
     max_v = _max_velocity(snap)
@@ -210,6 +232,8 @@ def summarize_lbm_boundary_diagnostics(
         "outlet_plane_ux_max": outlet_plane["ux_max"],
         "outlet_plane_ux_mean": outlet_plane["ux_mean"],
         "outlet_plane_negative_ux_fraction": outlet_plane["negative_ux_fraction"],
+        "outlet_plane_rho_mean": outlet_plane_density["rho_mean"],
+        "outlet_plane_rho_std": outlet_plane_density["rho_std"],
         "all_finite": _all_numeric_finite(snap),
     }
 

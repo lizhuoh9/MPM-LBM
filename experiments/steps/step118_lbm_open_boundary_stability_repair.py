@@ -76,6 +76,8 @@ class Step118RunSpec(Step116RunSpec):
     open_boundary_flux_feedback_gain_rho: float = 0.005
     open_boundary_flux_filter_alpha: float = 0.05
     open_boundary_flux_correction_cap_u: float = 0.005
+    open_boundary_flux_feedback_delta_cap_u: float = 0.0
+    open_boundary_flux_feedback_slew_alpha: float = 1.0
     open_boundary_convective_blend_weight: float = 0.05
     synthetic_diagnostic_mode: bool = False
 
@@ -400,6 +402,8 @@ def _make_lbm_config(spec: Step118RunSpec, tau_report: Dict[str, Any]) -> LBMCon
         open_boundary_flux_feedback_gain_rho=float(spec.open_boundary_flux_feedback_gain_rho),
         open_boundary_flux_filter_alpha=float(spec.open_boundary_flux_filter_alpha),
         open_boundary_flux_correction_cap_u=float(spec.open_boundary_flux_correction_cap_u),
+        open_boundary_flux_feedback_delta_cap_u=float(spec.open_boundary_flux_feedback_delta_cap_u),
+        open_boundary_flux_feedback_slew_alpha=float(spec.open_boundary_flux_feedback_slew_alpha),
         open_boundary_convective_blend_weight=float(spec.open_boundary_convective_blend_weight),
         bc_x_left=2,
         bc_x_right=1,

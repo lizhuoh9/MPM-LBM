@@ -135,6 +135,8 @@ SOLVER_STATE_HASH_FIELDS = {
     "open_boundary_flux_feedback_gain_rho",
     "open_boundary_flux_filter_alpha",
     "open_boundary_flux_correction_cap_u",
+    "open_boundary_flux_feedback_delta_cap_u",
+    "open_boundary_flux_feedback_slew_alpha",
     "open_boundary_convective_blend_weight",
 }
 
@@ -1478,6 +1480,8 @@ def _summary_row(
         "open_boundary_flux_feedback_gain_rho": float(spec.open_boundary_flux_feedback_gain_rho),
         "open_boundary_flux_filter_alpha": float(spec.open_boundary_flux_filter_alpha),
         "open_boundary_flux_correction_cap_u": float(spec.open_boundary_flux_correction_cap_u),
+        "open_boundary_flux_feedback_delta_cap_u": float(spec.open_boundary_flux_feedback_delta_cap_u),
+        "open_boundary_flux_feedback_slew_alpha": float(spec.open_boundary_flux_feedback_slew_alpha),
         "open_boundary_convective_blend_weight": float(spec.open_boundary_convective_blend_weight),
         "inlet_u_lbm": float(spec.inlet_u_lbm),
         "outlet_rho": float(spec.outlet_rho),
@@ -1580,6 +1584,8 @@ def _metadata(
         "open_boundary_flux_feedback_gain_rho": float(spec.open_boundary_flux_feedback_gain_rho),
         "open_boundary_flux_filter_alpha": float(spec.open_boundary_flux_filter_alpha),
         "open_boundary_flux_correction_cap_u": float(spec.open_boundary_flux_correction_cap_u),
+        "open_boundary_flux_feedback_delta_cap_u": float(spec.open_boundary_flux_feedback_delta_cap_u),
+        "open_boundary_flux_feedback_slew_alpha": float(spec.open_boundary_flux_feedback_slew_alpha),
         "open_boundary_convective_blend_weight": float(spec.open_boundary_convective_blend_weight),
         "step130_flow_repair_triage": bool(spec.row_role == "flow_repair_candidate_48"),
         "step120_schema_version": STEP120_SCHEMA_VERSION,
@@ -1635,6 +1641,8 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         "open_boundary_flux_feedback_gain_rho": float(spec.open_boundary_flux_feedback_gain_rho),
         "open_boundary_flux_filter_alpha": float(spec.open_boundary_flux_filter_alpha),
         "open_boundary_flux_correction_cap_u": float(spec.open_boundary_flux_correction_cap_u),
+        "open_boundary_flux_feedback_delta_cap_u": float(spec.open_boundary_flux_feedback_delta_cap_u),
+        "open_boundary_flux_feedback_slew_alpha": float(spec.open_boundary_flux_feedback_slew_alpha),
         "open_boundary_convective_blend_weight": float(spec.open_boundary_convective_blend_weight),
         "actual_limiter_counter_required": True,
         "implemented_axis": "x",
@@ -1776,12 +1784,16 @@ def _flow_development_diagnostic_record(
     controller_raw_error = _finite_float(stats.get("controller_raw_flux_error", controller_target - controller_measured))
     controller_filtered_error = _finite_float(stats.get("controller_filtered_flux_error", controller_raw_error))
     controller_u_feedback = _finite_float(stats.get("controller_u_feedback", 0.0))
+    controller_density_feedback = _finite_float(stats.get("controller_density_feedback", 0.0))
     controller_cap_u = _finite_float(stats.get("flow_correction_cap_u", spec.open_boundary_flux_correction_cap_u))
     controller_authority_ratio = _finite_float(
         stats.get(
             "controller_authority_ratio",
             abs(controller_u_feedback) / abs(controller_cap_u) if abs(controller_cap_u) > 0.0 else 0.0,
         )
+    )
+    step133_mass_damped_candidate = bool(
+        spec.row_role == "plane_flux_control_candidate_48" and "Step133" in str(spec.artifact_scope_note)
     )
     step132_authority_sweep_candidate = bool(
         spec.row_role == "plane_flux_control_candidate_48" and "Step132" in str(spec.artifact_scope_note)
@@ -1790,6 +1802,7 @@ def _flow_development_diagnostic_record(
         "step": int(record.get("step", 0) or 0),
         "lbm_open_boundary_semantics": spec.open_boundary_semantics,
         "row_role": spec.row_role,
+        "step133_mass_damped_candidate": step133_mass_damped_candidate,
         "step132_authority_sweep_candidate": step132_authority_sweep_candidate,
         "target_outlet_flux": target_outlet_flux,
         "outlet_flux_raw_before_correction": _finite_float(stats.get("flow_outlet_flux_raw_before_correction_step", outlet_flux_after_correction)),
@@ -1806,6 +1819,16 @@ def _flow_development_diagnostic_record(
         "controller_filtered_flux_error": controller_filtered_error,
         "controller_u_feedback": controller_u_feedback,
         "controller_u_feedback_abs": _finite_float(stats.get("controller_u_feedback_abs", abs(controller_u_feedback))),
+        "controller_density_feedback": controller_density_feedback,
+        "controller_density_feedback_abs": _finite_float(
+            stats.get("controller_density_feedback_abs", abs(controller_density_feedback))
+        ),
+        "controller_delta_cap_u": _finite_float(
+            stats.get("controller_delta_cap_u", spec.open_boundary_flux_feedback_delta_cap_u)
+        ),
+        "controller_slew_alpha": _finite_float(
+            stats.get("controller_slew_alpha", spec.open_boundary_flux_feedback_slew_alpha)
+        ),
         "controller_authority_ratio": controller_authority_ratio,
         "controller_saturation_count_step": int(stats.get("controller_saturation_count_step", 0) or 0),
         "controller_saturation_count_run": int(stats.get("controller_saturation_count_run", 0) or 0),
@@ -1814,6 +1837,8 @@ def _flow_development_diagnostic_record(
         "outlet_plane_ux_max": _finite_float(record.get("outlet_plane_ux_max", 0.0)),
         "outlet_plane_ux_mean": _finite_float(record.get("outlet_plane_ux_mean", 0.0)),
         "outlet_plane_negative_ux_fraction": _finite_float(record.get("outlet_plane_negative_ux_fraction", 0.0)),
+        "outlet_plane_rho_mean": _finite_float(record.get("outlet_plane_rho_mean", 0.0)),
+        "outlet_plane_rho_std": _finite_float(record.get("outlet_plane_rho_std", 0.0)),
         "midplane_flux": _finite_float(record.get("midplane_flux", 0.0)),
         "sampled_x_profile_flux": str(record.get("sampled_x_profile_flux") or ""),
         "mass_total_delta_rel": _finite_float(record.get("mass_total_delta_rel", 0.0)),
@@ -1843,6 +1868,8 @@ def _write_flow_development_diagnostics(row_path: Path, records: Sequence[Dict[s
 
 
 def _flow_development_diagnostic_step_number(diagnostics: Sequence[Dict[str, Any]]) -> int:
+    if any(row.get("step133_mass_damped_candidate") is True for row in diagnostics):
+        return 133
     if any(row.get("step132_authority_sweep_candidate") is True for row in diagnostics):
         return 132
     if any(row.get("row_role") == "plane_flux_control_candidate_48" for row in diagnostics):
@@ -1854,6 +1881,8 @@ def _diagnostic_tail_records(diagnostics: Sequence[Dict[str, Any]]) -> List[Dict
     if not diagnostics:
         return []
     tail_count = max(1, int(math.ceil(len(diagnostics) * 0.2)))
+    if len(diagnostics) > 1:
+        tail_count = max(2, tail_count)
     return list(diagnostics[-tail_count:])
 
 
@@ -1897,20 +1926,49 @@ def _diagnostic_max(values: Sequence[float]) -> Optional[float]:
     return _finite_float(max(values))
 
 
+def _diagnostic_slope(values: Sequence[float]) -> Optional[float]:
+    if len(values) < 2:
+        return None
+    return _finite_float(values[-1] - values[0])
+
+
+def _diagnostic_sign_change_count(values: Sequence[float]) -> int:
+    signs: List[int] = []
+    for value in values:
+        if value > 0.0:
+            signs.append(1)
+        elif value < 0.0:
+            signs.append(-1)
+    if len(signs) < 2:
+        return 0
+    return sum(1 for left, right in zip(signs, signs[1:]) if left != right)
+
+
 def _flow_development_tail_summary(diagnostics: Sequence[Dict[str, Any]]) -> Dict[str, Any]:
     tail = _diagnostic_tail_records(diagnostics)
     feedback = _diagnostic_numeric_values(tail, "controller_u_feedback")
+    density_feedback = _diagnostic_numeric_values(tail, "controller_density_feedback")
     saturation = _diagnostic_numeric_values(tail, "controller_saturation_fraction_run")
     raw_error = _diagnostic_numeric_values(tail, "controller_raw_flux_error")
     filtered_error = _diagnostic_numeric_values(tail, "controller_filtered_flux_error")
     target_flux = _diagnostic_numeric_values(tail, "controller_target_outlet_flux")
     measured_flux = _diagnostic_numeric_values(tail, "controller_measured_outlet_flux")
     authority = _diagnostic_numeric_values(tail, "controller_authority_ratio")
+    mass_drift = _diagnostic_numeric_values(tail, "mass_total_delta_rel")
+    outlet_rho = _diagnostic_numeric_values(tail, "outlet_plane_rho_mean")
+    outlet_flux = _diagnostic_numeric_values(tail, "outlet_flux_after_correction")
     return {
         "controller_tail_record_count": int(len(tail)),
+        "mass_drift_tail_mean": _diagnostic_mean(mass_drift),
+        "mass_drift_tail_slope": _diagnostic_slope(mass_drift),
+        "density_feedback_tail_mean": _diagnostic_mean(density_feedback),
+        "density_feedback_tail_abs_max": _diagnostic_abs_max(density_feedback),
+        "rho_outlet_tail_mean": _diagnostic_mean(outlet_rho),
+        "rho_outlet_tail_std": _diagnostic_std(outlet_rho),
         "controller_u_feedback_tail_mean": _diagnostic_mean(feedback),
         "controller_u_feedback_tail_abs_max": _diagnostic_abs_max(feedback),
         "controller_u_feedback_tail_std": _diagnostic_std(feedback),
+        "controller_feedback_sign_change_count_tail": _diagnostic_sign_change_count(feedback),
         "controller_saturation_fraction_tail": _diagnostic_mean(saturation),
         "controller_raw_flux_error_tail_mean": _diagnostic_mean(raw_error),
         "controller_filtered_flux_error_tail_mean": _diagnostic_mean(filtered_error),
@@ -1918,6 +1976,7 @@ def _flow_development_tail_summary(diagnostics: Sequence[Dict[str, Any]]) -> Dic
         "controller_measured_outlet_flux_tail_mean": _diagnostic_mean(measured_flux),
         "controller_authority_ratio_tail_mean": _diagnostic_mean(authority),
         "controller_authority_ratio_tail_max": _diagnostic_max(authority),
+        "outlet_flux_tail_slope": _diagnostic_slope(outlet_flux),
     }
 
 
@@ -2415,6 +2474,7 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "step",
     "lbm_open_boundary_semantics",
     "row_role",
+    "step133_mass_damped_candidate",
     "step132_authority_sweep_candidate",
     "target_outlet_flux",
     "outlet_flux_raw_before_correction",
@@ -2431,6 +2491,10 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "controller_filtered_flux_error",
     "controller_u_feedback",
     "controller_u_feedback_abs",
+    "controller_density_feedback",
+    "controller_density_feedback_abs",
+    "controller_delta_cap_u",
+    "controller_slew_alpha",
     "controller_authority_ratio",
     "controller_saturation_count_step",
     "controller_saturation_count_run",
@@ -2439,6 +2503,8 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "outlet_plane_ux_max",
     "outlet_plane_ux_mean",
     "outlet_plane_negative_ux_fraction",
+    "outlet_plane_rho_mean",
+    "outlet_plane_rho_std",
     "midplane_flux",
     "sampled_x_profile_flux",
     "mass_total_delta_rel",
