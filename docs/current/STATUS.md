@@ -4,15 +4,37 @@ The active campaign is the Fluent duct/flap LBM open-boundary repair campaign.
 The current artifact state is `48_candidates_failed` with final classification
 `boundary_repair_failed_revisit_lbm_solver`.
 
-Step128 has added the code and contract surface for LBM open-boundary
-formulation repair. It introduces two new repaired 48^3 candidate semantics,
+Step129 ran the Step121 `repair48` phase for both Step128 repaired 48^3 /
+500-step LBM-only candidates. Both repaired rows completed 500/500 steps and
+produced simulation-backed terminal real evidence, but both failed the
+flow-development hard gates. Selected 96^3 duct-only work remains blocked.
+
+Step128 remains the code and contract surface for LBM open-boundary formulation
+repair. It introduced two new repaired 48^3 candidate semantics,
 `regularized_mass_balanced_pressure_outlet` and
 `convective_mass_balanced_pressure_outlet`, plus a distinct Step121 `repair48`
 phase. The old Step127 `candidates48` phase is unchanged.
 
-Step128 has not yet produced real 48^3 / 500-step repaired-candidate acceptance
-evidence. Selected 96^3 duct-only work remains blocked until a repaired 48^3
-candidate passes the existing hard gates.
+Step129 also added checkpoint persistence for the repaired boundary counters:
+`mass_balance_correction_count`, `mass_balance_correction_abs_sum`, and
+`unknown_population_delta_abs_sum`.
+
+Step129 repaired-candidate outcome:
+
+- `duct_only_48_regularized_mass_balanced_pressure_outlet_500step_real`
+  completed 500/500 steps with `mass_total_delta_rel_final =
+  0.0019035086161313225`, but failed flow development:
+  `flux_imbalance_rel_tail_mean = 0.3722224827902342`,
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.264735695477319`,
+  `midplane_to_inlet_flux_ratio_tail_mean = 1.2098449625412`, and
+  `outlet_flux_tail_cv = 0.33003290861468526`.
+- `duct_only_48_convective_mass_balanced_pressure_outlet_500step_real`
+  completed 500/500 steps with `mass_total_delta_rel_final =
+  -0.0011874128939383197`, but failed flow development:
+  `flux_imbalance_rel_tail_mean = 0.40325868347534677`,
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.2722701740330669`,
+  `midplane_to_inlet_flux_ratio_tail_mean = 1.2671693838169262`, and
+  `outlet_flux_tail_cv = 0.5513854681310228`.
 
 Step127 ran real 48^3 LBM-only candidates. The limited regularized candidate
 completed 500/500 steps but failed the flow-development gates, essentially
@@ -40,5 +62,5 @@ commit from the current code commit in `ACTIVE_CAMPAIGN.json` and Step121
 campaign manifests, and it records `code_commit_at_run` for Step120 row
 artifacts.
 
-Step128 does not claim 48^3 repaired-candidate success, selected 96^3 success,
+Step129 does not claim 48^3 repaired-candidate success, selected 96^3 success,
 quasi-2D validation, FSI validation, Fluent validation, or Figure 29.3 parity.

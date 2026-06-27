@@ -13,7 +13,7 @@ Current Step127 outcome:
 - No best 48^3 boundary is selected.
 - Selected 96^3 execution is blocked.
 
-Current Step128 code surface:
+Current Step128/Step129 repair surface and evidence:
 
 - New repaired 48^3 semantics exist for bounded open-boundary repair:
   `regularized_mass_balanced_pressure_outlet` and
@@ -21,8 +21,20 @@ Current Step128 code surface:
 - Step121 has a separate `repair48` phase for repaired candidates.
 - Step120 now reports hard-stop mass-drift fields separately from candidate
   mass-acceptance fields.
-- No repaired 48^3 / 500-step acceptance artifact has passed the hard gates
-  yet.
+- Step129 persisted repaired boundary counters across checkpoints so
+  `mass_balance_correction_count`, `mass_balance_correction_abs_sum`, and
+  `unknown_population_delta_abs_sum` survive resume.
+- Step129 ran both repaired 48^3 / 500-step candidates as real LBM-only rows.
+- Both repaired candidates completed 500/500 steps and passed finite, density,
+  mass, population, mach, first-failure, and candidate-mass-acceptance checks.
+- Both repaired candidates failed flow-development hard gates:
+  `regularized_mass_balanced_pressure_outlet` had
+  `flux_imbalance_rel_tail_mean = 0.3722224827902342` and
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.264735695477319`;
+  `convective_mass_balanced_pressure_outlet` had
+  `flux_imbalance_rel_tail_mean = 0.40325868347534677` and
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.2722701740330669`.
+- No repaired 48^3 / 500-step acceptance artifact has passed the hard gates.
 - Selected 96^3 execution remains blocked.
 
 Current Step124 gate requirements:

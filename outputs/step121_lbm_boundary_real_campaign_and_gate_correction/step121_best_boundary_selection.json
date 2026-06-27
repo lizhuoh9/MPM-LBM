@@ -5,6 +5,41 @@
   "candidate_summaries": [
     {
       "candidate_pass": false,
+      "completed_real_row": true,
+      "flow_development_gate_pass": false,
+      "flow_development_rejection_reasons": [
+        "flux_imbalance_rel_tail_max",
+        "flux_imbalance_rel_tail_mean",
+        "midplane_to_inlet_flux_ratio_tail_mean",
+        "outlet_flux_tail_cv",
+        "outlet_to_inlet_flux_ratio_tail_mean"
+      ],
+      "flux_imbalance_rel_tail_max": 0.5735062556642948,
+      "flux_imbalance_rel_tail_mean": 0.40325868347534677,
+      "inlet_flux_tail_mean": 43.36468115997312,
+      "limiter_activation_fraction": 0.0,
+      "mass_total_delta_rel_final": -0.0011874128939383197,
+      "midplane_to_inlet_flux_ratio_tail_mean": 1.2671693838169262,
+      "name": "duct_only_48_convective_mass_balanced_pressure_outlet_500step_real",
+      "not_used_for_validation": false,
+      "outlet_flux_tail_cv": 0.5513854681310228,
+      "outlet_flux_tail_mean": 55.17159044628745,
+      "outlet_to_inlet_flux_ratio_tail_mean": 1.2722701740330669,
+      "rejection_reasons": [
+        "flux_imbalance_gate",
+        "flux_imbalance_rel_tail_max",
+        "flux_imbalance_rel_tail_mean",
+        "flux_worse_than_legacy",
+        "midplane_to_inlet_flux_ratio_tail_mean",
+        "outlet_flux_tail_cv",
+        "outlet_to_inlet_flux_ratio_tail_mean"
+      ],
+      "semantics": "convective_mass_balanced_pressure_outlet",
+      "simulation_backed_artifact": true,
+      "terminal_real_evidence": true
+    },
+    {
+      "candidate_pass": false,
       "completed_real_row": false,
       "flow_development_gate_pass": false,
       "flow_development_rejection_reasons": [
@@ -74,6 +109,41 @@
         "outlet_to_inlet_flux_ratio_tail_mean"
       ],
       "semantics": "regularized_velocity_pressure_limited",
+      "simulation_backed_artifact": true,
+      "terminal_real_evidence": true
+    },
+    {
+      "candidate_pass": false,
+      "completed_real_row": true,
+      "flow_development_gate_pass": false,
+      "flow_development_rejection_reasons": [
+        "flux_imbalance_rel_tail_max",
+        "flux_imbalance_rel_tail_mean",
+        "midplane_to_inlet_flux_ratio_tail_mean",
+        "outlet_flux_tail_cv",
+        "outlet_to_inlet_flux_ratio_tail_mean"
+      ],
+      "flux_imbalance_rel_tail_max": 0.5721747900550053,
+      "flux_imbalance_rel_tail_mean": 0.3722224827902342,
+      "inlet_flux_tail_mean": 42.9208604427933,
+      "limiter_activation_fraction": 0.0,
+      "mass_total_delta_rel_final": 0.0019035086161313225,
+      "midplane_to_inlet_flux_ratio_tail_mean": 1.2098449625412,
+      "name": "duct_only_48_regularized_mass_balanced_pressure_outlet_500step_real",
+      "not_used_for_validation": false,
+      "outlet_flux_tail_cv": 0.33003290861468526,
+      "outlet_flux_tail_mean": 54.283544282601135,
+      "outlet_to_inlet_flux_ratio_tail_mean": 1.264735695477319,
+      "rejection_reasons": [
+        "flux_imbalance_gate",
+        "flux_imbalance_rel_tail_max",
+        "flux_imbalance_rel_tail_mean",
+        "flux_worse_than_legacy",
+        "midplane_to_inlet_flux_ratio_tail_mean",
+        "outlet_flux_tail_cv",
+        "outlet_to_inlet_flux_ratio_tail_mean"
+      ],
+      "semantics": "regularized_mass_balanced_pressure_outlet",
       "simulation_backed_artifact": true,
       "terminal_real_evidence": true
     }

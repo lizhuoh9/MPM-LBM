@@ -2,8 +2,19 @@
   "artifact_root": "D:\\working\\squid robot\\LBM\\MPM-LBM\\outputs\\step121_lbm_boundary_real_campaign_and_gate_correction",
   "campaign_base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
   "campaign_id": "step124_lbm_boundary_516b1aaa",
-  "current_code_commit": "e2be90f89f4b31d9bd8f63d405017fc701c15cc8",
+  "current_code_commit": "25b03a22d1b1345b01888fe6a54102c4dd54a3be",
   "expected_rows": {
+    "duct_only_48_convective_mass_balanced_pressure_outlet_500step_real": {
+      "geometry_mode": "duct_only",
+      "lbm_open_boundary_semantics": "convective_mass_balanced_pressure_outlet",
+      "row_role": "repair_candidate_48",
+      "run_manifest_hash": "7f54f028cf709f740c1c99a7c7fcebdae7be451278223e5dfa6a0a2dfe9a2d43",
+      "selected_source_config_hash": null,
+      "selected_source_lbm_relaxation_semantics": null,
+      "selected_source_row_name": null,
+      "selected_source_tau": null,
+      "solver_state_hash": "a4f3f1e947ece670e78cff0dfb5df74aae0f54089adcdd7b8c31092066f45ada"
+    },
     "duct_only_48_convective_outlet_boundary_500step_real": {
       "geometry_mode": "duct_only",
       "lbm_open_boundary_semantics": "convective_pressure_outlet_experimental",
@@ -48,6 +59,17 @@
       "selected_source_tau": null,
       "solver_state_hash": "5e100a3e77c58a39f17b8eb37a8823f50c8afe0ee482c7752f4c6d3fabaf05bf"
     },
+    "duct_only_48_regularized_mass_balanced_pressure_outlet_500step_real": {
+      "geometry_mode": "duct_only",
+      "lbm_open_boundary_semantics": "regularized_mass_balanced_pressure_outlet",
+      "row_role": "repair_candidate_48",
+      "run_manifest_hash": "11691fb4abef3e4e39ebabe20f6d0bf962522189d7bcb80fbe66e6b7a0074b53",
+      "selected_source_config_hash": null,
+      "selected_source_lbm_relaxation_semantics": null,
+      "selected_source_row_name": null,
+      "selected_source_tau": null,
+      "solver_state_hash": "d8c34da71896a454208d6d4beab27a6adc93901049e7933de26af642eec5792d"
+    },
     "tiny_step121_real_runner_smoke": {
       "geometry_mode": "duct_only",
       "lbm_open_boundary_semantics": "regularized_velocity_pressure_limited",
@@ -75,7 +97,7 @@
     "ratio_min": 0.8,
     "selected96_mass_acceptance_max": 0.01
   },
-  "git_commit": "e2be90f89f4b31d9bd8f63d405017fc701c15cc8",
+  "git_commit": "25b03a22d1b1345b01888fe6a54102c4dd54a3be",
   "phase_commit_history": [
     {
       "code_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
@@ -88,16 +110,22 @@
     {
       "code_commit": "e2be90f89f4b31d9bd8f63d405017fc701c15cc8",
       "phase": "candidates48"
+    },
+    {
+      "code_commit": "25b03a22d1b1345b01888fe6a54102c4dd54a3be",
+      "phase": "repair48"
     }
   ],
   "phase_history": [
     "smoke",
     "references48",
-    "candidates48"
+    "candidates48",
+    "repair48"
   ],
   "run_commands": [
     "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase references48 --allow-large-real-rows --output-interval 25",
     "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase candidates48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase repair48 --allow-large-real-rows --output-interval 25",
     "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary"
   ],
   "step121_campaign_manifest_schema_version": 2
