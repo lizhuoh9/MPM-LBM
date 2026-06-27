@@ -95,6 +95,10 @@ FLOW_REPAIR_CANDIDATE_SEMANTICS = {
     "regularized_flux_matched_pressure_outlet",
     "convective_flux_matched_damped_outlet",
 }
+PLANE_FLUX_CONTROL_CANDIDATE_SEMANTICS = {
+    "regularized_plane_flux_controlled_pressure_outlet",
+    "convective_plane_flux_controlled_damped_outlet",
+}
 CANDIDATE_SEMANTICS = STEP127_CANDIDATE_SEMANTICS | REPAIRED_CANDIDATE_SEMANTICS
 REFERENCE_SEMANTICS = {
     "equilibrium_all_population_reset",
@@ -308,6 +312,48 @@ def step120_real_run_specs(output_interval: int = 25) -> List[Step120RunSpec]:
             open_boundary_flux_correction_cap_u=0.005,
             open_boundary_convective_blend_weight=0.05,
             artifact_scope_note="Step130 bounded 48^3 convective damped flow-development triage; not a selected96 enabling row",
+        ),
+        Step120RunSpec(
+            name="duct_only_48_regularized_plane_flux_controlled_pressure_outlet_250step_triage",
+            nx=48,
+            ny=48,
+            nz=48,
+            n_steps=250,
+            output_interval=output_interval,
+            failure_check_interval=5,
+            checkpoint_every=50,
+            open_boundary_semantics="regularized_plane_flux_controlled_pressure_outlet",
+            geometry_mode="duct_only",
+            requested_nx=48,
+            requested_n_steps=250,
+            row_role="plane_flux_control_candidate_48",
+            open_boundary_flux_feedback_gain_u=0.0025,
+            open_boundary_flux_feedback_gain_rho=0.0,
+            open_boundary_flux_filter_alpha=0.02,
+            open_boundary_flux_correction_cap_u=0.002,
+            open_boundary_convective_blend_weight=0.02,
+            artifact_scope_note="Step131 bounded 48^3 plane-flux-control triage; not a selected96 enabling row",
+        ),
+        Step120RunSpec(
+            name="duct_only_48_convective_plane_flux_controlled_damped_outlet_250step_triage",
+            nx=48,
+            ny=48,
+            nz=48,
+            n_steps=250,
+            output_interval=output_interval,
+            failure_check_interval=5,
+            checkpoint_every=50,
+            open_boundary_semantics="convective_plane_flux_controlled_damped_outlet",
+            geometry_mode="duct_only",
+            requested_nx=48,
+            requested_n_steps=250,
+            row_role="plane_flux_control_candidate_48",
+            open_boundary_flux_feedback_gain_u=0.0025,
+            open_boundary_flux_feedback_gain_rho=0.0,
+            open_boundary_flux_filter_alpha=0.02,
+            open_boundary_flux_correction_cap_u=0.002,
+            open_boundary_convective_blend_weight=0.02,
+            artifact_scope_note="Step131 bounded 48^3 convective plane-flux-control triage; not a selected96 enabling row",
         ),
         Step120RunSpec(
             name="duct_only_96_regularized_limited_physical_nu_report_only_100step_guarded_real",
@@ -1572,7 +1618,12 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         "convective_mass_balanced_pressure_outlet_used": spec.open_boundary_semantics == "convective_mass_balanced_pressure_outlet",
         "regularized_flux_matched_pressure_outlet_used": spec.open_boundary_semantics == "regularized_flux_matched_pressure_outlet",
         "convective_flux_matched_damped_outlet_used": spec.open_boundary_semantics == "convective_flux_matched_damped_outlet",
+        "regularized_plane_flux_controlled_pressure_outlet_used": spec.open_boundary_semantics
+        == "regularized_plane_flux_controlled_pressure_outlet",
+        "convective_plane_flux_controlled_damped_outlet_used": spec.open_boundary_semantics
+        == "convective_plane_flux_controlled_damped_outlet",
         "step130_flow_repair_candidate": spec.row_role == "flow_repair_candidate_48",
+        "step131_plane_flux_control_candidate": spec.row_role == "plane_flux_control_candidate_48",
         "all_population_equilibrium_reset_used": spec.open_boundary_semantics == "equilibrium_all_population_reset",
         "open_boundary_limiter_enabled": bool(spec.open_boundary_limiter_enabled),
         "open_boundary_rho_min": float(spec.open_boundary_rho_min),
@@ -1720,6 +1771,11 @@ def _flow_development_diagnostic_record(
     target_outlet_flux = _finite_float(record.get("inlet_flux", 0.0))
     outlet_flux_after_correction = _finite_float(record.get("outlet_flux", 0.0))
     outlet_flux_error = _finite_float(target_outlet_flux - outlet_flux_after_correction)
+    controller_target = _finite_float(stats.get("controller_target_outlet_flux", target_outlet_flux))
+    controller_measured = _finite_float(stats.get("controller_measured_outlet_flux", outlet_flux_after_correction))
+    controller_raw_error = _finite_float(stats.get("controller_raw_flux_error", controller_target - controller_measured))
+    controller_filtered_error = _finite_float(stats.get("controller_filtered_flux_error", controller_raw_error))
+    controller_u_feedback = _finite_float(stats.get("controller_u_feedback", 0.0))
     return {
         "step": int(record.get("step", 0) or 0),
         "lbm_open_boundary_semantics": spec.open_boundary_semantics,
@@ -1732,6 +1788,15 @@ def _flow_development_diagnostic_record(
         "correction_gain_effective": _finite_float(stats.get("flow_correction_gain_effective_step", spec.open_boundary_flux_feedback_gain_u)),
         "correction_delta_abs_sum": _finite_float(stats.get("flow_correction_delta_abs_sum_step", 0.0)),
         "correction_delta_abs_sum_run": _finite_float(stats.get("flow_correction_delta_abs_sum_run", 0.0)),
+        "controller_target_outlet_flux": controller_target,
+        "controller_measured_outlet_flux": controller_measured,
+        "controller_raw_flux_error": controller_raw_error,
+        "controller_filtered_flux_error": controller_filtered_error,
+        "controller_u_feedback": controller_u_feedback,
+        "controller_u_feedback_abs": _finite_float(stats.get("controller_u_feedback_abs", abs(controller_u_feedback))),
+        "controller_saturation_count_step": int(stats.get("controller_saturation_count_step", 0) or 0),
+        "controller_saturation_count_run": int(stats.get("controller_saturation_count_run", 0) or 0),
+        "controller_saturation_fraction_run": _finite_float(stats.get("controller_saturation_fraction_run", 0.0)),
         "outlet_plane_ux_min": _finite_float(record.get("outlet_plane_ux_min", 0.0)),
         "outlet_plane_ux_max": _finite_float(record.get("outlet_plane_ux_max", 0.0)),
         "outlet_plane_ux_mean": _finite_float(record.get("outlet_plane_ux_mean", 0.0)),
@@ -1746,11 +1811,12 @@ def _flow_development_diagnostic_record(
 
 def _write_flow_development_diagnostics(row_path: Path, records: Sequence[Dict[str, Any]]) -> None:
     diagnostics = [_flow_development_diagnostic_row_from_record(row) for row in records]
+    step_number = 131 if any(row.get("row_role") == "plane_flux_control_candidate_48" for row in diagnostics) else 130
     _write_csv(row_path / "flow_development_diagnostics.csv", diagnostics, FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS)
     _write_json(
         row_path / "flow_development_diagnostics_summary.json",
         {
-            "step": 130,
+            "step": step_number,
             "artifact": "flow_development_diagnostics",
             "row_count": int(len(diagnostics)),
             "bounded_size_artifact": True,
@@ -2263,6 +2329,15 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "correction_gain_effective",
     "correction_delta_abs_sum",
     "correction_delta_abs_sum_run",
+    "controller_target_outlet_flux",
+    "controller_measured_outlet_flux",
+    "controller_raw_flux_error",
+    "controller_filtered_flux_error",
+    "controller_u_feedback",
+    "controller_u_feedback_abs",
+    "controller_saturation_count_step",
+    "controller_saturation_count_run",
+    "controller_saturation_fraction_run",
     "outlet_plane_ux_min",
     "outlet_plane_ux_max",
     "outlet_plane_ux_mean",

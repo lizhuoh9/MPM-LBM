@@ -27,6 +27,7 @@ from experiments.steps.step119_lbm_boundary_repair_real_run_validation import ( 
 from experiments.steps.step120_lbm_boundary_repair_large_real_execution import (  # noqa: E402
     CANDIDATE_SEMANTICS,
     FLOW_REPAIR_CANDIDATE_SEMANTICS,
+    PLANE_FLUX_CONTROL_CANDIDATE_SEMANTICS,
     REPAIRED_CANDIDATE_SEMANTICS,
     STEP120_SCHEMA_VERSION,
     REFERENCE_SEMANTICS,
@@ -140,6 +141,15 @@ def step121_flow_repair_48_specs(output_interval: int = 100) -> List[Step120RunS
         for spec in step120_real_run_specs(output_interval=output_interval)
         if spec.row_role == "flow_repair_candidate_48"
         and spec.open_boundary_semantics in FLOW_REPAIR_CANDIDATE_SEMANTICS
+    ]
+
+
+def step121_plane_flux_48_specs(output_interval: int = 100) -> List[Step120RunSpec]:
+    return [
+        _replace_spec(spec, output_interval=output_interval)
+        for spec in step120_real_run_specs(output_interval=output_interval)
+        if spec.row_role == "plane_flux_control_candidate_48"
+        and spec.open_boundary_semantics in PLANE_FLUX_CONTROL_CANDIDATE_SEMANTICS
     ]
 
 
@@ -287,6 +297,8 @@ def resolve_step121_phase_specs(
         return step121_repair_48_specs(output_interval=output_interval)
     if phase == "flowrepair48":
         return step121_flow_repair_48_specs(output_interval=output_interval)
+    if phase == "planeflux48":
+        return step121_plane_flux_48_specs(output_interval=output_interval)
     if phase in {"selected96", "selected-static"}:
         if best_selection_path is None:
             raise ValueError(f"{phase} phase requires --best-selection-path")
@@ -487,6 +499,7 @@ def _manifest_run_commands() -> List[str]:
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase candidates48 --allow-large-real-rows --output-interval 25",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase repair48 --allow-large-real-rows --output-interval 25",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase flowrepair48 --allow-large-real-rows --output-interval 25",
+        "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux48 --allow-large-real-rows --output-interval 25",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary",
     ]
 
@@ -1345,6 +1358,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             "candidates48",
             "repair48",
             "flowrepair48",
+            "planeflux48",
             "all48",
             "selected96",
             "selected-static",

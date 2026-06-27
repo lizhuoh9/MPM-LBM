@@ -21,6 +21,8 @@ VALID_LBM_OPEN_BOUNDARY_SEMANTICS = (
     "convective_mass_balanced_pressure_outlet",
     "regularized_flux_matched_pressure_outlet",
     "convective_flux_matched_damped_outlet",
+    "regularized_plane_flux_controlled_pressure_outlet",
+    "convective_plane_flux_controlled_damped_outlet",
 )
 
 
