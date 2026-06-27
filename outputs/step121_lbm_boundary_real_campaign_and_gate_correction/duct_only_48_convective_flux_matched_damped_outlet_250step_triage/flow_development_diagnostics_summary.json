@@ -1,0 +1,30 @@
+{
+  "artifact": "flow_development_diagnostics",
+  "bounded_size_artifact": true,
+  "final": {
+    "correction_delta_abs_sum": 1.771201491355896,
+    "correction_delta_abs_sum_run": 551.7055053710938,
+    "correction_gain_effective": 0.009999999776482582,
+    "lbm_open_boundary_semantics": "convective_flux_matched_damped_outlet",
+    "mass_total_delta_rel": -0.030650375098126185,
+    "midplane_flux": 25.33810476266769,
+    "outlet_flux_after_correction": 73.79855906829783,
+    "outlet_flux_error": -31.36971199130997,
+    "outlet_flux_error_filtered": 0.017232993617653847,
+    "outlet_flux_raw_before_correction": 73.79855906829783,
+    "outlet_plane_negative_ux_fraction": 0.0,
+    "outlet_plane_ux_max": 0.040840327739715576,
+    "outlet_plane_ux_mean": 0.03476480245151727,
+    "outlet_plane_ux_min": 0.0004917122423648834,
+    "row_role": "flow_repair_candidate_48",
+    "sampled_x_profile_flux": "0:42.428847077;24:25.3381047627;47:73.7985590683",
+    "selected96_claim_allowed": false,
+    "step": 250,
+    "target_outlet_flux": 42.428847076987864,
+    "validation_claim_allowed": false
+  },
+  "row_count": 11,
+  "selected96_claim_allowed": false,
+  "step": 130,
+  "validation_claim_allowed": false
+}

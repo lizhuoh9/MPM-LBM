@@ -9,6 +9,14 @@ Step129 ran the Step121 `repair48` phase for both Step128 repaired 48^3 /
 produced simulation-backed terminal real evidence, but both failed the
 flow-development hard gates. Selected 96^3 duct-only work remains blocked.
 
+Step130 added a distinct bounded `flowrepair48` triage surface with
+`regularized_flux_matched_pressure_outlet` and
+`convective_flux_matched_damped_outlet`. Both new 48^3 / 250-step LBM-only
+triage rows completed 250/250 with finite/density/mass/population/mach stability
+gates passing and no first-failure event, but both failed flow-development hard
+gates and candidate mass-acceptance. No 500-step promotion was justified, and
+selected 96^3 remains blocked.
+
 Step128 remains the code and contract surface for LBM open-boundary formulation
 repair. It introduced two new repaired 48^3 candidate semantics,
 `regularized_mass_balanced_pressure_outlet` and
@@ -44,8 +52,8 @@ outlet candidate produced terminal real evidence at step 200 with
 also failed flow-development ratio/imbalance gates.
 
 Step127 selected no best 48^3 boundary. Selected 96^3 duct-only work is not
-allowed from the current artifacts. The next step should be boundary formulation
-repair grounded in the Step127 failures.
+allowed from the current artifacts. Step128, Step129, and Step130 continue that
+blocked 48^3 boundary-repair sequence without selecting a boundary.
 
 Step126 ran real 48^3 LBM-only references. The legacy reference completed
 500/500 steps and passed the flow-development gate. The old regularized
@@ -62,5 +70,5 @@ commit from the current code commit in `ACTIVE_CAMPAIGN.json` and Step121
 campaign manifests, and it records `code_commit_at_run` for Step120 row
 artifacts.
 
-Step129 does not claim 48^3 repaired-candidate success, selected 96^3 success,
+Step130 does not claim 48^3 repaired-candidate success, selected 96^3 success,
 quasi-2D validation, FSI validation, Fluent validation, or Figure 29.3 parity.

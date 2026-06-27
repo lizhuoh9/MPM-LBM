@@ -37,6 +37,28 @@ Current Step128/Step129 repair surface and evidence:
 - No repaired 48^3 / 500-step acceptance artifact has passed the hard gates.
 - Selected 96^3 execution remains blocked.
 
+Current Step130 flow-repair triage surface and evidence:
+
+- New flow-repair 48^3 triage semantics exist for bounded LBM-only outlet
+  repair: `regularized_flux_matched_pressure_outlet` and
+  `convective_flux_matched_damped_outlet`.
+- Step121 has a separate `flowrepair48` phase for these triage rows.
+- Step130 semantics are not in the selected-candidate semantics set and cannot
+  enable selected 96^3.
+- Both Step130 rows completed 250/250 as real simulation-backed LBM-only triage
+  artifacts, but both failed hard flow-development gates and failed candidate
+  mass-acceptance.
+- `regularized_flux_matched_pressure_outlet` ended with
+  `flux_imbalance_rel_tail_mean = 0.391091092110087`,
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.582099528142026`, and
+  `candidate_mass_acceptance_observed_abs = 0.027093607822589214`.
+- `convective_flux_matched_damped_outlet` ended with
+  `flux_imbalance_rel_tail_mean = 0.5063421113905975`,
+  `outlet_to_inlet_flux_ratio_tail_mean = 2.0460586163795886`, and
+  `candidate_mass_acceptance_observed_abs = 0.030650375098126185`.
+- No 500-step promotion was run from Step130 triage.
+- Selected 96^3 execution remains blocked.
+
 Current Step124 gate requirements:
 
 - 48^3 legacy reference rows must either complete the requested real window or

@@ -183,8 +183,19 @@
     "artifact_root": "D:\\working\\squid robot\\LBM\\MPM-LBM\\outputs\\step121_lbm_boundary_real_campaign_and_gate_correction",
     "campaign_base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
     "campaign_id": "step124_lbm_boundary_516b1aaa",
-    "current_code_commit": "25b03a22d1b1345b01888fe6a54102c4dd54a3be",
+    "current_code_commit": "cf6576dfa8fa25477510a40a7711ca4667625ea1",
     "expected_rows": {
+      "duct_only_48_convective_flux_matched_damped_outlet_250step_triage": {
+        "geometry_mode": "duct_only",
+        "lbm_open_boundary_semantics": "convective_flux_matched_damped_outlet",
+        "row_role": "flow_repair_candidate_48",
+        "run_manifest_hash": "cca028064a0a78cfe57a05e4acbb83f547f6ed646be90b33a43f1813c6f9cf78",
+        "selected_source_config_hash": null,
+        "selected_source_lbm_relaxation_semantics": null,
+        "selected_source_row_name": null,
+        "selected_source_tau": null,
+        "solver_state_hash": "6d28c4ed91d451bea27c20b4a77d1a2d5f3e52dd774c7c96a400434eab3e10fe"
+      },
       "duct_only_48_convective_mass_balanced_pressure_outlet_500step_real": {
         "geometry_mode": "duct_only",
         "lbm_open_boundary_semantics": "convective_mass_balanced_pressure_outlet",
@@ -228,6 +239,17 @@
         "selected_source_row_name": null,
         "selected_source_tau": null,
         "solver_state_hash": "2eb3ff1c97e321a47262dd91b483c7cf26630cdeae7b85026ceed67e7d9af4d3"
+      },
+      "duct_only_48_regularized_flux_matched_pressure_outlet_250step_triage": {
+        "geometry_mode": "duct_only",
+        "lbm_open_boundary_semantics": "regularized_flux_matched_pressure_outlet",
+        "row_role": "flow_repair_candidate_48",
+        "run_manifest_hash": "3978e7855f9461c804572f0fc474e4a52b81ebc7e92b01cb5f8107d25f0cd09d",
+        "selected_source_config_hash": null,
+        "selected_source_lbm_relaxation_semantics": null,
+        "selected_source_row_name": null,
+        "selected_source_tau": null,
+        "solver_state_hash": "68e993b54d1cf6375ba375b856ad844db56353e89a00d2ce885bba257baf2167"
       },
       "duct_only_48_regularized_limited_boundary_500step_real": {
         "geometry_mode": "duct_only",
@@ -278,7 +300,7 @@
       "ratio_min": 0.8,
       "selected96_mass_acceptance_max": 0.01
     },
-    "git_commit": "25b03a22d1b1345b01888fe6a54102c4dd54a3be",
+    "git_commit": "cf6576dfa8fa25477510a40a7711ca4667625ea1",
     "phase_commit_history": [
       {
         "code_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
@@ -295,18 +317,24 @@
       {
         "code_commit": "25b03a22d1b1345b01888fe6a54102c4dd54a3be",
         "phase": "repair48"
+      },
+      {
+        "code_commit": "cf6576dfa8fa25477510a40a7711ca4667625ea1",
+        "phase": "flowrepair48"
       }
     ],
     "phase_history": [
       "smoke",
       "references48",
       "candidates48",
-      "repair48"
+      "repair48",
+      "flowrepair48"
     ],
     "run_commands": [
       "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase references48 --allow-large-real-rows --output-interval 25",
       "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase candidates48 --allow-large-real-rows --output-interval 25",
       "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase repair48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase flowrepair48 --allow-large-real-rows --output-interval 25",
       "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary"
     ],
     "step121_campaign_manifest_schema_version": 2
@@ -377,7 +405,7 @@
   "ignored_rows": [],
   "phase": "summary",
   "quasi2d_allowed": false,
-  "row_count": 7,
+  "row_count": 9,
   "runner_file": "experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py",
   "static_two_flap_rows_are_lbm_only": true,
   "step": 121,
