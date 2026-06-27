@@ -1,8 +1,24 @@
 # Current Status
 
 The active campaign is the Fluent duct/flap LBM open-boundary repair campaign.
-The current artifact state is `48_candidates_failed` with final classification
-`boundary_repair_failed_revisit_lbm_solver`.
+The current artifact state remains selected-boundary blocked. Step135 is a
+diagnostic continuation of the 48^3 boundary-repair loop, not selected-candidate
+evidence.
+
+Step135 added a bounded `planeflux_interior_diag48` interior reflection and
+bulk-dynamics diagnostic phase. Six real 48^3 / 250-step LBM-only diagnostic
+rows completed 250/250 with finite state and no first-failure event, but no row
+passed the relaxed reporting gate set. The baseline high-frequency regularized
+row first labeled compact profile collapse at interior `x = 24`, step 220, not
+at the true outlet; `lbm_niu = 0.08` and `lbm_niu = 0.12` retained the same
+interior-collapse pattern. Inlet ramping changed the failure mode: ramp50
+delayed collapse to step 245 and ramp100 removed the compact collapse label,
+but ramp100 failed ratio and flux gates with
+`outlet_to_inlet_flux_ratio_tail_mean = 1.5815747922655192`,
+`midplane_to_inlet_flux_ratio_tail_mean = 1.4639728217023902`, and
+`flux_imbalance_rel_tail_mean = 0.36544508198725295`. Step135 therefore
+supports a bulk/startup-transient diagnosis, not outlet-local measurement
+repair, and it does not justify a 500-step promotion or selected 96^3.
 
 Step134 added a bounded `planeflux_stationarity48` outlet tail-collapse
 diagnostic and near-outlet control-plane repair phase. Six real 48^3 / 250-step
@@ -98,8 +114,8 @@ also failed flow-development ratio/imbalance gates.
 
 Step127 selected no best 48^3 boundary. Selected 96^3 duct-only work is not
 allowed from the current artifacts. Step128, Step129, Step130, Step131,
-Step132, Step133, and Step134 continue that blocked 48^3 boundary-repair sequence
-without selecting a boundary.
+Step132, Step133, Step134, and Step135 continue that blocked 48^3
+boundary-repair sequence without selecting a boundary.
 
 Step126 ran real 48^3 LBM-only references. The legacy reference completed
 500/500 steps and passed the flow-development gate. The old regularized
@@ -116,5 +132,5 @@ commit from the current code commit in `ACTIVE_CAMPAIGN.json` and Step121
 campaign manifests, and it records `code_commit_at_run` for Step120 row
 artifacts.
 
-Step134 does not claim 48^3 repaired-candidate success, selected 96^3 success,
+Step135 does not claim 48^3 repaired-candidate success, selected 96^3 success,
 quasi-2D validation, FSI validation, Fluent validation, or Figure 29.3 parity.

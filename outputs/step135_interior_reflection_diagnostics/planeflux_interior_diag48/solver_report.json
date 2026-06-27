@@ -1,0 +1,209 @@
+{
+  "best_boundary_selection": {
+    "best_boundary_selected": false,
+    "campaign_should_stop_at_48": false,
+    "campaign_state": "awaiting_48_references",
+    "candidate_summaries": [],
+    "final_classification": "boundary_repair_partial_continue_lbm",
+    "reference_comparison_ready": false,
+    "reference_status": {
+      "failed_reference_semantics": [],
+      "incomplete_reference_semantics": [],
+      "legacy_reference_failed": false,
+      "missing_reference_semantics": [
+        "equilibrium_all_population_reset",
+        "regularized_velocity_pressure"
+      ],
+      "reference_comparison_ready": false,
+      "reference_rows": {}
+    },
+    "selection_reason": "48_reference_rows_not_complete",
+    "step": 121,
+    "step121_schema_version": 1,
+    "validation_claim_allowed": false
+  },
+  "campaign_manifest": {
+    "artifact_root": "outputs\\step135_interior_reflection_diagnostics\\planeflux_interior_diag48",
+    "campaign_base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
+    "campaign_id": "step124_lbm_boundary_516b1aaa",
+    "current_code_commit": "e194b896ea2153da3dc906272fd4cfd84124dec4",
+    "expected_rows": {
+      "duct_only_48_convective_plane_flux_controlled_damped_gain0p10_cap0p002_rho0p001_alpha0p02_du0p0005_slew0p50_offset1_guard_on_min0p70_ramp0_niu0p10_out5_250step_interior_diag": {
+        "geometry_mode": "duct_only",
+        "lbm_open_boundary_semantics": "convective_plane_flux_controlled_damped_outlet",
+        "row_role": "interior_reflection_diagnostic_48",
+        "run_manifest_hash": "80b8b1dcd13b662d7eaf48d57902d5ca7056f286abf3a2839ddbeba000bc1d2d",
+        "selected_source_config_hash": null,
+        "selected_source_lbm_relaxation_semantics": null,
+        "selected_source_row_name": null,
+        "selected_source_tau": null,
+        "solver_state_hash": "8564eb9f8be4ab3039316b6283bb9af9a58dbbeb56ad372aa067298912d4c900"
+      },
+      "duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p001_alpha0p02_du0p0005_slew0p50_offset2_guard_on_min0p70_ramp0_niu0p08_out5_250step_interior_diag": {
+        "geometry_mode": "duct_only",
+        "lbm_open_boundary_semantics": "regularized_plane_flux_controlled_pressure_outlet",
+        "row_role": "interior_reflection_diagnostic_48",
+        "run_manifest_hash": "b0d80e9092d4495add8f582269b00ef26a06cad0d0d663c97053e56624e0e9bc",
+        "selected_source_config_hash": null,
+        "selected_source_lbm_relaxation_semantics": null,
+        "selected_source_row_name": null,
+        "selected_source_tau": null,
+        "solver_state_hash": "a87293ad26f30c42f5e03490181e34c55f65fc84220957d49fd2dde468ca7f96"
+      },
+      "duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p001_alpha0p02_du0p0005_slew0p50_offset2_guard_on_min0p70_ramp0_niu0p10_out5_250step_interior_diag": {
+        "geometry_mode": "duct_only",
+        "lbm_open_boundary_semantics": "regularized_plane_flux_controlled_pressure_outlet",
+        "row_role": "interior_reflection_diagnostic_48",
+        "run_manifest_hash": "94450d756230aea45ba27cc000894ff8f2b593e652e34b5f5679ed2566692f64",
+        "selected_source_config_hash": null,
+        "selected_source_lbm_relaxation_semantics": null,
+        "selected_source_row_name": null,
+        "selected_source_tau": null,
+        "solver_state_hash": "fdb27d80194e08310158a793d45dc9f29414741ea38cb163edf26d4c5c1ebb2b"
+      },
+      "duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p001_alpha0p02_du0p0005_slew0p50_offset2_guard_on_min0p70_ramp0_niu0p12_out5_250step_interior_diag": {
+        "geometry_mode": "duct_only",
+        "lbm_open_boundary_semantics": "regularized_plane_flux_controlled_pressure_outlet",
+        "row_role": "interior_reflection_diagnostic_48",
+        "run_manifest_hash": "cd301565a0663afaab7d42bf396f982cf05f65fe7a9c5c3579d5a18872da11ea",
+        "selected_source_config_hash": null,
+        "selected_source_lbm_relaxation_semantics": null,
+        "selected_source_row_name": null,
+        "selected_source_tau": null,
+        "solver_state_hash": "7f52ac6df8d432ec7829b5561c5de54793971db85623b4e099ba2c7fa32d61ae"
+      },
+      "duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p001_alpha0p02_du0p0005_slew0p50_offset2_guard_on_min0p70_ramp100_niu0p10_out5_250step_interior_diag": {
+        "geometry_mode": "duct_only",
+        "lbm_open_boundary_semantics": "regularized_plane_flux_controlled_pressure_outlet",
+        "row_role": "interior_reflection_diagnostic_48",
+        "run_manifest_hash": "4fdf293f63546a09dab6cb6c4a257da49f401515b4054b9084b36bfbd264046b",
+        "selected_source_config_hash": null,
+        "selected_source_lbm_relaxation_semantics": null,
+        "selected_source_row_name": null,
+        "selected_source_tau": null,
+        "solver_state_hash": "d0cd2e80a282f573d20e342d22ff3eee715dc73d7ee4eaf7a16bea4a3e5ba130"
+      },
+      "duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p001_alpha0p02_du0p0005_slew0p50_offset2_guard_on_min0p70_ramp50_niu0p10_out5_250step_interior_diag": {
+        "geometry_mode": "duct_only",
+        "lbm_open_boundary_semantics": "regularized_plane_flux_controlled_pressure_outlet",
+        "row_role": "interior_reflection_diagnostic_48",
+        "run_manifest_hash": "204891f82a6645db604faf7351cd1b2bccaad92d0d16ae892467070565a25b49",
+        "selected_source_config_hash": null,
+        "selected_source_lbm_relaxation_semantics": null,
+        "selected_source_row_name": null,
+        "selected_source_tau": null,
+        "solver_state_hash": "0c5d3721703460cdf45d9d8901767d90e43e99e01ba927b9b76488819e701914"
+      }
+    },
+    "gate_thresholds": {
+      "candidate_mass_acceptance_max": 0.005,
+      "flux_imbalance_rel_tail_max_max": 0.2,
+      "flux_imbalance_rel_tail_mean_max": 0.1,
+      "hard_stop_mach_max": 0.35,
+      "hard_stop_mass_drift_max": 0.05,
+      "hard_stop_negative_population_fraction_max": 0.001,
+      "hard_stop_rho_max": 1.15,
+      "hard_stop_rho_min": 0.85,
+      "inlet_flux_min": 1e-06,
+      "outlet_flux_tail_cv_max": 0.1,
+      "ratio_max": 1.2,
+      "ratio_min": 0.8,
+      "selected96_mass_acceptance_max": 0.01
+    },
+    "git_commit": "e194b896ea2153da3dc906272fd4cfd84124dec4",
+    "phase_commit_history": [
+      {
+        "code_commit": "e194b896ea2153da3dc906272fd4cfd84124dec4",
+        "phase": "planeflux_interior_diag48"
+      }
+    ],
+    "phase_history": [
+      "planeflux_interior_diag48"
+    ],
+    "run_commands": [
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase references48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase candidates48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase repair48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase flowrepair48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_sweep48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_mass_damped48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_stationarity48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_interior_diag48 --allow-large-real-rows --output-interval 5",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary"
+    ],
+    "step121_campaign_manifest_schema_version": 2
+  },
+  "campaign_manifest_id": "step124_lbm_boundary_516b1aaa",
+  "campaign_state": "awaiting_48_references",
+  "figure_29_3_parity_claim_allowed": false,
+  "final_classification": "boundary_repair_partial_continue_lbm",
+  "fluent_validation_claim_allowed": false,
+  "fluid_only": true,
+  "full_fsi_rerun_done": false,
+  "gate_report": {
+    "allowed_final_classifications": [
+      "boundary_repair_failed_revisit_lbm_solver",
+      "boundary_repair_partial_continue_lbm",
+      "boundary_repair_success_go_to_quasi2d"
+    ],
+    "best_boundary_selected": false,
+    "campaign_state": "awaiting_48_references",
+    "failed_selected_rows": [],
+    "figure_29_3_parity_claim_allowed": false,
+    "final_classification": "boundary_repair_partial_continue_lbm",
+    "fluent_validation_claim_allowed": false,
+    "full_fsi_validation_claim_allowed": false,
+    "global_limiter_gate_not_used_for_final_classification": true,
+    "global_limiter_gate_would_block_if_used": false,
+    "missing_selected_rows": [],
+    "no_fluent_claim": true,
+    "no_fsi_claim": true,
+    "quasi2d_allowed": false,
+    "required_selected_rows": [],
+    "selected_96_flow_development_gate": {
+      "duct_pass": false,
+      "duct_reasons": [
+        "not_selected"
+      ],
+      "flux_imbalance_rel_tail_max": null,
+      "midplane_to_inlet_flux_ratio_tail_mean": null,
+      "outlet_flux_min": 1e-12,
+      "outlet_flux_tail_cv": null,
+      "outlet_flux_tail_mean": null,
+      "outlet_to_inlet_flux_ratio_tail_mean": null,
+      "static_pass": false,
+      "static_reasons": [
+        "not_selected"
+      ]
+    },
+    "selected_boundary_semantics": null,
+    "selected_boundary_slug": null,
+    "selected_chain_limiter_gate_pass": true,
+    "selected_chain_limiter_summary": {
+      "blocked_row_names": [],
+      "limiter_activation_fraction_limit": 0.05,
+      "max_limiter_activation_fraction": 0.0,
+      "row_count": 0,
+      "selected_chain_limiter_gate_pass": true
+    },
+    "selected_chain_row_names": [],
+    "source_step120_schema_version": 1,
+    "static_two_flap_rows_are_lbm_only": true,
+    "step": 121,
+    "step121_quasi2d_allowed": false,
+    "step121_schema_version": 1,
+    "validation_claim_allowed": false
+  },
+  "goal_file": "STEP121_LBM_BOUNDARY_REAL_CAMPAIGN_AND_GATE_CORRECTION_GOAL.md",
+  "ignored_row_count": 0,
+  "ignored_rows": [],
+  "phase": "planeflux_interior_diag48",
+  "quasi2d_allowed": false,
+  "row_count": 6,
+  "runner_file": "experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py",
+  "static_two_flap_rows_are_lbm_only": true,
+  "step": 121,
+  "step121_schema_version": 1,
+  "validation_claim_allowed": false
+}

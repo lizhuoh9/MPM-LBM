@@ -190,6 +190,28 @@ Current Step134 outlet-stationarity triage evidence:
 - No 500-step promotion was run from Step134 triage.
 - Selected 96^3 execution remains blocked.
 
+Current Step135 interior-reflection diagnostic evidence:
+
+- Step135 adds a distinct `planeflux_interior_diag48` phase for compact
+  x-profile, inlet-ramp, and niu-sensitivity diagnostics.
+- The Step135 phase ran six real 48^3 / 250-step LBM-only diagnostic rows:
+  baseline high-frequency regularized, ramp50, ramp100, `lbm_niu = 0.08`,
+  `lbm_niu = 0.12`, and a convective comparator.
+- Every row completed 250/250, stayed finite, and had no first-failure
+  evidence.
+- Step135 rows use `row_role = interior_reflection_diagnostic_48`; they are not
+  in the selected-candidate semantics set and cannot enable selected 96^3.
+- No Step135 row passed the relaxed reporting gate set. The ramp100 row
+  improved mass and outlet stationarity but failed ratio and flux gates:
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.5815747922655192`,
+  `midplane_to_inlet_flux_ratio_tail_mean = 1.4639728217023902`,
+  `flux_imbalance_rel_tail_mean = 0.36544508198725295`, and
+  `flux_imbalance_rel_tail_max = 0.4148086159154826`.
+- The baseline compact x-profile collapse label appeared at interior `x = 24`,
+  step 220, not as a one-cell true-outlet artifact.
+- No 500-step promotion was run from Step135 diagnostics.
+- Selected 96^3 execution remains blocked.
+
 Current Step124 gate requirements:
 
 - 48^3 legacy reference rows must either complete the requested real window or

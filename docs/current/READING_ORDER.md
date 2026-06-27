@@ -5,10 +5,10 @@ Read these files first for the current boundary-repair campaign state:
 1. `docs/current/STATUS.md`
 2. `docs/current/ACTIVE_CAMPAIGN.json`
 3. `docs/current/VALIDATION_GATES.md`
-4. `docs/campaigns/fluent_duct_flap/steps/134/goal.md`
-5. `docs/campaigns/fluent_duct_flap/steps/134/report.md`
-6. `docs/campaigns/fluent_duct_flap/steps/133/goal.md`
-7. `docs/campaigns/fluent_duct_flap/steps/133/report.md`
+4. `docs/campaigns/fluent_duct_flap/steps/135/goal.md`
+5. `docs/campaigns/fluent_duct_flap/steps/135/report.md`
+6. `docs/campaigns/fluent_duct_flap/steps/134/goal.md`
+7. `docs/campaigns/fluent_duct_flap/steps/134/report.md`
 8. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
 
 Older Step102-Step126 documents remain useful history, but they are not the
@@ -30,4 +30,9 @@ first-failure event, but accepted row count remained zero. Step134 added
 control-plane offsets; all six real 48^3 / 250-step rows completed, stayed
 finite, and had no first-failure event, but accepted row count remained zero.
 No Step134 500-step promotion or selected 96^3 run is justified, so selected
-96^3 remains blocked.
+96^3 remains blocked. Step135 added `planeflux_interior_diag48` interior
+reflection / bulk-dynamics diagnostics; all six real 48^3 / 250-step diagnostic
+rows completed, stayed finite, and had no first-failure event, but no row passed
+the relaxed reporting gates. Step135 points to bulk/startup transient behavior,
+not an outlet-local readout artifact. No Step135 500-step promotion or selected
+96^3 run is justified.
