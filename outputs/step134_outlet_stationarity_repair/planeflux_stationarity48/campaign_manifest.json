@@ -1,0 +1,111 @@
+{
+  "artifact_root": "outputs\\step134_outlet_stationarity_repair\\planeflux_stationarity48",
+  "campaign_base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
+  "campaign_id": "step124_lbm_boundary_516b1aaa",
+  "current_code_commit": "26a79a492565e98ada2e55c1fd968b790f9f7df7",
+  "expected_rows": {
+    "duct_only_48_convective_plane_flux_controlled_damped_gain0p10_cap0p002_rho0p001_alpha0p02_du0p0005_slew0p50_offset1_guard_on_min0p70_250step_triage": {
+      "geometry_mode": "duct_only",
+      "lbm_open_boundary_semantics": "convective_plane_flux_controlled_damped_outlet",
+      "row_role": "plane_flux_control_candidate_48",
+      "run_manifest_hash": "50eeb151d138118b02597daadef79d7ef66e1f25fac98e5fc4e4479a92680ad2",
+      "selected_source_config_hash": null,
+      "selected_source_lbm_relaxation_semantics": null,
+      "selected_source_row_name": null,
+      "selected_source_tau": null,
+      "solver_state_hash": "9791f6a56b18978fedaa0d436a1ddd5ad7c2b96558c09087a25dfe79d0ba9147"
+    },
+    "duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p001_alpha0p01_du0p0005_slew0p50_offset1_guard_on_min0p70_250step_triage": {
+      "geometry_mode": "duct_only",
+      "lbm_open_boundary_semantics": "regularized_plane_flux_controlled_pressure_outlet",
+      "row_role": "plane_flux_control_candidate_48",
+      "run_manifest_hash": "7505732b6b2ea4acd87f5b11fa7b560f3e5ee762baaa12d90f1615389b0d7a7d",
+      "selected_source_config_hash": null,
+      "selected_source_lbm_relaxation_semantics": null,
+      "selected_source_row_name": null,
+      "selected_source_tau": null,
+      "solver_state_hash": "d0744fa4af23ea1924fcdd41972c89e5ad77abdc491a4abc1ed56fd598119d45"
+    },
+    "duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p001_alpha0p02_du0p0005_slew0p50_offset1_guard_off_min0p60_250step_triage": {
+      "geometry_mode": "duct_only",
+      "lbm_open_boundary_semantics": "regularized_plane_flux_controlled_pressure_outlet",
+      "row_role": "plane_flux_control_candidate_48",
+      "run_manifest_hash": "d1db39149c8dc07a7982e6a762352a9488c1b5cf1710243bd2f2e9b47888a755",
+      "selected_source_config_hash": null,
+      "selected_source_lbm_relaxation_semantics": null,
+      "selected_source_row_name": null,
+      "selected_source_tau": null,
+      "solver_state_hash": "b9571fb45763993c5f2245091be6ed4b1fdbef2463ebf9b44d61069092984141"
+    },
+    "duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p001_alpha0p02_du0p0005_slew0p50_offset1_guard_on_min0p50_250step_triage": {
+      "geometry_mode": "duct_only",
+      "lbm_open_boundary_semantics": "regularized_plane_flux_controlled_pressure_outlet",
+      "row_role": "plane_flux_control_candidate_48",
+      "run_manifest_hash": "43b4c58c8ae8dbbb8866cbac4392396cb863ee0e8f75b75c50d2888e42df9bfe",
+      "selected_source_config_hash": null,
+      "selected_source_lbm_relaxation_semantics": null,
+      "selected_source_row_name": null,
+      "selected_source_tau": null,
+      "solver_state_hash": "32e7081e63593a8877e6922bae2e4e1d817f067ffb70c395c90d402bdf65d5e4"
+    },
+    "duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p001_alpha0p02_du0p0005_slew0p50_offset1_guard_on_min0p70_250step_triage": {
+      "geometry_mode": "duct_only",
+      "lbm_open_boundary_semantics": "regularized_plane_flux_controlled_pressure_outlet",
+      "row_role": "plane_flux_control_candidate_48",
+      "run_manifest_hash": "d0af1065f173c08b741b25cd0d796d9e653a7f24848afb3081f853c28b889eaf",
+      "selected_source_config_hash": null,
+      "selected_source_lbm_relaxation_semantics": null,
+      "selected_source_row_name": null,
+      "selected_source_tau": null,
+      "solver_state_hash": "2972d4c3889bd87cb1287a5198a4121658cfbb791b5abc3a9e4cebb6ecd5748a"
+    },
+    "duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p001_alpha0p02_du0p0005_slew0p50_offset2_guard_on_min0p70_250step_triage": {
+      "geometry_mode": "duct_only",
+      "lbm_open_boundary_semantics": "regularized_plane_flux_controlled_pressure_outlet",
+      "row_role": "plane_flux_control_candidate_48",
+      "run_manifest_hash": "12cc3d4ee408c11b219a9965a2fcfb0bf98d8e3383cf2d90ef24ed32fa2700a6",
+      "selected_source_config_hash": null,
+      "selected_source_lbm_relaxation_semantics": null,
+      "selected_source_row_name": null,
+      "selected_source_tau": null,
+      "solver_state_hash": "cee5ab362daabd9146fc48a5419c4ba662dc0f47bb714af1799d5a29d2dcd1d3"
+    }
+  },
+  "gate_thresholds": {
+    "candidate_mass_acceptance_max": 0.005,
+    "flux_imbalance_rel_tail_max_max": 0.2,
+    "flux_imbalance_rel_tail_mean_max": 0.1,
+    "hard_stop_mach_max": 0.35,
+    "hard_stop_mass_drift_max": 0.05,
+    "hard_stop_negative_population_fraction_max": 0.001,
+    "hard_stop_rho_max": 1.15,
+    "hard_stop_rho_min": 0.85,
+    "inlet_flux_min": 1e-06,
+    "outlet_flux_tail_cv_max": 0.1,
+    "ratio_max": 1.2,
+    "ratio_min": 0.8,
+    "selected96_mass_acceptance_max": 0.01
+  },
+  "git_commit": "26a79a492565e98ada2e55c1fd968b790f9f7df7",
+  "phase_commit_history": [
+    {
+      "code_commit": "26a79a492565e98ada2e55c1fd968b790f9f7df7",
+      "phase": "planeflux_stationarity48"
+    }
+  ],
+  "phase_history": [
+    "planeflux_stationarity48"
+  ],
+  "run_commands": [
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase references48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase candidates48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase repair48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase flowrepair48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_sweep48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_mass_damped48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_stationarity48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary"
+  ],
+  "step121_campaign_manifest_schema_version": 2
+}

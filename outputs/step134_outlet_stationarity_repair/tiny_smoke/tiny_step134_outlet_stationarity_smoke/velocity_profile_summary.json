@@ -1,0 +1,39 @@
+{
+  "centerline_profile_x": {
+    "axis": "x",
+    "source": [
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline"
+    ],
+    "ux": [
+      0.021378109231591225,
+      0.027358070015907288,
+      0.029094712808728218,
+      0.029822133481502533,
+      0.03258952870965004,
+      0.03980889171361923,
+      0.0499873012304306,
+      0.0562092587351799
+    ],
+    "y_index": 3,
+    "z_index": 3
+  },
+  "final_flux_imbalance_rel": 0.5339635794965746,
+  "final_outlet_reflection_proxy": {
+    "fluid_cell_count": 16,
+    "negative_ux_fraction": 0.0,
+    "proxy_name": "outlet_near_plane_ux_density_variation",
+    "rho_peak_to_peak": 0.0024881362915039062,
+    "rho_std": 0.0008944061094489237,
+    "ux_std": 0.007802800037248771,
+    "x_index": 6
+  },
+  "geometry_mode": "duct_only",
+  "name": "tiny_step134_outlet_stationarity_smoke"
+}

@@ -28,14 +28,30 @@ def _fresh_tmp_dir(name: str) -> Path:
     return path
 
 
+def _active_campaign_manifest(active: dict) -> dict:
+    artifact_root = ROOT / active["artifact_root"]
+    candidates = [artifact_root / "campaign_manifest.json"]
+    if artifact_root.exists():
+        candidates.extend(sorted(artifact_root.glob("*/campaign_manifest.json")))
+    candidates.append(ROOT / "outputs" / "step121_lbm_boundary_real_campaign_and_gate_correction" / "campaign_manifest.json")
+
+    existing = [path for path in candidates if path.exists()]
+    assert existing, f"no campaign_manifest.json found for active artifact root {artifact_root}"
+
+    for path in existing:
+        manifest = json.loads(path.read_text(encoding="utf-8"))
+        if manifest.get("current_code_commit") == active["current_code_commit"]:
+            return manifest
+    return json.loads(existing[0].read_text(encoding="utf-8"))
+
+
 def test_step125_current_campaign_records_split_commit_identity():
     active_path = ROOT / "docs" / "current" / "ACTIVE_CAMPAIGN.json"
     gate_report_path = ROOT / "outputs" / "step121_lbm_boundary_real_campaign_and_gate_correction" / "step121_gate_report.json"
-    manifest_path = ROOT / "outputs" / "step121_lbm_boundary_real_campaign_and_gate_correction" / "campaign_manifest.json"
 
     active = json.loads(active_path.read_text(encoding="utf-8"))
     gate = json.loads(gate_report_path.read_text(encoding="utf-8"))
-    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest = _active_campaign_manifest(active)
     head = _git("rev-parse", "HEAD")
 
     assert active["campaign_base_commit"] == CAMPAIGN_BASE_COMMIT

@@ -156,6 +156,40 @@ Current Step133 mass-damped plane-flux triage evidence:
 - No 500-step promotion was run from Step133 triage.
 - Selected 96^3 execution remains blocked.
 
+Current Step134 outlet-stationarity triage evidence:
+
+- Step134 reuses the Step131-Step133 plane-flux-control semantics and adds a
+  distinct `planeflux_stationarity48` phase for outlet tail-collapse diagnosis,
+  near-outlet control-plane offsets, and an optional outlet flux drop guard.
+- The Step134 triage ran six real 48^3 / 250-step LBM-only rows across bounded
+  offset, guard, `min_ratio`, `filter_alpha`, and convective comparator
+  settings. Every row completed 250/250, stayed finite, and had no
+  first-failure evidence.
+- Step134 rows remain triage rows with
+  `row_role = plane_flux_control_candidate_48`; they are not in the
+  selected-candidate semantics set and cannot enable selected 96^3.
+- All six rows failed the promotion gates. `accepted_row_count = 0`.
+- The best mass row was
+  `duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p001_alpha0p02_du0p0005_slew0p50_offset2_guard_on_min0p70_250step_triage`
+  with `candidate_mass_acceptance_observed_abs = 0.014007222184954796`,
+  `flux_imbalance_rel_tail_mean = 0.39347561119048463`,
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.0272119275600675`,
+  `midplane_to_inlet_flux_ratio_tail_mean = 0.9077078805411898`, and
+  `outlet_flux_tail_cv = 0.46403458232245004`.
+- The best flux-imbalance row was
+  `duct_only_48_convective_plane_flux_controlled_damped_gain0p10_cap0p002_rho0p001_alpha0p02_du0p0005_slew0p50_offset1_guard_on_min0p70_250step_triage`
+  with `flux_imbalance_rel_tail_mean = 0.2598977291666475`,
+  `candidate_mass_acceptance_observed_abs = 0.022051240592753655`,
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.4026043007528752`,
+  `midplane_to_inlet_flux_ratio_tail_mean = 1.240713111991833`, and
+  `outlet_flux_tail_cv = 0.20179832248145668`.
+- Regularized Step134 rows retained near-outlet to true-outlet tail ratios from
+  `0.9913981762897958` to `0.9990451987612539`, while still collapsing to final
+  tail outlet flux around `14.4` to `16.0`; this indicates the near-outlet
+  control planes and the true outlet plane collapse together.
+- No 500-step promotion was run from Step134 triage.
+- Selected 96^3 execution remains blocked.
+
 Current Step124 gate requirements:
 
 - 48^3 legacy reference rows must either complete the requested real window or

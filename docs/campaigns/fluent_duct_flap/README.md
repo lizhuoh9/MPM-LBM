@@ -12,8 +12,9 @@ Current entry points:
 - `docs/current/ACTIVE_CAMPAIGN.json`
 - `docs/current/STATUS.md`
 - `docs/current/VALIDATION_GATES.md`
-- `docs/campaigns/fluent_duct_flap/steps/127/goal.md`
-- `docs/campaigns/fluent_duct_flap/steps/127/report.md`
+- `docs/campaigns/fluent_duct_flap/steps/134/goal.md`
+- `docs/campaigns/fluent_duct_flap/steps/134/report.md`
 
-Current state: Step127 real 48^3 candidates failed hard gates, so no best
-boundary is selected and selected 96^3 is blocked.
+Current state: Step134 real 48^3 outlet-stationarity triage completed all six
+250-step rows, but accepted row count remained zero, so no best boundary is
+selected and selected 96^3 is blocked.

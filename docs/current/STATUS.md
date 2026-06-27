@@ -4,6 +4,20 @@ The active campaign is the Fluent duct/flap LBM open-boundary repair campaign.
 The current artifact state is `48_candidates_failed` with final classification
 `boundary_repair_failed_revisit_lbm_solver`.
 
+Step134 added a bounded `planeflux_stationarity48` outlet tail-collapse
+diagnostic and near-outlet control-plane repair phase. Six real 48^3 / 250-step
+LBM-only rows completed 250/250 with finite state and no first-failure event,
+but all six failed promotion gates. The best mass row was
+`duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p001_alpha0p02_du0p0005_slew0p50_offset2_guard_on_min0p70_250step_triage`
+with `candidate_mass_acceptance_observed_abs = 0.014007222184954796`; the best
+flux-imbalance row was
+`duct_only_48_convective_plane_flux_controlled_damped_gain0p10_cap0p002_rho0p001_alpha0p02_du0p0005_slew0p50_offset1_guard_on_min0p70_250step_triage`
+with `flux_imbalance_rel_tail_mean = 0.2598977291666475`. Near-outlet ratios in
+the regularized rows stayed near the true outlet ratio (`0.9913981762897958` to
+`0.9990451987612539`), so Step134 did not support the hypothesis that the
+tail collapse was only an `nx - 1` measurement-plane artifact. No 500-step
+promotion was justified, and selected 96^3 remains blocked.
+
 Step133 added a bounded `planeflux_mass_damped48` slow-density-feedback and
 feedback-stationarity-damping phase. Six real 48^3 / 250-step LBM-only rows
 completed 250/250 with finite state and no first-failure event, but all six
@@ -84,7 +98,7 @@ also failed flow-development ratio/imbalance gates.
 
 Step127 selected no best 48^3 boundary. Selected 96^3 duct-only work is not
 allowed from the current artifacts. Step128, Step129, Step130, Step131,
-Step132, and Step133 continue that blocked 48^3 boundary-repair sequence
+Step132, Step133, and Step134 continue that blocked 48^3 boundary-repair sequence
 without selecting a boundary.
 
 Step126 ran real 48^3 LBM-only references. The legacy reference completed
@@ -102,5 +116,5 @@ commit from the current code commit in `ACTIVE_CAMPAIGN.json` and Step121
 campaign manifests, and it records `code_commit_at_run` for Step120 row
 artifacts.
 
-Step133 does not claim 48^3 repaired-candidate success, selected 96^3 success,
+Step134 does not claim 48^3 repaired-candidate success, selected 96^3 success,
 quasi-2D validation, FSI validation, Fluent validation, or Figure 29.3 parity.

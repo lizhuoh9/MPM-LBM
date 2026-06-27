@@ -1,0 +1,93 @@
+{
+  "step": 134,
+  "phase": "planeflux_stationarity48",
+  "artifact_root": "outputs/step134_outlet_stationarity_repair/planeflux_stationarity48",
+  "tiny_smoke_artifact": "outputs/step134_outlet_stationarity_repair/tiny_smoke/tiny_step134_outlet_stationarity_smoke",
+  "code_commit_at_run": "26a79a492565e98ada2e55c1fd968b790f9f7df7",
+  "row_count": 6,
+  "accepted_row_count": 0,
+  "all_rows_completed_requested_window": true,
+  "all_rows_finite": true,
+  "all_rows_first_failure_step_null": true,
+  "validation_claim_allowed": false,
+  "selected96_claim_allowed": false,
+  "promotion_500_step_run": false,
+  "quasi2d_allowed": false,
+  "fluent_validation_claim_allowed": false,
+  "figure_29_3_parity_claim_allowed": false,
+  "summary": "All six Step134 48^3 LBM-only rows completed 250/250 with finite state and no first-failure event, but every row failed promotion gates. Near-outlet ratios show regularized near-outlet and true outlet planes collapse together, so the Step134 control-plane offset and drop guard do not select a boundary.",
+  "rows": [
+    {
+      "name": "duct_only_48_convective_plane_flux_controlled_damped_gain0p10_cap0p002_rho0p001_alpha0p02_du0p0005_slew0p50_offset1_guard_on_min0p70_250step_triage",
+      "mass_abs": 0.022051240592753655,
+      "flux_mean": 0.2598977291666475,
+      "flux_max": 0.44625889115432205,
+      "outlet_to_inlet": 1.4026043007528752,
+      "mid_to_inlet": 1.240713111991833,
+      "outlet_cv": 0.20179832248145668,
+      "near_outlet_to_outlet_tail_mean": 0.9847224949268254,
+      "drop_guard_activation_count_tail": 0,
+      "accepted": false
+    },
+    {
+      "name": "duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p001_alpha0p01_du0p0005_slew0p50_offset1_guard_on_min0p70_250step_triage",
+      "mass_abs": 0.019823264260204167,
+      "flux_mean": 0.4413925196852171,
+      "flux_max": 0.6123331129550219,
+      "outlet_to_inlet": 1.1647833138682373,
+      "mid_to_inlet": 1.0147826175295076,
+      "outlet_cv": 0.4729750760550094,
+      "near_outlet_to_outlet_tail_mean": 0.9990451987612539,
+      "drop_guard_activation_count_tail": 0,
+      "accepted": false
+    },
+    {
+      "name": "duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p001_alpha0p02_du0p0005_slew0p50_offset1_guard_off_min0p60_250step_triage",
+      "mass_abs": 0.014091429001315442,
+      "flux_mean": 0.39658874377355086,
+      "flux_max": 0.6523567810324484,
+      "outlet_to_inlet": 1.027329406409514,
+      "mid_to_inlet": 0.9095671322521625,
+      "outlet_cv": 0.4682320104198965,
+      "near_outlet_to_outlet_tail_mean": 0.9916974655527171,
+      "drop_guard_activation_count_tail": 0,
+      "accepted": false
+    },
+    {
+      "name": "duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p001_alpha0p02_du0p0005_slew0p50_offset1_guard_on_min0p50_250step_triage",
+      "mass_abs": 0.0140913273046461,
+      "flux_mean": 0.3966219504237829,
+      "flux_max": 0.6524571053931987,
+      "outlet_to_inlet": 1.0272954330509134,
+      "mid_to_inlet": 0.9095676267414075,
+      "outlet_cv": 0.46829325351966133,
+      "near_outlet_to_outlet_tail_mean": 0.9916992226907411,
+      "drop_guard_activation_count_tail": 0,
+      "accepted": false
+    },
+    {
+      "name": "duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p001_alpha0p02_du0p0005_slew0p50_offset1_guard_on_min0p70_250step_triage",
+      "mass_abs": 0.014091378787359917,
+      "flux_mean": 0.396956918902168,
+      "flux_max": 0.6534690502340655,
+      "outlet_to_inlet": 1.0269529057675373,
+      "mid_to_inlet": 0.9095918397317195,
+      "outlet_cv": 0.4689114065945128,
+      "near_outlet_to_outlet_tail_mean": 0.9917012526218455,
+      "drop_guard_activation_count_tail": 0,
+      "accepted": false
+    },
+    {
+      "name": "duct_only_48_regularized_plane_flux_controlled_gain0p25_cap0p005_rho0p001_alpha0p02_du0p0005_slew0p50_offset2_guard_on_min0p70_250step_triage",
+      "mass_abs": 0.014007222184954796,
+      "flux_mean": 0.39347561119048463,
+      "flux_max": 0.6463693210369579,
+      "outlet_to_inlet": 1.0272119275600675,
+      "mid_to_inlet": 0.9077078805411898,
+      "outlet_cv": 0.46403458232245004,
+      "near_outlet_to_outlet_tail_mean": 0.9913981762897958,
+      "drop_guard_activation_count_tail": 0,
+      "accepted": false
+    }
+  ]
+}
