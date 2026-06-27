@@ -2,7 +2,7 @@
   "artifact_root": "D:\\working\\squid robot\\LBM\\MPM-LBM\\outputs\\step121_lbm_boundary_real_campaign_and_gate_correction",
   "campaign_base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
   "campaign_id": "step124_lbm_boundary_516b1aaa",
-  "current_code_commit": "cf6576dfa8fa25477510a40a7711ca4667625ea1",
+  "current_code_commit": "8b5e5ff5767073ad15d46f779c6c1f18348f4b5d",
   "expected_rows": {
     "duct_only_48_convective_flux_matched_damped_outlet_250step_triage": {
       "geometry_mode": "duct_only",
@@ -36,6 +36,17 @@
       "selected_source_row_name": null,
       "selected_source_tau": null,
       "solver_state_hash": "5d56100e46467c9bfee29a9f3411ebc33436b6b663b664e7eb21ac79714ab075"
+    },
+    "duct_only_48_convective_plane_flux_controlled_damped_outlet_250step_triage": {
+      "geometry_mode": "duct_only",
+      "lbm_open_boundary_semantics": "convective_plane_flux_controlled_damped_outlet",
+      "row_role": "plane_flux_control_candidate_48",
+      "run_manifest_hash": "23f99b57e60986228800cade5d44f83f58832dc8730a0ac13c06f2261f63feb5",
+      "selected_source_config_hash": null,
+      "selected_source_lbm_relaxation_semantics": null,
+      "selected_source_row_name": null,
+      "selected_source_tau": null,
+      "solver_state_hash": "6f4050f586b4da3ae6330f70f0f5346dc8d7b9942ec9215e651f32a1b58661dd"
     },
     "duct_only_48_legacy_boundary_500step_reference_real": {
       "geometry_mode": "duct_only",
@@ -92,6 +103,17 @@
       "selected_source_tau": null,
       "solver_state_hash": "d8c34da71896a454208d6d4beab27a6adc93901049e7933de26af642eec5792d"
     },
+    "duct_only_48_regularized_plane_flux_controlled_pressure_outlet_250step_triage": {
+      "geometry_mode": "duct_only",
+      "lbm_open_boundary_semantics": "regularized_plane_flux_controlled_pressure_outlet",
+      "row_role": "plane_flux_control_candidate_48",
+      "run_manifest_hash": "0f01f4d9d51f6eb4638a4c1cb98082a239af614278f2547f2d46d6a4f97d9a09",
+      "selected_source_config_hash": null,
+      "selected_source_lbm_relaxation_semantics": null,
+      "selected_source_row_name": null,
+      "selected_source_tau": null,
+      "solver_state_hash": "62b6eb8090dfef72713a461fc09868c572f166f72c298c26eb14dbf2b0e8e32d"
+    },
     "tiny_step121_real_runner_smoke": {
       "geometry_mode": "duct_only",
       "lbm_open_boundary_semantics": "regularized_velocity_pressure_limited",
@@ -119,7 +141,7 @@
     "ratio_min": 0.8,
     "selected96_mass_acceptance_max": 0.01
   },
-  "git_commit": "cf6576dfa8fa25477510a40a7711ca4667625ea1",
+  "git_commit": "8b5e5ff5767073ad15d46f779c6c1f18348f4b5d",
   "phase_commit_history": [
     {
       "code_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
@@ -140,6 +162,14 @@
     {
       "code_commit": "cf6576dfa8fa25477510a40a7711ca4667625ea1",
       "phase": "flowrepair48"
+    },
+    {
+      "code_commit": "e4a942c3f2769ae32c5bbcf321df5967dd99cde7",
+      "phase": "planeflux48"
+    },
+    {
+      "code_commit": "8b5e5ff5767073ad15d46f779c6c1f18348f4b5d",
+      "phase": "planeflux48"
     }
   ],
   "phase_history": [
@@ -147,13 +177,15 @@
     "references48",
     "candidates48",
     "repair48",
-    "flowrepair48"
+    "flowrepair48",
+    "planeflux48"
   ],
   "run_commands": [
     "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase references48 --allow-large-real-rows --output-interval 25",
     "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase candidates48 --allow-large-real-rows --output-interval 25",
     "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase repair48 --allow-large-real-rows --output-interval 25",
     "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase flowrepair48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux48 --allow-large-real-rows --output-interval 25",
     "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary"
   ],
   "step121_campaign_manifest_schema_version": 2

@@ -1,0 +1,39 @@
+{
+  "centerline_profile_x": {
+    "axis": "x",
+    "source": [
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline"
+    ],
+    "ux": [
+      0.02136300504207611,
+      0.026909589767456055,
+      0.028219683095812798,
+      0.028574591502547264,
+      0.031049270182847977,
+      0.03805774822831154,
+      0.048124611377716064,
+      0.05438508465886116
+    ],
+    "y_index": 3,
+    "z_index": 3
+  },
+  "final_flux_imbalance_rel": 0.5208023307064283,
+  "final_outlet_reflection_proxy": {
+    "fluid_cell_count": 16,
+    "negative_ux_fraction": 0.0,
+    "proxy_name": "outlet_near_plane_ux_density_variation",
+    "rho_peak_to_peak": 0.0024641752243041992,
+    "rho_std": 0.0008857710485284097,
+    "ux_std": 0.007479962876312497,
+    "x_index": 6
+  },
+  "geometry_mode": "duct_only",
+  "name": "tiny_step131_regularized_plane_flux_controller_20step_smoke"
+}

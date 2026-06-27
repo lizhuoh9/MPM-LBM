@@ -4,6 +4,14 @@ The active campaign is the Fluent duct/flap LBM open-boundary repair campaign.
 The current artifact state is `48_candidates_failed` with final classification
 `boundary_repair_failed_revisit_lbm_solver`.
 
+Step131 added a true plane-integrated flux-error controller with
+`regularized_plane_flux_controlled_pressure_outlet` and
+`convective_plane_flux_controlled_damped_outlet`, plus a distinct Step121
+`planeflux48` phase. Both new 48^3 / 250-step LBM-only triage rows completed
+250/250 with finite/density/mass/population/mach stability and no first-failure
+event, but both failed candidate mass acceptance and flow-development hard
+gates. No 500-step promotion was justified, and selected 96^3 remains blocked.
+
 Step129 ran the Step121 `repair48` phase for both Step128 repaired 48^3 /
 500-step LBM-only candidates. Both repaired rows completed 500/500 steps and
 produced simulation-backed terminal real evidence, but both failed the
@@ -53,7 +61,9 @@ also failed flow-development ratio/imbalance gates.
 
 Step127 selected no best 48^3 boundary. Selected 96^3 duct-only work is not
 allowed from the current artifacts. Step128, Step129, and Step130 continue that
-blocked 48^3 boundary-repair sequence without selecting a boundary.
+blocked 48^3 boundary-repair sequence without selecting a boundary. Step131
+continues the same blocked 48^3 boundary-repair sequence without selecting a
+boundary.
 
 Step126 ran real 48^3 LBM-only references. The legacy reference completed
 500/500 steps and passed the flow-development gate. The old regularized
@@ -70,5 +80,5 @@ commit from the current code commit in `ACTIVE_CAMPAIGN.json` and Step121
 campaign manifests, and it records `code_commit_at_run` for Step120 row
 artifacts.
 
-Step130 does not claim 48^3 repaired-candidate success, selected 96^3 success,
+Step131 does not claim 48^3 repaired-candidate success, selected 96^3 success,
 quasi-2D validation, FSI validation, Fluent validation, or Figure 29.3 parity.
