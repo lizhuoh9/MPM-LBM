@@ -140,6 +140,7 @@ SOLVER_STATE_HASH_FIELDS = {
     "open_boundary_flux_feedback_slew_alpha",
     "open_boundary_convective_blend_weight",
     "open_boundary_flux_control_measure_plane_offset",
+    "open_boundary_flux_control_target_scale",
     "open_boundary_outlet_flux_drop_guard_enabled",
     "open_boundary_outlet_flux_drop_guard_min_ratio",
     "open_boundary_inlet_ramp_steps",
@@ -163,6 +164,7 @@ class Step120RunSpec(Step119RunSpec):
     selected_source_lbm_relaxation_semantics: Optional[str] = None
     open_boundary_inlet_ramp_steps: int = 0
     open_boundary_inlet_ramp_profile: str = "linear"
+    open_boundary_flux_control_target_scale: float = 1.0
 
 
 def step120_real_run_specs(output_interval: int = 25) -> List[Step120RunSpec]:
@@ -823,6 +825,13 @@ def summarize_step120_limiter_activation(stats_or_lbm: Any, spec: Step120RunSpec
             stats.get("controller_drop_guard_activation_count_run", 0) or 0
         ),
         "controller_drop_guard_reference_flux": _finite_float(stats.get("controller_drop_guard_reference_flux", 0.0) or 0.0),
+        "controller_target_scale": _finite_float(
+            stats.get(
+                "controller_target_scale",
+                _spec_value(spec, "open_boundary_flux_control_target_scale", 1.0),
+            )
+            or 1.0
+        ),
         "controller_drop_guard_min_ratio": _finite_float(stats.get("controller_drop_guard_min_ratio", 0.60) or 0.60),
         "controller_drop_guard_activation_fraction_run": _finite_float(
             stats.get("controller_drop_guard_activation_fraction_run", 0.0) or 0.0
@@ -1541,6 +1550,7 @@ def _summary_row(
         "open_boundary_flux_feedback_slew_alpha": float(spec.open_boundary_flux_feedback_slew_alpha),
         "open_boundary_convective_blend_weight": float(spec.open_boundary_convective_blend_weight),
         "open_boundary_flux_control_measure_plane_offset": int(spec.open_boundary_flux_control_measure_plane_offset),
+        "open_boundary_flux_control_target_scale": float(spec.open_boundary_flux_control_target_scale),
         "open_boundary_outlet_flux_drop_guard_enabled": bool(spec.open_boundary_outlet_flux_drop_guard_enabled),
         "open_boundary_outlet_flux_drop_guard_min_ratio": float(spec.open_boundary_outlet_flux_drop_guard_min_ratio),
         "open_boundary_inlet_ramp_steps": int(spec.open_boundary_inlet_ramp_steps or 0),
@@ -1593,7 +1603,12 @@ def _summary_row(
         "midplane_to_inlet_flux_ratio_tail_mean": midplane_to_inlet_flux_ratio_tail_mean,
         "flow_development_gate_pass": bool(flow_development_gate_pass),
         "step130_flow_repair_triage": bool(spec.row_role == "flow_repair_candidate_48" and spec.requested_steps() < 500),
-        "step135_interior_reflection_candidate": bool(spec.row_role == "interior_reflection_diagnostic_48"),
+        "step135_interior_reflection_candidate": bool(
+            spec.row_role == "interior_reflection_diagnostic_48" and "Step135" in str(spec.artifact_scope_note)
+        ),
+        "step136_ramped_throughput_calibration_candidate": bool(
+            spec.row_role == "interior_reflection_diagnostic_48" and "Step136" in str(spec.artifact_scope_note)
+        ),
         "selected96_claim_allowed": False,
         "mass_total_delta_rel_final": mass_total_delta_rel_final,
         "mach_proxy_observed_max": mach_proxy_observed_max,
@@ -1654,12 +1669,18 @@ def _metadata(
         "open_boundary_flux_feedback_slew_alpha": float(spec.open_boundary_flux_feedback_slew_alpha),
         "open_boundary_convective_blend_weight": float(spec.open_boundary_convective_blend_weight),
         "open_boundary_flux_control_measure_plane_offset": int(spec.open_boundary_flux_control_measure_plane_offset),
+        "open_boundary_flux_control_target_scale": float(spec.open_boundary_flux_control_target_scale),
         "open_boundary_outlet_flux_drop_guard_enabled": bool(spec.open_boundary_outlet_flux_drop_guard_enabled),
         "open_boundary_outlet_flux_drop_guard_min_ratio": float(spec.open_boundary_outlet_flux_drop_guard_min_ratio),
         "open_boundary_inlet_ramp_steps": int(spec.open_boundary_inlet_ramp_steps or 0),
         "open_boundary_inlet_ramp_profile": str(spec.open_boundary_inlet_ramp_profile or "linear"),
         "step130_flow_repair_triage": bool(spec.row_role == "flow_repair_candidate_48"),
-        "step135_interior_reflection_candidate": bool(spec.row_role == "interior_reflection_diagnostic_48"),
+        "step135_interior_reflection_candidate": bool(
+            spec.row_role == "interior_reflection_diagnostic_48" and "Step135" in str(spec.artifact_scope_note)
+        ),
+        "step136_ramped_throughput_calibration_candidate": bool(
+            spec.row_role == "interior_reflection_diagnostic_48" and "Step136" in str(spec.artifact_scope_note)
+        ),
         "step120_schema_version": STEP120_SCHEMA_VERSION,
         "synthetic_diagnostic_mode": False,
         "fluid_only": True,
@@ -1702,7 +1723,12 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         == "convective_plane_flux_controlled_damped_outlet",
         "step130_flow_repair_candidate": spec.row_role == "flow_repair_candidate_48",
         "step131_plane_flux_control_candidate": spec.row_role == "plane_flux_control_candidate_48",
-        "step135_interior_reflection_candidate": spec.row_role == "interior_reflection_diagnostic_48",
+        "step135_interior_reflection_candidate": bool(
+            spec.row_role == "interior_reflection_diagnostic_48" and "Step135" in str(spec.artifact_scope_note)
+        ),
+        "step136_ramped_throughput_calibration_candidate": bool(
+            spec.row_role == "interior_reflection_diagnostic_48" and "Step136" in str(spec.artifact_scope_note)
+        ),
         "all_population_equilibrium_reset_used": spec.open_boundary_semantics == "equilibrium_all_population_reset",
         "open_boundary_limiter_enabled": bool(spec.open_boundary_limiter_enabled),
         "open_boundary_rho_min": float(spec.open_boundary_rho_min),
@@ -1718,6 +1744,7 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         "open_boundary_flux_feedback_slew_alpha": float(spec.open_boundary_flux_feedback_slew_alpha),
         "open_boundary_convective_blend_weight": float(spec.open_boundary_convective_blend_weight),
         "open_boundary_flux_control_measure_plane_offset": int(spec.open_boundary_flux_control_measure_plane_offset),
+        "open_boundary_flux_control_target_scale": float(spec.open_boundary_flux_control_target_scale),
         "open_boundary_outlet_flux_drop_guard_enabled": bool(spec.open_boundary_outlet_flux_drop_guard_enabled),
         "open_boundary_outlet_flux_drop_guard_min_ratio": float(spec.open_boundary_outlet_flux_drop_guard_min_ratio),
         "open_boundary_inlet_ramp_steps": int(spec.open_boundary_inlet_ramp_steps or 0),
@@ -1854,7 +1881,8 @@ def _flow_development_diagnostic_record(
     stats: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     stats = stats or {}
-    target_outlet_flux = _finite_float(record.get("inlet_flux", 0.0))
+    target_scale = _finite_float(getattr(spec, "open_boundary_flux_control_target_scale", 1.0))
+    target_outlet_flux = _finite_float(record.get("inlet_flux", 0.0)) * target_scale
     outlet_flux_after_correction = _finite_float(record.get("outlet_flux", 0.0))
     outlet_flux_error = _finite_float(target_outlet_flux - outlet_flux_after_correction)
     controller_target = _finite_float(stats.get("controller_target_outlet_flux", target_outlet_flux))
@@ -1879,6 +1907,9 @@ def _flow_development_diagnostic_record(
     step135_interior_reflection_candidate = bool(
         spec.row_role == "interior_reflection_diagnostic_48" and "Step135" in str(spec.artifact_scope_note)
     )
+    step136_ramped_throughput_calibration_candidate = bool(
+        spec.row_role == "interior_reflection_diagnostic_48" and "Step136" in str(spec.artifact_scope_note)
+    )
     step132_authority_sweep_candidate = bool(
         spec.row_role == "plane_flux_control_candidate_48" and "Step132" in str(spec.artifact_scope_note)
     )
@@ -1888,6 +1919,7 @@ def _flow_development_diagnostic_record(
         "lbm_open_boundary_semantics": spec.open_boundary_semantics,
         "row_role": spec.row_role,
         "step135_interior_reflection_candidate": step135_interior_reflection_candidate,
+        "step136_ramped_throughput_calibration_candidate": step136_ramped_throughput_calibration_candidate,
         "step134_outlet_stationarity_candidate": step134_outlet_stationarity_candidate,
         "step133_mass_damped_candidate": step133_mass_damped_candidate,
         "step132_authority_sweep_candidate": step132_authority_sweep_candidate,
@@ -1899,6 +1931,7 @@ def _flow_development_diagnostic_record(
         "open_boundary_inlet_ramp_steps": int(spec.open_boundary_inlet_ramp_steps or 0),
         "open_boundary_inlet_ramp_profile": str(spec.open_boundary_inlet_ramp_profile or "linear"),
         "open_boundary_inlet_ramp_factor": _step120_inlet_ramp_factor(spec, sample_step),
+        "open_boundary_flux_control_target_scale": target_scale,
         "target_outlet_flux": target_outlet_flux,
         "outlet_flux_raw_before_correction": _finite_float(stats.get("flow_outlet_flux_raw_before_correction_step", outlet_flux_after_correction)),
         "outlet_flux_after_correction": outlet_flux_after_correction,
@@ -1931,6 +1964,7 @@ def _flow_development_diagnostic_record(
         "controller_measure_plane_offset": int(
             stats.get("controller_measure_plane_offset", spec.open_boundary_flux_control_measure_plane_offset) or 0
         ),
+        "controller_target_scale": _finite_float(stats.get("controller_target_scale", target_scale)),
         "controller_drop_guard_active_step": int(stats.get("controller_drop_guard_active_step", 0) or 0),
         "controller_drop_guard_activation_count_run": int(
             stats.get("controller_drop_guard_activation_count_run", 0) or 0
@@ -1992,6 +2026,8 @@ def _write_flow_development_diagnostics(row_path: Path, records: Sequence[Dict[s
 
 
 def _flow_development_diagnostic_step_number(diagnostics: Sequence[Dict[str, Any]]) -> int:
+    if any(row.get("step136_ramped_throughput_calibration_candidate") is True for row in diagnostics):
+        return 136
     if any(row.get("step135_interior_reflection_candidate") is True for row in diagnostics):
         return 135
     if any(row.get("step134_outlet_stationarity_candidate") is True for row in diagnostics):
@@ -2766,6 +2802,7 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "lbm_open_boundary_semantics",
     "row_role",
     "step135_interior_reflection_candidate",
+    "step136_ramped_throughput_calibration_candidate",
     "step134_outlet_stationarity_candidate",
     "step133_mass_damped_candidate",
     "step132_authority_sweep_candidate",
@@ -2775,6 +2812,7 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "open_boundary_inlet_ramp_steps",
     "open_boundary_inlet_ramp_profile",
     "open_boundary_inlet_ramp_factor",
+    "open_boundary_flux_control_target_scale",
     "target_outlet_flux",
     "outlet_flux_raw_before_correction",
     "outlet_flux_after_correction",
@@ -2799,6 +2837,7 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "controller_saturation_count_run",
     "controller_saturation_fraction_run",
     "controller_measure_plane_offset",
+    "controller_target_scale",
     "controller_drop_guard_active_step",
     "controller_drop_guard_activation_count_run",
     "controller_drop_guard_activation_fraction_run",

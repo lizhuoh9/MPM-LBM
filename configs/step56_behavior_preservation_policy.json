@@ -10,6 +10,7 @@
     "force": [0.0, 0.0, 0.0],
     "niu": 0.1,
     "open_boundary_convective_blend_weight": 0.05,
+    "open_boundary_flux_control_target_scale": 1.0,
     "open_boundary_flux_control_measure_plane_offset": 0,
     "open_boundary_flux_correction_cap_u": 0.005,
     "open_boundary_flux_feedback_delta_cap_u": 0.0,

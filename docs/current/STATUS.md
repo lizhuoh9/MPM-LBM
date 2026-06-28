@@ -4,6 +4,7 @@ The active campaign is the Fluent duct/flap LBM open-boundary repair campaign.
 The current artifact state remains selected-boundary blocked. Step135 is a
 diagnostic continuation of the 48^3 boundary-repair loop, not selected-candidate
 evidence.
+Current campaign state: `48_candidates_failed`.
 
 Step135 added a bounded `planeflux_interior_diag48` interior reflection and
 bulk-dynamics diagnostic phase. Six real 48^3 / 250-step LBM-only diagnostic

@@ -409,6 +409,9 @@ def _make_lbm_config(spec: Step118RunSpec, tau_report: Dict[str, Any]) -> LBMCon
         open_boundary_flux_feedback_slew_alpha=float(spec.open_boundary_flux_feedback_slew_alpha),
         open_boundary_convective_blend_weight=float(spec.open_boundary_convective_blend_weight),
         open_boundary_flux_control_measure_plane_offset=int(spec.open_boundary_flux_control_measure_plane_offset),
+        open_boundary_flux_control_target_scale=float(
+            getattr(spec, "open_boundary_flux_control_target_scale", 1.0)
+        ),
         open_boundary_outlet_flux_drop_guard_enabled=bool(spec.open_boundary_outlet_flux_drop_guard_enabled),
         open_boundary_outlet_flux_drop_guard_min_ratio=float(spec.open_boundary_outlet_flux_drop_guard_min_ratio),
         bc_x_left=2,

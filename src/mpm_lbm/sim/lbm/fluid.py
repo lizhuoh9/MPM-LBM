@@ -60,6 +60,7 @@ class LBMFluid3D:
         self.open_boundary_flux_feedback_slew_alpha = float(config.open_boundary_flux_feedback_slew_alpha)
         self.open_boundary_convective_blend_weight = float(config.open_boundary_convective_blend_weight)
         self.open_boundary_flux_control_measure_plane_offset = int(config.open_boundary_flux_control_measure_plane_offset)
+        self.open_boundary_flux_control_target_scale = float(config.open_boundary_flux_control_target_scale)
         self.open_boundary_outlet_flux_drop_guard_enabled = bool(config.open_boundary_outlet_flux_drop_guard_enabled)
         self.open_boundary_outlet_flux_drop_guard_min_ratio = float(config.open_boundary_outlet_flux_drop_guard_min_ratio)
         self.open_boundary_population_floor_enabled = config.open_boundary_population_floor is not None
@@ -804,6 +805,7 @@ class LBMFluid3D:
             "flow_feedback_slew_alpha": float(self.open_boundary_flux_feedback_slew_alpha),
             "flow_convective_blend_weight": float(self.open_boundary_convective_blend_weight),
             "flow_control_measure_plane_offset": int(self.open_boundary_flux_control_measure_plane_offset),
+            "flow_control_target_scale": float(self.open_boundary_flux_control_target_scale),
             "flow_outlet_flux_drop_guard_enabled": bool(self.open_boundary_outlet_flux_drop_guard_enabled),
             "flow_outlet_flux_drop_guard_min_ratio": float(self.open_boundary_outlet_flux_drop_guard_min_ratio),
             "near_outlet_flux_xminus1": float(self.ob_near_outlet_flux_xminus1[None]),
@@ -832,6 +834,7 @@ class LBMFluid3D:
                 controller_saturations / controller_updates if controller_updates else 0.0
             ),
             "controller_measure_plane_offset": int(self.open_boundary_flux_control_measure_plane_offset),
+            "controller_target_scale": float(self.open_boundary_flux_control_target_scale),
             "controller_drop_guard_active_step": int(self.ob_drop_guard_active_step[None]),
             "controller_drop_guard_activation_count_run": int(self.ob_drop_guard_activation_count_run[None]),
             "controller_drop_guard_reference_flux": float(self.ob_drop_guard_reference_flux[None]),
@@ -1100,6 +1103,9 @@ class LBMFluid3D:
                     self.ob_near_outlet_flux_xminus3[None],
                     self.rho[near3_i, j, k] * self.v[near3_i, j, k][0],
                 )
+        self.ob_target_outlet_flux[None] = (
+            self.open_boundary_flux_control_target_scale * self.ob_target_outlet_flux[None]
+        )
         area = self.ob_outlet_fluid_area[None]
         if area <= 0.0:
             area = 1.0
