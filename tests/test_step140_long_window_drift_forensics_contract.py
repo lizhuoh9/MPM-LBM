@@ -8,6 +8,7 @@ STEP139_ROOT = ROOT / "outputs" / "step139_planeflux_final48"
 STEP140_OUTPUT_ROOT = ROOT / "outputs" / "step140_long_window_drift_forensics"
 STEP139_RUN_COMMIT = "4e43162a641085e56a4ba72c8bc013e58cb08cc3"
 STEP139_REPORT_COMMIT = "b83c1514e325c3bb5f29d73f8adeab13f6ac623d"
+STEP141_RUN_COMMIT = "90fa5798754942cd8f7de2a1c24a483804667478"
 
 EXPECTED_REPORTS = [
     "mass_drift_segment_report.json",
@@ -122,8 +123,10 @@ def test_step140_does_not_add_phase_or_selected96_runtime_surface():
     )
     parser = (ROOT / "experiments" / "steps" / "step140_long_window_drift_forensics.py").read_text(encoding="utf-8")
 
-    assert "step140" not in step121.lower()
-    assert "long_window_drift_forensics" not in step121
+    assert "STEP140_LONG_WINDOW_DRIFT_FORENSICS_PHASE" not in step121
+    assert "step121_step140" not in step121.lower()
+    assert "STEP140_SUMMARY_RELATIVE_PATH" in step121
+    assert "STEP141_DENSITY_FEEDBACK_ISOLATION_PHASE" in step121
     for forbidden in [
         "run_step120_row",
         "create_step120_lbm",
@@ -164,12 +167,14 @@ def test_step139_reconciliation_records_actual_paths_and_commit_semantics():
     ]:
         assert stale_path not in goal
 
-    assert active["current_code_commit"] == STEP139_RUN_COMMIT
-    assert active["code_commit_at_run"] == STEP139_RUN_COMMIT
-    assert active["repository_head_at_report"] == STEP139_REPORT_COMMIT
+    assert active["step139_code_commit_at_run"] == STEP139_RUN_COMMIT
+    assert active["step141_code_commit_at_run"] == STEP141_RUN_COMMIT
+    assert active["current_code_commit"] == STEP141_RUN_COMMIT
+    assert active["code_commit_at_run"] == STEP141_RUN_COMMIT
+    assert active["repository_head_at_report"] == STEP141_RUN_COMMIT
     assert "code_commit_at_run" in status
     assert STEP139_RUN_COMMIT in status
-    assert STEP139_REPORT_COMMIT in status
+    assert STEP141_RUN_COMMIT in status
 
 
 def test_committed_step140_outputs_exist_and_are_artifact_only():

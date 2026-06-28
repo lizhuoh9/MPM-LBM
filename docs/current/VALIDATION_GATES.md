@@ -348,9 +348,33 @@ Current Step140 long-window drift forensics evidence:
   `slope_per_step = -0.0017400182162721955`.
 - Step140 does not justify selected boundary, selected96, 96^3, quasi-2D, FSI,
   Fluent, Figure 29.3, or production-readiness claims.
-- A later Step141 may only propose one bounded 48^3 / 250-step diagnostic
-  focused on mass-neutral plane-flux or density-feedback isolation. It may not
-  run selected96 or 500 steps.
+
+Current Step141 density-feedback isolation evidence:
+
+- Step141 adds a distinct `planeflux_density_feedback_isolation48` phase for
+  bounded density-feedback isolation only.
+- The phase ran exactly four real 48^3 / 250-step LBM-only rows with
+  `output_interval = 5`; no selected96, selected-static, 96^3, Fluent, FSI, or
+  500-step row was run.
+- Step141 rows use `row_role = density_feedback_isolation_diagnostic_48`; the
+  role is not in `SELECTED_CHAIN_ROLES`, and
+  `regularized_plane_flux_controlled_pressure_outlet` remains outside
+  `CANDIDATE_SEMANTICS` and `REPAIRED_CANDIDATE_SEMANTICS`.
+- Each row preserves Step139/Step140 provenance including
+  `source_step = 140`, the Step139 source row hashes, and
+  `source_step140_summary_hash =
+  a2cabe6f927750f161e892b8b625087193f2a43218ebe4c68a2e970d3817f7d8`.
+- All four rows completed 250/250, stayed finite, passed density/population/Mach
+  and the bounded 250-step flow-development gate, and had no first-failure or
+  compact-collapse label.
+- The audit decision is `density_feedback_isolation_insufficient`. The best
+  250-step mass result remained the baseline repeat with `gain_rho = 0.001`:
+  `candidate_mass_acceptance_observed_abs = 0.003974863988826804`. Removing
+  density feedback had `candidate_mass_acceptance_observed_abs =
+  0.003979989185473907`, so Step141 does not support density feedback as the
+  dominant cause of the Step140 post-250 tail failure.
+- `step142_single_500step_final_evidence_proposal_allowed = false`.
+- Selected 96^3 execution remains blocked.
 
 Current Step124 gate requirements:
 

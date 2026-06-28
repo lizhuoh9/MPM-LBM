@@ -6,17 +6,21 @@ Read these files first for the current boundary-repair campaign state:
 2. `docs/current/ACTIVE_CAMPAIGN.json`
 3. `docs/current/VALIDATION_GATES.md`
 4. `docs/current/READING_ORDER.md`
-5. `docs/campaigns/fluent_duct_flap/steps/140/goal.md`
-6. `docs/campaigns/fluent_duct_flap/steps/140/report.md`
-7. `outputs/step140_long_window_drift_forensics/step140_failure_mechanism_summary.json`
-8. `docs/campaigns/fluent_duct_flap/steps/139/report.md`
-9. `outputs/step139_planeflux_final48/step139_long_window_comparison.json`
-10. `outputs/step139_planeflux_final48/step139_failure_forensics.json`
-11. `docs/GENERIC_SOLVER_ARCHITECTURE_CONTRACT.md`
-12. `docs/campaigns/fluent_duct_flap/fluent_official_local_execution_guard.md`
-13. `outputs/fluent_official_local_execution_prep/guard_report.json`
-14. `docs/campaigns/fluent_duct_flap/steps/138/report.md`
-15. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
+5. `docs/campaigns/fluent_duct_flap/steps/141/goal.md`
+6. `docs/campaigns/fluent_duct_flap/steps/141/report.md`
+7. `outputs/step141_density_feedback_isolation/step141_decision_summary.json`
+8. `outputs/step141_density_feedback_isolation/step141_density_feedback_comparison.json`
+9. `docs/campaigns/fluent_duct_flap/steps/140/goal.md`
+10. `docs/campaigns/fluent_duct_flap/steps/140/report.md`
+11. `outputs/step140_long_window_drift_forensics/step140_failure_mechanism_summary.json`
+12. `docs/campaigns/fluent_duct_flap/steps/139/report.md`
+13. `outputs/step139_planeflux_final48/step139_long_window_comparison.json`
+14. `outputs/step139_planeflux_final48/step139_failure_forensics.json`
+15. `docs/GENERIC_SOLVER_ARCHITECTURE_CONTRACT.md`
+16. `docs/campaigns/fluent_duct_flap/fluent_official_local_execution_guard.md`
+17. `outputs/fluent_official_local_execution_prep/guard_report.json`
+18. `docs/campaigns/fluent_duct_flap/steps/138/report.md`
+19. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
 
 Older Step102-Step126 documents remain useful history, but they are not the
 current entry point for deciding whether the campaign may advance to selected
@@ -71,6 +75,9 @@ artifacts. It classifies the long-window failure as
 the 250-step window, outlet stationarity and mean flux imbalance failed in the
 400-500 hard-gate tail, and controller authority decayed without saturation.
 Step140 did not add a Step121 phase, did not run LBM, did not tune parameters,
-and did not enable selected96. Step141, if opened, is limited to one bounded
-48^3 / 250-step diagnostic proposal focused on mass-neutral plane-flux or
-density-feedback isolation; no selected96 or 500-step run is justified.
+and did not enable selected96. Step141 then ran exactly four bounded 48^3 /
+250-step density-feedback isolation rows. All four completed and passed the
+bounded 250-step checks, but reducing or removing `gain_rho` did not improve
+mass acceptance versus the `gain_rho = 0.001` baseline repeat. Step141 reports
+`density_feedback_isolation_insufficient`, does not allow a Step142 500-step
+final-evidence proposal, and selected 96^3 remains blocked.

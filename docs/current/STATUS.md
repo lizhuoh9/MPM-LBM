@@ -1,18 +1,38 @@
 # Current Status
 
 The active campaign is the Fluent duct/flap LBM open-boundary repair campaign.
-The current artifact state remains selected-boundary blocked. Step139 is a
-single 48^3 / 500-step final-evidence test of the one Step138 passing
-short-window row. It is not selected-candidate evidence and it does not enable
-selected 96^3.
+The current artifact state remains selected-boundary blocked. Step141 is a
+bounded 48^3 / 250-step LBM-only density-feedback isolation diagnostic over
+the Step139/Step140 failure, not selected-candidate evidence and not a
+validation step.
 Current campaign state: `48_candidates_failed`.
 
-Commit identity note: `code_commit_at_run =
-4e43162a641085e56a4ba72c8bc013e58cb08cc3` identifies the Step139 run-time
-code that produced the 500-step artifacts. `repository_head_at_report =
-b83c1514e325c3bb5f29d73f8adeab13f6ac623d` identifies the final Step139
-report/docs commit reviewed before Step140. These fields are intentionally
-separate.
+Commit identity note: Step141 was executed with `code_commit_at_run =
+90fa5798754942cd8f7de2a1c24a483804667478`. The Step139 source row still
+records `step139_code_commit_at_run =
+4e43162a641085e56a4ba72c8bc013e58cb08cc3`. These fields are intentionally
+separate from the final report/push commit for this Step141 patch.
+
+Step141 adds the distinct `planeflux_density_feedback_isolation48` phase with
+exactly four real 48^3 / 250-step rows. All rows use
+`row_role = density_feedback_isolation_diagnostic_48` and
+`regularized_plane_flux_controlled_pressure_outlet`; only
+`open_boundary_flux_feedback_gain_rho` varies across `0.001`, `0.0`,
+`0.00025`, and `0.0005`. The role and semantics are not selected-candidate
+semantics and cannot enable selected 96^3.
+
+Step141 generated artifacts under
+`outputs/step141_density_feedback_isolation`. The audit decision is
+`density_feedback_isolation_insufficient`: the baseline repeat with
+`gain_rho = 0.001` had the lowest 250-step
+`candidate_mass_acceptance_observed_abs = 0.003974863988826804`, while
+`gain_rho = 0.0` had `candidate_mass_acceptance_observed_abs =
+0.003979989185473907`. All four rows completed 250/250, stayed finite, passed
+the bounded 250-step flow-development gate, and kept
+`selected96_claim_allowed = false` and `validation_claim_allowed = false`.
+Lowering density feedback therefore did not explain or repair Step140's
+post-250 tail failure, and Step142 must not proceed to a 500-step final-evidence
+run from this diagnostic.
 
 Step140 is a forensics-only long-window drift diagnosis from existing Step139
 artifacts. It does not add a Step121 phase, run a new LBM simulation, tune new
@@ -29,12 +49,11 @@ ended at `mass_total_delta_rel = 0.008321150189010917`. The hard-gate tail also
 had `flux_imbalance_rel` mean `0.10270018561574665` and outlet flux CV
 `0.11556697847525366`; `near_outlet_to_outlet_flux_ratio` mean stayed close to
 one at `0.9978928625164406`, so Step140 does not support a measurement-plane
-mismatch-only explanation. Controller saturation stayed at `0.0`, while
+mismatch-only explanation. The precise Step141 interpretation is
+`post_250_mass_excursion_with_tail_acceptance_failure`, not a claim of strictly
+monotonic accumulation. Controller saturation stayed at `0.0`, while
 `controller_authority_ratio` declined to final `0.38176060964663827` with
-`slope_per_step = -0.0017400182162721955`. Step141 may only propose one bounded
-48^3 / 250-step diagnostic focused on mass-neutral plane-flux or
-density-feedback isolation. It may not run selected96, may not run 500 steps,
-and may not claim validation.
+`slope_per_step = -0.0017400182162721955`.
 
 Step139 added a bounded `planeflux_final48` phase with exactly one real
 48^3 / 500-step LBM-only row copied from the Step138 passing parameters:

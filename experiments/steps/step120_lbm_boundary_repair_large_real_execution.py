@@ -167,6 +167,14 @@ class Step120RunSpec(Step119RunSpec):
     source_solver_state_hash: Optional[str] = None
     source_run_manifest_hash: Optional[str] = None
     source_code_commit: Optional[str] = None
+    source_step139_row_name: Optional[str] = None
+    source_step139_solver_state_hash: Optional[str] = None
+    source_step139_run_manifest_hash: Optional[str] = None
+    source_step139_code_commit: Optional[str] = None
+    source_step140_summary_hash: Optional[str] = None
+    source_step140_summary_path: Optional[str] = None
+    source_step140_dominant_failure_mechanism: Optional[str] = None
+    source_step140_mass_drift_mechanism: Optional[str] = None
     open_boundary_inlet_ramp_steps: int = 0
     open_boundary_inlet_ramp_profile: str = "linear"
     open_boundary_flux_control_target_scale: float = 1.0
@@ -1579,6 +1587,14 @@ def _summary_row(
         "source_solver_state_hash": spec.source_solver_state_hash,
         "source_run_manifest_hash": spec.source_run_manifest_hash,
         "source_code_commit": spec.source_code_commit,
+        "source_step139_row_name": spec.source_step139_row_name,
+        "source_step139_solver_state_hash": spec.source_step139_solver_state_hash,
+        "source_step139_run_manifest_hash": spec.source_step139_run_manifest_hash,
+        "source_step139_code_commit": spec.source_step139_code_commit,
+        "source_step140_summary_hash": spec.source_step140_summary_hash,
+        "source_step140_summary_path": spec.source_step140_summary_path,
+        "source_step140_dominant_failure_mechanism": spec.source_step140_dominant_failure_mechanism,
+        "source_step140_mass_drift_mechanism": spec.source_step140_mass_drift_mechanism,
         "requested_nx": spec.requested_grid(),
         "executed_nx": int(spec.nx),
         "requested_n_steps": spec.requested_steps(),
@@ -1627,6 +1643,9 @@ def _summary_row(
         ),
         "step139_planeflux_final48_candidate": bool(
             spec.row_role == "final_evidence_candidate_48" and "Step139" in str(spec.artifact_scope_note)
+        ),
+        "step141_density_feedback_isolation_candidate": bool(
+            spec.row_role == "density_feedback_isolation_diagnostic_48" and "Step141" in str(spec.artifact_scope_note)
         ),
         "selected96_claim_allowed": False,
         "mass_total_delta_rel_final": mass_total_delta_rel_final,
@@ -1731,6 +1750,14 @@ def _metadata(
         "source_solver_state_hash": spec.source_solver_state_hash,
         "source_run_manifest_hash": spec.source_run_manifest_hash,
         "source_code_commit": spec.source_code_commit,
+        "source_step139_row_name": spec.source_step139_row_name,
+        "source_step139_solver_state_hash": spec.source_step139_solver_state_hash,
+        "source_step139_run_manifest_hash": spec.source_step139_run_manifest_hash,
+        "source_step139_code_commit": spec.source_step139_code_commit,
+        "source_step140_summary_hash": spec.source_step140_summary_hash,
+        "source_step140_summary_path": spec.source_step140_summary_path,
+        "source_step140_dominant_failure_mechanism": spec.source_step140_dominant_failure_mechanism,
+        "source_step140_mass_drift_mechanism": spec.source_step140_mass_drift_mechanism,
         "checkpoint_runtime_artifact_committed": False,
         "restored_checkpoint": restored_checkpoint,
         "stop_on_first_failure": bool(spec.stop_on_first_failure),
@@ -1771,11 +1798,22 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         "step139_planeflux_final48_candidate": bool(
             spec.row_role == "final_evidence_candidate_48" and "Step139" in str(spec.artifact_scope_note)
         ),
+        "step141_density_feedback_isolation_candidate": bool(
+            spec.row_role == "density_feedback_isolation_diagnostic_48" and "Step141" in str(spec.artifact_scope_note)
+        ),
         "source_step": spec.source_step,
         "source_row_name": spec.source_row_name,
         "source_solver_state_hash": spec.source_solver_state_hash,
         "source_run_manifest_hash": spec.source_run_manifest_hash,
         "source_code_commit": spec.source_code_commit,
+        "source_step139_row_name": spec.source_step139_row_name,
+        "source_step139_solver_state_hash": spec.source_step139_solver_state_hash,
+        "source_step139_run_manifest_hash": spec.source_step139_run_manifest_hash,
+        "source_step139_code_commit": spec.source_step139_code_commit,
+        "source_step140_summary_hash": spec.source_step140_summary_hash,
+        "source_step140_summary_path": spec.source_step140_summary_path,
+        "source_step140_dominant_failure_mechanism": spec.source_step140_dominant_failure_mechanism,
+        "source_step140_mass_drift_mechanism": spec.source_step140_mass_drift_mechanism,
         "all_population_equilibrium_reset_used": spec.open_boundary_semantics == "equilibrium_all_population_reset",
         "open_boundary_limiter_enabled": bool(spec.open_boundary_limiter_enabled),
         "open_boundary_rho_min": float(spec.open_boundary_rho_min),
@@ -1966,6 +2004,9 @@ def _flow_development_diagnostic_record(
     step139_planeflux_final48_candidate = bool(
         spec.row_role == "final_evidence_candidate_48" and "Step139" in str(spec.artifact_scope_note)
     )
+    step141_density_feedback_isolation_candidate = bool(
+        spec.row_role == "density_feedback_isolation_diagnostic_48" and "Step141" in str(spec.artifact_scope_note)
+    )
     step132_authority_sweep_candidate = bool(
         spec.row_role == "plane_flux_control_candidate_48" and "Step132" in str(spec.artifact_scope_note)
     )
@@ -1979,6 +2020,7 @@ def _flow_development_diagnostic_record(
         "step137_ramp_target_refinement_candidate": step137_ramp_target_refinement_candidate,
         "step138_high_authority_outlet_candidate": step138_high_authority_outlet_candidate,
         "step139_planeflux_final48_candidate": step139_planeflux_final48_candidate,
+        "step141_density_feedback_isolation_candidate": step141_density_feedback_isolation_candidate,
         "step134_outlet_stationarity_candidate": step134_outlet_stationarity_candidate,
         "step133_mass_damped_candidate": step133_mass_damped_candidate,
         "step132_authority_sweep_candidate": step132_authority_sweep_candidate,
@@ -2063,6 +2105,14 @@ def _flow_development_diagnostic_record(
         "source_solver_state_hash": spec.source_solver_state_hash,
         "source_run_manifest_hash": spec.source_run_manifest_hash,
         "source_code_commit": spec.source_code_commit,
+        "source_step139_row_name": spec.source_step139_row_name,
+        "source_step139_solver_state_hash": spec.source_step139_solver_state_hash,
+        "source_step139_run_manifest_hash": spec.source_step139_run_manifest_hash,
+        "source_step139_code_commit": spec.source_step139_code_commit,
+        "source_step140_summary_hash": spec.source_step140_summary_hash,
+        "source_step140_summary_path": spec.source_step140_summary_path,
+        "source_step140_dominant_failure_mechanism": spec.source_step140_dominant_failure_mechanism,
+        "source_step140_mass_drift_mechanism": spec.source_step140_mass_drift_mechanism,
         "mass_total_delta_rel": _finite_float(record.get("mass_total_delta_rel", 0.0)),
         "validation_claim_allowed": False,
         "selected96_claim_allowed": False,
@@ -2090,6 +2140,8 @@ def _write_flow_development_diagnostics(row_path: Path, records: Sequence[Dict[s
 
 
 def _flow_development_diagnostic_step_number(diagnostics: Sequence[Dict[str, Any]]) -> int:
+    if any(row.get("step141_density_feedback_isolation_candidate") is True for row in diagnostics):
+        return 141
     if any(row.get("step139_planeflux_final48_candidate") is True for row in diagnostics):
         return 139
     if any(row.get("step138_high_authority_outlet_candidate") is True for row in diagnostics):
@@ -2737,6 +2789,14 @@ def run_manifest_hash_for_spec(spec: Step120RunSpec) -> str:
         "source_solver_state_hash",
         "source_run_manifest_hash",
         "source_code_commit",
+        "source_step139_row_name",
+        "source_step139_solver_state_hash",
+        "source_step139_run_manifest_hash",
+        "source_step139_code_commit",
+        "source_step140_summary_hash",
+        "source_step140_summary_path",
+        "source_step140_dominant_failure_mechanism",
+        "source_step140_mass_drift_mechanism",
     ]:
         if data.get(key) is None:
             data.pop(key, None)
@@ -2886,6 +2946,7 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "step137_ramp_target_refinement_candidate",
     "step138_high_authority_outlet_candidate",
     "step139_planeflux_final48_candidate",
+    "step141_density_feedback_isolation_candidate",
     "step134_outlet_stationarity_candidate",
     "step133_mass_damped_candidate",
     "step132_authority_sweep_candidate",
@@ -2946,6 +3007,14 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "source_solver_state_hash",
     "source_run_manifest_hash",
     "source_code_commit",
+    "source_step139_row_name",
+    "source_step139_solver_state_hash",
+    "source_step139_run_manifest_hash",
+    "source_step139_code_commit",
+    "source_step140_summary_hash",
+    "source_step140_summary_path",
+    "source_step140_dominant_failure_mechanism",
+    "source_step140_mass_drift_mechanism",
     "mass_total_delta_rel",
     "validation_claim_allowed",
     "selected96_claim_allowed",
