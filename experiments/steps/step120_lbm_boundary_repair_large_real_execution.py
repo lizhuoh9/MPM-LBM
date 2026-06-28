@@ -1609,6 +1609,9 @@ def _summary_row(
         "step136_ramped_throughput_calibration_candidate": bool(
             spec.row_role == "interior_reflection_diagnostic_48" and "Step136" in str(spec.artifact_scope_note)
         ),
+        "step137_ramp_target_refinement_candidate": bool(
+            spec.row_role == "interior_reflection_diagnostic_48" and "Step137" in str(spec.artifact_scope_note)
+        ),
         "selected96_claim_allowed": False,
         "mass_total_delta_rel_final": mass_total_delta_rel_final,
         "mach_proxy_observed_max": mach_proxy_observed_max,
@@ -1681,6 +1684,9 @@ def _metadata(
         "step136_ramped_throughput_calibration_candidate": bool(
             spec.row_role == "interior_reflection_diagnostic_48" and "Step136" in str(spec.artifact_scope_note)
         ),
+        "step137_ramp_target_refinement_candidate": bool(
+            spec.row_role == "interior_reflection_diagnostic_48" and "Step137" in str(spec.artifact_scope_note)
+        ),
         "step120_schema_version": STEP120_SCHEMA_VERSION,
         "synthetic_diagnostic_mode": False,
         "fluid_only": True,
@@ -1728,6 +1734,9 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         ),
         "step136_ramped_throughput_calibration_candidate": bool(
             spec.row_role == "interior_reflection_diagnostic_48" and "Step136" in str(spec.artifact_scope_note)
+        ),
+        "step137_ramp_target_refinement_candidate": bool(
+            spec.row_role == "interior_reflection_diagnostic_48" and "Step137" in str(spec.artifact_scope_note)
         ),
         "all_population_equilibrium_reset_used": spec.open_boundary_semantics == "equilibrium_all_population_reset",
         "open_boundary_limiter_enabled": bool(spec.open_boundary_limiter_enabled),
@@ -1910,6 +1919,9 @@ def _flow_development_diagnostic_record(
     step136_ramped_throughput_calibration_candidate = bool(
         spec.row_role == "interior_reflection_diagnostic_48" and "Step136" in str(spec.artifact_scope_note)
     )
+    step137_ramp_target_refinement_candidate = bool(
+        spec.row_role == "interior_reflection_diagnostic_48" and "Step137" in str(spec.artifact_scope_note)
+    )
     step132_authority_sweep_candidate = bool(
         spec.row_role == "plane_flux_control_candidate_48" and "Step132" in str(spec.artifact_scope_note)
     )
@@ -1920,6 +1932,7 @@ def _flow_development_diagnostic_record(
         "row_role": spec.row_role,
         "step135_interior_reflection_candidate": step135_interior_reflection_candidate,
         "step136_ramped_throughput_calibration_candidate": step136_ramped_throughput_calibration_candidate,
+        "step137_ramp_target_refinement_candidate": step137_ramp_target_refinement_candidate,
         "step134_outlet_stationarity_candidate": step134_outlet_stationarity_candidate,
         "step133_mass_damped_candidate": step133_mass_damped_candidate,
         "step132_authority_sweep_candidate": step132_authority_sweep_candidate,
@@ -2026,6 +2039,8 @@ def _write_flow_development_diagnostics(row_path: Path, records: Sequence[Dict[s
 
 
 def _flow_development_diagnostic_step_number(diagnostics: Sequence[Dict[str, Any]]) -> int:
+    if any(row.get("step137_ramp_target_refinement_candidate") is True for row in diagnostics):
+        return 137
     if any(row.get("step136_ramped_throughput_calibration_candidate") is True for row in diagnostics):
         return 136
     if any(row.get("step135_interior_reflection_candidate") is True for row in diagnostics):
@@ -2803,6 +2818,7 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "row_role",
     "step135_interior_reflection_candidate",
     "step136_ramped_throughput_calibration_candidate",
+    "step137_ramp_target_refinement_candidate",
     "step134_outlet_stationarity_candidate",
     "step133_mass_damped_candidate",
     "step132_authority_sweep_candidate",

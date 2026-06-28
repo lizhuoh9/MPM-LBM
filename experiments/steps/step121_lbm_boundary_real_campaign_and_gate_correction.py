@@ -99,6 +99,7 @@ FLOW_IMBALANCE_TAIL_MAX_MAX = 0.20
 FLOW_OUTLET_TAIL_CV_MAX = 0.10
 STEP135_INTERIOR_REFLECTION_ROLE = "interior_reflection_diagnostic_48"
 STEP136_RAMP_TUNED_PHASE = "planeflux_ramp_tuned48"
+STEP137_RAMP_REFINED_PHASE = "planeflux_ramp_refined48"
 
 
 def step121_smoke_specs() -> List[Step120RunSpec]:
@@ -544,6 +545,93 @@ def step121_plane_flux_ramp_tuned_tiny_smoke_specs() -> List[Step120RunSpec]:
     ]
 
 
+def step121_plane_flux_ramp_refined_48_specs(output_interval: int = 5) -> List[Step120RunSpec]:
+    tuned_specs = step121_plane_flux_ramp_tuned_48_specs(output_interval=output_interval)
+    regularized_base = next(
+        spec
+        for spec in tuned_specs
+        if spec.open_boundary_semantics == "regularized_plane_flux_controlled_pressure_outlet"
+        and int(spec.open_boundary_inlet_ramp_steps) == 100
+        and math.isclose(float(spec.open_boundary_flux_feedback_gain_u), 0.50, rel_tol=0.0, abs_tol=1.0e-12)
+        and math.isclose(float(spec.open_boundary_flux_correction_cap_u), 0.005, rel_tol=0.0, abs_tol=1.0e-12)
+        and math.isclose(float(spec.open_boundary_flux_control_target_scale), 0.90, rel_tol=0.0, abs_tol=1.0e-12)
+    )
+    refined_plan = [
+        (90, 0.90),
+        (90, 0.85),
+        (90, 0.80),
+        (85, 0.90),
+        (85, 0.85),
+        (100, 0.85),
+    ]
+    specs: List[Step120RunSpec] = []
+    for ramp_steps, target_scale in refined_plan:
+        specs.append(
+            _replace_spec(
+                regularized_base,
+                name=(
+                    "duct_only_48_regularized_plane_flux_controlled"
+                    f"_gain{_step132_gain_slug(regularized_base.open_boundary_flux_feedback_gain_u)}"
+                    f"_cap{_step136_cap_slug(regularized_base.open_boundary_flux_correction_cap_u)}"
+                    f"_rho{_step133_param_slug(regularized_base.open_boundary_flux_feedback_gain_rho, 4)}"
+                    f"_alpha{_step133_param_slug(regularized_base.open_boundary_flux_filter_alpha, 3)}"
+                    f"_du{_step133_param_slug(regularized_base.open_boundary_flux_feedback_delta_cap_u, 5)}"
+                    f"_slew{_step133_param_slug(regularized_base.open_boundary_flux_feedback_slew_alpha, 2, strip_trailing=False)}"
+                    f"_offset{int(regularized_base.open_boundary_flux_control_measure_plane_offset)}"
+                    "_guard_on"
+                    f"_min{_step133_param_slug(regularized_base.open_boundary_outlet_flux_drop_guard_min_ratio, 2, strip_trailing=False)}"
+                    f"_ramp{int(ramp_steps)}"
+                    f"_target{_step133_param_slug(target_scale, 2, strip_trailing=False)}"
+                    f"_out{int(output_interval)}"
+                    "_250step_ramp_refined"
+                ),
+                output_interval=output_interval,
+                row_role=STEP135_INTERIOR_REFLECTION_ROLE,
+                open_boundary_inlet_ramp_steps=int(ramp_steps),
+                open_boundary_flux_control_target_scale=float(target_scale),
+                artifact_scope_note=(
+                    "Step137 bounded 48^3 refined ramp-target throughput window; "
+                    "diagnostic only and not selected96 or 500-step evidence"
+                ),
+            )
+        )
+    return specs
+
+
+def step121_plane_flux_ramp_refined_tiny_smoke_specs() -> List[Step120RunSpec]:
+    target_scale_base = next(
+        spec
+        for spec in step121_plane_flux_ramp_refined_48_specs(output_interval=5)
+        if int(spec.open_boundary_inlet_ramp_steps) == 90
+        and math.isclose(float(spec.open_boundary_flux_control_target_scale), 0.85, rel_tol=0.0, abs_tol=1.0e-12)
+    )
+    return [
+        _replace_spec(
+            target_scale_base,
+            name="tiny_step137_ramp_target_refinement_smoke",
+            nx=8,
+            ny=6,
+            nz=6,
+            n_steps=20,
+            output_interval=5,
+            failure_check_interval=5,
+            checkpoint_every=0,
+            requested_nx=8,
+            requested_n_steps=20,
+            open_boundary_inlet_ramp_steps=10,
+            allow_large_real_run_without_flag=True,
+            step120_required_row=False,
+            step119_required_row=False,
+            not_used_for_validation=True,
+            row_role="tiny_smoke",
+            artifact_scope_note=(
+                "Step137 tiny smoke for refined ramp-target throughput wiring; "
+                "not validation, selected96, or 500-step evidence"
+            ),
+        )
+    ]
+
+
 def _provenance_float(provenance: Dict[str, Any], key: str, default: float) -> float:
     value = provenance.get(key, default)
     if value is None:
@@ -704,6 +792,10 @@ def resolve_step121_phase_specs(
         return step121_plane_flux_ramp_tuned_48_specs(output_interval=output_interval)
     if phase == "planeflux_ramp_tuned48_tiny":
         return step121_plane_flux_ramp_tuned_tiny_smoke_specs()
+    if phase == STEP137_RAMP_REFINED_PHASE:
+        return step121_plane_flux_ramp_refined_48_specs(output_interval=output_interval)
+    if phase == "planeflux_ramp_refined48_tiny":
+        return step121_plane_flux_ramp_refined_tiny_smoke_specs()
     if phase in {"selected96", "selected-static"}:
         if best_selection_path is None:
             raise ValueError(f"{phase} phase requires --best-selection-path")
@@ -915,6 +1007,7 @@ def _manifest_run_commands() -> List[str]:
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_stationarity48 --allow-large-real-rows --output-interval 25",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_interior_diag48 --allow-large-real-rows --output-interval 5",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_ramp_tuned48 --allow-large-real-rows --output-interval 5",
+        "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_ramp_refined48 --allow-large-real-rows --output-interval 5",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary",
     ]
 
@@ -1781,6 +1874,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             "planeflux_interior_diag48_tiny",
             "planeflux_ramp_tuned48",
             "planeflux_ramp_tuned48_tiny",
+            "planeflux_ramp_refined48",
+            "planeflux_ramp_refined48_tiny",
             "all48",
             "selected96",
             "selected-static",
@@ -1801,6 +1896,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     tiny_phase_by_phase = {
         "planeflux_interior_diag48": "planeflux_interior_diag48_tiny",
         "planeflux_ramp_tuned48": "planeflux_ramp_tuned48_tiny",
+        "planeflux_ramp_refined48": "planeflux_ramp_refined48_tiny",
     }
     phase = tiny_phase_by_phase.get(args.phase, args.phase) if args.tiny_smoke else args.phase
 
