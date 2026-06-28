@@ -5,11 +5,15 @@ Read these files first for the current boundary-repair campaign state:
 1. `docs/current/STATUS.md`
 2. `docs/current/ACTIVE_CAMPAIGN.json`
 3. `docs/current/VALIDATION_GATES.md`
-4. `docs/campaigns/fluent_duct_flap/steps/138/goal.md`
-5. `docs/campaigns/fluent_duct_flap/steps/138/report.md`
-6. `docs/campaigns/fluent_duct_flap/steps/137/report.md`
-7. `docs/campaigns/fluent_duct_flap/steps/136/report.md`
-8. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
+4. `docs/campaigns/fluent_duct_flap/steps/139/goal.md`
+5. `docs/campaigns/fluent_duct_flap/steps/139/report.md`
+6. `outputs/step139_planeflux_final48/step139_long_window_comparison.json`
+7. `outputs/step139_planeflux_final48/step139_failure_forensics.json`
+8. `docs/GENERIC_SOLVER_ARCHITECTURE_CONTRACT.md`
+9. `docs/campaigns/fluent_duct_flap/fluent_official_local_execution_guard.md`
+10. `outputs/fluent_official_local_execution_prep/guard_report.json`
+11. `docs/campaigns/fluent_duct_flap/steps/138/report.md`
+12. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
 
 Older Step102-Step126 documents remain useful history, but they are not the
 current entry point for deciding whether the campaign may advance to selected
@@ -51,4 +55,11 @@ One row, ramp85 / target0.80 / gain0.75 / cap0.0075, passed the full final hard
 gate including mass acceptance and no compact-collapse label. This justifies a
 later Step139 single 48^3 / 500-step final-evidence proposal only. Step138 did
 not run 500 steps, did not add selected-candidate semantics, and selected 96^3
-remains blocked.
+remains blocked. Step139 ran that single Step138 source row for 500 steps as
+`planeflux_final48`; it completed 500/500, stayed finite, had no first-failure
+event, and had no compact-collapse label, but failed the final hard gate on
+candidate mass acceptance, mean flux imbalance, and outlet stationarity.
+Step139 therefore falsifies the Step138 short-window promotion candidate. No
+selected boundary, Step140 promotion, selected 96^3, quasi-2D validation, FSI
+validation, Fluent validation, Figure 29.3 parity, or production-readiness
+claim is justified.

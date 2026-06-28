@@ -1,10 +1,38 @@
 # Current Status
 
 The active campaign is the Fluent duct/flap LBM open-boundary repair campaign.
-The current artifact state remains selected-boundary blocked. Step138 is a
-bounded 48^3 high-authority outlet diagnostic continuation of the
-boundary-repair loop, not selected-candidate evidence.
+The current artifact state remains selected-boundary blocked. Step139 is a
+single 48^3 / 500-step final-evidence test of the one Step138 passing
+short-window row. It is not selected-candidate evidence and it does not enable
+selected 96^3.
 Current campaign state: `48_candidates_failed`.
+
+Step139 added a bounded `planeflux_final48` phase with exactly one real
+48^3 / 500-step LBM-only row copied from the Step138 passing parameters:
+ramp85 / target0.80 / gain0.75 / cap0.0075. The row completed 500/500, stayed
+finite, passed density, population, Mach, mass-drift, first-failure, ratio,
+max-imbalance, collapse, and limiter checks, but it failed the full final hard
+gate. The 500-step tail had `candidate_mass_acceptance_observed_abs =
+0.008321150189010917`, which failed the `< 0.005` candidate mass-acceptance
+gate; `flux_imbalance_rel_tail_mean = 0.10270018561574665`, which failed the
+`< 0.10` mean-imbalance gate; and `outlet_flux_tail_cv =
+0.11556697847525366`, which failed the `< 0.10` outlet-stationarity gate. The
+ratio checks stayed inside bounds with `outlet_to_inlet_flux_ratio_tail_mean =
+1.0372606489398013` and `midplane_to_inlet_flux_ratio_tail_mean =
+0.9995829419859176`; `flux_imbalance_rel_tail_max =
+0.16810119026843742`; `collapse_first_x = null`; and `collapse_first_step =
+null`. Step139 therefore falsifies the Step138 short-window promotion
+candidate. No selected boundary, selected96, selected-static, 96^3, quasi-2D,
+FSI, Fluent, Figure 29.3, or production-readiness claim is allowed.
+
+Step139 also records two bounded guard surfaces without changing solver
+equations or running external tools. `docs/GENERIC_SOLVER_ARCHITECTURE_CONTRACT.md`
+keeps solver-core packages benchmark-agnostic and keeps benchmark adapters out
+of solver formulas. `docs/campaigns/fluent_duct_flap/fluent_official_local_execution_guard.md`
+prepares a future manual local Fluent official execution manifest and monitor
+export schema, but its guard report records `fluent_run_executed = false`,
+`external_action_taken = false`, `official_payload_committed = false`, and
+`validation_claim_allowed = false`.
 
 Step138 added a bounded `planeflux_high_authority48` phase. Six real 48^3 /
 250-step LBM-only diagnostic rows completed 250/250 with finite state and no
@@ -164,8 +192,9 @@ also failed flow-development ratio/imbalance gates.
 
 Step127 selected no best 48^3 boundary. Selected 96^3 duct-only work is not
 allowed from the current artifacts. Step128, Step129, Step130, Step131,
-Step132, Step133, Step134, Step135, Step136, Step137, and Step138 continue
-that blocked 48^3 boundary-repair sequence without selecting a boundary.
+Step132, Step133, Step134, Step135, Step136, Step137, Step138, and Step139
+continue that blocked 48^3 boundary-repair sequence without selecting a
+boundary.
 
 Step126 ran real 48^3 LBM-only references. The legacy reference completed
 500/500 steps and passed the flow-development gate. The old regularized
@@ -182,5 +211,5 @@ commit from the current code commit in `ACTIVE_CAMPAIGN.json` and Step121
 campaign manifests, and it records `code_commit_at_run` for Step120 row
 artifacts.
 
-Step138 does not claim 48^3 repaired-candidate success, selected 96^3 success,
+Step139 does not claim 48^3 repaired-candidate success, selected 96^3 success,
 quasi-2D validation, FSI validation, Fluent validation, or Figure 29.3 parity.

@@ -1,0 +1,93 @@
+{
+  "artifact": "step139_long_window_comparison",
+  "comparisons": [
+    {
+      "delta_500_minus_250": 0.004346286200184114,
+      "metric": "mass_abs",
+      "source_step138_250": 0.003974863988826804,
+      "step139_500": 0.008321150189010917
+    },
+    {
+      "delta_500_minus_250": -0.021686285523432325,
+      "metric": "outlet_to_inlet_flux_ratio_tail_mean",
+      "source_step138_250": 1.0589469344632336,
+      "step139_500": 1.0372606489398013
+    },
+    {
+      "delta_500_minus_250": 0.06236681404310496,
+      "metric": "midplane_to_inlet_flux_ratio_tail_mean",
+      "source_step138_250": 0.9372161279428126,
+      "step139_500": 0.9995829419859176
+    },
+    {
+      "delta_500_minus_250": 0.014435330191636855,
+      "metric": "flux_imbalance_rel_tail_mean",
+      "source_step138_250": 0.08826485542410979,
+      "step139_500": 0.10270018561574665
+    },
+    {
+      "delta_500_minus_250": -0.012778553098803352,
+      "metric": "flux_imbalance_rel_tail_max",
+      "source_step138_250": 0.18087974336724078,
+      "step139_500": 0.16810119026843742
+    },
+    {
+      "delta_500_minus_250": 0.019055487169414603,
+      "metric": "outlet_flux_tail_cv",
+      "source_step138_250": 0.09651149130583905,
+      "step139_500": 0.11556697847525366
+    },
+    {
+      "delta_500_minus_250": null,
+      "metric": "collapse_first_x",
+      "source_step138_250": null,
+      "step139_500": null
+    },
+    {
+      "delta_500_minus_250": null,
+      "metric": "collapse_first_step",
+      "source_step138_250": null,
+      "step139_500": null
+    },
+    {
+      "delta_500_minus_250": -0.23161613975058903,
+      "metric": "controller_authority_ratio_tail_mean",
+      "source_step138_250": 0.7843610576607964,
+      "step139_500": 0.5527449179102074
+    },
+    {
+      "delta_500_minus_250": 0.0,
+      "metric": "controller_saturation_fraction_tail",
+      "source_step138_250": 0.0,
+      "step139_500": 0.0
+    },
+    {
+      "delta_500_minus_250": 0.0,
+      "metric": "limiter_activation_fraction",
+      "source_step138_250": 0.0,
+      "step139_500": 0.0
+    },
+    {
+      "delta_500_minus_250": null,
+      "metric": "first_failure_step",
+      "source_step138_250": null,
+      "step139_500": null
+    },
+    {
+      "delta_500_minus_250": -22.459956100035924,
+      "metric": "runtime_s",
+      "source_step138_250": 76.69465730001684,
+      "step139_500": 54.23470119998092
+    }
+  ],
+  "conclusion": "Step139 falsifies the Step138 short-window promotion candidate. No selected boundary. No selected96. Next step should analyze first failure or long-window flow-development drift.",
+  "final_hard_gate_pass": false,
+  "selected96_execution_allowed": false,
+  "source_artifact_root": "outputs\\step138_high_authority_outlet_diagnostic\\planeflux_high_authority48",
+  "source_row_name": "duct_only_48_regularized_plane_flux_controlled_gain0p75_cap0p0075_rho0p001_alpha0p02_du0p0005_slew0p50_offset2_guard_on_min0p70_ramp85_target0p80_out5_250step_high_authority",
+  "source_step": 138,
+  "step": 139,
+  "step139_artifact_root": "outputs\\step139_planeflux_final48\\planeflux_final48",
+  "step139_row_name": "duct_only_48_regularized_plane_flux_controlled_gain0p75_cap0p0075_rho0p001_alpha0p02_du0p0005_slew0p50_offset2_guard_on_min0p70_ramp85_target0p80_500step_final",
+  "validation_claim_allowed": false
+}

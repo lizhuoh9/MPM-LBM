@@ -2,18 +2,18 @@
   "campaign": "fluent_lbm_open_boundary_repair",
   "campaign_base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
   "base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
-  "current_code_commit": "f0284d3f6207eb1c9341dfc9906293b651c6b0f7",
+  "current_code_commit": "4e43162a641085e56a4ba72c8bc013e58cb08cc3",
   "state": "48_candidates_failed",
   "final_classification": "boundary_repair_failed_revisit_lbm_solver",
-  "artifact_root": "outputs/step138_high_authority_outlet_diagnostic/planeflux_high_authority48",
+  "artifact_root": "outputs/step139_planeflux_final48/planeflux_final48",
   "read_first": [
     "docs/current/STATUS.md",
     "docs/current/ACTIVE_CAMPAIGN.json",
     "docs/current/VALIDATION_GATES.md",
     "docs/current/READING_ORDER.md",
-    "docs/campaigns/fluent_duct_flap/steps/138/goal.md",
-    "docs/campaigns/fluent_duct_flap/steps/138/report.md",
-    "docs/campaigns/fluent_duct_flap/steps/137/report.md",
-    "experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py"
+    "docs/campaigns/fluent_duct_flap/steps/139/goal.md",
+    "docs/campaigns/fluent_duct_flap/steps/139/report.md",
+    "outputs/step139_planeflux_final48/step139_long_window_comparison.json",
+    "outputs/step139_planeflux_final48/step139_failure_forensics.json"
   ]
 }

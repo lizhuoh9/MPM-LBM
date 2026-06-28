@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fluent official two-way FSI local execution manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "fluent_executable",
+    "local_private_root",
+    "archive_path",
+    "mesh_path",
+    "journal_path",
+    "case_output_dir",
+    "monitor_export_path",
+    "execution_scope",
+    "commit_official_payloads",
+    "validation_claim_allowed"
+  ],
+  "properties": {
+    "fluent_executable": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Local Fluent executable path supplied by the user for a future approved manual run."
+    },
+    "local_private_root": {
+      "const": "benchmarks/private/fluent_fsi_2way/"
+    },
+    "archive_path": {
+      "type": "string",
+      "pattern": "^benchmarks/private/fluent_fsi_2way/fsi_2way\\.zip$"
+    },
+    "mesh_path": {
+      "type": "string",
+      "pattern": "^benchmarks/private/fluent_fsi_2way/flap\\.msh$"
+    },
+    "journal_path": {
+      "type": "string",
+      "pattern": "^benchmarks/private/fluent_fsi_2way/steady_fluid_flow\\.jou$"
+    },
+    "case_output_dir": {
+      "type": "string",
+      "pattern": "^benchmarks/private/fluent_fsi_2way/outputs/"
+    },
+    "monitor_export_path": {
+      "type": "string",
+      "pattern": "^benchmarks/private/fluent_fsi_2way/outputs/.+\\.csv$"
+    },
+    "execution_scope": {
+      "const": "manual_local_only"
+    },
+    "commit_official_payloads": {
+      "const": false
+    },
+    "validation_claim_allowed": {
+      "const": false
+    }
+  }
+}

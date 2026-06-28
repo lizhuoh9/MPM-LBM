@@ -1,0 +1,59 @@
+{
+  "artifact": "step139_failure_forensics",
+  "collapse_first_step": null,
+  "collapse_first_x": null,
+  "failed_gates": [
+    "candidate_mass_acceptance_gate_pass",
+    "flow_development_gate_pass",
+    "flux_imbalance_rel_tail_mean",
+    "outlet_flux_tail_cv"
+  ],
+  "failure_classes": [
+    "mass_acceptance_failed_after_250",
+    "flux_mean_or_max_drift",
+    "outlet_cv_drift"
+  ],
+  "failure_confirmed": true,
+  "first_failed_gate": "candidate_mass_acceptance_gate_pass",
+  "first_failed_step_if_available": null,
+  "last_good_step_window": "Step138 250-step source row passed the full final hard gate; Step139 stayed finite through 500 but failed final 500-step gates.",
+  "selected96_execution_allowed": false,
+  "step": 139,
+  "suggested_next_diagnostic": "Analyze long-window mass drift and outlet stationarity around steps 250-500 without changing Step139 parameters and without running selected96.",
+  "tail_metrics_at_250_equivalent_point": {
+    "source_step138_final": {
+      "candidate_mass_acceptance_observed_abs": 0.003974863988826804,
+      "flux_imbalance_rel_tail_max": 0.18087974336724078,
+      "flux_imbalance_rel_tail_mean": 0.08826485542410979,
+      "limiter_activation_fraction": 0.0,
+      "midplane_to_inlet_flux_ratio_tail_mean": 0.9372161279428126,
+      "outlet_flux_tail_cv": 0.09651149130583905,
+      "outlet_to_inlet_flux_ratio_tail_mean": 1.0589469344632336
+    },
+    "step139_point_250": {
+      "controller_authority_ratio": 0.6163579722245535,
+      "controller_saturation_fraction_run": 0.0,
+      "mass_total_delta_rel": 0.003974863988826804,
+      "midplane_flux": 27.989709029053863,
+      "outlet_flux_after_correction": 36.610605079387994
+    }
+  },
+  "tail_metrics_at_500_final": {
+    "candidate_mass_acceptance_observed_abs": 0.008321150189010917,
+    "first_failure_reason": null,
+    "first_failure_step": null,
+    "flux_imbalance_rel_tail_max": 0.16810119026843742,
+    "flux_imbalance_rel_tail_mean": 0.10270018561574665,
+    "limiter_activation_fraction": 0.0,
+    "midplane_to_inlet_flux_ratio_tail_mean": 0.9995829419859176,
+    "outlet_flux_tail_cv": 0.11556697847525366,
+    "outlet_to_inlet_flux_ratio_tail_mean": 1.0372606489398013
+  },
+  "trend_slope": {
+    "controller_authority_ratio_per_step_250_to_500": -0.0009383894503116608,
+    "mass_total_delta_rel_per_step_250_to_500": 1.7385144800736455e-05,
+    "midplane_flux_per_step_250_to_500": 0.028421919991354086,
+    "outlet_flux_after_correction_per_step_250_to_500": -0.0010942167529275366
+  },
+  "validation_claim_allowed": false
+}

@@ -1,0 +1,41 @@
+{
+  "step": 139,
+  "guard": "fluent_official_local_execution_prep",
+  "status": "prep_only_pass",
+  "fluent_run_executed": false,
+  "external_action_taken": false,
+  "official_payload_committed": false,
+  "validation_claim_allowed": false,
+  "gap_only_comparison_readiness": true,
+  "local_private_root": "benchmarks/private/fluent_fsi_2way/",
+  "required_local_only_files": [
+    "fsi_2way.zip",
+    "flap.msh",
+    "steady_fluid_flow.jou"
+  ],
+  "execution_schema": "configs/fluent_official_2way_fsi_local_execution_schema.json",
+  "monitor_export_schema": "configs/fluent_official_monitor_export_schema.json",
+  "forbidden_committed_payloads": [
+    "benchmarks/private/fluent_fsi_2way/",
+    "*.cas.h5",
+    "*.dat.h5",
+    "*.wbpj",
+    "fsi_2way.zip",
+    "flap.msh",
+    "steady_fluid_flow.jou"
+  ],
+  "claim_boundary": {
+    "selected96_claim_allowed": false,
+    "quasi2d_validation_claim_allowed": false,
+    "fsi_validation_claim_allowed": false,
+    "fluent_validation_claim_allowed": false,
+    "figure29_3_parity_claim_allowed": false,
+    "production_readiness_claim_allowed": false
+  },
+  "notes": [
+    "No Fluent command was run in this step.",
+    "No official Fluent asset was copied into tracked repository paths.",
+    "A future local run requires explicit user approval and local private files.",
+    "Future comparison output remains gap-only until a later explicit validation gate passes."
+  ]
+}

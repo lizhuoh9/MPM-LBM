@@ -291,6 +291,38 @@ Current Step138 high-authority outlet diagnostic evidence:
 - No 500-step promotion was run from Step138 diagnostics.
 - Selected 96^3 execution remains blocked.
 
+Current Step139 plane-flux final48 evidence:
+
+- Step139 adds a distinct `planeflux_final48` phase containing exactly one
+  real 48^3 / 500-step LBM-only final-evidence row copied from the Step138
+  passing source row.
+- The Step139 row uses
+  `row_role = final_evidence_candidate_48`; it is not in the
+  selected-candidate semantics set and cannot enable selected 96^3.
+- The row preserves Step138 provenance:
+  `source_step = 138`,
+  `source_solver_state_hash =
+  34437ee966ac063d03d80bd4a9c9dea30961897cbb87d41cc5c7de1571ef3ed8`,
+  `source_run_manifest_hash =
+  e689ad17b0de0f478d57ef9d419e2ed10579692cfb94866dbc1095b5c7239969`, and
+  `source_code_commit = f0284d3f6207eb1c9341dfc9906293b651c6b0f7`.
+- The Step139 row completed 500/500 steps, stayed finite, had no
+  first-failure evidence, had no limiter activation, and did not produce a
+  compact x-profile collapse label.
+- Step139 failed the final hard gate. It failed candidate mass acceptance with
+  `candidate_mass_acceptance_observed_abs = 0.008321150189010917`, failed
+  flow development with `flow_development_gate_pass = false`, failed mean flux
+  imbalance with `flux_imbalance_rel_tail_mean = 0.10270018561574665`, and
+  failed outlet stationarity with `outlet_flux_tail_cv =
+  0.11556697847525366`.
+- Step139 retained ratio and max-imbalance checks inside their hard ranges:
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.0372606489398013`,
+  `midplane_to_inlet_flux_ratio_tail_mean = 0.9995829419859176`, and
+  `flux_imbalance_rel_tail_max = 0.16810119026843742`.
+- Step139 falsifies the Step138 short-window promotion candidate. It does not
+  select a boundary and does not justify Step140 selected96 promotion.
+- Selected 96^3 execution remains blocked.
+
 Current Step124 gate requirements:
 
 - 48^3 legacy reference rows must either complete the requested real window or

@@ -2,6 +2,12 @@
 
 The project is organized around a single Taichi runtime and a normalized cubic domain. `FSIDriver3D` is an engineering orchestration layer. It selects a mode, advances existing solver components, collects diagnostics, and writes outputs. It is not a new physical coupling model.
 
+The benchmark and validation boundary is fixed by
+`docs/GENERIC_SOLVER_ARCHITECTURE_CONTRACT.md`: solver-core packages remain
+benchmark-agnostic, benchmark adapters may prepare inputs and comparisons
+without changing solver equations, and official Fluent assets stay outside the
+repository.
+
 ## Components
 
 ### LBMFluid3D

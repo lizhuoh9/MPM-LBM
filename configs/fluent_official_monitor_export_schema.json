@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fluent official monitor export schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source",
+    "comparison_scope",
+    "validation_claim_allowed",
+    "columns",
+    "units"
+  ],
+  "properties": {
+    "source": {
+      "const": "official_fluent_manual_export"
+    },
+    "comparison_scope": {
+      "const": "gap_only"
+    },
+    "validation_claim_allowed": {
+      "const": false
+    },
+    "columns": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "time_s",
+          "step",
+          "flap_tip_total_displacement_m",
+          "flap_tip_x_displacement_m",
+          "flap_tip_y_displacement_m",
+          "flap_tip_velocity_m_per_s",
+          "fluid_force_x_n",
+          "fluid_force_y_n",
+          "fluid_force_magnitude_n"
+        ]
+      }
+    },
+    "units": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "time_s",
+        "flap_tip_total_displacement_m"
+      ],
+      "properties": {
+        "time_s": {
+          "const": "s"
+        },
+        "step": {
+          "const": "count"
+        },
+        "flap_tip_total_displacement_m": {
+          "const": "m"
+        },
+        "flap_tip_x_displacement_m": {
+          "const": "m"
+        },
+        "flap_tip_y_displacement_m": {
+          "const": "m"
+        },
+        "flap_tip_velocity_m_per_s": {
+          "const": "m/s"
+        },
+        "fluid_force_x_n": {
+          "const": "N"
+        },
+        "fluid_force_y_n": {
+          "const": "N"
+        },
+        "fluid_force_magnitude_n": {
+          "const": "N"
+        }
+      }
+    }
+  }
+}
