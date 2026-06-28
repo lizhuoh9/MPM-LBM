@@ -162,6 +162,11 @@ class Step120RunSpec(Step119RunSpec):
     selected_source_config_hash: Optional[str] = None
     selected_source_tau: Optional[float] = None
     selected_source_lbm_relaxation_semantics: Optional[str] = None
+    source_step: Optional[int] = None
+    source_row_name: Optional[str] = None
+    source_solver_state_hash: Optional[str] = None
+    source_run_manifest_hash: Optional[str] = None
+    source_code_commit: Optional[str] = None
     open_boundary_inlet_ramp_steps: int = 0
     open_boundary_inlet_ramp_profile: str = "linear"
     open_boundary_flux_control_target_scale: float = 1.0
@@ -1569,6 +1574,11 @@ def _summary_row(
         "selected_source_config_hash": spec.selected_source_config_hash,
         "selected_source_tau": spec.selected_source_tau,
         "selected_source_lbm_relaxation_semantics": spec.selected_source_lbm_relaxation_semantics,
+        "source_step": spec.source_step,
+        "source_row_name": spec.source_row_name,
+        "source_solver_state_hash": spec.source_solver_state_hash,
+        "source_run_manifest_hash": spec.source_run_manifest_hash,
+        "source_code_commit": spec.source_code_commit,
         "requested_nx": spec.requested_grid(),
         "executed_nx": int(spec.nx),
         "requested_n_steps": spec.requested_steps(),
@@ -1614,6 +1624,9 @@ def _summary_row(
         ),
         "step138_high_authority_outlet_candidate": bool(
             spec.row_role == "interior_reflection_diagnostic_48" and "Step138" in str(spec.artifact_scope_note)
+        ),
+        "step139_planeflux_final48_candidate": bool(
+            spec.row_role == "final_evidence_candidate_48" and "Step139" in str(spec.artifact_scope_note)
         ),
         "selected96_claim_allowed": False,
         "mass_total_delta_rel_final": mass_total_delta_rel_final,
@@ -1693,6 +1706,9 @@ def _metadata(
         "step138_high_authority_outlet_candidate": bool(
             spec.row_role == "interior_reflection_diagnostic_48" and "Step138" in str(spec.artifact_scope_note)
         ),
+        "step139_planeflux_final48_candidate": bool(
+            spec.row_role == "final_evidence_candidate_48" and "Step139" in str(spec.artifact_scope_note)
+        ),
         "step120_schema_version": STEP120_SCHEMA_VERSION,
         "synthetic_diagnostic_mode": False,
         "fluid_only": True,
@@ -1710,6 +1726,11 @@ def _metadata(
         "solver_state_hash": solver_state_hash_for_spec(spec),
         "run_manifest_hash": run_manifest_hash_for_spec(spec),
         "code_commit_at_run": _current_git_commit(),
+        "source_step": spec.source_step,
+        "source_row_name": spec.source_row_name,
+        "source_solver_state_hash": spec.source_solver_state_hash,
+        "source_run_manifest_hash": spec.source_run_manifest_hash,
+        "source_code_commit": spec.source_code_commit,
         "checkpoint_runtime_artifact_committed": False,
         "restored_checkpoint": restored_checkpoint,
         "stop_on_first_failure": bool(spec.stop_on_first_failure),
@@ -1747,6 +1768,14 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         "step138_high_authority_outlet_candidate": bool(
             spec.row_role == "interior_reflection_diagnostic_48" and "Step138" in str(spec.artifact_scope_note)
         ),
+        "step139_planeflux_final48_candidate": bool(
+            spec.row_role == "final_evidence_candidate_48" and "Step139" in str(spec.artifact_scope_note)
+        ),
+        "source_step": spec.source_step,
+        "source_row_name": spec.source_row_name,
+        "source_solver_state_hash": spec.source_solver_state_hash,
+        "source_run_manifest_hash": spec.source_run_manifest_hash,
+        "source_code_commit": spec.source_code_commit,
         "all_population_equilibrium_reset_used": spec.open_boundary_semantics == "equilibrium_all_population_reset",
         "open_boundary_limiter_enabled": bool(spec.open_boundary_limiter_enabled),
         "open_boundary_rho_min": float(spec.open_boundary_rho_min),
@@ -1934,6 +1963,9 @@ def _flow_development_diagnostic_record(
     step138_high_authority_outlet_candidate = bool(
         spec.row_role == "interior_reflection_diagnostic_48" and "Step138" in str(spec.artifact_scope_note)
     )
+    step139_planeflux_final48_candidate = bool(
+        spec.row_role == "final_evidence_candidate_48" and "Step139" in str(spec.artifact_scope_note)
+    )
     step132_authority_sweep_candidate = bool(
         spec.row_role == "plane_flux_control_candidate_48" and "Step132" in str(spec.artifact_scope_note)
     )
@@ -1946,6 +1978,7 @@ def _flow_development_diagnostic_record(
         "step136_ramped_throughput_calibration_candidate": step136_ramped_throughput_calibration_candidate,
         "step137_ramp_target_refinement_candidate": step137_ramp_target_refinement_candidate,
         "step138_high_authority_outlet_candidate": step138_high_authority_outlet_candidate,
+        "step139_planeflux_final48_candidate": step139_planeflux_final48_candidate,
         "step134_outlet_stationarity_candidate": step134_outlet_stationarity_candidate,
         "step133_mass_damped_candidate": step133_mass_damped_candidate,
         "step132_authority_sweep_candidate": step132_authority_sweep_candidate,
@@ -2025,6 +2058,11 @@ def _flow_development_diagnostic_record(
         "x_profile_ux_mean_samples": _compact_diagnostic_mapping(record.get("x_profile_ux_mean_samples")),
         "x_profile_rho_mean_samples": _compact_diagnostic_mapping(record.get("x_profile_rho_mean_samples")),
         "sampled_x_profile_flux": str(record.get("sampled_x_profile_flux") or ""),
+        "source_step": spec.source_step,
+        "source_row_name": spec.source_row_name,
+        "source_solver_state_hash": spec.source_solver_state_hash,
+        "source_run_manifest_hash": spec.source_run_manifest_hash,
+        "source_code_commit": spec.source_code_commit,
         "mass_total_delta_rel": _finite_float(record.get("mass_total_delta_rel", 0.0)),
         "validation_claim_allowed": False,
         "selected96_claim_allowed": False,
@@ -2052,6 +2090,8 @@ def _write_flow_development_diagnostics(row_path: Path, records: Sequence[Dict[s
 
 
 def _flow_development_diagnostic_step_number(diagnostics: Sequence[Dict[str, Any]]) -> int:
+    if any(row.get("step139_planeflux_final48_candidate") is True for row in diagnostics):
+        return 139
     if any(row.get("step138_high_authority_outlet_candidate") is True for row in diagnostics):
         return 138
     if any(row.get("step137_ramp_target_refinement_candidate") is True for row in diagnostics):
@@ -2690,7 +2730,17 @@ def solver_state_hash_for_spec(spec: Step120RunSpec) -> str:
 
 
 def run_manifest_hash_for_spec(spec: Step120RunSpec) -> str:
-    return _hash_spec_mapping(asdict(spec))
+    data = asdict(spec)
+    for key in [
+        "source_step",
+        "source_row_name",
+        "source_solver_state_hash",
+        "source_run_manifest_hash",
+        "source_code_commit",
+    ]:
+        if data.get(key) is None:
+            data.pop(key, None)
+    return _hash_spec_mapping(data)
 
 
 def _config_hash(spec: Step120RunSpec) -> str:
@@ -2835,6 +2885,7 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "step136_ramped_throughput_calibration_candidate",
     "step137_ramp_target_refinement_candidate",
     "step138_high_authority_outlet_candidate",
+    "step139_planeflux_final48_candidate",
     "step134_outlet_stationarity_candidate",
     "step133_mass_damped_candidate",
     "step132_authority_sweep_candidate",
@@ -2890,6 +2941,11 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "x_profile_ux_mean_samples",
     "x_profile_rho_mean_samples",
     "sampled_x_profile_flux",
+    "source_step",
+    "source_row_name",
+    "source_solver_state_hash",
+    "source_run_manifest_hash",
+    "source_code_commit",
     "mass_total_delta_rel",
     "validation_claim_allowed",
     "selected96_claim_allowed",

@@ -101,6 +101,8 @@ STEP135_INTERIOR_REFLECTION_ROLE = "interior_reflection_diagnostic_48"
 STEP136_RAMP_TUNED_PHASE = "planeflux_ramp_tuned48"
 STEP137_RAMP_REFINED_PHASE = "planeflux_ramp_refined48"
 STEP138_HIGH_AUTHORITY_PHASE = "planeflux_high_authority48"
+STEP139_PLANE_FLUX_FINAL_PHASE = "planeflux_final48"
+STEP139_SOURCE_CODE_COMMIT = "f0284d3f6207eb1c9341dfc9906293b651c6b0f7"
 
 
 def step121_smoke_specs() -> List[Step120RunSpec]:
@@ -724,6 +726,50 @@ def step121_plane_flux_high_authority_tiny_smoke_specs() -> List[Step120RunSpec]
     ]
 
 
+def step121_plane_flux_final_48_specs(output_interval: int = 10) -> List[Step120RunSpec]:
+    source = next(
+        spec
+        for spec in step121_plane_flux_high_authority_48_specs(output_interval=5)
+        if int(spec.open_boundary_inlet_ramp_steps) == 85
+        and math.isclose(float(spec.open_boundary_flux_control_target_scale), 0.80, rel_tol=0.0, abs_tol=1.0e-12)
+        and math.isclose(float(spec.open_boundary_flux_feedback_gain_u), 0.75, rel_tol=0.0, abs_tol=1.0e-12)
+        and math.isclose(float(spec.open_boundary_flux_correction_cap_u), 0.0075, rel_tol=0.0, abs_tol=1.0e-12)
+    )
+    return [
+        _replace_spec(
+            source,
+            name=(
+                "duct_only_48_regularized_plane_flux_controlled"
+                f"_gain{_step132_gain_slug(source.open_boundary_flux_feedback_gain_u)}"
+                f"_cap{_step133_param_slug(source.open_boundary_flux_correction_cap_u, 4, strip_trailing=False)}"
+                f"_rho{_step133_param_slug(source.open_boundary_flux_feedback_gain_rho, 4)}"
+                f"_alpha{_step133_param_slug(source.open_boundary_flux_filter_alpha, 3)}"
+                f"_du{_step133_param_slug(source.open_boundary_flux_feedback_delta_cap_u, 5)}"
+                f"_slew{_step133_param_slug(source.open_boundary_flux_feedback_slew_alpha, 2, strip_trailing=False)}"
+                f"_offset{int(source.open_boundary_flux_control_measure_plane_offset)}"
+                "_guard_on"
+                f"_min{_step133_param_slug(source.open_boundary_outlet_flux_drop_guard_min_ratio, 2, strip_trailing=False)}"
+                f"_ramp{int(source.open_boundary_inlet_ramp_steps)}"
+                f"_target{_step133_param_slug(source.open_boundary_flux_control_target_scale, 2, strip_trailing=False)}"
+                "_500step_final"
+            ),
+            n_steps=500,
+            requested_n_steps=500,
+            output_interval=output_interval,
+            row_role="final_evidence_candidate_48",
+            source_step=138,
+            source_row_name=source.name,
+            source_solver_state_hash=solver_state_hash_for_spec(source),
+            source_run_manifest_hash=run_manifest_hash_for_spec(source),
+            source_code_commit=STEP139_SOURCE_CODE_COMMIT,
+            artifact_scope_note=(
+                "Step139 single 48^3 500-step final evidence for the Step138 "
+                "passing row; not selected96, selected-static, FSI, or Fluent validation"
+            ),
+        )
+    ]
+
+
 def _provenance_float(provenance: Dict[str, Any], key: str, default: float) -> float:
     value = provenance.get(key, default)
     if value is None:
@@ -892,6 +938,8 @@ def resolve_step121_phase_specs(
         return step121_plane_flux_high_authority_48_specs(output_interval=output_interval)
     if phase == "planeflux_high_authority48_tiny":
         return step121_plane_flux_high_authority_tiny_smoke_specs()
+    if phase == STEP139_PLANE_FLUX_FINAL_PHASE:
+        return step121_plane_flux_final_48_specs(output_interval=output_interval)
     if phase in {"selected96", "selected-static"}:
         if best_selection_path is None:
             raise ValueError(f"{phase} phase requires --best-selection-path")
@@ -1035,6 +1083,11 @@ def _manifest_row_for_spec(spec: Step120RunSpec) -> Dict[str, Any]:
         "selected_source_config_hash": spec.selected_source_config_hash,
         "selected_source_tau": spec.selected_source_tau,
         "selected_source_lbm_relaxation_semantics": spec.selected_source_lbm_relaxation_semantics,
+        "source_step": spec.source_step,
+        "source_row_name": spec.source_row_name,
+        "source_solver_state_hash": spec.source_solver_state_hash,
+        "source_run_manifest_hash": spec.source_run_manifest_hash,
+        "source_code_commit": spec.source_code_commit,
         "open_boundary_inlet_ramp_steps": int(spec.open_boundary_inlet_ramp_steps or 0),
         "open_boundary_inlet_ramp_profile": str(spec.open_boundary_inlet_ramp_profile or "linear"),
         "open_boundary_flux_feedback_gain_u": float(spec.open_boundary_flux_feedback_gain_u),
@@ -1059,6 +1112,11 @@ def _manifest_rejection_reasons(
         "selected_source_row_name": row.get("selected_source_row_name"),
         "selected_source_config_hash": row.get("selected_source_config_hash"),
         "selected_source_lbm_relaxation_semantics": row.get("selected_source_lbm_relaxation_semantics"),
+        "source_step": row.get("source_step"),
+        "source_row_name": row.get("source_row_name"),
+        "source_solver_state_hash": row.get("source_solver_state_hash"),
+        "source_run_manifest_hash": row.get("source_run_manifest_hash"),
+        "source_code_commit": row.get("source_code_commit"),
     }
     reasons: List[str] = []
     for key, actual in checks.items():
@@ -1105,6 +1163,7 @@ def _manifest_run_commands() -> List[str]:
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_ramp_tuned48 --allow-large-real-rows --output-interval 5",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_ramp_refined48 --allow-large-real-rows --output-interval 5",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_high_authority48 --allow-large-real-rows --output-interval 5",
+        "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_final48 --allow-large-real-rows --output-interval 10",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary",
     ]
 
@@ -1975,6 +2034,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             "planeflux_ramp_refined48_tiny",
             "planeflux_high_authority48",
             "planeflux_high_authority48_tiny",
+            "planeflux_final48",
             "all48",
             "selected96",
             "selected-static",
