@@ -5,15 +5,18 @@ Read these files first for the current boundary-repair campaign state:
 1. `docs/current/STATUS.md`
 2. `docs/current/ACTIVE_CAMPAIGN.json`
 3. `docs/current/VALIDATION_GATES.md`
-4. `docs/campaigns/fluent_duct_flap/steps/139/goal.md`
-5. `docs/campaigns/fluent_duct_flap/steps/139/report.md`
-6. `outputs/step139_planeflux_final48/step139_long_window_comparison.json`
-7. `outputs/step139_planeflux_final48/step139_failure_forensics.json`
-8. `docs/GENERIC_SOLVER_ARCHITECTURE_CONTRACT.md`
-9. `docs/campaigns/fluent_duct_flap/fluent_official_local_execution_guard.md`
-10. `outputs/fluent_official_local_execution_prep/guard_report.json`
-11. `docs/campaigns/fluent_duct_flap/steps/138/report.md`
-12. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
+4. `docs/current/READING_ORDER.md`
+5. `docs/campaigns/fluent_duct_flap/steps/140/goal.md`
+6. `docs/campaigns/fluent_duct_flap/steps/140/report.md`
+7. `outputs/step140_long_window_drift_forensics/step140_failure_mechanism_summary.json`
+8. `docs/campaigns/fluent_duct_flap/steps/139/report.md`
+9. `outputs/step139_planeflux_final48/step139_long_window_comparison.json`
+10. `outputs/step139_planeflux_final48/step139_failure_forensics.json`
+11. `docs/GENERIC_SOLVER_ARCHITECTURE_CONTRACT.md`
+12. `docs/campaigns/fluent_duct_flap/fluent_official_local_execution_guard.md`
+13. `outputs/fluent_official_local_execution_prep/guard_report.json`
+14. `docs/campaigns/fluent_duct_flap/steps/138/report.md`
+15. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
 
 Older Step102-Step126 documents remain useful history, but they are not the
 current entry point for deciding whether the campaign may advance to selected
@@ -62,4 +65,12 @@ candidate mass acceptance, mean flux imbalance, and outlet stationarity.
 Step139 therefore falsifies the Step138 short-window promotion candidate. No
 selected boundary, Step140 promotion, selected 96^3, quasi-2D validation, FSI
 validation, Fluent validation, Figure 29.3 parity, or production-readiness
-claim is justified.
+claim is justified. Step140 is a forensics-only read of the existing Step139
+artifacts. It classifies the long-window failure as
+`mass_accumulation_with_outlet_stationarity_drift`: mass acceptance failed after
+the 250-step window, outlet stationarity and mean flux imbalance failed in the
+400-500 hard-gate tail, and controller authority decayed without saturation.
+Step140 did not add a Step121 phase, did not run LBM, did not tune parameters,
+and did not enable selected96. Step141, if opened, is limited to one bounded
+48^3 / 250-step diagnostic proposal focused on mass-neutral plane-flux or
+density-feedback isolation; no selected96 or 500-step run is justified.

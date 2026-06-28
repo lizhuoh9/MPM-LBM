@@ -323,6 +323,35 @@ Current Step139 plane-flux final48 evidence:
   select a boundary and does not justify Step140 selected96 promotion.
 - Selected 96^3 execution remains blocked.
 
+Current Step140 long-window drift forensics evidence:
+
+- Step140 is report-only forensics over the existing Step139 artifacts in
+  `outputs/step139_planeflux_final48`.
+- Step140 did not add a Step121 phase, did not run LBM, did not tune
+  parameters, did not add selected-candidate semantics, and did not enable
+  selected96 execution.
+- Step140 generated segment reports under
+  `outputs/step140_long_window_drift_forensics` for mass drift, flux
+  stationarity, controller response, x-profile evolution, and failure-mechanism
+  summary.
+- Step140 classifies the dominant failure mechanism as
+  `mass_accumulation_with_outlet_stationarity_drift`.
+- The `200_250` segment retained the short-window mass pass with
+  `mass_total_delta_rel = 0.003974863988826804`, but `250_300` rose to
+  `mass_total_delta_rel = 0.010577758938477861`, and the `400_500` hard-gate
+  tail ended at `mass_total_delta_rel = 0.008321150189010917`.
+- In the `400_500` hard-gate tail, `flux_imbalance_rel` mean was
+  `0.10270018561574665`, outlet flux CV was `0.11556697847525366`, and
+  near-outlet to true-outlet ratio mean was `0.9978928625164406`.
+- Controller saturation stayed at `0.0`, while `controller_authority_ratio`
+  declined to final `0.38176060964663827` with
+  `slope_per_step = -0.0017400182162721955`.
+- Step140 does not justify selected boundary, selected96, 96^3, quasi-2D, FSI,
+  Fluent, Figure 29.3, or production-readiness claims.
+- A later Step141 may only propose one bounded 48^3 / 250-step diagnostic
+  focused on mass-neutral plane-flux or density-feedback isolation. It may not
+  run selected96 or 500 steps.
+
 Current Step124 gate requirements:
 
 - 48^3 legacy reference rows must either complete the requested real window or

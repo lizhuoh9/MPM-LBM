@@ -1,0 +1,180 @@
+{
+  "artifact": "mass_drift_segment_report",
+  "classification": "tail_mass_acceptance_failure",
+  "figure29_3_parity_claim_allowed": false,
+  "fluent_validation_claim_allowed": false,
+  "fsi_validation_claim_allowed": false,
+  "input_final_mass_abs": 0.008321150189010917,
+  "new_lbm_run_executed": false,
+  "new_parameter_tuning_executed": false,
+  "production_readiness_claim_allowed": false,
+  "quasi2d_validation_claim_allowed": false,
+  "segments": [
+    {
+      "end_step": 100.0,
+      "metrics": {
+        "mass_total_delta_rel": {
+          "available": true,
+          "count": 11,
+          "cv": 0.8596498171526666,
+          "final": 0.01619062851351541,
+          "max": 0.01619062851351541,
+          "max_abs": 0.01619062851351541,
+          "mean": 0.006498584002945669,
+          "min": 0.0,
+          "slope_per_step": 0.00017306920200999882,
+          "std": 0.005586506549883488
+        }
+      },
+      "name": "0_100",
+      "record_count": 11,
+      "start_step": 0.0
+    },
+    {
+      "end_step": 200.0,
+      "metrics": {
+        "mass_total_delta_rel": {
+          "available": true,
+          "count": 11,
+          "cv": 0.3413005132522124,
+          "final": 0.005272477217342543,
+          "max": 0.017024365369941764,
+          "max_abs": 0.017024365369941764,
+          "mean": 0.012513308387014758,
+          "min": 0.005272477217342543,
+          "slope_per_step": -0.00012847665270273288,
+          "std": 0.004270798574971351
+        }
+      },
+      "name": "100_200",
+      "record_count": 11,
+      "start_step": 100.0
+    },
+    {
+      "end_step": 250.0,
+      "metrics": {
+        "mass_total_delta_rel": {
+          "available": true,
+          "count": 6,
+          "cv": 0.1315665257508768,
+          "final": 0.003974863988826804,
+          "max": 0.005272477217342543,
+          "max_abs": 0.005272477217342543,
+          "mean": 0.0041885833205869225,
+          "min": 0.003689408389160148,
+          "slope_per_step": -2.6156890990482676e-05,
+          "std": 0.0005510773553076924
+        }
+      },
+      "name": "200_250",
+      "record_count": 6,
+      "start_step": 200.0
+    },
+    {
+      "end_step": 300.0,
+      "metrics": {
+        "mass_total_delta_rel": {
+          "available": true,
+          "count": 6,
+          "cv": 0.3252819303849577,
+          "final": 0.010577758938477861,
+          "max": 0.010577758938477861,
+          "max_abs": 0.010577758938477861,
+          "mean": 0.0071677800714523635,
+          "min": 0.003974863988826804,
+          "slope_per_step": 0.00013628106427297047,
+          "std": 0.0023315493382168547
+        }
+      },
+      "name": "250_300",
+      "record_count": 6,
+      "start_step": 250.0
+    },
+    {
+      "end_step": 400.0,
+      "metrics": {
+        "mass_total_delta_rel": {
+          "available": true,
+          "count": 11,
+          "cv": 0.1029207819483495,
+          "final": 0.010114996407061308,
+          "max": 0.013887088211803745,
+          "max_abs": 0.013887088211803745,
+          "mean": 0.012119661347253742,
+          "min": 0.010114996407061308,
+          "slope_per_step": -1.2308320656039803e-05,
+          "std": 0.001247365022808542
+        }
+      },
+      "name": "300_400",
+      "record_count": 11,
+      "start_step": 300.0
+    },
+    {
+      "end_step": 500.0,
+      "metrics": {
+        "mass_total_delta_rel": {
+          "available": true,
+          "count": 11,
+          "cv": 0.12664712853970556,
+          "final": 0.008321150189010917,
+          "max": 0.010114996407061308,
+          "max_abs": 0.010114996407061308,
+          "mean": 0.0080140204347417,
+          "min": 0.006928796977950254,
+          "slope_per_step": -1.91350246764096e-05,
+          "std": 0.001014952676118559
+        }
+      },
+      "name": "400_500",
+      "record_count": 11,
+      "start_step": 400.0
+    },
+    {
+      "end_step": 500.0,
+      "metrics": {
+        "mass_total_delta_rel": {
+          "available": true,
+          "count": 41,
+          "cv": 0.39922625488738533,
+          "final": 0.008321150189010917,
+          "max": 0.017024365369941764,
+          "max_abs": 0.017024365369941764,
+          "mean": 0.009690609162430228,
+          "min": 0.003689408389160148,
+          "slope_per_step": -9.70374961657865e-06,
+          "std": 0.0038687456034944023
+        }
+      },
+      "name": "tail_80pct_diagnostic",
+      "record_count": 41,
+      "start_step": 99.99999999999997
+    },
+    {
+      "end_step": 500.0,
+      "metrics": {
+        "mass_total_delta_rel": {
+          "available": true,
+          "count": 11,
+          "cv": 0.12664712853970556,
+          "final": 0.008321150189010917,
+          "max": 0.010114996407061308,
+          "max_abs": 0.010114996407061308,
+          "mean": 0.0080140204347417,
+          "min": 0.006928796977950254,
+          "slope_per_step": -1.91350246764096e-05,
+          "std": 0.001014952676118559
+        }
+      },
+      "name": "tail_20pct_hard_gate",
+      "record_count": 11,
+      "start_step": 400.0
+    }
+  ],
+  "selected96_execution_allowed": false,
+  "source_step": 139,
+  "step": 140,
+  "step139_input_root": "outputs/step139_planeflux_final48",
+  "unavailable_fields": [],
+  "validation_claim_allowed": false
+}

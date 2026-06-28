@@ -3,17 +3,21 @@
   "campaign_base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
   "base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
   "current_code_commit": "4e43162a641085e56a4ba72c8bc013e58cb08cc3",
+  "code_commit_at_run": "4e43162a641085e56a4ba72c8bc013e58cb08cc3",
+  "repository_head_at_report": "b83c1514e325c3bb5f29d73f8adeab13f6ac623d",
+  "commit_identity_note": "current_code_commit/code_commit_at_run identify the Step139 run-time code; repository_head_at_report identifies the final Step139 report/docs commit reviewed before Step140.",
   "state": "48_candidates_failed",
   "final_classification": "boundary_repair_failed_revisit_lbm_solver",
   "artifact_root": "outputs/step139_planeflux_final48/planeflux_final48",
+  "forensics_artifact_root": "outputs/step140_long_window_drift_forensics",
   "read_first": [
     "docs/current/STATUS.md",
     "docs/current/ACTIVE_CAMPAIGN.json",
     "docs/current/VALIDATION_GATES.md",
     "docs/current/READING_ORDER.md",
-    "docs/campaigns/fluent_duct_flap/steps/139/goal.md",
-    "docs/campaigns/fluent_duct_flap/steps/139/report.md",
-    "outputs/step139_planeflux_final48/step139_long_window_comparison.json",
-    "outputs/step139_planeflux_final48/step139_failure_forensics.json"
+    "docs/campaigns/fluent_duct_flap/steps/140/goal.md",
+    "docs/campaigns/fluent_duct_flap/steps/140/report.md",
+    "outputs/step140_long_window_drift_forensics/step140_failure_mechanism_summary.json",
+    "docs/campaigns/fluent_duct_flap/steps/139/report.md"
   ]
 }

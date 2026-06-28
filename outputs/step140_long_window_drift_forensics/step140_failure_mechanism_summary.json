@@ -1,0 +1,47 @@
+{
+  "artifact": "step140_failure_mechanism_summary",
+  "dominant_failure_mechanism": "mass_accumulation_with_outlet_stationarity_drift",
+  "figure29_3_parity_claim_allowed": false,
+  "fluent_validation_claim_allowed": false,
+  "flux_mean_failure_classified": true,
+  "fsi_validation_claim_allowed": false,
+  "input_final_hard_gate_pass": false,
+  "input_row_completed_500": true,
+  "input_step": 139,
+  "mass_drift_failure_classified": true,
+  "mechanism_summary": {
+    "controller_authority_ratio_tail_slope": -0.0017400182162721955,
+    "controller_response_mechanism": "unsaturated_controller_authority_decay",
+    "dominant_failure_mechanism": "mass_accumulation_with_outlet_stationarity_drift",
+    "flux_mean_mechanism": "mean_flux_imbalance_tail_drift",
+    "mass_drift_mechanism": "tail_mass_acceptance_failure",
+    "near_outlet_to_outlet_tail_mean": 0.9978928625164406,
+    "outlet_cv_mechanism": "true_outlet_stationarity_oscillation",
+    "recommended_next_step": "Step141 may propose one bounded 48^3 / 250-step diagnostic design focused on mass-neutral plane-flux or density-feedback isolation; no selected96 and no 500-step run."
+  },
+  "mechanism_summary_present": true,
+  "missing_input": false,
+  "new_lbm_run_executed": false,
+  "new_parameter_tuning_executed": false,
+  "next_experiment_recommendation_count": 1,
+  "next_experiment_recommendations": [
+    "Step141 may propose one bounded 48^3 / 250-step diagnostic design focused on mass-neutral plane-flux or density-feedback isolation; no selected96 and no 500-step run."
+  ],
+  "outlet_cv_failure_classified": true,
+  "production_readiness_claim_allowed": false,
+  "quasi2d_validation_claim_allowed": false,
+  "segment_count": 8,
+  "selected96_execution_allowed": false,
+  "source_step": 139,
+  "status": "mechanism_classified",
+  "step": 140,
+  "step139_input_root": "outputs/step139_planeflux_final48",
+  "step141_branch_policy": {
+    "controller_lag_dominates": "filter_alpha / slew / delta_cap bounded diagnostic, no more than 6 rows",
+    "mass_drift_dominates": "mass-neutral plane-flux or outlet density feedback design proposal only",
+    "outlet_cv_dominates": "stationarity-focused 48^3 / 250-step diagnostic sweep only",
+    "profile_mismatch_dominates": "measurement-plane / x-profile forensics, no more than 250 steps",
+    "unclear": "add diagnostics before tuning"
+  },
+  "validation_claim_allowed": false
+}

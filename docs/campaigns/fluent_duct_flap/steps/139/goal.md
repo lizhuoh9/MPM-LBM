@@ -283,9 +283,7 @@ running simulations.
 
 Create:
 
-- `docs/architecture/GENERIC_FSI_SOLVER_CONTRACT.md`
-- `docs/architecture/BENCHMARK_ADAPTER_CONTRACT.md`
-- `docs/architecture/VALIDATION_CLAIM_BOUNDARY.md`
+- `docs/GENERIC_SOLVER_ARCHITECTURE_CONTRACT.md`
 - `tests/test_step139_generic_solver_architecture_contract.py`
 
 The contract must enforce:
@@ -329,7 +327,7 @@ not run Fluent and do not commit official assets.
 
 Create:
 
-- `docs/campaigns/fluent_duct_flap/fluent_official_local_execution_plan.md`
+- `docs/campaigns/fluent_duct_flap/fluent_official_local_execution_guard.md`
 - `configs/fluent_official_2way_fsi_local_execution_schema.json`
 - `configs/fluent_official_monitor_export_schema.json`
 - `tests/test_fluent_official_local_execution_guard.py`

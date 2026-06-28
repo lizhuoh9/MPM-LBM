@@ -7,6 +7,35 @@ short-window row. It is not selected-candidate evidence and it does not enable
 selected 96^3.
 Current campaign state: `48_candidates_failed`.
 
+Commit identity note: `code_commit_at_run =
+4e43162a641085e56a4ba72c8bc013e58cb08cc3` identifies the Step139 run-time
+code that produced the 500-step artifacts. `repository_head_at_report =
+b83c1514e325c3bb5f29d73f8adeab13f6ac623d` identifies the final Step139
+report/docs commit reviewed before Step140. These fields are intentionally
+separate.
+
+Step140 is a forensics-only long-window drift diagnosis from existing Step139
+artifacts. It does not add a Step121 phase, run a new LBM simulation, tune new
+parameters, or enable selected96. Its artifact root is
+`outputs/step140_long_window_drift_forensics`.
+
+Step140 classifies the Step139 long-window failure mechanism as
+`mass_accumulation_with_outlet_stationarity_drift`. The `200_250` segment still
+looked like the Step138 short-window pass with `mass_total_delta_rel =
+0.003974863988826804`, but `250_300` rose to
+`mass_total_delta_rel = 0.010577758938477861` with
+`slope_per_step = 0.00013628106427297047`, and the hard-gate `400_500` tail
+ended at `mass_total_delta_rel = 0.008321150189010917`. The hard-gate tail also
+had `flux_imbalance_rel` mean `0.10270018561574665` and outlet flux CV
+`0.11556697847525366`; `near_outlet_to_outlet_flux_ratio` mean stayed close to
+one at `0.9978928625164406`, so Step140 does not support a measurement-plane
+mismatch-only explanation. Controller saturation stayed at `0.0`, while
+`controller_authority_ratio` declined to final `0.38176060964663827` with
+`slope_per_step = -0.0017400182162721955`. Step141 may only propose one bounded
+48^3 / 250-step diagnostic focused on mass-neutral plane-flux or
+density-feedback isolation. It may not run selected96, may not run 500 steps,
+and may not claim validation.
+
 Step139 added a bounded `planeflux_final48` phase with exactly one real
 48^3 / 500-step LBM-only row copied from the Step138 passing parameters:
 ramp85 / target0.80 / gain0.75 / cap0.0075. The row completed 500/500, stayed

@@ -76,10 +76,14 @@ source_solver_state_hash = 34437ee966ac063d03d80bd4a9c9dea30961897cbb87d41cc5c7d
 source_run_manifest_hash = e689ad17b0de0f478d57ef9d419e2ed10579692cfb94866dbc1095b5c7239969
 source_code_commit = f0284d3f6207eb1c9341dfc9906293b651c6b0f7
 code_commit_at_run = 4e43162a641085e56a4ba72c8bc013e58cb08cc3
+repository_head_at_report = b83c1514e325c3bb5f29d73f8adeab13f6ac623d
 ```
 
 The source provenance is recorded in the Step139 finite report, run metadata,
 boundary report, flow diagnostics, and campaign manifest expected row.
+`code_commit_at_run` identifies the code commit used to execute Step139;
+`repository_head_at_report` identifies the final Step139 report/docs commit
+that also added guard documentation and tests.
 
 ## Artifacts
 
