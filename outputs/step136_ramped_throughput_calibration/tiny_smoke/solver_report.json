@@ -1,0 +1,160 @@
+{
+  "best_boundary_selection": {
+    "best_boundary_selected": false,
+    "campaign_should_stop_at_48": false,
+    "campaign_state": "awaiting_48_references",
+    "candidate_summaries": [],
+    "final_classification": "boundary_repair_partial_continue_lbm",
+    "reference_comparison_ready": false,
+    "reference_status": {
+      "failed_reference_semantics": [],
+      "incomplete_reference_semantics": [],
+      "legacy_reference_failed": false,
+      "missing_reference_semantics": [
+        "equilibrium_all_population_reset",
+        "regularized_velocity_pressure"
+      ],
+      "reference_comparison_ready": false,
+      "reference_rows": {}
+    },
+    "selection_reason": "48_reference_rows_not_complete",
+    "step": 121,
+    "step121_schema_version": 1,
+    "validation_claim_allowed": false
+  },
+  "campaign_manifest": {
+    "artifact_root": "outputs\\step136_ramped_throughput_calibration\\tiny_smoke",
+    "campaign_base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
+    "campaign_id": "step124_lbm_boundary_516b1aaa",
+    "current_code_commit": "e46ad23e361341567b92b8e114711f87d3f565f3",
+    "expected_rows": {
+      "tiny_step136_ramped_throughput_calibration_smoke": {
+        "geometry_mode": "duct_only",
+        "lbm_open_boundary_semantics": "regularized_plane_flux_controlled_pressure_outlet",
+        "open_boundary_flux_control_target_scale": 0.95,
+        "open_boundary_flux_correction_cap_u": 0.005,
+        "open_boundary_flux_feedback_gain_u": 0.5,
+        "open_boundary_inlet_ramp_profile": "linear",
+        "open_boundary_inlet_ramp_steps": 10,
+        "row_role": "tiny_smoke",
+        "run_manifest_hash": "abfc6e8d2baeacc72918dc0f2bd1fdeced2e6cc4731880a754b2cae2311da275",
+        "selected_source_config_hash": null,
+        "selected_source_lbm_relaxation_semantics": null,
+        "selected_source_row_name": null,
+        "selected_source_tau": null,
+        "solver_state_hash": "9b76b3e135802d585ce2974d775f604de678257ab6bf14789fea7c685d50a3b5"
+      }
+    },
+    "gate_thresholds": {
+      "candidate_mass_acceptance_max": 0.005,
+      "flux_imbalance_rel_tail_max_max": 0.2,
+      "flux_imbalance_rel_tail_mean_max": 0.1,
+      "hard_stop_mach_max": 0.35,
+      "hard_stop_mass_drift_max": 0.05,
+      "hard_stop_negative_population_fraction_max": 0.001,
+      "hard_stop_rho_max": 1.15,
+      "hard_stop_rho_min": 0.85,
+      "inlet_flux_min": 1e-06,
+      "outlet_flux_tail_cv_max": 0.1,
+      "ratio_max": 1.2,
+      "ratio_min": 0.8,
+      "selected96_mass_acceptance_max": 0.01
+    },
+    "git_commit": "e46ad23e361341567b92b8e114711f87d3f565f3",
+    "phase_commit_history": [
+      {
+        "code_commit": "e46ad23e361341567b92b8e114711f87d3f565f3",
+        "phase": "planeflux_ramp_tuned48_tiny"
+      }
+    ],
+    "phase_history": [
+      "planeflux_ramp_tuned48_tiny"
+    ],
+    "run_commands": [
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase references48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase candidates48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase repair48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase flowrepair48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_sweep48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_mass_damped48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_stationarity48 --allow-large-real-rows --output-interval 25",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_interior_diag48 --allow-large-real-rows --output-interval 5",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_ramp_tuned48 --allow-large-real-rows --output-interval 5",
+      "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary"
+    ],
+    "step121_campaign_manifest_schema_version": 2
+  },
+  "campaign_manifest_id": "step124_lbm_boundary_516b1aaa",
+  "campaign_state": "awaiting_48_references",
+  "figure_29_3_parity_claim_allowed": false,
+  "final_classification": "boundary_repair_partial_continue_lbm",
+  "fluent_validation_claim_allowed": false,
+  "fluid_only": true,
+  "full_fsi_rerun_done": false,
+  "gate_report": {
+    "allowed_final_classifications": [
+      "boundary_repair_failed_revisit_lbm_solver",
+      "boundary_repair_partial_continue_lbm",
+      "boundary_repair_success_go_to_quasi2d"
+    ],
+    "best_boundary_selected": false,
+    "campaign_state": "awaiting_48_references",
+    "failed_selected_rows": [],
+    "figure_29_3_parity_claim_allowed": false,
+    "final_classification": "boundary_repair_partial_continue_lbm",
+    "fluent_validation_claim_allowed": false,
+    "full_fsi_validation_claim_allowed": false,
+    "global_limiter_gate_not_used_for_final_classification": true,
+    "global_limiter_gate_would_block_if_used": false,
+    "missing_selected_rows": [],
+    "no_fluent_claim": true,
+    "no_fsi_claim": true,
+    "quasi2d_allowed": false,
+    "required_selected_rows": [],
+    "selected_96_flow_development_gate": {
+      "duct_pass": false,
+      "duct_reasons": [
+        "not_selected"
+      ],
+      "flux_imbalance_rel_tail_max": null,
+      "midplane_to_inlet_flux_ratio_tail_mean": null,
+      "outlet_flux_min": 1e-12,
+      "outlet_flux_tail_cv": null,
+      "outlet_flux_tail_mean": null,
+      "outlet_to_inlet_flux_ratio_tail_mean": null,
+      "static_pass": false,
+      "static_reasons": [
+        "not_selected"
+      ]
+    },
+    "selected_boundary_semantics": null,
+    "selected_boundary_slug": null,
+    "selected_chain_limiter_gate_pass": true,
+    "selected_chain_limiter_summary": {
+      "blocked_row_names": [],
+      "limiter_activation_fraction_limit": 0.05,
+      "max_limiter_activation_fraction": 0.0,
+      "row_count": 0,
+      "selected_chain_limiter_gate_pass": true
+    },
+    "selected_chain_row_names": [],
+    "source_step120_schema_version": 1,
+    "static_two_flap_rows_are_lbm_only": true,
+    "step": 121,
+    "step121_quasi2d_allowed": false,
+    "step121_schema_version": 1,
+    "validation_claim_allowed": false
+  },
+  "goal_file": "STEP121_LBM_BOUNDARY_REAL_CAMPAIGN_AND_GATE_CORRECTION_GOAL.md",
+  "ignored_row_count": 0,
+  "ignored_rows": [],
+  "phase": "planeflux_ramp_tuned48_tiny",
+  "quasi2d_allowed": false,
+  "row_count": 1,
+  "runner_file": "experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py",
+  "static_two_flap_rows_are_lbm_only": true,
+  "step": 121,
+  "step121_schema_version": 1,
+  "validation_claim_allowed": false
+}

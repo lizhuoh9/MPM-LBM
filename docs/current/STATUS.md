@@ -1,10 +1,26 @@
 # Current Status
 
 The active campaign is the Fluent duct/flap LBM open-boundary repair campaign.
-The current artifact state remains selected-boundary blocked. Step135 is a
-diagnostic continuation of the 48^3 boundary-repair loop, not selected-candidate
-evidence.
+The current artifact state remains selected-boundary blocked. Step136 is a
+bounded 48^3 ramped-inlet throughput-calibration continuation of the
+boundary-repair loop, not selected-candidate evidence.
 Current campaign state: `48_candidates_failed`.
+
+Step136 added a bounded `planeflux_ramp_tuned48` phase and a report-visible
+`open_boundary_flux_control_target_scale` parameter. Six real 48^3 / 250-step
+LBM-only calibration rows completed 250/250 with finite state and no
+first-failure event. Two rows passed candidate mass acceptance: target0.90
+(`candidate_mass_acceptance_observed_abs = 0.0027411073257309804`) and
+target0.95 (`candidate_mass_acceptance_observed_abs =
+0.004158116831305122`). No row passed the flow-development gate. The best
+flux-imbalance row was ramp75 / target1.00 with
+`flux_imbalance_rel_tail_mean = 0.17995040672859994`, but it reintroduced a
+compact-collapse label at interior `x = 24`, step 250. The best mass row,
+ramp100 / target0.90, still had
+`outlet_to_inlet_flux_ratio_tail_mean = 1.3064291443826772` and
+`midplane_to_inlet_flux_ratio_tail_mean = 1.228018341923524`. Step136 therefore
+supports continued bounded 48^3 calibration only; it does not justify a
+500-step promotion or selected 96^3.
 
 Step135 added a bounded `planeflux_interior_diag48` interior reflection and
 bulk-dynamics diagnostic phase. Six real 48^3 / 250-step LBM-only diagnostic
@@ -133,5 +149,5 @@ commit from the current code commit in `ACTIVE_CAMPAIGN.json` and Step121
 campaign manifests, and it records `code_commit_at_run` for Step120 row
 artifacts.
 
-Step135 does not claim 48^3 repaired-candidate success, selected 96^3 success,
+Step136 does not claim 48^3 repaired-candidate success, selected 96^3 success,
 quasi-2D validation, FSI validation, Fluent validation, or Figure 29.3 parity.

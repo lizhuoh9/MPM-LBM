@@ -1,0 +1,12 @@
+{
+  "campaign_manifest_id": "step124_lbm_boundary_516b1aaa",
+  "campaign_state": "awaiting_48_references",
+  "final_classification": "boundary_repair_partial_continue_lbm",
+  "ignored_row_count": 0,
+  "phase": "planeflux_ramp_tuned48_tiny",
+  "quasi2d_allowed": false,
+  "row_count": 1,
+  "step": 121,
+  "step121_schema_version": 1,
+  "validation_claim_allowed": false
+}

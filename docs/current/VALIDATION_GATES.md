@@ -212,6 +212,33 @@ Current Step135 interior-reflection diagnostic evidence:
 - No 500-step promotion was run from Step135 diagnostics.
 - Selected 96^3 execution remains blocked.
 
+Current Step136 ramped-inlet throughput calibration evidence:
+
+- Step136 adds a distinct `planeflux_ramp_tuned48` phase for bounded
+  ramped-inlet throughput calibration.
+- Step136 also adds report-visible
+  `open_boundary_flux_control_target_scale`, with default `1.0`, to scale the
+  plane-flux controller target without changing existing default behavior.
+- The Step136 phase ran six real 48^3 / 250-step LBM-only calibration rows
+  across bounded ramp, feedback gain, correction cap, and target-scale values.
+  Every row completed 250/250, stayed finite, and had no first-failure
+  evidence.
+- Step136 rows use `row_role = interior_reflection_diagnostic_48`; they are not
+  in the selected-candidate semantics set and cannot enable selected 96^3.
+- Two rows passed candidate mass acceptance: ramp100 / gain0.50 / cap0.005 /
+  target0.90 with `candidate_mass_acceptance_observed_abs =
+  0.0027411073257309804`, and ramp100 / gain0.50 / cap0.005 / target0.95 with
+  `candidate_mass_acceptance_observed_abs = 0.004158116831305122`.
+- All six rows failed flow-development gates. The target0.90 row still had
+  `flux_imbalance_rel_tail_mean = 0.22888777098124222`,
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.3064291443826772`, and
+  `midplane_to_inlet_flux_ratio_tail_mean = 1.228018341923524`.
+- The best flux-imbalance row was ramp75 / gain0.50 / cap0.005 / target1.00
+  with `flux_imbalance_rel_tail_mean = 0.17995040672859994`, but it
+  reintroduced a compact-collapse label at interior `x = 24`, step 250.
+- No 500-step promotion was run from Step136 calibration.
+- Selected 96^3 execution remains blocked.
+
 Current Step124 gate requirements:
 
 - 48^3 legacy reference rows must either complete the requested real window or

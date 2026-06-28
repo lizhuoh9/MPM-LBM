@@ -1,0 +1,23 @@
+{
+  "best_boundary_selected": false,
+  "campaign_should_stop_at_48": false,
+  "campaign_state": "awaiting_48_references",
+  "candidate_summaries": [],
+  "final_classification": "boundary_repair_partial_continue_lbm",
+  "reference_comparison_ready": false,
+  "reference_status": {
+    "failed_reference_semantics": [],
+    "incomplete_reference_semantics": [],
+    "legacy_reference_failed": false,
+    "missing_reference_semantics": [
+      "equilibrium_all_population_reset",
+      "regularized_velocity_pressure"
+    ],
+    "reference_comparison_ready": false,
+    "reference_rows": {}
+  },
+  "selection_reason": "48_reference_rows_not_complete",
+  "step": 121,
+  "step121_schema_version": 1,
+  "validation_claim_allowed": false
+}
