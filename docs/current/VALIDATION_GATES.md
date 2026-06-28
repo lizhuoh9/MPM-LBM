@@ -239,6 +239,30 @@ Current Step136 ramped-inlet throughput calibration evidence:
 - No 500-step promotion was run from Step136 calibration.
 - Selected 96^3 execution remains blocked.
 
+Current Step137 refined ramp-target throughput-window evidence:
+
+- Step137 adds a distinct `planeflux_ramp_refined48` phase for bounded
+  intermediate-ramp and lower-target-scale diagnostics.
+- The Step137 phase ran six real 48^3 / 250-step LBM-only diagnostic rows
+  across `ramp_steps = 85, 90, 100` and `target_scale = 0.80, 0.85, 0.90`.
+  Every row completed 250/250, stayed finite, and had no first-failure
+  evidence.
+- Step137 rows use `row_role = interior_reflection_diagnostic_48`; they are
+  not in the selected-candidate semantics set and cannot enable selected 96^3.
+- All six rows passed candidate mass acceptance and avoided the compact
+  x-profile collapse label.
+- All six rows failed final hard flow-development gates. The best outlet-ratio
+  row was ramp85 / target0.85 with
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.246561166160358`,
+  `midplane_to_inlet_flux_ratio_tail_mean = 1.1418110718950278`,
+  `flux_imbalance_rel_tail_mean = 0.19102045308771165`, and
+  `flux_imbalance_rel_tail_max = 0.29227885610916315`.
+- `target_scale = 0.80` did not fix outlet overdrive: ramp90 / target0.80 had
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.2636158741752672` and
+  `flux_imbalance_rel_tail_mean = 0.20201121638125025`.
+- No 500-step promotion is justified from Step137 diagnostics.
+- Selected 96^3 execution remains blocked.
+
 Current Step124 gate requirements:
 
 - 48^3 legacy reference rows must either complete the requested real window or

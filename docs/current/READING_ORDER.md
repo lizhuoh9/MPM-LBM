@@ -5,11 +5,13 @@ Read these files first for the current boundary-repair campaign state:
 1. `docs/current/STATUS.md`
 2. `docs/current/ACTIVE_CAMPAIGN.json`
 3. `docs/current/VALIDATION_GATES.md`
-4. `docs/campaigns/fluent_duct_flap/steps/136/goal.md`
-5. `docs/campaigns/fluent_duct_flap/steps/136/report.md`
-6. `docs/campaigns/fluent_duct_flap/steps/135/goal.md`
-7. `docs/campaigns/fluent_duct_flap/steps/135/report.md`
-8. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
+4. `docs/campaigns/fluent_duct_flap/steps/137/goal.md`
+5. `docs/campaigns/fluent_duct_flap/steps/137/report.md`
+6. `docs/campaigns/fluent_duct_flap/steps/136/goal.md`
+7. `docs/campaigns/fluent_duct_flap/steps/136/report.md`
+8. `docs/campaigns/fluent_duct_flap/steps/135/goal.md`
+9. `docs/campaigns/fluent_duct_flap/steps/135/report.md`
+10. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
 
 Older Step102-Step126 documents remain useful history, but they are not the
 current entry point for deciding whether the campaign may advance to selected
@@ -40,4 +42,9 @@ throughput calibration and `open_boundary_flux_control_target_scale`; all six
 real 48^3 / 250-step calibration rows completed, stayed finite, and had no
 first-failure event. Target0.90 and target0.95 passed candidate mass
 acceptance, but all six rows still failed flow-development gates. No Step136
-500-step promotion or selected 96^3 run is justified.
+500-step promotion or selected 96^3 run is justified. Step137 added
+`planeflux_ramp_refined48` refined ramp-target diagnostics; all six real 48^3 /
+250-step rows completed, stayed finite, passed candidate mass acceptance, and
+avoided compact x-profile collapse, but all six still failed final hard
+flow-development gates. No Step137 500-step promotion or selected 96^3 run is
+justified.

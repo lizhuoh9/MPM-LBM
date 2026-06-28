@@ -1,0 +1,39 @@
+{
+  "centerline_profile_x": {
+    "axis": "x",
+    "source": [
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline",
+      "centerline"
+    ],
+    "ux": [
+      0.020915139466524124,
+      0.0258205384016037,
+      0.027481088414788246,
+      0.028279686346650124,
+      0.02887118048965931,
+      0.029143420979380608,
+      0.029558729380369186,
+      0.030258186161518097
+    ],
+    "y_index": 3,
+    "z_index": 3
+  },
+  "final_flux_imbalance_rel": 0.1551740786642066,
+  "final_outlet_reflection_proxy": {
+    "fluid_cell_count": 16,
+    "negative_ux_fraction": 0.0,
+    "proxy_name": "outlet_near_plane_ux_density_variation",
+    "rho_peak_to_peak": 0.0008697509765625,
+    "rho_std": 0.00031332776206086484,
+    "ux_std": 0.004471519677173977,
+    "x_index": 6
+  },
+  "geometry_mode": "duct_only",
+  "name": "tiny_step137_ramp_target_refinement_smoke"
+}
