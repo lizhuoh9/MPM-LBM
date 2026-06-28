@@ -263,6 +263,34 @@ Current Step137 refined ramp-target throughput-window evidence:
 - No 500-step promotion is justified from Step137 diagnostics.
 - Selected 96^3 execution remains blocked.
 
+Current Step138 high-authority outlet diagnostic evidence:
+
+- Step138 adds a distinct `planeflux_high_authority48` phase for bounded
+  high-authority outlet diagnostics.
+- The Step138 phase ran six real 48^3 / 250-step LBM-only diagnostic rows
+  across `ramp_steps = 85, 90`, `target_scale = 0.80, 0.85`,
+  `gain_u = 0.75, 1.00`, and `cap_u = 0.0050, 0.0075, 0.0100`.
+  Every row completed 250/250, stayed finite, and had no first-failure
+  evidence.
+- Step138 rows use `row_role = interior_reflection_diagnostic_48`; they are
+  not in the selected-candidate semantics set and cannot enable selected 96^3.
+- Four rows passed candidate mass acceptance, three rows avoided compact
+  x-profile collapse labels, and two rows passed the raw ratio/imbalance/outlet
+  stationarity flow-development gate.
+- One row passed the full final hard gate including mass acceptance and no
+  compact-collapse label: ramp85 / target0.80 / gain0.75 / cap0.0075 with
+  `candidate_mass_acceptance_observed_abs = 0.003974863988826804`,
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.0589469344632336`,
+  `midplane_to_inlet_flux_ratio_tail_mean = 0.9372161279428126`,
+  `flux_imbalance_rel_tail_mean = 0.08826485542410979`,
+  `flux_imbalance_rel_tail_max = 0.18087974336724078`, and
+  `outlet_flux_tail_cv = 0.09651149130583905`, with
+  `collapse_first_x = null` and `collapse_first_step = null`.
+- This justifies a later Step139 single 48^3 / 500-step final-evidence proposal
+  for that row.
+- No 500-step promotion was run from Step138 diagnostics.
+- Selected 96^3 execution remains blocked.
+
 Current Step124 gate requirements:
 
 - 48^3 legacy reference rows must either complete the requested real window or

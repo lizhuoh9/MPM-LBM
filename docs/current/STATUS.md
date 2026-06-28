@@ -1,10 +1,27 @@
 # Current Status
 
 The active campaign is the Fluent duct/flap LBM open-boundary repair campaign.
-The current artifact state remains selected-boundary blocked. Step137 is a
-bounded 48^3 refined ramp-target throughput-window continuation of the
+The current artifact state remains selected-boundary blocked. Step138 is a
+bounded 48^3 high-authority outlet diagnostic continuation of the
 boundary-repair loop, not selected-candidate evidence.
 Current campaign state: `48_candidates_failed`.
+
+Step138 added a bounded `planeflux_high_authority48` phase. Six real 48^3 /
+250-step LBM-only diagnostic rows completed 250/250 with finite state and no
+first-failure event. All six rows passed density, population, and Mach gates;
+four passed candidate mass acceptance; three avoided the compact x-profile
+collapse label; two passed the raw flow-development gate; and one row passed
+the full final hard gate including mass acceptance and no compact-collapse
+label. The passing row was ramp85 / target0.80 / gain0.75 / cap0.0075 with
+`candidate_mass_acceptance_observed_abs = 0.003974863988826804`,
+`outlet_to_inlet_flux_ratio_tail_mean = 1.0589469344632336`,
+`midplane_to_inlet_flux_ratio_tail_mean = 0.9372161279428126`,
+`flux_imbalance_rel_tail_mean = 0.08826485542410979`,
+`flux_imbalance_rel_tail_max = 0.18087974336724078`, and
+`outlet_flux_tail_cv = 0.09651149130583905`, with no compact-collapse label.
+Step138 therefore justifies a later Step139 single 48^3 / 500-step
+final-evidence proposal for that row. Step138 itself did not run 500 steps, did
+not add selected-candidate semantics, and selected 96^3 remains blocked.
 
 Step137 added a bounded `planeflux_ramp_refined48` phase. Six real 48^3 /
 250-step LBM-only diagnostic rows completed 250/250 with finite state and no
@@ -147,8 +164,8 @@ also failed flow-development ratio/imbalance gates.
 
 Step127 selected no best 48^3 boundary. Selected 96^3 duct-only work is not
 allowed from the current artifacts. Step128, Step129, Step130, Step131,
-Step132, Step133, Step134, Step135, Step136, and Step137 continue that blocked
-48^3 boundary-repair sequence without selecting a boundary.
+Step132, Step133, Step134, Step135, Step136, Step137, and Step138 continue
+that blocked 48^3 boundary-repair sequence without selecting a boundary.
 
 Step126 ran real 48^3 LBM-only references. The legacy reference completed
 500/500 steps and passed the flow-development gate. The old regularized
@@ -165,5 +182,5 @@ commit from the current code commit in `ACTIVE_CAMPAIGN.json` and Step121
 campaign manifests, and it records `code_commit_at_run` for Step120 row
 artifacts.
 
-Step137 does not claim 48^3 repaired-candidate success, selected 96^3 success,
+Step138 does not claim 48^3 repaired-candidate success, selected 96^3 success,
 quasi-2D validation, FSI validation, Fluent validation, or Figure 29.3 parity.

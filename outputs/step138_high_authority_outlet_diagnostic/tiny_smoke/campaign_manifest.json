@@ -1,0 +1,65 @@
+{
+  "artifact_root": "outputs\\step138_high_authority_outlet_diagnostic\\tiny_smoke",
+  "campaign_base_commit": "516b1aaa4c71d5468ce5ea444a21ffa07741c8bc",
+  "campaign_id": "step124_lbm_boundary_516b1aaa",
+  "current_code_commit": "f0284d3f6207eb1c9341dfc9906293b651c6b0f7",
+  "expected_rows": {
+    "tiny_step138_high_authority_outlet_smoke": {
+      "geometry_mode": "duct_only",
+      "lbm_open_boundary_semantics": "regularized_plane_flux_controlled_pressure_outlet",
+      "open_boundary_flux_control_target_scale": 0.85,
+      "open_boundary_flux_correction_cap_u": 0.0075,
+      "open_boundary_flux_feedback_gain_u": 0.75,
+      "open_boundary_inlet_ramp_profile": "linear",
+      "open_boundary_inlet_ramp_steps": 10,
+      "row_role": "tiny_smoke",
+      "run_manifest_hash": "c1415c1d0dfe3bfd2294cbfd14d92f8153a9025852c842631cb000dc0887e090",
+      "selected_source_config_hash": null,
+      "selected_source_lbm_relaxation_semantics": null,
+      "selected_source_row_name": null,
+      "selected_source_tau": null,
+      "solver_state_hash": "80cab5ced2c360c5d45e500169b2d128f13a10bc5a9a9b797ad1586970e0e352"
+    }
+  },
+  "gate_thresholds": {
+    "candidate_mass_acceptance_max": 0.005,
+    "flux_imbalance_rel_tail_max_max": 0.2,
+    "flux_imbalance_rel_tail_mean_max": 0.1,
+    "hard_stop_mach_max": 0.35,
+    "hard_stop_mass_drift_max": 0.05,
+    "hard_stop_negative_population_fraction_max": 0.001,
+    "hard_stop_rho_max": 1.15,
+    "hard_stop_rho_min": 0.85,
+    "inlet_flux_min": 1e-06,
+    "outlet_flux_tail_cv_max": 0.1,
+    "ratio_max": 1.2,
+    "ratio_min": 0.8,
+    "selected96_mass_acceptance_max": 0.01
+  },
+  "git_commit": "f0284d3f6207eb1c9341dfc9906293b651c6b0f7",
+  "phase_commit_history": [
+    {
+      "code_commit": "f0284d3f6207eb1c9341dfc9906293b651c6b0f7",
+      "phase": "planeflux_high_authority48_tiny"
+    }
+  ],
+  "phase_history": [
+    "planeflux_high_authority48_tiny"
+  ],
+  "run_commands": [
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase references48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase candidates48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase repair48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase flowrepair48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_sweep48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_mass_damped48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_stationarity48 --allow-large-real-rows --output-interval 25",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_interior_diag48 --allow-large-real-rows --output-interval 5",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_ramp_tuned48 --allow-large-real-rows --output-interval 5",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_ramp_refined48 --allow-large-real-rows --output-interval 5",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_high_authority48 --allow-large-real-rows --output-interval 5",
+    "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary"
+  ],
+  "step121_campaign_manifest_schema_version": 2
+}
