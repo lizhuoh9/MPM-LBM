@@ -142,7 +142,6 @@ Allowed reference mass modes:
 
 ```text
 initial
-runtime_initial
 ```
 
 Validation rules:
@@ -347,8 +346,8 @@ Add:
 
 ```text
 experiments/steps/step142_mass_neutral_plane_flux_design_report.py
-outputs/step142_mass_neutral_plane_flux_design/design_readiness_report.json
-outputs/step142_mass_neutral_plane_flux_design/design_readiness_report.md
+outputs/step142_mass_neutral_plane_flux_design/step142_design_readiness_report.json
+outputs/step142_mass_neutral_plane_flux_design/step142_design_readiness_report.md
 docs/campaigns/fluent_duct_flap/steps/142/report.md
 docs/campaigns/fluent_duct_flap/steps/142/mass_neutral_plane_flux_design.md
 ```

@@ -1,0 +1,108 @@
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\taichi\env\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\working\taichi\env\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step121_lbm_boundary_real_campaign_and_gate_correction.py", line 2332, in <module>
+    raise SystemExit(main())
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step121_lbm_boundary_real_campaign_and_gate_correction.py", line 2316, in main
+    run_step121_matrix(
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step121_lbm_boundary_real_campaign_and_gate_correction.py", line 1755, in run_step121_matrix
+    run_step120_matrix(
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step120_lbm_boundary_repair_large_real_execution.py", line 472, in run_step120_matrix
+    run_step120_row(
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step120_lbm_boundary_repair_large_real_execution.py", line 553, in run_step120_row
+    lbm, tau_report = create_step120_lbm(spec, tau_report=tau_report)
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step120_lbm_boundary_repair_large_real_execution.py", line 686, in create_step120_lbm
+    lbm = LBMFluid3D(config)
+  File "D:\working\squid robot\LBM\MPM-LBM\src\mpm_lbm\sim\lbm\fluid.py", line 257, in __init__
+    self.M[None] = ti.Matrix([[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\taichi\env\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\working\taichi\env\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step121_lbm_boundary_real_campaign_and_gate_correction.py", line 2332, in <module>
+    raise SystemExit(main())
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step121_lbm_boundary_real_campaign_and_gate_correction.py", line 2316, in main
+    run_step121_matrix(
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step121_lbm_boundary_real_campaign_and_gate_correction.py", line 1755, in run_step121_matrix
+    run_step120_matrix(
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step120_lbm_boundary_repair_large_real_execution.py", line 472, in run_step120_matrix
+    run_step120_row(
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step120_lbm_boundary_repair_large_real_execution.py", line 553, in run_step120_row
+    lbm, tau_report = create_step120_lbm(spec, tau_report=tau_report)
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step120_lbm_boundary_repair_large_real_execution.py", line 686, in create_step120_lbm
+    lbm = LBMFluid3D(config)
+  File "D:\working\squid robot\LBM\MPM-LBM\src\mpm_lbm\sim\lbm\fluid.py", line 257, in __init__
+    self.M[None] = ti.Matrix([[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1358, in __setitem__
+    self[key]._set_entries(value)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1367, in __getitem__
+    return Matrix([[_host_access[i * self.m + j] for j in range(self.m)] for i in range(self.n)])
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\taichi\env\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\working\taichi\env\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step121_lbm_boundary_real_campaign_and_gate_correction.py", line 2332, in <module>
+    raise SystemExit(main())
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step121_lbm_boundary_real_campaign_and_gate_correction.py", line 2316, in main
+    run_step121_matrix(
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step121_lbm_boundary_real_campaign_and_gate_correction.py", line 1755, in run_step121_matrix
+    run_step120_matrix(
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step120_lbm_boundary_repair_large_real_execution.py", line 472, in run_step120_matrix
+    run_step120_row(
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step120_lbm_boundary_repair_large_real_execution.py", line 553, in run_step120_row
+    lbm, tau_report = create_step120_lbm(spec, tau_report=tau_report)
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step120_lbm_boundary_repair_large_real_execution.py", line 686, in create_step120_lbm
+    lbm = LBMFluid3D(config)
+  File "D:\working\squid robot\LBM\MPM-LBM\src\mpm_lbm\sim\lbm\fluid.py", line 277, in __init__
+    self.inv_M[None] = ti.Matrix(inv_M_np)
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)
+D:\working\taichi\env\lib\site-packages\taichi\lang\util.py:370: UserWarning: [33m[1mTaichi matrices/vectors with 19x19 > 32 entries are not suggested. Matrices/vectors will be automatically unrolled at compile-time for performance. So the compilation time could be extremely long if the matrix size is too big. You may use a field to store a large matrix like this, e.g.:
+    x = ti.field(ti.f32, (19, 19)).
+ See https://docs.taichi-lang.org/docs/field#matrix-size for more details.
+  File "D:\working\taichi\env\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\working\taichi\env\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step121_lbm_boundary_real_campaign_and_gate_correction.py", line 2332, in <module>
+    raise SystemExit(main())
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step121_lbm_boundary_real_campaign_and_gate_correction.py", line 2316, in main
+    run_step121_matrix(
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step121_lbm_boundary_real_campaign_and_gate_correction.py", line 1755, in run_step121_matrix
+    run_step120_matrix(
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step120_lbm_boundary_repair_large_real_execution.py", line 472, in run_step120_matrix
+    run_step120_row(
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step120_lbm_boundary_repair_large_real_execution.py", line 553, in run_step120_row
+    lbm, tau_report = create_step120_lbm(spec, tau_report=tau_report)
+  File "D:\working\squid robot\LBM\MPM-LBM\experiments\steps\step120_lbm_boundary_repair_large_real_execution.py", line 686, in create_step120_lbm
+    lbm = LBMFluid3D(config)
+  File "D:\working\squid robot\LBM\MPM-LBM\src\mpm_lbm\sim\lbm\fluid.py", line 277, in __init__
+    self.inv_M[None] = ti.Matrix(inv_M_np)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1358, in __setitem__
+    self[key]._set_entries(value)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\util.py", line 351, in wrapped
+    return func(*args, **kwargs)
+  File "D:\working\taichi\env\lib\site-packages\taichi\lang\matrix.py", line 1367, in __getitem__
+    return Matrix([[_host_access[i * self.m + j] for j in range(self.m)] for i in range(self.n)])
+[0m
+  warnings.warn(Fore.YELLOW + Style.BRIGHT + msg + Style.RESET_ALL, warning_type)

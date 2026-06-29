@@ -1,11 +1,41 @@
 # Current Status
 
 The active campaign is the Fluent duct/flap LBM open-boundary repair campaign.
-The current artifact state remains selected-boundary blocked. Step142 is a
-design-only mass-neutral plane-flux controller contract over the Step141
-decision. It does not add a Step121 phase, does not run a real 48^3 row, does
-not run 500 steps, and does not enable selected96.
+The current artifact state remains selected-boundary blocked. Step143 activated
+the Step142 mass-neutral plane-flux controller design only inside a bounded
+four-row `48^3 / 250-step` LBM-only diagnostic phase. The Step143 audit supports
+allowing Step144 to propose one `48^3 / 500-step` probe for the best Step143
+setting only; it does not approve selected96, selected-static, 96^3, Fluent,
+FSI, quasi-2D validation, Figure 29.3 parity, or production-readiness.
 Current campaign state: `48_candidates_failed`.
+
+Step143 did not run selected96.
+Step143 did not run selected-static.
+Step143 did not run 96^3.
+Step143 did not run a 500-step row.
+Step143 did not run Fluent.
+Step143 did not run FSI.
+Step143 does not make a validation claim.
+
+Step143 generated artifacts under
+`outputs/step143_mass_neutral_design_diagnostic`. The real phase root is
+`outputs/step143_mass_neutral_design_diagnostic/mass_neutral_design48`, and the
+audit decision is
+`mass_neutral_design_supports_step144_single_500step_probe`.
+The best enabled row used `open_boundary_mass_neutral_mass_error_gain = 0.50`,
+`open_boundary_mass_neutral_mass_error_cap = 0.00100`, and
+`open_boundary_mass_neutral_correction_blend = 1.0`. It completed 250/250 with
+`candidate_mass_acceptance_observed_abs = 0.0031636249081530357`,
+`outlet_flux_tail_cv = 0.09161249772040454`, and
+`flux_imbalance_rel_tail_mean = 0.08579940196467845`, improving over the
+disabled baseline values `0.003974863988826804`, `0.09651149130583905`, and
+`0.08826485542410979`. All Step143 rows stayed finite, had no first-failure
+event, and kept `selected96_claim_allowed = false` and
+`validation_claim_allowed = false`.
+
+Step142 is a design-only mass-neutral plane-flux controller contract over the
+Step141 decision. It did not add a Step121 phase, did not run a real 48^3 row,
+did not run 500 steps, and did not enable selected96.
 
 Commit identity note: Step141 was executed with `code_commit_at_run =
 90fa5798754942cd8f7de2a1c24a483804667478`. The Step139 source row still

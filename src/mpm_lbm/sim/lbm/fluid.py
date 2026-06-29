@@ -128,6 +128,15 @@ class LBMFluid3D:
         self.ob_flux_control_saturation_count_run = ti.field(ti.i32, shape=())
         self.ob_flux_control_update_count_step = ti.field(ti.i32, shape=())
         self.ob_flux_control_update_count_run = ti.field(ti.i32, shape=())
+        self.ob_mass_neutral_mass_current = ti.field(ti.f32, shape=())
+        self.ob_mass_neutral_mass_initial_reference = ti.field(ti.f32, shape=())
+        self.ob_mass_neutral_mass_error = ti.field(ti.f32, shape=())
+        self.ob_mass_neutral_rho_feedback = ti.field(ti.f32, shape=())
+        self.ob_mass_neutral_feedback_saturation_count_step = ti.field(ti.i32, shape=())
+        self.ob_mass_neutral_feedback_saturation_count_run = ti.field(ti.i32, shape=())
+        self.ob_mass_neutral_feedback_update_count_step = ti.field(ti.i32, shape=())
+        self.ob_mass_neutral_feedback_update_count_run = ti.field(ti.i32, shape=())
+        self.ob_mass_neutral_initialized = ti.field(ti.i32, shape=())
         self.ob_near_outlet_flux_xminus1 = ti.field(ti.f32, shape=())
         self.ob_near_outlet_flux_xminus2 = ti.field(ti.f32, shape=())
         self.ob_near_outlet_flux_xminus3 = ti.field(ti.f32, shape=())
@@ -573,6 +582,8 @@ class LBMFluid3D:
         self.ob_flow_correction_gain_effective_step[None] = 0.0
         self.ob_flux_control_saturation_count_step[None] = 0
         self.ob_flux_control_update_count_step[None] = 0
+        self.ob_mass_neutral_feedback_saturation_count_step[None] = 0
+        self.ob_mass_neutral_feedback_update_count_step[None] = 0
         self.ob_drop_guard_active_step[None] = 0
 
     @ti.kernel
@@ -607,6 +618,15 @@ class LBMFluid3D:
         self.ob_flux_control_saturation_count_run[None] = 0
         self.ob_flux_control_update_count_step[None] = 0
         self.ob_flux_control_update_count_run[None] = 0
+        self.ob_mass_neutral_mass_current[None] = 0.0
+        self.ob_mass_neutral_mass_initial_reference[None] = 0.0
+        self.ob_mass_neutral_mass_error[None] = 0.0
+        self.ob_mass_neutral_rho_feedback[None] = 0.0
+        self.ob_mass_neutral_feedback_saturation_count_step[None] = 0
+        self.ob_mass_neutral_feedback_saturation_count_run[None] = 0
+        self.ob_mass_neutral_feedback_update_count_step[None] = 0
+        self.ob_mass_neutral_feedback_update_count_run[None] = 0
+        self.ob_mass_neutral_initialized[None] = 0
         self.ob_near_outlet_flux_xminus1[None] = 0.0
         self.ob_near_outlet_flux_xminus2[None] = 0.0
         self.ob_near_outlet_flux_xminus3[None] = 0.0
@@ -654,6 +674,15 @@ class LBMFluid3D:
         self.ob_flux_control_saturation_count_run[None] = 0
         self.ob_flux_control_update_count_step[None] = 0
         self.ob_flux_control_update_count_run[None] = 0
+        self.ob_mass_neutral_mass_current[None] = 0.0
+        self.ob_mass_neutral_mass_initial_reference[None] = 0.0
+        self.ob_mass_neutral_mass_error[None] = 0.0
+        self.ob_mass_neutral_rho_feedback[None] = 0.0
+        self.ob_mass_neutral_feedback_saturation_count_step[None] = 0
+        self.ob_mass_neutral_feedback_saturation_count_run[None] = 0
+        self.ob_mass_neutral_feedback_update_count_step[None] = 0
+        self.ob_mass_neutral_feedback_update_count_run[None] = 0
+        self.ob_mass_neutral_initialized[None] = 0
         self.ob_near_outlet_flux_xminus1[None] = 0.0
         self.ob_near_outlet_flux_xminus2[None] = 0.0
         self.ob_near_outlet_flux_xminus3[None] = 0.0
@@ -689,6 +718,15 @@ class LBMFluid3D:
         self.ob_flux_control_saturation_count_run[None] = 0
         self.ob_flux_control_update_count_step[None] = 0
         self.ob_flux_control_update_count_run[None] = 0
+        self.ob_mass_neutral_mass_current[None] = 0.0
+        self.ob_mass_neutral_mass_initial_reference[None] = 0.0
+        self.ob_mass_neutral_mass_error[None] = 0.0
+        self.ob_mass_neutral_rho_feedback[None] = 0.0
+        self.ob_mass_neutral_feedback_saturation_count_step[None] = 0
+        self.ob_mass_neutral_feedback_saturation_count_run[None] = 0
+        self.ob_mass_neutral_feedback_update_count_step[None] = 0
+        self.ob_mass_neutral_feedback_update_count_run[None] = 0
+        self.ob_mass_neutral_initialized[None] = 0
         self.ob_near_outlet_flux_xminus1[None] = 0.0
         self.ob_near_outlet_flux_xminus2[None] = 0.0
         self.ob_near_outlet_flux_xminus3[None] = 0.0
@@ -779,9 +817,16 @@ class LBMFluid3D:
         denominator = int(self.ob_reconstructed_population_count_run[None])
         controller_updates = int(self.ob_flux_control_update_count_run[None])
         controller_saturations = int(self.ob_flux_control_saturation_count_run[None])
+        mass_neutral_updates = int(self.ob_mass_neutral_feedback_update_count_run[None])
+        mass_neutral_saturations = int(self.ob_mass_neutral_feedback_saturation_count_run[None])
         controller_feedback_abs = abs(float(self.ob_flux_control_u_feedback[None]))
         controller_density_feedback_abs = abs(float(self.ob_flux_control_rho_feedback[None]))
+        mass_neutral_feedback = float(self.ob_mass_neutral_rho_feedback[None])
         controller_cap_abs = abs(float(self.open_boundary_flux_correction_cap_u))
+        mass_neutral_runtime_active = bool(
+            self.open_boundary_mass_neutral_flux_control_enabled
+            and self.open_boundary_mass_neutral_flux_control_mode == "global_mass_error_density_offset"
+        )
         return {
             "rho_clip_count_step": int(self.ob_rho_clip_count_step[None]),
             "rho_clip_count_run": int(self.ob_rho_clip_count_run[None]),
@@ -827,7 +872,21 @@ class LBMFluid3D:
             "mass_neutral_projection_report_only": bool(
                 self.open_boundary_mass_neutral_flux_control_mode == "outlet_population_projection_report_only"
             ),
-            "mass_neutral_runtime_behavior_active": False,
+            "mass_neutral_runtime_behavior_active": mass_neutral_runtime_active,
+            "mass_neutral_mass_current": float(self.ob_mass_neutral_mass_current[None]),
+            "mass_neutral_mass_initial_reference": float(self.ob_mass_neutral_mass_initial_reference[None]),
+            "mass_neutral_mass_error": float(self.ob_mass_neutral_mass_error[None]),
+            "mass_neutral_rho_feedback": mass_neutral_feedback,
+            "mass_neutral_rho_feedback_abs": abs(mass_neutral_feedback),
+            "mass_neutral_feedback_saturation_count_step": int(
+                self.ob_mass_neutral_feedback_saturation_count_step[None]
+            ),
+            "mass_neutral_feedback_saturation_count_run": mass_neutral_saturations,
+            "mass_neutral_feedback_update_count_step": int(self.ob_mass_neutral_feedback_update_count_step[None]),
+            "mass_neutral_feedback_update_count_run": mass_neutral_updates,
+            "mass_neutral_feedback_saturation_fraction_run": float(
+                mass_neutral_saturations / mass_neutral_updates if mass_neutral_updates else 0.0
+            ),
             "near_outlet_flux_xminus1": float(self.ob_near_outlet_flux_xminus1[None]),
             "near_outlet_flux_xminus2": float(self.ob_near_outlet_flux_xminus2[None]),
             "near_outlet_flux_xminus3": float(self.ob_near_outlet_flux_xminus3[None]),
@@ -1163,6 +1222,39 @@ class LBMFluid3D:
         self.ob_flux_control_u_feedback[None] = next_feedback
         requested_rho_feedback = self.open_boundary_flux_feedback_gain_rho * filtered / area
         self.ob_flux_control_rho_feedback[None] = self._bounded_scalar(requested_rho_feedback, 0.01)
+        if ti.static(
+            self.open_boundary_mass_neutral_flux_control_enabled
+            and self.open_boundary_mass_neutral_flux_control_mode == "global_mass_error_density_offset"
+        ):
+            self.ob_mass_neutral_mass_current[None] = 0.0
+            for i, j, k in ti.ndrange((0, self.nx), (0, self.ny), (0, self.nz)):
+                if self.solid[i, j, k] == 0:
+                    ti.atomic_add(self.ob_mass_neutral_mass_current[None], self.rho[i, j, k])
+            if self.ob_mass_neutral_initialized[None] == 0:
+                reference = self.ob_mass_neutral_mass_current[None]
+                if ti.abs(reference) <= 1.0e-12:
+                    reference = 1.0
+                self.ob_mass_neutral_mass_initial_reference[None] = reference
+                self.ob_mass_neutral_initialized[None] = 1
+            reference = self.ob_mass_neutral_mass_initial_reference[None]
+            if ti.abs(reference) <= 1.0e-12:
+                reference = 1.0
+                self.ob_mass_neutral_mass_initial_reference[None] = reference
+            mass_error = (self.ob_mass_neutral_mass_current[None] - reference) / reference
+            raw_mass_feedback = -self.open_boundary_mass_neutral_mass_error_gain * mass_error
+            bounded_mass_feedback = self._bounded_scalar(
+                raw_mass_feedback,
+                self.open_boundary_mass_neutral_mass_error_cap,
+            )
+            self.ob_mass_neutral_mass_error[None] = mass_error
+            self.ob_mass_neutral_rho_feedback[None] = (
+                self.open_boundary_mass_neutral_correction_blend * bounded_mass_feedback
+            )
+            self.ob_mass_neutral_feedback_update_count_step[None] = 1
+            ti.atomic_add(self.ob_mass_neutral_feedback_update_count_run[None], 1)
+            if ti.abs(raw_mass_feedback - bounded_mass_feedback) > 1.0e-12:
+                self.ob_mass_neutral_feedback_saturation_count_step[None] = 1
+                ti.atomic_add(self.ob_mass_neutral_feedback_saturation_count_run[None], 1)
         self.ob_flow_correction_gain_effective_step[None] = self.open_boundary_flux_feedback_gain_u
         self.ob_flux_control_update_count_step[None] = 1
         ti.atomic_add(self.ob_flux_control_update_count_run[None], 1)
@@ -1226,13 +1318,20 @@ class LBMFluid3D:
     @ti.func
     def _regularized_plane_flux_controlled_population(self, s, target_rho, target_u, ni, nj, nk):
         rho_feedback = self.ob_flux_control_rho_feedback[None]
+        mass_neutral_rho_feedback = 0.0
+        if ti.static(
+            self.open_boundary_semantics == REGULARIZED_PLANE_FLUX_CONTROLLED_PRESSURE_OUTLET
+            and self.open_boundary_mass_neutral_flux_control_enabled
+            and self.open_boundary_mass_neutral_flux_control_mode == "global_mass_error_density_offset"
+        ):
+            mass_neutral_rho_feedback = self.ob_mass_neutral_rho_feedback[None]
         velocity_feedback = self.ob_flux_control_u_feedback[None]
         repaired_u = target_u
         repaired_u[0] = target_u[0] + velocity_feedback
-        repaired_rho = target_rho + rho_feedback
+        repaired_rho = target_rho + rho_feedback + mass_neutral_rho_feedback
         before = self._regularized_population(s, target_rho, target_u, ni, nj, nk)
         after = self._regularized_population(s, repaired_rho, repaired_u, ni, nj, nk)
-        correction_abs = ti.abs(rho_feedback) + ti.abs(velocity_feedback)
+        correction_abs = ti.abs(rho_feedback) + ti.abs(mass_neutral_rho_feedback) + ti.abs(velocity_feedback)
         self._record_open_boundary_plane_flux_correction(correction_abs, ti.abs(after - before))
         return self._limit_open_boundary_population(after)
 

@@ -1,0 +1,54 @@
+{
+  "allowed_final_classifications": [
+    "boundary_repair_failed_revisit_lbm_solver",
+    "boundary_repair_partial_continue_lbm",
+    "boundary_repair_success_go_to_quasi2d"
+  ],
+  "best_boundary_selected": false,
+  "campaign_state": "awaiting_48_references",
+  "failed_selected_rows": [],
+  "figure_29_3_parity_claim_allowed": false,
+  "final_classification": "boundary_repair_partial_continue_lbm",
+  "fluent_validation_claim_allowed": false,
+  "full_fsi_validation_claim_allowed": false,
+  "global_limiter_gate_not_used_for_final_classification": true,
+  "global_limiter_gate_would_block_if_used": false,
+  "missing_selected_rows": [],
+  "no_fluent_claim": true,
+  "no_fsi_claim": true,
+  "quasi2d_allowed": false,
+  "required_selected_rows": [],
+  "selected_96_flow_development_gate": {
+    "duct_pass": false,
+    "duct_reasons": [
+      "not_selected"
+    ],
+    "flux_imbalance_rel_tail_max": null,
+    "midplane_to_inlet_flux_ratio_tail_mean": null,
+    "outlet_flux_min": 1e-12,
+    "outlet_flux_tail_cv": null,
+    "outlet_flux_tail_mean": null,
+    "outlet_to_inlet_flux_ratio_tail_mean": null,
+    "static_pass": false,
+    "static_reasons": [
+      "not_selected"
+    ]
+  },
+  "selected_boundary_semantics": null,
+  "selected_boundary_slug": null,
+  "selected_chain_limiter_gate_pass": true,
+  "selected_chain_limiter_summary": {
+    "blocked_row_names": [],
+    "limiter_activation_fraction_limit": 0.05,
+    "max_limiter_activation_fraction": 0.0,
+    "row_count": 0,
+    "selected_chain_limiter_gate_pass": true
+  },
+  "selected_chain_row_names": [],
+  "source_step120_schema_version": 1,
+  "static_two_flap_rows_are_lbm_only": true,
+  "step": 121,
+  "step121_quasi2d_allowed": false,
+  "step121_schema_version": 1,
+  "validation_claim_allowed": false
+}

@@ -106,6 +106,18 @@ no Step143 direct approval of selected96
 no Step143 direct approval of validation
 ```
 
+Required report wording:
+
+```text
+Step143 did not run selected96
+Step143 did not run selected-static
+Step143 did not run 96^3
+Step143 did not run a 500-step row
+Step143 did not run Fluent
+Step143 did not run FSI
+Step143 does not make a validation claim
+```
+
 ## Activated Identity Requirement
 
 Step142 intentionally kept the new mass-neutral fields out of

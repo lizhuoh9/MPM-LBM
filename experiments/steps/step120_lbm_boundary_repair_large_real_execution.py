@@ -155,6 +155,7 @@ DEFAULT_MASS_NEUTRAL_SPEC_VALUES = {
     "open_boundary_mass_neutral_correction_blend": 0.0,
     "open_boundary_mass_neutral_reference_mass_mode": "initial",
 }
+MASS_NEUTRAL_ACTIVATION_FIELDS = tuple(DEFAULT_MASS_NEUTRAL_SPEC_VALUES)
 
 
 @dataclass(frozen=True)
@@ -184,6 +185,10 @@ class Step120RunSpec(Step119RunSpec):
     source_step140_summary_path: Optional[str] = None
     source_step140_dominant_failure_mechanism: Optional[str] = None
     source_step140_mass_drift_mechanism: Optional[str] = None
+    source_step142_readiness_hash: Optional[str] = None
+    source_step142_readiness_path: Optional[str] = None
+    source_step142_status: Optional[str] = None
+    source_step142_recommended_design: Optional[str] = None
     open_boundary_inlet_ramp_steps: int = 0
     open_boundary_inlet_ramp_profile: str = "linear"
     open_boundary_flux_control_target_scale: float = 1.0
@@ -864,6 +869,7 @@ def summarize_step120_limiter_activation(stats_or_lbm: Any, spec: Step120RunSpec
         "controller_drop_guard_activation_fraction_run": _finite_float(
             stats.get("controller_drop_guard_activation_fraction_run", 0.0) or 0.0
         ),
+        **_mass_neutral_runtime_fields(stats, spec),
         "validation_blocked_by_limiter_activation": bool(activation_fraction > fraction_limit),
         "validation_claim_allowed": False,
     }
@@ -1593,6 +1599,8 @@ def _summary_row(
         "open_boundary_mass_neutral_reference_mass_mode": str(
             spec.open_boundary_mass_neutral_reference_mass_mode
         ),
+        "mass_neutral_activation_hash": mass_neutral_activation_hash_for_spec(spec),
+        **_mass_neutral_runtime_fields(limiter_summary, spec),
         "step142_mass_neutral_plane_flux_design_surface": True,
         "inlet_u_lbm": float(spec.inlet_u_lbm),
         "outlet_rho": float(spec.outlet_rho),
@@ -1621,6 +1629,7 @@ def _summary_row(
         "source_step140_summary_path": spec.source_step140_summary_path,
         "source_step140_dominant_failure_mechanism": spec.source_step140_dominant_failure_mechanism,
         "source_step140_mass_drift_mechanism": spec.source_step140_mass_drift_mechanism,
+        **_source_step142_fields(spec),
         "requested_nx": spec.requested_grid(),
         "executed_nx": int(spec.nx),
         "requested_n_steps": spec.requested_steps(),
@@ -1672,6 +1681,9 @@ def _summary_row(
         ),
         "step141_density_feedback_isolation_candidate": bool(
             spec.row_role == "density_feedback_isolation_diagnostic_48" and "Step141" in str(spec.artifact_scope_note)
+        ),
+        "step143_mass_neutral_design_candidate": bool(
+            spec.row_role == "mass_neutral_design_diagnostic_48" and "Step143" in str(spec.artifact_scope_note)
         ),
         "selected96_claim_allowed": False,
         "mass_total_delta_rel_final": mass_total_delta_rel_final,
@@ -1748,6 +1760,8 @@ def _metadata(
         "open_boundary_mass_neutral_reference_mass_mode": str(
             spec.open_boundary_mass_neutral_reference_mass_mode
         ),
+        "mass_neutral_activation_hash": mass_neutral_activation_hash_for_spec(spec),
+        **_mass_neutral_runtime_fields({}, spec),
         "step142_mass_neutral_plane_flux_design_surface": True,
         "step130_flow_repair_triage": bool(spec.row_role == "flow_repair_candidate_48"),
         "step135_interior_reflection_candidate": bool(
@@ -1764,6 +1778,12 @@ def _metadata(
         ),
         "step139_planeflux_final48_candidate": bool(
             spec.row_role == "final_evidence_candidate_48" and "Step139" in str(spec.artifact_scope_note)
+        ),
+        "step141_density_feedback_isolation_candidate": bool(
+            spec.row_role == "density_feedback_isolation_diagnostic_48" and "Step141" in str(spec.artifact_scope_note)
+        ),
+        "step143_mass_neutral_design_candidate": bool(
+            spec.row_role == "mass_neutral_design_diagnostic_48" and "Step143" in str(spec.artifact_scope_note)
         ),
         "step120_schema_version": STEP120_SCHEMA_VERSION,
         "synthetic_diagnostic_mode": False,
@@ -1795,6 +1815,7 @@ def _metadata(
         "source_step140_summary_path": spec.source_step140_summary_path,
         "source_step140_dominant_failure_mechanism": spec.source_step140_dominant_failure_mechanism,
         "source_step140_mass_drift_mechanism": spec.source_step140_mass_drift_mechanism,
+        **_source_step142_fields(spec),
         "checkpoint_runtime_artifact_committed": False,
         "restored_checkpoint": restored_checkpoint,
         "stop_on_first_failure": bool(spec.stop_on_first_failure),
@@ -1838,6 +1859,9 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         "step141_density_feedback_isolation_candidate": bool(
             spec.row_role == "density_feedback_isolation_diagnostic_48" and "Step141" in str(spec.artifact_scope_note)
         ),
+        "step143_mass_neutral_design_candidate": bool(
+            spec.row_role == "mass_neutral_design_diagnostic_48" and "Step143" in str(spec.artifact_scope_note)
+        ),
         "source_step": spec.source_step,
         "source_row_name": spec.source_row_name,
         "source_solver_state_hash": spec.source_solver_state_hash,
@@ -1851,6 +1875,7 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         "source_step140_summary_path": spec.source_step140_summary_path,
         "source_step140_dominant_failure_mechanism": spec.source_step140_dominant_failure_mechanism,
         "source_step140_mass_drift_mechanism": spec.source_step140_mass_drift_mechanism,
+        **_source_step142_fields(spec),
         "all_population_equilibrium_reset_used": spec.open_boundary_semantics == "equilibrium_all_population_reset",
         "open_boundary_limiter_enabled": bool(spec.open_boundary_limiter_enabled),
         "open_boundary_rho_min": float(spec.open_boundary_rho_min),
@@ -1881,7 +1906,8 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         "open_boundary_mass_neutral_reference_mass_mode": str(
             spec.open_boundary_mass_neutral_reference_mass_mode
         ),
-        "mass_neutral_runtime_behavior_active": False,
+        "mass_neutral_activation_hash": mass_neutral_activation_hash_for_spec(spec),
+        **_mass_neutral_runtime_fields({}, spec),
         "mass_neutral_projection_report_only": bool(
             spec.open_boundary_mass_neutral_flux_control_mode == "outlet_population_projection_report_only"
         ),
@@ -2058,10 +2084,14 @@ def _flow_development_diagnostic_record(
     step141_density_feedback_isolation_candidate = bool(
         spec.row_role == "density_feedback_isolation_diagnostic_48" and "Step141" in str(spec.artifact_scope_note)
     )
+    step143_mass_neutral_design_candidate = bool(
+        spec.row_role == "mass_neutral_design_diagnostic_48" and "Step143" in str(spec.artifact_scope_note)
+    )
     step132_authority_sweep_candidate = bool(
         spec.row_role == "plane_flux_control_candidate_48" and "Step132" in str(spec.artifact_scope_note)
     )
     sample_step = int(record.get("step", 0) or 0)
+    mass_neutral_runtime = _mass_neutral_runtime_fields(stats, spec)
     return {
         "step": sample_step,
         "lbm_open_boundary_semantics": spec.open_boundary_semantics,
@@ -2072,6 +2102,7 @@ def _flow_development_diagnostic_record(
         "step138_high_authority_outlet_candidate": step138_high_authority_outlet_candidate,
         "step139_planeflux_final48_candidate": step139_planeflux_final48_candidate,
         "step141_density_feedback_isolation_candidate": step141_density_feedback_isolation_candidate,
+        "step143_mass_neutral_design_candidate": step143_mass_neutral_design_candidate,
         "step134_outlet_stationarity_candidate": step134_outlet_stationarity_candidate,
         "step133_mass_damped_candidate": step133_mass_damped_candidate,
         "step132_authority_sweep_candidate": step132_authority_sweep_candidate,
@@ -2128,6 +2159,7 @@ def _flow_development_diagnostic_record(
         "controller_true_outlet_flux_for_guard": _finite_float(
             stats.get("controller_true_outlet_flux_for_guard", outlet_flux_after_correction)
         ),
+        **mass_neutral_runtime,
         "outlet_plane_ux_min": _finite_float(record.get("outlet_plane_ux_min", 0.0)),
         "outlet_plane_ux_max": _finite_float(record.get("outlet_plane_ux_max", 0.0)),
         "outlet_plane_ux_mean": _finite_float(record.get("outlet_plane_ux_mean", 0.0)),
@@ -2164,6 +2196,7 @@ def _flow_development_diagnostic_record(
         "source_step140_summary_path": spec.source_step140_summary_path,
         "source_step140_dominant_failure_mechanism": spec.source_step140_dominant_failure_mechanism,
         "source_step140_mass_drift_mechanism": spec.source_step140_mass_drift_mechanism,
+        **_source_step142_fields(spec),
         "mass_total_delta_rel": _finite_float(record.get("mass_total_delta_rel", 0.0)),
         "validation_claim_allowed": False,
         "selected96_claim_allowed": False,
@@ -2191,6 +2224,8 @@ def _write_flow_development_diagnostics(row_path: Path, records: Sequence[Dict[s
 
 
 def _flow_development_diagnostic_step_number(diagnostics: Sequence[Dict[str, Any]]) -> int:
+    if any(row.get("step143_mass_neutral_design_candidate") is True for row in diagnostics):
+        return 143
     if any(row.get("step141_density_feedback_isolation_candidate") is True for row in diagnostics):
         return 141
     if any(row.get("step139_planeflux_final48_candidate") is True for row in diagnostics):
@@ -2433,6 +2468,10 @@ def _flow_development_tail_summary(diagnostics: Sequence[Dict[str, Any]]) -> Dic
     near_outlet_to_outlet = _diagnostic_numeric_values(tail, "near_outlet_to_outlet_flux_ratio")
     drop_guard_active = _diagnostic_numeric_values(tail, "controller_drop_guard_active_step")
     drop_guard_fraction = _diagnostic_numeric_values(tail, "controller_drop_guard_activation_fraction_run")
+    mass_neutral_rho_feedback = _diagnostic_numeric_values(tail, "mass_neutral_rho_feedback")
+    mass_neutral_rho_feedback_abs = _diagnostic_numeric_values(tail, "mass_neutral_rho_feedback_abs")
+    mass_neutral_mass_error = _diagnostic_numeric_values(tail, "mass_neutral_mass_error")
+    mass_neutral_saturation = _diagnostic_numeric_values(tail, "mass_neutral_feedback_saturation_fraction_run")
     x_profile_summary = _flow_development_x_profile_tail_summary(tail)
     return {
         "controller_tail_record_count": int(len(tail)),
@@ -2460,6 +2499,10 @@ def _flow_development_tail_summary(diagnostics: Sequence[Dict[str, Any]]) -> Dic
         "controller_saturation_fraction_tail": _diagnostic_mean(saturation),
         "drop_guard_activation_count_tail": int(_diagnostic_sum(drop_guard_active) or 0),
         "drop_guard_activation_fraction_tail": _diagnostic_mean(drop_guard_fraction),
+        "mass_neutral_rho_feedback_tail_mean": _diagnostic_mean(mass_neutral_rho_feedback),
+        "mass_neutral_rho_feedback_abs_tail_mean": _diagnostic_mean(mass_neutral_rho_feedback_abs),
+        "mass_neutral_mass_error_tail_mean": _diagnostic_mean(mass_neutral_mass_error),
+        "mass_neutral_feedback_saturation_fraction_tail": _diagnostic_mean(mass_neutral_saturation),
         "controller_raw_flux_error_tail_mean": _diagnostic_mean(raw_error),
         "controller_filtered_flux_error_tail_mean": _diagnostic_mean(filtered_error),
         "controller_target_outlet_flux_tail_mean": _diagnostic_mean(target_flux),
@@ -2848,11 +2891,24 @@ def run_manifest_hash_for_spec(spec: Step120RunSpec) -> str:
         "source_step140_summary_path",
         "source_step140_dominant_failure_mechanism",
         "source_step140_mass_drift_mechanism",
+        "source_step142_readiness_hash",
+        "source_step142_readiness_path",
+        "source_step142_status",
+        "source_step142_recommended_design",
     ]:
         if data.get(key) is None:
             data.pop(key, None)
     _drop_default_mass_neutral_spec_values(data)
     return _hash_spec_mapping(data)
+
+
+def mass_neutral_activation_payload_for_spec(spec: Step120RunSpec) -> Dict[str, Any]:
+    data = asdict(spec)
+    return {field: data.get(field) for field in MASS_NEUTRAL_ACTIVATION_FIELDS}
+
+
+def mass_neutral_activation_hash_for_spec(spec: Step120RunSpec) -> str:
+    return _hash_spec_mapping(mass_neutral_activation_payload_for_spec(spec))
 
 
 def _config_hash(spec: Step120RunSpec) -> str:
@@ -2883,6 +2939,62 @@ def _drop_default_mass_neutral_spec_values(data: Dict[str, Any]) -> None:
 
 def _hash_spec_mapping(mapping: Dict[str, Any]) -> str:
     return sha256(json.dumps(mapping, sort_keys=True, default=str).encode("utf-8")).hexdigest()
+
+
+def _mass_neutral_runtime_fields(stats: Dict[str, Any], spec: Step120RunSpec | Dict[str, Any]) -> Dict[str, Any]:
+    updates = int(stats.get("mass_neutral_feedback_update_count_run", 0) or 0)
+    saturations = int(stats.get("mass_neutral_feedback_saturation_count_run", 0) or 0)
+    configured_active = bool(
+        _spec_value(spec, "open_boundary_mass_neutral_flux_control_enabled", False)
+        and _spec_value(spec, "open_boundary_mass_neutral_flux_control_mode", "disabled")
+        == "global_mass_error_density_offset"
+    )
+    return {
+        "mass_neutral_runtime_behavior_active": bool(
+            stats.get("mass_neutral_runtime_behavior_active", configured_active)
+        ),
+        "mass_neutral_mass_current": _finite_float(stats.get("mass_neutral_mass_current", 0.0) or 0.0),
+        "mass_neutral_mass_initial_reference": _finite_float(
+            stats.get("mass_neutral_mass_initial_reference", 0.0) or 0.0
+        ),
+        "mass_neutral_mass_error": _finite_float(stats.get("mass_neutral_mass_error", 0.0) or 0.0),
+        "mass_neutral_rho_feedback": _finite_float(stats.get("mass_neutral_rho_feedback", 0.0) or 0.0),
+        "mass_neutral_rho_feedback_abs": _finite_float(
+            stats.get("mass_neutral_rho_feedback_abs", abs(float(stats.get("mass_neutral_rho_feedback", 0.0) or 0.0)))
+        ),
+        "mass_neutral_feedback_saturation_count_step": int(
+            stats.get("mass_neutral_feedback_saturation_count_step", 0) or 0
+        ),
+        "mass_neutral_feedback_saturation_count_run": saturations,
+        "mass_neutral_feedback_update_count_step": int(
+            stats.get("mass_neutral_feedback_update_count_step", 0) or 0
+        ),
+        "mass_neutral_feedback_update_count_run": updates,
+        "mass_neutral_feedback_saturation_fraction_run": _finite_float(
+            stats.get(
+                "mass_neutral_feedback_saturation_fraction_run",
+                saturations / updates if updates else 0.0,
+            )
+            or 0.0
+        ),
+        "mass_neutral_activation_hash": str(
+            stats.get("mass_neutral_activation_hash")
+            or (
+                mass_neutral_activation_hash_for_spec(spec)
+                if isinstance(spec, Step120RunSpec)
+                else _hash_spec_mapping({field: _spec_value(spec, field, None) for field in MASS_NEUTRAL_ACTIVATION_FIELDS})
+            )
+        ),
+    }
+
+
+def _source_step142_fields(spec: Step120RunSpec) -> Dict[str, Any]:
+    return {
+        "source_step142_readiness_hash": spec.source_step142_readiness_hash,
+        "source_step142_readiness_path": spec.source_step142_readiness_path,
+        "source_step142_status": spec.source_step142_status,
+        "source_step142_recommended_design": spec.source_step142_recommended_design,
+    }
 
 
 def _flow_development_gate_pass(
@@ -2990,6 +3102,11 @@ _RUN_SUMMARY_FIELDS = [
     "midplane_to_inlet_flux_ratio_tail_mean",
     "flow_development_gate_pass",
     "mass_total_delta_rel_final",
+    "mass_neutral_activation_hash",
+    "mass_neutral_runtime_behavior_active",
+    "mass_neutral_mass_error",
+    "mass_neutral_rho_feedback",
+    "mass_neutral_feedback_saturation_fraction_run",
     "limiter_activation_count",
     "limiter_activation_fraction",
     "checkpoint_available",
@@ -3006,6 +3123,7 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "step138_high_authority_outlet_candidate",
     "step139_planeflux_final48_candidate",
     "step141_density_feedback_isolation_candidate",
+    "step143_mass_neutral_design_candidate",
     "step134_outlet_stationarity_candidate",
     "step133_mass_damped_candidate",
     "step132_authority_sweep_candidate",
@@ -3046,6 +3164,18 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "controller_drop_guard_activation_fraction_run",
     "controller_drop_guard_reference_flux",
     "controller_true_outlet_flux_for_guard",
+    "mass_neutral_runtime_behavior_active",
+    "mass_neutral_mass_current",
+    "mass_neutral_mass_initial_reference",
+    "mass_neutral_mass_error",
+    "mass_neutral_rho_feedback",
+    "mass_neutral_rho_feedback_abs",
+    "mass_neutral_feedback_saturation_count_step",
+    "mass_neutral_feedback_saturation_count_run",
+    "mass_neutral_feedback_update_count_step",
+    "mass_neutral_feedback_update_count_run",
+    "mass_neutral_feedback_saturation_fraction_run",
+    "mass_neutral_activation_hash",
     "outlet_plane_ux_min",
     "outlet_plane_ux_max",
     "outlet_plane_ux_mean",
@@ -3074,6 +3204,10 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "source_step140_summary_path",
     "source_step140_dominant_failure_mechanism",
     "source_step140_mass_drift_mechanism",
+    "source_step142_readiness_hash",
+    "source_step142_readiness_path",
+    "source_step142_status",
+    "source_step142_recommended_design",
     "mass_total_delta_rel",
     "validation_claim_allowed",
     "selected96_claim_allowed",

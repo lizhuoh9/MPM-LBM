@@ -165,12 +165,7 @@ def test_fluid_mass_neutral_surface_is_report_only_for_step142():
     assert "open_boundary_mass_neutral_flux_control_enabled" in source
     assert "mass_neutral_runtime_behavior_active" in source
     assert "mass_neutral_projection_report_only" in source
-
-    population_start = source.index("def _regularized_plane_flux_controlled_population")
-    population_end = source.index("def _convective_plane_flux_controlled_damped_population", population_start)
-    population_block = source[population_start:population_end]
-    assert "open_boundary_mass_neutral_mass_error_gain" not in population_block
-    assert "open_boundary_mass_neutral_mass_error_cap" not in population_block
+    assert "global_mass_error_density_offset" in source
 
 
 def test_step121_does_not_expose_step142_real_run_phase():
@@ -181,9 +176,7 @@ def test_step121_does_not_expose_step142_real_run_phase():
 
     source = STEP121_DRIVER.read_text(encoding="utf-8")
     forbidden_phases = [
-        "planeflux_mass_neutral_design48",
         "step142_mass_neutral48",
-        "mass_neutral_design_diagnostic_48",
     ]
     for forbidden in forbidden_phases:
         assert forbidden not in source

@@ -3,6 +3,38 @@
 The campaign cannot claim selected 96^3, quasi-2D, FSI, Fluent validation, or
 Figure 29.3 parity from the current 48^3 LBM-only candidate artifacts.
 
+Current Step143 mass-neutral design diagnostic surface and evidence:
+
+- Step143 adds the distinct `planeflux_mass_neutral_design48` phase with four
+  real `48^3 / 250-step` LBM-only diagnostic rows.
+- Step143 row role is `mass_neutral_design_diagnostic_48`; this role is not in
+  the selected chain and `regularized_plane_flux_controlled_pressure_outlet`
+  remains outside selected-candidate semantics.
+- Step143 did not run selected96.
+- Step143 did not run selected-static.
+- Step143 did not run 96^3.
+- Step143 did not run a 500-step row.
+- Step143 did not run Fluent.
+- Step143 did not run FSI.
+- Step143 does not make a validation claim.
+- All four rows completed 250/250, stayed finite, had no first-failure event,
+  and retained `selected96_claim_allowed = false` and
+  `validation_claim_allowed = false`.
+- The disabled baseline ended with
+  `candidate_mass_acceptance_observed_abs = 0.003974863988826804`,
+  `outlet_flux_tail_cv = 0.09651149130583905`, and
+  `flux_imbalance_rel_tail_mean = 0.08826485542410979`.
+- The best enabled row used mass-neutral `gain = 0.50`, `cap = 0.00100`, and
+  `blend = 1.0`; it ended with
+  `candidate_mass_acceptance_observed_abs = 0.0031636249081530357`,
+  `outlet_flux_tail_cv = 0.09161249772040454`, and
+  `flux_imbalance_rel_tail_mean = 0.08579940196467845`.
+- Step143 audit decision:
+  `mass_neutral_design_supports_step144_single_500step_probe`.
+- Step143 permits only a later Step144 proposal for one `48^3 / 500-step`
+  final-evidence probe at the exact best Step143 setting. Selected 96^3
+  execution remains blocked.
+
 Current Step127 outcome:
 
 - Legacy 48^3 reference passed the flow-development gate.
