@@ -6,19 +6,19 @@ Current status: engineering prototype.
 
 Current campaign entry point: `docs/current/STATUS.md`.
 
-Current LBM boundary campaign note: Step147 ran exactly four 48^3 / 250-step
-LBM-only rows under `planeflux_saturation_stationarity48` from the Step146
-readiness artifact. Step147 did not run selected96. Step147 did not run
-selected-static. Step147 did not run 96^3. Step147 did not run a 500-step row.
-Step147 did not run Fluent. Step147 did not run FSI. Step147 does not make a
-validation claim. `origin/main = 54afab0c6b4bdae05fa08f50f274e8d2f557e1d9`
-is the checked Step146 source ref. The Step147 audit decision is
-`relief_design_unstable`: relief rows improved short-window mass/flow metrics
-but all three relief rows reported compact x-profile collapse at x=24, step
-240. Step148, selected-candidate review, selected96, selected-static, 96^3,
-Fluent, FSI, and validation claim remain blocked.
+Current Fluent official-case reproduction note: Step152 is the active targeted
+solver-fix apply gate after Step151. It reads the Step151 report and fix plan
+before allowing any solver patch. In this checkout
+`benchmarks/private/fluent_fsi_2way/outputs/official_monitor.csv` is absent, so
+Step150 remains `missing_official_monitor`, Step151 remains
+`blocked_by_missing_error_localization`, and Step152 reports
+`blocked_by_missing_targeted_fix_plan`. Step152 did not modify solver runtime
+code, did not apply a targeted fix, did not rerun post-fix Step148 or Step150,
+did not run selected96, and does not make a validation claim. Private official
+monitor data belongs under the ignored `benchmarks/private/` path and must not
+be committed.
 
-Step147 bounded-state phrases: Step147 ran exactly four 48^3 / 250-step LBM-only rows; Step147 did not run selected96; Step147 did not run selected-static; Step147 did not run 96^3; Step147 did not run a 500-step row; Step147 did not run Fluent; Step147 did not run FSI; Step147 does not make a validation claim; origin/main = 54afab0c6b4bdae05fa08f50f274e8d2f557e1d9.
+Step152 bounded-state phrases: Step152 reports `blocked_by_missing_targeted_fix_plan`; Step152 did not modify solver runtime code; Step152 did not apply a targeted fix; Step152 did not rerun post-fix Step148; Step152 did not rerun post-fix Step150; Step152 did not run selected96; Step152 does not make a validation claim; private official monitor data is absent and must not be committed.
 
 This repository is a small-scale engineering prototype for comparing MPM-LBM coupling paths. It is not production ready and should not be described as a completed sharp-interface FSI solver or a real squid simulation.
 

@@ -7,18 +7,23 @@ error-localization state:
 2. `docs/current/ACTIVE_CAMPAIGN.json`
 3. `docs/current/VALIDATION_GATES.md`
 4. `docs/current/READING_ORDER.md`
-5. `docs/campaigns/fluent_duct_flap/steps/151/goal.md`
-6. `docs/campaigns/fluent_duct_flap/steps/151/report.md`
-7. `outputs/step151_targeted_solver_fix/step151_fix_report.json`
-8. `outputs/step151_targeted_solver_fix/step151_fix_plan.json`
-9. `outputs/step151_targeted_solver_fix/error_delta_report.json`
-10. `docs/campaigns/fluent_duct_flap/steps/150/goal.md`
-11. `docs/campaigns/fluent_duct_flap/steps/150/report.md`
-12. `outputs/step150_official_monitor_error_localization/step150_decision_summary.json`
-13. `outputs/step150_official_monitor_error_localization/error_localization_summary.json`
-14. `outputs/step150_official_monitor_error_localization/official_monitor_intake_summary.json`
-15. `outputs/step150_official_monitor_error_localization/official_monitor_schema_report.json`
-16. `outputs/step150_official_monitor_error_localization/official_monitor_private_hash_report.json`
+5. `docs/campaigns/fluent_duct_flap/steps/152/goal.md`
+6. `docs/campaigns/fluent_duct_flap/steps/152/report.md`
+7. `outputs/step152_apply_targeted_solver_fix/step152_apply_summary.json`
+8. `outputs/step152_apply_targeted_solver_fix/step152_patch_plan.json`
+9. `outputs/step152_apply_targeted_solver_fix/error_delta_report.json`
+10. `docs/campaigns/fluent_duct_flap/steps/151/goal.md`
+11. `docs/campaigns/fluent_duct_flap/steps/151/report.md`
+12. `outputs/step151_targeted_solver_fix/step151_fix_report.json`
+13. `outputs/step151_targeted_solver_fix/step151_fix_plan.json`
+14. `outputs/step151_targeted_solver_fix/error_delta_report.json`
+15. `docs/campaigns/fluent_duct_flap/steps/150/goal.md`
+16. `docs/campaigns/fluent_duct_flap/steps/150/report.md`
+17. `outputs/step150_official_monitor_error_localization/step150_decision_summary.json`
+18. `outputs/step150_official_monitor_error_localization/error_localization_summary.json`
+19. `outputs/step150_official_monitor_error_localization/official_monitor_intake_summary.json`
+20. `outputs/step150_official_monitor_error_localization/official_monitor_schema_report.json`
+21. `outputs/step150_official_monitor_error_localization/official_monitor_private_hash_report.json`
 17. `docs/campaigns/fluent_duct_flap/steps/149/goal.md`
 18. `docs/campaigns/fluent_duct_flap/steps/149/report.md`
 19. `outputs/step149_fluent_official_vs_our_solver_error_localization/error_localization_summary.json`
@@ -77,11 +82,14 @@ official monitor intake and comparison wrapper: it loaded the Step148 solver
 monitor but stopped at `missing_official_monitor` because
 `benchmarks/private/fluent_fsi_2way/outputs/official_monitor.csv` is not present
 in this checkout. It did not fabricate error metrics or bug hypotheses, and it
-does not identify a Step151 code-fix target. Step151 is the active targeted-fix
+does not identify a Step151 code-fix target. Step151 is the targeted-fix plan
 gate: it reads Step150 outputs and currently reports
 `blocked_by_missing_error_localization`, with no solver code modified and no
-post-fix Step148/Step150 rerun. Step149 remains the reusable comparison logic
-under the Step150 wrapper.
+post-fix Step148/Step150 rerun. Step152 is the current apply gate: it reads the
+Step151 report/plan and currently reports
+`blocked_by_missing_targeted_fix_plan`, with no solver code modified, no patch
+implementation present, no post-fix Step148/Step150 rerun, and no validation
+claim. Step149 remains the reusable comparison logic under the Step150 wrapper.
 
 Older Step102-Step126 documents remain useful history, but they are not the
 current entry point for deciding whether the campaign may advance to selected

@@ -33,6 +33,19 @@ any solver patch. In the current checkout Step150 is still
 coupling, geometry, monitor extraction, or runtime solver formulas in this
 state.
 
+Step152 is now the current targeted solver-fix apply gate after Step151. It
+reads `outputs/step151_targeted_solver_fix/step151_fix_report.json` and
+`outputs/step151_targeted_solver_fix/step151_fix_plan.json` before allowing any
+real solver patch. In the current checkout Step151 is still
+`blocked_by_missing_error_localization`, so Step152 reports
+`blocked_by_missing_targeted_fix_plan`: `solver_code_modified = false`,
+`targeted_fix_applied = false`, `patch_implementation_present = false`,
+`post_fix_step148_run_executed = false`,
+`post_fix_step150_comparison_executed = false`, and
+`primary_metric_improved = false`. Step152 does not change MPM, LBM, FSI
+coupling, geometry, monitor extraction, or runtime solver formulas while
+Step151 lacks a real targeted fix plan.
+
 The previous LBM outlet-controller repair line remains selected-boundary
 blocked. Step147 ran exactly four 48^3 / 250-step LBM-only rows under
 `planeflux_saturation_stationarity48` from the Step146 readiness artifact.
@@ -74,7 +87,7 @@ diagnostic proposal. Step146 did not run a new LBM row, did not run selected96,
 selected-static, 96^3, Fluent, or FSI, did not run a 500-step probe, and does
 not make a validation claim.
 Current campaign state:
-`targeted_solver_fix_blocked_missing_error_localization`.
+`step152_blocked_missing_targeted_fix_plan`.
 
 Step146 artifacts are under
 `outputs/step146_coupled_saturation_stationarity_design`. The design readiness

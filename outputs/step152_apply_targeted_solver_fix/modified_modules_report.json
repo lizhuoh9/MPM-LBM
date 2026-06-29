@@ -1,0 +1,13 @@
+{
+  "modified_modules": [],
+  "new_tests_added": false,
+  "reason": "No Step152 category-specific solver patch has been applied",
+  "selected96_execution_allowed": false,
+  "solver_code_modified": false,
+  "source_step151_status": "blocked_by_missing_error_localization",
+  "source_top_bug_category": null,
+  "status": "not_modified",
+  "step": 152,
+  "targeted_fix_applied": false,
+  "validation_claim_allowed": false
+}

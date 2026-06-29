@@ -1,0 +1,23 @@
+{
+  "actions": [],
+  "blocked_reasons": [
+    "source_step151_status=blocked_by_missing_error_localization",
+    "source_step151_plan_status=blocked_by_missing_error_localization",
+    "source_step150_status=missing_official_monitor",
+    "source_top_bug_category_missing",
+    "requires_solver_patch=false",
+    "step150_error_metrics_present=false",
+    "step150_solver_bug_hypotheses_present=false"
+  ],
+  "patch_implementation_present": false,
+  "reason": "Step151 did not produce a ready targeted solver-fix plan",
+  "selected96_execution_allowed": false,
+  "solver_code_modified": false,
+  "source_step150_status": "missing_official_monitor",
+  "source_step151_status": "blocked_by_missing_error_localization",
+  "source_top_bug_category": null,
+  "status": "blocked_by_missing_targeted_fix_plan",
+  "step": 152,
+  "targeted_fix_applied": false,
+  "validation_claim_allowed": false
+}

@@ -1,0 +1,9 @@
+{
+  "post_fix_step148_run_executed": false,
+  "reason": "Step152 has not applied a solver patch",
+  "selected96_execution_allowed": false,
+  "source_step151_status": "blocked_by_missing_error_localization",
+  "status": "not_executed",
+  "step": 152,
+  "validation_claim_allowed": false
+}
