@@ -6,12 +6,19 @@ Current status: engineering prototype.
 
 Current campaign entry point: `docs/current/STATUS.md`.
 
-Current LBM boundary campaign note: Step146 is design-only and artifact-only
-over the Step145/Step144 artifacts. Step145 classifies the Step144 failure as
-`mixed_saturation_stationarity_failure`; Step146 recommends only a later bounded
-Step147 `48^3 / 250-step` diagnostic proposal and does not add the phase or run
-it. selected-candidate review, selected96, selected-static, 96^3, Fluent, FSI,
-and validation claim remains blocked.
+Current LBM boundary campaign note: Step147 ran exactly four 48^3 / 250-step
+LBM-only rows under `planeflux_saturation_stationarity48` from the Step146
+readiness artifact. Step147 did not run selected96. Step147 did not run
+selected-static. Step147 did not run 96^3. Step147 did not run a 500-step row.
+Step147 did not run Fluent. Step147 did not run FSI. Step147 does not make a
+validation claim. `origin/main = 54afab0c6b4bdae05fa08f50f274e8d2f557e1d9`
+is the checked Step146 source ref. The Step147 audit decision is
+`relief_design_unstable`: relief rows improved short-window mass/flow metrics
+but all three relief rows reported compact x-profile collapse at x=24, step
+240. Step148, selected-candidate review, selected96, selected-static, 96^3,
+Fluent, FSI, and validation claim remain blocked.
+
+Step147 bounded-state phrases: Step147 ran exactly four 48^3 / 250-step LBM-only rows; Step147 did not run selected96; Step147 did not run selected-static; Step147 did not run 96^3; Step147 did not run a 500-step row; Step147 did not run Fluent; Step147 did not run FSI; Step147 does not make a validation claim; origin/main = 54afab0c6b4bdae05fa08f50f274e8d2f557e1d9.
 
 This repository is a small-scale engineering prototype for comparing MPM-LBM coupling paths. It is not production ready and should not be described as a completed sharp-interface FSI solver or a real squid simulation.
 

@@ -192,15 +192,20 @@ def test_step146_runner_generates_design_readiness_from_existing_artifacts(tmp_p
     assert "blocked" in markdown
 
 
-def test_step146_does_not_add_step121_phase_or_execution_surface():
+def test_step146_remains_artifact_only_after_step147_phase_lands():
+    step146_source = (
+        ROOT / "experiments" / "steps" / "step146_coupled_saturation_stationarity_design_report.py"
+    ).read_text(encoding="utf-8")
     step121_source = (
         ROOT / "experiments" / "steps" / "step121_lbm_boundary_real_campaign_and_gate_correction.py"
     ).read_text(encoding="utf-8")
 
-    assert "STEP146" not in step121_source
+    assert "run_step120_matrix" not in step146_source
+    assert "step121_lbm_boundary_real_campaign_and_gate_correction" not in step146_source
     assert "step146_coupled_saturation_stationarity_design_report" not in step121_source
-    assert "planeflux_saturation_stationarity48" not in step121_source
-    assert "saturation_stationarity_diagnostic_48" not in step121_source
+    assert "STEP147_SATURATION_STATIONARITY_PHASE" in step121_source
+    assert "STEP147_SATURATION_STATIONARITY_ROLE" in step121_source
+    assert "STEP146_READINESS_RELATIVE_PATH" in step121_source
 
 
 def test_committed_step146_outputs_docs_and_reading_order_preserve_blocked_state():

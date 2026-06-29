@@ -110,11 +110,14 @@ STEP143_MASS_NEUTRAL_DESIGN_PHASE = "planeflux_mass_neutral_design48"
 STEP143_MASS_NEUTRAL_DESIGN_ROLE = "mass_neutral_design_diagnostic_48"
 STEP144_MASS_NEUTRAL_FINAL_PHASE = "planeflux_mass_neutral_final48"
 STEP144_MASS_NEUTRAL_FINAL_ROLE = "mass_neutral_final_evidence_candidate_48"
+STEP147_SATURATION_STATIONARITY_PHASE = "planeflux_saturation_stationarity48"
+STEP147_SATURATION_STATIONARITY_ROLE = "saturation_stationarity_diagnostic_48"
 STEP139_SOURCE_CODE_COMMIT = "f0284d3f6207eb1c9341dfc9906293b651c6b0f7"
 STEP139_RUNTIME_CODE_COMMIT = "4e43162a641085e56a4ba72c8bc013e58cb08cc3"
 STEP142_SOURCE_CODE_COMMIT = "e792735d5572bb11716aca4a8249eccba3bb36d7"
 STEP143_RUNTIME_CODE_COMMIT = "5ec833f13602c8fb010693fc376f92088b24d93b"
 STEP143_FINAL_REPOSITORY_COMMIT = "618cf188827e0b9538e5279e8ab042fabd92a0b2"
+STEP146_FINAL_REPOSITORY_COMMIT = "54afab0c6b4bdae05fa08f50f274e8d2f557e1d9"
 STEP140_SUMMARY_RELATIVE_PATH = "outputs/step140_long_window_drift_forensics/step140_failure_mechanism_summary.json"
 STEP142_READINESS_RELATIVE_PATH = (
     "outputs/step142_mass_neutral_plane_flux_design/step142_design_readiness_report.json"
@@ -122,6 +125,9 @@ STEP142_READINESS_RELATIVE_PATH = (
 STEP143_DECISION_RELATIVE_PATH = "outputs/step143_mass_neutral_design_diagnostic/step143_decision_summary.json"
 STEP143_COMPARISON_RELATIVE_PATH = (
     "outputs/step143_mass_neutral_design_diagnostic/step143_mass_neutral_comparison.json"
+)
+STEP146_READINESS_RELATIVE_PATH = (
+    "outputs/step146_coupled_saturation_stationarity_design/step146_design_readiness_report.json"
 )
 
 
@@ -1034,6 +1040,133 @@ def step121_mass_neutral_final_48_specs(output_interval: int = 10) -> List[Step1
     return [spec]
 
 
+def _step147_step146_readiness_path() -> Path:
+    return REPO_ROOT / STEP146_READINESS_RELATIVE_PATH
+
+
+def _step147_step146_readiness_provenance() -> Dict[str, Any]:
+    path = _step147_step146_readiness_path()
+    payload = _read_json(path)
+    if payload.get("status") != "design_ready":
+        raise ValueError("Step147 requires Step146 design_ready status")
+    if payload.get("step147_250step_diagnostic_proposal_allowed") is not True:
+        raise ValueError("Step147 requires Step146 to allow a bounded 250-step diagnostic")
+    if payload.get("step146_500step_probe_allowed") is not False:
+        raise ValueError("Step147 requires Step146 500-step probe to remain blocked")
+    if payload.get("selected96_execution_allowed") is not False:
+        raise ValueError("Step147 requires Step146 selected96 execution to remain blocked")
+    if payload.get("recommended_step147_phase") != STEP147_SATURATION_STATIONARITY_PHASE:
+        raise ValueError("Step147 readiness artifact recommends a different phase")
+    if payload.get("recommended_step147_row_role") != STEP147_SATURATION_STATIONARITY_ROLE:
+        raise ValueError("Step147 readiness artifact recommends a different row role")
+    return {
+        "source_step146_readiness_hash": sha256(path.read_bytes()).hexdigest(),
+        "source_step146_readiness_path": STEP146_READINESS_RELATIVE_PATH,
+        "source_step146_status": payload.get("status"),
+        "source_step146_recommended_design": payload.get("recommended_design"),
+        "source_step146_recommended_phase": payload.get("recommended_step147_phase"),
+        "source_step146_recommended_row_role": payload.get("recommended_step147_row_role"),
+        "source_step145_decision_case": payload.get("source_step145_decision_case"),
+        "source_step144_decision_case": payload.get("source_step144_decision_case"),
+    }
+
+
+def step121_saturation_stationarity_48_specs(output_interval: int = 5) -> List[Step120RunSpec]:
+    source = step121_mass_neutral_final_48_specs(output_interval=10)[0]
+    step146 = _step147_step146_readiness_provenance()
+    sweep = [
+        (
+            "baseline_high_repeat",
+            "duct_only_48_regularized_plane_flux_controlled_gain0p75_cap0p0075_rho0p0010"
+            "_mnhigh_mgain0p50_mcap0p001_blend1p00_slew0p50_out5_250step_satstat",
+            0.50,
+            0.0010,
+            1.00,
+            0.50,
+            "baseline repeat only; repeats the Step144 high mass-neutral setting at 250 steps",
+        ),
+        (
+            "relief_low_slew025",
+            "duct_only_48_regularized_plane_flux_controlled_gain0p75_cap0p0075_rho0p0010"
+            "_mnrelieflow_mgain0p35_mcap0p001_blend0p50_slew0p25_out5_250step_satstat",
+            0.35,
+            0.0010,
+            0.50,
+            0.25,
+            "mass-neutral relief plus stationarity damping",
+        ),
+        (
+            "relief_mid_slew025",
+            "duct_only_48_regularized_plane_flux_controlled_gain0p75_cap0p0075_rho0p0010"
+            "_mnreliefmid_mgain0p50_mcap0p001_blend0p50_slew0p25_out5_250step_satstat",
+            0.50,
+            0.0010,
+            0.50,
+            0.25,
+            "same mass-neutral gain and cap as baseline with lower blend and stronger stationarity damping",
+        ),
+        (
+            "relief_cap_test_slew025",
+            "duct_only_48_regularized_plane_flux_controlled_gain0p75_cap0p0075_rho0p0010"
+            "_mncaptest_mgain0p50_mcap0p0015_blend0p50_slew0p25_out5_250step_satstat",
+            0.50,
+            0.0015,
+            0.50,
+            0.25,
+            "diagnostic cap test only; not a promotion row",
+        ),
+    ]
+    specs: List[Step120RunSpec] = []
+    for label, name, gain_mass, cap_mass, blend, slew_alpha, purpose in sweep:
+        specs.append(
+            _replace_spec(
+                source,
+                name=name,
+                mass_neutral_label=label,
+                n_steps=250,
+                requested_n_steps=250,
+                output_interval=output_interval,
+                row_role=STEP147_SATURATION_STATIONARITY_ROLE,
+                allow_large_real_run_without_flag=True,
+                not_used_for_validation=True,
+                source_step=146,
+                source_row_name=source.name,
+                source_solver_state_hash=solver_state_hash_for_spec(source),
+                source_run_manifest_hash=run_manifest_hash_for_spec(source),
+                source_code_commit=STEP146_FINAL_REPOSITORY_COMMIT,
+                source_step142_readiness_hash=None,
+                source_step142_readiness_path=None,
+                source_step142_status=None,
+                source_step142_recommended_design=None,
+                source_step143_decision_hash=None,
+                source_step143_decision_path=None,
+                source_step143_comparison_hash=None,
+                source_step143_comparison_path=None,
+                source_step143_best_row_name=None,
+                source_step143_best_row_solver_state_hash=None,
+                source_step143_best_row_run_manifest_hash=None,
+                source_step143_best_row_mass_neutral_activation_hash=None,
+                source_step143_decision_case=None,
+                open_boundary_mass_neutral_flux_control_enabled=True,
+                open_boundary_mass_neutral_flux_control_mode="global_mass_error_density_offset",
+                open_boundary_mass_neutral_mass_error_gain=float(gain_mass),
+                open_boundary_mass_neutral_mass_error_cap=float(cap_mass),
+                open_boundary_mass_neutral_correction_blend=float(blend),
+                open_boundary_mass_neutral_reference_mass_mode="initial",
+                open_boundary_flux_feedback_slew_alpha=float(slew_alpha),
+                open_boundary_flux_feedback_delta_cap_u=0.0005,
+                artifact_scope_note=(
+                    "Step147 bounded 48^3 / 250-step saturation-stationarity diagnostic; "
+                    f"{purpose}; not selected96, not selected-static, not 96^3, not Fluent, "
+                    "not FSI, not validation, not selected-candidate-surface review, "
+                    "and not 500-step evidence"
+                ),
+                **step146,
+            )
+        )
+    return specs
+
+
 def _provenance_float(provenance: Dict[str, Any], key: str, default: float) -> float:
     value = provenance.get(key, default)
     if value is None:
@@ -1210,6 +1343,8 @@ def resolve_step121_phase_specs(
         return step121_mass_neutral_design_48_specs(output_interval=output_interval)
     if phase == STEP144_MASS_NEUTRAL_FINAL_PHASE:
         return step121_mass_neutral_final_48_specs(output_interval=output_interval)
+    if phase == STEP147_SATURATION_STATIONARITY_PHASE:
+        return step121_saturation_stationarity_48_specs(output_interval=output_interval)
     if phase in {"selected96", "selected-static"}:
         if best_selection_path is None:
             raise ValueError(f"{phase} phase requires --best-selection-path")
@@ -1381,6 +1516,15 @@ def _manifest_row_for_spec(spec: Step120RunSpec) -> Dict[str, Any]:
             spec.source_step143_best_row_mass_neutral_activation_hash
         ),
         "source_step143_decision_case": spec.source_step143_decision_case,
+        "source_step146_readiness_hash": spec.source_step146_readiness_hash,
+        "source_step146_readiness_path": spec.source_step146_readiness_path,
+        "source_step146_status": spec.source_step146_status,
+        "source_step146_recommended_design": spec.source_step146_recommended_design,
+        "source_step146_recommended_phase": spec.source_step146_recommended_phase,
+        "source_step146_recommended_row_role": spec.source_step146_recommended_row_role,
+        "source_step145_decision_case": spec.source_step145_decision_case,
+        "source_step144_decision_case": spec.source_step144_decision_case,
+        "mass_neutral_label": spec.mass_neutral_label,
         "open_boundary_inlet_ramp_steps": int(spec.open_boundary_inlet_ramp_steps or 0),
         "open_boundary_inlet_ramp_profile": str(spec.open_boundary_inlet_ramp_profile or "linear"),
         "open_boundary_flux_feedback_gain_u": float(spec.open_boundary_flux_feedback_gain_u),
@@ -1444,6 +1588,15 @@ def _manifest_rejection_reasons(
             "source_step143_best_row_mass_neutral_activation_hash"
         ),
         "source_step143_decision_case": row.get("source_step143_decision_case"),
+        "source_step146_readiness_hash": row.get("source_step146_readiness_hash"),
+        "source_step146_readiness_path": row.get("source_step146_readiness_path"),
+        "source_step146_status": row.get("source_step146_status"),
+        "source_step146_recommended_design": row.get("source_step146_recommended_design"),
+        "source_step146_recommended_phase": row.get("source_step146_recommended_phase"),
+        "source_step146_recommended_row_role": row.get("source_step146_recommended_row_role"),
+        "source_step145_decision_case": row.get("source_step145_decision_case"),
+        "source_step144_decision_case": row.get("source_step144_decision_case"),
+        "mass_neutral_label": row.get("mass_neutral_label"),
         "open_boundary_mass_neutral_flux_control_enabled": row.get(
             "open_boundary_mass_neutral_flux_control_enabled"
         ),
@@ -1513,6 +1666,7 @@ def _manifest_run_commands() -> List[str]:
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_density_feedback_isolation48 --allow-large-real-rows --output-interval 5",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_mass_neutral_design48 --allow-large-real-rows --output-interval 5",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_mass_neutral_final48 --allow-large-real-rows --output-interval 10",
+        "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_saturation_stationarity48 --allow-large-real-rows --output-interval 5",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary",
     ]
 
@@ -2387,6 +2541,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             "planeflux_density_feedback_isolation48",
             "planeflux_mass_neutral_design48",
             "planeflux_mass_neutral_final48",
+            "planeflux_saturation_stationarity48",
             "all48",
             "selected96",
             "selected-static",

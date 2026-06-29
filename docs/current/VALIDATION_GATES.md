@@ -3,6 +3,30 @@
 The campaign cannot claim selected 96^3, quasi-2D, FSI, Fluent validation, or
 Figure 29.3 parity from the current 48^3 LBM-only candidate artifacts.
 
+Current Step147 saturation-stationarity diagnostic evidence:
+
+- Step147 ran exactly four 48^3 / 250-step LBM-only rows.
+- Step147 did not run selected96.
+- Step147 did not run selected-static.
+- Step147 did not run 96^3.
+- Step147 did not run a 500-step row.
+- Step147 did not run Fluent.
+- Step147 did not run FSI.
+- Step147 does not make a validation claim.
+- `origin/main = 54afab0c6b4bdae05fa08f50f274e8d2f557e1d9` is the checked
+  Step146 source ref for this Step147 implementation.
+- All four rows completed 250/250 and passed the flow-development gate.
+- The baseline repeat had no compact-collapse marker but retained high
+  mass-neutral saturation tail:
+  `mass_neutral_feedback_saturation_fraction_tail = 0.8749355566726297`.
+- The three relief rows improved mass, outlet CV, and mean imbalance, but all
+  three reported compact x-profile collapse at x=24, step 240.
+- Step147 audit decision: `relief_design_unstable`.
+- `step148_500step_probe_proposal_allowed = false`.
+- selected96 remains blocked.
+- selected-candidate-surface review remains blocked.
+- validation claim remains blocked.
+
 Current Step146 coupled design evidence:
 
 - Step146 is design-only and artifact-only.

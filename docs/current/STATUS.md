@@ -1,15 +1,46 @@
 # Current Status
 
 The active campaign is the Fluent duct/flap LBM open-boundary repair campaign.
-The current artifact state remains selected-boundary blocked. Step146 is design-only and artifact-only.
-It reads the existing Step145 and Step144
-artifacts, records a coupled saturation-stationarity design readiness report,
-and recommends only a later bounded Step147 `48^3 / 250-step` diagnostic
-proposal. Step146 did not run a new LBM row, did not add a Step121 phase, did
-not run selected96, selected-static, 96^3, Fluent, or FSI, did not run a
-500-step probe, and does not make a validation claim. selected96 remains
-blocked, selected-candidate-surface review remains blocked, validation claim
-remains blocked, and the Step146 500-step probe remains blocked.
+The current artifact state remains selected-boundary blocked. Step147 ran
+exactly four 48^3 / 250-step LBM-only rows under
+`planeflux_saturation_stationarity48` from the Step146 readiness artifact.
+Step147 did not run selected96. Step147 did not run selected-static. Step147
+did not run 96^3. Step147 did not run a 500-step row. Step147 did not run
+Fluent. Step147 did not run FSI. Step147 does not make a validation claim.
+`origin/main = 54afab0c6b4bdae05fa08f50f274e8d2f557e1d9` is the checked
+Step146 source ref for this Step147 implementation.
+
+Step147 artifacts are under
+`outputs/step147_saturation_stationarity_diagnostic`. The audit decision is
+`relief_design_unstable`: all four rows completed 250/250 and flow gates passed,
+but all three relief rows reported compact x-profile collapse at x=24, step
+240. The best-looking relief cap-test row ended with
+`candidate_mass_acceptance_observed_abs = 0.002093421390940915`,
+`flux_imbalance_rel_tail_mean = 0.06738282016989694`,
+`outlet_flux_tail_cv = 0.08294339447357761`, and
+`mass_neutral_feedback_saturation_fraction_tail = 0.7280537236557635`, but the
+collapse marker blocks promotion. Step148 500-step probe remains blocked,
+selected96 remains blocked, selected-candidate-surface review remains blocked,
+and validation claim remains blocked.
+
+Step147 bounded-state phrases:
+
+- Step147 ran exactly four 48^3 / 250-step LBM-only rows
+- Step147 did not run selected96
+- Step147 did not run selected-static
+- Step147 did not run 96^3
+- Step147 did not run a 500-step row
+- Step147 did not run Fluent
+- Step147 did not run FSI
+- Step147 does not make a validation claim
+- origin/main = 54afab0c6b4bdae05fa08f50f274e8d2f557e1d9
+
+Step146 is design-only and artifact-only. It reads the existing Step145 and
+Step144 artifacts, records a coupled saturation-stationarity design readiness
+report, and allowed only the now-completed bounded Step147 `48^3 / 250-step`
+diagnostic proposal. Step146 did not run a new LBM row, did not run selected96,
+selected-static, 96^3, Fluent, or FSI, did not run a 500-step probe, and does
+not make a validation claim.
 Current campaign state: `48_candidates_failed`.
 
 Step146 artifacts are under

@@ -6,44 +6,48 @@ Read these files first for the current boundary-repair campaign state:
 2. `docs/current/ACTIVE_CAMPAIGN.json`
 3. `docs/current/VALIDATION_GATES.md`
 4. `docs/current/READING_ORDER.md`
-5. `docs/campaigns/fluent_duct_flap/steps/146/goal.md`
-6. `docs/campaigns/fluent_duct_flap/steps/146/report.md`
-7. `docs/campaigns/fluent_duct_flap/steps/146/coupled_saturation_stationarity_design.md`
-8. `outputs/step146_coupled_saturation_stationarity_design/step146_design_readiness_report.json`
-9. `docs/campaigns/fluent_duct_flap/steps/145/goal.md`
-10. `docs/campaigns/fluent_duct_flap/steps/145/report.md`
-11. `outputs/step145_mass_neutral_long_window_forensics/step145_failure_mechanism_summary.json`
-12. `outputs/step145_mass_neutral_long_window_forensics/saturation_segment_report.json`
-13. `outputs/step145_mass_neutral_long_window_forensics/stationarity_segment_report.json`
-14. `outputs/step145_mass_neutral_long_window_forensics/mass_neutral_error_segment_report.json`
-15. `outputs/step145_mass_neutral_long_window_forensics/controller_lag_segment_report.json`
-16. `docs/campaigns/fluent_duct_flap/steps/144/goal.md`
-17. `docs/campaigns/fluent_duct_flap/steps/144/report.md`
-18. `outputs/step144_mass_neutral_final48/step144_decision_summary.json`
-19. `outputs/step144_mass_neutral_final48/step144_long_window_comparison.json`
-20. `docs/campaigns/fluent_duct_flap/steps/143/goal.md`
-21. `docs/campaigns/fluent_duct_flap/steps/143/report.md`
-22. `outputs/step143_mass_neutral_design_diagnostic/step143_decision_summary.json`
-23. `outputs/step143_mass_neutral_design_diagnostic/step143_mass_neutral_comparison.json`
-24. `docs/campaigns/fluent_duct_flap/steps/142/goal.md`
-25. `docs/campaigns/fluent_duct_flap/steps/142/report.md`
-26. `docs/campaigns/fluent_duct_flap/steps/142/mass_neutral_plane_flux_design.md`
-27. `outputs/step142_mass_neutral_plane_flux_design/step142_design_readiness_report.json`
-28. `docs/campaigns/fluent_duct_flap/steps/141/goal.md`
-29. `docs/campaigns/fluent_duct_flap/steps/141/report.md`
-30. `outputs/step141_density_feedback_isolation/step141_decision_summary.json`
-31. `outputs/step141_density_feedback_isolation/step141_density_feedback_comparison.json`
-32. `docs/campaigns/fluent_duct_flap/steps/140/goal.md`
-33. `docs/campaigns/fluent_duct_flap/steps/140/report.md`
-34. `outputs/step140_long_window_drift_forensics/step140_failure_mechanism_summary.json`
-35. `docs/campaigns/fluent_duct_flap/steps/139/report.md`
-36. `outputs/step139_planeflux_final48/step139_long_window_comparison.json`
-37. `outputs/step139_planeflux_final48/step139_failure_forensics.json`
-38. `docs/GENERIC_SOLVER_ARCHITECTURE_CONTRACT.md`
-39. `docs/campaigns/fluent_duct_flap/fluent_official_local_execution_guard.md`
-40. `outputs/fluent_official_local_execution_prep/guard_report.json`
-41. `docs/campaigns/fluent_duct_flap/steps/138/report.md`
-42. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
+5. `docs/campaigns/fluent_duct_flap/steps/147/goal.md`
+6. `docs/campaigns/fluent_duct_flap/steps/147/report.md`
+7. `outputs/step147_saturation_stationarity_diagnostic/step147_decision_summary.json`
+8. `outputs/step147_saturation_stationarity_diagnostic/step147_saturation_stationarity_comparison.json`
+9. `docs/campaigns/fluent_duct_flap/steps/146/goal.md`
+10. `docs/campaigns/fluent_duct_flap/steps/146/report.md`
+11. `docs/campaigns/fluent_duct_flap/steps/146/coupled_saturation_stationarity_design.md`
+12. `outputs/step146_coupled_saturation_stationarity_design/step146_design_readiness_report.json`
+13. `docs/campaigns/fluent_duct_flap/steps/145/goal.md`
+14. `docs/campaigns/fluent_duct_flap/steps/145/report.md`
+15. `outputs/step145_mass_neutral_long_window_forensics/step145_failure_mechanism_summary.json`
+16. `outputs/step145_mass_neutral_long_window_forensics/saturation_segment_report.json`
+17. `outputs/step145_mass_neutral_long_window_forensics/stationarity_segment_report.json`
+18. `outputs/step145_mass_neutral_long_window_forensics/mass_neutral_error_segment_report.json`
+19. `outputs/step145_mass_neutral_long_window_forensics/controller_lag_segment_report.json`
+20. `docs/campaigns/fluent_duct_flap/steps/144/goal.md`
+21. `docs/campaigns/fluent_duct_flap/steps/144/report.md`
+22. `outputs/step144_mass_neutral_final48/step144_decision_summary.json`
+23. `outputs/step144_mass_neutral_final48/step144_long_window_comparison.json`
+24. `docs/campaigns/fluent_duct_flap/steps/143/goal.md`
+25. `docs/campaigns/fluent_duct_flap/steps/143/report.md`
+26. `outputs/step143_mass_neutral_design_diagnostic/step143_decision_summary.json`
+27. `outputs/step143_mass_neutral_design_diagnostic/step143_mass_neutral_comparison.json`
+28. `docs/campaigns/fluent_duct_flap/steps/142/goal.md`
+29. `docs/campaigns/fluent_duct_flap/steps/142/report.md`
+30. `docs/campaigns/fluent_duct_flap/steps/142/mass_neutral_plane_flux_design.md`
+31. `outputs/step142_mass_neutral_plane_flux_design/step142_design_readiness_report.json`
+32. `docs/campaigns/fluent_duct_flap/steps/141/goal.md`
+33. `docs/campaigns/fluent_duct_flap/steps/141/report.md`
+34. `outputs/step141_density_feedback_isolation/step141_decision_summary.json`
+35. `outputs/step141_density_feedback_isolation/step141_density_feedback_comparison.json`
+36. `docs/campaigns/fluent_duct_flap/steps/140/goal.md`
+37. `docs/campaigns/fluent_duct_flap/steps/140/report.md`
+38. `outputs/step140_long_window_drift_forensics/step140_failure_mechanism_summary.json`
+39. `docs/campaigns/fluent_duct_flap/steps/139/report.md`
+40. `outputs/step139_planeflux_final48/step139_long_window_comparison.json`
+41. `outputs/step139_planeflux_final48/step139_failure_forensics.json`
+42. `docs/GENERIC_SOLVER_ARCHITECTURE_CONTRACT.md`
+43. `docs/campaigns/fluent_duct_flap/fluent_official_local_execution_guard.md`
+44. `outputs/fluent_official_local_execution_prep/guard_report.json`
+45. `docs/campaigns/fluent_duct_flap/steps/138/report.md`
+46. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
 
 Older Step102-Step126 documents remain useful history, but they are not the
 current entry point for deciding whether the campaign may advance to selected
@@ -129,3 +133,9 @@ into a readiness report and design note, recommends only a later bounded
 Step147 `planeflux_saturation_stationarity48` 48^3 / 250-step diagnostic
 proposal, and keeps selected96, selected-candidate-surface review, validation,
 and a Step146 500-step probe blocked.
+Step147 ran exactly four 48^3 / 250-step LBM-only rows. Step147 did not run
+selected96. Step147 did not run selected-static. Step147 did not run 96^3.
+Step147 did not run a 500-step row. Step147 did not run Fluent. Step147 did
+not run FSI. Step147 does not make a validation claim. The audit reports
+`relief_design_unstable` because all three relief rows had compact x-profile
+collapse at x=24, step 240, so Step148 and selected96 remain blocked.
