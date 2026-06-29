@@ -6,19 +6,22 @@ Current status: engineering prototype.
 
 Current campaign entry point: `docs/current/STATUS.md`.
 
-Current Fluent official-case reproduction note: Step155 is the active official
-tutorial solver V1 run after Step154. It consumes
-`outputs/step154_official_solver_prepost_pipeline/compiled_case.json` directly
-and runs `FSIDriver3D` for 50 steps at `dt = 0.0005 s`, total `0.025 s`.
-It writes solver monitor, force monitor, stability, mass/flux, and velocity
-snapshot artifacts under `outputs/step155_official_tutorial_solver_v1`.
-Step155 did not call Step148 or Step153 helper runners as the primary runner,
-did not run Fluent, did not load or fabricate official monitor data, did not
-run Step150, did not run selected96, and does not make a validation claim.
-Private official monitor data belongs under the ignored `benchmarks/private/`
-path and must not be committed.
+Current Fluent official-case reproduction note: Step156 is the active official
+tutorial postprocessing and solver-acceptance step after Step155. It consumes
+Step154 compiled-case artifacts and Step155 solver outputs only, then writes
+velocity magnitude, ux/uy, stream/quiver, geometry overlay, monitor plots,
+centerline and x-plane flux profiles, solver acceptance, official comparison,
+and summary artifacts under
+`outputs/step156_official_tutorial_postprocess_and_acceptance`. Step156 did
+not rerun the solver, did not run Fluent, did not load or fabricate official
+monitor data, did not run Step150, did not run selected96, and does not make a
+validation claim. The Step156 acceptance report keeps flow development
+separate from postprocess completion: numerical sanity and postprocess pass,
+but `flow_development_gate_pass = false` because the Step155 outlet flux is
+still near zero over the 0.025 s tutorial window. Private official monitor data
+belongs under the ignored `benchmarks/private/` path and must not be committed.
 
-Step155 bounded-state phrases: Step155 reports `official_tutorial_solver_v1_run_complete`; Step155 consumed the Step154 compiled case directly; Step155 ran 50 steps ending at 0.025 s; Step155 Step148 helper used is false; Step155 Step153 helper used is false; Step155 official monitor loaded is false; Step155 did not run Fluent; Step155 did not run Step150; Step155 did not run selected96; Step155 does not make a validation claim.
+Step156 bounded-state phrases: Step156 reports `official_tutorial_postprocess_complete`; Step156 consumed the Step154 compiled case and Step155 solver root; Step156 generated velocity cloud and diagnostic plots; Step156 wrote centerline and x-plane flux profiles; Step156 official monitor loaded is false; Step156 did not run the solver; Step156 did not run Fluent; Step156 did not run Step150; Step156 did not run selected96; Step156 does not make a validation claim; Step156 reports flow development honestly and currently fails that gate.
 
 This repository is a small-scale engineering prototype for comparing MPM-LBM coupling paths. It is not production ready and should not be described as a completed sharp-interface FSI solver or a real squid simulation.
 

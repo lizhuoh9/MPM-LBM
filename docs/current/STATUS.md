@@ -46,7 +46,41 @@ real solver patch. In the current checkout Step151 is still
 coupling, geometry, monitor extraction, or runtime solver formulas while
 Step151 lacks a real targeted fix plan.
 
-Step155 is now the current official tutorial solver V1 run after Step154. It
+Step156 is now the current official tutorial postprocessing and solver
+acceptance step. It consumed Step154 compiled-case artifacts and Step155 solver
+outputs, generated official-style velocity plots and diagnostics, wrote monitor
+plots, centerline and x-plane flux profiles, solver acceptance report, and
+official comparison report. The output is under
+`outputs/step156_official_tutorial_postprocess_and_acceptance`. The summary
+records `status = official_tutorial_postprocess_complete`,
+`preprocess_complete = true`, `solver_complete = true`,
+`postprocess_complete = true`, `compiled_case_consumed = true`,
+`step155_solver_root_consumed = true`, `final_snapshot_loaded = true`,
+`velocity_cloud_written = true`, `velocity_magnitude_written = true`,
+`velocity_ux_written = true`, `velocity_uy_written = true`,
+`streamline_or_quiver_written = true`, `geometry_overlay_written = true`,
+`monitor_plots_written = true`, `centerline_profile_written = true`,
+`x_plane_flux_profile_written = true`,
+`solver_acceptance_report_written = true`,
+`official_comparison_report_written = true`,
+`postprocess_acceptance_pass = true`, `solver_numerical_sanity_pass = true`,
+`flow_development_gate_reported = true`, and
+`solver_pipeline_complete = true`.
+
+Step156 did not run Fluent, did not rerun the solver, did not load or fabricate
+official monitor data, did not run Step150, did not run selected96, and does
+not make a validation claim. Step156 completes the preprocess -> solve ->
+postprocess pipeline, but it does not close validation. The current Step155
+run remains numerically finite, but Step156 reports
+`flow_development_gate_pass = false`: tail inlet flux is
+`1.64673269197663`, tail outlet flux is `-8.246116412041075e-05`,
+`outlet_to_inlet_flux_ratio_tail_mean = -5.006163707054121e-05`, and
+`flux_imbalance_rel_tail_mean = -1.0000500616370704`. If the official monitor
+is still absent, official error metrics remain unavailable. If
+flow-development gates fail, the next step must diagnose solver
+flow/outlet/geometry development rather than claiming Figure 29.3 parity.
+
+Step155 is the upstream official tutorial solver V1 run after Step154. It
 consumed
 `outputs/step154_official_solver_prepost_pipeline/compiled_case.json` directly
 and ran the repository `FSIDriver3D` path for the public official tutorial
@@ -71,10 +105,8 @@ under `outputs/step155_official_tutorial_solver_v1`. The summary records
 Step155 did not call Step148 or Step153 helper runners as the primary runner.
 Step155 did not run Fluent. Step155 did not load or fabricate official monitor
 data. Step155 did not run Step150. Step155 did not run selected96 and does not
-make a validation claim. Step156 is the next step. It must consume Step155
-solver outputs and produce the official-style velocity plots, ux/uy
-diagnostics, stream/quiver plot, monitor plots, flux profiles, solver
-acceptance report, and official comparison placeholder/report.
+make a validation claim. Step156 consumed these Step155 outputs for
+postprocessing only.
 
 Step154 remains the current compiled-case and pre/post input source for
 Step155. It compiled the public tutorial duct/flap proxy into
@@ -133,7 +165,7 @@ diagnostic proposal. Step146 did not run a new LBM row, did not run selected96,
 selected-static, 96^3, Fluent, or FSI, did not run a 500-step probe, and does
 not make a validation claim.
 Current campaign state:
-`step155_official_tutorial_solver_v1_run_complete`.
+`step156_official_tutorial_postprocess_complete`.
 
 Step146 artifacts are under
 `outputs/step146_coupled_saturation_stationarity_design`. The design readiness

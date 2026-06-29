@@ -1,0 +1,27 @@
+{
+  "force_is_direct_fluent_wall_integral": false,
+  "force_monitor_plot": {
+    "force_is_direct_fluent_wall_integral": false,
+    "path": "outputs\\step156_official_tutorial_postprocess_and_acceptance\\force_monitor_plot.png",
+    "row_count": 51,
+    "status": "force_monitor_plot_written",
+    "validation_claim_allowed": false
+  },
+  "force_monitor_plot_written": true,
+  "monitor_displacement_plot": {
+    "path": "outputs\\step156_official_tutorial_postprocess_and_acceptance\\monitor_displacement_plot.png",
+    "row_count": 51,
+    "series_plotted": [
+      "flap_tip_total_displacement_m",
+      "official_point_like_total_displacement_m"
+    ],
+    "status": "monitor_displacement_plot_written",
+    "validation_claim_allowed": false
+  },
+  "monitor_displacement_plot_written": true,
+  "solver_force_monitor_rows": 51,
+  "solver_monitor_rows": 51,
+  "status": "monitor_plot_report_written",
+  "step": 156,
+  "validation_claim_allowed": false
+}

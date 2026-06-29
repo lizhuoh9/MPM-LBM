@@ -1,0 +1,11 @@
+{
+  "comparison_scope": "solver_postprocess_only",
+  "figure_29_3_parity_claim_allowed": false,
+  "next_action": "provide_private_official_monitor_or_run_step150_intake",
+  "official_error_metrics_available": false,
+  "official_monitor_loaded": false,
+  "official_monitor_path": "benchmarks\\private\\fluent_fsi_2way\\outputs\\official_monitor.csv",
+  "status": "official_monitor_missing",
+  "step": 156,
+  "validation_claim_allowed": false
+}

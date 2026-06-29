@@ -2,9 +2,10 @@
 
 The campaign cannot claim selected 96^3, quasi-2D, Fluent validation, Figure
 29.3 parity, an actionable Step151 solver bug fix, an applied Step152 solver
-patch, or Step150 readiness from the current artifact state.
+patch, Step150 readiness, or flow-development success from the current
+artifact state.
 
-Current Step148/149/150/151/152/153/154/155 official-case reproduction state:
+Current Step148/149/150/151/152/153/154/155/156 official-case reproduction state:
 
 - Step148 ran the repository MPM-LBM/FSI solver through `FSIDriver3D` at 48 grid
   / 250 FSI steps.
@@ -105,6 +106,33 @@ Current Step148/149/150/151/152/153/154/155 official-case reproduction state:
   `lbm_open_boundary_semantics = regularized_velocity_pressure_limited`.
 - Step155 did not run Fluent, did not load or fabricate official monitor data,
   did not run Step150, did not run selected96, and did not claim validation.
+- Step156 is an official tutorial postprocessing and solver-acceptance step,
+  not a solver run and not a Fluent validation gate.
+- Step156 consumed Step154 compiled-case artifacts and Step155 solver outputs
+  only.
+- Step156 generated velocity magnitude, ux, uy, stream/quiver, geometry
+  overlay, official-style velocity cloud, centerline profile, x-plane flux
+  profile, monitor displacement plot, force monitor plot, solver acceptance
+  report, official comparison report, and postprocess summary under
+  `outputs/step156_official_tutorial_postprocess_and_acceptance`.
+- Step156 records `status = official_tutorial_postprocess_complete`,
+  `postprocess_complete = true`, `solver_pipeline_complete = true`,
+  `postprocess_acceptance_pass = true`, and
+  `solver_numerical_sanity_pass = true`.
+- Step156 records `flow_development_gate_reported = true` and
+  `flow_development_gate_pass = false`; this is report-only for Step156 and
+  does not fail postprocess completion.
+- Step156 mass-flux tail means are `inlet_flux_tail_mean =
+  1.64673269197663`, `outlet_flux_tail_mean =
+  -8.246116412041075e-05`, `outlet_to_inlet_flux_ratio_tail_mean =
+  -5.006163707054121e-05`, and `flux_imbalance_rel_tail_mean =
+  -1.0000500616370704`.
+- Step156 did not rerun the solver, did not run Fluent, did not load or
+  fabricate official monitor data, did not run Step150, did not run
+  selected96, and does not claim validation.
+- Step156 keeps `official_monitor_loaded = false`,
+  `official_error_metrics_available = false`, `validation_claim_allowed =
+  false`, and `figure_29_3_parity_claim_allowed = false`.
 - Step150 can only be rerun for real error localization after a private official
   monitor is supplied directly or a later explicitly scoped reference artifact
   is generated and marked with its confidence limits.

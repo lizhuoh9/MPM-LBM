@@ -1,0 +1,86 @@
+{
+  "centerline_profile_written": true,
+  "geometry_overlay_written": true,
+  "official_style_velocity_cloud_written": true,
+  "plot_reports": {
+    "geometry_overlay": {
+      "path": "outputs\\step156_official_tutorial_postprocess_and_acceptance\\geometry_overlay_step050.png",
+      "size_bytes": 34079,
+      "slice_axis": "z",
+      "slice_index": 24,
+      "status": "geometry_overlay_written",
+      "validation_claim_allowed": false
+    },
+    "official_style_velocity_cloud": {
+      "path": "outputs\\step156_official_tutorial_postprocess_and_acceptance\\official_style_velocity_cloud_step050.png",
+      "size_bytes": 44661,
+      "slice_axis": "z",
+      "slice_index": 24,
+      "status": "plot_written",
+      "validation_claim_allowed": false
+    },
+    "streamline_or_quiver": {
+      "path": "outputs\\step156_official_tutorial_postprocess_and_acceptance\\streamline_or_quiver_step050.png",
+      "size_bytes": 95254,
+      "slice_axis": "z",
+      "slice_index": 24,
+      "status": "streamline_or_quiver_plot_written",
+      "validation_claim_allowed": false
+    },
+    "velocity_magnitude": {
+      "path": "outputs\\step156_official_tutorial_postprocess_and_acceptance\\velocity_magnitude_step050.png",
+      "size_bytes": 45161,
+      "slice_axis": "z",
+      "slice_index": 24,
+      "status": "plot_written",
+      "validation_claim_allowed": false
+    },
+    "velocity_ux": {
+      "path": "outputs\\step156_official_tutorial_postprocess_and_acceptance\\velocity_ux_step050.png",
+      "size_bytes": 38017,
+      "slice_axis": "z",
+      "slice_index": 24,
+      "status": "plot_written",
+      "validation_claim_allowed": false
+    },
+    "velocity_uy": {
+      "path": "outputs\\step156_official_tutorial_postprocess_and_acceptance\\velocity_uy_step050.png",
+      "size_bytes": 37943,
+      "slice_axis": "z",
+      "slice_index": 24,
+      "status": "plot_written",
+      "validation_claim_allowed": false
+    }
+  },
+  "profile_reports": {
+    "centerline": {
+      "path": "outputs\\step156_official_tutorial_postprocess_and_acceptance\\centerline_velocity_profile.csv",
+      "row_count": 48,
+      "status": "centerline_velocity_profile_written",
+      "validation_claim_allowed": false,
+      "y_index": 24,
+      "z_index": 24
+    },
+    "x_plane_flux": {
+      "path": "outputs\\step156_official_tutorial_postprocess_and_acceptance\\x_plane_flux_profile.csv",
+      "row_count": 48,
+      "status": "x_plane_flux_profile_written",
+      "validation_claim_allowed": false
+    }
+  },
+  "slice_axis": "z",
+  "slice_index": 24,
+  "slice_policy": "monitor_z_index",
+  "snapshot_step": 50,
+  "snapshot_time_s": 0.025,
+  "status": "velocity_render_complete",
+  "step": 156,
+  "streamline_or_quiver_written": true,
+  "validation_claim_allowed": false,
+  "velocity_magnitude_written": true,
+  "velocity_scale_mps_per_lbm": 500.0,
+  "velocity_scale_note": "proxy m/s from Step155 target_u_lbm mapping; not Fluent validation",
+  "velocity_ux_written": true,
+  "velocity_uy_written": true,
+  "x_plane_flux_profile_written": true
+}

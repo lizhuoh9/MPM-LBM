@@ -1,0 +1,45 @@
+{
+  "dynamic_fluid_cell_count": 3815,
+  "finite_field_values": true,
+  "monitor_index": [
+    24,
+    18,
+    24
+  ],
+  "rho_max": 1.0633937120437622,
+  "rho_min": 0.9999964833259583,
+  "rho_shape": [
+    48,
+    48,
+    48
+  ],
+  "slice_axis": "z",
+  "slice_index": 24,
+  "slice_policy": "monitor_z_index",
+  "snapshot_path": "outputs\\step155_official_tutorial_solver_v1\\velocity_snapshots\\velocity_snapshot_step050.npz",
+  "snapshot_step": 50,
+  "snapshot_time_s": 0.025,
+  "source_snapshot_step": 50,
+  "source_snapshot_time_s": 0.025,
+  "speed_max_lbm": 0.028106188401579857,
+  "speed_max_mps_proxy": 14.053094200789928,
+  "speed_min_lbm": 0.0,
+  "static_fluid_cell_count": 3820,
+  "status": "final_snapshot_field_summary_written",
+  "step": 156,
+  "ux_max_lbm": 0.028064874932169914,
+  "ux_min_lbm": -3.1385559395857854e-06,
+  "uy_max_lbm": 0.011726868338882923,
+  "uy_min_lbm": -0.01153234951198101,
+  "uz_max_lbm": 0.0021350160241127014,
+  "uz_min_lbm": -0.002339011523872614,
+  "validation_claim_allowed": false,
+  "velocity_scale_mps_per_lbm": 500.0,
+  "velocity_scale_note": "proxy m/s from Step155 target_u_lbm mapping; not Fluent validation",
+  "velocity_shape": [
+    48,
+    48,
+    48,
+    3
+  ]
+}
