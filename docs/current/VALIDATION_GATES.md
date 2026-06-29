@@ -1,10 +1,10 @@
 # Validation Gates
 
 The campaign cannot claim selected 96^3, quasi-2D, Fluent validation, Figure
-29.3 parity, an actionable Step151 solver bug fix, or an applied Step152 solver
-patch from the current artifact state.
+29.3 parity, an actionable Step151 solver bug fix, an applied Step152 solver
+patch, or Step150 readiness from the current artifact state.
 
-Current Step148/149/150/151/152 official-case reproduction state:
+Current Step148/149/150/151/152/153 official-case reproduction state:
 
 - Step148 ran the repository MPM-LBM/FSI solver through `FSIDriver3D` at 48 grid
   / 250 FSI steps.
@@ -57,6 +57,17 @@ Current Step148/149/150/151/152 official-case reproduction state:
   monitor is supplied, Step150 produces `error_localization_complete`, Step151
   produces `targeted_fix_plan_ready`, and the single registered
   `source_top_bug_category` has a category-specific patch implementation.
+- Step153 is an official monitor extraction/normalization utility, not a solver
+  patch and not a validation gate.
+- Step153 status is `waiting_for_official_monitor_source` in this checkout
+  because there is no private Fluent/System Coupling raw monitor export.
+- Step153 records `official_monitor_written_private = false` and
+  `ready_for_step150 = false`.
+- Step153 did not run Step150, did not fabricate official monitor data, did not
+  commit private monitor payloads, and did not modify solver runtime code.
+- Step150 can only be rerun for real error localization after a private official
+  monitor is supplied directly or Step153 successfully normalizes a private raw
+  export into `benchmarks/private/fluent_fsi_2way/outputs/official_monitor.csv`.
 - selected96 remains blocked.
 - validation claim remains blocked.
 

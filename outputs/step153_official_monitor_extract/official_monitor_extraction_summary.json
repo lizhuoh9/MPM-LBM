@@ -1,0 +1,29 @@
+{
+  "columns": [],
+  "fabricated_metrics_used": false,
+  "input": "benchmarks\\private\\fluent_fsi_2way\\outputs\\raw_monitor_export.txt",
+  "input_exists": false,
+  "next_action": "export_fluent_or_system_coupling_monitor",
+  "official_monitor_committed": false,
+  "official_monitor_hash": null,
+  "official_monitor_path": "benchmarks\\private\\fluent_fsi_2way\\outputs\\official_monitor.csv",
+  "official_monitor_size_bytes": 0,
+  "official_monitor_written_private": false,
+  "ready_for_step150": false,
+  "reason": "official_monitor_source_missing",
+  "row_count": 0,
+  "sample_values_included": false,
+  "schema_errors": [
+    "official monitor source is missing"
+  ],
+  "schema_valid": false,
+  "selected96_execution_allowed": false,
+  "source_columns": [],
+  "source_delimiter": null,
+  "status": "waiting_for_official_monitor_source",
+  "step": 153,
+  "step150_executed": false,
+  "time_end_s": null,
+  "time_start_s": null,
+  "validation_claim_allowed": false
+}

@@ -6,19 +6,18 @@ Current status: engineering prototype.
 
 Current campaign entry point: `docs/current/STATUS.md`.
 
-Current Fluent official-case reproduction note: Step152 is the active targeted
-solver-fix apply gate after Step151. It reads the Step151 report and fix plan
-before allowing any solver patch. In this checkout
-`benchmarks/private/fluent_fsi_2way/outputs/official_monitor.csv` is absent, so
-Step150 remains `missing_official_monitor`, Step151 remains
-`blocked_by_missing_error_localization`, and Step152 reports
-`blocked_by_missing_targeted_fix_plan`. Step152 did not modify solver runtime
-code, did not apply a targeted fix, did not rerun post-fix Step148 or Step150,
-did not run selected96, and does not make a validation claim. Private official
-monitor data belongs under the ignored `benchmarks/private/` path and must not
-be committed.
+Current Fluent official-case reproduction note: Step153 is the active official
+monitor extraction/normalization path after Step152. It can convert a
+user-supplied private Fluent/System Coupling raw monitor export into
+`benchmarks/private/fluent_fsi_2way/outputs/official_monitor.csv`, which is the
+private Step150 input. In this checkout no private raw monitor export is
+present, so Step153 reports `waiting_for_official_monitor_source` and
+`ready_for_step150 = false`. Step153 did not run Step150, did not modify solver
+runtime code, did not write or commit an official monitor, did not run
+selected96, and does not make a validation claim. Private official monitor data
+belongs under the ignored `benchmarks/private/` path and must not be committed.
 
-Step152 bounded-state phrases: Step152 reports `blocked_by_missing_targeted_fix_plan`; Step152 did not modify solver runtime code; Step152 did not apply a targeted fix; Step152 did not rerun post-fix Step148; Step152 did not rerun post-fix Step150; Step152 did not run selected96; Step152 does not make a validation claim; private official monitor data is absent and must not be committed.
+Step153 bounded-state phrases: Step153 reports `waiting_for_official_monitor_source`; Step153 did not write private official_monitor.csv; Step153 did not run Step150; Step153 did not modify solver runtime code; Step153 did not run selected96; Step153 does not make a validation claim; private official monitor data is absent and must not be committed.
 
 This repository is a small-scale engineering prototype for comparing MPM-LBM coupling paths. It is not production ready and should not be described as a completed sharp-interface FSI solver or a real squid simulation.
 

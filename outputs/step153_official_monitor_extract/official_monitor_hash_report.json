@@ -1,0 +1,12 @@
+{
+  "exists": false,
+  "official_monitor": "benchmarks\\private\\fluent_fsi_2way\\outputs\\official_monitor.csv",
+  "official_monitor_committed": false,
+  "official_monitor_hash": null,
+  "private_payload_committed": false,
+  "selected96_execution_allowed": false,
+  "size_bytes": 0,
+  "status": "waiting_for_official_monitor_source",
+  "step": 153,
+  "validation_claim_allowed": false
+}

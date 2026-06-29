@@ -46,6 +46,17 @@ real solver patch. In the current checkout Step151 is still
 coupling, geometry, monitor extraction, or runtime solver formulas while
 Step151 lacks a real targeted fix plan.
 
+Step153 is now the current practical path for unblocking Step150. It is an
+official monitor extraction/normalization utility, not another solver gate. It
+converts a user-supplied private Fluent/System Coupling monitor export into the
+private Step150 input:
+`benchmarks/private/fluent_fsi_2way/outputs/official_monitor.csv`. In the
+current checkout there is no private raw export and no private official monitor
+file, so Step153 reports `waiting_for_official_monitor_source`,
+`official_monitor_written_private = false`, and `ready_for_step150 = false`.
+Step153 does not run Step150, does not modify solver runtime code, does not
+commit private monitor payloads, and does not make a validation claim.
+
 The previous LBM outlet-controller repair line remains selected-boundary
 blocked. Step147 ran exactly four 48^3 / 250-step LBM-only rows under
 `planeflux_saturation_stationarity48` from the Step146 readiness artifact.
@@ -87,7 +98,7 @@ diagnostic proposal. Step146 did not run a new LBM row, did not run selected96,
 selected-static, 96^3, Fluent, or FSI, did not run a 500-step probe, and does
 not make a validation claim.
 Current campaign state:
-`step152_blocked_missing_targeted_fix_plan`.
+`step153_waiting_for_official_monitor_source`.
 
 Step146 artifacts are under
 `outputs/step146_coupled_saturation_stationarity_design`. The design readiness

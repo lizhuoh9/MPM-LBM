@@ -1,0 +1,20 @@
+{
+  "columns": [],
+  "input": "benchmarks\\private\\fluent_fsi_2way\\outputs\\raw_monitor_export.txt",
+  "official_monitor_path": "benchmarks\\private\\fluent_fsi_2way\\outputs\\official_monitor.csv",
+  "ready_for_step150": false,
+  "row_count": 0,
+  "sample_values_included": false,
+  "schema_errors": [
+    "official monitor source is missing"
+  ],
+  "schema_valid": false,
+  "selected96_execution_allowed": false,
+  "source_columns": [],
+  "source_delimiter": null,
+  "status": "waiting_for_official_monitor_source",
+  "step": 153,
+  "time_end_s": null,
+  "time_start_s": null,
+  "validation_claim_allowed": false
+}
