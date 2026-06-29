@@ -9,6 +9,8 @@ STEP140_OUTPUT_ROOT = ROOT / "outputs" / "step140_long_window_drift_forensics"
 STEP139_RUN_COMMIT = "4e43162a641085e56a4ba72c8bc013e58cb08cc3"
 STEP139_REPORT_COMMIT = "b83c1514e325c3bb5f29d73f8adeab13f6ac623d"
 STEP141_RUN_COMMIT = "90fa5798754942cd8f7de2a1c24a483804667478"
+STEP143_RUN_COMMIT = "5ec833f13602c8fb010693fc376f92088b24d93b"
+STEP143_FINAL_COMMIT = "618cf188827e0b9538e5279e8ab042fabd92a0b2"
 
 EXPECTED_REPORTS = [
     "mass_drift_segment_report.json",
@@ -169,9 +171,11 @@ def test_step139_reconciliation_records_actual_paths_and_commit_semantics():
 
     assert active["step139_code_commit_at_run"] == STEP139_RUN_COMMIT
     assert active["step141_code_commit_at_run"] == STEP141_RUN_COMMIT
-    assert active["current_code_commit"] == STEP141_RUN_COMMIT
-    assert active["code_commit_at_run"] == STEP141_RUN_COMMIT
-    assert active["repository_head_at_report"] == STEP141_RUN_COMMIT
+    assert active["step143_code_commit_at_run"] == STEP143_RUN_COMMIT
+    assert active["final_repository_head_after_step143_push"] == STEP143_FINAL_COMMIT
+    assert active["current_code_commit"] == STEP143_FINAL_COMMIT
+    assert active["code_commit_at_run"] == STEP143_FINAL_COMMIT
+    assert active["repository_head_at_report"] == STEP143_FINAL_COMMIT
     assert "code_commit_at_run" in status
     assert STEP139_RUN_COMMIT in status
     assert STEP141_RUN_COMMIT in status

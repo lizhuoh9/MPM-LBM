@@ -6,10 +6,11 @@ Current status: engineering prototype.
 
 Current campaign entry point: `docs/current/STATUS.md`.
 
-Current LBM boundary campaign note: Step143 completed four real `48^3 /
-250-step` mass-neutral design diagnostics and only permits a later Step144
-proposal for one `48^3 / 500-step` probe; selected96, selected-static, 96^3,
-Fluent, FSI, and validation claims remain blocked.
+Current LBM boundary campaign note: Step144 ran exactly one real `48^3 /
+500-step` mass-neutral final-evidence probe. It completed 500/500 and stayed
+finite, but failed mass acceptance, mean flux imbalance, and outlet stationarity;
+selected96, selected-static, 96^3, Fluent, FSI, and validation claims remain
+blocked.
 
 This repository is a small-scale engineering prototype for comparing MPM-LBM coupling paths. It is not production ready and should not be described as a completed sharp-interface FSI solver or a real squid simulation.
 

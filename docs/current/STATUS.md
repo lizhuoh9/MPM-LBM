@@ -1,13 +1,37 @@
 # Current Status
 
 The active campaign is the Fluent duct/flap LBM open-boundary repair campaign.
-The current artifact state remains selected-boundary blocked. Step143 activated
-the Step142 mass-neutral plane-flux controller design only inside a bounded
-four-row `48^3 / 250-step` LBM-only diagnostic phase. The Step143 audit supports
-allowing Step144 to propose one `48^3 / 500-step` probe for the best Step143
-setting only; it does not approve selected96, selected-static, 96^3, Fluent,
-FSI, quasi-2D validation, Figure 29.3 parity, or production-readiness.
+The current artifact state remains selected-boundary blocked. Step144 ran the
+single `48^3 / 500-step` LBM-only mass-neutral final-evidence probe that Step143
+allowed, using the exact Step143 best high setting. The row completed 500/500
+and stayed finite, but it failed the final hard gate on mass acceptance, mean
+flux imbalance, and outlet stationarity. Step144 therefore does not approve
+selected96, selected-static, 96^3, Fluent, FSI, quasi-2D validation, Figure 29.3
+parity, or production-readiness.
 Current campaign state: `48_candidates_failed`.
+
+Step144 did not run selected96.
+Step144 did not run selected-static.
+Step144 did not run 96^3.
+Step144 ran exactly one 48^3 / 500-step LBM-only row.
+Step144 did not run Fluent.
+Step144 did not run FSI.
+Step144 does not make a validation claim.
+Step144 keeps selected96 blocked.
+
+Step144 generated artifacts under `outputs/step144_mass_neutral_final48`. The
+real phase root is `outputs/step144_mass_neutral_final48/mass_neutral_final48`,
+and the audit decision is
+`mass_neutral_flow_stationarity_long_window_failure`. The single row completed
+500/500 with `candidate_mass_acceptance_observed_abs =
+0.007345390662776274`, `flux_imbalance_rel_tail_mean =
+0.1023209978570283`, and `outlet_flux_tail_cv =
+0.11500661338208944`, so it failed the `< 0.005` mass gate, `< 0.10` mean
+imbalance gate, and `< 0.10` outlet-CV gate. It kept
+`selected96_claim_allowed = false` and `validation_claim_allowed = false`.
+Mass-neutral feedback stayed saturated through most of the tail with
+`mass_neutral_feedback_saturation_fraction_tail = 0.9374677783363148`.
+Step145 selected-candidate-surface review is not allowed from this evidence.
 
 Step143 did not run selected96.
 Step143 did not run selected-static.

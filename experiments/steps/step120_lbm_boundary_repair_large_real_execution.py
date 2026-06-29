@@ -189,6 +189,15 @@ class Step120RunSpec(Step119RunSpec):
     source_step142_readiness_path: Optional[str] = None
     source_step142_status: Optional[str] = None
     source_step142_recommended_design: Optional[str] = None
+    source_step143_decision_hash: Optional[str] = None
+    source_step143_decision_path: Optional[str] = None
+    source_step143_comparison_hash: Optional[str] = None
+    source_step143_comparison_path: Optional[str] = None
+    source_step143_best_row_name: Optional[str] = None
+    source_step143_best_row_solver_state_hash: Optional[str] = None
+    source_step143_best_row_run_manifest_hash: Optional[str] = None
+    source_step143_best_row_mass_neutral_activation_hash: Optional[str] = None
+    source_step143_decision_case: Optional[str] = None
     open_boundary_inlet_ramp_steps: int = 0
     open_boundary_inlet_ramp_profile: str = "linear"
     open_boundary_flux_control_target_scale: float = 1.0
@@ -1630,6 +1639,7 @@ def _summary_row(
         "source_step140_dominant_failure_mechanism": spec.source_step140_dominant_failure_mechanism,
         "source_step140_mass_drift_mechanism": spec.source_step140_mass_drift_mechanism,
         **_source_step142_fields(spec),
+        **_source_step143_fields(spec),
         "requested_nx": spec.requested_grid(),
         "executed_nx": int(spec.nx),
         "requested_n_steps": spec.requested_steps(),
@@ -1684,6 +1694,9 @@ def _summary_row(
         ),
         "step143_mass_neutral_design_candidate": bool(
             spec.row_role == "mass_neutral_design_diagnostic_48" and "Step143" in str(spec.artifact_scope_note)
+        ),
+        "step144_mass_neutral_final48_candidate": bool(
+            spec.row_role == "mass_neutral_final_evidence_candidate_48" and "Step144" in str(spec.artifact_scope_note)
         ),
         "selected96_claim_allowed": False,
         "mass_total_delta_rel_final": mass_total_delta_rel_final,
@@ -1785,6 +1798,9 @@ def _metadata(
         "step143_mass_neutral_design_candidate": bool(
             spec.row_role == "mass_neutral_design_diagnostic_48" and "Step143" in str(spec.artifact_scope_note)
         ),
+        "step144_mass_neutral_final48_candidate": bool(
+            spec.row_role == "mass_neutral_final_evidence_candidate_48" and "Step144" in str(spec.artifact_scope_note)
+        ),
         "step120_schema_version": STEP120_SCHEMA_VERSION,
         "synthetic_diagnostic_mode": False,
         "fluid_only": True,
@@ -1816,6 +1832,7 @@ def _metadata(
         "source_step140_dominant_failure_mechanism": spec.source_step140_dominant_failure_mechanism,
         "source_step140_mass_drift_mechanism": spec.source_step140_mass_drift_mechanism,
         **_source_step142_fields(spec),
+        **_source_step143_fields(spec),
         "checkpoint_runtime_artifact_committed": False,
         "restored_checkpoint": restored_checkpoint,
         "stop_on_first_failure": bool(spec.stop_on_first_failure),
@@ -1862,6 +1879,9 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         "step143_mass_neutral_design_candidate": bool(
             spec.row_role == "mass_neutral_design_diagnostic_48" and "Step143" in str(spec.artifact_scope_note)
         ),
+        "step144_mass_neutral_final48_candidate": bool(
+            spec.row_role == "mass_neutral_final_evidence_candidate_48" and "Step144" in str(spec.artifact_scope_note)
+        ),
         "source_step": spec.source_step,
         "source_row_name": spec.source_row_name,
         "source_solver_state_hash": spec.source_solver_state_hash,
@@ -1876,6 +1896,7 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         "source_step140_dominant_failure_mechanism": spec.source_step140_dominant_failure_mechanism,
         "source_step140_mass_drift_mechanism": spec.source_step140_mass_drift_mechanism,
         **_source_step142_fields(spec),
+        **_source_step143_fields(spec),
         "all_population_equilibrium_reset_used": spec.open_boundary_semantics == "equilibrium_all_population_reset",
         "open_boundary_limiter_enabled": bool(spec.open_boundary_limiter_enabled),
         "open_boundary_rho_min": float(spec.open_boundary_rho_min),
@@ -2087,6 +2108,9 @@ def _flow_development_diagnostic_record(
     step143_mass_neutral_design_candidate = bool(
         spec.row_role == "mass_neutral_design_diagnostic_48" and "Step143" in str(spec.artifact_scope_note)
     )
+    step144_mass_neutral_final48_candidate = bool(
+        spec.row_role == "mass_neutral_final_evidence_candidate_48" and "Step144" in str(spec.artifact_scope_note)
+    )
     step132_authority_sweep_candidate = bool(
         spec.row_role == "plane_flux_control_candidate_48" and "Step132" in str(spec.artifact_scope_note)
     )
@@ -2103,6 +2127,7 @@ def _flow_development_diagnostic_record(
         "step139_planeflux_final48_candidate": step139_planeflux_final48_candidate,
         "step141_density_feedback_isolation_candidate": step141_density_feedback_isolation_candidate,
         "step143_mass_neutral_design_candidate": step143_mass_neutral_design_candidate,
+        "step144_mass_neutral_final48_candidate": step144_mass_neutral_final48_candidate,
         "step134_outlet_stationarity_candidate": step134_outlet_stationarity_candidate,
         "step133_mass_damped_candidate": step133_mass_damped_candidate,
         "step132_authority_sweep_candidate": step132_authority_sweep_candidate,
@@ -2197,6 +2222,7 @@ def _flow_development_diagnostic_record(
         "source_step140_dominant_failure_mechanism": spec.source_step140_dominant_failure_mechanism,
         "source_step140_mass_drift_mechanism": spec.source_step140_mass_drift_mechanism,
         **_source_step142_fields(spec),
+        **_source_step143_fields(spec),
         "mass_total_delta_rel": _finite_float(record.get("mass_total_delta_rel", 0.0)),
         "validation_claim_allowed": False,
         "selected96_claim_allowed": False,
@@ -2224,6 +2250,8 @@ def _write_flow_development_diagnostics(row_path: Path, records: Sequence[Dict[s
 
 
 def _flow_development_diagnostic_step_number(diagnostics: Sequence[Dict[str, Any]]) -> int:
+    if any(row.get("step144_mass_neutral_final48_candidate") is True for row in diagnostics):
+        return 144
     if any(row.get("step143_mass_neutral_design_candidate") is True for row in diagnostics):
         return 143
     if any(row.get("step141_density_feedback_isolation_candidate") is True for row in diagnostics):
@@ -2895,6 +2923,15 @@ def run_manifest_hash_for_spec(spec: Step120RunSpec) -> str:
         "source_step142_readiness_path",
         "source_step142_status",
         "source_step142_recommended_design",
+        "source_step143_decision_hash",
+        "source_step143_decision_path",
+        "source_step143_comparison_hash",
+        "source_step143_comparison_path",
+        "source_step143_best_row_name",
+        "source_step143_best_row_solver_state_hash",
+        "source_step143_best_row_run_manifest_hash",
+        "source_step143_best_row_mass_neutral_activation_hash",
+        "source_step143_decision_case",
     ]:
         if data.get(key) is None:
             data.pop(key, None)
@@ -2994,6 +3031,20 @@ def _source_step142_fields(spec: Step120RunSpec) -> Dict[str, Any]:
         "source_step142_readiness_path": spec.source_step142_readiness_path,
         "source_step142_status": spec.source_step142_status,
         "source_step142_recommended_design": spec.source_step142_recommended_design,
+    }
+
+
+def _source_step143_fields(spec: Step120RunSpec) -> Dict[str, Any]:
+    return {
+        "source_step143_decision_hash": spec.source_step143_decision_hash,
+        "source_step143_decision_path": spec.source_step143_decision_path,
+        "source_step143_comparison_hash": spec.source_step143_comparison_hash,
+        "source_step143_comparison_path": spec.source_step143_comparison_path,
+        "source_step143_best_row_name": spec.source_step143_best_row_name,
+        "source_step143_best_row_solver_state_hash": spec.source_step143_best_row_solver_state_hash,
+        "source_step143_best_row_run_manifest_hash": spec.source_step143_best_row_run_manifest_hash,
+        "source_step143_best_row_mass_neutral_activation_hash": spec.source_step143_best_row_mass_neutral_activation_hash,
+        "source_step143_decision_case": spec.source_step143_decision_case,
     }
 
 
@@ -3124,6 +3175,7 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "step139_planeflux_final48_candidate",
     "step141_density_feedback_isolation_candidate",
     "step143_mass_neutral_design_candidate",
+    "step144_mass_neutral_final48_candidate",
     "step134_outlet_stationarity_candidate",
     "step133_mass_damped_candidate",
     "step132_authority_sweep_candidate",
@@ -3208,6 +3260,15 @@ FLOW_DEVELOPMENT_DIAGNOSTIC_FIELDS = [
     "source_step142_readiness_path",
     "source_step142_status",
     "source_step142_recommended_design",
+    "source_step143_decision_hash",
+    "source_step143_decision_path",
+    "source_step143_comparison_hash",
+    "source_step143_comparison_path",
+    "source_step143_best_row_name",
+    "source_step143_best_row_solver_state_hash",
+    "source_step143_best_row_run_manifest_hash",
+    "source_step143_best_row_mass_neutral_activation_hash",
+    "source_step143_decision_case",
     "mass_total_delta_rel",
     "validation_claim_allowed",
     "selected96_claim_allowed",

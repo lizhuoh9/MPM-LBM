@@ -3,6 +3,38 @@
 The campaign cannot claim selected 96^3, quasi-2D, FSI, Fluent validation, or
 Figure 29.3 parity from the current 48^3 LBM-only candidate artifacts.
 
+Current Step144 mass-neutral final48 probe evidence:
+
+- Step144 adds the distinct `planeflux_mass_neutral_final48` phase with exactly
+  one real `48^3 / 500-step` LBM-only row.
+- Step144 row role is `mass_neutral_final_evidence_candidate_48`; this role is
+  not in the selected chain and `regularized_plane_flux_controlled_pressure_outlet`
+  remains outside selected-candidate semantics.
+- Step144 did not run selected96.
+- Step144 did not run selected-static.
+- Step144 did not run 96^3.
+- Step144 ran exactly one 48^3 / 500-step LBM-only row.
+- Step144 did not run Fluent.
+- Step144 did not run FSI.
+- Step144 does not make a validation claim.
+- Step144 keeps selected96 blocked.
+- The row completed 500/500, stayed finite, had no first-failure event, and had
+  no compact-collapse label.
+- The row failed final hard gates with
+  `candidate_mass_acceptance_observed_abs = 0.007345390662776274`,
+  `flux_imbalance_rel_tail_mean = 0.1023209978570283`, and
+  `outlet_flux_tail_cv = 0.11500661338208944`.
+- The ratio and max-imbalance fields stayed inside bounds:
+  `outlet_to_inlet_flux_ratio_tail_mean = 1.0364764885085453`,
+  `midplane_to_inlet_flux_ratio_tail_mean = 0.9977253037978716`, and
+  `flux_imbalance_rel_tail_max = 0.16828271633544037`.
+- Mass-neutral tail saturation remained high:
+  `mass_neutral_feedback_saturation_fraction_tail = 0.9374677783363148`.
+- Step144 audit decision:
+  `mass_neutral_flow_stationarity_long_window_failure`.
+- Step144 does not allow Step145 selected-candidate-surface review and does not
+  allow selected 96^3 execution.
+
 Current Step143 mass-neutral design diagnostic surface and evidence:
 
 - Step143 adds the distinct `planeflux_mass_neutral_design48` phase with four

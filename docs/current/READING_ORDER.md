@@ -6,29 +6,33 @@ Read these files first for the current boundary-repair campaign state:
 2. `docs/current/ACTIVE_CAMPAIGN.json`
 3. `docs/current/VALIDATION_GATES.md`
 4. `docs/current/READING_ORDER.md`
-5. `docs/campaigns/fluent_duct_flap/steps/143/goal.md`
-6. `docs/campaigns/fluent_duct_flap/steps/143/report.md`
-7. `outputs/step143_mass_neutral_design_diagnostic/step143_decision_summary.json`
-8. `outputs/step143_mass_neutral_design_diagnostic/step143_mass_neutral_comparison.json`
-9. `docs/campaigns/fluent_duct_flap/steps/142/goal.md`
-10. `docs/campaigns/fluent_duct_flap/steps/142/report.md`
-11. `docs/campaigns/fluent_duct_flap/steps/142/mass_neutral_plane_flux_design.md`
-12. `outputs/step142_mass_neutral_plane_flux_design/step142_design_readiness_report.json`
-13. `docs/campaigns/fluent_duct_flap/steps/141/goal.md`
-14. `docs/campaigns/fluent_duct_flap/steps/141/report.md`
-15. `outputs/step141_density_feedback_isolation/step141_decision_summary.json`
-16. `outputs/step141_density_feedback_isolation/step141_density_feedback_comparison.json`
-17. `docs/campaigns/fluent_duct_flap/steps/140/goal.md`
-18. `docs/campaigns/fluent_duct_flap/steps/140/report.md`
-19. `outputs/step140_long_window_drift_forensics/step140_failure_mechanism_summary.json`
-20. `docs/campaigns/fluent_duct_flap/steps/139/report.md`
-21. `outputs/step139_planeflux_final48/step139_long_window_comparison.json`
-22. `outputs/step139_planeflux_final48/step139_failure_forensics.json`
-23. `docs/GENERIC_SOLVER_ARCHITECTURE_CONTRACT.md`
-24. `docs/campaigns/fluent_duct_flap/fluent_official_local_execution_guard.md`
-25. `outputs/fluent_official_local_execution_prep/guard_report.json`
-26. `docs/campaigns/fluent_duct_flap/steps/138/report.md`
-27. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
+5. `docs/campaigns/fluent_duct_flap/steps/144/goal.md`
+6. `docs/campaigns/fluent_duct_flap/steps/144/report.md`
+7. `outputs/step144_mass_neutral_final48/step144_decision_summary.json`
+8. `outputs/step144_mass_neutral_final48/step144_long_window_comparison.json`
+9. `docs/campaigns/fluent_duct_flap/steps/143/goal.md`
+10. `docs/campaigns/fluent_duct_flap/steps/143/report.md`
+11. `outputs/step143_mass_neutral_design_diagnostic/step143_decision_summary.json`
+12. `outputs/step143_mass_neutral_design_diagnostic/step143_mass_neutral_comparison.json`
+13. `docs/campaigns/fluent_duct_flap/steps/142/goal.md`
+14. `docs/campaigns/fluent_duct_flap/steps/142/report.md`
+15. `docs/campaigns/fluent_duct_flap/steps/142/mass_neutral_plane_flux_design.md`
+16. `outputs/step142_mass_neutral_plane_flux_design/step142_design_readiness_report.json`
+17. `docs/campaigns/fluent_duct_flap/steps/141/goal.md`
+18. `docs/campaigns/fluent_duct_flap/steps/141/report.md`
+19. `outputs/step141_density_feedback_isolation/step141_decision_summary.json`
+20. `outputs/step141_density_feedback_isolation/step141_density_feedback_comparison.json`
+21. `docs/campaigns/fluent_duct_flap/steps/140/goal.md`
+22. `docs/campaigns/fluent_duct_flap/steps/140/report.md`
+23. `outputs/step140_long_window_drift_forensics/step140_failure_mechanism_summary.json`
+24. `docs/campaigns/fluent_duct_flap/steps/139/report.md`
+25. `outputs/step139_planeflux_final48/step139_long_window_comparison.json`
+26. `outputs/step139_planeflux_final48/step139_failure_forensics.json`
+27. `docs/GENERIC_SOLVER_ARCHITECTURE_CONTRACT.md`
+28. `docs/campaigns/fluent_duct_flap/fluent_official_local_execution_guard.md`
+29. `outputs/fluent_official_local_execution_prep/guard_report.json`
+30. `docs/campaigns/fluent_duct_flap/steps/138/report.md`
+31. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
 
 Older Step102-Step126 documents remain useful history, but they are not the
 current entry point for deciding whether the campaign may advance to selected
@@ -98,4 +102,9 @@ mass-neutral row improved mass, outlet CV, and mean flux imbalance over the
 disabled baseline, so Step143 permits only a later Step144 proposal for one
 48^3 / 500-step probe at that exact setting. Step143 did not run selected96,
 selected-static, 96^3, a 500-step row, Fluent, or FSI, and it does not make a
-validation claim.
+validation claim. Step144 then ran exactly one real 48^3 / 500-step LBM-only
+row at the exact Step143 best setting. The row completed 500/500 and stayed
+finite, but failed candidate mass acceptance, mean flux imbalance, and outlet
+stationarity. Step144 reports
+`mass_neutral_flow_stationarity_long_window_failure`, does not allow Step145
+selected-candidate-surface review, and keeps selected 96^3 blocked.

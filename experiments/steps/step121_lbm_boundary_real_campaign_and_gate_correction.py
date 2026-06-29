@@ -108,12 +108,20 @@ STEP141_DENSITY_FEEDBACK_ISOLATION_PHASE = "planeflux_density_feedback_isolation
 STEP141_DENSITY_FEEDBACK_ISOLATION_ROLE = "density_feedback_isolation_diagnostic_48"
 STEP143_MASS_NEUTRAL_DESIGN_PHASE = "planeflux_mass_neutral_design48"
 STEP143_MASS_NEUTRAL_DESIGN_ROLE = "mass_neutral_design_diagnostic_48"
+STEP144_MASS_NEUTRAL_FINAL_PHASE = "planeflux_mass_neutral_final48"
+STEP144_MASS_NEUTRAL_FINAL_ROLE = "mass_neutral_final_evidence_candidate_48"
 STEP139_SOURCE_CODE_COMMIT = "f0284d3f6207eb1c9341dfc9906293b651c6b0f7"
 STEP139_RUNTIME_CODE_COMMIT = "4e43162a641085e56a4ba72c8bc013e58cb08cc3"
 STEP142_SOURCE_CODE_COMMIT = "e792735d5572bb11716aca4a8249eccba3bb36d7"
+STEP143_RUNTIME_CODE_COMMIT = "5ec833f13602c8fb010693fc376f92088b24d93b"
+STEP143_FINAL_REPOSITORY_COMMIT = "618cf188827e0b9538e5279e8ab042fabd92a0b2"
 STEP140_SUMMARY_RELATIVE_PATH = "outputs/step140_long_window_drift_forensics/step140_failure_mechanism_summary.json"
 STEP142_READINESS_RELATIVE_PATH = (
     "outputs/step142_mass_neutral_plane_flux_design/step142_design_readiness_report.json"
+)
+STEP143_DECISION_RELATIVE_PATH = "outputs/step143_mass_neutral_design_diagnostic/step143_decision_summary.json"
+STEP143_COMPARISON_RELATIVE_PATH = (
+    "outputs/step143_mass_neutral_design_diagnostic/step143_mass_neutral_comparison.json"
 )
 
 
@@ -950,6 +958,82 @@ def step121_mass_neutral_design_48_specs(output_interval: int = 5) -> List[Step1
     return specs
 
 
+def _step144_step143_decision_path() -> Path:
+    return REPO_ROOT / STEP143_DECISION_RELATIVE_PATH
+
+
+def _step144_step143_comparison_path() -> Path:
+    return REPO_ROOT / STEP143_COMPARISON_RELATIVE_PATH
+
+
+def _step144_step143_best_row_provenance() -> Dict[str, Any]:
+    decision_path = _step144_step143_decision_path()
+    comparison_path = _step144_step143_comparison_path()
+    decision = _read_json(decision_path)
+    comparison = _read_json(comparison_path)
+    if decision.get("decision_case") != "mass_neutral_design_supports_step144_single_500step_probe":
+        raise ValueError("Step144 requires the Step143 probe-allowed decision case")
+    if decision.get("step144_single_500step_probe_proposal_allowed") is not True:
+        raise ValueError("Step144 requires Step143 to allow a single 500-step probe proposal")
+    best_name = decision.get("best_row_name")
+    best = next((row for row in comparison.get("rows", []) if row.get("name") == best_name), None)
+    if best is None:
+        raise ValueError(f"Step143 comparison is missing best row: {best_name}")
+    return {
+        "source_step143_decision_hash": sha256(decision_path.read_bytes()).hexdigest(),
+        "source_step143_decision_path": STEP143_DECISION_RELATIVE_PATH,
+        "source_step143_comparison_hash": sha256(comparison_path.read_bytes()).hexdigest(),
+        "source_step143_comparison_path": STEP143_COMPARISON_RELATIVE_PATH,
+        "source_step143_best_row_name": str(best_name),
+        "source_step143_best_row_solver_state_hash": str(best.get("solver_state_hash")),
+        "source_step143_best_row_run_manifest_hash": str(best.get("run_manifest_hash")),
+        "source_step143_best_row_mass_neutral_activation_hash": str(best.get("mass_neutral_activation_hash")),
+        "source_step143_decision_case": str(decision.get("decision_case")),
+    }
+
+
+def step121_mass_neutral_final_48_specs(output_interval: int = 10) -> List[Step120RunSpec]:
+    step143 = _step144_step143_best_row_provenance()
+    source = next(
+        spec
+        for spec in step121_mass_neutral_design_48_specs(output_interval=5)
+        if spec.name == step143["source_step143_best_row_name"]
+    )
+    spec = _replace_spec(
+        source,
+        name=(
+            "duct_only_48_regularized_plane_flux_controlled"
+            f"_gain{_step132_gain_slug(source.open_boundary_flux_feedback_gain_u)}"
+            f"_cap{_step133_param_slug(source.open_boundary_flux_correction_cap_u, 4, strip_trailing=False)}"
+            f"_rho{_step141_rho_slug(source.open_boundary_flux_feedback_gain_rho)}"
+            "_mnhigh"
+            f"_mgain{_step143_mass_gain_slug(source.open_boundary_mass_neutral_mass_error_gain)}"
+            f"_mcap{_step143_mass_cap_slug(source.open_boundary_mass_neutral_mass_error_cap)}"
+            f"_blend{_step133_param_slug(source.open_boundary_mass_neutral_correction_blend, 2, strip_trailing=False)}"
+            f"_out{int(output_interval)}"
+            "_500step_mass_neutral_final"
+        ),
+        n_steps=500,
+        requested_n_steps=500,
+        output_interval=output_interval,
+        row_role=STEP144_MASS_NEUTRAL_FINAL_ROLE,
+        allow_large_real_run_without_flag=True,
+        not_used_for_validation=True,
+        source_step=143,
+        source_row_name=source.name,
+        source_solver_state_hash=solver_state_hash_for_spec(source),
+        source_run_manifest_hash=run_manifest_hash_for_spec(source),
+        source_code_commit=STEP143_RUNTIME_CODE_COMMIT,
+        artifact_scope_note=(
+            "Step144 single 48^3 / 500-step mass-neutral final-evidence probe; "
+            "not selected96, not selected-static, not 96^3, not Fluent, not FSI, "
+            "not validation, and not a selected boundary"
+        ),
+        **step143,
+    )
+    return [spec]
+
+
 def _provenance_float(provenance: Dict[str, Any], key: str, default: float) -> float:
     value = provenance.get(key, default)
     if value is None:
@@ -1124,6 +1208,8 @@ def resolve_step121_phase_specs(
         return step121_density_feedback_isolation_48_specs(output_interval=output_interval)
     if phase == STEP143_MASS_NEUTRAL_DESIGN_PHASE:
         return step121_mass_neutral_design_48_specs(output_interval=output_interval)
+    if phase == STEP144_MASS_NEUTRAL_FINAL_PHASE:
+        return step121_mass_neutral_final_48_specs(output_interval=output_interval)
     if phase in {"selected96", "selected-static"}:
         if best_selection_path is None:
             raise ValueError(f"{phase} phase requires --best-selection-path")
@@ -1284,6 +1370,17 @@ def _manifest_row_for_spec(spec: Step120RunSpec) -> Dict[str, Any]:
         "source_step142_readiness_path": spec.source_step142_readiness_path,
         "source_step142_status": spec.source_step142_status,
         "source_step142_recommended_design": spec.source_step142_recommended_design,
+        "source_step143_decision_hash": spec.source_step143_decision_hash,
+        "source_step143_decision_path": spec.source_step143_decision_path,
+        "source_step143_comparison_hash": spec.source_step143_comparison_hash,
+        "source_step143_comparison_path": spec.source_step143_comparison_path,
+        "source_step143_best_row_name": spec.source_step143_best_row_name,
+        "source_step143_best_row_solver_state_hash": spec.source_step143_best_row_solver_state_hash,
+        "source_step143_best_row_run_manifest_hash": spec.source_step143_best_row_run_manifest_hash,
+        "source_step143_best_row_mass_neutral_activation_hash": (
+            spec.source_step143_best_row_mass_neutral_activation_hash
+        ),
+        "source_step143_decision_case": spec.source_step143_decision_case,
         "open_boundary_inlet_ramp_steps": int(spec.open_boundary_inlet_ramp_steps or 0),
         "open_boundary_inlet_ramp_profile": str(spec.open_boundary_inlet_ramp_profile or "linear"),
         "open_boundary_flux_feedback_gain_u": float(spec.open_boundary_flux_feedback_gain_u),
@@ -1336,6 +1433,17 @@ def _manifest_rejection_reasons(
         "source_step142_readiness_path": row.get("source_step142_readiness_path"),
         "source_step142_status": row.get("source_step142_status"),
         "source_step142_recommended_design": row.get("source_step142_recommended_design"),
+        "source_step143_decision_hash": row.get("source_step143_decision_hash"),
+        "source_step143_decision_path": row.get("source_step143_decision_path"),
+        "source_step143_comparison_hash": row.get("source_step143_comparison_hash"),
+        "source_step143_comparison_path": row.get("source_step143_comparison_path"),
+        "source_step143_best_row_name": row.get("source_step143_best_row_name"),
+        "source_step143_best_row_solver_state_hash": row.get("source_step143_best_row_solver_state_hash"),
+        "source_step143_best_row_run_manifest_hash": row.get("source_step143_best_row_run_manifest_hash"),
+        "source_step143_best_row_mass_neutral_activation_hash": row.get(
+            "source_step143_best_row_mass_neutral_activation_hash"
+        ),
+        "source_step143_decision_case": row.get("source_step143_decision_case"),
         "open_boundary_mass_neutral_flux_control_enabled": row.get(
             "open_boundary_mass_neutral_flux_control_enabled"
         ),
@@ -1404,6 +1512,7 @@ def _manifest_run_commands() -> List[str]:
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_final48 --allow-large-real-rows --output-interval 10",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_density_feedback_isolation48 --allow-large-real-rows --output-interval 5",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_mass_neutral_design48 --allow-large-real-rows --output-interval 5",
+        "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase planeflux_mass_neutral_final48 --allow-large-real-rows --output-interval 10",
         "D:\\working\\taichi\\env\\python.exe -m experiments.steps.step121_lbm_boundary_real_campaign_and_gate_correction --phase summary",
     ]
 
@@ -2277,6 +2386,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             "planeflux_final48",
             "planeflux_density_feedback_isolation48",
             "planeflux_mass_neutral_design48",
+            "planeflux_mass_neutral_final48",
             "all48",
             "selected96",
             "selected-static",
