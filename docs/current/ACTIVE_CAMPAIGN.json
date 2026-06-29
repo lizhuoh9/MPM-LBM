@@ -17,8 +17,8 @@
   "step145_artifact_generation_base_commit": "6fdf9bddea667bdbf36ab0f8e802c12db2a0def5",
   "step146_code_commit_at_run": "8f4199f1d454f929dc1ebcdd29ee297b0ffa5ab8",
   "commit_identity_note": "step144_code_commit_at_run = 618cf188827e0b9538e5279e8ab042fabd92a0b2 records the runtime code used by the real Step144 row; final_repository_head_after_step144_push = 6fdf9bddea667bdbf36ab0f8e802c12db2a0def5 records the final Step144 docs/tests/artifacts push. final_repository_head_after_step145_push = 8f4199f1d454f929dc1ebcdd29ee297b0ffa5ab8 records the final reviewed Step145 docs/tests/artifacts push. step145_artifact_generation_base_commit = 6fdf9bddea667bdbf36ab0f8e802c12db2a0def5 records the Step144 final-push base used for Step145 artifact generation. step146_code_commit_at_run records the repository HEAD used for Step146 artifact-only report generation.",
-  "state": "step157_subcycled_flow_development_repair_attempt_flow_gate_failed",
-  "final_classification": "step157_subcycled_repair_attempt_complete_flow_density_blocked_no_validation_claim",
+  "state": "step157_subcycled_flow_development_repair_attempt_density_invalidated_flow_metrics",
+  "final_classification": "step157_subcycled_repair_attempt_complete_density_invalidated_flow_metrics_no_validation_claim",
   "artifact_root": "outputs/step144_mass_neutral_final48/mass_neutral_final48",
   "forensics_artifact_root": "outputs/step140_long_window_drift_forensics",
   "diagnostic_artifact_root": "outputs/step141_density_feedback_isolation",
@@ -520,7 +520,13 @@
   "step157_mass_flux_reported": true,
   "step157_flow_development_gate_reported": true,
   "step157_flow_development_gate_pass": false,
-  "step157_outlet_flux_ratio_improved": true,
+  "step157_flow_metrics_valid_for_gate": false,
+  "step157_flow_metrics_invalid_reason": "density_gate_failed_before_tail_window",
+  "step157_first_density_gate_failure_step": 9,
+  "step157_first_finite_gate_failure_step": null,
+  "step157_raw_outlet_flux_ratio_improved": true,
+  "step157_outlet_flux_ratio_improved": false,
+  "step157_raw_flux_imbalance_improved": false,
   "step157_flux_imbalance_improved": false,
   "step157_inlet_flux_tail_mean": -1930589024.733107,
   "step157_outlet_flux_tail_mean": -5612815745.592484,
@@ -537,5 +543,5 @@
   "step157_figure_29_3_parity_claim_allowed": false,
   "step157_selected96_execution_allowed": false,
   "step157_recommended_next_step": "open_boundary_or_geometry_obstruction_diagnosis",
-  "step157_scope_note": "Step157 ran FSIDriver3D directly with 120 LBM substeps per official FSI step for 50 official steps and 6000 total LBM substeps. It did not run Fluent, Step150, selected96, or fabricate official monitor data. It does not make a validation claim. Flow-development and density gates remain failed."
+  "step157_scope_note": "Step157 ran FSIDriver3D directly with 120 LBM substeps per official FSI step for 50 official steps and 6000 total LBM substeps. It did not run Fluent, Step150, selected96, or fabricate official monitor data. It does not make a validation claim. Density first failed at official step 9 before the tail window, so raw tail-window flow metrics are not valid repair evidence. Flow-development and density gates remain failed."
 }

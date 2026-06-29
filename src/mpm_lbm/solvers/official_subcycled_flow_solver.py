@@ -253,6 +253,7 @@ def run_step157_subcycled_flow_repair(
             output_dir / "subcycled_mass_flux_timeseries.csv",
             output_dir / "flow_development_comparison_report.json",
             tail_fraction=tail_fraction,
+            stability_csv=output_dir / "subcycled_stability_timeseries.csv",
         )
         acceptance = _write_solver_acceptance_report(
             output_dir,
@@ -652,6 +653,10 @@ def _write_solver_acceptance_report(
         ),
         "outlet_flux_ratio_improved": bool(comparison["outlet_flux_ratio_improved"]),
         "flux_imbalance_improved": bool(comparison["flux_imbalance_improved"]),
+        "flow_metrics_valid_for_gate": bool(comparison["flow_metrics_valid_for_gate"]),
+        "flow_metrics_invalid_reason": comparison["flow_metrics_invalid_reason"],
+        "first_density_gate_failure_step": comparison["first_density_gate_failure_step"],
+        "first_finite_gate_failure_step": comparison["first_finite_gate_failure_step"],
         "official_monitor_loaded": False,
         "official_error_metrics_available": False,
         "validation_claim_allowed": False,
@@ -716,6 +721,12 @@ def _build_summary(
         "step157_flow_development_gate_pass": flow_pass,
         "outlet_flux_ratio_improved": bool(comparison["outlet_flux_ratio_improved"]),
         "flux_imbalance_improved": bool(comparison["flux_imbalance_improved"]),
+        "raw_outlet_flux_ratio_improved": bool(comparison["raw_outlet_flux_ratio_improved"]),
+        "raw_flux_imbalance_improved": bool(comparison["raw_flux_imbalance_improved"]),
+        "flow_metrics_valid_for_gate": bool(comparison["flow_metrics_valid_for_gate"]),
+        "flow_metrics_invalid_reason": comparison["flow_metrics_invalid_reason"],
+        "first_density_gate_failure_step": comparison["first_density_gate_failure_step"],
+        "first_finite_gate_failure_step": comparison["first_finite_gate_failure_step"],
         "official_monitor_loaded": bool(official_status["official_monitor_loaded"]),
         "official_error_metrics_available": bool(official_status["official_error_metrics_available"]),
         "validation_claim_allowed": False,
@@ -741,6 +752,13 @@ def _write_report(output_dir: Path, summary: dict[str, Any], comparison: dict[st
         else "Subcycling alone did not close the flow-development gate. The next step must "
         "diagnose open-boundary behavior, outlet propagation, or geometry/mask mismatch."
     )
+    if not bool(summary.get("flow_metrics_valid_for_gate", True)):
+        outcome = (
+            "Subcycling reached a density instability before the flow-development tail "
+            "window, so the raw tail flux ratios are not valid improvement evidence. "
+            "The next step must diagnose open-boundary behavior, outlet propagation, "
+            "or geometry/mask mismatch before re-evaluating flow development."
+        )
     text = (
         "# Step157 Official Subcycled Flow Development Repair\n\n"
         "Step157 diagnosed the Step155/Step156 flow-development failure as a\n"
@@ -762,6 +780,9 @@ def _write_report(output_dir: Path, summary: dict[str, Any], comparison: dict[st
         f"- Step157 flow gate pass: `{summary['step157_flow_development_gate_pass']}`\n"
         f"- Outlet ratio improved: `{comparison['outlet_flux_ratio_improved']}`\n"
         f"- Flux imbalance improved: `{comparison['flux_imbalance_improved']}`\n"
+        f"- Flow metrics valid for gate: `{comparison['flow_metrics_valid_for_gate']}`\n"
+        f"- Flow metrics invalid reason: `{comparison['flow_metrics_invalid_reason']}`\n"
+        f"- First density gate failure step: `{comparison['first_density_gate_failure_step']}`\n"
         f"- Validation claim allowed: `{summary['validation_claim_allowed']}`\n"
     )
     (output_dir / "report.md").write_text(text, encoding="utf-8")

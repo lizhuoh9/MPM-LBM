@@ -134,6 +134,9 @@ def test_step157_summary_contract():
     assert summary["source_step156_flow_development_gate_pass"] is False
     assert summary["step157_flow_development_gate_reported"] is True
     assert "step157_flow_development_gate_pass" in summary
+    assert summary["flow_metrics_valid_for_gate"] is False
+    assert summary["flow_metrics_invalid_reason"] == "density_gate_failed_before_tail_window"
+    assert summary["first_density_gate_failure_step"] == 9
     assert summary["validation_claim_allowed"] is False
     assert summary["figure_29_3_parity_claim_allowed"] is False
     assert summary["selected96_execution_allowed"] is False
@@ -147,6 +150,11 @@ def test_step157_flow_comparison_contract():
     assert "subcycled_step157" in report
     assert "outlet_flux_ratio_improved" in report
     assert "flux_imbalance_improved" in report
+    assert report["flow_metrics_valid_for_gate"] is False
+    assert report["flow_metrics_invalid_reason"] == "density_gate_failed_before_tail_window"
+    assert report["first_density_gate_failure_step"] == 9
+    assert report["raw_outlet_flux_ratio_improved"] is True
+    assert report["outlet_flux_ratio_improved"] is False
     assert "subcycling_repair_success" in report
     assert report["subcycling_repair_success_policy"].startswith("flow gate requires")
     assert report["validation_claim_allowed"] is False

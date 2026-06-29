@@ -15,7 +15,7 @@ Step157 did not run Fluent, did not load or fabricate official monitor data,
 did not run Step150, did not run selected96, and does not make a validation
 claim.
 
-Subcycling alone did not close the flow-development gate. The next step must diagnose open-boundary behavior, outlet propagation, or geometry/mask mismatch.
+Subcycling reached a density instability before the flow-development tail window, so the raw tail flux ratios are not valid improvement evidence. The next step must diagnose open-boundary behavior, outlet propagation, or geometry/mask mismatch before re-evaluating flow development.
 
 The flow-development comparison against Step156 is recorded in:
 `outputs/step157_official_subcycled_flow_development_repair/flow_development_comparison_report.json`.
@@ -23,6 +23,9 @@ The flow-development comparison against Step156 is recorded in:
 ## Current Comparison
 
 - Step157 flow gate pass: `False`
-- Outlet ratio improved: `True`
+- Outlet ratio improved: `False`
 - Flux imbalance improved: `False`
+- Flow metrics valid for gate: `False`
+- Flow metrics invalid reason: `density_gate_failed_before_tail_window`
+- First density gate failure step: `9`
 - Validation claim allowed: `False`

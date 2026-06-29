@@ -150,10 +150,15 @@ Current Step148/149/150/151/152/153/154/155/156/157 official-case reproduction s
   subcycled timeseries CSVs, `velocity_snapshot_step050.npz`,
   Step157 velocity PNGs, `flow_development_comparison_report.json`,
   `solver_acceptance_report.json`, and `step157_summary.json`.
-- Step157 improved `outlet_to_inlet_flux_ratio_tail_mean` from the Step156
-  value `-5.006163707054121e-05` to `-0.7868301859248276`, but
-  `flux_imbalance_rel_tail_mean = -1.0595574586521002` remains outside the
-  flow-development gate.
+- Step157 changed the raw `outlet_to_inlet_flux_ratio_tail_mean` from the
+  Step156 value `-5.006163707054121e-05` to `-0.7868301859248276`, but that
+  raw comparison is not valid repair evidence because the density gate first
+  failed at official step 9, before the tail window.
+- Step157 records `flow_metrics_valid_for_gate = false`,
+  `flow_metrics_invalid_reason = density_gate_failed_before_tail_window`,
+  `raw_outlet_flux_ratio_improved = true`,
+  `outlet_flux_ratio_improved = false`, and
+  `flux_imbalance_rel_tail_mean = -1.0595574586521002`.
 - Step157 records `step157_flow_development_gate_pass = false`,
   `density_gate_pass = false`, `finite_gate_pass = true`,
   `mpm_j_gate_pass = true`, `validation_claim_allowed = false`,

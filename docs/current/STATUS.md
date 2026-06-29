@@ -59,12 +59,17 @@ steps, `0.025 s`, and 6000 total LBM substeps. The output is under
 
 Step157 did not run Fluent, did not run Step150, did not run selected96, did
 not load or fabricate official monitor data, and does not make a validation or
-Figure 29.3 parity claim. The repair attempt improved the outlet/inlet flux
-ratio magnitude from Step156's `-5.006163707054121e-05` to
-`-0.7868301859248276`, but it did not pass the flow-development gate because
-`flux_imbalance_rel_tail_mean = -1.0595574586521002` remains outside the
-accepted range. The density gate also failed while finite values and MPM-J
-checks passed. The summary records
+Figure 29.3 parity claim. The raw outlet/inlet flux ratio changed from
+Step156's `-5.006163707054121e-05` to `-0.7868301859248276`, but that raw
+tail-window comparison is not valid repair evidence because the density gate
+first failed at official step 9, before the tail window. With flow metrics
+gated on density/finite stability, Step157 records
+`flow_metrics_valid_for_gate = false`,
+`flow_metrics_invalid_reason = density_gate_failed_before_tail_window`,
+`outlet_flux_ratio_improved = false`, and
+`raw_outlet_flux_ratio_improved = true`. The flow-development gate still fails
+with `flux_imbalance_rel_tail_mean = -1.0595574586521002`, and the density
+gate failed while finite values and MPM-J checks passed. The summary records
 `status = subcycled_flow_development_repair_attempt_complete_but_flow_gate_failed`,
 `subcycled_solver_run_executed = true`, `total_lbm_substeps_completed = 6000`,
 `step157_flow_development_gate_pass = false`,

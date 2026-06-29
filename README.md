@@ -13,15 +13,19 @@ artifacts, then runs the same public duct/flap proxy through `FSIDriver3D` with
 `fsi_exchange_mode = lbm_subcycled_per_fsi_step`, 120 LBM substeps per official
 FSI step, and `lbm_dt_phys_override_s = 4.166666666666667e-6`. Step157
 completed 50 official steps, `0.025 s`, and 6000 total LBM substeps under
-`outputs/step157_official_subcycled_flow_development_repair`. It improved the
-outlet/inlet flux ratio magnitude but still fails the flow-development gate
-because flux imbalance remains outside gate, and it also fails the density
-gate. Step157 did not run Fluent, did not run Step150, did not run selected96,
-did not load or fabricate official monitor data, and does not make a
-validation claim. Private official monitor data belongs under the ignored
+`outputs/step157_official_subcycled_flow_development_repair`. Its raw
+outlet/inlet flux ratio changed toward the target magnitude, but density first
+failed at official step 9 before the tail window, so the raw tail-window flow
+comparison is not valid repair evidence. Step157 now reports
+`flow_metrics_valid_for_gate = false`,
+`flow_metrics_invalid_reason = density_gate_failed_before_tail_window`,
+`outlet_flux_ratio_improved = false`, and it still fails both flow-development
+and density gates. Step157 did not run Fluent, did not run Step150, did not run
+selected96, did not load or fabricate official monitor data, and does not make
+a validation claim. Private official monitor data belongs under the ignored
 `benchmarks/private/` path and must not be committed.
 
-Step157 bounded-state phrases: Step157 reports `subcycled_flow_development_repair_attempt_complete_but_flow_gate_failed`; Step157 consumed the Step154 compiled case, Step155 solver root, and Step156 acceptance artifacts; Step157 ran `FSIDriver3D` directly with 120 LBM substeps per official step; Step157 completed 6000 total LBM substeps; Step157 generated Step157 velocity cloud and diagnostic plots; Step157 wrote subcycled mass/flux, solver, monitor, force, and stability CSVs; Step157 official monitor loaded is false; Step157 did not run Fluent; Step157 did not run Step150; Step157 did not run selected96; Step157 does not make a validation claim; Step157 reports flow development honestly and currently fails that gate.
+Step157 bounded-state phrases: Step157 reports `subcycled_flow_development_repair_attempt_complete_but_flow_gate_failed`; Step157 consumed the Step154 compiled case, Step155 solver root, and Step156 acceptance artifacts; Step157 ran `FSIDriver3D` directly with 120 LBM substeps per official step; Step157 completed 6000 total LBM substeps; Step157 generated Step157 velocity cloud and diagnostic plots; Step157 wrote subcycled mass/flux, solver, monitor, force, and stability CSVs; Step157 first density gate failure step is 9; Step157 flow metrics valid for gate is false; Step157 raw outlet flux ratio improved is true; Step157 gated outlet flux ratio improved is false; Step157 official monitor loaded is false; Step157 did not run Fluent; Step157 did not run Step150; Step157 did not run selected96; Step157 does not make a validation claim; Step157 reports flow development honestly and currently fails that gate.
 
 This repository is a small-scale engineering prototype for comparing MPM-LBM coupling paths. It is not production ready and should not be described as a completed sharp-interface FSI solver or a real squid simulation.
 

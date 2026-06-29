@@ -119,6 +119,8 @@ def summarize_mass_flux_tail(mass_flux_csv: Path, tail_fraction: float = 0.2) ->
         raise ValueError(f"mass flux csv has no rows: {mass_flux_csv}")
     tail_count = max(1, math.ceil(len(rows) * tail_fraction))
     tail_rows = rows[-tail_count:]
+    tail_first_step = int(_parse_float(tail_rows[0].get("official_step", tail_rows[0].get("step"))))
+    tail_last_step = int(_parse_float(tail_rows[-1].get("official_step", tail_rows[-1].get("step"))))
     inlet = _mean(tail_rows, "inlet_flux")
     outlet = _mean(tail_rows, "outlet_flux")
     midplane = _mean(tail_rows, "midplane_flux")
@@ -130,6 +132,8 @@ def summarize_mass_flux_tail(mass_flux_csv: Path, tail_fraction: float = 0.2) ->
         "mass_flux_rows": len(rows),
         "tail_fraction": tail_fraction,
         "tail_row_count": tail_count,
+        "tail_first_official_step": tail_first_step,
+        "tail_last_official_step": tail_last_step,
         "inlet_flux_tail_mean": inlet,
         "outlet_flux_tail_mean": outlet,
         "midplane_flux_tail_mean": midplane,
@@ -140,11 +144,64 @@ def summarize_mass_flux_tail(mass_flux_csv: Path, tail_fraction: float = 0.2) ->
     }
 
 
+def summarize_stability_gate(stability_csv: Path | None) -> dict[str, Any]:
+    if stability_csv is None:
+        return {
+            "stability_rows": 0,
+            "density_gate_pass": True,
+            "finite_gate_pass": True,
+            "first_density_gate_failure_step": None,
+            "first_finite_gate_failure_step": None,
+        }
+
+    rows = _read_csv_rows(stability_csv)
+    first_density_failure = None
+    first_finite_failure = None
+    first_density_row: dict[str, str] | None = None
+    first_finite_row: dict[str, str] | None = None
+    density_pass = True
+    finite_pass = True
+
+    for row in rows:
+        step = int(_parse_float(row.get("official_step", row.get("step", 0))))
+        if not _parse_bool(row.get("density_gate_pass_step"), default=True):
+            density_pass = False
+            if first_density_failure is None:
+                first_density_failure = step
+                first_density_row = row
+        if not _parse_bool(row.get("finite_gate_pass_step"), default=True):
+            finite_pass = False
+            if first_finite_failure is None:
+                first_finite_failure = step
+                first_finite_row = row
+
+    return {
+        "stability_rows": len(rows),
+        "density_gate_pass": bool(density_pass),
+        "finite_gate_pass": bool(finite_pass),
+        "first_density_gate_failure_step": first_density_failure,
+        "first_finite_gate_failure_step": first_finite_failure,
+        "first_density_gate_failure_rho_min": (
+            None if first_density_row is None else _parse_float(first_density_row.get("rho_min"))
+        ),
+        "first_density_gate_failure_rho_max": (
+            None if first_density_row is None else _parse_float(first_density_row.get("rho_max"))
+        ),
+        "first_density_gate_failure_lbm_max_v": (
+            None if first_density_row is None else _parse_float(first_density_row.get("lbm_max_v"))
+        ),
+        "first_finite_gate_failure_lbm_max_v": (
+            None if first_finite_row is None else _parse_float(first_finite_row.get("lbm_max_v"))
+        ),
+    }
+
+
 def build_flow_development_comparison_report(
     step156_acceptance: dict,
     subcycled_mass_flux_csv: Path,
     output_path: Path,
     tail_fraction: float = 0.2,
+    stability_csv: Path | None = None,
 ) -> dict[str, Any]:
     baseline = {
         "flow_development_gate_pass": bool(step156_acceptance.get("flow_development_gate_pass")),
@@ -158,20 +215,54 @@ def build_flow_development_comparison_report(
         ),
     }
     subcycled = summarize_mass_flux_tail(subcycled_mass_flux_csv, tail_fraction)
-    outlet_improved = abs(subcycled["outlet_to_inlet_flux_ratio_tail_mean"]) > abs(
+    stability = summarize_stability_gate(stability_csv)
+    raw_outlet_improved = abs(subcycled["outlet_to_inlet_flux_ratio_tail_mean"]) > abs(
         baseline["outlet_to_inlet_flux_ratio_tail_mean"]
     )
-    imbalance_improved = abs(subcycled["flux_imbalance_rel_tail_mean"]) < abs(
+    raw_imbalance_improved = abs(subcycled["flux_imbalance_rel_tail_mean"]) < abs(
         baseline["flux_imbalance_rel_tail_mean"]
     )
+    flow_metrics_valid = bool(stability["density_gate_pass"] and stability["finite_gate_pass"])
+    invalid_reason = None
+    if not stability["density_gate_pass"]:
+        invalid_reason = _stability_failure_reason(
+            "density_gate_failed",
+            stability["first_density_gate_failure_step"],
+            subcycled["tail_first_official_step"],
+            subcycled["tail_last_official_step"],
+        )
+    elif not stability["finite_gate_pass"]:
+        invalid_reason = _stability_failure_reason(
+            "finite_gate_failed",
+            stability["first_finite_gate_failure_step"],
+            subcycled["tail_first_official_step"],
+            subcycled["tail_last_official_step"],
+        )
+
+    subcycled = {
+        **subcycled,
+        "density_gate_pass": bool(stability["density_gate_pass"]),
+        "finite_gate_pass": bool(stability["finite_gate_pass"]),
+        "first_density_gate_failure_step": stability["first_density_gate_failure_step"],
+        "first_finite_gate_failure_step": stability["first_finite_gate_failure_step"],
+        "flow_metrics_valid_for_gate": flow_metrics_valid,
+        "flow_metrics_invalid_reason": invalid_reason,
+    }
     report = {
         "step": STEP,
         "status": "flow_development_comparison_written",
         "baseline_step155_step156": baseline,
         "subcycled_step157": subcycled,
-        "outlet_flux_ratio_improved": bool(outlet_improved),
-        "flux_imbalance_improved": bool(imbalance_improved),
-        "subcycling_repair_success": bool(subcycled["flow_development_gate_pass"]),
+        "raw_outlet_flux_ratio_improved": bool(raw_outlet_improved),
+        "raw_flux_imbalance_improved": bool(raw_imbalance_improved),
+        "outlet_flux_ratio_improved": bool(flow_metrics_valid and raw_outlet_improved),
+        "flux_imbalance_improved": bool(flow_metrics_valid and raw_imbalance_improved),
+        "flow_metrics_valid_for_gate": flow_metrics_valid,
+        "flow_metrics_invalid_reason": invalid_reason,
+        "first_density_gate_failure_step": stability["first_density_gate_failure_step"],
+        "first_finite_gate_failure_step": stability["first_finite_gate_failure_step"],
+        "stability_gate_summary": stability,
+        "subcycling_repair_success": bool(flow_metrics_valid and subcycled["flow_development_gate_pass"]),
         "subcycling_repair_success_policy": FLOW_GATE_POLICY,
         "validation_claim_allowed": False,
         "figure_29_3_parity_claim_allowed": False,
@@ -195,3 +286,31 @@ def _parse_float(value: Any) -> float:
         return float(value)
     except (TypeError, ValueError):
         return 0.0
+
+
+def _parse_bool(value: Any, default: bool = False) -> bool:
+    if value is None:
+        return default
+    if isinstance(value, bool):
+        return value
+    text = str(value).strip().lower()
+    if text in {"true", "1", "yes"}:
+        return True
+    if text in {"false", "0", "no"}:
+        return False
+    return default
+
+
+def _stability_failure_reason(
+    prefix: str,
+    failure_step: int | None,
+    tail_first_step: int,
+    tail_last_step: int,
+) -> str:
+    if failure_step is None:
+        return f"{prefix}_unknown_step"
+    if failure_step < tail_first_step:
+        return f"{prefix}_before_tail_window"
+    if failure_step <= tail_last_step:
+        return f"{prefix}_during_tail_window"
+    return f"{prefix}_after_tail_window"
