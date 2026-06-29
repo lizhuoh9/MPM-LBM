@@ -1,0 +1,25 @@
+{
+  "case_name": "official_tutorial_duct_flap_proxy_case",
+  "compiled_case_path": "outputs\\step154_official_solver_prepost_pipeline\\compiled_case.json",
+  "expected_outputs": {
+    "centerline_velocity_profile": "centerline_velocity_profile.csv",
+    "force_monitor_plot": "force_monitor_plot.png",
+    "geometry_overlay_plot": "geometry_overlay_step050.png",
+    "monitor_displacement_plot": "monitor_displacement_plot.png",
+    "official_comparison_report": "official_comparison_report.json",
+    "postprocess_summary": "postprocess_summary.json",
+    "solver_acceptance_report": "solver_acceptance_report.json",
+    "streamline_or_quiver_plot": "streamline_or_quiver_step050.png",
+    "velocity_magnitude_plot": "velocity_magnitude_step050.png",
+    "velocity_ux_plot": "velocity_ux_step050.png",
+    "velocity_uy_plot": "velocity_uy_step050.png",
+    "x_plane_flux_profile": "x_plane_flux_profile.csv"
+  },
+  "figure_29_3_parity_claim_allowed": false,
+  "geometry_preview_path": "outputs\\step154_official_solver_prepost_pipeline\\geometry_preview.png",
+  "official_monitor_required_before_comparison_report": true,
+  "status": "postprocess_spec_ready",
+  "step": 154,
+  "step156_required_before_velocity_plots": true,
+  "validation_claim_allowed": false
+}

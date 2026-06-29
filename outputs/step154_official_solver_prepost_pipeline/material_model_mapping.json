@@ -1,0 +1,15 @@
+{
+  "current_solver_structural_model": "finite_deformation_mpm",
+  "fluent_structural_model_equivalence_claim_allowed": false,
+  "material_constants_available_to_step155": true,
+  "official_material": {
+    "material_name": "silicone-rubber",
+    "poisson_ratio": 0.47,
+    "solid_density_kg_m3": 1600.0,
+    "youngs_modulus_pa": 1000000.0
+  },
+  "official_structural_model": "Fluent intrinsic FSI / FEM-like structural model",
+  "status": "material_mapping_compiled",
+  "step": 154,
+  "validation_claim_allowed": false
+}

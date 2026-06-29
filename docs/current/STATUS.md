@@ -46,17 +46,29 @@ real solver patch. In the current checkout Step151 is still
 coupling, geometry, monitor extraction, or runtime solver formulas while
 Step151 lacks a real targeted fix plan.
 
-Step153 is now the current official tutorial setup-parity run after Step152. It
-runs the repository `FSIDriver3D` path through the Step148 solver helper, but
-uses the public official tutorial window of 50 steps, `dt = 0.0005 s`, total
-time `0.025 s`, and records the official geometry, material, monitor point, and
-boundary/FSI semantics. The output is under
-`outputs/step153_official_tutorial_setup_parity`. The run completed with
-`status = official_tutorial_setup_parity_run_complete`, `solver_monitor_rows =
-11`, `solver_time_end_s = 0.025`, `official_structural_material_applied = true`,
-`official_monitor_loaded = false`, `validation_claim_allowed = false`, and
-`selected96_execution_allowed = false`. Step153 does not run Step150, does not
-commit private monitor payloads, and does not make a validation claim.
+Step154 is now the current official solver pre/post pipeline after Step153. It
+does not run the solver, Fluent, Step150, selected96, or the Step148 helper as
+the primary runner. It compiles the public tutorial duct/flap proxy into the
+canonical next-run input under
+`outputs/step154_official_solver_prepost_pipeline/compiled_case.json`, writes
+geometry, boundary, and FSI masks, records material and dimensionless mappings,
+maps the official monitor point to the 48^3 solver grid, and writes a
+postprocess specification plus `geometry_preview.png`. The summary records
+`status = official_solver_prepost_pipeline_ready`,
+`compiled_case_ready_for_step155 = true`, `step155_solver_run_allowed = true`,
+`solver_run_executed = false`, `fluent_run_executed = false`,
+`step150_executed = false`, `official_monitor_loaded = false`,
+`validation_claim_allowed = false`, `figure_29_3_parity_claim_allowed = false`,
+and `selected96_execution_allowed = false`.
+
+Step153 remains the latest official tutorial setup-parity solver run before
+Step154. It ran the repository `FSIDriver3D` path through the Step148 solver
+helper for the public official tutorial window of 50 steps, `dt = 0.0005 s`,
+total time `0.025 s`, and recorded the official geometry, material, monitor
+point, and boundary/FSI semantics under
+`outputs/step153_official_tutorial_setup_parity`. Step153 completed with
+`official_monitor_loaded = false`, so Step154 intentionally produces only a
+case-preparation surface and does not make a validation claim.
 
 The previous LBM outlet-controller repair line remains selected-boundary
 blocked. Step147 ran exactly four 48^3 / 250-step LBM-only rows under
@@ -99,7 +111,7 @@ diagnostic proposal. Step146 did not run a new LBM row, did not run selected96,
 selected-static, 96^3, Fluent, or FSI, did not run a 500-step probe, and does
 not make a validation claim.
 Current campaign state:
-`step153_official_tutorial_setup_parity_run_complete`.
+`step154_official_solver_prepost_pipeline_ready`.
 
 Step146 artifacts are under
 `outputs/step146_coupled_saturation_stationarity_design`. The design readiness

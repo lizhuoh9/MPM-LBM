@@ -7,40 +7,49 @@ error-localization state:
 2. `docs/current/ACTIVE_CAMPAIGN.json`
 3. `docs/current/VALIDATION_GATES.md`
 4. `docs/current/READING_ORDER.md`
-5. `docs/campaigns/fluent_duct_flap/steps/153/goal.md`
-6. `docs/campaigns/fluent_duct_flap/steps/153/report.md`
-7. `outputs/step153_official_tutorial_setup_parity/solver_reproduction_summary.json`
-8. `outputs/step153_official_tutorial_setup_parity/official_tutorial_setup_report.json`
-9. `outputs/step153_official_tutorial_setup_parity/material_mapping_report.json`
-10. `outputs/step153_official_tutorial_setup_parity/boundary_semantics_gap_report.json`
-11. `outputs/step153_official_tutorial_setup_parity/official_reference_gap_report.json`
-12. `outputs/step153_official_tutorial_setup_parity/solver_monitor.csv`
-13. `outputs/step153_official_tutorial_setup_parity/solver_force_monitor.csv`
-14. `docs/campaigns/fluent_duct_flap/steps/152/goal.md`
-15. `docs/campaigns/fluent_duct_flap/steps/152/report.md`
-16. `outputs/step152_apply_targeted_solver_fix/step152_apply_summary.json`
-17. `outputs/step152_apply_targeted_solver_fix/step152_patch_plan.json`
-18. `outputs/step152_apply_targeted_solver_fix/error_delta_report.json`
-19. `docs/campaigns/fluent_duct_flap/steps/151/goal.md`
-20. `docs/campaigns/fluent_duct_flap/steps/151/report.md`
-21. `outputs/step151_targeted_solver_fix/step151_fix_report.json`
-22. `outputs/step151_targeted_solver_fix/step151_fix_plan.json`
-23. `outputs/step151_targeted_solver_fix/error_delta_report.json`
-24. `docs/campaigns/fluent_duct_flap/steps/150/goal.md`
-25. `docs/campaigns/fluent_duct_flap/steps/150/report.md`
-26. `outputs/step150_official_monitor_error_localization/step150_decision_summary.json`
-27. `outputs/step150_official_monitor_error_localization/error_localization_summary.json`
-28. `outputs/step150_official_monitor_error_localization/official_monitor_intake_summary.json`
-29. `outputs/step150_official_monitor_error_localization/official_monitor_schema_report.json`
-30. `outputs/step150_official_monitor_error_localization/official_monitor_private_hash_report.json`
-31. `docs/campaigns/fluent_duct_flap/steps/149/goal.md`
-32. `docs/campaigns/fluent_duct_flap/steps/149/report.md`
-33. `outputs/step149_fluent_official_vs_our_solver_error_localization/error_localization_summary.json`
-34. `docs/campaigns/fluent_duct_flap/steps/148/goal.md`
-35. `docs/campaigns/fluent_duct_flap/steps/148/report.md`
-36. `outputs/step148_our_solver_fluent_official_case/solver_reproduction_summary.json`
-37. `outputs/step148_our_solver_fluent_official_case/solver_monitor.csv`
-38. `outputs/step148_our_solver_fluent_official_case/solver_force_monitor.csv`
+5. `docs/campaigns/fluent_duct_flap/steps/154/goal.md`
+6. `docs/campaigns/fluent_duct_flap/steps/154/report.md`
+7. `outputs/step154_official_solver_prepost_pipeline/step154_summary.json`
+8. `outputs/step154_official_solver_prepost_pipeline/compiled_case.json`
+9. `outputs/step154_official_solver_prepost_pipeline/preprocess_report.json`
+10. `outputs/step154_official_solver_prepost_pipeline/postprocess_spec.json`
+11. `outputs/step154_official_solver_prepost_pipeline/material_model_mapping.json`
+12. `outputs/step154_official_solver_prepost_pipeline/dimensionless_mapping.json`
+13. `outputs/step154_official_solver_prepost_pipeline/geometry_preview.png`
+14. `docs/campaigns/fluent_duct_flap/steps/153/goal.md`
+15. `docs/campaigns/fluent_duct_flap/steps/153/report.md`
+16. `outputs/step153_official_tutorial_setup_parity/solver_reproduction_summary.json`
+17. `outputs/step153_official_tutorial_setup_parity/official_tutorial_setup_report.json`
+18. `outputs/step153_official_tutorial_setup_parity/material_mapping_report.json`
+19. `outputs/step153_official_tutorial_setup_parity/boundary_semantics_gap_report.json`
+20. `outputs/step153_official_tutorial_setup_parity/official_reference_gap_report.json`
+21. `outputs/step153_official_tutorial_setup_parity/solver_monitor.csv`
+22. `outputs/step153_official_tutorial_setup_parity/solver_force_monitor.csv`
+23. `docs/campaigns/fluent_duct_flap/steps/152/goal.md`
+24. `docs/campaigns/fluent_duct_flap/steps/152/report.md`
+25. `outputs/step152_apply_targeted_solver_fix/step152_apply_summary.json`
+26. `outputs/step152_apply_targeted_solver_fix/step152_patch_plan.json`
+27. `outputs/step152_apply_targeted_solver_fix/error_delta_report.json`
+28. `docs/campaigns/fluent_duct_flap/steps/151/goal.md`
+29. `docs/campaigns/fluent_duct_flap/steps/151/report.md`
+30. `outputs/step151_targeted_solver_fix/step151_fix_report.json`
+31. `outputs/step151_targeted_solver_fix/step151_fix_plan.json`
+32. `outputs/step151_targeted_solver_fix/error_delta_report.json`
+33. `docs/campaigns/fluent_duct_flap/steps/150/goal.md`
+34. `docs/campaigns/fluent_duct_flap/steps/150/report.md`
+35. `outputs/step150_official_monitor_error_localization/step150_decision_summary.json`
+36. `outputs/step150_official_monitor_error_localization/error_localization_summary.json`
+37. `outputs/step150_official_monitor_error_localization/official_monitor_intake_summary.json`
+38. `outputs/step150_official_monitor_error_localization/official_monitor_schema_report.json`
+39. `outputs/step150_official_monitor_error_localization/official_monitor_private_hash_report.json`
+40. `docs/campaigns/fluent_duct_flap/steps/149/goal.md`
+41. `docs/campaigns/fluent_duct_flap/steps/149/report.md`
+42. `outputs/step149_fluent_official_vs_our_solver_error_localization/error_localization_summary.json`
+43. `docs/campaigns/fluent_duct_flap/steps/148/goal.md`
+44. `docs/campaigns/fluent_duct_flap/steps/148/report.md`
+45. `outputs/step148_our_solver_fluent_official_case/solver_reproduction_summary.json`
+46. `outputs/step148_our_solver_fluent_official_case/solver_monitor.csv`
+47. `outputs/step148_our_solver_fluent_official_case/solver_force_monitor.csv`
 25. `docs/campaigns/fluent_duct_flap/steps/147/goal.md`
 26. `docs/campaigns/fluent_duct_flap/steps/147/report.md`
 27. `outputs/step147_saturation_stationarity_diagnostic/step147_decision_summary.json`
@@ -83,6 +92,15 @@ error-localization state:
 64. `outputs/fluent_official_local_execution_prep/guard_report.json`
 65. `docs/campaigns/fluent_duct_flap/steps/138/report.md`
 66. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
+
+Step154 is the active official solver pre/post pipeline artifact: it compiles a
+canonical 48^3 duct/flap proxy case, geometry/boundary/FSI masks, material and
+dimensionless mappings, monitor-point mapping, postprocess specification, and a
+geometry preview under `outputs/step154_official_solver_prepost_pipeline`.
+Step154 did not run the solver, Fluent, Step150, selected96, or the Step148
+helper as the primary runner. It only makes
+`compiled_case_ready_for_step155 = true`; validation and Figure 29.3 parity
+claims remain blocked.
 
 Step148 is the active solver reproduction artifact: it ran the repository
 MPM-LBM/FSI driver at 48 grid / 250 FSI steps and wrote solver monitors under

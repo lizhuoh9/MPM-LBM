@@ -4,7 +4,7 @@ The campaign cannot claim selected 96^3, quasi-2D, Fluent validation, Figure
 29.3 parity, an actionable Step151 solver bug fix, an applied Step152 solver
 patch, or Step150 readiness from the current artifact state.
 
-Current Step148/149/150/151/152/153 official-case reproduction state:
+Current Step148/149/150/151/152/153/154 official-case reproduction state:
 
 - Step148 ran the repository MPM-LBM/FSI solver through `FSIDriver3D` at 48 grid
   / 250 FSI steps.
@@ -71,9 +71,23 @@ Current Step148/149/150/151/152/153 official-case reproduction state:
   Step151 targeted fixes, and Step152 patches remain blocked.
 - Step153 did not run Step150, did not fabricate official monitor data, did not
   commit private monitor payloads, and did not claim validation.
+- Step154 is an official solver pre/post pipeline step, not a solver run and
+  not a validation gate.
+- Step154 compiled the canonical next-run case under
+  `outputs/step154_official_solver_prepost_pipeline/compiled_case.json`.
+- Step154 wrote geometry masks, boundary masks, FSI interface masks, material
+  and dimensionless mappings, a postprocess specification, and
+  `geometry_preview.png`.
+- Step154 records `compiled_case_ready_for_step155 = true` and
+  `step155_solver_run_allowed = true`; that permission applies only to a later
+  Step155 runner consuming the compiled case.
+- Step154 records `solver_run_executed = false`, `fluent_run_executed = false`,
+  `step150_executed = false`, `official_monitor_loaded = false`,
+  `validation_claim_allowed = false`, and
+  `figure_29_3_parity_claim_allowed = false`.
 - Step150 can only be rerun for real error localization after a private official
-  monitor is supplied directly or a diagnostic Step154 reference is explicitly
-  generated and marked low confidence.
+  monitor is supplied directly or a later explicitly scoped reference artifact
+  is generated and marked with its confidence limits.
 - selected96 remains blocked.
 - validation claim remains blocked.
 

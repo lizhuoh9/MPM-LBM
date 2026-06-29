@@ -1,0 +1,19 @@
+{
+  "direct_physical_reynolds_validation_allowed": false,
+  "duct_height_cells": 20,
+  "duct_height_m": 0.04,
+  "duct_length_m": 0.1,
+  "dx_m_if_x_length_controls": 0.0020833333333333333,
+  "dy_m_if_duct_height_controls": 0.002,
+  "fluid_cell_count_for_mapping_context": 3820,
+  "inlet_velocity_mps": 10.0,
+  "mapping_scope": "preprocessor_case_metadata_only",
+  "official_dt_s": 0.0005,
+  "official_time_steps": 50,
+  "official_total_time_s": 0.025,
+  "physical_reynolds_parity_claim_allowed": false,
+  "solver_nx": 48,
+  "solver_ny": 48,
+  "solver_nz": 48,
+  "tau_margin_validation_required_before_physical_re_claim": true
+}

@@ -6,18 +6,19 @@ Current status: engineering prototype.
 
 Current campaign entry point: `docs/current/STATUS.md`.
 
-Current Fluent official-case reproduction note: Step153 is the active official
-tutorial setup-parity run after Step152. It runs the repository `FSIDriver3D`
-path through the Step148 solver helper for 50 steps at `dt = 0.0005 s`, total
-`0.025 s`, and writes setup/material/boundary/monitor artifacts under
-`outputs/step153_official_tutorial_setup_parity`. It records
-`official_monitor_loaded = false`, so Step150 real error localization remains
-blocked. Step153 did not run Step150, did not write or commit an official
-monitor, did not run selected96, and does not make a validation claim. Private
-official monitor data belongs under the ignored `benchmarks/private/` path and
-must not be committed.
+Current Fluent official-case reproduction note: Step154 is the active official
+solver pre/post pipeline after Step153. It compiles the public tutorial
+duct/flap proxy into
+`outputs/step154_official_solver_prepost_pipeline/compiled_case.json`, writes
+geometry, boundary, and FSI masks, maps the official monitor point, records
+material and dimensionless mappings, and emits a postprocess spec plus
+`geometry_preview.png`. Step154 did not run the solver, Fluent, Step150,
+selected96, or the Step148 helper as the primary runner. It records
+`compiled_case_ready_for_step155 = true`, but validation, Figure 29.3 parity,
+and selected96 remain blocked. Private official monitor data belongs under the
+ignored `benchmarks/private/` path and must not be committed.
 
-Step153 bounded-state phrases: Step153 reports `official_tutorial_setup_parity_run_complete`; Step153 solver monitor ends at 0.025 s; Step153 official monitor loaded is false; Step153 did not run Step150; Step153 did not run selected96; Step153 does not make a validation claim; private official monitor data is absent and must not be committed.
+Step154 bounded-state phrases: Step154 reports `official_solver_prepost_pipeline_ready`; Step154 compiled case is ready for a later Step155 runner; Step154 solver run executed is false; Step154 Fluent run executed is false; Step154 Step150 executed is false; Step154 official monitor loaded is false; Step154 did not run selected96; Step154 does not make a validation claim; private official monitor data is absent and must not be committed.
 
 This repository is a small-scale engineering prototype for comparing MPM-LBM coupling paths. It is not production ready and should not be described as a completed sharp-interface FSI solver or a real squid simulation.
 

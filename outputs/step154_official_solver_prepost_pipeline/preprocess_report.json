@@ -1,0 +1,29 @@
+{
+  "boundary_masks_written": true,
+  "fsi_interface_masks_written": true,
+  "geometry_equivalence_claim_allowed": false,
+  "geometry_masks_written": true,
+  "grid": {
+    "nx": 48,
+    "ny": 48,
+    "nz": 48
+  },
+  "mask_counts": {
+    "flap_solid_cell_count": 20,
+    "fluid_cell_count": 3820,
+    "fluid_interface_cell_count": 44,
+    "fsi_wall_cell_count": 44,
+    "monitor_cell_count": 1,
+    "pressure_outlet_cell_count": 80,
+    "solid_cell_count": 106772,
+    "solid_interface_cell_count": 20,
+    "velocity_inlet_cell_count": 80
+  },
+  "monitor_point_mapped": true,
+  "official_tutorial_constants_loaded": true,
+  "preprocessor_ready": true,
+  "solver_input_case_written": true,
+  "status": "preprocess_complete",
+  "step": 154,
+  "validation_claim_allowed": false
+}

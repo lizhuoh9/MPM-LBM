@@ -1,0 +1,64 @@
+{
+  "boundary_masks_written": true,
+  "compiled_case": "outputs\\step154_official_solver_prepost_pipeline\\compiled_case.json",
+  "compiled_case_path": "outputs\\step154_official_solver_prepost_pipeline\\compiled_case.json",
+  "compiled_case_ready_for_step155": true,
+  "figure_29_3_parity_claim_allowed": false,
+  "fluent_run_executed": false,
+  "fsi_interface_masks_written": true,
+  "geometry_masks_written": true,
+  "geometry_preview_path": "outputs\\step154_official_solver_prepost_pipeline\\geometry_preview.png",
+  "geometry_preview_written": true,
+  "mask_counts": {
+    "flap_solid_cell_count": 20,
+    "fluid_cell_count": 3820,
+    "fluid_interface_cell_count": 44,
+    "fsi_wall_cell_count": 44,
+    "monitor_cell_count": 1,
+    "pressure_outlet_cell_count": 80,
+    "solid_cell_count": 106772,
+    "solid_interface_cell_count": 20,
+    "velocity_inlet_cell_count": 80
+  },
+  "monitor_point_mapped": true,
+  "monitor_spec": {
+    "monitor_index": [
+      24,
+      18,
+      24
+    ],
+    "monitor_point_m": [
+      0.0505,
+      0.0095
+    ],
+    "monitor_point_normalized": [
+      0.505,
+      0.39499999999999996,
+      0.5
+    ],
+    "monitor_quantity": "Structure / Total Displacement",
+    "nearest_cell_policy": "nearest_cell_center"
+  },
+  "official_monitor_loaded": false,
+  "official_monitor_required_for_validation": true,
+  "official_tutorial_constants_loaded": true,
+  "postprocess_spec_path": "outputs\\step154_official_solver_prepost_pipeline\\postprocess_spec.json",
+  "postprocessor_ready": true,
+  "preprocessor_ready": true,
+  "selected96_execution_allowed": false,
+  "solver_grid": {
+    "nx": 48,
+    "ny": 48,
+    "nz": 48
+  },
+  "solver_input_case_written": true,
+  "solver_run_executed": false,
+  "source_step153_root": "outputs\\step153_official_tutorial_setup_parity",
+  "source_step153_status": "official_tutorial_setup_parity_run_complete",
+  "status": "official_solver_prepost_pipeline_ready",
+  "step": 154,
+  "step148_helper_used_as_primary_runner": false,
+  "step150_executed": false,
+  "step155_solver_run_allowed": true,
+  "validation_claim_allowed": false
+}
