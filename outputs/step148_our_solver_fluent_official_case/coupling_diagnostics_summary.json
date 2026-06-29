@@ -1,0 +1,11 @@
+{
+  "coupling_force_found": true,
+  "force_is_direct_fluent_wall_integral": false,
+  "force_monitor_rows": 26,
+  "force_proxy_source": "max of driver diagnostics hydro/cell/reaction force norms",
+  "force_vector_proxy_axis": "positive_y",
+  "monitor_rows": 26,
+  "nonzero_force_row_count": 25,
+  "nonzero_motion_row_count": 25,
+  "solid_motion_found": true
+}

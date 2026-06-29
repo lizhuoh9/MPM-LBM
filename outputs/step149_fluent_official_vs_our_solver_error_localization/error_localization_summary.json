@@ -1,0 +1,16 @@
+{
+  "error_metrics_present": false,
+  "fabricated_metrics_used": false,
+  "missing_reason": "official_reference_missing",
+  "next_code_fix_step_identified": false,
+  "official_monitor": "benchmarks\\private\\fluent_fsi_2way\\outputs\\official_monitor.csv",
+  "official_reference_loaded": false,
+  "solver_bug_hypotheses_present": false,
+  "solver_force_monitor": "outputs\\step148_our_solver_fluent_official_case\\solver_force_monitor.csv",
+  "solver_monitor": "outputs\\step148_our_solver_fluent_official_case\\solver_monitor.csv",
+  "solver_monitor_loaded": true,
+  "solver_summary": "outputs\\step148_our_solver_fluent_official_case\\solver_reproduction_summary.json",
+  "status": "missing_official_monitor",
+  "step": 149,
+  "validation_claim_allowed": false
+}

@@ -1,8 +1,26 @@
 # Current Status
 
-The active campaign is the Fluent duct/flap LBM open-boundary repair campaign.
-The current artifact state remains selected-boundary blocked. Step147 ran
-exactly four 48^3 / 250-step LBM-only rows under
+The active campaign has moved from outlet-controller repair to Fluent official
+case reproduction with the repository MPM-LBM/FSI solver. Step148 ran the
+repository `FSIDriver3D` at 48 grid / 250 FSI steps using the duct/flap proxy
+geometry and wrote comparison-ready solver monitors under
+`outputs/step148_our_solver_fluent_official_case`. Step148 did not run Fluent,
+did not commit private official payloads, did not use the private official
+monitor as runtime input, did not run selected96, and does not make a validation
+claim. The Step148 run base was
+`67e05ebbce10e92f5331dde20b424e7b5c081b7b`.
+
+Step149 attempted the official-vs-solver error-localization track against
+`benchmarks/private/fluent_fsi_2way/outputs/official_monitor.csv`. That private
+official monitor is not present in this checkout, so Step149 correctly reports
+`missing_official_monitor` / `official_reference_missing`. It loaded the Step148
+solver monitor, but it did not fabricate displacement metrics, force metrics,
+phase-lag metrics, or solver bug hypotheses. No Step150 code-fix target is
+identified until the official monitor is available or a user-provided reference
+monitor is supplied.
+
+The previous LBM outlet-controller repair line remains selected-boundary
+blocked. Step147 ran exactly four 48^3 / 250-step LBM-only rows under
 `planeflux_saturation_stationarity48` from the Step146 readiness artifact.
 Step147 did not run selected96. Step147 did not run selected-static. Step147
 did not run 96^3. Step147 did not run a 500-step row. Step147 did not run
@@ -41,7 +59,8 @@ report, and allowed only the now-completed bounded Step147 `48^3 / 250-step`
 diagnostic proposal. Step146 did not run a new LBM row, did not run selected96,
 selected-static, 96^3, Fluent, or FSI, did not run a 500-step probe, and does
 not make a validation claim.
-Current campaign state: `48_candidates_failed`.
+Current campaign state:
+`official_solver_reproduction_complete_missing_official_reference`.
 
 Step146 artifacts are under
 `outputs/step146_coupled_saturation_stationarity_design`. The design readiness

@@ -1,7 +1,33 @@
 # Validation Gates
 
-The campaign cannot claim selected 96^3, quasi-2D, FSI, Fluent validation, or
-Figure 29.3 parity from the current 48^3 LBM-only candidate artifacts.
+The campaign cannot claim selected 96^3, quasi-2D, Fluent validation, Figure
+29.3 parity, or an actionable Step150 solver bug fix from the current artifact
+state.
+
+Current Step148/149 official-case reproduction state:
+
+- Step148 ran the repository MPM-LBM/FSI solver through `FSIDriver3D` at 48 grid
+  / 250 FSI steps.
+- Step148 wrote `solver_monitor.csv` and `solver_force_monitor.csv` under
+  `outputs/step148_our_solver_fluent_official_case`.
+- Step148 used the committed duct/flap proxy geometry and did not commit or
+  execute private official Fluent payloads.
+- Step148 did not run Fluent.
+- Step148 did not run selected96.
+- Step148 does not make a validation claim.
+- Step148 force columns are report-only solver force proxies from existing
+  coupling diagnostics, not direct Fluent wall-integral equivalence.
+- Step149 loaded the Step148 solver monitor.
+- Step149 did not load an official reference because
+  `benchmarks/private/fluent_fsi_2way/outputs/official_monitor.csv` is absent.
+- Step149 status is `missing_official_monitor` with
+  `official_reference_missing`.
+- Step149 did not fabricate displacement metrics, force metrics, phase-lag
+  metrics, or solver bug hypotheses.
+- Step150 is blocked until an official monitor is available or a scoped
+  replacement reference is explicitly supplied.
+- selected96 remains blocked.
+- validation claim remains blocked.
 
 Current Step147 saturation-stationarity diagnostic evidence:
 

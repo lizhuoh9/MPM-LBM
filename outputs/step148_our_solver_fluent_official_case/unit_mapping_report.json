@@ -1,0 +1,33 @@
+{
+  "force_is_direct_fluent_wall_integral": false,
+  "force_unit_mapping": "driver diagnostic force norms are emitted in the requested force columns as report-only solver force proxies",
+  "official_fsi_dt_s": 0.0005,
+  "physical_duct_length_m": 0.1,
+  "step": 148,
+  "target_inlet_velocity_mps": 10.0,
+  "target_u_lbm_for_dimensional_mapping": 0.02,
+  "unit_mapping_status": "report_only_proxy_units",
+  "validation_claim_allowed": false,
+  "viscosity_mapping": {
+    "fluid_density_kg_m3": 1.225,
+    "fluid_density_used_for_lbm_rho0": false,
+    "fluid_kinematic_viscosity_m2_s": 1.5e-05,
+    "lbm_min_tau_margin": 0.0001,
+    "lbm_niu": 0.1,
+    "lbm_relaxation_semantics": "legacy_external_solver_relaxation_parameter",
+    "lbm_tau_stability_policy": "report_only",
+    "lbm_viscosity_semantics": "legacy_external",
+    "legacy_lbm_niu": 0.1,
+    "mach_proxy": 0.034641016151377546,
+    "nu_lbm": null,
+    "physical_mapping_used": false,
+    "physical_reynolds_direct_simulation_feasible_with_current_lbm": null,
+    "physical_viscosity_validation_claim": false,
+    "reynolds_from_config": 26666.666666666668,
+    "target_reynolds_match": true,
+    "target_reynolds_number": 26666.666666666668,
+    "tau": 0.5333333333333333,
+    "tau_margin_pass": true,
+    "tau_minus_half": 0.033333333333333326
+  }
+}
