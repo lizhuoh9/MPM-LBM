@@ -6,22 +6,22 @@ Current status: engineering prototype.
 
 Current campaign entry point: `docs/current/STATUS.md`.
 
-Current Fluent official-case reproduction note: Step156 is the active official
-tutorial postprocessing and solver-acceptance step after Step155. It consumes
-Step154 compiled-case artifacts and Step155 solver outputs only, then writes
-velocity magnitude, ux/uy, stream/quiver, geometry overlay, monitor plots,
-centerline and x-plane flux profiles, solver acceptance, official comparison,
-and summary artifacts under
-`outputs/step156_official_tutorial_postprocess_and_acceptance`. Step156 did
-not rerun the solver, did not run Fluent, did not load or fabricate official
-monitor data, did not run Step150, did not run selected96, and does not make a
-validation claim. The Step156 acceptance report keeps flow development
-separate from postprocess completion: numerical sanity and postprocess pass,
-but `flow_development_gate_pass = false` because the Step155 outlet flux is
-still near zero over the 0.025 s tutorial window. Private official monitor data
-belongs under the ignored `benchmarks/private/` path and must not be committed.
+Current Fluent official-case reproduction note: Step157 is the active official
+subcycled flow-development repair attempt after Step156. It consumes Step154
+compiled-case artifacts, Step155 solver outputs, and Step156 acceptance
+artifacts, then runs the same public duct/flap proxy through `FSIDriver3D` with
+`fsi_exchange_mode = lbm_subcycled_per_fsi_step`, 120 LBM substeps per official
+FSI step, and `lbm_dt_phys_override_s = 4.166666666666667e-6`. Step157
+completed 50 official steps, `0.025 s`, and 6000 total LBM substeps under
+`outputs/step157_official_subcycled_flow_development_repair`. It improved the
+outlet/inlet flux ratio magnitude but still fails the flow-development gate
+because flux imbalance remains outside gate, and it also fails the density
+gate. Step157 did not run Fluent, did not run Step150, did not run selected96,
+did not load or fabricate official monitor data, and does not make a
+validation claim. Private official monitor data belongs under the ignored
+`benchmarks/private/` path and must not be committed.
 
-Step156 bounded-state phrases: Step156 reports `official_tutorial_postprocess_complete`; Step156 consumed the Step154 compiled case and Step155 solver root; Step156 generated velocity cloud and diagnostic plots; Step156 wrote centerline and x-plane flux profiles; Step156 official monitor loaded is false; Step156 did not run the solver; Step156 did not run Fluent; Step156 did not run Step150; Step156 did not run selected96; Step156 does not make a validation claim; Step156 reports flow development honestly and currently fails that gate.
+Step157 bounded-state phrases: Step157 reports `subcycled_flow_development_repair_attempt_complete_but_flow_gate_failed`; Step157 consumed the Step154 compiled case, Step155 solver root, and Step156 acceptance artifacts; Step157 ran `FSIDriver3D` directly with 120 LBM substeps per official step; Step157 completed 6000 total LBM substeps; Step157 generated Step157 velocity cloud and diagnostic plots; Step157 wrote subcycled mass/flux, solver, monitor, force, and stability CSVs; Step157 official monitor loaded is false; Step157 did not run Fluent; Step157 did not run Step150; Step157 did not run selected96; Step157 does not make a validation claim; Step157 reports flow development honestly and currently fails that gate.
 
 This repository is a small-scale engineering prototype for comparing MPM-LBM coupling paths. It is not production ready and should not be described as a completed sharp-interface FSI solver or a real squid simulation.
 

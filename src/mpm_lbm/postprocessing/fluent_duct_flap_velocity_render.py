@@ -119,6 +119,7 @@ def write_velocity_magnitude_plot(
     compiled_case: dict,
     output_path: Path,
     slice_index: int,
+    title: str | None = None,
 ) -> dict[str, Any]:
     field = np.asarray(snapshot["speed"])[:, :, slice_index] * VELOCITY_SCALE_MPS_PER_LBM
     return _write_field_plot(
@@ -128,7 +129,8 @@ def write_velocity_magnitude_plot(
         compiled_case,
         output_path,
         slice_index,
-        title=f"Step155 step 50, t = {float(np.asarray(snapshot['time_s']).item()):.3f} s; proxy solver result",
+        title=title
+        or f"Step155 step 50, t = {float(np.asarray(snapshot['time_s']).item()):.3f} s; proxy solver result",
         colorbar_label="Velocity magnitude [m/s proxy]",
         cmap="viridis",
         signed=False,
@@ -142,6 +144,7 @@ def write_velocity_component_plot(
     output_path: Path,
     component: str,
     slice_index: int,
+    title: str | None = None,
 ) -> dict[str, Any]:
     if component not in {"ux", "uy", "uz"}:
         raise ValueError(f"unsupported velocity component: {component}")
@@ -153,7 +156,7 @@ def write_velocity_component_plot(
         compiled_case,
         output_path,
         slice_index,
-        title=f"{component} diagnostic; not Fluent validation",
+        title=title or f"{component} diagnostic; not Fluent validation",
         colorbar_label=f"{component} [m/s proxy]",
         cmap="coolwarm",
         signed=True,
@@ -262,6 +265,7 @@ def write_official_style_velocity_cloud_plot(
     compiled_case: dict,
     output_path: Path,
     slice_index: int,
+    title: str | None = None,
 ) -> dict[str, Any]:
     field = np.asarray(snapshot["speed"])[:, :, slice_index] * VELOCITY_SCALE_MPS_PER_LBM
     return _write_field_plot(
@@ -271,7 +275,7 @@ def write_official_style_velocity_cloud_plot(
         compiled_case,
         output_path,
         slice_index,
-        title="Step155 proxy solver result; not Fluent validation",
+        title=title or "Step155 proxy solver result; not Fluent validation",
         colorbar_label="Velocity magnitude [m/s proxy]",
         cmap="turbo",
         signed=False,

@@ -1,0 +1,197 @@
+from __future__ import annotations
+
+import csv
+import math
+from pathlib import Path
+from typing import Any
+
+from .official_duct_flap_io import write_json
+
+
+STEP = 157
+FLOW_GATE_POLICY = (
+    "flow gate requires abs(outlet_to_inlet_flux_ratio_tail_mean) >= 0.5 and "
+    "abs(flux_imbalance_rel_tail_mean) <= 0.5"
+)
+
+
+def compute_required_lbm_substeps(
+    compiled_case: dict,
+    target_u_lbm: tuple[float, float, float],
+) -> dict[str, Any]:
+    setup = compiled_case["official_tutorial_setup"]
+    grid = compiled_case["solver_grid"]
+    n_grid = int(grid["nx"])
+    duct_length_m = float(setup["duct_length_m"])
+    target_inlet_velocity_mps = float(setup["inlet_air_velocity_mps"])
+    target_u_x = float(target_u_lbm[0])
+    official_dt_s = float(setup["official_tutorial_dt_s"])
+    official_steps = int(setup["official_tutorial_time_steps"])
+    dx_phys_m = duct_length_m / float(n_grid)
+    lbm_dt_phys_s = target_u_x * dx_phys_m / target_inlet_velocity_mps
+    required_substeps = int(round(official_dt_s / lbm_dt_phys_s))
+    return {
+        "step": STEP,
+        "status": "lbm_substeps_required_computed",
+        "duct_length_m": duct_length_m,
+        "n_grid": n_grid,
+        "dx_phys_m": dx_phys_m,
+        "target_u_lbm": target_u_x,
+        "target_inlet_velocity_mps": target_inlet_velocity_mps,
+        "lbm_dt_phys_s": lbm_dt_phys_s,
+        "official_fsi_dt_s": official_dt_s,
+        "required_lbm_substeps_per_fsi_step": required_substeps,
+        "required_total_lbm_substeps_for_50_official_steps": required_substeps * official_steps,
+        "official_steps": official_steps,
+        "validation_claim_allowed": False,
+    }
+
+
+def diagnose_step155_time_scale(
+    step155_summary: dict,
+    step156_acceptance: dict,
+    compiled_case: dict,
+) -> dict[str, Any]:
+    required = compute_required_lbm_substeps(compiled_case, (0.02, 0.0, 0.0))
+    step155_substeps_per_step = int(step155_summary.get("lbm_substeps_per_fsi_step", 1))
+    step155_total_substeps = int(step155_summary.get("n_steps_completed", 0)) * step155_substeps_per_step
+    report = {
+        **required,
+        "status": "time_scale_mismatch_diagnosed",
+        "source_step155_status": step155_summary.get("status"),
+        "source_step156_status": "official_tutorial_postprocess_complete",
+        "step155_lbm_substeps_per_fsi_step": step155_substeps_per_step,
+        "step155_total_lbm_substeps": step155_total_substeps,
+        "step155_subcycling_deficit_factor": int(
+            required["required_lbm_substeps_per_fsi_step"] / max(step155_substeps_per_step, 1)
+        ),
+        "step156_flow_development_gate_pass": bool(
+            step156_acceptance.get("flow_development_gate_pass")
+        ),
+        "step156_inlet_flux_tail_mean": float(step156_acceptance.get("inlet_flux_tail_mean", 0.0)),
+        "step156_outlet_flux_tail_mean": float(step156_acceptance.get("outlet_flux_tail_mean", 0.0)),
+        "step156_outlet_to_inlet_flux_ratio_tail_mean": float(
+            step156_acceptance.get("outlet_to_inlet_flux_ratio_tail_mean", 0.0)
+        ),
+        "step156_flux_imbalance_rel_tail_mean": float(
+            step156_acceptance.get("flux_imbalance_rel_tail_mean", 0.0)
+        ),
+        "repair_hypothesis": (
+            "one LBM step per official FSI step under-advects the flow; use "
+            "lbm_subcycled_per_fsi_step with 120 LBM substeps per official step"
+        ),
+        "validation_claim_allowed": False,
+    }
+    return report
+
+
+def summarize_step156_flux_failure(
+    step156_x_flux_csv: Path,
+    step156_acceptance: dict,
+) -> dict[str, Any]:
+    rows = _read_csv_rows(step156_x_flux_csv)
+    mass_flux = [_parse_float(row.get("mass_flux_lbm")) for row in rows]
+    max_abs = max((abs(value) for value in mass_flux), default=0.0)
+    cutoff_index = None
+    if max_abs > 0.0:
+        for row, value in zip(rows, mass_flux):
+            if abs(value) <= 0.1 * max_abs:
+                cutoff_index = int(row.get("x_index", 0))
+                break
+    return {
+        "step": STEP,
+        "status": "step156_flux_failure_summarized",
+        "row_count": len(rows),
+        "first_x_index_below_10pct_max_abs_flux": cutoff_index,
+        "step156_flow_development_gate_pass": bool(
+            step156_acceptance.get("flow_development_gate_pass")
+        ),
+        "step156_outlet_to_inlet_flux_ratio_tail_mean": float(
+            step156_acceptance.get("outlet_to_inlet_flux_ratio_tail_mean", 0.0)
+        ),
+        "validation_claim_allowed": False,
+    }
+
+
+def summarize_mass_flux_tail(mass_flux_csv: Path, tail_fraction: float = 0.2) -> dict[str, Any]:
+    rows = _read_csv_rows(mass_flux_csv)
+    if not rows:
+        raise ValueError(f"mass flux csv has no rows: {mass_flux_csv}")
+    tail_count = max(1, math.ceil(len(rows) * tail_fraction))
+    tail_rows = rows[-tail_count:]
+    inlet = _mean(tail_rows, "inlet_flux")
+    outlet = _mean(tail_rows, "outlet_flux")
+    midplane = _mean(tail_rows, "midplane_flux")
+    imbalance = _mean(tail_rows, "flux_imbalance_rel")
+    outlet_ratio = _mean(tail_rows, "outlet_to_inlet_flux_ratio")
+    midplane_ratio = _mean(tail_rows, "midplane_to_inlet_flux_ratio")
+    gate_pass = abs(outlet_ratio) >= 0.5 and abs(imbalance) <= 0.5
+    return {
+        "mass_flux_rows": len(rows),
+        "tail_fraction": tail_fraction,
+        "tail_row_count": tail_count,
+        "inlet_flux_tail_mean": inlet,
+        "outlet_flux_tail_mean": outlet,
+        "midplane_flux_tail_mean": midplane,
+        "flux_imbalance_rel_tail_mean": imbalance,
+        "outlet_to_inlet_flux_ratio_tail_mean": outlet_ratio,
+        "midplane_to_inlet_flux_ratio_tail_mean": midplane_ratio,
+        "flow_development_gate_pass": bool(gate_pass),
+    }
+
+
+def build_flow_development_comparison_report(
+    step156_acceptance: dict,
+    subcycled_mass_flux_csv: Path,
+    output_path: Path,
+    tail_fraction: float = 0.2,
+) -> dict[str, Any]:
+    baseline = {
+        "flow_development_gate_pass": bool(step156_acceptance.get("flow_development_gate_pass")),
+        "inlet_flux_tail_mean": float(step156_acceptance.get("inlet_flux_tail_mean", 0.0)),
+        "outlet_flux_tail_mean": float(step156_acceptance.get("outlet_flux_tail_mean", 0.0)),
+        "outlet_to_inlet_flux_ratio_tail_mean": float(
+            step156_acceptance.get("outlet_to_inlet_flux_ratio_tail_mean", 0.0)
+        ),
+        "flux_imbalance_rel_tail_mean": float(
+            step156_acceptance.get("flux_imbalance_rel_tail_mean", 0.0)
+        ),
+    }
+    subcycled = summarize_mass_flux_tail(subcycled_mass_flux_csv, tail_fraction)
+    outlet_improved = abs(subcycled["outlet_to_inlet_flux_ratio_tail_mean"]) > abs(
+        baseline["outlet_to_inlet_flux_ratio_tail_mean"]
+    )
+    imbalance_improved = abs(subcycled["flux_imbalance_rel_tail_mean"]) < abs(
+        baseline["flux_imbalance_rel_tail_mean"]
+    )
+    report = {
+        "step": STEP,
+        "status": "flow_development_comparison_written",
+        "baseline_step155_step156": baseline,
+        "subcycled_step157": subcycled,
+        "outlet_flux_ratio_improved": bool(outlet_improved),
+        "flux_imbalance_improved": bool(imbalance_improved),
+        "subcycling_repair_success": bool(subcycled["flow_development_gate_pass"]),
+        "subcycling_repair_success_policy": FLOW_GATE_POLICY,
+        "validation_claim_allowed": False,
+        "figure_29_3_parity_claim_allowed": False,
+    }
+    write_json(output_path, report)
+    return report
+
+
+def _read_csv_rows(path: Path) -> list[dict[str, str]]:
+    with Path(path).open("r", encoding="utf-8", newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def _mean(rows: list[dict[str, str]], field: str) -> float:
+    values = [_parse_float(row.get(field)) for row in rows]
+    return float(sum(values) / len(values)) if values else 0.0
+
+
+def _parse_float(value: Any) -> float:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return 0.0

@@ -7,52 +7,71 @@ error-localization state:
 2. `docs/current/ACTIVE_CAMPAIGN.json`
 3. `docs/current/VALIDATION_GATES.md`
 4. `docs/current/READING_ORDER.md`
-5. `docs/campaigns/fluent_duct_flap/steps/156/goal.md`
-6. `docs/campaigns/fluent_duct_flap/steps/156/report.md`
-7. `outputs/step156_official_tutorial_postprocess_and_acceptance/postprocess_summary.json`
-8. `outputs/step156_official_tutorial_postprocess_and_acceptance/solver_acceptance_report.json`
-9. `outputs/step156_official_tutorial_postprocess_and_acceptance/official_comparison_report.json`
-10. `outputs/step156_official_tutorial_postprocess_and_acceptance/velocity_render_report.json`
-11. `outputs/step156_official_tutorial_postprocess_and_acceptance/final_snapshot_field_summary.json`
-12. `outputs/step156_official_tutorial_postprocess_and_acceptance/monitor_plot_report.json`
-13. `outputs/step156_official_tutorial_postprocess_and_acceptance/velocity_magnitude_step050.png`
-14. `outputs/step156_official_tutorial_postprocess_and_acceptance/velocity_ux_step050.png`
-15. `outputs/step156_official_tutorial_postprocess_and_acceptance/velocity_uy_step050.png`
-16. `outputs/step156_official_tutorial_postprocess_and_acceptance/streamline_or_quiver_step050.png`
-17. `outputs/step156_official_tutorial_postprocess_and_acceptance/geometry_overlay_step050.png`
-18. `outputs/step156_official_tutorial_postprocess_and_acceptance/official_style_velocity_cloud_step050.png`
-19. `outputs/step156_official_tutorial_postprocess_and_acceptance/centerline_velocity_profile.csv`
-20. `outputs/step156_official_tutorial_postprocess_and_acceptance/x_plane_flux_profile.csv`
-21. `outputs/step156_official_tutorial_postprocess_and_acceptance/monitor_displacement_plot.png`
-22. `outputs/step156_official_tutorial_postprocess_and_acceptance/force_monitor_plot.png`
-23. `docs/campaigns/fluent_duct_flap/steps/155/goal.md`
-24. `docs/campaigns/fluent_duct_flap/steps/155/report.md`
-25. `outputs/step155_official_tutorial_solver_v1/solver_v1_summary.json`
-26. `outputs/step155_official_tutorial_solver_v1/solver_run_manifest.json`
-27. `outputs/step155_official_tutorial_solver_v1/boundary_semantics_runtime_report.json`
-28. `outputs/step155_official_tutorial_solver_v1/solver_monitor.csv`
-29. `outputs/step155_official_tutorial_solver_v1/solver_force_monitor.csv`
-30. `outputs/step155_official_tutorial_solver_v1/stability_timeseries.csv`
-31. `outputs/step155_official_tutorial_solver_v1/mass_flux_timeseries.csv`
-32. `outputs/step155_official_tutorial_solver_v1/velocity_snapshots/velocity_snapshot_step050.npz`
-33. `docs/campaigns/fluent_duct_flap/steps/154/goal.md`
-34. `docs/campaigns/fluent_duct_flap/steps/154/report.md`
-35. `outputs/step154_official_solver_prepost_pipeline/step154_summary.json`
-36. `outputs/step154_official_solver_prepost_pipeline/compiled_case.json`
-37. `outputs/step154_official_solver_prepost_pipeline/preprocess_report.json`
-38. `outputs/step154_official_solver_prepost_pipeline/postprocess_spec.json`
-39. `outputs/step154_official_solver_prepost_pipeline/material_model_mapping.json`
-40. `outputs/step154_official_solver_prepost_pipeline/dimensionless_mapping.json`
-41. `outputs/step154_official_solver_prepost_pipeline/geometry_preview.png`
-42. `docs/campaigns/fluent_duct_flap/steps/153/goal.md`
-43. `docs/campaigns/fluent_duct_flap/steps/153/report.md`
-44. `outputs/step153_official_tutorial_setup_parity/solver_reproduction_summary.json`
-45. `outputs/step153_official_tutorial_setup_parity/official_tutorial_setup_report.json`
-46. `outputs/step153_official_tutorial_setup_parity/material_mapping_report.json`
-47. `outputs/step153_official_tutorial_setup_parity/boundary_semantics_gap_report.json`
-48. `outputs/step153_official_tutorial_setup_parity/official_reference_gap_report.json`
-49. `outputs/step153_official_tutorial_setup_parity/solver_monitor.csv`
-50. `outputs/step153_official_tutorial_setup_parity/solver_force_monitor.csv`
+5. `docs/campaigns/fluent_duct_flap/steps/157/goal.md`
+6. `docs/campaigns/fluent_duct_flap/steps/157/report.md`
+7. `outputs/step157_official_subcycled_flow_development_repair/step157_summary.json`
+8. `outputs/step157_official_subcycled_flow_development_repair/solver_acceptance_report.json`
+9. `outputs/step157_official_subcycled_flow_development_repair/flow_development_comparison_report.json`
+10. `outputs/step157_official_subcycled_flow_development_repair/step157_time_scale_diagnosis.json`
+11. `outputs/step157_official_subcycled_flow_development_repair/step157_subcycle_config_report.json`
+12. `outputs/step157_official_subcycled_flow_development_repair/solver_run_manifest.json`
+13. `outputs/step157_official_subcycled_flow_development_repair/subcycled_solver_timeseries.csv`
+14. `outputs/step157_official_subcycled_flow_development_repair/subcycled_solver_monitor.csv`
+15. `outputs/step157_official_subcycled_flow_development_repair/subcycled_solver_force_monitor.csv`
+16. `outputs/step157_official_subcycled_flow_development_repair/subcycled_stability_timeseries.csv`
+17. `outputs/step157_official_subcycled_flow_development_repair/subcycled_mass_flux_timeseries.csv`
+18. `outputs/step157_official_subcycled_flow_development_repair/velocity_snapshots/velocity_snapshot_step050.npz`
+19. `outputs/step157_official_subcycled_flow_development_repair/official_style_velocity_cloud_step050.png`
+20. `outputs/step157_official_subcycled_flow_development_repair/velocity_magnitude_step050.png`
+21. `outputs/step157_official_subcycled_flow_development_repair/velocity_ux_step050.png`
+22. `outputs/step157_official_subcycled_flow_development_repair/velocity_uy_step050.png`
+23. `outputs/step157_official_subcycled_flow_development_repair/x_plane_flux_profile_step050.csv`
+24. `docs/campaigns/fluent_duct_flap/steps/156/goal.md`
+25. `docs/campaigns/fluent_duct_flap/steps/156/report.md`
+26. `outputs/step156_official_tutorial_postprocess_and_acceptance/postprocess_summary.json`
+27. `outputs/step156_official_tutorial_postprocess_and_acceptance/solver_acceptance_report.json`
+28. `outputs/step156_official_tutorial_postprocess_and_acceptance/official_comparison_report.json`
+29. `outputs/step156_official_tutorial_postprocess_and_acceptance/velocity_render_report.json`
+30. `outputs/step156_official_tutorial_postprocess_and_acceptance/final_snapshot_field_summary.json`
+31. `outputs/step156_official_tutorial_postprocess_and_acceptance/monitor_plot_report.json`
+32. `outputs/step156_official_tutorial_postprocess_and_acceptance/velocity_magnitude_step050.png`
+33. `outputs/step156_official_tutorial_postprocess_and_acceptance/velocity_ux_step050.png`
+34. `outputs/step156_official_tutorial_postprocess_and_acceptance/velocity_uy_step050.png`
+35. `outputs/step156_official_tutorial_postprocess_and_acceptance/streamline_or_quiver_step050.png`
+36. `outputs/step156_official_tutorial_postprocess_and_acceptance/geometry_overlay_step050.png`
+37. `outputs/step156_official_tutorial_postprocess_and_acceptance/official_style_velocity_cloud_step050.png`
+38. `outputs/step156_official_tutorial_postprocess_and_acceptance/centerline_velocity_profile.csv`
+39. `outputs/step156_official_tutorial_postprocess_and_acceptance/x_plane_flux_profile.csv`
+40. `outputs/step156_official_tutorial_postprocess_and_acceptance/monitor_displacement_plot.png`
+41. `outputs/step156_official_tutorial_postprocess_and_acceptance/force_monitor_plot.png`
+42. `docs/campaigns/fluent_duct_flap/steps/155/goal.md`
+43. `docs/campaigns/fluent_duct_flap/steps/155/report.md`
+44. `outputs/step155_official_tutorial_solver_v1/solver_v1_summary.json`
+45. `outputs/step155_official_tutorial_solver_v1/solver_run_manifest.json`
+46. `outputs/step155_official_tutorial_solver_v1/boundary_semantics_runtime_report.json`
+47. `outputs/step155_official_tutorial_solver_v1/solver_monitor.csv`
+48. `outputs/step155_official_tutorial_solver_v1/solver_force_monitor.csv`
+49. `outputs/step155_official_tutorial_solver_v1/stability_timeseries.csv`
+50. `outputs/step155_official_tutorial_solver_v1/mass_flux_timeseries.csv`
+51. `outputs/step155_official_tutorial_solver_v1/velocity_snapshots/velocity_snapshot_step050.npz`
+52. `docs/campaigns/fluent_duct_flap/steps/154/goal.md`
+53. `docs/campaigns/fluent_duct_flap/steps/154/report.md`
+54. `outputs/step154_official_solver_prepost_pipeline/step154_summary.json`
+55. `outputs/step154_official_solver_prepost_pipeline/compiled_case.json`
+56. `outputs/step154_official_solver_prepost_pipeline/preprocess_report.json`
+57. `outputs/step154_official_solver_prepost_pipeline/postprocess_spec.json`
+58. `outputs/step154_official_solver_prepost_pipeline/material_model_mapping.json`
+59. `outputs/step154_official_solver_prepost_pipeline/dimensionless_mapping.json`
+60. `outputs/step154_official_solver_prepost_pipeline/geometry_preview.png`
+61. `docs/campaigns/fluent_duct_flap/steps/153/goal.md`
+62. `docs/campaigns/fluent_duct_flap/steps/153/report.md`
+63. `outputs/step153_official_tutorial_setup_parity/solver_reproduction_summary.json`
+64. `outputs/step153_official_tutorial_setup_parity/official_tutorial_setup_report.json`
+65. `outputs/step153_official_tutorial_setup_parity/material_mapping_report.json`
+66. `outputs/step153_official_tutorial_setup_parity/boundary_semantics_gap_report.json`
+67. `outputs/step153_official_tutorial_setup_parity/official_reference_gap_report.json`
+68. `outputs/step153_official_tutorial_setup_parity/solver_monitor.csv`
+69. `outputs/step153_official_tutorial_setup_parity/solver_force_monitor.csv`
 23. `docs/campaigns/fluent_duct_flap/steps/152/goal.md`
 24. `docs/campaigns/fluent_duct_flap/steps/152/report.md`
 25. `outputs/step152_apply_targeted_solver_fix/step152_apply_summary.json`
@@ -121,7 +140,14 @@ error-localization state:
 65. `docs/campaigns/fluent_duct_flap/steps/138/report.md`
 66. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
 
-Step155 is the active official tutorial solver V1 artifact: it consumes the
+Step157 is the active official subcycled flow-development repair attempt. It
+uses the Step154 compiled case, Step155 baseline, and Step156 acceptance
+artifacts, then runs `FSIDriver3D` for 50 official steps with 120 LBM substeps
+per official step. Step157 completed 6000 LBM substeps but still failed the
+flow-development gate and density gate, so the next work should diagnose
+open-boundary, outlet propagation, or geometry/mask obstruction.
+
+Step155 is the upstream official tutorial solver V1 artifact: it consumes the
 Step154 compiled case directly, runs `FSIDriver3D` for 50 steps at
 `dt = 0.0005 s`, and writes solver monitor, force monitor, stability,
 mass/flux, and velocity-snapshot artifacts under

@@ -1,0 +1,9 @@
+{
+  "comparison_scope": "subcycled_solver_repair_only",
+  "figure_29_3_parity_claim_allowed": false,
+  "official_error_metrics_available": false,
+  "official_monitor_loaded": false,
+  "status": "official_monitor_missing",
+  "step": 157,
+  "validation_claim_allowed": false
+}

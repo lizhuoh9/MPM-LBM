@@ -46,7 +46,36 @@ real solver patch. In the current checkout Step151 is still
 coupling, geometry, monitor extraction, or runtime solver formulas while
 Step151 lacks a real targeted fix plan.
 
-Step156 is now the current official tutorial postprocessing and solver
+Step157 is now the current official subcycled flow-development repair attempt.
+It consumed the Step154 compiled case, the Step155 solver baseline, and the
+Step156 postprocess/acceptance artifacts, diagnosed the one-LBM-step per
+official FSI step time-scale deficit, and ran the same public duct/flap proxy
+through `FSIDriver3D` with
+`fsi_exchange_mode = lbm_subcycled_per_fsi_step`,
+`lbm_substeps_per_fsi_step = 120`, and
+`lbm_dt_phys_override_s = 4.166666666666667e-6`. The run completed 50 official
+steps, `0.025 s`, and 6000 total LBM substeps. The output is under
+`outputs/step157_official_subcycled_flow_development_repair`.
+
+Step157 did not run Fluent, did not run Step150, did not run selected96, did
+not load or fabricate official monitor data, and does not make a validation or
+Figure 29.3 parity claim. The repair attempt improved the outlet/inlet flux
+ratio magnitude from Step156's `-5.006163707054121e-05` to
+`-0.7868301859248276`, but it did not pass the flow-development gate because
+`flux_imbalance_rel_tail_mean = -1.0595574586521002` remains outside the
+accepted range. The density gate also failed while finite values and MPM-J
+checks passed. The summary records
+`status = subcycled_flow_development_repair_attempt_complete_but_flow_gate_failed`,
+`subcycled_solver_run_executed = true`, `total_lbm_substeps_completed = 6000`,
+`step157_flow_development_gate_pass = false`,
+`density_gate_pass = false`, `finite_gate_pass = true`,
+`mpm_j_gate_pass = true`, `official_monitor_loaded = false`,
+`official_error_metrics_available = false`, and
+`validation_claim_allowed = false`. Step158 should diagnose open-boundary,
+outlet propagation, or geometry/mask obstruction rather than claiming Fluent
+validation.
+
+Step156 is the upstream official tutorial postprocessing and solver
 acceptance step. It consumed Step154 compiled-case artifacts and Step155 solver
 outputs, generated official-style velocity plots and diagnostics, wrote monitor
 plots, centerline and x-plane flux profiles, solver acceptance report, and
@@ -165,7 +194,7 @@ diagnostic proposal. Step146 did not run a new LBM row, did not run selected96,
 selected-static, 96^3, Fluent, or FSI, did not run a 500-step probe, and does
 not make a validation claim.
 Current campaign state:
-`step156_official_tutorial_postprocess_complete`.
+`step157_subcycled_flow_development_repair_attempt_flow_gate_failed`.
 
 Step146 artifacts are under
 `outputs/step146_coupled_saturation_stationarity_design`. The design readiness

@@ -3,9 +3,10 @@
 The campaign cannot claim selected 96^3, quasi-2D, Fluent validation, Figure
 29.3 parity, an actionable Step151 solver bug fix, an applied Step152 solver
 patch, Step150 readiness, or flow-development success from the current
-artifact state.
+artifact state. Step157 completed a real subcycled repair attempt, but the
+flow-development gate and density gate remain failed.
 
-Current Step148/149/150/151/152/153/154/155/156 official-case reproduction state:
+Current Step148/149/150/151/152/153/154/155/156/157 official-case reproduction state:
 
 - Step148 ran the repository MPM-LBM/FSI solver through `FSIDriver3D` at 48 grid
   / 250 FSI steps.
@@ -133,6 +134,35 @@ Current Step148/149/150/151/152/153/154/155/156 official-case reproduction state
 - Step156 keeps `official_monitor_loaded = false`,
   `official_error_metrics_available = false`, `validation_claim_allowed =
   false`, and `figure_29_3_parity_claim_allowed = false`.
+- Step157 is an official subcycled flow-development repair attempt, not a
+  Fluent validation gate.
+- Step157 consumed the Step154 compiled case, Step155 solver baseline, and
+  Step156 postprocess/acceptance artifacts.
+- Step157 ran `FSIDriver3D` directly with
+  `fsi_exchange_mode = lbm_subcycled_per_fsi_step`,
+  `lbm_substeps_per_fsi_step = 120`, and
+  `lbm_dt_phys_override_s = 4.166666666666667e-6`.
+- Step157 completed 50 official steps, `0.025 s`, and 6000 total LBM
+  substeps under
+  `outputs/step157_official_subcycled_flow_development_repair`.
+- Step157 wrote `step157_time_scale_diagnosis.json`,
+  `step157_subcycle_config_report.json`, `solver_run_manifest.json`,
+  subcycled timeseries CSVs, `velocity_snapshot_step050.npz`,
+  Step157 velocity PNGs, `flow_development_comparison_report.json`,
+  `solver_acceptance_report.json`, and `step157_summary.json`.
+- Step157 improved `outlet_to_inlet_flux_ratio_tail_mean` from the Step156
+  value `-5.006163707054121e-05` to `-0.7868301859248276`, but
+  `flux_imbalance_rel_tail_mean = -1.0595574586521002` remains outside the
+  flow-development gate.
+- Step157 records `step157_flow_development_gate_pass = false`,
+  `density_gate_pass = false`, `finite_gate_pass = true`,
+  `mpm_j_gate_pass = true`, `validation_claim_allowed = false`,
+  and `figure_29_3_parity_claim_allowed = false`.
+- Step157 did not run Fluent, did not run Step150, did not run selected96, did
+  not load or fabricate official monitor data, and does not claim validation.
+- Step158 remains limited to open-boundary, outlet propagation, or geometry/mask
+  obstruction diagnosis unless a later artifact explicitly opens a narrower
+  scope.
 - Step150 can only be rerun for real error localization after a private official
   monitor is supplied directly or a later explicitly scoped reference artifact
   is generated and marked with its confidence limits.

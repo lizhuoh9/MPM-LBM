@@ -1,0 +1,13 @@
+{
+  "fsi_exchange_mode": "lbm_subcycled_per_fsi_step",
+  "lbm_dt_phys_override_s": 4.166666666666667e-06,
+  "lbm_substeps_per_fsi_step": 120,
+  "legacy_external_viscosity_used": true,
+  "official_dt_reconstructed_from_lbm_substeps": 0.0005,
+  "official_fsi_dt_s": 0.0005,
+  "physical_reynolds_parity_claim_allowed": false,
+  "status": "subcycled_fsi_config_built",
+  "step": 157,
+  "target_velocity_mapping_reconstructs_10_mps": true,
+  "validation_claim_allowed": false
+}

@@ -1,0 +1,29 @@
+{
+  "baseline_step155_step156": {
+    "flow_development_gate_pass": false,
+    "flux_imbalance_rel_tail_mean": -1.0000500616370704,
+    "inlet_flux_tail_mean": 1.64673269197663,
+    "outlet_flux_tail_mean": -8.246116412041075e-05,
+    "outlet_to_inlet_flux_ratio_tail_mean": -5.006163707054121e-05
+  },
+  "figure_29_3_parity_claim_allowed": false,
+  "flux_imbalance_improved": false,
+  "outlet_flux_ratio_improved": true,
+  "status": "flow_development_comparison_written",
+  "step": 157,
+  "subcycled_step157": {
+    "flow_development_gate_pass": false,
+    "flux_imbalance_rel_tail_mean": -1.0595574586521002,
+    "inlet_flux_tail_mean": -1930589024.733107,
+    "mass_flux_rows": 51,
+    "midplane_flux_tail_mean": 414650931941.10114,
+    "midplane_to_inlet_flux_ratio_tail_mean": 43.809824843508096,
+    "outlet_flux_tail_mean": -5612815745.592484,
+    "outlet_to_inlet_flux_ratio_tail_mean": -0.7868301859248276,
+    "tail_fraction": 0.2,
+    "tail_row_count": 11
+  },
+  "subcycling_repair_success": false,
+  "subcycling_repair_success_policy": "flow gate requires abs(outlet_to_inlet_flux_ratio_tail_mean) >= 0.5 and abs(flux_imbalance_rel_tail_mean) <= 0.5",
+  "validation_claim_allowed": false
+}
