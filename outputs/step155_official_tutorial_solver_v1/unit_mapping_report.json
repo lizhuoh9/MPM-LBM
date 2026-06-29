@@ -1,0 +1,17 @@
+{
+  "duct_height_m": 0.04,
+  "lbm_viscosity_semantics": "legacy_external",
+  "official_fsi_dt_s": 0.0005,
+  "physical_duct_length_m": 0.1,
+  "physical_reynolds_parity_claim_allowed": false,
+  "status": "unit_mapping_report_only",
+  "step": 155,
+  "target_inlet_velocity_mps": 10.0,
+  "target_u_lbm": [
+    0.02,
+    0.0,
+    0.0
+  ],
+  "tau_margin_validation_required_before_physical_re_claim": true,
+  "validation_claim_allowed": false
+}

@@ -1,0 +1,15 @@
+{
+  "compiled_case_path": "outputs\\step154_official_solver_prepost_pipeline\\compiled_case.json",
+  "driver_static_lbm_geometry_includes_flap": false,
+  "flap_represented_by_mpm_particles": true,
+  "generated_geometry_config_path": "outputs\\step155_official_tutorial_solver_v1\\generated_geometry_config.json",
+  "geometry_equivalence_claim_allowed": false,
+  "official_mesh_imported": false,
+  "proxy_geometry_used": true,
+  "static_duct_geometry_compatible_with_step154_duct_context": true,
+  "status": "case_geometry_mapped_to_driver_config",
+  "step": 155,
+  "step154_flap_solid_cell_count": 20,
+  "step154_geometry_masks_loaded": true,
+  "validation_claim_allowed": false
+}

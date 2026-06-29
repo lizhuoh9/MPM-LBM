@@ -1,0 +1,16 @@
+{
+  "compiled_case_path": "outputs\\step154_official_solver_prepost_pipeline\\compiled_case.json",
+  "driver_class": "FSIDriver3D",
+  "dt_s": 0.0005,
+  "generated_geometry_config_path": "outputs\\step155_official_tutorial_solver_v1\\generated_geometry_config.json",
+  "monitor_interval": 1,
+  "n_steps_requested": 50,
+  "snapshot_interval": 5,
+  "solver_driver_config_path": "outputs\\step155_official_tutorial_solver_v1\\solver_driver_config.json",
+  "status": "solver_manifest_written",
+  "step": 155,
+  "step148_helper_used": false,
+  "step153_helper_used": false,
+  "target_time_end_s": 0.025,
+  "validation_claim_allowed": false
+}

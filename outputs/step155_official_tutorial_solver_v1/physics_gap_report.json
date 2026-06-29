@@ -1,0 +1,16 @@
+{
+  "coupling_mode": "moving_boundary",
+  "figure_29_3_parity_claim_allowed": false,
+  "fluid_solver": "LBM",
+  "official_dynamic_mesh_model": "linearly elastic dynamic mesh smoothing",
+  "official_mesh_imported": false,
+  "official_monitor_loaded": false,
+  "official_structural_model": "Fluent intrinsic FSI / FEM-like structural model",
+  "our_dynamic_mesh_equivalent": "moving-boundary/proxy coupling on fixed LBM grid",
+  "proxy_geometry_used": true,
+  "solid_solver": "finite_deformation_mpm",
+  "solver_pipeline_stage": "real_solver_run",
+  "status": "physics_gaps_reported",
+  "step": 155,
+  "validation_claim_allowed": false
+}

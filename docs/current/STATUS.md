@@ -46,20 +46,42 @@ real solver patch. In the current checkout Step151 is still
 coupling, geometry, monitor extraction, or runtime solver formulas while
 Step151 lacks a real targeted fix plan.
 
-Step154 is now the current official solver pre/post pipeline after Step153. It
-does not run the solver, Fluent, Step150, selected96, or the Step148 helper as
-the primary runner. It compiles the public tutorial duct/flap proxy into the
-canonical next-run input under
-`outputs/step154_official_solver_prepost_pipeline/compiled_case.json`, writes
-geometry, boundary, and FSI masks, records material and dimensionless mappings,
-maps the official monitor point to the 48^3 solver grid, and writes a
-postprocess specification plus `geometry_preview.png`. The summary records
-`status = official_solver_prepost_pipeline_ready`,
-`compiled_case_ready_for_step155 = true`, `step155_solver_run_allowed = true`,
-`solver_run_executed = false`, `fluent_run_executed = false`,
-`step150_executed = false`, `official_monitor_loaded = false`,
-`validation_claim_allowed = false`, `figure_29_3_parity_claim_allowed = false`,
-and `selected96_execution_allowed = false`.
+Step155 is now the current official tutorial solver V1 run after Step154. It
+consumed
+`outputs/step154_official_solver_prepost_pipeline/compiled_case.json` directly
+and ran the repository `FSIDriver3D` path for the public official tutorial
+window of 50 steps at `dt = 0.0005 s`, total time `0.025 s`. The output is
+under `outputs/step155_official_tutorial_solver_v1`. The summary records
+`status = official_tutorial_solver_v1_run_complete`,
+`solver_v1_run_executed = true`, `compiled_case_consumed = true`,
+`step148_helper_used = false`, `step153_helper_used = false`,
+`n_steps_completed = 50`, `time_end_s = 0.025`,
+`velocity_inlet_active = true`, `pressure_outlet_active = true`,
+`legacy_all_population_reset_used = false`,
+`unknown_population_reconstruction_used = true`,
+`open_boundary_limiter_enabled = true`,
+`lbm_open_boundary_semantics = regularized_velocity_pressure_limited`,
+`solver_monitor_rows = 51`, `solver_force_monitor_rows = 51`,
+`stability_rows = 51`, `mass_flux_rows = 51`,
+`velocity_snapshot_count = 11`, `official_monitor_loaded = false`,
+`official_error_metrics_available = false`, `validation_claim_allowed = false`,
+`figure_29_3_parity_claim_allowed = false`, and
+`selected96_execution_allowed = false`.
+
+Step155 did not call Step148 or Step153 helper runners as the primary runner.
+Step155 did not run Fluent. Step155 did not load or fabricate official monitor
+data. Step155 did not run Step150. Step155 did not run selected96 and does not
+make a validation claim. Step156 is the next step. It must consume Step155
+solver outputs and produce the official-style velocity plots, ux/uy
+diagnostics, stream/quiver plot, monitor plots, flux profiles, solver
+acceptance report, and official comparison placeholder/report.
+
+Step154 remains the current compiled-case and pre/post input source for
+Step155. It compiled the public tutorial duct/flap proxy into
+`outputs/step154_official_solver_prepost_pipeline/compiled_case.json`, wrote
+geometry/boundary/FSI masks, material and dimensionless mappings, monitor
+mapping, postprocess spec, and `geometry_preview.png`. Step154 did not run the
+solver, Fluent, Step150, selected96, or make a validation claim.
 
 Step153 remains the latest official tutorial setup-parity solver run before
 Step154. It ran the repository `FSIDriver3D` path through the Step148 solver
@@ -111,7 +133,7 @@ diagnostic proposal. Step146 did not run a new LBM row, did not run selected96,
 selected-static, 96^3, Fluent, or FSI, did not run a 500-step probe, and does
 not make a validation claim.
 Current campaign state:
-`step154_official_solver_prepost_pipeline_ready`.
+`step155_official_tutorial_solver_v1_run_complete`.
 
 Step146 artifacts are under
 `outputs/step146_coupled_saturation_stationarity_design`. The design readiness

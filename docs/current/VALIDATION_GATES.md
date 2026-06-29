@@ -4,7 +4,7 @@ The campaign cannot claim selected 96^3, quasi-2D, Fluent validation, Figure
 29.3 parity, an actionable Step151 solver bug fix, an applied Step152 solver
 patch, or Step150 readiness from the current artifact state.
 
-Current Step148/149/150/151/152/153/154 official-case reproduction state:
+Current Step148/149/150/151/152/153/154/155 official-case reproduction state:
 
 - Step148 ran the repository MPM-LBM/FSI solver through `FSIDriver3D` at 48 grid
   / 250 FSI steps.
@@ -85,6 +85,26 @@ Current Step148/149/150/151/152/153/154 official-case reproduction state:
   `step150_executed = false`, `official_monitor_loaded = false`,
   `validation_claim_allowed = false`, and
   `figure_29_3_parity_claim_allowed = false`.
+- Step155 is an official tutorial solver V1 run, not a Fluent validation gate.
+- Step155 consumed
+  `outputs/step154_official_solver_prepost_pipeline/compiled_case.json`
+  directly and ran `FSIDriver3D` for 50 steps at `dt = 0.0005 s`, total
+  `0.025 s`.
+- Step155 did not call Step148 or Step153 helper runners as the primary runner.
+- Step155 wrote solver monitor, force monitor, stability, mass/flux, and
+  velocity snapshot artifacts under
+  `outputs/step155_official_tutorial_solver_v1`.
+- Step155 records `solver_v1_run_executed = true`,
+  `compiled_case_consumed = true`, `n_steps_completed = 50`,
+  `time_end_s = 0.025`, `solver_monitor_rows = 51`,
+  `solver_force_monitor_rows = 51`, `stability_rows = 51`,
+  `mass_flux_rows = 51`, and `velocity_snapshot_count = 11`.
+- Step155 records `legacy_all_population_reset_used = false`,
+  `unknown_population_reconstruction_used = true`,
+  `open_boundary_limiter_enabled = true`, and
+  `lbm_open_boundary_semantics = regularized_velocity_pressure_limited`.
+- Step155 did not run Fluent, did not load or fabricate official monitor data,
+  did not run Step150, did not run selected96, and did not claim validation.
 - Step150 can only be rerun for real error localization after a private official
   monitor is supplied directly or a later explicitly scoped reference artifact
   is generated and marked with its confidence limits.

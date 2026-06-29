@@ -7,24 +7,34 @@ error-localization state:
 2. `docs/current/ACTIVE_CAMPAIGN.json`
 3. `docs/current/VALIDATION_GATES.md`
 4. `docs/current/READING_ORDER.md`
-5. `docs/campaigns/fluent_duct_flap/steps/154/goal.md`
-6. `docs/campaigns/fluent_duct_flap/steps/154/report.md`
-7. `outputs/step154_official_solver_prepost_pipeline/step154_summary.json`
-8. `outputs/step154_official_solver_prepost_pipeline/compiled_case.json`
-9. `outputs/step154_official_solver_prepost_pipeline/preprocess_report.json`
-10. `outputs/step154_official_solver_prepost_pipeline/postprocess_spec.json`
-11. `outputs/step154_official_solver_prepost_pipeline/material_model_mapping.json`
-12. `outputs/step154_official_solver_prepost_pipeline/dimensionless_mapping.json`
-13. `outputs/step154_official_solver_prepost_pipeline/geometry_preview.png`
-14. `docs/campaigns/fluent_duct_flap/steps/153/goal.md`
-15. `docs/campaigns/fluent_duct_flap/steps/153/report.md`
-16. `outputs/step153_official_tutorial_setup_parity/solver_reproduction_summary.json`
-17. `outputs/step153_official_tutorial_setup_parity/official_tutorial_setup_report.json`
-18. `outputs/step153_official_tutorial_setup_parity/material_mapping_report.json`
-19. `outputs/step153_official_tutorial_setup_parity/boundary_semantics_gap_report.json`
-20. `outputs/step153_official_tutorial_setup_parity/official_reference_gap_report.json`
-21. `outputs/step153_official_tutorial_setup_parity/solver_monitor.csv`
-22. `outputs/step153_official_tutorial_setup_parity/solver_force_monitor.csv`
+5. `docs/campaigns/fluent_duct_flap/steps/155/goal.md`
+6. `docs/campaigns/fluent_duct_flap/steps/155/report.md`
+7. `outputs/step155_official_tutorial_solver_v1/solver_v1_summary.json`
+8. `outputs/step155_official_tutorial_solver_v1/solver_run_manifest.json`
+9. `outputs/step155_official_tutorial_solver_v1/boundary_semantics_runtime_report.json`
+10. `outputs/step155_official_tutorial_solver_v1/solver_monitor.csv`
+11. `outputs/step155_official_tutorial_solver_v1/solver_force_monitor.csv`
+12. `outputs/step155_official_tutorial_solver_v1/stability_timeseries.csv`
+13. `outputs/step155_official_tutorial_solver_v1/mass_flux_timeseries.csv`
+14. `outputs/step155_official_tutorial_solver_v1/velocity_snapshots/velocity_snapshot_step050.npz`
+15. `docs/campaigns/fluent_duct_flap/steps/154/goal.md`
+16. `docs/campaigns/fluent_duct_flap/steps/154/report.md`
+17. `outputs/step154_official_solver_prepost_pipeline/step154_summary.json`
+18. `outputs/step154_official_solver_prepost_pipeline/compiled_case.json`
+19. `outputs/step154_official_solver_prepost_pipeline/preprocess_report.json`
+20. `outputs/step154_official_solver_prepost_pipeline/postprocess_spec.json`
+21. `outputs/step154_official_solver_prepost_pipeline/material_model_mapping.json`
+22. `outputs/step154_official_solver_prepost_pipeline/dimensionless_mapping.json`
+23. `outputs/step154_official_solver_prepost_pipeline/geometry_preview.png`
+24. `docs/campaigns/fluent_duct_flap/steps/153/goal.md`
+25. `docs/campaigns/fluent_duct_flap/steps/153/report.md`
+26. `outputs/step153_official_tutorial_setup_parity/solver_reproduction_summary.json`
+27. `outputs/step153_official_tutorial_setup_parity/official_tutorial_setup_report.json`
+28. `outputs/step153_official_tutorial_setup_parity/material_mapping_report.json`
+29. `outputs/step153_official_tutorial_setup_parity/boundary_semantics_gap_report.json`
+30. `outputs/step153_official_tutorial_setup_parity/official_reference_gap_report.json`
+31. `outputs/step153_official_tutorial_setup_parity/solver_monitor.csv`
+32. `outputs/step153_official_tutorial_setup_parity/solver_force_monitor.csv`
 23. `docs/campaigns/fluent_duct_flap/steps/152/goal.md`
 24. `docs/campaigns/fluent_duct_flap/steps/152/report.md`
 25. `outputs/step152_apply_targeted_solver_fix/step152_apply_summary.json`
@@ -93,7 +103,16 @@ error-localization state:
 65. `docs/campaigns/fluent_duct_flap/steps/138/report.md`
 66. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
 
-Step154 is the active official solver pre/post pipeline artifact: it compiles a
+Step155 is the active official tutorial solver V1 artifact: it consumes the
+Step154 compiled case directly, runs `FSIDriver3D` for 50 steps at
+`dt = 0.0005 s`, and writes solver monitor, force monitor, stability,
+mass/flux, and velocity-snapshot artifacts under
+`outputs/step155_official_tutorial_solver_v1`. Step155 did not use Step148 or
+Step153 helper runners as the primary runner, did not run Fluent, did not load
+or fabricate official monitor data, did not run Step150, did not run
+selected96, and does not make a validation claim.
+
+Step154 remains the official solver pre/post pipeline artifact: it compiles a
 canonical 48^3 duct/flap proxy case, geometry/boundary/FSI masks, material and
 dimensionless mappings, monitor-point mapping, postprocess specification, and a
 geometry preview under `outputs/step154_official_solver_prepost_pipeline`.

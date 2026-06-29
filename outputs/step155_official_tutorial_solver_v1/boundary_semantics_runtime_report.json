@@ -1,0 +1,12 @@
+{
+  "driver_boundary_report_path": "outputs\\tmp\\step155_official_tutorial_solver_v1_driver_raw\\duct_boundary_condition_report.json",
+  "lbm_open_boundary_semantics": "regularized_velocity_pressure_limited",
+  "legacy_all_population_reset_used": false,
+  "open_boundary_limiter_enabled": true,
+  "pressure_outlet_active": true,
+  "status": "boundary_semantics_runtime_checked",
+  "step": 155,
+  "unknown_population_reconstruction_used": true,
+  "validation_claim_allowed": false,
+  "velocity_inlet_active": true
+}

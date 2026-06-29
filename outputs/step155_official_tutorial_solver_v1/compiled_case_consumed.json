@@ -1,0 +1,155 @@
+{
+  "_compiled_case_path": "outputs\\step154_official_solver_prepost_pipeline\\compiled_case.json",
+  "boundary_condition_spec": {
+    "flap_wall": "fsi_moving_wall",
+    "inlet": "velocity_inlet",
+    "inlet_velocity_mps": 10.0,
+    "outlet": "pressure_outlet",
+    "wall": "no_slip",
+    "z_boundary_proxy": "periodic_or_symmetry_proxy_reported"
+  },
+  "case_name": "official_tutorial_duct_flap_proxy_case",
+  "case_version": 1,
+  "dimensionless_mapping": {
+    "direct_physical_reynolds_validation_allowed": false,
+    "duct_height_cells": 20,
+    "duct_height_m": 0.04,
+    "duct_length_m": 0.1,
+    "dx_m_if_x_length_controls": 0.0020833333333333333,
+    "dy_m_if_duct_height_controls": 0.002,
+    "fluid_cell_count_for_mapping_context": 3820,
+    "inlet_velocity_mps": 10.0,
+    "mapping_scope": "preprocessor_case_metadata_only",
+    "official_dt_s": 0.0005,
+    "official_time_steps": 50,
+    "official_total_time_s": 0.025,
+    "physical_reynolds_parity_claim_allowed": false,
+    "solver_nx": 48,
+    "solver_ny": 48,
+    "solver_nz": 48,
+    "tau_margin_validation_required_before_physical_re_claim": true
+  },
+  "figure_29_3_parity_claim_allowed": false,
+  "fsi_interface_spec": {
+    "fixed_base_policy": "lower_wall_fixed_base_band",
+    "fluent_intrinsic_fsi_equivalence_claim_allowed": false,
+    "fluid_interface": "fluid_cells_adjacent_to_flap_solid",
+    "interface_connectivity": "6_neighbor",
+    "moving_wall_semantics": "proxy_mpm_moving_boundary_interface",
+    "solid_interface": "flap_solid_cells_adjacent_to_fluid"
+  },
+  "lbm_boundary_semantics_required_for_step155": {
+    "legacy_all_population_reset_allowed": false,
+    "minimum_open_boundary_semantics": "regularized_velocity_pressure_limited"
+  },
+  "mask_artifacts": {
+    "boundary_masks": "outputs\\step154_official_solver_prepost_pipeline\\boundary_masks.npz",
+    "fsi_interface_masks": "outputs\\step154_official_solver_prepost_pipeline\\fsi_interface_masks.npz",
+    "geometry_masks": "outputs\\step154_official_solver_prepost_pipeline\\geometry_masks.npz"
+  },
+  "monitor_spec": {
+    "monitor_index": [
+      24,
+      18,
+      24
+    ],
+    "monitor_point_m": [
+      0.0505,
+      0.0095
+    ],
+    "monitor_point_normalized": [
+      0.505,
+      0.39499999999999996,
+      0.5
+    ],
+    "monitor_quantity": "Structure / Total Displacement",
+    "nearest_cell_policy": "nearest_cell_center"
+  },
+  "official_fluent_files_used_as_runtime_input": false,
+  "official_material": {
+    "material_name": "silicone-rubber",
+    "poisson_ratio": 0.47,
+    "solid_density_kg_m3": 1600.0,
+    "youngs_modulus_pa": 1000000.0
+  },
+  "official_mesh_imported": false,
+  "official_tutorial_setup": {
+    "duct_height_m": 0.04,
+    "duct_length_m": 0.1,
+    "flap_height_m": 0.01,
+    "flap_thickness_m": 0.003,
+    "half_domain_mode": true,
+    "inlet_air_velocity_mps": 10.0,
+    "max_iterations_per_time_step": 40,
+    "monitor_point_m": [
+      0.0505,
+      0.0095
+    ],
+    "monitor_quantity": "Structure / Total Displacement",
+    "official_tutorial_dt_s": 0.0005,
+    "official_tutorial_time_steps": 50,
+    "official_tutorial_total_time_s": 0.025,
+    "outlet_type": "pressure_outlet"
+  },
+  "postprocess_spec_path": "outputs\\step154_official_solver_prepost_pipeline\\postprocess_spec.json",
+  "selected96_execution_allowed": false,
+  "solver_geometry_mapping": {
+    "duct_normalized": {
+      "x": [
+        0.0,
+        1.0
+      ],
+      "y": [
+        0.3,
+        0.7
+      ],
+      "z": [
+        0.45,
+        0.55
+      ]
+    },
+    "flap_normalized": {
+      "anchor_side": "lower_wall",
+      "anchor_x": 0.505,
+      "anchor_y": 0.3,
+      "height": 0.1,
+      "mirrored_pair": false,
+      "thickness": 0.03,
+      "z": [
+        0.45,
+        0.55
+      ]
+    },
+    "geometry_equivalence_claim_allowed": false,
+    "physical_to_normalized_mapping": {
+      "x_norm": "x_m / duct_length_m",
+      "y_norm": "duct_y_min_norm + (y_m / duct_height_m) * (duct_y_max_norm - duct_y_min_norm)",
+      "z_norm": "0.5"
+    },
+    "solver_domain_normalized": {
+      "x": [
+        0.0,
+        1.0
+      ],
+      "y": [
+        0.0,
+        1.0
+      ],
+      "z": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  "solver_grid": {
+    "nx": 48,
+    "ny": 48,
+    "nz": 48
+  },
+  "source_step": 153,
+  "source_step153_root": "outputs\\step153_official_tutorial_setup_parity",
+  "source_step153_status": "official_tutorial_setup_parity_run_complete",
+  "status": "compiled_case_ready_for_step155",
+  "step": 154,
+  "validation_claim_allowed": false
+}

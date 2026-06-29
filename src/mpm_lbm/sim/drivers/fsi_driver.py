@@ -53,6 +53,10 @@ DIAGNOSTIC_FIELDS = [
 ]
 
 DIAGNOSTIC_TEXT_FIELDS = {"coupling_mode", "mb_subcycle_force_accumulation_mode"}
+UNKNOWN_POPULATION_RECONSTRUCTION_OPEN_BOUNDARIES = {
+    "regularized_velocity_pressure",
+    "regularized_velocity_pressure_limited",
+}
 
 
 class FSIDriver3D:
@@ -273,6 +277,7 @@ class FSIDriver3D:
             "lbm_boundary_condition_mode": self.config.lbm_boundary_condition_mode,
             "lbm_open_boundary_semantics": self.config.lbm_open_boundary_semantics,
             "lbm_open_boundary_scope_note": self._lbm_open_boundary_scope_note(),
+            "open_boundary_limiter_enabled": bool(self.config.open_boundary_limiter_enabled),
             "periodic_boundary_used": False,
             "pressure_outlet_density": 1.0,
             "pressure_outlet_cell_count": pressure_outlet_cell_count,
@@ -284,7 +289,8 @@ class FSIDriver3D:
             "target_u_lbm": list(self.config.target_u_lbm),
             "target_u_lbm_applied_to_inlet": True,
             "target_u_lbm_applied_to_solid_initial_velocity": False,
-            "unknown_population_reconstruction_used": self.config.lbm_open_boundary_semantics == "regularized_velocity_pressure",
+            "unknown_population_reconstruction_used": self.config.lbm_open_boundary_semantics
+            in UNKNOWN_POPULATION_RECONSTRUCTION_OPEN_BOUNDARIES,
             "validation_claim_allowed": False,
             "velocity_inlet_axis": self.config.velocity_inlet_axis,
             "velocity_inlet_cell_count": velocity_inlet_cell_count,
@@ -863,6 +869,11 @@ class FSIDriver3D:
             return (
                 "opt-in D3Q19 x-axis unknown-population reconstruction; not a Fluent pressure-based "
                 "open-boundary equivalence claim"
+            )
+        if self.config.lbm_open_boundary_semantics == "regularized_velocity_pressure_limited":
+            return (
+                "opt-in D3Q19 x-axis unknown-population reconstruction with limiter; not a Fluent "
+                "pressure-based open-boundary equivalence claim"
             )
         return (
             "legacy duct inlet/outlet uses all-population equilibrium reset; not a Fluent-like Zou-He or "
