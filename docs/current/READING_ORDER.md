@@ -9,34 +9,38 @@ error-localization state:
 4. `docs/current/READING_ORDER.md`
 5. `docs/campaigns/fluent_duct_flap/steps/153/goal.md`
 6. `docs/campaigns/fluent_duct_flap/steps/153/report.md`
-7. `outputs/step153_official_monitor_extract/official_monitor_extraction_summary.json`
-8. `outputs/step153_official_monitor_extract/official_monitor_schema_preview.json`
-9. `outputs/step153_official_monitor_extract/official_monitor_hash_report.json`
-10. `docs/campaigns/fluent_duct_flap/steps/152/goal.md`
-11. `docs/campaigns/fluent_duct_flap/steps/152/report.md`
-12. `outputs/step152_apply_targeted_solver_fix/step152_apply_summary.json`
-13. `outputs/step152_apply_targeted_solver_fix/step152_patch_plan.json`
-14. `outputs/step152_apply_targeted_solver_fix/error_delta_report.json`
-15. `docs/campaigns/fluent_duct_flap/steps/151/goal.md`
-16. `docs/campaigns/fluent_duct_flap/steps/151/report.md`
-17. `outputs/step151_targeted_solver_fix/step151_fix_report.json`
-18. `outputs/step151_targeted_solver_fix/step151_fix_plan.json`
-19. `outputs/step151_targeted_solver_fix/error_delta_report.json`
-20. `docs/campaigns/fluent_duct_flap/steps/150/goal.md`
-21. `docs/campaigns/fluent_duct_flap/steps/150/report.md`
-22. `outputs/step150_official_monitor_error_localization/step150_decision_summary.json`
-23. `outputs/step150_official_monitor_error_localization/error_localization_summary.json`
-24. `outputs/step150_official_monitor_error_localization/official_monitor_intake_summary.json`
-25. `outputs/step150_official_monitor_error_localization/official_monitor_schema_report.json`
-26. `outputs/step150_official_monitor_error_localization/official_monitor_private_hash_report.json`
-27. `docs/campaigns/fluent_duct_flap/steps/149/goal.md`
-28. `docs/campaigns/fluent_duct_flap/steps/149/report.md`
-29. `outputs/step149_fluent_official_vs_our_solver_error_localization/error_localization_summary.json`
-30. `docs/campaigns/fluent_duct_flap/steps/148/goal.md`
-31. `docs/campaigns/fluent_duct_flap/steps/148/report.md`
-32. `outputs/step148_our_solver_fluent_official_case/solver_reproduction_summary.json`
-33. `outputs/step148_our_solver_fluent_official_case/solver_monitor.csv`
-34. `outputs/step148_our_solver_fluent_official_case/solver_force_monitor.csv`
+7. `outputs/step153_official_tutorial_setup_parity/solver_reproduction_summary.json`
+8. `outputs/step153_official_tutorial_setup_parity/official_tutorial_setup_report.json`
+9. `outputs/step153_official_tutorial_setup_parity/material_mapping_report.json`
+10. `outputs/step153_official_tutorial_setup_parity/boundary_semantics_gap_report.json`
+11. `outputs/step153_official_tutorial_setup_parity/official_reference_gap_report.json`
+12. `outputs/step153_official_tutorial_setup_parity/solver_monitor.csv`
+13. `outputs/step153_official_tutorial_setup_parity/solver_force_monitor.csv`
+14. `docs/campaigns/fluent_duct_flap/steps/152/goal.md`
+15. `docs/campaigns/fluent_duct_flap/steps/152/report.md`
+16. `outputs/step152_apply_targeted_solver_fix/step152_apply_summary.json`
+17. `outputs/step152_apply_targeted_solver_fix/step152_patch_plan.json`
+18. `outputs/step152_apply_targeted_solver_fix/error_delta_report.json`
+19. `docs/campaigns/fluent_duct_flap/steps/151/goal.md`
+20. `docs/campaigns/fluent_duct_flap/steps/151/report.md`
+21. `outputs/step151_targeted_solver_fix/step151_fix_report.json`
+22. `outputs/step151_targeted_solver_fix/step151_fix_plan.json`
+23. `outputs/step151_targeted_solver_fix/error_delta_report.json`
+24. `docs/campaigns/fluent_duct_flap/steps/150/goal.md`
+25. `docs/campaigns/fluent_duct_flap/steps/150/report.md`
+26. `outputs/step150_official_monitor_error_localization/step150_decision_summary.json`
+27. `outputs/step150_official_monitor_error_localization/error_localization_summary.json`
+28. `outputs/step150_official_monitor_error_localization/official_monitor_intake_summary.json`
+29. `outputs/step150_official_monitor_error_localization/official_monitor_schema_report.json`
+30. `outputs/step150_official_monitor_error_localization/official_monitor_private_hash_report.json`
+31. `docs/campaigns/fluent_duct_flap/steps/149/goal.md`
+32. `docs/campaigns/fluent_duct_flap/steps/149/report.md`
+33. `outputs/step149_fluent_official_vs_our_solver_error_localization/error_localization_summary.json`
+34. `docs/campaigns/fluent_duct_flap/steps/148/goal.md`
+35. `docs/campaigns/fluent_duct_flap/steps/148/report.md`
+36. `outputs/step148_our_solver_fluent_official_case/solver_reproduction_summary.json`
+37. `outputs/step148_our_solver_fluent_official_case/solver_monitor.csv`
+38. `outputs/step148_our_solver_fluent_official_case/solver_force_monitor.csv`
 25. `docs/campaigns/fluent_duct_flap/steps/147/goal.md`
 26. `docs/campaigns/fluent_duct_flap/steps/147/report.md`
 27. `outputs/step147_saturation_stationarity_diagnostic/step147_decision_summary.json`
@@ -94,12 +98,13 @@ post-fix Step148/Step150 rerun. Step152 is the current apply gate: it reads the
 Step151 report/plan and currently reports
 `blocked_by_missing_targeted_fix_plan`, with no solver code modified, no patch
 implementation present, no post-fix Step148/Step150 rerun, and no validation
-claim. Step153 is the current unblocking path for the missing official monitor:
-it can normalize a private Fluent/System Coupling raw monitor export into the
-private Step150 `official_monitor.csv`, but the current checkout has no raw
-export, so Step153 reports `waiting_for_official_monitor_source` and
-`ready_for_step150 = false`. Step149 remains the reusable comparison logic under
-the Step150 wrapper.
+claim. Step153 is the current official tutorial setup-parity solver run: it
+uses the Step148 `FSIDriver3D` helper path, runs 50 steps at `dt = 0.0005 s`,
+writes monitor artifacts under `outputs/step153_official_tutorial_setup_parity`,
+and records official geometry/material/boundary semantics. It still has
+`official_monitor_loaded = false`, so Step150 real error localization remains
+blocked. Step149 remains the reusable comparison logic under the Step150
+wrapper.
 
 Older Step102-Step126 documents remain useful history, but they are not the
 current entry point for deciding whether the campaign may advance to selected

@@ -1,0 +1,24 @@
+{
+  "driver_material_reference_used_for_mpm_config": true,
+  "fluent_structural_model_equivalence_claim_allowed": false,
+  "geometry_material_matches_official_tutorial": true,
+  "geometry_material_reference": {
+    "density": 1600.0,
+    "poisson_ratio": 0.47,
+    "used_for_exact_structural_model": false,
+    "used_for_mpm_config": true,
+    "youngs_modulus": 1000000.0
+  },
+  "geometry_material_used_for_mpm_config": true,
+  "material_mapping_gap_blocks_physics_parity": false,
+  "material_name": "silicone-rubber",
+  "official_structural_material_application_scope": "MPM config overrides p_rho, young_modulus, and poisson_ratio",
+  "official_structural_material_applied": true,
+  "poisson_ratio": 0.47,
+  "semantic_note": "Fluent intrinsic FSI uses a FEM-like structural zone; this runner maps public material constants into the MPM proxy only.",
+  "solid_density_kg_m3": 1600.0,
+  "status": "official_structural_material_mapped_to_mpm_config",
+  "step": 153,
+  "validation_claim_allowed": false,
+  "youngs_modulus_pa": 1000000.0
+}

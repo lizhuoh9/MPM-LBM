@@ -1,0 +1,14 @@
+{
+  "comparison_scope": "setup_parity_only",
+  "next_action_if_available": "Step155 official error localization using Step153 solver monitor",
+  "next_action_if_missing": "Step154 diagnostic official reference extraction or provide Fluent report CSV",
+  "official_monitor_committed": false,
+  "official_monitor_loaded": false,
+  "official_monitor_path": "benchmarks\\private\\fluent_fsi_2way\\outputs\\official_monitor.csv",
+  "official_monitor_required_for_error_metrics": true,
+  "official_monitor_used_for_setup_parity_run": false,
+  "official_payload_committed": false,
+  "status": "official_monitor_missing",
+  "step": 153,
+  "validation_claim_allowed": false
+}

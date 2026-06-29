@@ -1,0 +1,28 @@
+{
+  "boundary_equivalence_claim_allowed": false,
+  "official_dynamic_mesh_fsi_wall_shadow_present": true,
+  "official_dynamic_mesh_smoothing_method": "Linearly Elastic Solid",
+  "official_fixed_flap_attach_present": true,
+  "official_intrinsic_fsi_wall_present": true,
+  "official_pressure_outlet_present": true,
+  "official_stationary_dynamic_mesh_zones": [
+    "pressure_outlet",
+    "symmetry",
+    "velocity_inlet",
+    "wall"
+  ],
+  "official_velocity_inlet_present": true,
+  "our_solver_equivalent_moving_boundary_mode": "moving_boundary",
+  "our_solver_lbm_boundary_condition_mode": "duct_velocity_inlet_pressure_outlet",
+  "our_solver_open_boundary_semantics": "regularized_velocity_pressure_limited",
+  "our_solver_solid_dimensionality": "three_dimensional",
+  "our_solver_solid_model": "finite_deformation_mpm",
+  "semantic_gaps": [
+    "Fluent intrinsic FSI solid zone is FEM-like linear elasticity; our solid is MPM",
+    "Fluent dynamic mesh smoothing is linearly elastic solid; our LBM grid uses moving-boundary/proxy coupling",
+    "The current proxy geometry is procedural and is not a direct import of the private Fluent mesh"
+  ],
+  "status": "official_boundary_semantics_reported",
+  "step": 153,
+  "validation_claim_allowed": false
+}

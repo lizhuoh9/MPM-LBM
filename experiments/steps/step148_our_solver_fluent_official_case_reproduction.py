@@ -443,8 +443,6 @@ def _write_manifest(
 
 
 def _write_step_report(output_dir: Path, summary: dict[str, Any]) -> None:
-    report_path = REPO_ROOT / "docs" / "campaigns" / "fluent_duct_flap" / "steps" / "148" / "report.md"
-    report_path.parent.mkdir(parents=True, exist_ok=True)
     lines = [
         "# Step148 Our-Solver Fluent Official Case Reproduction",
         "",
@@ -460,7 +458,21 @@ def _write_step_report(output_dir: Path, summary: dict[str, Any]) -> None:
         "Private official payloads remain under `benchmarks/private/fluent_fsi_2way/` and are not committed.",
         "",
     ]
-    report_path.write_text("\n".join(lines), encoding="utf-8")
+    text = "\n".join(lines)
+    output_report = output_dir / "report.md"
+    output_report.parent.mkdir(parents=True, exist_ok=True)
+    output_report.write_text(text, encoding="utf-8")
+    if _is_default_output_dir(output_dir):
+        report_path = REPO_ROOT / "docs" / "campaigns" / "fluent_duct_flap" / "steps" / "148" / "report.md"
+        report_path.parent.mkdir(parents=True, exist_ok=True)
+        report_path.write_text(text, encoding="utf-8")
+
+
+def _is_default_output_dir(output_dir: Path) -> bool:
+    try:
+        return output_dir.resolve() == (REPO_ROOT / DEFAULT_OUTPUT_DIR).resolve()
+    except Exception:
+        return False
 
 
 def _private_file_manifest(private_root: Path) -> dict[str, dict[str, Any]]:

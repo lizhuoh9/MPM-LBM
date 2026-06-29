@@ -46,15 +46,16 @@ real solver patch. In the current checkout Step151 is still
 coupling, geometry, monitor extraction, or runtime solver formulas while
 Step151 lacks a real targeted fix plan.
 
-Step153 is now the current practical path for unblocking Step150. It is an
-official monitor extraction/normalization utility, not another solver gate. It
-converts a user-supplied private Fluent/System Coupling monitor export into the
-private Step150 input:
-`benchmarks/private/fluent_fsi_2way/outputs/official_monitor.csv`. In the
-current checkout there is no private raw export and no private official monitor
-file, so Step153 reports `waiting_for_official_monitor_source`,
-`official_monitor_written_private = false`, and `ready_for_step150 = false`.
-Step153 does not run Step150, does not modify solver runtime code, does not
+Step153 is now the current official tutorial setup-parity run after Step152. It
+runs the repository `FSIDriver3D` path through the Step148 solver helper, but
+uses the public official tutorial window of 50 steps, `dt = 0.0005 s`, total
+time `0.025 s`, and records the official geometry, material, monitor point, and
+boundary/FSI semantics. The output is under
+`outputs/step153_official_tutorial_setup_parity`. The run completed with
+`status = official_tutorial_setup_parity_run_complete`, `solver_monitor_rows =
+11`, `solver_time_end_s = 0.025`, `official_structural_material_applied = true`,
+`official_monitor_loaded = false`, `validation_claim_allowed = false`, and
+`selected96_execution_allowed = false`. Step153 does not run Step150, does not
 commit private monitor payloads, and does not make a validation claim.
 
 The previous LBM outlet-controller repair line remains selected-boundary
@@ -98,7 +99,7 @@ diagnostic proposal. Step146 did not run a new LBM row, did not run selected96,
 selected-static, 96^3, Fluent, or FSI, did not run a 500-step probe, and does
 not make a validation claim.
 Current campaign state:
-`step153_waiting_for_official_monitor_source`.
+`step153_official_tutorial_setup_parity_run_complete`.
 
 Step146 artifacts are under
 `outputs/step146_coupled_saturation_stationarity_design`. The design readiness

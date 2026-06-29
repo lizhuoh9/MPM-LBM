@@ -57,17 +57,23 @@ Current Step148/149/150/151/152/153 official-case reproduction state:
   monitor is supplied, Step150 produces `error_localization_complete`, Step151
   produces `targeted_fix_plan_ready`, and the single registered
   `source_top_bug_category` has a category-specific patch implementation.
-- Step153 is an official monitor extraction/normalization utility, not a solver
-  patch and not a validation gate.
-- Step153 status is `waiting_for_official_monitor_source` in this checkout
-  because there is no private Fluent/System Coupling raw monitor export.
-- Step153 records `official_monitor_written_private = false` and
-  `ready_for_step150 = false`.
+- Step153 is an official tutorial setup-parity solver run, not a solver patch
+  and not a validation gate.
+- Step153 ran the repository `FSIDriver3D` path through the Step148 solver
+  helper for 50 steps at `dt = 0.0005 s`, total `0.025 s`.
+- Step153 wrote solver monitor artifacts under
+  `outputs/step153_official_tutorial_setup_parity`.
+- Step153 records `solver_monitor_rows = 11`, `solver_time_end_s = 0.025`, and
+  `solver_time_window_matches_official_tutorial = true`.
+- Step153 records the official tutorial geometry, material, monitor point, and
+  boundary/FSI semantic gaps.
+- Step153 records `official_monitor_loaded = false`, so Step150 error metrics,
+  Step151 targeted fixes, and Step152 patches remain blocked.
 - Step153 did not run Step150, did not fabricate official monitor data, did not
-  commit private monitor payloads, and did not modify solver runtime code.
+  commit private monitor payloads, and did not claim validation.
 - Step150 can only be rerun for real error localization after a private official
-  monitor is supplied directly or Step153 successfully normalizes a private raw
-  export into `benchmarks/private/fluent_fsi_2way/outputs/official_monitor.csv`.
+  monitor is supplied directly or a diagnostic Step154 reference is explicitly
+  generated and marked low confidence.
 - selected96 remains blocked.
 - validation claim remains blocked.
 

@@ -1,0 +1,44 @@
+{
+  "geometry_mapping_report": "outputs\\step153_official_tutorial_setup_parity\\geometry_mapping_report.json",
+  "geometry_mapping_status": "official_tutorial_proxy_geometry_mapped",
+  "monitor_point_m": [
+    0.0505,
+    0.0095
+  ],
+  "monitor_quantity": "Structure / Total Displacement",
+  "official_monitor_loaded": false,
+  "official_reference_gap_report": "outputs\\step153_official_tutorial_setup_parity\\official_reference_gap_report.json",
+  "official_tutorial_material": {
+    "material_name": "silicone-rubber",
+    "poisson_ratio": 0.47,
+    "solid_density_kg_m3": 1600.0,
+    "youngs_modulus_pa": 1000000.0
+  },
+  "official_tutorial_setup": {
+    "duct_height_m": 0.04,
+    "duct_length_m": 0.1,
+    "flap_height_m": 0.01,
+    "flap_thickness_m": 0.003,
+    "half_domain_mode": true,
+    "inlet_air_velocity_mps": 10.0,
+    "max_iterations_per_time_step": 40,
+    "monitor_point_m": [
+      0.0505,
+      0.0095
+    ],
+    "monitor_quantity": "Structure / Total Displacement",
+    "official_tutorial_dt_s": 0.0005,
+    "official_tutorial_time_steps": 50,
+    "official_tutorial_total_time_s": 0.025,
+    "outlet_type": "pressure_outlet",
+    "source": "Ansys Chapter 29 public two-way FSI tutorial setup"
+  },
+  "requested_dt_s": 0.0005,
+  "requested_n_steps": 50,
+  "requested_total_time_s": 0.025,
+  "selected96_execution_allowed": false,
+  "status": "official_tutorial_setup_encoded",
+  "step": 153,
+  "time_window_matches_official_tutorial": true,
+  "validation_claim_allowed": false
+}
