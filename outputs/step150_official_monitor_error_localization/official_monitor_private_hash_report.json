@@ -1,0 +1,9 @@
+{
+  "exists": false,
+  "official_monitor": "benchmarks\\private\\fluent_fsi_2way\\outputs\\official_monitor.csv",
+  "official_monitor_committed": false,
+  "official_monitor_hash": null,
+  "private_payload_committed": false,
+  "size_bytes": 0,
+  "step": 150
+}

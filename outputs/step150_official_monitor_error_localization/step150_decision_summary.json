@@ -1,0 +1,33 @@
+{
+  "aligned_sample_count": 0,
+  "error_metrics_present": false,
+  "fabricated_metrics_used": false,
+  "next_code_fix_step_identified": false,
+  "official_monitor": "benchmarks\\private\\fluent_fsi_2way\\outputs\\official_monitor.csv",
+  "official_monitor_committed": false,
+  "official_monitor_hash": null,
+  "official_monitor_rows": 0,
+  "official_reference_loaded": false,
+  "official_time_end_s": null,
+  "official_time_start_s": null,
+  "reason": "official_reference_missing",
+  "recommended_next_step": null,
+  "schema_errors": [
+    "official monitor is missing"
+  ],
+  "schema_valid": false,
+  "selected96_execution_allowed": false,
+  "solver_bug_hypotheses_present": false,
+  "solver_force_monitor": "outputs\\step148_our_solver_fluent_official_case\\solver_force_monitor.csv",
+  "solver_monitor": "outputs\\step148_our_solver_fluent_official_case\\solver_monitor.csv",
+  "solver_monitor_loaded": true,
+  "solver_monitor_rows": 26,
+  "solver_summary": "outputs\\step148_our_solver_fluent_official_case\\solver_reproduction_summary.json",
+  "solver_time_end_s": 0.125,
+  "solver_time_start_s": 0.0,
+  "status": "missing_official_monitor",
+  "step": 150,
+  "step149_comparison_ran": false,
+  "top_bug_category": null,
+  "validation_claim_allowed": false
+}

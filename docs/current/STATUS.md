@@ -10,14 +10,17 @@ monitor as runtime input, did not run selected96, and does not make a validation
 claim. The Step148 run base was
 `67e05ebbce10e92f5331dde20b424e7b5c081b7b`.
 
-Step149 attempted the official-vs-solver error-localization track against
-`benchmarks/private/fluent_fsi_2way/outputs/official_monitor.csv`. That private
-official monitor is not present in this checkout, so Step149 correctly reports
-`missing_official_monitor` / `official_reference_missing`. It loaded the Step148
-solver monitor, but it did not fabricate displacement metrics, force metrics,
-phase-lag metrics, or solver bug hypotheses. No Step150 code-fix target is
-identified until the official monitor is available or a user-provided reference
-monitor is supplied.
+Step150 is now the current official-monitor intake wrapper for the
+official-vs-solver error-localization track. It checks
+`benchmarks/private/fluent_fsi_2way/outputs/official_monitor.csv`, verifies the
+private official monitor schema before calling the Step149 comparison logic,
+records only private-file metadata/hash, and refuses to fabricate metrics when
+the official reference is absent. In this checkout the private official monitor
+is not present, so Step150 reports `missing_official_monitor` /
+`official_reference_missing`. It confirms the Step148 solver monitor is present,
+but it does not generate displacement metrics, force metrics, phase-lag metrics,
+or solver bug hypotheses. No Step151 code-fix target is identified until the
+official monitor is available or a user-provided reference monitor is supplied.
 
 The previous LBM outlet-controller repair line remains selected-boundary
 blocked. Step147 ran exactly four 48^3 / 250-step LBM-only rows under
@@ -60,7 +63,7 @@ diagnostic proposal. Step146 did not run a new LBM row, did not run selected96,
 selected-static, 96^3, Fluent, or FSI, did not run a 500-step probe, and does
 not make a validation claim.
 Current campaign state:
-`official_solver_reproduction_complete_missing_official_reference`.
+`official_monitor_intake_blocked_missing_reference`.
 
 Step146 artifacts are under
 `outputs/step146_coupled_saturation_stationarity_design`. The design readiness

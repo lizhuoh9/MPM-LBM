@@ -4,7 +4,7 @@ The campaign cannot claim selected 96^3, quasi-2D, Fluent validation, Figure
 29.3 parity, or an actionable Step150 solver bug fix from the current artifact
 state.
 
-Current Step148/149 official-case reproduction state:
+Current Step148/149/150 official-case reproduction state:
 
 - Step148 ran the repository MPM-LBM/FSI solver through `FSIDriver3D` at 48 grid
   / 250 FSI steps.
@@ -24,8 +24,19 @@ Current Step148/149 official-case reproduction state:
   `official_reference_missing`.
 - Step149 did not fabricate displacement metrics, force metrics, phase-lag
   metrics, or solver bug hypotheses.
-- Step150 is blocked until an official monitor is available or a scoped
-  replacement reference is explicitly supplied.
+- Step150 now wraps the official-monitor intake before reusing Step149
+  comparison logic.
+- Step150 checked
+  `benchmarks/private/fluent_fsi_2way/outputs/official_monitor.csv` and reports
+  `missing_official_monitor` / `official_reference_missing` in this checkout.
+- Step150 records no official monitor hash because the private file is absent.
+- Step150 confirms `official_monitor_committed = false`.
+- Step150 did not fabricate displacement metrics, force metrics, phase-lag
+  metrics, or solver bug hypotheses.
+- Step150 does not identify a Step151 code-fix target.
+- Step151 code changes are blocked until an official monitor is available or a
+  scoped replacement reference is explicitly supplied and Step150 produces real
+  error metrics plus a ranked top bug category.
 - selected96 remains blocked.
 - validation claim remains blocked.
 

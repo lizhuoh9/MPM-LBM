@@ -1,0 +1,14 @@
+{
+  "columns": [],
+  "displacement_column": null,
+  "force_column": null,
+  "official_monitor": "benchmarks\\private\\fluent_fsi_2way\\outputs\\official_monitor.csv",
+  "row_count": 0,
+  "schema_errors": [
+    "official monitor is missing"
+  ],
+  "schema_valid": false,
+  "step": 150,
+  "time_end_s": null,
+  "time_start_s": null
+}
