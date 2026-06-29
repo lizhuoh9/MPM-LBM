@@ -1,0 +1,11 @@
+{
+  "error_delta_report_present": true,
+  "primary_metric_improved": false,
+  "reason": "No post-fix Step148/Step150 rerun has been executed",
+  "selected96_execution_allowed": false,
+  "source_step150_status": "missing_official_monitor",
+  "source_top_bug_category": null,
+  "status": "not_computed",
+  "step": 151,
+  "validation_claim_allowed": false
+}

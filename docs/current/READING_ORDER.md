@@ -7,63 +7,68 @@ error-localization state:
 2. `docs/current/ACTIVE_CAMPAIGN.json`
 3. `docs/current/VALIDATION_GATES.md`
 4. `docs/current/READING_ORDER.md`
-5. `docs/campaigns/fluent_duct_flap/steps/150/goal.md`
-6. `docs/campaigns/fluent_duct_flap/steps/150/report.md`
-7. `outputs/step150_official_monitor_error_localization/step150_decision_summary.json`
-8. `outputs/step150_official_monitor_error_localization/error_localization_summary.json`
-9. `outputs/step150_official_monitor_error_localization/official_monitor_intake_summary.json`
-10. `outputs/step150_official_monitor_error_localization/official_monitor_schema_report.json`
-11. `outputs/step150_official_monitor_error_localization/official_monitor_private_hash_report.json`
-12. `docs/campaigns/fluent_duct_flap/steps/149/goal.md`
-13. `docs/campaigns/fluent_duct_flap/steps/149/report.md`
-14. `outputs/step149_fluent_official_vs_our_solver_error_localization/error_localization_summary.json`
-15. `docs/campaigns/fluent_duct_flap/steps/148/goal.md`
-16. `docs/campaigns/fluent_duct_flap/steps/148/report.md`
-17. `outputs/step148_our_solver_fluent_official_case/solver_reproduction_summary.json`
-18. `outputs/step148_our_solver_fluent_official_case/solver_monitor.csv`
-19. `outputs/step148_our_solver_fluent_official_case/solver_force_monitor.csv`
-20. `docs/campaigns/fluent_duct_flap/steps/147/goal.md`
-21. `docs/campaigns/fluent_duct_flap/steps/147/report.md`
-22. `outputs/step147_saturation_stationarity_diagnostic/step147_decision_summary.json`
-23. `outputs/step147_saturation_stationarity_diagnostic/step147_saturation_stationarity_comparison.json`
-24. `docs/campaigns/fluent_duct_flap/steps/146/goal.md`
-25. `docs/campaigns/fluent_duct_flap/steps/146/report.md`
-26. `docs/campaigns/fluent_duct_flap/steps/146/coupled_saturation_stationarity_design.md`
-27. `outputs/step146_coupled_saturation_stationarity_design/step146_design_readiness_report.json`
-28. `docs/campaigns/fluent_duct_flap/steps/145/goal.md`
-29. `docs/campaigns/fluent_duct_flap/steps/145/report.md`
-30. `outputs/step145_mass_neutral_long_window_forensics/step145_failure_mechanism_summary.json`
-31. `outputs/step145_mass_neutral_long_window_forensics/saturation_segment_report.json`
-32. `outputs/step145_mass_neutral_long_window_forensics/stationarity_segment_report.json`
-33. `outputs/step145_mass_neutral_long_window_forensics/mass_neutral_error_segment_report.json`
-34. `outputs/step145_mass_neutral_long_window_forensics/controller_lag_segment_report.json`
-35. `docs/campaigns/fluent_duct_flap/steps/144/goal.md`
-36. `docs/campaigns/fluent_duct_flap/steps/144/report.md`
-37. `outputs/step144_mass_neutral_final48/step144_decision_summary.json`
-38. `outputs/step144_mass_neutral_final48/step144_long_window_comparison.json`
-39. `docs/campaigns/fluent_duct_flap/steps/143/goal.md`
-40. `docs/campaigns/fluent_duct_flap/steps/143/report.md`
-41. `outputs/step143_mass_neutral_design_diagnostic/step143_decision_summary.json`
-42. `outputs/step143_mass_neutral_design_diagnostic/step143_mass_neutral_comparison.json`
-43. `docs/campaigns/fluent_duct_flap/steps/142/goal.md`
-44. `docs/campaigns/fluent_duct_flap/steps/142/report.md`
-45. `docs/campaigns/fluent_duct_flap/steps/142/mass_neutral_plane_flux_design.md`
-46. `outputs/step142_mass_neutral_plane_flux_design/step142_design_readiness_report.json`
-47. `docs/campaigns/fluent_duct_flap/steps/141/goal.md`
-48. `docs/campaigns/fluent_duct_flap/steps/141/report.md`
-49. `outputs/step141_density_feedback_isolation/step141_decision_summary.json`
-50. `outputs/step141_density_feedback_isolation/step141_density_feedback_comparison.json`
-51. `docs/campaigns/fluent_duct_flap/steps/140/goal.md`
-52. `docs/campaigns/fluent_duct_flap/steps/140/report.md`
-53. `outputs/step140_long_window_drift_forensics/step140_failure_mechanism_summary.json`
-54. `docs/campaigns/fluent_duct_flap/steps/139/report.md`
-55. `outputs/step139_planeflux_final48/step139_long_window_comparison.json`
-56. `outputs/step139_planeflux_final48/step139_failure_forensics.json`
-57. `docs/GENERIC_SOLVER_ARCHITECTURE_CONTRACT.md`
-58. `docs/campaigns/fluent_duct_flap/fluent_official_local_execution_guard.md`
-59. `outputs/fluent_official_local_execution_prep/guard_report.json`
-60. `docs/campaigns/fluent_duct_flap/steps/138/report.md`
-61. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
+5. `docs/campaigns/fluent_duct_flap/steps/151/goal.md`
+6. `docs/campaigns/fluent_duct_flap/steps/151/report.md`
+7. `outputs/step151_targeted_solver_fix/step151_fix_report.json`
+8. `outputs/step151_targeted_solver_fix/step151_fix_plan.json`
+9. `outputs/step151_targeted_solver_fix/error_delta_report.json`
+10. `docs/campaigns/fluent_duct_flap/steps/150/goal.md`
+11. `docs/campaigns/fluent_duct_flap/steps/150/report.md`
+12. `outputs/step150_official_monitor_error_localization/step150_decision_summary.json`
+13. `outputs/step150_official_monitor_error_localization/error_localization_summary.json`
+14. `outputs/step150_official_monitor_error_localization/official_monitor_intake_summary.json`
+15. `outputs/step150_official_monitor_error_localization/official_monitor_schema_report.json`
+16. `outputs/step150_official_monitor_error_localization/official_monitor_private_hash_report.json`
+17. `docs/campaigns/fluent_duct_flap/steps/149/goal.md`
+18. `docs/campaigns/fluent_duct_flap/steps/149/report.md`
+19. `outputs/step149_fluent_official_vs_our_solver_error_localization/error_localization_summary.json`
+20. `docs/campaigns/fluent_duct_flap/steps/148/goal.md`
+21. `docs/campaigns/fluent_duct_flap/steps/148/report.md`
+22. `outputs/step148_our_solver_fluent_official_case/solver_reproduction_summary.json`
+23. `outputs/step148_our_solver_fluent_official_case/solver_monitor.csv`
+24. `outputs/step148_our_solver_fluent_official_case/solver_force_monitor.csv`
+25. `docs/campaigns/fluent_duct_flap/steps/147/goal.md`
+26. `docs/campaigns/fluent_duct_flap/steps/147/report.md`
+27. `outputs/step147_saturation_stationarity_diagnostic/step147_decision_summary.json`
+28. `outputs/step147_saturation_stationarity_diagnostic/step147_saturation_stationarity_comparison.json`
+29. `docs/campaigns/fluent_duct_flap/steps/146/goal.md`
+30. `docs/campaigns/fluent_duct_flap/steps/146/report.md`
+31. `docs/campaigns/fluent_duct_flap/steps/146/coupled_saturation_stationarity_design.md`
+32. `outputs/step146_coupled_saturation_stationarity_design/step146_design_readiness_report.json`
+33. `docs/campaigns/fluent_duct_flap/steps/145/goal.md`
+34. `docs/campaigns/fluent_duct_flap/steps/145/report.md`
+35. `outputs/step145_mass_neutral_long_window_forensics/step145_failure_mechanism_summary.json`
+36. `outputs/step145_mass_neutral_long_window_forensics/saturation_segment_report.json`
+37. `outputs/step145_mass_neutral_long_window_forensics/stationarity_segment_report.json`
+38. `outputs/step145_mass_neutral_long_window_forensics/mass_neutral_error_segment_report.json`
+39. `outputs/step145_mass_neutral_long_window_forensics/controller_lag_segment_report.json`
+40. `docs/campaigns/fluent_duct_flap/steps/144/goal.md`
+41. `docs/campaigns/fluent_duct_flap/steps/144/report.md`
+42. `outputs/step144_mass_neutral_final48/step144_decision_summary.json`
+43. `outputs/step144_mass_neutral_final48/step144_long_window_comparison.json`
+44. `docs/campaigns/fluent_duct_flap/steps/143/goal.md`
+45. `docs/campaigns/fluent_duct_flap/steps/143/report.md`
+46. `outputs/step143_mass_neutral_design_diagnostic/step143_decision_summary.json`
+47. `outputs/step143_mass_neutral_design_diagnostic/step143_mass_neutral_comparison.json`
+48. `docs/campaigns/fluent_duct_flap/steps/142/goal.md`
+49. `docs/campaigns/fluent_duct_flap/steps/142/report.md`
+50. `docs/campaigns/fluent_duct_flap/steps/142/mass_neutral_plane_flux_design.md`
+51. `outputs/step142_mass_neutral_plane_flux_design/step142_design_readiness_report.json`
+52. `docs/campaigns/fluent_duct_flap/steps/141/goal.md`
+53. `docs/campaigns/fluent_duct_flap/steps/141/report.md`
+54. `outputs/step141_density_feedback_isolation/step141_decision_summary.json`
+55. `outputs/step141_density_feedback_isolation/step141_density_feedback_comparison.json`
+56. `docs/campaigns/fluent_duct_flap/steps/140/goal.md`
+57. `docs/campaigns/fluent_duct_flap/steps/140/report.md`
+58. `outputs/step140_long_window_drift_forensics/step140_failure_mechanism_summary.json`
+59. `docs/campaigns/fluent_duct_flap/steps/139/report.md`
+60. `outputs/step139_planeflux_final48/step139_long_window_comparison.json`
+61. `outputs/step139_planeflux_final48/step139_failure_forensics.json`
+62. `docs/GENERIC_SOLVER_ARCHITECTURE_CONTRACT.md`
+63. `docs/campaigns/fluent_duct_flap/fluent_official_local_execution_guard.md`
+64. `outputs/fluent_official_local_execution_prep/guard_report.json`
+65. `docs/campaigns/fluent_duct_flap/steps/138/report.md`
+66. `experiments/steps/step121_lbm_boundary_real_campaign_and_gate_correction.py`
 
 Step148 is the active solver reproduction artifact: it ran the repository
 MPM-LBM/FSI driver at 48 grid / 250 FSI steps and wrote solver monitors under
@@ -72,8 +77,11 @@ official monitor intake and comparison wrapper: it loaded the Step148 solver
 monitor but stopped at `missing_official_monitor` because
 `benchmarks/private/fluent_fsi_2way/outputs/official_monitor.csv` is not present
 in this checkout. It did not fabricate error metrics or bug hypotheses, and it
-does not identify a Step151 code-fix target. Step149 remains the reusable
-comparison logic under the Step150 wrapper.
+does not identify a Step151 code-fix target. Step151 is the active targeted-fix
+gate: it reads Step150 outputs and currently reports
+`blocked_by_missing_error_localization`, with no solver code modified and no
+post-fix Step148/Step150 rerun. Step149 remains the reusable comparison logic
+under the Step150 wrapper.
 
 Older Step102-Step126 documents remain useful history, but they are not the
 current entry point for deciding whether the campaign may advance to selected

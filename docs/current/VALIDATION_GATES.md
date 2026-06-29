@@ -1,10 +1,10 @@
 # Validation Gates
 
 The campaign cannot claim selected 96^3, quasi-2D, Fluent validation, Figure
-29.3 parity, or an actionable Step150 solver bug fix from the current artifact
+29.3 parity, or an actionable Step151 solver bug fix from the current artifact
 state.
 
-Current Step148/149/150 official-case reproduction state:
+Current Step148/149/150/151 official-case reproduction state:
 
 - Step148 ran the repository MPM-LBM/FSI solver through `FSIDriver3D` at 48 grid
   / 250 FSI steps.
@@ -34,9 +34,16 @@ Current Step148/149/150 official-case reproduction state:
 - Step150 did not fabricate displacement metrics, force metrics, phase-lag
   metrics, or solver bug hypotheses.
 - Step150 does not identify a Step151 code-fix target.
-- Step151 code changes are blocked until an official monitor is available or a
-  scoped replacement reference is explicitly supplied and Step150 produces real
-  error metrics plus a ranked top bug category.
+- Step151 reads Step150 outputs before allowing a targeted solver patch.
+- Step151 status is `blocked_by_missing_error_localization` because Step150
+  has no real official comparison.
+- Step151 records `solver_code_modified = false` and
+  `targeted_fix_applied = false`.
+- Step151 did not rerun post-fix Step148 or post-fix Step150.
+- Step151 did not improve a primary metric because no solver patch was allowed.
+- Step151 code changes remain blocked until an official monitor is available or
+  a scoped replacement reference is explicitly supplied and Step150 produces
+  real error metrics plus a ranked top bug category.
 - selected96 remains blocked.
 - validation claim remains blocked.
 

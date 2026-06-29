@@ -1,0 +1,17 @@
+{
+  "actions": [],
+  "blocked_reasons": [
+    "source_step150_status=missing_official_monitor",
+    "error_metrics_present=false",
+    "solver_bug_hypotheses_present=false",
+    "next_code_fix_step_identified=false",
+    "top_bug_category_missing",
+    "hypotheses_missing"
+  ],
+  "reason": "Step150 has no real official comparison",
+  "selected96_execution_allowed": false,
+  "solver_code_modified": false,
+  "status": "blocked_by_missing_error_localization",
+  "step": 151,
+  "validation_claim_allowed": false
+}

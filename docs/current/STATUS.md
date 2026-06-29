@@ -22,6 +22,17 @@ but it does not generate displacement metrics, force metrics, phase-lag metrics,
 or solver bug hypotheses. No Step151 code-fix target is identified until the
 official monitor is available or a user-provided reference monitor is supplied.
 
+Step151 is now the current targeted-fix gate after Step150. It reads the
+Step150 error-localization summary and solver bug hypotheses before allowing
+any solver patch. In the current checkout Step150 is still
+`missing_official_monitor`, so Step151 correctly reports
+`blocked_by_missing_error_localization`: `solver_code_modified = false`,
+`targeted_fix_applied = false`, `post_fix_step148_run_executed = false`,
+`post_fix_step150_comparison_executed = false`, and
+`primary_metric_improved = false`. Step151 does not change MPM, LBM, FSI
+coupling, geometry, monitor extraction, or runtime solver formulas in this
+state.
+
 The previous LBM outlet-controller repair line remains selected-boundary
 blocked. Step147 ran exactly four 48^3 / 250-step LBM-only rows under
 `planeflux_saturation_stationarity48` from the Step146 readiness artifact.
@@ -63,7 +74,7 @@ diagnostic proposal. Step146 did not run a new LBM row, did not run selected96,
 selected-static, 96^3, Fluent, or FSI, did not run a 500-step probe, and does
 not make a validation claim.
 Current campaign state:
-`official_monitor_intake_blocked_missing_reference`.
+`targeted_solver_fix_blocked_missing_error_localization`.
 
 Step146 artifacts are under
 `outputs/step146_coupled_saturation_stationarity_design`. The design readiness
