@@ -63,6 +63,16 @@ class LBMFluid3D:
         self.open_boundary_flux_control_target_scale = float(config.open_boundary_flux_control_target_scale)
         self.open_boundary_outlet_flux_drop_guard_enabled = bool(config.open_boundary_outlet_flux_drop_guard_enabled)
         self.open_boundary_outlet_flux_drop_guard_min_ratio = float(config.open_boundary_outlet_flux_drop_guard_min_ratio)
+        self.open_boundary_mass_neutral_flux_control_enabled = bool(
+            config.open_boundary_mass_neutral_flux_control_enabled
+        )
+        self.open_boundary_mass_neutral_flux_control_mode = str(config.open_boundary_mass_neutral_flux_control_mode)
+        self.open_boundary_mass_neutral_mass_error_gain = float(config.open_boundary_mass_neutral_mass_error_gain)
+        self.open_boundary_mass_neutral_mass_error_cap = float(config.open_boundary_mass_neutral_mass_error_cap)
+        self.open_boundary_mass_neutral_correction_blend = float(config.open_boundary_mass_neutral_correction_blend)
+        self.open_boundary_mass_neutral_reference_mass_mode = str(
+            config.open_boundary_mass_neutral_reference_mass_mode
+        )
         self.open_boundary_population_floor_enabled = config.open_boundary_population_floor is not None
         self.open_boundary_population_floor = float(
             config.open_boundary_population_floor
@@ -808,6 +818,16 @@ class LBMFluid3D:
             "flow_control_target_scale": float(self.open_boundary_flux_control_target_scale),
             "flow_outlet_flux_drop_guard_enabled": bool(self.open_boundary_outlet_flux_drop_guard_enabled),
             "flow_outlet_flux_drop_guard_min_ratio": float(self.open_boundary_outlet_flux_drop_guard_min_ratio),
+            "mass_neutral_flux_control_enabled": bool(self.open_boundary_mass_neutral_flux_control_enabled),
+            "mass_neutral_flux_control_mode": self.open_boundary_mass_neutral_flux_control_mode,
+            "mass_neutral_mass_error_gain": float(self.open_boundary_mass_neutral_mass_error_gain),
+            "mass_neutral_mass_error_cap": float(self.open_boundary_mass_neutral_mass_error_cap),
+            "mass_neutral_correction_blend": float(self.open_boundary_mass_neutral_correction_blend),
+            "mass_neutral_reference_mass_mode": self.open_boundary_mass_neutral_reference_mass_mode,
+            "mass_neutral_projection_report_only": bool(
+                self.open_boundary_mass_neutral_flux_control_mode == "outlet_population_projection_report_only"
+            ),
+            "mass_neutral_runtime_behavior_active": False,
             "near_outlet_flux_xminus1": float(self.ob_near_outlet_flux_xminus1[None]),
             "near_outlet_flux_xminus2": float(self.ob_near_outlet_flux_xminus2[None]),
             "near_outlet_flux_xminus3": float(self.ob_near_outlet_flux_xminus3[None]),

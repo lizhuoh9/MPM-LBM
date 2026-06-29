@@ -418,6 +418,18 @@ def _lbm_config_report(config: LBMConfig, spec: Step116RunSpec, tau_report: Dict
             "bc_x_right": config.bc_x_right,
             "vel_bc_x_left": list(config.vel_bc_x_left),
             "rho_bc_x_right": config.rho_bc_x_right,
+            "open_boundary_mass_neutral_flux_control_enabled": bool(
+                config.open_boundary_mass_neutral_flux_control_enabled
+            ),
+            "open_boundary_mass_neutral_flux_control_mode": config.open_boundary_mass_neutral_flux_control_mode,
+            "open_boundary_mass_neutral_mass_error_gain": float(
+                config.open_boundary_mass_neutral_mass_error_gain
+            ),
+            "open_boundary_mass_neutral_mass_error_cap": float(config.open_boundary_mass_neutral_mass_error_cap),
+            "open_boundary_mass_neutral_correction_blend": float(
+                config.open_boundary_mass_neutral_correction_blend
+            ),
+            "open_boundary_mass_neutral_reference_mass_mode": config.open_boundary_mass_neutral_reference_mass_mode,
         },
         "step116_spec": asdict(spec),
         "tau_feasibility_report": tau_report,

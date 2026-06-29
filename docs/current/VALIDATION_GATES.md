@@ -376,6 +376,30 @@ Current Step141 density-feedback isolation evidence:
 - `step142_single_500step_final_evidence_proposal_allowed = false`.
 - Selected 96^3 execution remains blocked.
 
+Current Step142 mass-neutral plane-flux design contract:
+
+- Step142 is design-only. It did not run a real 48^3 row, did not run a
+  500-step row, did not add a Step121 phase, and did not enable selected96.
+- Step142 adds default-disabled report-visible config fields for a future
+  mass-neutral plane-flux controller:
+  `open_boundary_mass_neutral_flux_control_enabled`,
+  `open_boundary_mass_neutral_flux_control_mode`,
+  `open_boundary_mass_neutral_mass_error_gain`,
+  `open_boundary_mass_neutral_mass_error_cap`,
+  `open_boundary_mass_neutral_correction_blend`, and
+  `open_boundary_mass_neutral_reference_mass_mode`.
+- The Step142 design-readiness artifact is
+  `outputs/step142_mass_neutral_plane_flux_design/step142_design_readiness_report.json`.
+- The readiness report records `status = design_ready`,
+  `step142_real_48_run_executed = false`,
+  `step142_single_500step_final_evidence_proposal_allowed = false`,
+  `selected96_execution_allowed = false`, and
+  `validation_claim_allowed = false`.
+- A future Step143 bounded 48^3 / 250-step diagnostic may be proposed as
+  `planeflux_mass_neutral_design48`; that phase is not present in Step121
+  during Step142.
+- selected 96^3 execution remains blocked.
+
 Current Step124 gate requirements:
 
 - 48^3 legacy reference rows must either complete the requested real window or

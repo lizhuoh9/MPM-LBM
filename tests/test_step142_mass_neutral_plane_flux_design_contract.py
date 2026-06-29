@@ -95,6 +95,8 @@ def test_step120_reports_mass_neutral_surface_without_changing_solver_state_hash
         nz=4,
         n_steps=1,
         output_interval=1,
+        open_boundary_semantics="regularized_plane_flux_controlled_pressure_outlet",
+        geometry_mode="duct_only",
         checkpoint_every=0,
         requested_nx=5,
         requested_n_steps=1,

@@ -414,6 +414,24 @@ def _make_lbm_config(spec: Step118RunSpec, tau_report: Dict[str, Any]) -> LBMCon
         ),
         open_boundary_outlet_flux_drop_guard_enabled=bool(spec.open_boundary_outlet_flux_drop_guard_enabled),
         open_boundary_outlet_flux_drop_guard_min_ratio=float(spec.open_boundary_outlet_flux_drop_guard_min_ratio),
+        open_boundary_mass_neutral_flux_control_enabled=bool(
+            getattr(spec, "open_boundary_mass_neutral_flux_control_enabled", False)
+        ),
+        open_boundary_mass_neutral_flux_control_mode=str(
+            getattr(spec, "open_boundary_mass_neutral_flux_control_mode", "disabled")
+        ),
+        open_boundary_mass_neutral_mass_error_gain=float(
+            getattr(spec, "open_boundary_mass_neutral_mass_error_gain", 0.0)
+        ),
+        open_boundary_mass_neutral_mass_error_cap=float(
+            getattr(spec, "open_boundary_mass_neutral_mass_error_cap", 0.0)
+        ),
+        open_boundary_mass_neutral_correction_blend=float(
+            getattr(spec, "open_boundary_mass_neutral_correction_blend", 0.0)
+        ),
+        open_boundary_mass_neutral_reference_mass_mode=str(
+            getattr(spec, "open_boundary_mass_neutral_reference_mass_mode", "initial")
+        ),
         bc_x_left=2,
         bc_x_right=1,
         vel_bc_x_left=(float(spec.inlet_u_lbm), 0.0, 0.0),

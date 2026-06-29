@@ -147,6 +147,15 @@ SOLVER_STATE_HASH_FIELDS = {
     "open_boundary_inlet_ramp_profile",
 }
 
+DEFAULT_MASS_NEUTRAL_SPEC_VALUES = {
+    "open_boundary_mass_neutral_flux_control_enabled": False,
+    "open_boundary_mass_neutral_flux_control_mode": "disabled",
+    "open_boundary_mass_neutral_mass_error_gain": 0.0,
+    "open_boundary_mass_neutral_mass_error_cap": 0.0,
+    "open_boundary_mass_neutral_correction_blend": 0.0,
+    "open_boundary_mass_neutral_reference_mass_mode": "initial",
+}
+
 
 @dataclass(frozen=True)
 class Step120RunSpec(Step119RunSpec):
@@ -178,6 +187,12 @@ class Step120RunSpec(Step119RunSpec):
     open_boundary_inlet_ramp_steps: int = 0
     open_boundary_inlet_ramp_profile: str = "linear"
     open_boundary_flux_control_target_scale: float = 1.0
+    open_boundary_mass_neutral_flux_control_enabled: bool = False
+    open_boundary_mass_neutral_flux_control_mode: str = "disabled"
+    open_boundary_mass_neutral_mass_error_gain: float = 0.0
+    open_boundary_mass_neutral_mass_error_cap: float = 0.0
+    open_boundary_mass_neutral_correction_blend: float = 0.0
+    open_boundary_mass_neutral_reference_mass_mode: str = "initial"
 
 
 def step120_real_run_specs(output_interval: int = 25) -> List[Step120RunSpec]:
@@ -1568,6 +1583,17 @@ def _summary_row(
         "open_boundary_outlet_flux_drop_guard_min_ratio": float(spec.open_boundary_outlet_flux_drop_guard_min_ratio),
         "open_boundary_inlet_ramp_steps": int(spec.open_boundary_inlet_ramp_steps or 0),
         "open_boundary_inlet_ramp_profile": str(spec.open_boundary_inlet_ramp_profile or "linear"),
+        "open_boundary_mass_neutral_flux_control_enabled": bool(
+            spec.open_boundary_mass_neutral_flux_control_enabled
+        ),
+        "open_boundary_mass_neutral_flux_control_mode": str(spec.open_boundary_mass_neutral_flux_control_mode),
+        "open_boundary_mass_neutral_mass_error_gain": float(spec.open_boundary_mass_neutral_mass_error_gain),
+        "open_boundary_mass_neutral_mass_error_cap": float(spec.open_boundary_mass_neutral_mass_error_cap),
+        "open_boundary_mass_neutral_correction_blend": float(spec.open_boundary_mass_neutral_correction_blend),
+        "open_boundary_mass_neutral_reference_mass_mode": str(
+            spec.open_boundary_mass_neutral_reference_mass_mode
+        ),
+        "step142_mass_neutral_plane_flux_design_surface": True,
         "inlet_u_lbm": float(spec.inlet_u_lbm),
         "outlet_rho": float(spec.outlet_rho),
         "lbm_niu": float(tau_report["lbm_niu"]),
@@ -1712,6 +1738,17 @@ def _metadata(
         "open_boundary_outlet_flux_drop_guard_min_ratio": float(spec.open_boundary_outlet_flux_drop_guard_min_ratio),
         "open_boundary_inlet_ramp_steps": int(spec.open_boundary_inlet_ramp_steps or 0),
         "open_boundary_inlet_ramp_profile": str(spec.open_boundary_inlet_ramp_profile or "linear"),
+        "open_boundary_mass_neutral_flux_control_enabled": bool(
+            spec.open_boundary_mass_neutral_flux_control_enabled
+        ),
+        "open_boundary_mass_neutral_flux_control_mode": str(spec.open_boundary_mass_neutral_flux_control_mode),
+        "open_boundary_mass_neutral_mass_error_gain": float(spec.open_boundary_mass_neutral_mass_error_gain),
+        "open_boundary_mass_neutral_mass_error_cap": float(spec.open_boundary_mass_neutral_mass_error_cap),
+        "open_boundary_mass_neutral_correction_blend": float(spec.open_boundary_mass_neutral_correction_blend),
+        "open_boundary_mass_neutral_reference_mass_mode": str(
+            spec.open_boundary_mass_neutral_reference_mass_mode
+        ),
+        "step142_mass_neutral_plane_flux_design_surface": True,
         "step130_flow_repair_triage": bool(spec.row_role == "flow_repair_candidate_48"),
         "step135_interior_reflection_candidate": bool(
             spec.row_role == "interior_reflection_diagnostic_48" and "Step135" in str(spec.artifact_scope_note)
@@ -1834,6 +1871,20 @@ def _boundary_report(spec: Step120RunSpec) -> Dict[str, Any]:
         "open_boundary_outlet_flux_drop_guard_min_ratio": float(spec.open_boundary_outlet_flux_drop_guard_min_ratio),
         "open_boundary_inlet_ramp_steps": int(spec.open_boundary_inlet_ramp_steps or 0),
         "open_boundary_inlet_ramp_profile": str(spec.open_boundary_inlet_ramp_profile or "linear"),
+        "open_boundary_mass_neutral_flux_control_enabled": bool(
+            spec.open_boundary_mass_neutral_flux_control_enabled
+        ),
+        "open_boundary_mass_neutral_flux_control_mode": str(spec.open_boundary_mass_neutral_flux_control_mode),
+        "open_boundary_mass_neutral_mass_error_gain": float(spec.open_boundary_mass_neutral_mass_error_gain),
+        "open_boundary_mass_neutral_mass_error_cap": float(spec.open_boundary_mass_neutral_mass_error_cap),
+        "open_boundary_mass_neutral_correction_blend": float(spec.open_boundary_mass_neutral_correction_blend),
+        "open_boundary_mass_neutral_reference_mass_mode": str(
+            spec.open_boundary_mass_neutral_reference_mass_mode
+        ),
+        "mass_neutral_runtime_behavior_active": False,
+        "mass_neutral_projection_report_only": bool(
+            spec.open_boundary_mass_neutral_flux_control_mode == "outlet_population_projection_report_only"
+        ),
         "actual_limiter_counter_required": True,
         "implemented_axis": "x",
         "pressure_outlet_density": float(spec.outlet_rho),
@@ -2800,6 +2851,7 @@ def run_manifest_hash_for_spec(spec: Step120RunSpec) -> str:
     ]:
         if data.get(key) is None:
             data.pop(key, None)
+    _drop_default_mass_neutral_spec_values(data)
     return _hash_spec_mapping(data)
 
 
@@ -2809,6 +2861,7 @@ def _config_hash(spec: Step120RunSpec) -> str:
 
 def _legacy_config_hash(spec: Step120RunSpec) -> str:
     data = asdict(spec)
+    _drop_default_mass_neutral_spec_values(data)
     relevant = {
         key: data[key]
         for key in sorted(data)
@@ -2820,6 +2873,12 @@ def _legacy_config_hash(spec: Step120RunSpec) -> str:
         }
     }
     return _hash_spec_mapping(relevant)
+
+
+def _drop_default_mass_neutral_spec_values(data: Dict[str, Any]) -> None:
+    for key, default_value in DEFAULT_MASS_NEUTRAL_SPEC_VALUES.items():
+        if data.get(key) == default_value:
+            data.pop(key, None)
 
 
 def _hash_spec_mapping(mapping: Dict[str, Any]) -> str:

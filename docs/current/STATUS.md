@@ -1,17 +1,39 @@
 # Current Status
 
 The active campaign is the Fluent duct/flap LBM open-boundary repair campaign.
-The current artifact state remains selected-boundary blocked. Step141 is a
-bounded 48^3 / 250-step LBM-only density-feedback isolation diagnostic over
-the Step139/Step140 failure, not selected-candidate evidence and not a
-validation step.
+The current artifact state remains selected-boundary blocked. Step142 is a
+design-only mass-neutral plane-flux controller contract over the Step141
+decision. It does not add a Step121 phase, does not run a real 48^3 row, does
+not run 500 steps, and does not enable selected96.
 Current campaign state: `48_candidates_failed`.
 
 Commit identity note: Step141 was executed with `code_commit_at_run =
 90fa5798754942cd8f7de2a1c24a483804667478`. The Step139 source row still
 records `step139_code_commit_at_run =
 4e43162a641085e56a4ba72c8bc013e58cb08cc3`. These fields are intentionally
-separate from the final report/push commit for this Step141 patch.
+separate from the final Step141 report/push commit
+`24f5bef3d10e6102fbc2a1cd28c383df81ad7bf3`.
+
+Step142 adds default-disabled report-visible config fields for a future
+mass-neutral plane-flux controller:
+
+```text
+open_boundary_mass_neutral_flux_control_enabled
+open_boundary_mass_neutral_flux_control_mode
+open_boundary_mass_neutral_mass_error_gain
+open_boundary_mass_neutral_mass_error_cap
+open_boundary_mass_neutral_correction_blend
+open_boundary_mass_neutral_reference_mass_mode
+```
+
+The Step142 readiness artifact is
+`outputs/step142_mass_neutral_plane_flux_design/step142_design_readiness_report.json`.
+It records `status = design_ready`, `step142_real_48_run_executed = false`,
+`step142_single_500step_final_evidence_proposal_allowed = false`,
+`selected96_execution_allowed = false`, and
+`step143_250step_diagnostic_proposal_allowed = true`. The proposed later phase
+name is `planeflux_mass_neutral_design48`, but that phase is not added to
+Step121 in Step142.
 
 Step141 adds the distinct `planeflux_density_feedback_isolation48` phase with
 exactly four real 48^3 / 250-step rows. All rows use
