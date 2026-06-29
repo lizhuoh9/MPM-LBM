@@ -3,6 +3,29 @@
 The campaign cannot claim selected 96^3, quasi-2D, FSI, Fluent validation, or
 Figure 29.3 parity from the current 48^3 LBM-only candidate artifacts.
 
+Current Step146 coupled design evidence:
+
+- Step146 is design-only and artifact-only.
+- Step146 reads the Step145 and Step144 artifacts only.
+- Step146 did not run a new LBM row.
+- Step146 did not add a Step121 phase.
+- Step146 did not run selected96.
+- Step146 did not run selected-static.
+- Step146 did not run 96^3.
+- Step146 did not run Fluent.
+- Step146 did not run FSI.
+- Step146 did not run a 500-step probe.
+- Step146 does not make a validation claim.
+- Step146 preserves the Step145 mechanism:
+  `mixed_saturation_stationarity_failure`.
+- selected96 remains blocked.
+- selected-candidate-surface review remains blocked.
+- validation claim remains blocked.
+- 500-step probe remains blocked.
+- Step146 recommends only a later bounded Step147 `48^3 / 250-step`
+  diagnostic proposal under `planeflux_saturation_stationarity48`.
+- Step146 does not add that Step147 phase to Step121.
+
 Current Step145 failure-forensics evidence:
 
 - Step145 is artifact-only over Step144, Step143, and Step140 outputs.

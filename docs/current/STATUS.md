@@ -1,9 +1,33 @@
 # Current Status
 
 The active campaign is the Fluent duct/flap LBM open-boundary repair campaign.
-The current artifact state remains selected-boundary blocked. Step145 is an
-artifact-only failure-forensics step over the existing Step144, Step143, and
-Step140 outputs. It classifies the Step144 long-window failure as
+The current artifact state remains selected-boundary blocked. Step146 is design-only and artifact-only.
+It reads the existing Step145 and Step144
+artifacts, records a coupled saturation-stationarity design readiness report,
+and recommends only a later bounded Step147 `48^3 / 250-step` diagnostic
+proposal. Step146 did not run a new LBM row, did not add a Step121 phase, did
+not run selected96, selected-static, 96^3, Fluent, or FSI, did not run a
+500-step probe, and does not make a validation claim. selected96 remains
+blocked, selected-candidate-surface review remains blocked, validation claim
+remains blocked, and the Step146 500-step probe remains blocked.
+Current campaign state: `48_candidates_failed`.
+
+Step146 artifacts are under
+`outputs/step146_coupled_saturation_stationarity_design`. The design readiness
+report is
+`outputs/step146_coupled_saturation_stationarity_design/step146_design_readiness_report.json`.
+It records `status = design_ready`, `source_step145_decision_case =
+mixed_saturation_stationarity_failure`, `design_only = true`, `artifact_only =
+true`, `new_lbm_run_executed = false`, `step121_phase_added = false`,
+`selected96_execution_allowed = false`,
+`selected_candidate_surface_review_allowed = false`, and
+`validation_claim_allowed = false`. It recommends Design A,
+`saturation_aware_mass_neutral_relief_with_stationarity_damping`, for a later
+Step147 proposal and keeps Design B,
+`outlet_population_projection_report_only`, as fallback telemetry only.
+
+Step145 is an artifact-only failure-forensics step over the existing Step144,
+Step143, and Step140 outputs. It classifies the Step144 long-window failure as
 `mixed_saturation_stationarity_failure`: mass-neutral feedback saturated through
 the hard-gate tail while mass acceptance and outlet stationarity both remained
 outside gate.
@@ -16,7 +40,6 @@ add a Step121 phase, did not run selected96, did not run selected-static, did
 not run 96^3, did not run Fluent, did not run FSI, and does not make a
 validation claim. selected96 remains blocked, selected-candidate-surface review remains blocked,
 and validation claim remains blocked.
-Current campaign state: `48_candidates_failed`.
 
 Step145 artifacts are under
 `outputs/step145_mass_neutral_long_window_forensics`. The failure mechanism
@@ -26,9 +49,9 @@ It records `dominant_failure_mechanism =
 mixed_saturation_stationarity_failure`,
 `selected96_execution_allowed = false`,
 `selected_candidate_surface_review_allowed = false`, and
-`validation_claim_allowed = false`. The only Step146 allowance is a bounded
-250-step diagnostic/design proposal; a 500-step probe and selected96 remain
-blocked.
+`validation_claim_allowed = false`. The only Step146 allowance was a bounded
+250-step diagnostic/design proposal; Step146 now converts that allowance into a
+design-only readiness artifact. A 500-step probe and selected96 remain blocked.
 
 Step144 did not run selected96.
 Step144 did not run selected-static.

@@ -1,0 +1,118 @@
+{
+  "artifact": "step146_coupled_saturation_stationarity_design_readiness",
+  "artifact_only": true,
+  "design_decision": "Recommend Design A for a later bounded Step147 48^3 / 250-step diagnostic. Keep Design B as fallback telemetry. Step146 does not execute either design.",
+  "design_only": true,
+  "design_options": [
+    {
+      "description": "Couple mass-neutral relief to stationarity damping instead of raising the mass cap alone.",
+      "label": "Design A",
+      "name": "saturation_aware_mass_neutral_relief_with_stationarity_damping",
+      "recommended_for_step147": true,
+      "runtime_activation_in_step146": false
+    },
+    {
+      "description": "Keep outlet population projection as report-only feasibility telemetry before any runtime activation.",
+      "label": "Design B",
+      "name": "outlet_population_projection_report_only",
+      "recommended_for_step147": false,
+      "runtime_activation_in_step146": false
+    }
+  ],
+  "design_readiness_present": true,
+  "fallback_design": "outlet_population_projection_report_only",
+  "figure29_3_parity_claim_allowed": false,
+  "fluent_validation_claim_allowed": false,
+  "fsi_validation_claim_allowed": false,
+  "input_hashes": {
+    "step144_comparison": "c73c455a42f6eed2040a3b193244cb9f528ce128d306b2aa98385d49256ec669",
+    "step144_decision": "b8b05d8ee8db553c4b00e416d386953dee6dd743a0f68d668d453f6632ba0ff6",
+    "step145_controller": "d08e0fc2eb88c942d7da646f6e5833207134ee1018356b9c56f410e9a9e2a55f",
+    "step145_saturation": "eeded4ff8a001de63cb8bccfab72c37855b8212908f8b34a32fd1dac7f2b28d7",
+    "step145_stationarity": "ad3094039191f74b59d93c17d64a3518169590f85632599d256e19cbee297445",
+    "step145_summary": "f33797d68f14748cc7d3c354023cb7e70e2d02a437cbb0487c94d65efeb867c4"
+  },
+  "max_step147_rows": 4,
+  "max_step147_steps": 250,
+  "missing_input": false,
+  "new_lbm_run_executed": false,
+  "new_parameter_tuning_executed": false,
+  "next_step_recommendation": "Step147 may propose at most four bounded 48^3 / 250-step rows for mass-neutral relief with stationarity damping; selected96 and a Step146 500-step probe remain blocked.",
+  "production_readiness_claim_allowed": false,
+  "quasi2d_validation_claim_allowed": false,
+  "recommended_design": "saturation_aware_mass_neutral_relief_with_stationarity_damping",
+  "recommended_step147_phase": "planeflux_saturation_stationarity48",
+  "recommended_step147_row_role": "saturation_stationarity_diagnostic_48",
+  "selected96_execution_allowed": false,
+  "selected_candidate_surface_review_allowed": false,
+  "selected_static_execution_allowed": false,
+  "source_input_paths": {
+    "step144_comparison": "outputs/step144_mass_neutral_final48/step144_long_window_comparison.json",
+    "step144_decision": "outputs/step144_mass_neutral_final48/step144_decision_summary.json",
+    "step145_controller": "outputs/step145_mass_neutral_long_window_forensics/controller_lag_segment_report.json",
+    "step145_saturation": "outputs/step145_mass_neutral_long_window_forensics/saturation_segment_report.json",
+    "step145_stationarity": "outputs/step145_mass_neutral_long_window_forensics/stationarity_segment_report.json",
+    "step145_summary": "outputs/step145_mass_neutral_long_window_forensics/step145_failure_mechanism_summary.json"
+  },
+  "source_selected96_execution_allowed": false,
+  "source_selected_candidate_surface_review_allowed": false,
+  "source_step": 145,
+  "source_step144_decision_case": "mass_neutral_flow_stationarity_long_window_failure",
+  "source_step144_row_name": "duct_only_48_regularized_plane_flux_controlled_gain0p75_cap0p0075_rho0p0010_mnhigh_mgain0p50_mcap0p001_blend1p00_out10_500step_mass_neutral_final",
+  "source_step145_decision_case": "mixed_saturation_stationarity_failure",
+  "source_step145_dominant_failure_mechanism": "mixed_saturation_stationarity_failure",
+  "source_step145_status": "mechanism_classified",
+  "source_step145_summary_hash": "f33797d68f14748cc7d3c354023cb7e70e2d02a437cbb0487c94d65efeb867c4",
+  "source_step146_500step_probe_allowed": false,
+  "source_validation_claim_allowed": false,
+  "status": "design_ready",
+  "step": 146,
+  "step121_phase_added": false,
+  "step144_final_mass_abs": 0.007345390662776274,
+  "step144_flux_imbalance_rel_tail_mean": 0.1023209978570283,
+  "step144_mass_neutral_feedback_saturation_fraction_tail": 0.9374677783363148,
+  "step144_outlet_flux_tail_cv": 0.11500661338208944,
+  "step145_controller_interpretation": "unsaturated_velocity_controller_cannot_prevent_stationarity_drift",
+  "step145_stationarity_interpretation": "long_window_stationarity_failure_recurs_after_mass_neutral_feedback",
+  "step145_tail_saturation_final": 0.944,
+  "step145_tail_saturation_mean": 0.9374677783363148,
+  "step146_500step_probe_allowed": false,
+  "step147_250step_diagnostic_proposal_allowed": true,
+  "step147_candidate_rows": [
+    {
+      "blend": 1.0,
+      "cap_mass": 0.001,
+      "gain_mass": 0.5,
+      "name": "mass_neutral_high_baseline",
+      "role": "baseline repeat only",
+      "stationarity_damping": "current Step144/Step143 high setting baseline"
+    },
+    {
+      "blend": 0.5,
+      "cap_mass": 0.001,
+      "gain_mass": 0.35,
+      "name": "relief_low",
+      "role": "mass-neutral relief plus stationarity damping",
+      "stationarity_damping": "stronger damping; prefer slew_alpha = 0.25 or delta_cap_u = 0.00025"
+    },
+    {
+      "blend": 0.5,
+      "cap_mass": 0.001,
+      "gain_mass": 0.5,
+      "name": "relief_mid",
+      "role": "same gain/cap with lower blend",
+      "stationarity_damping": "stronger damping"
+    },
+    {
+      "blend": 0.5,
+      "cap_mass": 0.0015,
+      "gain_mass": 0.5,
+      "name": "relief_cap_test",
+      "role": "diagnostic cap test only; not promotion",
+      "stationarity_damping": "stronger damping"
+    }
+  ],
+  "step147_output_interval": 5,
+  "tail_controller_authority_ratio_slope": -0.0017484489151022653,
+  "validation_claim_allowed": false
+}

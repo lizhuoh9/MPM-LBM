@@ -6,13 +6,12 @@ Current status: engineering prototype.
 
 Current campaign entry point: `docs/current/STATUS.md`.
 
-Current LBM boundary campaign note: Step145 is artifact-only forensics over the
-Step144 failure. Step144 ran exactly one real `48^3 / 500-step` mass-neutral
-final-evidence probe. It completed 500/500 and stayed finite, but failed mass
-acceptance, mean flux imbalance, and outlet stationarity. Step145 classifies
-the mechanism as `mixed_saturation_stationarity_failure`; selected-candidate
-review, selected96, selected-static, 96^3, Fluent, FSI, and validation claims
-remain blocked.
+Current LBM boundary campaign note: Step146 is design-only and artifact-only
+over the Step145/Step144 artifacts. Step145 classifies the Step144 failure as
+`mixed_saturation_stationarity_failure`; Step146 recommends only a later bounded
+Step147 `48^3 / 250-step` diagnostic proposal and does not add the phase or run
+it. selected-candidate review, selected96, selected-static, 96^3, Fluent, FSI,
+and validation claim remains blocked.
 
 This repository is a small-scale engineering prototype for comparing MPM-LBM coupling paths. It is not production ready and should not be described as a completed sharp-interface FSI solver or a real squid simulation.
 
@@ -134,6 +133,7 @@ This repository is a small-scale engineering prototype for comparing MPM-LBM cou
 - Step 123 LBM boundary 48 real-campaign execution and decision hardening, with terminal-evidence versus validation-pass semantics, selected 96^3 flow-development gates, spec-aware artifact reuse, solver-state versus run-manifest hashes, formal selected-provenance fail-fast behavior, real Taichi lightweight mass-reduction contracts, and no quasi-2D/FSI/Fluent claim until the real 48^3 and selected 96^3 artifacts pass
 - Step 124 LBM boundary campaign-readiness hardening, with legacy-reference terminal failure stopping the 48 campaign, shared dimensionless flow-development gates for candidates and selected 96^3 rows, campaign-manifest summary filtering, current documentation entry points, refreshed tiny smoke artifacts, and no quasi-2D/FSI/Fluent claim until real 48^3 and selected 96^3 artifacts pass
 - Step 142 LBM boundary mass-neutral plane-flux controller design contract, with default-disabled config/report surfaces, Step141-backed readiness artifacts, and no Step142 real 48^3, 500-step, selected96, quasi-2D, FSI, Fluent, or production-readiness claim
+- Step 146 coupled saturation-stationarity design proposal, with Step145/Step144 artifact-only readiness, Design A recommended only for a later bounded Step147 48^3 / 250-step diagnostic proposal, Design B kept as fallback telemetry, and selected96, selected-candidate review, Step146 500-step probe, Fluent, FSI, and validation claim remains blocked
 
 ## Not Implemented
 
