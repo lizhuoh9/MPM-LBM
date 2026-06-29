@@ -6,11 +6,13 @@ Current status: engineering prototype.
 
 Current campaign entry point: `docs/current/STATUS.md`.
 
-Current LBM boundary campaign note: Step144 ran exactly one real `48^3 /
-500-step` mass-neutral final-evidence probe. It completed 500/500 and stayed
-finite, but failed mass acceptance, mean flux imbalance, and outlet stationarity;
-selected96, selected-static, 96^3, Fluent, FSI, and validation claims remain
-blocked.
+Current LBM boundary campaign note: Step145 is artifact-only forensics over the
+Step144 failure. Step144 ran exactly one real `48^3 / 500-step` mass-neutral
+final-evidence probe. It completed 500/500 and stayed finite, but failed mass
+acceptance, mean flux imbalance, and outlet stationarity. Step145 classifies
+the mechanism as `mixed_saturation_stationarity_failure`; selected-candidate
+review, selected96, selected-static, 96^3, Fluent, FSI, and validation claims
+remain blocked.
 
 This repository is a small-scale engineering prototype for comparing MPM-LBM coupling paths. It is not production ready and should not be described as a completed sharp-interface FSI solver or a real squid simulation.
 

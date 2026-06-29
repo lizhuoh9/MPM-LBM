@@ -3,6 +3,31 @@
 The campaign cannot claim selected 96^3, quasi-2D, FSI, Fluent validation, or
 Figure 29.3 parity from the current 48^3 LBM-only candidate artifacts.
 
+Current Step145 failure-forensics evidence:
+
+- Step145 is artifact-only over Step144, Step143, and Step140 outputs.
+- Step144 failed the final hard gate: the single Step144 row completed 500/500
+  and stayed finite, but failed mass acceptance, mean flux imbalance, and
+  outlet stationarity.
+- Step145 did not run a new LBM row.
+- Step145 did not add a Step121 phase.
+- Step145 did not run selected96.
+- Step145 did not run selected-static.
+- Step145 did not run 96^3.
+- Step145 did not run Fluent.
+- Step145 did not run FSI.
+- Step145 does not make a validation claim.
+- Step145 classifies the dominant mechanism as
+  `mixed_saturation_stationarity_failure`.
+- selected96 remains blocked.
+- selected-candidate-surface review remains blocked.
+- validation claim remains blocked.
+- Step145 keeps `selected96_execution_allowed = false`,
+  `selected_candidate_surface_review_allowed = false`, and
+  `validation_claim_allowed = false`.
+- Step145 allows at most a Step146 bounded 250-step diagnostic/design proposal;
+  it does not allow a 500-step probe or selected96 execution.
+
 Current Step144 mass-neutral final48 probe evidence:
 
 - Step144 adds the distinct `planeflux_mass_neutral_final48` phase with exactly

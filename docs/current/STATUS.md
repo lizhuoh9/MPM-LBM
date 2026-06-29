@@ -1,14 +1,34 @@
 # Current Status
 
 The active campaign is the Fluent duct/flap LBM open-boundary repair campaign.
-The current artifact state remains selected-boundary blocked. Step144 ran the
-single `48^3 / 500-step` LBM-only mass-neutral final-evidence probe that Step143
-allowed, using the exact Step143 best high setting. The row completed 500/500
-and stayed finite, but it failed the final hard gate on mass acceptance, mean
-flux imbalance, and outlet stationarity. Step144 therefore does not approve
-selected96, selected-static, 96^3, Fluent, FSI, quasi-2D validation, Figure 29.3
-parity, or production-readiness.
+The current artifact state remains selected-boundary blocked. Step145 is an
+artifact-only failure-forensics step over the existing Step144, Step143, and
+Step140 outputs. It classifies the Step144 long-window failure as
+`mixed_saturation_stationarity_failure`: mass-neutral feedback saturated through
+the hard-gate tail while mass acceptance and outlet stationarity both remained
+outside gate.
+
+Step144 failed the final hard gate after running the single `48^3 / 500-step`
+LBM-only mass-neutral final-evidence probe that Step143 allowed. The row
+completed 500/500 and stayed finite, but failed mass acceptance, mean flux
+imbalance, and outlet stationarity. Step145 did not run a new LBM row, did not
+add a Step121 phase, did not run selected96, did not run selected-static, did
+not run 96^3, did not run Fluent, did not run FSI, and does not make a
+validation claim. selected96 remains blocked, selected-candidate-surface review remains blocked,
+and validation claim remains blocked.
 Current campaign state: `48_candidates_failed`.
+
+Step145 artifacts are under
+`outputs/step145_mass_neutral_long_window_forensics`. The failure mechanism
+summary is
+`outputs/step145_mass_neutral_long_window_forensics/step145_failure_mechanism_summary.json`.
+It records `dominant_failure_mechanism =
+mixed_saturation_stationarity_failure`,
+`selected96_execution_allowed = false`,
+`selected_candidate_surface_review_allowed = false`, and
+`validation_claim_allowed = false`. The only Step146 allowance is a bounded
+250-step diagnostic/design proposal; a 500-step probe and selected96 remain
+blocked.
 
 Step144 did not run selected96.
 Step144 did not run selected-static.
